@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ARAM Mayhem — Team Leaderboard</title>
 <style>
-  :root { --bg:#0a1428; --card:#0f1f3d; --card2:#13294f; --gold:#c8aa6e; --blue:#0ac8b9;
-    --text:#e8eef7; --muted:#9fb0c8; --green:#3ddc84; --red:#ff6b6b; --line:#1e3a5f; }
+  :root { --bg:#000000; --card:#121212; --card2:#1b1b1b; --gold:#c8aa6e; --gold-bright:#e5c97a;
+    --text:#f0ead9; --muted:#a89f8d; --green:#3ddc84; --red:#ff6b6b; --line:#2a2a2a; }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; line-height:1.5; }
   header { padding:28px 20px 8px; max-width:1080px; margin:0 auto; }
@@ -27,7 +27,7 @@
   table { width:100%; border-collapse:collapse; background:var(--card); border-radius:12px; overflow:hidden; }
   th, td { padding:10px 12px; text-align:left; border-bottom:1px solid var(--line); font-size:14px; }
   th { background:var(--card2); color:var(--gold); cursor:pointer; white-space:nowrap; }
-  tr:hover td { background:#12264a; }
+  tr:hover td { background:#1c1c1c; }
   .rank1 td { background:#1a2f1a; }
   .pill { display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; background:#123524; color:var(--green); }
   .pill.low { background:#3d1a1a; color:var(--red); }
@@ -42,13 +42,13 @@
   canvas { width:100%; height:260px; background:var(--card); border:1px solid var(--line); border-radius:12px; }
   details { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 16px; margin:10px 0; }
   summary { cursor:pointer; font-weight:700; }
-  .note { background:#13294f; border-left:4px solid var(--blue); padding:12px 14px; border-radius:8px; color:#cfe3ff; font-size:14px; }
+  .note { background:#1b1b1b; border-left:4px solid var(--gold); padding:12px 14px; border-radius:8px; color:#e8dcc0; font-size:14px; }
   .muted { color:var(--muted); font-size:13px; }
   code { background:#00000055; padding:1px 6px; border-radius:6px; }
   footer { color:var(--muted); font-size:13px; }
-  .bar { background:#0a1a33; border:1px solid var(--line); border-radius:999px; height:12px; overflow:hidden; }
+  .bar { background:#1e1e1e; border:1px solid var(--line); border-radius:999px; height:12px; overflow:hidden; }
   .bar.slim { height:8px; margin-top:4px; }
-  .bar-fill { height:100%; background:linear-gradient(90deg,#0ac8b9,#c8aa6e); border-radius:999px; }
+  .bar-fill { height:100%; background:linear-gradient(90deg,#8a6d2f,#e5c97a); border-radius:999px; }
   .bar-fill.good { background:linear-gradient(90deg,#1f8f5f,#3ddc84); }
   .bar-fill.bad { background:linear-gradient(90deg,#8f2f2f,#ff6b6b); }
   .bar-row { display:grid; grid-template-columns:110px 1fr 90px; gap:8px; align-items:center; margin:6px 0; font-size:13px; }
@@ -69,7 +69,7 @@
   .champ-trio { display:flex; gap:10px; }
   .champ-cell { flex:1; min-width:0; text-align:center; }
   .champ-cell .rank { font-size:12px; color:var(--muted); font-weight:700; }
-  .champ-thumb-lg { width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid var(--line); background:#0a1a33; }
+  .champ-thumb-lg { width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid var(--line); background:#1e1e1e; }
   .champ-half.good .champ-thumb-lg { border-color:#1f5c3a; }
   .champ-half.bad .champ-thumb-lg { border-color:#5f2a2a; }
   .champ-cell .cname { font-weight:700; font-size:14px; margin-top:4px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
@@ -326,12 +326,12 @@ async function load() {
   drawChart(document.getElementById('chart-mmr'), data.history || [], 'mmr_style', 'MMR-style');
 }
 
-const COLORS = ['#0ac8b9','#c8aa6e','#ff6b9d','#7aa2ff','#3ddc84','#ff9f43'];
+const COLORS = ['#c8aa6e','#e5c97a','#3ddc84','#ff6b9d','#ff9f43','#8a6d2f'];
 function drawChart(canvas, history, key, label) {
   const ctx = canvas.getContext('2d');
   const W = canvas.width, H = canvas.height;
   ctx.clearRect(0,0,W,H);
-  if (!history.length) { ctx.fillStyle='#9fb0c8'; ctx.font='16px system-ui'; ctx.fillText('No history yet.', 20, 40); return; }
+  if (!history.length) { ctx.fillStyle='#a89f8d'; ctx.font='16px system-ui'; ctx.fillText('No history yet.', 20, 40); return; }
   const names = [...new Set(history.flatMap(h => Object.keys(h[key] || {})))];
   let vals = history.flatMap(h => Object.values(h[key] || {}));
   let min = Math.min(...vals), max = Math.max(...vals);
@@ -339,7 +339,7 @@ function drawChart(canvas, history, key, label) {
   const pad = (max - min) * 0.15; min -= pad; max += pad;
   const x = i => 50 + (W - 70) * (history.length === 1 ? 0.5 : i / (history.length - 1));
   const y = v => H - 30 - (H - 60) * ((v - min) / (max - min));
-  ctx.strokeStyle = '#1e3a5f'; ctx.fillStyle = '#9fb0c8'; ctx.font = '12px system-ui';
+  ctx.strokeStyle = '#2a2a2a'; ctx.fillStyle = '#a89f8d'; ctx.font = '12px system-ui';
   for (let t = 0; t <= 4; t++) {
     const v = min + (max - min) * t / 4, yy = y(v);
     ctx.beginPath(); ctx.moveTo(50, yy); ctx.lineTo(W - 20, yy); ctx.stroke();
@@ -360,7 +360,7 @@ function drawChart(canvas, history, key, label) {
     ctx.fillStyle = COLORS[ni % COLORS.length];
     ctx.fillText(n, x(history.length - 1) + 6 > W - 90 ? W - 90 : x(history.length - 1) + 6, 20 + ni * 16);
   });
-  ctx.fillStyle = '#9fb0c8';
+  ctx.fillStyle = '#a89f8d';
   history.forEach((h, i) => ctx.fillText(h.date.slice(5), x(i) - 10, H - 8));
 }
 
