@@ -64,7 +64,16 @@
     "updated_at_label": "Nov 8, 2026 \u2014 seeded snapshot",
     "window_games": 50,
     "window_note": "Each player is scored on their own last 50 ARAM Mayhem games. Remakes under 5 minutes are excluded. PlayARAM shows only the latest 20 games per fetch, so the updater keeps a cache and the window fills to 50 over the first few daily runs.",
-    "stack_note": "Stack splits below are from the Nov 8 6-player snapshot (600 player-games). They recompute for the 5-player group on the first daily run."
+    "stack_note": "Stack splits below are from the Nov 8 6-player snapshot (600 player-games). They recompute for the 5-player group on the first daily run.",
+    "automation": {
+      "last_attempt": "2026-11-08T17:55:19.085515-06:00",
+      "last_attempt_label": "2026-11-08 05:55 PM CST",
+      "last_source": "PlayARAM",
+      "last_games_found": 0,
+      "last_error": "I3i3oy: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Vincent Chan: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; CreamiNataella: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Ohwutahel: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; PikabUwU: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.",
+      "next_update": "Daily at 12:00 AM CST (06:00 UTC), retry 12:30 AM CST",
+      "needs_attention": true
+    }
   },
   "playbook": [
     "Pocket picks first. Jinx for I3i3oy (71.9, +15.8, 4 games) and Varus (68.9, +12.8, 6 games), Senna for Vincent Chan (70.1, +13.3, 5 games), Nidalee for CreamiNataella (72.5, +16.9, 3 games) and Sona (67.9, +12.3, 3 games), Aurelion Sol for pikabUwU (61.9, +14.3, 3 games) and Hwei (56.5, +8.9, 8 games), Zyra for Ohwutahel (68.0, +20.0, 3 games), Trundle (64.5, +16.5, 6 games) and Shen (64.2, +16.2, 6 games).",
