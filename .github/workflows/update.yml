@@ -1,0 +1,54 @@
+name: Update leaderboard daily
+
+# 12:00 AM CST = 06:00 UTC (Nov–Mar, CST is UTC-6).
+# GitHub cron runs in UTC and can start a few minutes late — that is normal.
+# During daylight time (CDT, UTC-5) this same cron lands at 1:00 AM CDT.
+# If you want it at midnight CDT in summer too, change 6 to 5 in March.
+on:
+  schedule:
+    # 12:00 AM CST = 06:00 UTC. Retry at 12:30 AM CST in case the first
+    # run hit a transient PlayARAM block — the updater is idempotent
+    # (one history point per day, cached matches), so a second run is safe.
+    - cron: "0 6 * * *"
+    - cron: "30 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aram-mayhem-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Update data (last 50 games per player)
+        run: python scripts/update.py
+
+      # Commit the updated snapshot AND the per-player PlayARAM cache
+      # (data/cache/playaram/) — the cache is how the last-50 window
+      # fills over the first few runs, since each fetch only shows 20
+      # games. Without it, every run would start from zero.
+      - name: Commit updated data if it changed
+        run: |
+          git config user.name "aram-mayhem-bot"
+          git config user.email "aram-mayhem-bot@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "Daily update: last 50 ARAM Mayhem games per player"
+          git push
+
+      # Freshness gate: fails the run (and GitHub emails the repo owner)
+      # only when the data is stale AND the last attempt recorded an
+      # error — i.e. the automation itself is broken. Stays quiet
+      # before setup is done and while a good snapshot is being kept.
+      - name: Check data freshness
+        run: python scripts/check_fresh.py 72
