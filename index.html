@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARAM Mayhem — Team Leaderboard</title>
+<style>
+  :root { --bg:#0a1428; --card:#0f1f3d; --card2:#13294f; --gold:#c8aa6e; --blue:#0ac8b9;
+    --text:#e8eef7; --muted:#9fb0c8; --green:#3ddc84; --red:#ff6b6b; --line:#1e3a5f; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; line-height:1.5; }
+  header { padding:28px 20px 8px; max-width:1080px; margin:0 auto; }
+  h1 { margin:0; font-size:32px; letter-spacing:.5px; }
+  h1 span { color:var(--gold); }
+  .sub { color:var(--muted); margin:6px 0 0; }
+  .badge { display:inline-block; background:#123524; color:var(--green); border:1px solid #1f5c3a;
+    padding:3px 10px; border-radius:999px; font-size:13px; margin-top:10px; }
+  main { max-width:1080px; margin:0 auto; padding:16px 20px 60px; }
+  section { margin-top:28px; }
+  h2 { font-size:22px; border-bottom:2px solid var(--gold); padding-bottom:6px; }
+  h3 { font-size:17px; margin:18px 0 8px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; }
+  .card .label { color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:.5px; }
+  .card .big { font-size:30px; font-weight:800; margin:4px 0; }
+  .card .who { color:var(--gold); font-weight:600; }
+  table { width:100%; border-collapse:collapse; background:var(--card); border-radius:12px; overflow:hidden; }
+  th, td { padding:10px 12px; text-align:left; border-bottom:1px solid var(--line); font-size:14px; }
+  th { background:var(--card2); color:var(--gold); cursor:pointer; white-space:nowrap; }
+  tr:hover td { background:#12264a; }
+  .rank1 td { background:#1a2f1a; }
+  .pill { display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; background:#123524; color:var(--green); }
+  .pill.low { background:#3d1a1a; color:var(--red); }
+  .player-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; }
+  .player { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; }
+  .player h3 { margin:0 0 4px; font-size:19px; }
+  .player .score { font-size:26px; font-weight:800; color:var(--gold); }
+  .player ul { margin:8px 0; padding-left:20px; }
+  .player li { margin:4px 0; font-size:14px; }
+  .workon { background:#2a1f0a; border:1px solid #6b5316; border-radius:8px; padding:10px 12px; margin-top:10px; font-size:14px; }
+  .workon b { color:var(--gold); }
+  canvas { width:100%; height:260px; background:var(--card); border:1px solid var(--line); border-radius:12px; }
+  details { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 16px; margin:10px 0; }
+  summary { cursor:pointer; font-weight:700; }
+  .note { background:#13294f; border-left:4px solid var(--blue); padding:12px 14px; border-radius:8px; color:#cfe3ff; font-size:14px; }
+  .muted { color:var(--muted); font-size:13px; }
+  code { background:#00000055; padding:1px 6px; border-radius:6px; }
+  footer { color:var(--muted); font-size:13px; }
+  .bar { background:#0a1a33; border:1px solid var(--line); border-radius:999px; height:12px; overflow:hidden; }
+  .bar.slim { height:8px; margin-top:4px; }
+  .bar-fill { height:100%; background:linear-gradient(90deg,#0ac8b9,#c8aa6e); border-radius:999px; }
+  .bar-fill.good { background:linear-gradient(90deg,#1f8f5f,#3ddc84); }
+  .bar-fill.bad { background:linear-gradient(90deg,#8f2f2f,#ff6b6b); }
+  .bar-row { display:grid; grid-template-columns:110px 1fr 90px; gap:8px; align-items:center; margin:6px 0; font-size:13px; }
+  .bar-label { color:var(--muted); }
+  .bar-val { text-align:right; font-weight:700; }
+  .pro { color:#7be3a8; }
+  .con { color:#ffb3b3; }
+  /* Top 3 / Worst 3 champions: one wide card per player, Best on the
+     left and Worst on the right, three round portraits in a row each. */
+  .champ-player { grid-column: 1 / -1; }
+  .champ-duo { display:flex; gap:12px; }
+  .champ-half { flex:1; min-width:0; background:var(--card2); border:1px solid var(--line); border-radius:10px; padding:12px 14px; }
+  .champ-half.good { border-top:3px solid var(--green); }
+  .champ-half.bad { border-top:3px solid var(--red); }
+  .champ-half h4 { margin:0 0 10px; font-size:15px; }
+  .champ-half.good h4 { color:var(--green); }
+  .champ-half.bad h4 { color:var(--red); }
+  .champ-trio { display:flex; gap:10px; }
+  .champ-cell { flex:1; min-width:0; text-align:center; }
+  .champ-cell .rank { font-size:12px; color:var(--muted); font-weight:700; }
+  .champ-thumb-lg { width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid var(--line); background:#0a1a33; }
+  .champ-half.good .champ-thumb-lg { border-color:#1f5c3a; }
+  .champ-half.bad .champ-thumb-lg { border-color:#5f2a2a; }
+  .champ-cell .cname { font-weight:700; font-size:14px; margin-top:4px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .champ-cell .cstats { font-size:12px; color:var(--muted); line-height:1.45; margin-top:4px; }
+  .champ-cell .cwhy { font-size:11px; color:var(--muted); line-height:1.35; margin-top:4px; }
+
+  .champ-head { display:flex; justify-content:space-between; gap:8px; font-size:14px; }
+  .why-card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; }
+  @media (max-width:640px){ h1{font-size:26px;} th,td{font-size:13px; padding:8px;} .champ-duo{flex-direction:column;} }
+</style>
+</head>
+<body>
+<header>
+  <h1>ARAM Mayhem <span>— Team Leaderboard</span></h1>
+  <p class="sub">Each player scored on their own <b>last 50 ARAM Mayhem games</b>. Remakes under 5 minutes excluded.</p>
+  <p class="sub" id="updated">Loading…</p>
+  <span class="badge">✓ Auto-updates daily at 12:00 AM CST — refreshing this page never contacts Riot or PlayARAM, so it can't get blocked</span>
+</header>
+<main>
+  <div class="note" id="seed-note"></div>
+
+  <section>
+    <h2>Leaderboard — Performance Score</h2>
+    <div class="cards" id="highlights"></div>
+    <div style="height:14px"></div>
+    <div style="overflow-x:auto">
+    <table id="leaderboard">
+      <thead><tr>
+        <th data-k="rank">#</th><th data-k="name">Player</th><th data-k="score">Score</th>
+        <th data-k="mmr_style">MMR-style</th><th data-k="win_rate">Win %</th>
+        <th data-k="wins">W–L</th><th data-k="kda">KDA</th><th data-k="damage_per_min">Dmg / min</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+    </div>
+    <p class="muted">Tap a column heading to sort. Score is 0–100. MMR-style = 800 + Score × 14 (1500 ≈ average).</p>
+  </section>
+
+  <section>
+    <h2>How the ranking is fair — read this before you complain</h2>
+    <div id="fair-ranking"></div>
+    <div class="player-grid" id="why-standings" style="margin-top:14px"></div>
+    <div class="card" style="margin-top:12px">
+      <div class="label">Worked example — Nov 8 snapshot</div>
+      <p><b>Ohwutahel (tanks) vs Vincent Chan (all carry champs).</b> Vincent ranks 2nd at 55.4 and Ohwutahel 4th at 47.9 — and that gap is <i>not</i> because carries get more kills. Vincent is graded only against other Damage games, Ohwutahel's tank games only against other Frontline games.</p>
+      <p>Ohwutahel's own numbers prove the point: his Frontline games grade <b>52.4</b> (+4.4, 52 games), while his Damage games grade 44.3 and his Support games 41.9. As a frontliner he is actually close to Vincent's level — his overall rank is pulled down by the off-role games in his last 100, not by playing tanks. If he played Frontline only, his score would be around 52, not 47.9.</p>
+      <p>Vincent's rank comes from carry games graded <i>within</i> the carry role: his Senna grades 70.1 (+13.3, 5 games), and his loss-vs-close gap is the smallest in the group (51.1 vs 56.0), which is what the median + floor terms reward. A carry with big KDA but a low floor would not rank this high — KDA is only 1 of 7 criteria, and win rate is only 15% of the score.</p>
+      <p class="muted">This example uses Nov 8 snapshot numbers. It recomputes from the last-50, role-adjusted window on the first daily run, and each player card below shows the same breakdown for that player.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Performance History</h2>
+    <p class="muted">One point per player per day. Each daily 12 AM CST run adds a new point. Y-axis is zoomed to the range the data covers, so close lines separate — it does not start at 0.</p>
+    <h3>Performance Score — daily history</h3>
+    <canvas id="chart-score" width="1000" height="260"></canvas>
+    <h3>MMR-style — daily history</h3>
+    <canvas id="chart-mmr" width="1000" height="260"></canvas>
+    <p class="muted" id="history-note"></p>
+  </section>
+
+  <section>
+    <h2>Player by Player — what they do well, and what to work on</h2>
+    <p class="muted">Each card shows why the player stands where they do, then one “What to work on” block — computed only from that player's most recent 20 games, compared with the group's recent-20 averages, and split into games played with 2+ of the group versus solo games, so stacked and solo play don't get mixed up. Nothing from the older games in the window or the Nov 8 snapshot goes into it. It updates every daily run; until the first run has per-game data, that block stays empty. Nothing here is invented.</p>
+    <div class="player-grid" id="players"></div>
+  </section>
+
+  <section>
+    <h2>Recent 50 Games — per player</h2>
+    <p class="muted">Newest first, one row per game: champion, result, KDA, damage, augments, grade. This fills automatically on the first daily updater run (or a manual CSV import — see README). Until then it shows the seeded snapshot, which has scores but no per-game rows.</p>
+    <div id="games"></div>
+  </section>
+
+  <section>
+    <h2>Top 3 / Worst 3 champions — last 50 games</h2>
+    <p class="muted">One card per player: Best on the left, Worst on the right, three round portraits each. Ranked by mean game grade on that champion versus the player's own average. Only champions with 3+ games count, so a one-game fluke can't top the list. If a player has only a few champions with 3+ games, the same champion can appear on both sides — it just means that champion is both the best and the worst of a small set. Grade, record and delta are the hard facts under each portrait; the small line under them says why it lands there.</p>
+    <div class="player-grid" id="champs"></div>
+  </section>
+
+  <section>
+    <h2>How the Rating Works</h2>
+    <div id="how"></div>
+  </section>
+
+  <footer>
+    <p><b>Where this data comes from:</b> the numbers on this page right now are a Nov 8, 2026 snapshot copied from the original page (bboyisk.github.io/aram-mayhem-assessment), which sourced its per-player history from PlayARAM and its population baselines from MayhemMeta. This page never contacts PlayARAM — nothing here was scraped from it after it blocked us. Future updates come from each player's PlayARAM profile, fetched once a day by GitHub Actions (no Riot API key needed — Riot's API does not reliably serve ARAM Mayhem), with a manual CSV export as backup. PlayARAM's match list shows result, champion, KDA, CS and skillshots dodged, but not damage or turret takedowns, so Output and Conversion stay blank on PlayARAM games — a missing field is skipped, never scored as 0. Subscores, recent-20, top/worst champions and per-game rows stay blank until that first update — no values were invented to fill them.</p>
+    <p>Data: per-player history from PlayARAM (playaram.gg), fetched daily. Population champion &amp; augment win rates: MayhemMeta (mayhemmeta.com). Skillshots dodged comes from PlayARAM's match list.</p>
+    <p>What isn't measured: PlayARAM does not publish healing, shielding, crowd-control score or per-player objective damage, so none of those appear here.</p>
+    <p>Not affiliated with Riot Games. ARAM Mayhem is a League of Legends game mode.</p>
+  </footer>
+</main>
+
+<script>
+const fmt = v => (v === null || v === undefined) ? '—' : v;
+const fmt1 = v => (v === null || v === undefined) ? '—' : Number(v).toFixed(1);
+
+const POCKETS = {
+  "I3i3oy": "Jinx, Varus", "Vincent Chan": "Senna", "CreamiNataella": "Nidalee, Sona",
+  "Ohwutahel": "Zyra, Trundle, Shen", "PikabUwU": "Aurelion Sol, Hwei"
+};
+
+async function load() {
+  const res = await fetch('data/data.json');
+  const data = await res.json();
+  const players = [...data.players].sort((a,b) => (b.score ?? -1) - (a.score ?? -1));
+
+  const auto = data.meta.automation || {};
+  const ageH = data.meta.updated_at ? (Date.now() - new Date(data.meta.updated_at).getTime()) / 3600000 : null;
+  const stale = ageH != null && ageH > 48;
+  document.getElementById('updated').innerHTML =
+    `Last updated: ${data.meta.updated_at_label || data.meta.updated_at}  ·  Next update: ${data.meta.next_update || 'Daily at 12:00 AM CST'}  ·  Window: last ${data.meta.window_games} games each`
+    + (auto.last_source ? `<br>Source: ${auto.last_source}${auto.last_games_found != null ? ` · ${auto.last_games_found} games in this window` : ''}${auto.last_attempt_label ? ` · Last attempt: ${auto.last_attempt_label}` : ''}` : '')
+    + (stale ? `<br><b style="color:#ff9f43">⚠ Data is ${Math.round(ageH)}h old — the daily update hasn't succeeded in over 2 days. The last snapshot is shown above, not new games.</b>` : '')
+    + (auto.last_error ? `<br><span class="muted">Last update note: ${auto.last_error}</span>` : '')
+    + `<br><span class="muted">Fully automatic — no one has to update this page by hand. It refreshes itself every night.</span>`;
+  document.getElementById('seed-note').textContent = data.meta.seed_note ||
+    'Seeded from the Nov 8, 2026 snapshot on the original page. Scores below are from that snapshot (last-100 window); the first 12 AM CST run recomputes them on the last 50.';
+
+  // Highlights
+  const h = data.highlights || {};
+  document.getElementById('highlights').innerHTML = [
+    ['Top rated · Performance Score', h.top_rated?.score, `${h.top_rated?.player || ''} · MMR-style ${h.top_rated?.mmr_style ?? ''}`],
+    ['Highest damage / min', h.highest_damage_per_min?.value?.toLocaleString?.(), `${h.highest_damage_per_min?.player || ''}${h.highest_damage_per_min?.note ? ' · ' + h.highest_damage_per_min.note : ''}`],
+    ['Best KDA', h.best_kda?.value, h.best_kda?.player || ''],
+    ['Most skillshots dodged / min', h.most_skillshots_dodged_per_min?.value, h.most_skillshots_dodged_per_min?.player || ''],
+  ].map(([l, v, w]) => `<div class="card"><div class="label">${l}</div><div class="big">${fmt(v)}</div><div class="who">${w}</div></div>`).join('');
+
+  // Leaderboard
+  const tb = document.querySelector('#leaderboard tbody');
+  tb.innerHTML = players.map((p,i) => `<tr class="${i===0?'rank1':''}">
+    <td>${['🥇','🥈','🥉'][i] || (i+1)}</td><td><b>${p.name}</b></td><td><b>${fmt1(p.score)}</b><div class="bar slim"><div class="bar-fill" style="width:${p.score || 0}%"></div></div></td>
+    <td>${fmt(p.mmr_style)}</td><td>${fmt1(p.win_rate)}${p.win_rate!=null?'%':''}</td>
+    <td>${p.wins!=null ? p.wins+'–'+p.losses : '—'}</td><td>${fmt(p.kda)}</td><td>${fmt(p.damage_per_min?.toLocaleString?.())}</td></tr>`).join('');
+
+  // Fair ranking explainer (from data.json, so the page and the updater agree)
+  const rm = data.ranking_method || {};
+  document.getElementById('fair-ranking').innerHTML = `
+    <p><b>${rm.one_line || ''}</b></p>
+    <ul>${(rm.points || []).map(x => `<li>${x}</li>`).join('')}</ul>
+    <p class="muted">${rm.criteria_weights || ''} Archetypes: ${Object.entries(rm.archetypes || {}).map(([k,v]) => `<b>${k}</b> — ${v}`).join(' · ')}</p>`;
+
+  // Shared: subscore keys + group averages, used by standings, cards, improve.
+  const subKeys = [['output','Output'],['kda_efficiency','KDA'],['teamplay','Teamplay'],['death_quality','Death Q'],['conversion','Conversion'],['augments','Augments'],['mechanics','Mechanics']];
+  const subLabel = Object.fromEntries(subKeys);
+  const groupSubAvg = {};
+  subKeys.forEach(([k]) => {
+    const vals = players.map(p => p.subscores?.[k]).filter(v => v != null);
+    groupSubAvg[k] = vals.length ? vals.reduce((a,b) => a+b, 0) / vals.length : null;
+  });
+  const subBars = (p) => subKeys.map(([k,label]) => {
+    const v = p.subscores?.[k], avg = groupSubAvg[k];
+    if (v == null) {
+      const why = (k === 'output' || k === 'conversion')
+        ? '— not available from PlayARAM'
+        : '— not filled yet';
+      return `<div class="bar-row"><span class="bar-label">${label}</span><span class="muted">${why}</span><span></span></div>`;
+    }
+    const delta = avg != null ? ` (${v - avg >= 0 ? '+' : ''}${(v - avg).toFixed(1)} vs group)` : '';
+    return `<div class="bar-row"><span class="bar-label">${label}</span><div class="bar"><div class="bar-fill" style="width:${v}%"></div></div><span class="bar-val">${v}${delta}</span></div>`;
+  }).join('');
+
+  // Detailed per-player standings — the "read before you complain" evidence
+  document.getElementById('why-standings').innerHTML = players.map((p,i) => `
+    <div class="why-card">
+      <h3>${['🥇','🥈','🥉'][i] || (i+1) + '.'} ${p.name} — ${fmt1(p.score)}</h3>
+      <p>${p.why_rank || 'Full breakdown fills on the first daily run.'}</p>
+      ${subBars(p)}
+      <p class="muted">Role split: ${p.role_split ? Object.entries(p.role_split).map(([a,v]) => `${a} ${v.mean_grade} (${v.games} games, ${v.delta_vs_overall >= 0 ? '+' : ''}${v.delta_vs_overall} vs own avg)`).join(' · ') : 'fills on the first daily run.'}</p>
+      ${(p.snapshot_facts?.length) ? `<ul>${p.snapshot_facts.map(x => `<li>${x}</li>`).join('')}</ul>` : ''}
+    </div>`).join('');
+
+  // Player cards — the rank plus the evidence for it, so a complaint gets an answer
+  document.getElementById('players').innerHTML = players.map((p,i) => {
+    const roleRows = p.role_split ? Object.entries(p.role_split).map(([a,v]) =>
+      `<li><b>${a}:</b> ${v.mean_grade} over ${v.games} games (${v.delta_vs_overall >= 0 ? '+' : ''}${v.delta_vs_overall} vs own average)</li>`).join('')
+      : '<li>Role split fills on the first daily run — it needs per-game data.</li>';
+    const cf = p.champion_focus || {};
+    const champTxt = (cf.take_when_offered?.length || cf.pass_or_swap?.length)
+      ? `<li><b>Take when offered:</b> ${cf.take_when_offered.map(c => `${c.champion} (${c.mean_grade}, ${c.delta_vs_overall >= 0 ? '+' : ''}${c.delta_vs_overall}, ${c.games} games)`).join(', ') || '—'}</li><li><b>Pass or swap away:</b> ${cf.pass_or_swap.map(c => `${c.champion} (${c.mean_grade}, ${c.delta_vs_overall}, ${c.games} games)`).join(', ') || '—'}</li>`
+      : '<li>Champion focus fills on the first daily run (needs 3+ games on a champion).</li>';
+    return `<div class="player">
+    <h3>${i+1}. ${p.name}</h3>
+    <div class="score">${fmt1(p.score)} <span style="font-size:15px;color:var(--muted)">· MMR-style ${fmt(p.mmr_style)}</span></div>
+    <p><b>Why this rank:</b> ${p.why_rank || 'Full breakdown fills on the first daily run.'}</p>
+    <ul>
+      <li><b>Pocket picks:</b> ${POCKETS[p.name] || '—'}</li>
+      <li><b>KDA:</b> ${fmt(p.kda)} &nbsp;·&nbsp; <b>Dmg/min:</b> ${fmt(p.damage_per_min?.toLocaleString?.())} &nbsp;·&nbsp; <b>Win %:</b> ${fmt1(p.win_rate)}${p.win_rate!=null?'%':''}</li>
+      <li><b>Record (last ${data.meta.window_games}):</b> ${p.wins!=null ? p.wins+'–'+p.losses : '—'}</li>
+    </ul>
+    <h3>Evidence — subscores vs group average</h3>
+    ${subBars(p)}
+    <p class="muted">Subscores are percentiles within role archetype, blended with same-champion percentiles. “—” means not filled yet for this window; Output and Conversion stay blank because PlayARAM's match list doesn't show damage or turret takedowns.</p>
+    <h3>By role played</h3><ul>${roleRows}</ul>
+    <h3>By champion</h3><ul>${champTxt}</ul>
+    ${(p.snapshot_facts?.length) ? `<h3>Snapshot facts (Nov 8)</h3><ul>${p.snapshot_facts.map(x => `<li>${x}</li>`).join('')}</ul>` : ''}
+    ${(() => {
+      const r20 = p.recent_20;
+      if (!r20) return `<div class="workon"><b>What to work on — last 20 games:</b><p class="muted">Recent-20 analysis fills on the first daily run — it needs per-game data. Nothing is shown here until then, so no older snapshot numbers stand in for it.</p></div>`;
+      return `<div class="workon"><b>What to work on — last 20 games:</b>
+        <p>Last 20: <b>${r20.wins}–${r20.losses}</b> (${r20.win_rate}%), mean grade ${r20.mean_grade}, 20-game score ${r20.score_20}.</p>
+        ${r20.team_line ? `<p><b>Playing together (2+ of the group):</b> ${r20.team_line}</p>` : ''}
+        <b>Pros</b><ul>${r20.pros.map(x => `<li class="pro">${x}</li>`).join('') || '<li>Nothing stands out +5 or more in the last 20 — steady, no big spike.</li>'}</ul>
+        <b>Cons</b><ul>${r20.cons.map(x => `<li class="con">${x}</li>`).join('') || '<li>Nothing slipping -5 or more in the last 20.</li>'}</ul>
+        <b>Tips to climb</b><ul>${r20.tips.map(x => `<li>${x}</li>`).join('') || '<li>Keep doing what the last 20 shows is working, and play your top champions in your best role.</li>'}</ul>
+      </div>`;
+    })()}
+  </div>`;
+  }).join('');
+
+  // Top 3 / worst 3 champions — last 50 games, bottom of the page.
+  // One wide card per player: Best on the left, Worst on the right,
+  // three round portrait bubbles in a row on each side.
+  const champTrio = (list, title, good) => {
+    if (!list || !list.length) return `<div class="champ-half ${good ? 'good' : 'bad'}"><h4>${title}</h4><p class="muted">Fills on the first daily run (needs 3+ games on a champion).</p></div>`;
+    return `<div class="champ-half ${good ? 'good' : 'bad'}"><h4>${title}</h4><div class="champ-trio">` + list.map((c,idx) => `
+      <div class="champ-cell">
+        <div class="rank">#${idx+1}</div>
+        ${c.image ? `<img class="champ-thumb-lg" src="${c.image}" alt="${c.champion} portrait" loading="lazy" onerror="this.style.display='none'">` : '<div class="champ-thumb-lg"></div>'}
+        <div class="cname">${c.champion}</div>
+        <div class="bar slim"><div class="bar-fill ${good ? 'good' : 'bad'}" style="width:${Math.max(0, Math.min(100, c.mean_grade))}%"></div></div>
+        <div class="cstats">Grade ${c.mean_grade} (${c.delta_vs_overall >= 0 ? '+' : ''}${c.delta_vs_overall})<br>${c.games} games · ${c.wins}–${c.losses} · ${c.win_rate}%</div>
+        <div class="cwhy">${c.why || ''}</div>
+      </div>`).join('') + `</div></div>`;
+  };
+  document.getElementById('champs').innerHTML = players.map(p => `
+    <div class="player champ-player"><h3>${p.name}</h3>
+      <div class="champ-duo">
+        ${champTrio(p.champion_top3, '★ Best', true)}
+        ${champTrio(p.champion_worst3, 'Worst', false)}
+      </div>
+    </div>`).join('');
+
+  // Recent games
+  document.getElementById('games').innerHTML = players.map(p => {
+    const games = p.games || [];
+    if (!games.length) return `<details><summary>${p.name} — last ${data.meta.window_games} games</summary><p class="muted">No per-game rows yet. They fill on the first daily run (or a manual CSV import). Scores above are from the seeded Nov 8 snapshot.</p></details>`;
+    const rows = games.map(g => `<tr><td>${g.date}</td><td>${g.champion}</td><td>${g.win ? '<span class="pill">Win</span>' : '<span class="pill low">Loss</span>'}</td><td>${g.kills}/${g.deaths}/${g.assists}</td><td>${g.damage_to_champions != null ? Number(g.damage_to_champions).toLocaleString() : '—'}</td><td>${(g.augments||[]).join(', ') || '—'}</td><td>${(g.stack_size || 1) > 1 ? (g.stack_size + ' of group') : 'Solo'}</td><td>${fmt1(g.grade)}</td></tr>`).join('');
+    return `<details><summary>${p.name} — last ${games.length} games</summary><div style="overflow-x:auto"><table><thead><tr><th>Date</th><th>Champion</th><th>Result</th><th>K/D/A</th><th>Damage</th><th>Augments</th><th>Stack</th><th>Grade</th></tr></thead><tbody>${rows}</tbody></table></div></details>`;
+  }).join('');
+
+  // How it works
+  const hw = data.how_rating_works || {};
+  document.getElementById('how').innerHTML = `
+    <p><b>${hw.formula || ''}</b></p><p>${hw.mmr_formula || ''}</p>
+    <ul>${(hw.criteria || []).map(c => `<li>${c}</li>`).join('')}</ul>
+    <p class="muted">${hw.not_measured || ''}</p>`;
+
+  // History charts
+  document.getElementById('history-note').textContent =
+    (data.history || []).length <= 1
+      ? 'Only one history point so far (Nov 8 seed). The line grows by one point per day after the daily runs start.'
+      : `${(data.history || []).length} daily points.`;
+  drawChart(document.getElementById('chart-score'), data.history || [], 'scores', 'Performance Score');
+  drawChart(document.getElementById('chart-mmr'), data.history || [], 'mmr_style', 'MMR-style');
+}
+
+const COLORS = ['#0ac8b9','#c8aa6e','#ff6b9d','#7aa2ff','#3ddc84','#ff9f43'];
+function drawChart(canvas, history, key, label) {
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0,0,W,H);
+  if (!history.length) { ctx.fillStyle='#9fb0c8'; ctx.font='16px system-ui'; ctx.fillText('No history yet.', 20, 40); return; }
+  const names = [...new Set(history.flatMap(h => Object.keys(h[key] || {})))];
+  let vals = history.flatMap(h => Object.values(h[key] || {}));
+  let min = Math.min(...vals), max = Math.max(...vals);
+  if (min === max) { min -= 5; max += 5; }
+  const pad = (max - min) * 0.15; min -= pad; max += pad;
+  const x = i => 50 + (W - 70) * (history.length === 1 ? 0.5 : i / (history.length - 1));
+  const y = v => H - 30 - (H - 60) * ((v - min) / (max - min));
+  ctx.strokeStyle = '#1e3a5f'; ctx.fillStyle = '#9fb0c8'; ctx.font = '12px system-ui';
+  for (let t = 0; t <= 4; t++) {
+    const v = min + (max - min) * t / 4, yy = y(v);
+    ctx.beginPath(); ctx.moveTo(50, yy); ctx.lineTo(W - 20, yy); ctx.stroke();
+    ctx.fillText(v.toFixed(0), 8, yy + 4);
+  }
+  names.forEach((n, ni) => {
+    ctx.strokeStyle = COLORS[ni % COLORS.length]; ctx.lineWidth = 2; ctx.beginPath();
+    history.forEach((h, i) => {
+      const v = h[key]?.[n]; if (v == null) return;
+      i === 0 ? ctx.moveTo(x(i), y(v)) : ctx.lineTo(x(i), y(v));
+    });
+    ctx.stroke();
+    history.forEach((h, i) => {
+      const v = h[key]?.[n]; if (v == null) return;
+      ctx.fillStyle = COLORS[ni % COLORS.length];
+      ctx.beginPath(); ctx.arc(x(i), y(v), 4, 0, Math.PI * 2); ctx.fill();
+    });
+    ctx.fillStyle = COLORS[ni % COLORS.length];
+    ctx.fillText(n, x(history.length - 1) + 6 > W - 90 ? W - 90 : x(history.length - 1) + 6, 20 + ni * 16);
+  });
+  ctx.fillStyle = '#9fb0c8';
+  history.forEach((h, i) => ctx.fillText(h.date.slice(5), x(i) - 10, H - 8));
+}
+
+// Sortable leaderboard
+document.querySelectorAll('#leaderboard th').forEach(th => th.addEventListener('click', () => {
+  const k = th.dataset.k, tb = document.querySelector('#leaderboard tbody');
+  const rows = [...tb.rows];
+  const idx = [...th.parentNode.children].indexOf(th);
+  const num = r => { const t = r.cells[idx].textContent.replace(/[^0-9.\-]/g,''); return parseFloat(t) || 0; };
+  rows.sort((a,b) => num(b) - num(a));
+  rows.forEach(r => tb.appendChild(r));
+}));
+
+load().catch(e => { document.getElementById('updated').textContent = 'Could not load data/data.json — ' + e.message; });
+</script>
+</body>
+</html>

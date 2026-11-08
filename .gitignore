@@ -1,0 +1,4 @@
+# Secrets / local-only
+.env
+__pycache__/
+*.pyc

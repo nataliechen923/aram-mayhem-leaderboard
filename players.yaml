@@ -1,0 +1,29 @@
+# Players — confirmed by Natalie on 2026-11-08. All NA.
+# Full Riot ID (GameName#TAG). Region is the platform (na1).
+# Routing is americas for NA.
+# The group ONLY plays ARAM Mayhem, so the updater only tracks
+# queue 2400 / mode KIWI and ignores any other queue.
+players:
+  - name: "I3i3oy"
+    riot_id: "i3i3oy#NA1"
+    region: "na1"
+    routing: "americas"
+  - name: "Vincent Chan"
+    riot_id: "Vincent Chan#NA1"
+    region: "na1"
+    routing: "americas"
+  - name: "CreamiNataella"
+    riot_id: "CreamiNataella#NA1"
+    region: "na1"
+    routing: "americas"
+  - name: "Ohwutahel"
+    riot_id: "Ohwutahel#NA1"
+    region: "na1"
+    routing: "americas"
+  - name: "PikabUwU"
+    riot_id: "PikabUwU#NA1"
+    region: "na1"
+    routing: "americas"
+
+# Window: last N ARAM Mayhem games per player. You asked for 50.
+window_games: 50
