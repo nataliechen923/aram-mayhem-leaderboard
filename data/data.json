@@ -1,0 +1,323 @@
+{
+  "highlights": {
+    "best_kda": {
+      "player": "CreamiNataella",
+      "value": 4.66
+    },
+    "highest_damage_per_min": {
+      "note": "21.9% of group damage",
+      "player": "I3i3oy",
+      "value": 2491
+    },
+    "most_skillshots_dodged_per_min": {
+      "player": "Ohwutahel",
+      "value": 5.0
+    },
+    "top_rated": {
+      "mmr_style": 1585,
+      "player": "I3i3oy",
+      "score": 56.1
+    }
+  },
+  "history": [
+    {
+      "date": "2026-11-08",
+      "mmr_style": {
+        "CreamiNataella": 1571,
+        "I3i3oy": 1585,
+        "Ohwutahel": 1471,
+        "Vincent Chan": 1575,
+        "PikabUwU": 1465
+      },
+      "note": "Seed point \u2014 last-100 window from the original page. From the first 50-game run on, points are last-50.",
+      "scores": {
+        "CreamiNataella": 55.0,
+        "I3i3oy": 56.1,
+        "Ohwutahel": 47.9,
+        "Vincent Chan": 55.4,
+        "PikabUwU": 47.5
+      },
+      "window_games": 100
+    }
+  ],
+  "how_rating_works": {
+    "criteria": [
+      "Output \u2014 per-minute damage / damage taken / assists, blended with share of your own team's totals, graded within your role archetype (Damage / Frontline / Support). Only when damage data exists \u2014 PlayARAM's match list does not show damage, so Output stays blank from PlayARAM and fills from a manual CSV.",
+      "KDA efficiency \u2014 kills, deaths and assists weighed against the archetype's expected line.",
+      "Teamplay \u2014 kill participation: (kills + assists) \u00f7 team kills. Only when team totals are available.",
+      "Death quality \u2014 deaths per game, graded within role (fewer deaths is better).",
+      "Conversion \u2014 your share of your team's structure takedowns (turrets + inhibitors \u00f7 team total). Only when per-player structure data exists \u2014 not shown on PlayARAM's match list, so it stays blank from PlayARAM.",
+      "Augments \u2014 how the augments you drafted performed across the group's games in this window. PlayARAM names are read from the match list when the page exposes them; otherwise this scores a neutral 50.",
+      "Mechanics \u2014 skillshots dodged per minute, from PlayARAM's match list. Shown as a subscore; not blended into the game grade."
+    ],
+    "formula": "Performance Score = 55% mean game grade + 20% median grade + 10% floor (25th percentile) grade + 15% win rate",
+    "mmr_formula": "MMR-style = 800 + Performance Score \u00d7 14 \u2014 1500 is roughly average",
+    "not_measured": "PlayARAM does not publish healing, shielding, crowd-control score or per-player objective damage, so none of those appear here."
+  },
+  "meta": {
+    "next_update": "Daily at 12:00 AM CST (06:00 UTC)",
+    "patch": "26.22",
+    "seed_note": "Seeded from the Nov 8, 2026 snapshot. Mashbrains removed Nov 8 at Natalie's request \u2014 he doesn't play Mayhem with the group. Remaining 5 scores were computed on last-100 games with a 6-player baseline, so the first last-50, 5-player run may move them. Per-game rows and subscores are empty until that run \u2014 no values have been invented.",
+    "title": "ARAM Mayhem \u2014 Team Leaderboard",
+    "update_method": "GitHub Actions, once a day, fetching each player's PlayARAM profile (no Riot API key). Loading / refreshing this page makes zero calls to Riot or PlayARAM.",
+    "updated_at": "2026-11-08T15:35:00-06:00",
+    "updated_at_label": "Nov 8, 2026 \u2014 seeded snapshot",
+    "window_games": 50,
+    "window_note": "Each player is scored on their own last 50 ARAM Mayhem games. Remakes under 5 minutes are excluded. PlayARAM shows only the latest 20 games per fetch, so the updater keeps a cache and the window fills to 50 over the first few daily runs.",
+    "stack_note": "Stack splits below are from the Nov 8 6-player snapshot (600 player-games). They recompute for the 5-player group on the first daily run."
+  },
+  "playbook": [
+    "Pocket picks first. Jinx for I3i3oy (71.9, +15.8, 4 games) and Varus (68.9, +12.8, 6 games), Senna for Vincent Chan (70.1, +13.3, 5 games), Nidalee for CreamiNataella (72.5, +16.9, 3 games) and Sona (67.9, +12.3, 3 games), Aurelion Sol for pikabUwU (61.9, +14.3, 3 games) and Hwei (56.5, +8.9, 8 games), Zyra for Ohwutahel (68.0, +20.0, 3 games), Trundle (64.5, +16.5, 6 games) and Shen (64.2, +16.2, 6 games).",
+    "Frontline-only for Ohwutahel. His Frontline games grade 52.4 (+4.4, 52 games) vs his Damage games at 44.3 (\u22123.7, 27 games) and his Support games at 41.9 (\u22126.1, 21 games).",
+    "Shared trap augments \u2014 taken at population win rates under 48%. Skilled Sniper 47.02% (pikabUwU \u00d711, Vincent Chan \u00d710), Pursuit of Haste 47.15% (I3i3oy \u00d75, Vincent Chan \u00d73), Ultimate Recursion 46.92% (CreamiNataella \u00d73, Vincent Chan \u00d73), Thread the Needle 47.17% (I3i3oy \u00d73), Pandora's Box 47.04% (CreamiNataella \u00d73).",
+    "Loss games grade well below close games. Group loss-game mean grade 43.9 vs close-game mean grade 50.2. Per player (loss vs close): I3i3oy 46.0 vs 54.1; CreamiNataella 48.5 vs 57.4; pikabUwU 41.0 vs 46.5; Ohwutahel 40.8 vs 49.0; Vincent Chan 51.1 vs 56.0.",
+    "Turret crediting for CreamiNataella. Her team structure share is 14.6%, the lowest in the group (I3i3oy highest at 26.2%).",
+    "Last-quarter deaths. Group mean late-death share in the Nov 8 snapshot was 26.8% \u2014 recomputed for the 5-player group on the first daily run."
+  ],
+  "players": [
+    {
+      "damage_per_min": 2491,
+      "damage_share_pct": 21.9,
+      "games": [],
+      "kda": null,
+      "losses": null,
+      "mmr_style": 1585,
+      "name": "I3i3oy",
+      "region": "na1",
+      "riot_id": "",
+      "score": 56.1,
+      "skillshots_dodged_per_min": null,
+      "subscores": {
+        "augments": null,
+        "conversion": null,
+        "death_quality": null,
+        "kda_efficiency": null,
+        "mechanics": null,
+        "output": null,
+        "teamplay": null
+      },
+      "win_rate": null,
+      "wins": null,
+      "why_rank": "Ranked 1st at 56.1 because he leads on the carry measures that are graded within the Damage role, not just on raw kills: highest damage/min in the group (2,491) and 21.9% of group damage, with pocket picks Jinx (71.9, +15.8) and Varus (68.9, +12.8) grading well above his own average. His gap is loss games (46.0 vs 54.1 in close games).",
+      "snapshot_facts": [
+        "Highest damage/min: 2,491",
+        "21.9% of group damage",
+        "Pocket picks: Jinx 71.9 (+15.8, 4 games), Varus 68.9 (+12.8, 6 games)",
+        "Loss games 46.0 vs close games 54.1",
+        "Trap augments to cut: Pursuit of Haste, Thread the Needle"
+      ],
+      "role_split": null,
+      "champion_focus": {
+        "take_when_offered": [],
+        "pass_or_swap": []
+      },
+      "evidence_note": "Snapshot evidence above is from Nov 8. Full subscore-vs-group, role-split and champion-focus breakdowns fill on the first daily run.",
+      "recent_20": null,
+      "champion_top3": [],
+      "champion_worst3": []
+    },
+    {
+      "damage_per_min": null,
+      "damage_share_pct": null,
+      "games": [],
+      "kda": null,
+      "losses": null,
+      "mmr_style": 1575,
+      "name": "Vincent Chan",
+      "region": "na1",
+      "riot_id": "",
+      "score": 55.4,
+      "skillshots_dodged_per_min": null,
+      "subscores": {
+        "augments": null,
+        "conversion": null,
+        "death_quality": null,
+        "kda_efficiency": null,
+        "mechanics": null,
+        "output": null,
+        "teamplay": null
+      },
+      "win_rate": null,
+      "wins": null,
+      "why_rank": "Ranked 2nd at 55.4. His Senna grades 70.1 (+13.3, 5 games), well above his own average, and his loss-vs-close gap is the smallest in the group (51.1 vs 56.0), which is what the consistency terms (median + floor) reward. His drag is trap augments: Skilled Sniper taken 10 times at 47.02%.",
+      "snapshot_facts": [
+        "Pocket pick: Senna 70.1 (+13.3, 5 games)",
+        "Smallest loss-vs-close gap: 51.1 vs 56.0",
+        "Trap augments: Skilled Sniper x10, Pursuit of Haste, Ultimate Recursion"
+      ],
+      "role_split": null,
+      "champion_focus": {
+        "take_when_offered": [],
+        "pass_or_swap": []
+      },
+      "evidence_note": "Snapshot evidence above is from Nov 8. Full subscore-vs-group, role-split and champion-focus breakdowns fill on the first daily run.",
+      "recent_20": null,
+      "champion_top3": [],
+      "champion_worst3": []
+    },
+    {
+      "damage_per_min": null,
+      "damage_share_pct": null,
+      "games": [],
+      "kda": 4.66,
+      "losses": null,
+      "mmr_style": 1571,
+      "name": "CreamiNataella",
+      "region": "na1",
+      "riot_id": "",
+      "score": 55.0,
+      "skillshots_dodged_per_min": null,
+      "subscores": {
+        "augments": null,
+        "conversion": null,
+        "death_quality": null,
+        "kda_efficiency": null,
+        "mechanics": null,
+        "output": null,
+        "teamplay": null
+      },
+      "win_rate": null,
+      "wins": null,
+      "why_rank": "Ranked 3rd at 55.0, with the best KDA in the group (4.66) and pocket picks Nidalee (72.5, +16.9) and Sona (67.9, +12.3). She is not ranked higher because her Conversion is the group's weak spot: 14.6% team structure share, lowest in the group (I3i3oy highest at 26.2%), and her loss-vs-close gap is the widest (48.5 vs 57.4).",
+      "snapshot_facts": [
+        "Best KDA in the group: 4.66",
+        "Pocket picks: Nidalee 72.5 (+16.9, 3 games), Sona 67.9 (+12.3, 3 games)",
+        "Lowest structure share: 14.6% (group high 26.2%)",
+        "Widest loss-vs-close gap: 48.5 vs 57.4",
+        "Trap augments: Ultimate Recursion, Pandora's Box"
+      ],
+      "role_split": null,
+      "champion_focus": {
+        "take_when_offered": [],
+        "pass_or_swap": []
+      },
+      "evidence_note": "Snapshot evidence above is from Nov 8. Full subscore-vs-group, role-split and champion-focus breakdowns fill on the first daily run.",
+      "recent_20": null,
+      "champion_top3": [],
+      "champion_worst3": []
+    },
+    {
+      "damage_per_min": null,
+      "damage_share_pct": null,
+      "games": [],
+      "kda": null,
+      "losses": null,
+      "mmr_style": 1471,
+      "name": "Ohwutahel",
+      "region": "na1",
+      "riot_id": "",
+      "score": 47.9,
+      "skillshots_dodged_per_min": 5.0,
+      "subscores": {
+        "augments": null,
+        "conversion": null,
+        "death_quality": null,
+        "kda_efficiency": null,
+        "mechanics": null,
+        "output": null,
+        "teamplay": null
+      },
+      "win_rate": null,
+      "wins": null,
+      "why_rank": "Ranked 4th at 47.9. The role split is the evidence: his Frontline games grade 52.4 (+4.4, 52 games) vs Damage 44.3 and Support 41.9, so he is graded as a frontliner and scores well there \u2014 but his overall rank is pulled down by the Damage/Support games in his last 100. He also has the most skillshots dodged/min (5.00), a Mechanics strength.",
+      "snapshot_facts": [
+        "Frontline 52.4 (+4.4, 52 games) vs Damage 44.3 vs Support 41.9",
+        "Most skillshots dodged/min: 5.00",
+        "Pocket picks: Zyra 68.0 (+20.0), Trundle 64.5 (+16.5), Shen 64.2 (+16.2)",
+        "Loss games 40.8 vs close games 49.0"
+      ],
+      "role_split": null,
+      "champion_focus": {
+        "take_when_offered": [],
+        "pass_or_swap": []
+      },
+      "evidence_note": "Snapshot evidence above is from Nov 8. Full subscore-vs-group, role-split and champion-focus breakdowns fill on the first daily run.",
+      "recent_20": null,
+      "champion_top3": [],
+      "champion_worst3": []
+    },
+    {
+      "damage_per_min": null,
+      "damage_share_pct": null,
+      "games": [],
+      "kda": null,
+      "losses": null,
+      "mmr_style": 1465,
+      "name": "PikabUwU",
+      "region": "na1",
+      "riot_id": "",
+      "score": 47.5,
+      "skillshots_dodged_per_min": null,
+      "subscores": {
+        "augments": null,
+        "conversion": null,
+        "death_quality": null,
+        "kda_efficiency": null,
+        "mechanics": null,
+        "output": null,
+        "teamplay": null
+      },
+      "win_rate": null,
+      "wins": null,
+      "why_rank": "",
+      "snapshot_facts": [],
+      "role_split": null,
+      "champion_focus": {
+        "take_when_offered": [],
+        "pass_or_swap": []
+      },
+      "evidence_note": "Snapshot evidence above is from Nov 8. Full subscore-vs-group, role-split and champion-focus breakdowns fill on the first daily run.",
+      "recent_20": null,
+      "champion_top3": [],
+      "champion_worst3": []
+    }
+  ],
+  "stack_splits": [
+    {
+      "grade": 45.2,
+      "label": "Solo",
+      "player_games": 162,
+      "win_rate_pct": 47.5,
+      "wins": 77
+    },
+    {
+      "grade": 53.0,
+      "label": "2\u20133 of the group",
+      "player_games": 173,
+      "win_rate_pct": 59.5,
+      "wins": 103
+    },
+    {
+      "grade": 54.3,
+      "label": "4 of the group",
+      "player_games": 151,
+      "win_rate_pct": 59.6,
+      "wins": 90
+    },
+    {
+      "grade": 49.2,
+      "label": "Full stack (5)",
+      "player_games": 114,
+      "win_rate_pct": 47.4,
+      "wins": 54
+    }
+  ],
+  "playbook_note": "Playbook above is from the Nov 8 snapshot. It recomputes from the last-50, 5-player window on the first daily run.",
+  "ranking_method": {
+    "title": "How the ranking is fair \u2014 whole performance, role-adjusted, champion-adjusted",
+    "one_line": "No single stat decides the rank. Every game is graded on the criteria the data source provides for that game, each graded only against players in the same role, and then adjusted for the champion played.",
+    "points": [
+      "Role first: every component is a percentile WITHIN the player's role archetype \u2014 Damage (ADC / mage / assassin carry), Frontline (tank / fighter), or Support \u2014 across all player-games in the window. A tank with 8 kills can score 90th percentile for Frontline while a carry with 12 kills scores only 60th for Damage. Raw kills and damage never compare a tank to a carry.",
+      "Champion second: each component is blended 70% archetype percentile + 30% same-champion percentile (only when the group has 3+ games on that champion; otherwise archetype only). Playing a champion well *for that champion* counts, not just picking a strong champion.",
+      "Whole performance, not one stat: a game grade is the mean of the criteria available for that game \u2014 from PlayARAM: KDA Efficiency, Teamplay, Death Quality and Augments. Output and Conversion join in only when damage / structure data exists (a manual CSV). Mechanics (skillshots dodged) is shown as a 7th subscore but is not blended into the grade. KDA is 1 of the graded criteria, damage is only part of Output, and win rate is only 15% of the final score. A missing field is skipped, never scored as 0.",
+      "Consistency counts: Performance Score = 55% mean game grade + 20% median grade + 10% floor (25th percentile) grade + 15% win rate. One pop-off game can't carry a rank; a low floor pulls it down.",
+      "Evidence on every card: each player card shows their subscores vs the group average, their grade split by role played, their best / worst champions vs their own average (with game counts), and a 'Why this rank' paragraph built from those numbers \u2014 so a complaint can be answered with the breakdown, not an opinion."
+    ],
+    "criteria_weights": "Each available criterion counts equally inside a game grade. Win rate is 15% of the final Performance Score, not the ranking itself.",
+    "archetypes": {
+      "Damage": "ADC / mage / assassin carries \u2014 judged on damage, kills and carry output",
+      "Frontline": "Tanks / fighters \u2014 judged on damage taken, damage soaked per death, and frontline output",
+      "Support": "Enchanters / wardens \u2014 judged on assists, teamplay and support output, not carry damage"
+    }
+  }
+}
