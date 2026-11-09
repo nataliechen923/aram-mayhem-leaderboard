@@ -77,19 +77,19 @@
     "seed_note": "",
     "title": "ARAM Mayhem \u2014 Team Leaderboard",
     "update_method": "GitHub Actions, once a day, fetching each player's PlayARAM profile (no Riot API key). Loading / refreshing this page makes zero calls to Riot or PlayARAM.",
-    "updated_at": "2026-11-09T00:20:52.950186-06:00",
-    "updated_at_label": "2026-11-09 12:20 AM CST",
+    "updated_at": "2026-11-09T08:33:40.440139-06:00",
+    "updated_at_label": "2026-11-09 08:33 AM CST",
     "window_games": 50,
     "window_note": "Each player is scored on their own last 50 ARAM Mayhem games. Remakes under 5 minutes are excluded. PlayARAM shows only the latest 20 games per fetch, so the updater keeps a cache and the window fills to 50 over the first few daily runs.",
     "stack_note": "Stack splits below are from the Nov 8 6-player snapshot (600 player-games). They recompute for the 5-player group on the first daily run.",
     "automation": {
-      "last_attempt": "2026-11-09T00:20:52.950179-06:00",
-      "last_attempt_label": "2026-11-09 12:20 AM CST",
-      "last_source": "browser extension",
+      "last_attempt": "2026-11-09T08:33:40.440124-06:00",
+      "last_attempt_label": "2026-11-09 08:33 AM CST",
+      "last_source": "PlayARAM",
       "last_games_found": 250,
-      "last_error": null,
+      "last_error": "I3i3oy: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Vincent Chan: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; CreamiNataella: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Ohwutahel: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; PikabUwU: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.",
       "next_update": "Daily at 12:00 AM CST (06:00 UTC), retry 12:30 AM CST",
-      "needs_attention": false
+      "needs_attention": true
     },
     "last_extension_sync": "2026-11-09T00:20:52.938728-06:00",
     "last_extension_sync_label": "2026-11-09 12:20 AM CST"
@@ -125,13 +125,8 @@
           ],
           "game_minutes": 22.6,
           "grade": 50.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "DrMundo|9/11/26|20.2|31|210|2026-11-09",
@@ -152,13 +147,8 @@
           ],
           "game_minutes": 20.2,
           "grade": 47.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kassadin|16/14/26|19.5|42|80|2026-11-08",
@@ -179,13 +169,8 @@
           ],
           "game_minutes": 19.5,
           "grade": 35.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Varus|13/11/25|19.6|66|44|2026-11-08",
@@ -206,13 +191,8 @@
           ],
           "game_minutes": 19.6,
           "grade": 57.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Quinn|6/8/27|12.3|29|50|2026-11-08",
@@ -232,12 +212,8 @@
           ],
           "game_minutes": 12.3,
           "grade": 42.3,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|3/8/24|15.4|19|26|2026-11-08",
@@ -257,11 +233,8 @@
           ],
           "game_minutes": 15.4,
           "grade": 44.7,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Caitlyn|16/13/20|17.8|104|12|2026-11-08",
@@ -282,11 +255,8 @@
           ],
           "game_minutes": 17.8,
           "grade": 47.0,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sivir|9/7/24|19.8|84|200|2026-11-08",
@@ -307,13 +277,8 @@
           ],
           "game_minutes": 19.8,
           "grade": 52.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kayle|9/7/32|15.1|70|7|2026-11-08",
@@ -333,13 +298,8 @@
           ],
           "game_minutes": 15.1,
           "grade": 66.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kindred|19/6/10|20.6|92|105|2026-11-08",
@@ -382,12 +342,8 @@
           ],
           "game_minutes": 26.9,
           "grade": 15.2,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kassadin|7/7/12|16.9|43|77|2026-11-08",
@@ -407,12 +363,8 @@
           ],
           "game_minutes": 16.9,
           "grade": 52.3,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lucian|8/8/14|15.9|44|24|2026-11-08",
@@ -432,12 +384,8 @@
           ],
           "game_minutes": 15.9,
           "grade": 41.8,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sivir|7/12/39|24.1|108|56|2026-11-08",
@@ -457,13 +405,8 @@
           ],
           "game_minutes": 24.1,
           "grade": 28.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kaisa|11/7/26|18.5|65|82|2026-11-08",
@@ -484,13 +427,8 @@
           ],
           "game_minutes": 18.5,
           "grade": 55.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Tryndamere|10/12/20|19.8|61|111|2026-11-08",
@@ -510,13 +448,8 @@
           ],
           "game_minutes": 19.8,
           "grade": 23.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Quinn|12/12/21|17.4|49|25|2026-11-08",
@@ -537,13 +470,8 @@
           ],
           "game_minutes": 17.4,
           "grade": 20.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Malzahar|11/12/25|25.3|155|84|2026-11-08",
@@ -564,13 +492,8 @@
           ],
           "game_minutes": 25.3,
           "grade": 28.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jinx|12/3/25|13.3|47|20|2026-11-08",
@@ -590,13 +513,8 @@
           ],
           "game_minutes": 13.3,
           "grade": 77.1,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Twitch|30/7/22|20.6|129|47|2026-11-08",
@@ -616,11 +534,8 @@
           ],
           "game_minutes": 20.6,
           "grade": 78.9,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Twitch|20/12/28|24.3|79|42|2026-11-08",
@@ -640,11 +555,8 @@
           ],
           "game_minutes": 24.2,
           "grade": 41.7,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jax|14/16/21|22.6|39|313|2026-11-08",
@@ -664,13 +576,8 @@
           ],
           "game_minutes": 22.6,
           "grade": 33.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Corki|19/5/15|12.8|77|9|2026-11-08",
@@ -690,13 +597,8 @@
           ],
           "game_minutes": 12.8,
           "grade": 77.1,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sona|5/11/41|19.1|13|113|2026-11-07",
@@ -716,13 +618,8 @@
           ],
           "game_minutes": 19.1,
           "grade": 14.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Skarner|8/7/32|17.8|47|28|2026-11-07",
@@ -742,13 +639,8 @@
           ],
           "game_minutes": 17.8,
           "grade": 73.8,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Corki|25/11/33|23.8|91|68|2026-11-07",
@@ -768,13 +660,8 @@
           ],
           "game_minutes": 23.8,
           "grade": 49.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sivir|11/11/23|21.2|91|19|2026-11-07",
@@ -795,13 +682,8 @@
           ],
           "game_minutes": 21.2,
           "grade": 34.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|6/13/25|19.2|64|31|2026-11-07",
@@ -821,11 +703,8 @@
           ],
           "game_minutes": 19.2,
           "grade": 13.2,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Mel|17/6/26|17.0|63|23|2026-11-07",
@@ -845,11 +724,8 @@
           ],
           "game_minutes": 17.0,
           "grade": 85.1,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Neeko|10/13/30|23.1|52|37|2026-11-07",
@@ -869,11 +745,8 @@
           ],
           "game_minutes": 23.1,
           "grade": 40.8,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Morgana|15/10/32|18.2|44|22|2026-11-07",
@@ -893,11 +766,8 @@
           ],
           "game_minutes": 18.2,
           "grade": 32.1,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Malphite|14/9/16|11.9|26|20|2026-11-07",
@@ -960,12 +830,8 @@
           ],
           "game_minutes": 19.6,
           "grade": 25.4,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "KogMaw|6/8/11|14.7|31|30|2026-11-06",
@@ -985,12 +851,8 @@
           ],
           "game_minutes": 14.7,
           "grade": 23.8,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Veigar|12/12/23|22.7|76|52|2026-11-06",
@@ -1010,12 +872,8 @@
           ],
           "game_minutes": 22.7,
           "grade": 28.0,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Soraka|5/8/33|17.0|6|19|2026-11-06",
@@ -1035,12 +893,8 @@
           ],
           "game_minutes": 17.0,
           "grade": 47.0,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sivir|12/9/17|13.8|48|36|2026-11-06",
@@ -1061,12 +915,8 @@
           ],
           "game_minutes": 13.8,
           "grade": 38.1,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jax|24/11/16|19.3|51|29|2026-11-06",
@@ -1086,11 +936,8 @@
           ],
           "game_minutes": 19.3,
           "grade": 62.6,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Varus|24/8/20|17.3|98|21|2026-11-06",
@@ -1111,11 +958,8 @@
           ],
           "game_minutes": 17.3,
           "grade": 66.9,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Morgana|7/4/50|17.0|64|8|2026-11-06",
@@ -1135,10 +979,8 @@
           ],
           "game_minutes": 17.0,
           "grade": 86.5,
-          "stack_size": 2,
-          "teammates": [
-            "CreamiNataella"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Caitlyn|9/9/14|18.2|87|95|2026-11-06",
@@ -1159,10 +1001,8 @@
           ],
           "game_minutes": 18.2,
           "grade": 37.9,
-          "stack_size": 2,
-          "teammates": [
-            "CreamiNataella"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ahri|18/9/22|16.6|55|37|2026-11-06",
@@ -1182,10 +1022,8 @@
           ],
           "game_minutes": 16.6,
           "grade": 52.0,
-          "stack_size": 2,
-          "teammates": [
-            "CreamiNataella"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|11/8/32|17.3|86|27|2026-11-06",
@@ -1206,10 +1044,8 @@
           ],
           "game_minutes": 17.3,
           "grade": 56.6,
-          "stack_size": 2,
-          "teammates": [
-            "CreamiNataella"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Varus|28/14/50|28.5|164|52|2026-11-06",
@@ -1251,12 +1087,8 @@
           ],
           "game_minutes": 23.0,
           "grade": 41.2,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Quinn|22/4/32|12.8|79|3|2026-11-05",
@@ -1275,12 +1107,8 @@
           ],
           "game_minutes": 12.8,
           "grade": 77.6,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Quinn|24/11/10|20.4|125|17|2026-11-05",
@@ -1301,12 +1129,8 @@
           ],
           "game_minutes": 20.4,
           "grade": 49.3,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Senna|12/9/24|20.0|72|47|2026-11-05",
@@ -1326,12 +1150,8 @@
           ],
           "game_minutes": 20.0,
           "grade": 53.9,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Skarner|8/8/31|16.1|35|59|2026-11-05",
@@ -1351,11 +1171,8 @@
           ],
           "game_minutes": 16.1,
           "grade": 87.4,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         }
       ],
       "kda": 3.9,
@@ -1461,21 +1278,15 @@
         "pros": [],
         "cons": [],
         "tips": [],
-        "stacked_20": {
-          "games": 19,
-          "wins": 7,
-          "losses": 12,
-          "win_rate": 36.8,
-          "mean_grade": 45.6
-        },
+        "stacked_20": null,
         "solo_20": {
-          "games": 1,
-          "wins": 1,
-          "losses": 0,
-          "win_rate": 100.0,
-          "mean_grade": 68.5
+          "games": 20,
+          "wins": 8,
+          "losses": 12,
+          "win_rate": 40.0,
+          "mean_grade": 46.7
         },
-        "team_line": "Playing together is dragging you down lately: with 2+ of the group in the last 20 you went 7-12 (36.8%, grade 45.6) vs solo 1-0 (100.0%, grade 68.5). Check role balance when you stack \u2014 someone may be off-role."
+        "team_line": "All of your last 20 were solo: 8-12 (40.0%, grade 46.7). No games with the group to compare against."
       },
       "champion_top3": [
         {
@@ -1570,13 +1381,8 @@
           ],
           "game_minutes": 22.6,
           "grade": 46.2,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Brand|12/14/26|20.2|43|73|2026-11-09",
@@ -1597,13 +1403,8 @@
           ],
           "game_minutes": 20.2,
           "grade": 22.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Mel|22/11/20|19.5|60|55|2026-11-08",
@@ -1624,13 +1425,8 @@
           ],
           "game_minutes": 19.5,
           "grade": 40.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ekko|25/12/18|19.6|34|78|2026-11-08",
@@ -1651,13 +1447,8 @@
           ],
           "game_minutes": 19.6,
           "grade": 31.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "TwistedFate|13/4/20|12.3|71|17|2026-11-08",
@@ -1677,12 +1468,8 @@
           ],
           "game_minutes": 12.3,
           "grade": 83.7,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "TwistedFate|15/11/23|19.8|54|115|2026-11-08",
@@ -1702,13 +1489,8 @@
           ],
           "game_minutes": 19.8,
           "grade": 49.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|15/5/38|15.1|42|4|2026-11-08",
@@ -1728,13 +1510,8 @@
           ],
           "game_minutes": 15.1,
           "grade": 94.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shen|6/5/31|13.8|15|25|2026-11-08",
@@ -1775,12 +1552,8 @@
           ],
           "game_minutes": 26.9,
           "grade": 21.1,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "FiddleSticks|4/9/17|16.9|26|69|2026-11-08",
@@ -1801,12 +1574,8 @@
           ],
           "game_minutes": 16.9,
           "grade": 27.9,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lillia|7/10/20|15.9|43|47|2026-11-08",
@@ -1826,12 +1595,8 @@
           ],
           "game_minutes": 15.9,
           "grade": 25.7,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Tristana|19/14/20|24.1|86|59|2026-11-08",
@@ -1851,13 +1616,8 @@
           ],
           "game_minutes": 24.1,
           "grade": 24.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Senna|20/9/23|18.5|33|70|2026-11-08",
@@ -1878,13 +1638,8 @@
           ],
           "game_minutes": 18.5,
           "grade": 52.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|22/11/6|19.8|47|57|2026-11-08",
@@ -1904,13 +1659,8 @@
           ],
           "game_minutes": 19.8,
           "grade": 42.5,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Caitlyn|13/14/16|17.4|54|42|2026-11-08",
@@ -1931,13 +1681,8 @@
           ],
           "game_minutes": 17.4,
           "grade": 7.2,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Poppy|11/11/36|25.3|51|272|2026-11-08",
@@ -1958,13 +1703,8 @@
           ],
           "game_minutes": 25.3,
           "grade": 45.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|17/5/20|13.3|35|17|2026-11-08",
@@ -1983,13 +1723,8 @@
           ],
           "game_minutes": 13.3,
           "grade": 85.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Varus|16/6/12|17.0|51|4|2026-11-08",
@@ -2009,12 +1744,8 @@
           ],
           "game_minutes": 17.0,
           "grade": 56.4,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Brand|10/14/29|22.6|25|121|2026-11-08",
@@ -2034,13 +1765,8 @@
           ],
           "game_minutes": 22.6,
           "grade": 17.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Senna|9/7/14|13.4|19|41|2026-11-08",
@@ -2059,12 +1785,8 @@
           ],
           "game_minutes": 13.4,
           "grade": 45.7,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Illaoi|8/7/17|12.8|23|38|2026-11-08",
@@ -2083,13 +1805,8 @@
           ],
           "game_minutes": 12.8,
           "grade": 79.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|17/13/20|19.1|93|77|2026-11-07",
@@ -2109,13 +1826,8 @@
           ],
           "game_minutes": 19.1,
           "grade": 16.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Urgot|21/8/26|17.8|70|31|2026-11-07",
@@ -2135,13 +1847,8 @@
           ],
           "game_minutes": 17.8,
           "grade": 65.5,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jhin|33/9/33|23.8|90|36|2026-11-07",
@@ -2161,13 +1868,8 @@
           ],
           "game_minutes": 23.8,
           "grade": 80.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shaco|18/8/26|21.2|31|13|2026-11-07",
@@ -2188,13 +1890,8 @@
           ],
           "game_minutes": 21.2,
           "grade": 47.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kaisa|19/12/27|22.7|95|45|2026-11-06",
@@ -2214,12 +1911,8 @@
           ],
           "game_minutes": 22.7,
           "grade": 44.2,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Blitzcrank|10/10/30|17.0|38|47|2026-11-06",
@@ -2239,12 +1932,8 @@
           ],
           "game_minutes": 17.0,
           "grade": 55.8,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Tristana|5/10/17|13.8|32|37|2026-11-06",
@@ -2265,12 +1954,8 @@
           ],
           "game_minutes": 13.8,
           "grade": 23.3,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Caitlyn|19/12/14|17.0|51|84|2026-11-06",
@@ -2373,12 +2058,8 @@
           ],
           "game_minutes": 20.0,
           "grade": 42.9,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ashe|4/6/30|19.1|36|24|2026-11-04",
@@ -2398,12 +2079,8 @@
           ],
           "game_minutes": 19.1,
           "grade": 72.7,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Tristana|13/7/27|12.1|26|23|2026-11-03",
@@ -2423,12 +2100,8 @@
           ],
           "game_minutes": 12.1,
           "grade": 64.8,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Illaoi|9/15/29|23.9|64|152|2026-11-03",
@@ -2449,12 +2122,8 @@
           ],
           "game_minutes": 23.9,
           "grade": 23.8,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jayce|9/10/17|17.1|39|31|2026-11-03",
@@ -2475,12 +2144,8 @@
           ],
           "game_minutes": 17.1,
           "grade": 27.4,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Smolder|12/8/23|14.4|40|28|2026-11-03",
@@ -2501,12 +2166,8 @@
           ],
           "game_minutes": 14.4,
           "grade": 54.0,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jinx|15/16/25|20.4|117|72|2026-11-02",
@@ -2526,12 +2187,8 @@
           ],
           "game_minutes": 20.4,
           "grade": 30.6,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "TwistedFate|6/9/25|19.4|37|11|2026-11-02",
@@ -2551,12 +2208,8 @@
           ],
           "game_minutes": 19.4,
           "grade": 31.6,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shaco|21/15/12|20.8|24|28|2026-11-02",
@@ -2576,12 +2229,8 @@
           ],
           "game_minutes": 20.8,
           "grade": 27.0,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Udyr|6/15/32|17.7|29|11|2026-11-02",
@@ -2602,12 +2251,8 @@
           ],
           "game_minutes": 17.7,
           "grade": 19.9,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "TwistedFate|4/5/33|14.6|24|38|2026-11-02",
@@ -2628,12 +2273,8 @@
           ],
           "game_minutes": 14.6,
           "grade": 73.6,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "LeeSin|9/10/17|14.1|39|49|2026-11-02",
@@ -2653,12 +2294,8 @@
           ],
           "game_minutes": 14.1,
           "grade": 22.2,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Varus|34/14/22|24.9|60|87|2026-11-02",
@@ -2678,11 +2315,8 @@
           ],
           "game_minutes": 24.9,
           "grade": 53.3,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Blitzcrank|3/15/63|24.3|18|89|2026-11-02",
@@ -2702,11 +2336,8 @@
           ],
           "game_minutes": 24.3,
           "grade": 50.2,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "KogMaw|11/9/27|16.2|18|11|2026-11-02",
@@ -2727,11 +2358,8 @@
           ],
           "game_minutes": 16.2,
           "grade": 59.3,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Senna|13/7/28|14.9|58|10|2026-11-02",
@@ -2751,10 +2379,8 @@
           ],
           "game_minutes": 14.9,
           "grade": 61.8,
-          "stack_size": 2,
-          "teammates": [
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Karma|3/5/34|15.3|44|24|2026-11-01",
@@ -2795,13 +2421,8 @@
           ],
           "game_minutes": 23.6,
           "grade": 56.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         }
       ],
       "kda": 3.77,
@@ -2916,21 +2537,15 @@
         "pros": [],
         "cons": [],
         "tips": [],
-        "stacked_20": {
-          "games": 19,
-          "wins": 6,
-          "losses": 13,
-          "win_rate": 31.6,
-          "mean_grade": 43.2
-        },
+        "stacked_20": null,
         "solo_20": {
-          "games": 1,
-          "wins": 1,
-          "losses": 0,
-          "win_rate": 100.0,
-          "mean_grade": 78.4
+          "games": 20,
+          "wins": 7,
+          "losses": 13,
+          "win_rate": 35.0,
+          "mean_grade": 45.0
         },
-        "team_line": "Playing together is dragging you down lately: with 2+ of the group in the last 20 you went 6-13 (31.6%, grade 43.2) vs solo 1-0 (100.0%, grade 78.4). Check role balance when you stack \u2014 someone may be off-role."
+        "team_line": "All of your last 20 were solo: 7-13 (35.0%, grade 45.0). No games with the group to compare against."
       },
       "champion_top3": [
         {
@@ -3025,13 +2640,8 @@
           ],
           "game_minutes": 22.6,
           "grade": 90.2,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sivir|11/13/25|20.2|66|60|2026-11-09",
@@ -3052,13 +2662,8 @@
           ],
           "game_minutes": 20.2,
           "grade": 15.9,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ashe|11/11/32|19.5|55|60|2026-11-08",
@@ -3079,13 +2684,8 @@
           ],
           "game_minutes": 19.5,
           "grade": 34.5,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Maokai|8/10/36|19.6|18|115|2026-11-08",
@@ -3106,13 +2706,8 @@
           ],
           "game_minutes": 19.6,
           "grade": 49.0,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "AurelionSol|7/6/27|12.3|26|40|2026-11-08",
@@ -3132,12 +2727,8 @@
           ],
           "game_minutes": 12.3,
           "grade": 80.2,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Seraphine|13/6/24|15.4|43|9|2026-11-08",
@@ -3157,11 +2748,8 @@
           ],
           "game_minutes": 15.4,
           "grade": 50.3,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ziggs|9/12/27|17.8|33|22|2026-11-08",
@@ -3182,11 +2770,8 @@
           ],
           "game_minutes": 17.8,
           "grade": 27.4,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Smolder|10/7/20|19.8|31|135|2026-11-08",
@@ -3207,13 +2792,8 @@
           ],
           "game_minutes": 19.8,
           "grade": 58.9,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lillia|13/5/29|15.1|23|7|2026-11-08",
@@ -3233,13 +2813,8 @@
           ],
           "game_minutes": 15.1,
           "grade": 70.9,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Morgana|16/4/37|15.0|29|42|2026-11-08",
@@ -3281,12 +2856,8 @@
           ],
           "game_minutes": 26.9,
           "grade": 33.1,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Malphite|3/7/19|16.9|17|74|2026-11-08",
@@ -3307,12 +2878,8 @@
           ],
           "game_minutes": 16.9,
           "grade": 58.1,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Chogath|7/10/15|15.9|19|58|2026-11-08",
@@ -3332,12 +2899,8 @@
           ],
           "game_minutes": 15.9,
           "grade": 35.4,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Velkoz|6/10/39|24.1|22|50|2026-11-08",
@@ -3357,13 +2920,8 @@
           ],
           "game_minutes": 24.1,
           "grade": 41.0,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Syndra|5/10/30|18.5|48|70|2026-11-08",
@@ -3384,13 +2942,8 @@
           ],
           "game_minutes": 18.5,
           "grade": 35.4,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Chogath|6/11/22|19.8|11|114|2026-11-08",
@@ -3410,13 +2963,8 @@
           ],
           "game_minutes": 19.8,
           "grade": 56.7,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Rammus|5/14/24|17.4|14|76|2026-11-08",
@@ -3437,13 +2985,8 @@
           ],
           "game_minutes": 17.4,
           "grade": 10.3,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nidalee|15/9/32|25.3|22|83|2026-11-08",
@@ -3464,13 +3007,8 @@
           ],
           "game_minutes": 25.3,
           "grade": 39.5,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|5/8/29|13.3|16|39|2026-11-08",
@@ -3490,13 +3028,8 @@
           ],
           "game_minutes": 13.3,
           "grade": 84.9,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Tristana|4/8/15|17.0|64|10|2026-11-08",
@@ -3516,12 +3049,8 @@
           ],
           "game_minutes": 17.0,
           "grade": 29.3,
-          "stack_size": 4,
-          "teammates": [
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Yuumi|8/3/49|20.6|8|7|2026-11-08",
@@ -3541,11 +3070,8 @@
           ],
           "game_minutes": 20.6,
           "grade": 91.5,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Morgana|10/9/56|24.3|60|55|2026-11-08",
@@ -3565,11 +3091,8 @@
           ],
           "game_minutes": 24.2,
           "grade": 42.9,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Heimerdinger|9/11/29|22.6|62|73|2026-11-08",
@@ -3589,13 +3112,8 @@
           ],
           "game_minutes": 22.6,
           "grade": 26.5,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sona|5/7/21|13.4|15|74|2026-11-08",
@@ -3614,12 +3132,8 @@
           ],
           "game_minutes": 13.4,
           "grade": 28.8,
-          "stack_size": 4,
-          "teammates": [
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Milio|2/4/34|12.8|8|11|2026-11-08",
@@ -3638,13 +3152,8 @@
           ],
           "game_minutes": 12.8,
           "grade": 83.4,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Karma|5/8/37|19.1|26|79|2026-11-07",
@@ -3664,13 +3173,8 @@
           ],
           "game_minutes": 19.1,
           "grade": 42.7,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Milio|6/7/40|17.8|39|19|2026-11-07",
@@ -3691,13 +3195,8 @@
           ],
           "game_minutes": 17.8,
           "grade": 59.9,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Xerath|12/7/47|23.8|27|40|2026-11-07",
@@ -3717,13 +3216,8 @@
           ],
           "game_minutes": 23.8,
           "grade": 75.0,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Anivia|6/7/29|21.2|55|15|2026-11-07",
@@ -3744,13 +3238,8 @@
           ],
           "game_minutes": 21.2,
           "grade": 65.4,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jhin|11/10/25|19.2|53|27|2026-11-07",
@@ -3770,11 +3259,8 @@
           ],
           "game_minutes": 19.2,
           "grade": 31.5,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Thresh|6/9/38|17.0|39|16|2026-11-07",
@@ -3794,11 +3280,8 @@
           ],
           "game_minutes": 17.0,
           "grade": 74.3,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lux|5/7/36|23.1|48|25|2026-11-07",
@@ -3818,11 +3301,8 @@
           ],
           "game_minutes": 23.1,
           "grade": 62.2,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jinx|9/11/26|18.2|56|15|2026-11-07",
@@ -3842,11 +3322,8 @@
           ],
           "game_minutes": 18.2,
           "grade": 32.2,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Senna|8/12/32|19.6|21|17|2026-11-06",
@@ -3867,12 +3344,8 @@
           ],
           "game_minutes": 19.6,
           "grade": 20.4,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kayle|4/9/14|14.7|39|23|2026-11-06",
@@ -3892,12 +3365,8 @@
           ],
           "game_minutes": 14.7,
           "grade": 40.9,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|7/11/36|22.7|11|142|2026-11-06",
@@ -3917,12 +3386,8 @@
           ],
           "game_minutes": 22.7,
           "grade": 63.7,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Xerath|10/7/25|17.0|33|20|2026-11-06",
@@ -3942,12 +3407,8 @@
           ],
           "game_minutes": 17.0,
           "grade": 70.3,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Anivia|3/6/21|13.8|47|37|2026-11-06",
@@ -3968,12 +3429,8 @@
           ],
           "game_minutes": 13.8,
           "grade": 48.2,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kaisa|6/7/34|19.3|37|5|2026-11-06",
@@ -3993,11 +3450,8 @@
           ],
           "game_minutes": 19.3,
           "grade": 72.3,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|8/9/28|17.3|17|54|2026-11-06",
@@ -4018,11 +3472,8 @@
           ],
           "game_minutes": 17.3,
           "grade": 64.8,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nami|0/7/61|17.0|8|11|2026-11-06",
@@ -4042,10 +3493,8 @@
           ],
           "game_minutes": 17.0,
           "grade": 78.4,
-          "stack_size": 2,
-          "teammates": [
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Malzahar|2/8/16|18.2|56|74|2026-11-06",
@@ -4066,10 +3515,8 @@
           ],
           "game_minutes": 18.2,
           "grade": 41.6,
-          "stack_size": 2,
-          "teammates": [
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Smolder|9/8/32|16.6|48|33|2026-11-06",
@@ -4089,10 +3536,8 @@
           ],
           "game_minutes": 16.6,
           "grade": 69.1,
-          "stack_size": 2,
-          "teammates": [
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Senna|9/8/40|17.3|15|18|2026-11-06",
@@ -4113,10 +3558,8 @@
           ],
           "game_minutes": 17.3,
           "grade": 77.7,
-          "stack_size": 2,
-          "teammates": [
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Swain|5/14/28|23.0|19|70|2026-11-05",
@@ -4136,12 +3579,8 @@
           ],
           "game_minutes": 23.0,
           "grade": 18.7,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|9/7/39|12.8|35|10|2026-11-05",
@@ -4160,12 +3599,8 @@
           ],
           "game_minutes": 12.8,
           "grade": 65.9,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|3/10/29|20.4|45|18|2026-11-05",
@@ -4186,12 +3621,8 @@
           ],
           "game_minutes": 20.4,
           "grade": 43.4,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "AurelionSol|21/8/20|20.0|85|26|2026-11-05",
@@ -4211,12 +3642,8 @@
           ],
           "game_minutes": 20.0,
           "grade": 64.5,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Evelynn|14/7/21|16.1|34|38|2026-11-05",
@@ -4236,11 +3663,8 @@
           ],
           "game_minutes": 16.1,
           "grade": 68.5,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lux|8/4/40|16.8|41|15|2026-11-05",
@@ -4260,11 +3684,8 @@
           ],
           "game_minutes": 16.8,
           "grade": 95.8,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         }
       ],
       "kda": 4.6,
@@ -4361,21 +3782,15 @@
         ],
         "cons": [],
         "tips": [],
-        "stacked_20": {
-          "games": 19,
-          "wins": 6,
-          "losses": 13,
-          "win_rate": 31.6,
-          "mean_grade": 47.4
-        },
+        "stacked_20": null,
         "solo_20": {
-          "games": 1,
-          "wins": 1,
-          "losses": 0,
-          "win_rate": 100.0,
-          "mean_grade": 85.4
+          "games": 20,
+          "wins": 7,
+          "losses": 13,
+          "win_rate": 35.0,
+          "mean_grade": 49.3
         },
-        "team_line": "Playing together is dragging you down lately: with 2+ of the group in the last 20 you went 6-13 (31.6%, grade 47.4) vs solo 1-0 (100.0%, grade 85.4). Check role balance when you stack \u2014 someone may be off-role."
+        "team_line": "All of your last 20 were solo: 7-13 (35.0%, grade 49.3). No games with the group to compare against."
       },
       "champion_top3": [
         {
@@ -4448,13 +3863,8 @@
           ],
           "game_minutes": 22.6,
           "grade": 33.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shen|12/11/27|20.2|15|187|2026-11-08",
@@ -4475,13 +3885,8 @@
           ],
           "game_minutes": 20.2,
           "grade": 30.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Rell|2/14/43|19.5|6|99|2026-11-08",
@@ -4502,13 +3907,8 @@
           ],
           "game_minutes": 19.5,
           "grade": 20.2,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Trundle|7/8/39|19.6|61|94|2026-11-08",
@@ -4529,13 +3929,8 @@
           ],
           "game_minutes": 19.6,
           "grade": 72.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kaisa|8/8/22|16.8|32|47|2026-11-08",
@@ -4576,11 +3971,8 @@
           ],
           "game_minutes": 15.4,
           "grade": 23.4,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "DrMundo|9/16/18|17.8|38|43|2026-11-08",
@@ -4601,11 +3993,8 @@
           ],
           "game_minutes": 17.8,
           "grade": 33.4,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Yorick|8/9/22|19.8|29|246|2026-11-08",
@@ -4626,13 +4015,8 @@
           ],
           "game_minutes": 19.8,
           "grade": 50.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Katarina|9/9/27|15.1|30|8|2026-11-08",
@@ -4652,13 +4036,8 @@
           ],
           "game_minutes": 15.1,
           "grade": 50.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shen|14/11/32|24.1|54|96|2026-11-08",
@@ -4678,13 +4057,8 @@
           ],
           "game_minutes": 24.1,
           "grade": 42.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Katarina|11/13/27|18.5|25|141|2026-11-08",
@@ -4705,13 +4079,8 @@
           ],
           "game_minutes": 18.5,
           "grade": 26.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Taric|3/11/38|19.8|61|119|2026-11-08",
@@ -4731,13 +4100,8 @@
           ],
           "game_minutes": 19.8,
           "grade": 52.1,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sylas|3/16/25|17.4|11|75|2026-11-08",
@@ -4758,13 +4122,8 @@
           ],
           "game_minutes": 17.4,
           "grade": 2.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Karthus|14/21/28|25.3|44|212|2026-11-08",
@@ -4785,13 +4144,8 @@
           ],
           "game_minutes": 25.3,
           "grade": 1.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Taric|4/7/31|13.3|15|46|2026-11-08",
@@ -4810,13 +4164,8 @@
           ],
           "game_minutes": 13.3,
           "grade": 78.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Malphite|5/8/16|17.0|43|37|2026-11-08",
@@ -4836,12 +4185,8 @@
           ],
           "game_minutes": 17.0,
           "grade": 30.9,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jax|12/14/25|20.6|29|142|2026-11-08",
@@ -4861,11 +4206,8 @@
           ],
           "game_minutes": 20.6,
           "grade": 49.1,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "DrMundo|11/19/49|24.3|71|112|2026-11-08",
@@ -4885,11 +4227,8 @@
           ],
           "game_minutes": 24.2,
           "grade": 30.7,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Volibear|13/14/29|22.6|74|435|2026-11-08",
@@ -4909,13 +4248,8 @@
           ],
           "game_minutes": 22.6,
           "grade": 30.8,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jayce|7/10/13|13.4|24|53|2026-11-08",
@@ -4933,12 +4267,8 @@
           ],
           "game_minutes": 13.4,
           "grade": 32.4,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Renekton|7/9/12|12.8|13|26|2026-11-08",
@@ -4957,13 +4287,8 @@
           ],
           "game_minutes": 12.8,
           "grade": 55.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Singed|7/10/31|19.1|63|101|2026-11-07",
@@ -4983,13 +4308,8 @@
           ],
           "game_minutes": 19.1,
           "grade": 49.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Zyra|10/8/26|17.8|40|19|2026-11-07",
@@ -5009,13 +4329,8 @@
           ],
           "game_minutes": 17.8,
           "grade": 80.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|3/13/39|23.8|30|86|2026-11-07",
@@ -5035,13 +4350,8 @@
           ],
           "game_minutes": 23.8,
           "grade": 54.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Yorick|6/9/27|21.2|64|32|2026-11-07",
@@ -5062,13 +4372,8 @@
           ],
           "game_minutes": 21.2,
           "grade": 43.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Zyra|10/12/22|19.2|31|23|2026-11-07",
@@ -5088,11 +4393,8 @@
           ],
           "game_minutes": 19.2,
           "grade": 15.4,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shen|9/11/35|17.0|27|42|2026-11-07",
@@ -5111,11 +4413,8 @@
           ],
           "game_minutes": 17.0,
           "grade": 40.6,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Singed|12/11/30|23.1|59|113|2026-11-07",
@@ -5135,11 +4434,8 @@
           ],
           "game_minutes": 23.1,
           "grade": 59.0,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Rumble|19/17/22|18.2|34|31|2026-11-07",
@@ -5159,11 +4455,8 @@
           ],
           "game_minutes": 18.2,
           "grade": 4.7,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sion|14/14/35|23.1|43|116|2026-11-07",
@@ -5206,12 +4499,8 @@
           ],
           "game_minutes": 19.6,
           "grade": 13.5,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Leona|4/10/15|14.7|11|75|2026-11-06",
@@ -5231,12 +4520,8 @@
           ],
           "game_minutes": 14.7,
           "grade": 33.7,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Volibear|8/11/34|19.3|38|35|2026-11-06",
@@ -5256,11 +4541,8 @@
           ],
           "game_minutes": 19.3,
           "grade": 64.9,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ashe|4/12/36|17.3|19|31|2026-11-06",
@@ -5281,11 +4563,8 @@
           ],
           "game_minutes": 17.3,
           "grade": 42.8,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|6/15/23|23.0|32|129|2026-11-05",
@@ -5305,12 +4584,8 @@
           ],
           "game_minutes": 23.0,
           "grade": 27.2,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shen|13/7/36|12.8|12|2|2026-11-05",
@@ -5329,12 +4604,8 @@
           ],
           "game_minutes": 12.8,
           "grade": 77.2,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Taric|8/15/33|20.4|18|17|2026-11-05",
@@ -5355,12 +4626,8 @@
           ],
           "game_minutes": 20.4,
           "grade": 23.0,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Trundle|4/14/35|20.0|52|133|2026-11-05",
@@ -5380,12 +4647,8 @@
           ],
           "game_minutes": 20.0,
           "grade": 32.4,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Rell|6/10/34|16.1|39|90|2026-11-05",
@@ -5405,11 +4668,8 @@
           ],
           "game_minutes": 16.1,
           "grade": 69.6,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jax|13/10/15|16.8|28|21|2026-11-05",
@@ -5429,11 +4689,8 @@
           ],
           "game_minutes": 16.8,
           "grade": 65.9,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Yorick|4/12/23|18.3|16|259|2026-11-05",
@@ -5453,11 +4710,8 @@
           ],
           "game_minutes": 18.2,
           "grade": 25.2,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sion|7/6/16|10.9|9|23|2026-11-03",
@@ -5475,12 +4729,8 @@
           ],
           "game_minutes": 10.9,
           "grade": 80.8,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Trundle|16/14/25|21.4|21|89|2026-11-03",
@@ -5500,11 +4750,8 @@
           ],
           "game_minutes": 21.4,
           "grade": 22.4,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sion|11/8/22|14.6|32|44|2026-11-03",
@@ -5524,11 +4771,8 @@
           ],
           "game_minutes": 14.6,
           "grade": 73.8,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Zyra|9/12/26|23.6|34|337|2026-11-01",
@@ -5548,13 +4792,8 @@
           ],
           "game_minutes": 23.6,
           "grade": 21.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Maokai|2/8/17|11.4|25|42|2026-11-01",
@@ -5574,13 +4813,8 @@
           ],
           "game_minutes": 11.4,
           "grade": 34.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Singed|9/15/31|23.5|53|75|2026-11-01",
@@ -5600,13 +4834,8 @@
           ],
           "game_minutes": 23.5,
           "grade": 26.2,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Rakan|4/15/33|19.6|11|102|2026-10-31",
@@ -5627,13 +4856,8 @@
           ],
           "game_minutes": 19.6,
           "grade": 9.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Taric|7/6/49|14.6|12|166|2026-10-31",
@@ -5654,13 +4878,8 @@
           ],
           "game_minutes": 14.6,
           "grade": 74.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Garen|10/8/11|16.8|27|29|2026-10-31",
@@ -5680,13 +4899,8 @@
           ],
           "game_minutes": 16.8,
           "grade": 40.2,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         }
       ],
       "kda": 3.12,
@@ -5802,21 +5016,15 @@
           "Work on KDA efficiency: trade less \u2014 fewer deaths for the kills you get.",
           "Work on Death quality: die less, and later in the game."
         ],
-        "stacked_20": {
-          "games": 19,
-          "wins": 6,
-          "losses": 13,
-          "win_rate": 31.6,
-          "mean_grade": 36.3
-        },
+        "stacked_20": null,
         "solo_20": {
-          "games": 1,
-          "wins": 0,
-          "losses": 1,
-          "win_rate": 0.0,
-          "mean_grade": 37.6
+          "games": 20,
+          "wins": 6,
+          "losses": 14,
+          "win_rate": 30.0,
+          "mean_grade": 36.4
         },
-        "team_line": "Playing together helps you: with 2+ of the group in the last 20 you went 6-13 (31.6%, grade 36.3) vs solo 0-1 (0.0%, grade 37.6)."
+        "team_line": "All of your last 20 were solo: 6-14 (30.0%, grade 36.4). No games with the group to compare against."
       },
       "champion_top3": [
         {
@@ -5911,13 +5119,8 @@
           ],
           "game_minutes": 22.6,
           "grade": 61.8,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Hwei|9/8/30|20.2|64|53|2026-11-08",
@@ -5938,13 +5141,8 @@
           ],
           "game_minutes": 20.2,
           "grade": 54.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Smolder|3/10/30|19.5|50|44|2026-11-08",
@@ -5965,13 +5163,8 @@
           ],
           "game_minutes": 19.5,
           "grade": 28.2,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Taliyah|5/8/29|19.6|43|22|2026-11-08",
@@ -5992,13 +5185,8 @@
           ],
           "game_minutes": 19.6,
           "grade": 75.8,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Blitzcrank|3/6/21|12.3|0|138|2026-11-08",
@@ -6018,12 +5206,8 @@
           ],
           "game_minutes": 12.3,
           "grade": 72.6,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Soraka|3/6/34|19.8|6|173|2026-11-08",
@@ -6044,13 +5228,8 @@
           ],
           "game_minutes": 19.8,
           "grade": 46.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sejuani|10/8/35|15.1|11|12|2026-11-08",
@@ -6070,13 +5249,8 @@
           ],
           "game_minutes": 15.1,
           "grade": 88.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Karma|1/11/44|26.9|26|34|2026-11-08",
@@ -6097,12 +5271,8 @@
           ],
           "game_minutes": 26.9,
           "grade": 29.7,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Syndra|8/7/9|16.9|33|79|2026-11-08",
@@ -6123,12 +5293,8 @@
           ],
           "game_minutes": 16.9,
           "grade": 52.8,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Elise|3/8/15|15.9|19|32|2026-11-08",
@@ -6148,12 +5314,8 @@
           ],
           "game_minutes": 15.9,
           "grade": 35.8,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Morgana|13/11/33|24.1|43|83|2026-11-08",
@@ -6173,13 +5335,8 @@
           ],
           "game_minutes": 24.1,
           "grade": 24.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Illaoi|5/13/23|18.5|15|140|2026-11-08",
@@ -6199,13 +5356,8 @@
           ],
           "game_minutes": 18.5,
           "grade": 15.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Malzahar|4/11/22|19.8|64|55|2026-11-08",
@@ -6225,13 +5377,8 @@
           ],
           "game_minutes": 19.8,
           "grade": 53.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Syndra|5/14/20|17.4|28|28|2026-11-08",
@@ -6252,13 +5399,8 @@
           ],
           "game_minutes": 17.4,
           "grade": 23.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Smolder|11/13/24|25.3|43|59|2026-11-08",
@@ -6279,13 +5421,8 @@
           ],
           "game_minutes": 25.3,
           "grade": 10.8,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Seraphine|5/4/36|13.3|28|8|2026-11-08",
@@ -6304,13 +5441,8 @@
           ],
           "game_minutes": 13.3,
           "grade": 67.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Mordekaiser|5/8/12|17.0|8|33|2026-11-08",
@@ -6330,12 +5462,8 @@
           ],
           "game_minutes": 17.0,
           "grade": 29.3,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Chogath|10/11/26|22.6|24|319|2026-11-08",
@@ -6355,13 +5483,8 @@
           ],
           "game_minutes": 22.6,
           "grade": 55.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ashe|1/8/16|13.4|9|69|2026-11-08",
@@ -6380,12 +5503,8 @@
           ],
           "game_minutes": 13.4,
           "grade": 32.3,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Vex|10/5/23|12.8|8|6|2026-11-08",
@@ -6404,13 +5523,8 @@
           ],
           "game_minutes": 12.8,
           "grade": 78.8,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nami|15/11/27|19.1|17|66|2026-11-07",
@@ -6430,13 +5544,8 @@
           ],
           "game_minutes": 19.1,
           "grade": 48.1,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Teemo|6/9/26|17.8|11|14|2026-11-07",
@@ -6456,13 +5565,8 @@
           ],
           "game_minutes": 17.8,
           "grade": 66.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|10/13/34|23.8|36|49|2026-11-07",
@@ -6482,13 +5586,8 @@
           ],
           "game_minutes": 23.8,
           "grade": 43.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Cassiopeia|6/11/25|21.2|12|18|2026-11-07",
@@ -6509,13 +5608,8 @@
           ],
           "game_minutes": 21.2,
           "grade": 34.8,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Seraphine|5/12/34|19.6|38|18|2026-11-06",
@@ -6536,12 +5630,8 @@
           ],
           "game_minutes": 19.6,
           "grade": 18.1,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ryze|3/9/12|14.7|40|41|2026-11-06",
@@ -6561,12 +5651,8 @@
           ],
           "game_minutes": 14.7,
           "grade": 26.3,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "AurelionSol|9/8/33|22.7|62|49|2026-11-06",
@@ -6586,12 +5672,8 @@
           ],
           "game_minutes": 22.7,
           "grade": 59.7,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kayle|16/9/23|17.0|54|30|2026-11-06",
@@ -6611,12 +5693,8 @@
           ],
           "game_minutes": 17.0,
           "grade": 44.5,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Soraka|1/8/24|13.8|6|39|2026-11-06",
@@ -6637,12 +5715,8 @@
           ],
           "game_minutes": 13.8,
           "grade": 21.4,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "TwistedFate|9/11/22|23.0|24|27|2026-11-05",
@@ -6662,12 +5736,8 @@
           ],
           "game_minutes": 23.0,
           "grade": 32.2,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lillia|11/7/31|12.8|11|1|2026-11-05",
@@ -6686,12 +5756,8 @@
           ],
           "game_minutes": 12.8,
           "grade": 82.2,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Hwei|5/9/26|20.4|25|14|2026-11-05",
@@ -6712,12 +5778,8 @@
           ],
           "game_minutes": 20.4,
           "grade": 48.6,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kaisa|5/6/24|20.0|25|44|2026-11-05",
@@ -6737,12 +5799,8 @@
           ],
           "game_minutes": 20.0,
           "grade": 78.9,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lux|11/13/30|20.0|43|17|2026-11-04",
@@ -6762,12 +5820,8 @@
           ],
           "game_minutes": 20.0,
           "grade": 39.4,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Cassiopeia|13/8/25|19.1|39|38|2026-11-04",
@@ -6787,12 +5841,8 @@
           ],
           "game_minutes": 19.1,
           "grade": 74.0,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Swain|10/4/20|10.9|11|12|2026-11-03",
@@ -6811,12 +5861,8 @@
           ],
           "game_minutes": 10.9,
           "grade": 79.6,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Smolder|5/5/39|12.1|28|9|2026-11-03",
@@ -6836,12 +5882,8 @@
           ],
           "game_minutes": 12.1,
           "grade": 82.5,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Mel|20/12/23|23.9|49|71|2026-11-03",
@@ -6862,12 +5904,8 @@
           ],
           "game_minutes": 23.9,
           "grade": 38.7,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Graves|6/10/12|17.1|15|41|2026-11-03",
@@ -6888,12 +5926,8 @@
           ],
           "game_minutes": 17.1,
           "grade": 15.0,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|1/9/26|14.4|4|86|2026-11-03",
@@ -6914,12 +5948,8 @@
           ],
           "game_minutes": 14.4,
           "grade": 49.7,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Senna|13/14/23|20.4|28|39|2026-11-02",
@@ -6938,12 +5968,8 @@
           ],
           "game_minutes": 20.4,
           "grade": 7.4,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Teemo|5/9/15|19.4|18|1|2026-11-02",
@@ -6963,12 +5989,8 @@
           ],
           "game_minutes": 19.4,
           "grade": 43.8,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kaisa|5/8/24|20.8|39|24|2026-11-02",
@@ -6988,12 +6010,8 @@
           ],
           "game_minutes": 20.8,
           "grade": 55.2,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Rammus|5/13/25|17.7|7|10|2026-11-02",
@@ -7014,12 +6032,8 @@
           ],
           "game_minutes": 17.7,
           "grade": 14.5,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ahri|12/3/32|14.6|33|70|2026-11-02",
@@ -7039,12 +6053,8 @@
           ],
           "game_minutes": 14.6,
           "grade": 85.9,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jayce|12/8/14|14.1|23|30|2026-11-02",
@@ -7064,12 +6074,8 @@
           ],
           "game_minutes": 14.1,
           "grade": 51.3,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ezreal|13/16/29|24.3|34|34|2026-11-02",
@@ -7089,11 +6095,8 @@
           ],
           "game_minutes": 24.3,
           "grade": 40.5,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lux|4/8/34|16.2|28|18|2026-11-02",
@@ -7114,11 +6117,8 @@
           ],
           "game_minutes": 16.2,
           "grade": 69.6,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nami|7/3/36|14.9|9|3|2026-11-02",
@@ -7137,10 +6137,8 @@
           ],
           "game_minutes": 14.9,
           "grade": 60.0,
-          "stack_size": 2,
-          "teammates": [
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nidalee|8/7/29|14.0|3|12|2026-11-01",
@@ -7240,15 +6238,15 @@
         ],
         "cons": [],
         "tips": [],
-        "stacked_20": {
+        "stacked_20": null,
+        "solo_20": {
           "games": 20,
           "wins": 7,
           "losses": 13,
           "win_rate": 35.0,
           "mean_grade": 46.8
         },
-        "solo_20": null,
-        "team_line": "All of your last 20 were with 2+ of the group: 7-13 (35.0%, grade 46.8). No solo games to compare against."
+        "team_line": "All of your last 20 were solo: 7-13 (35.0%, grade 46.8). No games with the group to compare against."
       },
       "champion_top3": [
         {
@@ -7281,31 +6279,10 @@
   "stack_splits": [
     {
       "label": "Solo",
-      "player_games": 14,
-      "wins": 8,
-      "win_rate_pct": 57.1,
-      "grade": 49.0
-    },
-    {
-      "label": "2\u20133 of the group",
-      "player_games": 53,
-      "wins": 35,
-      "win_rate_pct": 66.0,
-      "grade": 53.4
-    },
-    {
-      "label": "4 of the group",
-      "player_games": 86,
-      "wins": 36,
-      "win_rate_pct": 41.9,
-      "grade": 43.8
-    },
-    {
-      "label": "Full stack (5)",
-      "player_games": 97,
-      "wins": 42,
-      "win_rate_pct": 43.3,
-      "grade": 46.7
+      "player_games": 250,
+      "wins": 121,
+      "win_rate_pct": 48.4,
+      "grade": 47.2
     }
   ],
   "playbook_note": "Playbook above is from the Nov 8 snapshot. It recomputes from the last-50, 5-player window on the first daily run.",
