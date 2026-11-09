@@ -31,8 +31,22 @@ jobs:
         with:
           python-version: "3.12"
 
+      # If the Chrome extension's export is waiting (data/extension-export.json
+      # — Natalie drags the downloaded file in, renamed to that fixed name),
+      # import it and remove it so it is never imported twice. Otherwise
+      # run the normal PlayARAM fetch, which fails gracefully when
+      # Cloudflare blocks GitHub's computers. The file is removed only
+      # when the import succeeds: a broken export is moved aside by the
+      # updater as extension-export-failed-<date>.json instead, and the
+      # run stays green with the error recorded on the page.
       - name: Update data (last 50 games per player)
-        run: python scripts/update.py
+        run: |
+          if [ -f data/extension-export.json ]; then
+            python scripts/update.py --from-extension data/extension-export.json
+            rm -f data/extension-export.json
+          else
+            python scripts/update.py
+          fi
 
       # Commit the updated snapshot AND the per-player PlayARAM cache
       # (data/cache/playaram/) — the cache is how the last-50 window
