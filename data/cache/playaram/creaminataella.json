@@ -1,0 +1,1953 @@
+[
+  {
+    "match_id": "Milio|5/5/45|22.6|58|22|2026-11-09",
+    "date": "2026-11-09",
+    "champion": "Milio",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 5,
+    "deaths": 5,
+    "assists": 45,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 22.62,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "No Mana, No Problem",
+      "Pursuit of Haste",
+      "The Boom and the Bass",
+      "Jeweled Gauntlet"
+    ],
+    "items": [
+      "Luden's Echo",
+      "Rabadon's Deathcap",
+      "Stormsurge",
+      "Morellonomicon",
+      "Shadowflame",
+      "Void Staff"
+    ],
+    "skillshots_dodged_per_min": 0.97,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 50
+  },
+  {
+    "match_id": "Sivir|11/13/25|20.2|66|60|2026-11-09",
+    "date": "2026-11-09",
+    "champion": "Sivir",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 11,
+    "deaths": 13,
+    "assists": 25,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 20.22,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Blunt Force",
+      "CRIMSON COBALT",
+      "Recoil",
+      "Critical Rhythm",
+      "Bread And Butter"
+    ],
+    "items": [
+      "Infinity Edge",
+      "Statikk Shiv",
+      "The Collector",
+      "Mortal Reminder",
+      "Blade of The Ruined King",
+      "B. F. Sword"
+    ],
+    "skillshots_dodged_per_min": 2.97,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 49
+  },
+  {
+    "match_id": "Ashe|11/11/32|19.5|55|60|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Ashe",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 11,
+    "deaths": 11,
+    "assists": 32,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 19.47,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Giant Slayer",
+      "Tank It Or Leave It",
+      "Hextech Soul",
+      "Still Here",
+      "Tap Dancer"
+    ],
+    "items": [
+      "Yun Tal Wildarrows",
+      "Runaan's Hurricane",
+      "Blade of The Ruined King",
+      "Mortal Reminder",
+      "Infinity Edge",
+      "Hearthbound Axe"
+    ],
+    "skillshots_dodged_per_min": 3.08,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 48
+  },
+  {
+    "match_id": "Maokai|8/10/36|19.6|18|115|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Maokai",
+    "archetype": "Frontline",
+    "win": true,
+    "kills": 8,
+    "deaths": 10,
+    "assists": 36,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 19.63,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "THRASH",
+      "Sap Magic",
+      "Biggest Snowball Ever",
+      "Outlaw's Grit",
+      "Heavy Hitter"
+    ],
+    "items": [
+      "Heartsteel",
+      "Fimbulwinter",
+      "Spirit Visage",
+      "Thornmail",
+      "Unending Despair",
+      "Spectre's Cowl"
+    ],
+    "skillshots_dodged_per_min": 5.86,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 47
+  },
+  {
+    "match_id": "AurelionSol|7/6/27|12.3|26|40|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "AurelionSol",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 7,
+    "deaths": 6,
+    "assists": 27,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 12.3,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Infinite Recursion",
+      "BEES!!!",
+      "Warlock Juicebox",
+      "Twin Fire"
+    ],
+    "items": [
+      "Blackfire Torch",
+      "Refillable Potion",
+      "Liandry's Torment",
+      "Blighting Jewel",
+      "Rylai's Crystal Scepter"
+    ],
+    "skillshots_dodged_per_min": 3.25,
+    "stack_size": null,
+    "teammates": [
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1",
+      "smhrmst#NA1"
+    ],
+    "seq": 46
+  },
+  {
+    "match_id": "Seraphine|13/6/24|15.4|43|9|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Seraphine",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 13,
+    "deaths": 6,
+    "assists": 24,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 15.4,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Fey Magic",
+      "Omni Soul",
+      "Ultimate Recursion",
+      "Enchanting Butterflies"
+    ],
+    "items": [
+      "Malignance",
+      "Refillable Potion",
+      "Liandry's Torment",
+      "Rylai's Crystal Scepter",
+      "Shadowflame",
+      "Morellonomicon"
+    ],
+    "skillshots_dodged_per_min": 0.58,
+    "stack_size": null,
+    "teammates": [
+      "Feoldarline#NA1",
+      "ElderBuffalo#NA1",
+      "Ohwutahel#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 45
+  },
+  {
+    "match_id": "Ziggs|9/12/27|17.8|33|22|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Ziggs",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 9,
+    "deaths": 12,
+    "assists": 27,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 17.82,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "THRASH",
+      "Archmage",
+      "Heavy Is The Crown",
+      "Skilled Sniper",
+      "BEES!!!"
+    ],
+    "items": [
+      "Malignance",
+      "Fiendish Codex",
+      "Liandry's Torment",
+      "Shadowflame",
+      "Morellonomicon",
+      "Void Staff"
+    ],
+    "skillshots_dodged_per_min": 1.23,
+    "stack_size": null,
+    "teammates": [
+      "Peace At Mind#NA1",
+      "Ohwutahel#NA1",
+      "i3i3oy#NA1",
+      "bean#eatin"
+    ],
+    "seq": 44
+  },
+  {
+    "match_id": "Smolder|10/7/20|19.8|31|135|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Smolder",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 10,
+    "deaths": 7,
+    "assists": 20,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 19.8,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Skilled Sniper",
+      "Blue Barrier",
+      "Double Tap",
+      "Ethereal Weapon",
+      "Recoil"
+    ],
+    "items": [
+      "Essence Reaver",
+      "Muramana",
+      "Spear of Shojin",
+      "Lord Dominik's Regards",
+      "The Collector"
+    ],
+    "skillshots_dodged_per_min": 6.82,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 43
+  },
+  {
+    "match_id": "Lillia|13/5/29|15.1|23|7|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Lillia",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 13,
+    "deaths": 5,
+    "assists": 29,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 15.05,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Phenomenal Evil",
+      "Infernal Conduit",
+      "Bread and Cheese",
+      "Transmute: Gold"
+    ],
+    "items": [
+      "Blackfire Torch",
+      "Refillable Potion",
+      "Liandry's Torment",
+      "Rylai's Crystal Scepter",
+      "Blighting Jewel",
+      "Stormsurge"
+    ],
+    "skillshots_dodged_per_min": 0.47,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 42
+  },
+  {
+    "match_id": "Morgana|16/4/37|15.0|29|42|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Morgana",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 16,
+    "deaths": 4,
+    "assists": 37,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 14.98,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Twin Fire",
+      "Divine Intervention",
+      "Skilled Sniper",
+      "Homeguard"
+    ],
+    "items": [
+      "Blackfire Torch",
+      "Tear of the Goddess",
+      "Liandry's Torment",
+      "Rylai's Crystal Scepter",
+      "Oblivion Orb",
+      "Void Staff"
+    ],
+    "skillshots_dodged_per_min": 2.8,
+    "stack_size": null,
+    "teammates": [
+      "Jayjaypop#NA1",
+      "PocketSand#1233",
+      "StainedBritches1#8162",
+      "FOX Basil Brush#NA1"
+    ],
+    "seq": 41
+  },
+  {
+    "match_id": "Nidalee|10/13/36|26.9|43|37|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Nidalee",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 10,
+    "deaths": 13,
+    "assists": 36,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 26.95,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "HEAVY",
+      "Phenomenal Evil",
+      "Warlock Juicebox",
+      "Deft",
+      "Lich Brain"
+    ],
+    "items": [
+      "Luden's Echo",
+      "Liandry's Torment",
+      "Stormsurge",
+      "Horizon Focus",
+      "Void Staff",
+      "Morellonomicon"
+    ],
+    "skillshots_dodged_per_min": 1.37,
+    "stack_size": null,
+    "teammates": [
+      "Jigglybuff#uwu",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 40
+  },
+  {
+    "match_id": "Malphite|3/7/19|16.9|17|74|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Malphite",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 3,
+    "deaths": 7,
+    "assists": 19,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 16.95,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Steel Your Heart",
+      "Ultimate Recursion",
+      "Jeweled Gauntlet",
+      "Tank Engine",
+      "Recursion"
+    ],
+    "items": [
+      "Heartsteel",
+      "Luden's Echo",
+      "Stormsurge",
+      "Malignance"
+    ],
+    "skillshots_dodged_per_min": 4.37,
+    "stack_size": null,
+    "teammates": [
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1",
+      "TH\u00cdCH C\u00c2N 5#NA1"
+    ],
+    "seq": 39
+  },
+  {
+    "match_id": "Chogath|7/10/15|15.9|19|58|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Chogath",
+    "archetype": "Frontline",
+    "win": false,
+    "kills": 7,
+    "deaths": 10,
+    "assists": 15,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 15.88,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Phenomenal Evil",
+      "Armored Impact",
+      "Celestial Body",
+      "Dawnbringer's Resolve"
+    ],
+    "items": [
+      "Heartsteel",
+      "Warmog's Armor",
+      "Refillable Potion",
+      "Unending Despair",
+      "Thornmail",
+      "Negatron Cloak"
+    ],
+    "skillshots_dodged_per_min": 3.65,
+    "stack_size": null,
+    "teammates": [
+      "dipstik#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 38
+  },
+  {
+    "match_id": "Velkoz|6/10/39|24.1|22|50|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Velkoz",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 6,
+    "deaths": 10,
+    "assists": 39,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 24.05,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Infernal Conduit",
+      "Witchful Thinking",
+      "Twin Fire",
+      "Warlock Juicebox"
+    ],
+    "items": [
+      "Blackfire Torch",
+      "Void Staff",
+      "Shadowflame",
+      "Morellonomicon",
+      "Liandry's Torment",
+      "Rabadon's Deathcap"
+    ],
+    "skillshots_dodged_per_min": 2.08,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 37
+  },
+  {
+    "match_id": "Syndra|5/10/30|18.5|48|70|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Syndra",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 5,
+    "deaths": 10,
+    "assists": 30,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 18.48,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Magic Missile",
+      "Pursuit of Haste",
+      "Homeguard",
+      "Ultimate Revolution",
+      "Ultimate Unstoppable"
+    ],
+    "items": [
+      "Malignance",
+      "Oblivion Orb",
+      "Blackfire Torch",
+      "Liandry's Torment",
+      "Void Staff",
+      "Rabadon's Deathcap"
+    ],
+    "skillshots_dodged_per_min": 3.79,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 36
+  },
+  {
+    "match_id": "Chogath|6/11/22|19.8|11|114|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Chogath",
+    "archetype": "Frontline",
+    "win": true,
+    "kills": 6,
+    "deaths": 11,
+    "assists": 22,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 19.82,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Tank Engine",
+      "Courage of the Colossus",
+      "Get Jinxed",
+      "Lonely Warrior"
+    ],
+    "items": [
+      "Heartsteel",
+      "Warmog's Armor",
+      "Refillable Potion",
+      "Spirit Visage",
+      "Thornmail",
+      "Negatron Cloak"
+    ],
+    "skillshots_dodged_per_min": 5.75,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 35
+  },
+  {
+    "match_id": "Rammus|5/14/24|17.4|14|76|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Rammus",
+    "archetype": "Frontline",
+    "win": false,
+    "kills": 5,
+    "deaths": 14,
+    "assists": 24,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 17.35,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "POWER",
+      "Prom Queen",
+      "Armored Impact",
+      "Growth Spurt",
+      "Sap Magic"
+    ],
+    "items": [
+      "Thornmail",
+      "Heartsteel",
+      "Force of Nature",
+      "Warmog's Armor",
+      "Kaenic Rookern"
+    ],
+    "skillshots_dodged_per_min": 4.38,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 34
+  },
+  {
+    "match_id": "Nidalee|15/9/32|25.3|22|83|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Nidalee",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 15,
+    "deaths": 9,
+    "assists": 32,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 25.32,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "HEAVY",
+      "CRIMSON COBALT",
+      "Transmute: Chaos",
+      "Biggest Snowball Ever",
+      "Snowday"
+    ],
+    "items": [
+      "Luden's Echo",
+      "Liandry's Torment",
+      "Stormsurge",
+      "Morellonomicon",
+      "Horizon Focus",
+      "Void Staff"
+    ],
+    "skillshots_dodged_per_min": 3.28,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 33
+  },
+  {
+    "match_id": "Nautilus|5/8/29|13.3|16|39|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Nautilus",
+    "archetype": "Frontline",
+    "win": true,
+    "kills": 5,
+    "deaths": 8,
+    "assists": 29,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 13.35,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Armored Impact",
+      "Porcupine",
+      "Sap Magic",
+      "The Boom and the Bass"
+    ],
+    "items": [
+      "Heartsteel",
+      "Tear of the Goddess",
+      "Warmog's Armor",
+      "Thornmail",
+      "Chain Vest",
+      "Kindlegem"
+    ],
+    "skillshots_dodged_per_min": 2.92,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 32
+  },
+  {
+    "match_id": "Tristana|4/8/15|17.0|64|10|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Tristana",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 4,
+    "deaths": 8,
+    "assists": 15,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 17.0,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Weapon of Destiny",
+      "Tank It Or Leave It",
+      "Twin Fire",
+      "Omni Soul"
+    ],
+    "items": [
+      "Kraken Slayer",
+      "Refillable Potion",
+      "Blade of The Ruined King",
+      "The Collector",
+      "Lord Dominik's Regards",
+      "B. F. Sword"
+    ],
+    "skillshots_dodged_per_min": 0.59,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "Flumper#NA1"
+    ],
+    "seq": 31
+  },
+  {
+    "match_id": "Yuumi|8/3/49|20.6|8|7|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Yuumi",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 8,
+    "deaths": 3,
+    "assists": 49,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 20.57,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "BEES!!!",
+      "Take'em Down Down Down",
+      "Eureka",
+      "Magic Missile"
+    ],
+    "items": [
+      "Luden's Echo",
+      "Fated Ashes",
+      "Horizon Focus",
+      "Morellonomicon",
+      "Rabadon's Deathcap",
+      "Void Staff"
+    ],
+    "skillshots_dodged_per_min": 0.34,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "i3i3oy#NA1",
+      "TonytheDino#NA1",
+      "StrokemyGooser#1977"
+    ],
+    "seq": 30
+  },
+  {
+    "match_id": "Morgana|10/9/56|24.3|60|55|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Morgana",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 10,
+    "deaths": 9,
+    "assists": 56,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 24.25,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Spell Split",
+      "From Downtown",
+      "Warlock Juicebox",
+      "Shrink Engine"
+    ],
+    "items": [
+      "Blighting Jewel",
+      "Seraph's Embrace",
+      "Liandry's Torment",
+      "Rylai's Crystal Scepter",
+      "Morellonomicon",
+      "Blackfire Torch"
+    ],
+    "skillshots_dodged_per_min": 2.27,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "i3i3oy#NA1",
+      "Alveeen#Chez",
+      "AngelicPotatos#NA1"
+    ],
+    "seq": 29
+  },
+  {
+    "match_id": "Heimerdinger|9/11/29|22.6|62|73|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Heimerdinger",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 9,
+    "deaths": 11,
+    "assists": 29,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 22.58,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Phenomenal Evil",
+      "Infernal Conduit",
+      "Witchful Thinking",
+      "Minionmancer"
+    ],
+    "items": [
+      "Zhonya's Hourglass",
+      "Blackfire Torch",
+      "Liandry's Torment",
+      "Rylai's Crystal Scepter",
+      "Morellonomicon",
+      "Void Staff"
+    ],
+    "skillshots_dodged_per_min": 3.23,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 28
+  },
+  {
+    "match_id": "Sona|5/7/21|13.4|15|74|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Sona",
+    "archetype": "Support",
+    "win": false,
+    "kills": 5,
+    "deaths": 7,
+    "assists": 21,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 13.37,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Circle of Death",
+      "Enchanting Butterflies",
+      "Transmute: Prismatic"
+    ],
+    "items": [
+      "Moonstone Renewer",
+      "Diadem of Songs",
+      "Seraph's Embrace",
+      "Aether Wisp",
+      "Forbidden Idol"
+    ],
+    "skillshots_dodged_per_min": 5.54,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "Ice#HODL"
+    ],
+    "seq": 27
+  },
+  {
+    "match_id": "Milio|2/4/34|12.8|8|11|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Milio",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 2,
+    "deaths": 4,
+    "assists": 34,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 12.78,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Phenomenal Evil",
+      "No Mana, No Problem",
+      "Eureka"
+    ],
+    "items": [
+      "Luden's Echo",
+      "Refillable Potion",
+      "Stormsurge",
+      "Liandry's Torment"
+    ],
+    "skillshots_dodged_per_min": 0.86,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 26
+  },
+  {
+    "match_id": "Karma|5/8/37|19.1|26|79|2026-11-07",
+    "date": "2026-11-07",
+    "champion": "Karma",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 5,
+    "deaths": 8,
+    "assists": 37,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 19.15,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Wooglet's Witchcap",
+      "Sonata",
+      "Upgrade Zhonya's",
+      "Group Hug"
+    ],
+    "items": [
+      "Wooglet's Witchcap",
+      "Malignance",
+      "Refillable Potion",
+      "Luden's Echo",
+      "Stormsurge",
+      "Blighting Jewel"
+    ],
+    "skillshots_dodged_per_min": 4.13,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 25
+  },
+  {
+    "match_id": "Milio|6/7/40|17.8|39|19|2026-11-07",
+    "date": "2026-11-07",
+    "champion": "Milio",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 6,
+    "deaths": 7,
+    "assists": 40,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 17.83,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Purist - Caster",
+      "Take'em Down Down Down",
+      "Recursion",
+      "Enchanting Butterflies",
+      "CRIMSON COBALT"
+    ],
+    "items": [
+      "Luden's Echo",
+      "Dusk and Dawn",
+      "Nashor's Tooth",
+      "Stormsurge",
+      "Rylai's Crystal Scepter"
+    ],
+    "skillshots_dodged_per_min": 1.07,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 24
+  },
+  {
+    "match_id": "Xerath|12/7/47|23.8|27|40|2026-11-07",
+    "date": "2026-11-07",
+    "champion": "Xerath",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 12,
+    "deaths": 7,
+    "assists": 47,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 23.78,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Weapon of Destiny",
+      "Lich Brain",
+      "Eureka",
+      "Warlock Juicebox"
+    ],
+    "items": [
+      "Stormsurge",
+      "Morellonomicon",
+      "Luden's Echo",
+      "Horizon Focus",
+      "Void Staff",
+      "Rabadon's Deathcap"
+    ],
+    "skillshots_dodged_per_min": 1.68,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 23
+  },
+  {
+    "match_id": "Anivia|6/7/29|21.2|55|15|2026-11-07",
+    "date": "2026-11-07",
+    "champion": "Anivia",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 6,
+    "deaths": 7,
+    "assists": 29,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 21.22,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Take'em Down Down Down",
+      "Fey Magic",
+      "Magic Missile",
+      "Big Brain",
+      "Warlock Juicebox"
+    ],
+    "items": [
+      "Malignance",
+      "Seraph's Embrace",
+      "Morellonomicon",
+      "Liandry's Torment",
+      "Rylai's Crystal Scepter",
+      "Void Staff"
+    ],
+    "skillshots_dodged_per_min": 0.71,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 22
+  },
+  {
+    "match_id": "Jhin|11/10/25|19.2|53|27|2026-11-07",
+    "date": "2026-11-07",
+    "champion": "Jhin",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 11,
+    "deaths": 10,
+    "assists": 25,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 19.18,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "BEES!!!",
+      "Soul Siphon",
+      "Double Tap",
+      "Transmute: Prismatic"
+    ],
+    "items": [
+      "Hubris",
+      "Bloodthirster",
+      "The Collector",
+      "Infinity Edge",
+      "Lord Dominik's Regards",
+      "Tunneler"
+    ],
+    "skillshots_dodged_per_min": 1.41,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "i3i3oy#NA1",
+      "PumpkinStuffer#NA1",
+      "\uc808\ub300\ubabb\ucc38\ub294\uc0ac\ub78c#13215"
+    ],
+    "seq": 21
+  },
+  {
+    "match_id": "Thresh|6/9/38|17.0|39|16|2026-11-07",
+    "date": "2026-11-07",
+    "champion": "Thresh",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 6,
+    "deaths": 9,
+    "assists": 38,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 16.97,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Bouncing Bees",
+      "Scoped Weapons",
+      "Bread And Jam",
+      "Kill Secured"
+    ],
+    "items": [
+      "The Collector",
+      "Refillable Potion",
+      "Phantom Dancer",
+      "Kraken Slayer",
+      "Blade of The Ruined King",
+      "Long Sword"
+    ],
+    "skillshots_dodged_per_min": 0.94,
+    "stack_size": null,
+    "teammates": [
+      "Gumdrops#NA1",
+      "BlyBly#NA1",
+      "Ohwutahel#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 20
+  },
+  {
+    "match_id": "Lux|5/7/36|23.1|48|25|2026-11-07",
+    "date": "2026-11-07",
+    "champion": "Lux",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 5,
+    "deaths": 7,
+    "assists": 36,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 23.07,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Transmute: Prismatic",
+      "Transmute: Gold",
+      "Archmage",
+      "Twin Fire"
+    ],
+    "items": [
+      "Blackfire Torch",
+      "Liandry's Torment",
+      "Malignance",
+      "Stormsurge",
+      "Void Staff"
+    ],
+    "skillshots_dodged_per_min": 1.08,
+    "stack_size": null,
+    "teammates": [
+      "wuwutrain#NA1",
+      "Ohwutahel#NA1",
+      "i3i3oy#NA1",
+      "Balanoi#7605"
+    ],
+    "seq": 19
+  },
+  {
+    "match_id": "Jinx|9/11/26|18.2|56|15|2026-11-07",
+    "date": "2026-11-07",
+    "champion": "Jinx",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 9,
+    "deaths": 11,
+    "assists": 26,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 18.2,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Soul Siphon",
+      "Critical Rhythm",
+      "Jeweled Bracelet",
+      "Tap Dancer"
+    ],
+    "items": [
+      "The Collector",
+      "Blade of The Ruined King",
+      "Runaan's Hurricane",
+      "Lord Dominik's Regards",
+      "Infinity Edge",
+      "Long Sword"
+    ],
+    "skillshots_dodged_per_min": 0.82,
+    "stack_size": null,
+    "teammates": [
+      "shoyumyskill#808",
+      "wuwutrain#NA1",
+      "Ohwutahel#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 18
+  },
+  {
+    "match_id": "Senna|8/12/32|19.6|21|17|2026-11-06",
+    "date": "2026-11-06",
+    "champion": "Senna",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 8,
+    "deaths": 12,
+    "assists": 32,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 19.65,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Nightstalking",
+      "Upgrade Infinity Edge",
+      "Ominous Pact",
+      "It's Critical",
+      "Zealot"
+    ],
+    "items": [
+      "The Collector",
+      "Tear of the Goddess",
+      "Infinity Edge",
+      "Rapid Firecannon",
+      "Lord Dominik's Regards",
+      "Blade of The Ruined King"
+    ],
+    "skillshots_dodged_per_min": 0.87,
+    "stack_size": null,
+    "teammates": [
+      "Dragonhatcher#NA1",
+      "Ohwutahel#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 17
+  },
+  {
+    "match_id": "Kayle|4/9/14|14.7|39|23|2026-11-06",
+    "date": "2026-11-06",
+    "champion": "Kayle",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 4,
+    "deaths": 9,
+    "assists": 14,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 14.67,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Warlock Juicebox",
+      "Weapon of Destiny",
+      "Final Form",
+      "Magic Missile"
+    ],
+    "items": [
+      "Berserker's Greaves",
+      "Guinsoo's Rageblade",
+      "Blade of The Ruined King",
+      "Terminus",
+      "Recurve Bow",
+      "Null-Magic Mantle"
+    ],
+    "skillshots_dodged_per_min": 1.57,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "pikabUwU#NA1",
+      "Mashbrains#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 16
+  },
+  {
+    "match_id": "Nautilus|7/11/36|22.7|11|142|2026-11-06",
+    "date": "2026-11-06",
+    "champion": "Nautilus",
+    "archetype": "Frontline",
+    "win": true,
+    "kills": 7,
+    "deaths": 11,
+    "assists": 36,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 22.7,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Ravenous Bind",
+      "Pursuit of Haste",
+      "Armored Impact",
+      "Giant Slayer"
+    ],
+    "items": [
+      "Heartsteel",
+      "Fimbulwinter",
+      "Warmog's Armor",
+      "Kaenic Rookern",
+      "Unending Despair",
+      "Force of Nature"
+    ],
+    "skillshots_dodged_per_min": 6.26,
+    "stack_size": null,
+    "teammates": [
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "Mashbrains#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 15
+  },
+  {
+    "match_id": "Xerath|10/7/25|17.0|33|20|2026-11-06",
+    "date": "2026-11-06",
+    "champion": "Xerath",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 10,
+    "deaths": 7,
+    "assists": 25,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 17.03,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Ravenous Bind",
+      "Eureka",
+      "Lich Brain",
+      "Erosion"
+    ],
+    "items": [
+      "Malignance",
+      "Morellonomicon",
+      "Shadowflame",
+      "Liandry's Torment",
+      "Void Staff"
+    ],
+    "skillshots_dodged_per_min": 1.17,
+    "stack_size": null,
+    "teammates": [
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1",
+      "Oppugnos#NA1"
+    ],
+    "seq": 14
+  },
+  {
+    "match_id": "Anivia|3/6/21|13.8|47|37|2026-11-06",
+    "date": "2026-11-06",
+    "champion": "Anivia",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 3,
+    "deaths": 6,
+    "assists": 21,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 13.82,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "THRASH",
+      "Tripleshot",
+      "Homeguard",
+      "Slap Around",
+      "BEES!!!"
+    ],
+    "items": [
+      "Rod of Ages",
+      "Tear of the Goddess",
+      "Blasting Wand",
+      "Liandry's Torment",
+      "Morellonomicon",
+      "Giant's Belt"
+    ],
+    "skillshots_dodged_per_min": 2.68,
+    "stack_size": null,
+    "teammates": [
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1",
+      "Riataro#owo"
+    ],
+    "seq": 13
+  },
+  {
+    "match_id": "Kaisa|6/7/34|19.3|37|5|2026-11-06",
+    "date": "2026-11-06",
+    "champion": "Kaisa",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 6,
+    "deaths": 7,
+    "assists": 34,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 19.32,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Homeguard",
+      "Magic Missile",
+      "Jeweled Gauntlet",
+      "Upgrade Stormsurge"
+    ],
+    "items": [
+      "Luden's Echo",
+      "Rabadon's Deathcap",
+      "Horizon Focus",
+      "Shadowflame",
+      "Oblivion Orb",
+      "Stormsurge"
+    ],
+    "skillshots_dodged_per_min": 0.26,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "i3i3oy#NA1",
+      "Jyler#NA1",
+      "Rinti#NA1"
+    ],
+    "seq": 12
+  },
+  {
+    "match_id": "Nautilus|8/9/28|17.3|17|54|2026-11-06",
+    "date": "2026-11-06",
+    "champion": "Nautilus",
+    "archetype": "Frontline",
+    "win": true,
+    "kills": 8,
+    "deaths": 9,
+    "assists": 28,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 17.3,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Infinite Recursion",
+      "Sap Magic",
+      "Transmute: Prismatic",
+      "Tank Engine",
+      "Mighty Shield"
+    ],
+    "items": [
+      "Heartsteel",
+      "Fimbulwinter",
+      "Warmog's Armor",
+      "Thornmail",
+      "Unending Despair"
+    ],
+    "skillshots_dodged_per_min": 3.12,
+    "stack_size": null,
+    "teammates": [
+      "Groscoeur#NA1",
+      "MBC \u00d0ust#NA1",
+      "Ohwutahel#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 11
+  },
+  {
+    "match_id": "Nami|0/7/61|17.0|8|11|2026-11-06",
+    "date": "2026-11-06",
+    "champion": "Nami",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 0,
+    "deaths": 7,
+    "assists": 61,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 17.0,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Wooglet's Witchcap",
+      "Upgrade Stormsurge",
+      "All For You",
+      "Mad Scientist"
+    ],
+    "items": [
+      "Wooglet's Witchcap",
+      "Imperial Mandate",
+      "Refillable Potion",
+      "Stormsurge",
+      "Kindlegem",
+      "Amplifying Tome"
+    ],
+    "skillshots_dodged_per_min": 0.65,
+    "stack_size": null,
+    "teammates": [
+      "Hebejebee#NA1",
+      "To by for#NA1",
+      "i3i3oy#NA1",
+      "oCaldo#970"
+    ],
+    "seq": 10
+  },
+  {
+    "match_id": "Malzahar|2/8/16|18.2|56|74|2026-11-06",
+    "date": "2026-11-06",
+    "champion": "Malzahar",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 2,
+    "deaths": 8,
+    "assists": 16,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 18.2,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Weapon of Destiny",
+      "Upgrade Zhonya's",
+      "Apex Inventor",
+      "Lich Brain",
+      "Eureka"
+    ],
+    "items": [
+      "Zhonya's Hourglass",
+      "Tear of the Goddess",
+      "Cosmic Drive",
+      "Liandry's Torment",
+      "Rylai's Crystal Scepter",
+      "Hextech Alternator"
+    ],
+    "skillshots_dodged_per_min": 4.07,
+    "stack_size": null,
+    "teammates": [
+      "Sp\u00f3rk#NA1",
+      "\u4e14\u5fa9\u7aae\u5eec\u62dc#\u6703\u5411\u7a3e\u8857\u9022",
+      "i3i3oy#NA1",
+      "TAKASHI#GOAT"
+    ],
+    "seq": 9
+  },
+  {
+    "match_id": "Smolder|9/8/32|16.6|48|33|2026-11-06",
+    "date": "2026-11-06",
+    "champion": "Smolder",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 9,
+    "deaths": 8,
+    "assists": 32,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 16.6,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Weapon of Destiny",
+      "Blue Barrier",
+      "Twin Fire",
+      "Scopier Weapons"
+    ],
+    "items": [
+      "Trinity Force",
+      "Muramana",
+      "Ionian Boots of Lucidity",
+      "Spear of Shojin",
+      "Lord Dominik's Regards",
+      "B. F. Sword"
+    ],
+    "skillshots_dodged_per_min": 1.99,
+    "stack_size": null,
+    "teammates": [
+      "rat#worm",
+      "mcnugget567#NA1",
+      "Wetsy Rexy#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 8
+  },
+  {
+    "match_id": "Senna|9/8/40|17.3|15|18|2026-11-06",
+    "date": "2026-11-06",
+    "champion": "Senna",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 9,
+    "deaths": 8,
+    "assists": 40,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 17.33,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "HEAVY",
+      "Upgrade Infinity Edge",
+      "Giant Slayer",
+      "Big Shot",
+      "Transmute: Gold"
+    ],
+    "items": [
+      "The Collector",
+      "Tear of the Goddess",
+      "Infinity Edge",
+      "Zeal",
+      "Lord Dominik's Regards",
+      "Blade of The Ruined King"
+    ],
+    "skillshots_dodged_per_min": 1.04,
+    "stack_size": null,
+    "teammates": [
+      "owen210#NA1",
+      "SupahMelon#Trash",
+      "IronGhost#Agent",
+      "i3i3oy#NA1"
+    ],
+    "seq": 7
+  },
+  {
+    "match_id": "Swain|5/14/28|23.0|19|70|2026-11-05",
+    "date": "2026-11-05",
+    "champion": "Swain",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 5,
+    "deaths": 14,
+    "assists": 28,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 23.03,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Erosion",
+      "It's Killing Time",
+      "Recursion",
+      "Warlock Juicebox"
+    ],
+    "items": [
+      "Rod of Ages",
+      "Rylai's Crystal Scepter",
+      "Spirit Visage",
+      "Riftmaker",
+      "Morellonomicon",
+      "Unending Despair"
+    ],
+    "skillshots_dodged_per_min": 3.04,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1",
+      "DarkDivergence#6969"
+    ],
+    "seq": 6
+  },
+  {
+    "match_id": "Nautilus|9/7/39|12.8|35|10|2026-11-05",
+    "date": "2026-11-05",
+    "champion": "Nautilus",
+    "archetype": "Frontline",
+    "win": true,
+    "kills": 9,
+    "deaths": 7,
+    "assists": 39,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 12.77,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Icathia's Fall",
+      "Biggest Snowball Ever",
+      "Snowday"
+    ],
+    "items": [
+      "Void Immolation",
+      "Heartsteel",
+      "Warmog's Armor",
+      "Cloth Armor"
+    ],
+    "skillshots_dodged_per_min": 0.78,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1",
+      "SimbaXkinG#NA1"
+    ],
+    "seq": 5
+  },
+  {
+    "match_id": "MissFortune|3/10/29|20.4|45|18|2026-11-05",
+    "date": "2026-11-05",
+    "champion": "MissFortune",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 3,
+    "deaths": 10,
+    "assists": 29,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 20.35,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "THRASH",
+      "One Hit Wonder",
+      "Weapon of Destiny",
+      "Eureka",
+      "Big Brain"
+    ],
+    "items": [
+      "Blackfire Torch",
+      "Bloodletter's Curse",
+      "Seraph's Embrace",
+      "Liandry's Torment",
+      "Rylai's Crystal Scepter",
+      "Aether Wisp"
+    ],
+    "skillshots_dodged_per_min": 0.88,
+    "stack_size": null,
+    "teammates": [
+      "\u00e6spa Giselle#NA1",
+      "Ohwutahel#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 4
+  },
+  {
+    "match_id": "AurelionSol|21/8/20|20.0|85|26|2026-11-05",
+    "date": "2026-11-05",
+    "champion": "AurelionSol",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 21,
+    "deaths": 8,
+    "assists": 20,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 19.98,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Infinite Recursion",
+      "Magic Missile",
+      "Eureka",
+      "BEES!!!"
+    ],
+    "items": [
+      "Blackfire Torch",
+      "Void Staff",
+      "Rylai's Crystal Scepter",
+      "Liandry's Torment",
+      "Morellonomicon",
+      "Shadowflame"
+    ],
+    "skillshots_dodged_per_min": 1.3,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1",
+      "UmamiNami#xxx"
+    ],
+    "seq": 3
+  },
+  {
+    "match_id": "Evelynn|14/7/21|16.1|34|38|2026-11-05",
+    "date": "2026-11-05",
+    "champion": "Evelynn",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 14,
+    "deaths": 7,
+    "assists": 21,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 16.07,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "BEES!!!",
+      "Warlock Juicebox",
+      "Eureka",
+      "Upgrade Stormsurge"
+    ],
+    "items": [
+      "Luden's Echo",
+      "Blasting Wand",
+      "Stormsurge",
+      "Shadowflame",
+      "Void Staff",
+      "Lich Bane"
+    ],
+    "skillshots_dodged_per_min": 2.37,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "i3i3oy#NA1",
+      "Adragonith#NA1",
+      "andrx#360"
+    ],
+    "seq": 2
+  },
+  {
+    "match_id": "Lux|8/4/40|16.8|41|15|2026-11-05",
+    "date": "2026-11-05",
+    "champion": "Lux",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 8,
+    "deaths": 4,
+    "assists": 40,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 16.75,
+    "dmg_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Echo Cast",
+      "BEES!!!",
+      "Bolstered",
+      "No Mana, No Problem"
+    ],
+    "items": [
+      "Luden's Echo",
+      "Refillable Potion",
+      "Stormsurge",
+      "Void Staff",
+      "Shadowflame",
+      "Fiendish Codex"
+    ],
+    "skillshots_dodged_per_min": 0.9,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "i3i3oy#NA1",
+      "\u897f\u5317\u884c\u653f\u603b\u7763#000",
+      "6PathsofyoPainZ#NA1"
+    ],
+    "seq": 1
+  }
+]
