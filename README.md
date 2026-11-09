@@ -539,7 +539,8 @@ not on one stat, and not skewed by the role they play.
   Playing a champion well *for that champion* counts.
 - **Whole performance, not one stat.** One game is graded on the
   criteria the data source provides for it. From PlayARAM that is
-  KDA Efficiency, Teamplay, Death Quality and Augments; Output
+  KDA Efficiency, Teamplay, Death Quality, Augments and Mechanics
+  (skillshots dodged); Output
   (damage dealt) and Damage Taken join in when the extension has
   read the game's Details panel in your browser. Output is your
   share of the team's damage dealt when all five teammates' damage
@@ -556,8 +557,10 @@ not on one stat, and not skewed by the role they play.
   is not available, never 0.) PlayARAM's own match list does not show damage, so
   games from a server fetch have no damage and those two criteria
   stay blank for them. Conversion joins in only when per-player
-  turret data exists (a manual CSV). Mechanics (skillshots dodged)
-  is shown but not blended into the grade. KDA is only 1 of the
+  turret data exists (a manual CSV). Mechanics (skillshots dodged
+  per minute) is the 8th graded criterion, blended as a percentile
+  within role like the others — a good dodger scores high even on a
+  tank. KDA is only 1 of the
   graded criteria, and winning is only 15% of the final score.
 - **Steady beats one great game.** The final score is 55% average
   grade + 20% middle grade + 10% worst-quarter grade + 15% win rate.
@@ -573,11 +576,11 @@ not on one stat, and not skewed by the role they play.
   played **with 2 or more of the group** versus **solo games**, so
   stacked and solo play do not get mixed up.
 - **Top 3 / worst 3 champions** at the bottom are per player, from
-  the last 50 games, 3 or more games on that champion only, with
-  games, win-loss, win rate, grade, and a one-sentence reason. Each
-  champion shows its official portrait in a little round bubble.
-  If a player has only a few champions with 3+ games, the same
-  champion can appear in both lists.
+  the last 50 games, 2 or more games on that champion (one game is
+  not a pattern), with games, win-loss, win rate, grade, and a
+  one-sentence reason. Each champion shows its official portrait
+  in a little round bubble. A champion in the top 3 never appears
+  in the worst 3.
 - **The role maps come from the game's own data.** Item roles come
   from Data Dragon item tags (tank items carry Health with Armor or
   Magic Resist, AP items carry ability power, and so on), and the
