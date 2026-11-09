@@ -111,16 +111,30 @@
   .bar-val { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; }
   .pro { color:var(--green); }
   .con { color:var(--red); }
-  /* Top 3 / Worst 3 champions: one wide card per player, Best on the
-     left and Worst on the right, three round portraits in a row each. */
-  .champ-player { grid-column: 1 / -1; }
-  .champ-duo { display:flex; gap:12px; }
-  .champ-half { flex:1; min-width:0; background:var(--card2); border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
-  .champ-half.good { border-top:3px solid var(--green-bright); }
-  .champ-half.bad { border-top:3px solid var(--red-bright); }
+  /* Top 3 / Worst 3 champions: one clear-cut card per player, stacked
+     with a wide gap so each card is unmistakably its own. A header band
+     carries medal + name + score; inside, Best (green) and Worst (red)
+     are two separated panels with pill badges. */
+  .champs-list { display:flex; flex-direction:column; gap:28px; }
+  .champ-card { background:var(--card); border:1.5px solid var(--line); border-radius:20px;
+    box-shadow:0 2px 4px rgba(35,42,74,.06), 0 16px 36px rgba(35,42,74,.10);
+    border-top:4px solid var(--pc,var(--periwinkle)); overflow:hidden; }
+  .champ-band { display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    background:#f2f1fa; border-bottom:1px solid var(--line); padding:14px 20px; }
+  .champ-band h3 { margin:0; font-size:19px; }
+  .champ-band .champ-score { margin-left:auto; font-size:15px; font-weight:800;
+    color:var(--periwinkle-deep); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .champ-band .champ-score span { color:var(--muted); font-weight:600; font-size:13px; }
+  .champ-body { padding:18px 20px 20px; }
+  .champ-duo { display:flex; gap:16px; }
+  .champ-half { flex:1; min-width:0; border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
+  .champ-half.good { background:#eef9f2; border-top:3px solid var(--green-bright); }
+  .champ-half.bad { background:#fdf1f0; border-top:3px solid var(--red-bright); }
   .champ-half h4 { margin:0 0 12px; font-size:15px; }
-  .champ-half.good h4 { color:var(--green); }
-  .champ-half.bad h4 { color:var(--red); }
+  .champ-pill { display:inline-block; padding:3px 12px; border-radius:999px;
+    font-size:13px; font-weight:700; letter-spacing:.02em; color:#fff; }
+  .champ-pill.good { background:var(--green); }
+  .champ-pill.bad { background:var(--red); }
   .champ-trio { display:flex; gap:10px; }
   .champ-cell { flex:1; min-width:0; text-align:center; }
   .champ-cell .rank { font-size:12px; color:var(--muted); font-weight:700; }
@@ -135,6 +149,37 @@
   .champ-head { display:flex; justify-content:space-between; gap:8px; font-size:14px; }
   .why-card { background:var(--card); border:1px solid var(--line);
     border-radius:20px; padding:20px; box-shadow:var(--shadow); border-top:3px solid var(--pc,var(--periwinkle)); }
+  /* One-line rank summary: 5 rows in rank order, numbers bolded. */
+  .rank-summary { background:var(--card); border:1px solid var(--line); border-radius:20px;
+    box-shadow:var(--shadow); padding:8px 22px; margin-top:18px; }
+  .rank-summary h3 { margin:12px 0 4px; }
+  .rs-row { display:grid; grid-template-columns:36px 168px 62px 1fr; gap:12px; align-items:baseline;
+    padding:13px 0; border-bottom:1px solid var(--line-soft); font-size:14.5px; }
+  .rs-row:last-child { border-bottom:none; }
+  .rs-rank { font-size:16px; }
+  .rs-name { font-weight:700; }
+  .rs-score { font-weight:800; color:var(--periwinkle-deep); font-variant-numeric:tabular-nums; text-align:right; }
+  .rs-why { color:#3c3a5e; }
+  .rs-why b { color:var(--navy); }
+  /* Score spectrum: every player on one shared 0–100 scale, one row each
+     so the tight clusters (55.0 / 55.4 / 56.1) never collide. */
+  .spectrum { background:var(--card); border:1px solid var(--line); border-radius:20px;
+    box-shadow:var(--shadow); padding:20px 22px; margin-top:16px; }
+  .spec-row { margin:16px 0; }
+  .spec-head { display:flex; align-items:baseline; gap:8px; font-size:14px; margin-bottom:6px; }
+  .spec-head .spec-name { font-weight:700; }
+  .spec-head .spec-val { margin-left:auto; font-weight:800; color:var(--periwinkle-deep); font-variant-numeric:tabular-nums; }
+  .spec-track { position:relative; height:10px; background:#eceaf6; border:1px solid var(--line); border-radius:999px; }
+  .spec-dot { position:absolute; top:50%; width:18px; height:18px; border-radius:50%;
+    background:var(--pc,var(--periwinkle)); border:3px solid #fff;
+    transform:translate(-50%,-50%); box-shadow:0 2px 8px rgba(35,42,74,.35); }
+  .spec-axis { display:flex; justify-content:space-between; margin-top:6px;
+    font-size:11.5px; color:var(--muted); font-variant-numeric:tabular-nums; }
+  /* When You Stack: win-rate bars, one per stack size. */
+  .stack-row { display:grid; grid-template-columns:150px 1fr 92px; gap:12px; align-items:center; margin:14px 0; }
+  .stack-label { font-weight:700; font-size:14px; }
+  .stack-sub { grid-column:2 / 4; font-size:12.5px; color:var(--muted); margin-top:-6px; }
+  .stack-val { text-align:right; font-weight:800; font-size:17px; color:var(--periwinkle-deep); font-variant-numeric:tabular-nums; }
   @media (max-width:640px){
     h1{font-size:30px;} th,td{font-size:13px; padding:10px 8px;}
     th:first-child, td:first-child { padding-left:10px; }
@@ -142,6 +187,12 @@
     .champ-duo{flex-direction:column;}
     section { margin-top:36px; }
     .player, .why-card { padding:16px; }
+    .champ-band{padding:12px 16px;} .champ-body{padding:14px 16px 16px;}
+    .rs-row{grid-template-columns:28px 1fr auto;}
+    .rs-why{grid-column:1 / -1;}
+    .stack-row{grid-template-columns:104px 1fr 70px;}
+    .stack-sub{grid-column:2 / 4;}
+    .spectrum{padding:16px;}
   }
 </style>
 </head>
@@ -171,11 +222,13 @@
     </table>
     </div>
     <p class="muted">Tap a column heading to sort. Score is 0–100. MMR-style = 800 + Score × 14 (1500 ≈ average).</p>
+    <div class="spectrum" id="spectrum"></div>
   </section>
 
   <section>
     <h2>How the ranking is fair — read this before you complain</h2>
     <div id="fair-ranking"></div>
+    <div id="rank-summary"></div>
     <div class="player-grid" id="why-standings" style="margin-top:14px"></div>
     <div class="card" style="margin-top:16px">
       <div class="label">Worked example — Nov 8 snapshot</div>
@@ -184,6 +237,13 @@
       <p>Vincent's rank comes from carry games graded <i>within</i> the carry role: his Senna grades 70.1 (+13.3, 5 games), and his loss-vs-close gap is the smallest in the group (51.1 vs 56.0), which is what the median + floor terms reward. A carry with big KDA but a low floor would not rank this high — KDA is only 1 of 7 criteria, and win rate is only 15% of the score.</p>
       <p class="muted">This example uses Nov 8 snapshot numbers. It recomputes from the last-50, role-adjusted window on the first daily run, and each player card below shows the same breakdown for that player.</p>
     </div>
+  </section>
+
+  <section>
+    <h2>When You Stack</h2>
+    <p class="muted">How the group performs by how many of the five are in the game together — a supplementary lens. It does not change the scoring: each player is still scored on their own last 50 games.</p>
+    <div class="card" id="stack-chart"></div>
+    <p class="muted" id="stack-note"></p>
   </section>
 
   <section>
@@ -211,7 +271,7 @@
   <section>
     <h2>Top 3 / Worst 3 champions — last 50 games</h2>
     <p class="muted">One card per player: Best on the left, Worst on the right, three round portraits each. Ranked by mean game grade on that champion versus the player's own average. Only champions with 3+ games count, so a one-game fluke can't top the list. If a player has only a few champions with 3+ games, the same champion can appear on both sides — it just means that champion is both the best and the worst of a small set. Grade, record and delta are the hard facts under each portrait; the small line under them says why it lands there.</p>
-    <div class="player-grid" id="champs"></div>
+    <div class="champs-list" id="champs"></div>
   </section>
 
   <section>
@@ -270,12 +330,69 @@ async function load() {
     <td class="num">${fmt(p.mmr_style)}</td><td class="num">${fmt1(p.win_rate)}${p.win_rate!=null?'%':''}</td>
     <td class="num">${p.wins!=null ? p.wins+'–'+p.losses : '—'}</td><td class="num">${fmt(p.kda)}</td><td class="num">${fmt(p.damage_per_min?.toLocaleString?.())}</td></tr>`).join('');
 
+  // Score spectrum — all five on one shared 0–100 scale, one row each.
+  // The top three sit within 1.1 points of each other, so markers on a
+  // single track would collide; aligned rows keep the gaps visible.
+  const specGap = (players.length >= 3 && players[0].score != null && players[2].score != null)
+    ? (players[0].score - players[2].score).toFixed(1) : null;
+  document.getElementById('spectrum').innerHTML = `
+    <h3 style="margin-top:0">Score spectrum — all five on the same 0–100 scale</h3>
+    ${players.map((p,i) => `
+      <div class="spec-row" style="--pc:${COLORS[i % COLORS.length]}">
+        <div class="spec-head"><span>${['🥇','🥈','🥉'][i] || (i+1)}</span><span class="spec-name">${p.name}</span><span class="spec-val">${fmt1(p.score)}</span></div>
+        <div class="spec-track">${p.score != null ? `<span class="spec-dot" style="left:${Math.max(0, Math.min(100, p.score))}%"></span>` : ''}</div>
+      </div>`).join('')}
+    <div class="spec-axis"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div>
+    ${specGap != null ? `<p class="muted" style="margin-bottom:0">The top three sit within ${specGap} points of each other — the gaps are small at the top and wide at the bottom.</p>` : ''}`;
+
   // Fair ranking explainer (from data.json, so the page and the updater agree)
   const rm = data.ranking_method || {};
   document.getElementById('fair-ranking').innerHTML = `
     <p><b>${rm.one_line || ''}</b></p>
     <ul>${(rm.points || []).map(x => `<li>${x}</li>`).join('')}</ul>
     <p class="muted">${rm.criteria_weights || ''} Archetypes: ${Object.entries(rm.archetypes || {}).map(([k,v]) => `<b>${k}</b> — ${v}`).join(' · ')}</p>`;
+
+  // One-line rank summary — condensed from each player's why_rank and
+  // snapshot facts (Nov 8 snapshot numbers, all reused from data.json).
+  // While the page still shows the seed (no role_split / recent_20 yet)
+  // the hand-condensed lines below are used; once the updater refreshes
+  // why_rank, the summary is derived live from it instead, so it can't
+  // go stale. PikabUwU has no why_rank yet: the honest empty note.
+  const RANK_SUMMARY = {
+    "I3i3oy": "Top Damage carry — highest damage/min (<b>2,491</b>, <b>21.9%</b> of group damage) with pocket picks <b>Jinx 71.9</b> and <b>Varus 68.9</b>; held back by loss games (<b>46.0</b> vs <b>54.1</b> in close games).",
+    "Vincent Chan": "<b>Senna 70.1</b> (+13.3) and the smallest loss-vs-close gap (<b>51.1</b> vs <b>56.0</b>) reward his consistency — dragged by <b>Skilled Sniper ×10</b> at <b>47.02%</b>.",
+    "CreamiNataella": "Best KDA (<b>4.66</b>) with <b>Nidalee 72.5</b> and <b>Sona 67.9</b>, but the lowest structure share (<b>14.6%</b>) and the widest loss-vs-close gap (<b>48.5</b> vs <b>57.4</b>) keep her 3rd.",
+    "Ohwutahel": "Frontline games grade <b>52.4</b> (+4.4, <b>52 games</b>) vs Damage <b>44.3</b> and Support <b>41.9</b> — a strong frontliner dragged down by off-role games; most skillshots dodged (<b>5.00</b>/min).",
+    "PikabUwU": "Full breakdown fills on the first daily run."
+  };
+  const boldNums = (s) => s.replace(/(?<![\w.])([+\-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?%?)(?![\w.])/g, '<b>$1</b>');
+  const summarizeLive = (why) => {
+    // Leading sentences of why_rank (rank + strongest/weakest), dropping
+    // the trailing methodology sentence. Split on sentence ends only —
+    // the lookbehind keeps decimals like 56.1 intact.
+    const text = why.replace(/\s*Win rate is only 15% of the score[\s\S]*$/, '').trim();
+    const sentences = text.split(/(?<=[.!?]['")\]]?)\s+/).filter(Boolean);
+    let out = '';
+    for (const s of sentences) { out += (out ? ' ' : '') + s; if (out.replace(/\s/g, '').length >= 140) break; }
+    return boldNums(out.trim());
+  };
+  document.getElementById('rank-summary').innerHTML = `
+    <div class="rank-summary">
+      <h3>Why each player ranks where they do — in one line each</h3>
+      ${players.map((p,i) => {
+        const isSeed = !p.role_split && !p.recent_20;
+        const line = (isSeed && RANK_SUMMARY[p.name])
+          ? RANK_SUMMARY[p.name]
+          : (p.why_rank ? summarizeLive(p.why_rank) : 'Full breakdown fills on the first daily run.');
+        return `
+        <div class="rs-row">
+          <span class="rs-rank">${['🥇','🥈','🥉'][i] || (i+1)}</span>
+          <span class="rs-name">${p.name}</span>
+          <span class="rs-score">${fmt1(p.score)}</span>
+          <span class="rs-why">${line}</span>
+        </div>`;
+      }).join('')}
+    </div>`;
 
   // Shared: subscore keys + group averages, used by standings, cards, improve.
   const subKeys = [['output','Output'],['kda_efficiency','KDA'],['teamplay','Teamplay'],['death_quality','Death Q'],['conversion','Conversion'],['augments','Augments'],['mechanics','Mechanics']];
@@ -346,11 +463,13 @@ async function load() {
   }).join('');
 
   // Top 3 / worst 3 champions — last 50 games, bottom of the page.
-  // One wide card per player: Best on the left, Worst on the right,
-  // three round portrait bubbles in a row on each side.
+  // One clear-cut card per player: header band, then Best (green) and
+  // Worst (red) as two separated panels with pill badges, three round
+  // portrait bubbles in a row on each side.
   const champTrio = (list, title, good) => {
-    if (!list || !list.length) return `<div class="champ-half ${good ? 'good' : 'bad'}"><h4>${title}</h4><p class="muted">Fills on the first daily run (needs 3+ games on a champion).</p></div>`;
-    return `<div class="champ-half ${good ? 'good' : 'bad'}"><h4>${title}</h4><div class="champ-trio">` + list.map((c,idx) => `
+    const pill = `<span class="champ-pill ${good ? 'good' : 'bad'}">${title}</span>`;
+    if (!list || !list.length) return `<div class="champ-half ${good ? 'good' : 'bad'}"><h4>${pill}</h4><p class="muted">Fills on the first daily run (needs 3+ games on a champion).</p></div>`;
+    return `<div class="champ-half ${good ? 'good' : 'bad'}"><h4>${pill}</h4><div class="champ-trio">` + list.map((c,idx) => `
       <div class="champ-cell">
         <div class="rank${idx===0 ? ' first' : ''}">#${idx+1}</div>
         ${c.image ? `<img class="champ-thumb-lg" src="${c.image}" alt="${c.champion} portrait" loading="lazy" onerror="this.style.display='none'">` : '<div class="champ-thumb-lg"></div>'}
@@ -361,10 +480,17 @@ async function load() {
       </div>`).join('') + `</div></div>`;
   };
   document.getElementById('champs').innerHTML = players.map((p,i) => `
-    <div class="player champ-player" style="--pc:${COLORS[i % COLORS.length]}"><h3>${p.name}</h3>
-      <div class="champ-duo">
-        ${champTrio(p.champion_top3, '★ Best', true)}
-        ${champTrio(p.champion_worst3, 'Worst', false)}
+    <div class="champ-card" style="--pc:${COLORS[i % COLORS.length]}">
+      <div class="champ-band">
+        <span class="rank-cell ${i<3 ? 'm'+(i+1) : ''}">${['🥇','🥈','🥉'][i] || (i+1)}</span>
+        <h3>${p.name}</h3>
+        <span class="champ-score">${fmt1(p.score)} <span>· MMR-style ${fmt(p.mmr_style)}</span></span>
+      </div>
+      <div class="champ-body">
+        <div class="champ-duo">
+          ${champTrio(p.champion_top3, '★ Best', true)}
+          ${champTrio(p.champion_worst3, 'Worst', false)}
+        </div>
       </div>
     </div>`).join('');
 
@@ -382,6 +508,19 @@ async function load() {
     <p><b>${hw.formula || ''}</b></p><p>${hw.mmr_formula || ''}</p>
     <ul>${(hw.criteria || []).map(c => `<li>${c}</li>`).join('')}</ul>
     <p class="muted">${hw.not_measured || ''}</p>`;
+
+  // When You Stack — win-rate bars from data.stack_splits (Nov 8
+  // snapshot, 600 player-games; recomputes on the first daily run).
+  const stacks = data.stack_splits || [];
+  document.getElementById('stack-chart').innerHTML = stacks.length ? stacks.map(s => `
+    <div class="stack-row">
+      <span class="stack-label">${s.label}</span>
+      <div class="bar"><div class="bar-fill" style="width:${s.win_rate_pct}%"></div></div>
+      <span class="stack-val">${fmt1(s.win_rate_pct)}%</span>
+      <span class="stack-sub">${s.player_games} player-games · grade ${s.grade} · ${s.wins} wins</span>
+    </div>`).join('') : '<p class="muted">Stack splits fill on the first daily run.</p>';
+  document.getElementById('stack-note').textContent = data.meta?.stack_note ||
+    'Stack splits are a supplementary lens and do not change the scoring.';
 
   // History charts
   document.getElementById('history-note').textContent =
