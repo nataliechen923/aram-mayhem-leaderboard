@@ -524,11 +524,16 @@ page used.
 The point of the ranking is: who is doing best, judged on everything,
 not on one stat, and not skewed by the role they play.
 
-- **Role first.** Every part of the score is compared only against
-  players in the same role — Damage (carries), Frontline (tanks and
-  fighters), or Support. A tank with 8 kills can score higher than a
-  carry with 12 kills, because the tank is being compared to other
-  tanks. Raw kills never compare a tank to a carry.
+- **Role first — judged from the game, not just the champion.** Every
+  part of the score is compared only against players who played the
+  same role in that game — Damage (carries), Frontline (tanks and
+  fighters), or Support. The role comes from the champion plus the
+  augments taken and the items built: Malphite built AP counts as
+  Damage, Seraphine built with enchanter items counts as Support.
+  A tank with 8 kills can score higher than a carry with 12 kills,
+  because the tank is being compared to other tanks. Raw kills never
+  compare a tank to a carry. If a game has no augments or items
+  recorded, it falls back to the champion's usual role.
 - **Champion second.** Each part also compares you against other
   people playing the same champion (70% role, 30% same champion).
   Playing a champion well *for that champion* counts.
@@ -554,6 +559,15 @@ not on one stat, and not skewed by the role they play.
   champion shows its official portrait in a little round bubble.
   If a player has only a few champions with 3+ games, the same
   champion can appear in both lists.
+- **The role maps come from the game's own data.** Item roles come
+  from Data Dragon item tags (tank items carry Health with Armor or
+  Magic Resist, AP items carry ability power, and so on), and the
+  enchanter and support-quest items are listed by name. If a patch
+  renames an item or changes its tags, the maps in
+  `scripts/update.py` and `extension/parser.js` need regenerating
+  from the new Data Dragon files — the two copies must stay
+  identical, or the same game would get a different role depending
+  on which side read it.
 
 Worked example (Nov 8 snapshot): Ohwutahel plays mostly tanks,
 Vincent Chan plays all carry champs. Vincent ranks 2nd (55.4) and
