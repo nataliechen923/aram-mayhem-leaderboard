@@ -36,9 +36,10 @@ also what gets a site blocked. This updater is the opposite:
 What PlayARAM's match list shows (collapsed row) — and what it doesn't:
   * Shows: result, relative date ("14h ago"), duration, champion,
     KDA, CS, the 4 Mayhem event stats (hats, event takedowns, snowballs
-    hit, skillshots dodged), augment names (best effort), and links to
-    all 10 players' profiles (used for stack detection: the 5 players
-    on the profile player's team).
+    hit, skillshots dodged), augment names and item build names (best
+    effort — they decide the role a game is judged in, see
+    infer_game_role), and links to all 10 players' profiles (used
+    for stack detection: the 5 players on the profile player's team).
   * Does NOT show: per-game damage dealt/taken, per-player turret
     takedowns, or match IDs. (Damage lives only in the expandable
     Details panel, which renders on demand — it is not in the HTML
@@ -232,15 +233,17 @@ def parse_profile_games(html, riot_id, now):
       snowballs hit, skillshots dodged   <-- order assumption, see below
       badges (ACE, MVP, …) — ignored
     Augment names are taken from img alt/title attributes in the card,
-    excluding the champion portrait and item icons; if the markup does
-    not expose them, augments stay [] and the Augments component scores
-    a neutral 50. Stack comes from the 10 profile links in the card:
-    the 5 links in the profile player's half are their team.
+    excluding the champion portrait and item icons; item build names
+    the same way, from the item icons. If the markup does not expose
+    them, augments stay [] (and the Augments component scores a
+    neutral 50) and items stay [] (and the role falls back to the
+    champion's tags). Stack comes from the 10 profile links in the
+    card: the 5 links in the profile player's half are their team.
     Returns (games, diagnostics dict). Games are newest-first.
     """
     diag = {"segments": 0, "parsed": 0, "skipped": 0,
             "no_kda": 0, "no_numbers": 0, "no_champion": 0,
-            "with_augments": 0, "with_participants": 0}
+            "with_augments": 0, "with_items": 0, "with_participants": 0}
     # One card per 'ARAM: Mayhem' header. The page <title> says
     # 'ARAM Mayhem' (no colon), so it does not split there.
     segments = re.split(r"ARAM:\s*Mayhem", html)
@@ -315,6 +318,24 @@ def parse_profile_games(html, riot_id, now):
                 augments.append(name)
         if augments:
             diag["with_augments"] += 1
+        # Items: the build icons (src contains "item"), alt/title is
+        # the item name. The profile player's build is the card's
+        # main row, so the first icons in DOM order are theirs;
+        # cap at 7 (6 slots + trinket) so a layout change that
+        # exposed other players' builds could not flood the list.
+        # Items feed the role inference (tank vs AP vs AD vs
+        # support build) — a name the maps do not know is neutral.
+        items = []
+        for src, alt, title in bits.imgs:
+            if "item" not in src.lower():
+                continue
+            name = (alt or title or "").strip()
+            if name and name not in items:
+                items.append(name)
+            if len(items) >= 7:
+                break
+        if items:
+            diag["with_items"] += 1
         # Participants: /en/profile/<region>/<RiotID> links, in DOM
         # order — two groups of 5, one per team.
         participants = []
@@ -347,6 +368,7 @@ def parse_profile_games(html, riot_id, now):
             "game_minutes": round(mins, 2),
             "dmg_share": None, "kp": None, "structure_share": None,
             "augments": augments,
+            "items": items,
             "skillshots_dodged_per_min": (
                 round(dodged / mins, 2) if mins else None),
             # Stack is counted by the caller (it knows the group):
@@ -460,6 +482,387 @@ def champion_archetypes():
     except Exception as e:
         print(f"  Data Dragon champion list unavailable ({e}) — using Damage for all.", flush=True)
         return {}
+
+
+# ---------------------------------------------------------------- role inference
+# A game's role is judged from what was actually played, not just the
+# champion: champion + augments + items. Malphite can be built tank
+# or AP, Seraphine AP or Support — the champion alone cannot tell.
+#
+# Rule (deterministic; extension/parser.js implements the same rule,
+# and the two are cross-checked in tests):
+#   votes start with 1 for the champion's tag archetype (the prior);
+#   each role-indicative augment adds 1 vote for its role; each
+#   role-indicative item adds 1 vote for its role. AP and AD items
+#   both vote Damage; tank items vote Frontline; enchanter/support
+#   items vote Support. Most votes wins; a tie falls back to the
+#   champion's archetype, and if that is not among the tied roles,
+#   Damage wins over Frontline over Support. One item or augment
+#   alone can never flip a role (it only ties the prior, and the
+#   prior wins ties) — it takes a build leaning the other way.
+#   Boots, trinkets and consumables never vote. An augment or item
+#   the maps do not know is neutral and adds no vote. A game with no
+#   augments and no items falls back to the champion's tags, exactly
+#   like the old behaviour.
+#
+# ITEM_ROLE was generated from Data Dragon 16.22.1 item.json (the
+# same version the updater already uses): each item's tags decide its
+# signal — tank items carry Health with Armor/MagicResist, AP items
+# carry SpellDamage, AD items carry AttackDamage/CriticalStrike/
+# AttackSpeed, and the enchanter + support-quest items are listed by
+# name. Boots / trinkets / consumables are excluded. Regenerate it
+# from a fresh item.json if the patch changes item tags or renames
+# an item (e.g. Luden's Echo -> Luden's Companion, covered by the
+# alias below). Keys are normalized names (lowercase, alphanumeric).
+ITEM_ROLE = {
+    "abyssalmask": "tank",
+    "abyssalscepter": "ap",
+    "actualizer": "ap",
+    "aegisofthelegion": "tank",
+    "aetherwisp": "ap",
+    "amplifyingtome": "ap",
+    "archangelsstaff": "ap",
+    "ardentcenser": "support",
+    "atmasimpaler": "ad",
+    "atmasreckoning": "ad",
+    "avariceblade": "ad",
+    "axiomarc": "ad",
+    "bandleglassmirror": "ap",
+    "bandlepipes": "tank",
+    "bannerofcommand": "ap",
+    "bansheesveil": "ap",
+    "bastionbreaker": "ad",
+    "bfsword": "ad",
+    "bilgewatercutlass": "ad",
+    "blackcleaver": "ad",
+    "blackfiretorch": "ap",
+    "blackmistscythe": "support",
+    "bladeoftheruinedking": "ad",
+    "blastingwand": "ap",
+    "blightingjewel": "ap",
+    "bloodletterscurse": "ap",
+    "bloodsong": "support",
+    "bloodthirster": "ad",
+    "bountyofworlds": "support",
+    "brawlersgloves": "ad",
+    "bulwarkofthemountain": "support",
+    "caulfieldswarhammer": "ad",
+    "celestialopposition": "support",
+    "chempunkchainsword": "ad",
+    "chemtechputrifier": "support",
+    "cloakofagility": "ad",
+    "cloakofstarrynight": "tank",
+    "cosmicdrive": "ap",
+    "crownoftheshatteredqueen": "ap",
+    "cruelty": "ap",
+    "cryptbloom": "ap",
+    "crystallinebracer": "tank",
+    "cull": "ad",
+    "dagger": "ad",
+    "darkseal": "ap",
+    "dawncore": "support",
+    "deadmansplate": "tank",
+    "deathfiregrasp": "ap",
+    "deathsdance": "ad",
+    "demonicembrace": "ap",
+    "demonkingscrown": "tank",
+    "divinesunderer": "ad",
+    "doransblade": "ad",
+    "doransbow": "ad",
+    "doranshelm": "tank",
+    "doransring": "ap",
+    "doransshield": "tank",
+    "dreammaker": "support",
+    "duskanddawn": "ap",
+    "duskbladeofdraktharr": "ad",
+    "echoesofhelia": "support",
+    "eclipse": "ad",
+    "edgeofnight": "ad",
+    "emblemofvalor": "tank",
+    "endlesshunger": "ad",
+    "essencereaver": "ad",
+    "evenshroud": "tank",
+    "everfrost": "ap",
+    "executionerscalling": "ad",
+    "experimentalhexplate": "ad",
+    "fatedashes": "ap",
+    "feralflare": "ad",
+    "fiendhunterbolts": "ad",
+    "fiendishcodex": "ap",
+    "flesheater": "ap",
+    "forceofnature": "tank",
+    "frostfang": "support",
+    "frozenheart": "tank",
+    "frozenmallet": "ad",
+    "galeforce": "ad",
+    "gamblersblade": "ad",
+    "gargoylestoneplate": "tank",
+    "glacialbuckler": "tank",
+    "glacialshroud": "tank",
+    "goldenspatula": "tank",
+    "goredrinker": "ad",
+    "guardianangel": "ad",
+    "guardiansamulet": "ap",
+    "guardiansblade": "ad",
+    "guardiansdirk": "ad",
+    "guardianshammer": "ad",
+    "guardianshorn": "tank",
+    "guardiansorb": "ap",
+    "guardiansshroud": "ap",
+    "guinsoosrageblade": "ap",
+    "gunmetalgreaves": "ad",
+    "harrowingcrescent": "support",
+    "hauntingguise": "ap",
+    "hearthboundaxe": "ad",
+    "heartsteel": "tank",
+    "hexcoremk1": "ap",
+    "hexcoremk2": "ap",
+    "hexdrinker": "ad",
+    "hexopticsc44": "ad",
+    "hextechalternator": "ap",
+    "hextechgunblade": "ap",
+    "hextechrevolver": "ap",
+    "hextechrocketbelt": "ap",
+    "hollowradiance": "tank",
+    "horizonfocus": "ap",
+    "hubris": "ad",
+    "hullbreaker": "ad",
+    "huntersmachete": "ad",
+    "iceborngauntlet": "tank",
+    "immortalshieldbow": "ad",
+    "imperialmandate": "support",
+    "infinityedge": "ad",
+    "innervatinglocket": "ad",
+    "ionicspark": "ad",
+    "ironspikewhip": "ad",
+    "jakshotheprotean": "tank",
+    "kaenicrookern": "tank",
+    "kircheisshard": "ad",
+    "knightsvow": "tank",
+    "krakenslayer": "ad",
+    "lastwhisper": "ad",
+    "leechingleer": "ap",
+    "liandrystorment": "ap",
+    "lichbane": "ap",
+    "lifeline": "ad",
+    "lifewellpendant": "tank",
+    "lightningbraid": "tank",
+    "locketoftheironsolari": "tank",
+    "longsword": "ad",
+    "lorddominiksregards": "ad",
+    "lostchapter": "ap",
+    "luckypick": "ap",
+    "ludenscompanion": "ap",
+    "ludensecho": "ap",
+    "madredsbloodrazor": "ad",
+    "malady": "ap",
+    "malignance": "ap",
+    "manamune": "ad",
+    "mawofmalmortius": "ad",
+    "mejaissoulstealer": "ap",
+    "mercurialscimitar": "ad",
+    "mikaelsblessing": "support",
+    "moonstonerenewer": "support",
+    "morellonomicon": "ap",
+    "mortalreminder": "ad",
+    "muramana": "ad",
+    "nashorstooth": "ap",
+    "navoriflickerblade": "ad",
+    "navoriquickblades": "ad",
+    "needlesslylargerod": "ap",
+    "nightharvester": "ap",
+    "noonquiver": "ad",
+    "oblivionorb": "ap",
+    "ohmwrecker": "ap",
+    "opportunity": "ad",
+    "overgrowth": "ad",
+    "overlordsbloodmail": "ad",
+    "pauldronsofwhiterock": "support",
+    "perfecthexcore": "ap",
+    "phage": "ad",
+    "phantomdancer": "ad",
+    "pickaxe": "ad",
+    "profanehydra": "ad",
+    "prototypehexcore": "ap",
+    "prowlersclaw": "ad",
+    "rabadonsdeathcap": "ap",
+    "radiantvirtue": "tank",
+    "rageknife": "ad",
+    "randuinsomen": "tank",
+    "rapidfirecannon": "ad",
+    "ravenoushydra": "ad",
+    "rectrix": "ad",
+    "recurvebow": "ad",
+    "redemption": "support",
+    "relicshield": "support",
+    "riftmaker": "ap",
+    "riteofruin": "ap",
+    "rodofages": "ap",
+    "runaanshurricane": "ad",
+    "runesteelspaulders": "support",
+    "runicbulwark": "tank",
+    "runiccompass": "support",
+    "rylaiscrystalscepter": "ap",
+    "scoutsslingshot": "ad",
+    "seekersarmguard": "ap",
+    "seraphsembrace": "ap",
+    "serpentsfang": "ad",
+    "serrateddirk": "ad",
+    "seryldasgrudge": "ad",
+    "shadowflame": "ap",
+    "shardoftrueice": "support",
+    "shieldofmoltenstone": "tank",
+    "shieldoftherakkor": "ad",
+    "shurelyasbattlesong": "support",
+    "shurelyasreverie": "tank",
+    "shusheismanajug": "ap",
+    "silvermeredawn": "tank",
+    "sineater": "tank",
+    "solsticesleigh": "support",
+    "spearofshojin": "ad",
+    "spectralcutlass": "ad",
+    "spectralsickle": "support",
+    "spectrescowl": "tank",
+    "spellthiefsedge": "support",
+    "spiritoftheancientgolem": "tank",
+    "spiritoftheelderlizard": "ad",
+    "spiritofthespectralwraith": "ap",
+    "spiritvisage": "tank",
+    "staffofflowingwater": "support",
+    "starksfervor": "ad",
+    "statikkshiv": "ap",
+    "steelshoulderguards": "support",
+    "steelsigil": "ad",
+    "steraksgage": "ad",
+    "stinger": "ad",
+    "stirringwardstone": "ap",
+    "stormrazor": "ad",
+    "stormsurge": "ap",
+    "stridebreaker": "ad",
+    "sunderedsky": "ad",
+    "sunfireaegis": "tank",
+    "sunfirecape": "tank",
+    "swordofblossomingdawn": "ap",
+    "swordofthedivine": "ap",
+    "swordoftheoccult": "ad",
+    "targonsbuckler": "support",
+    "terminus": "ad",
+    "theblackcleaver": "ad",
+    "thebloodthirster": "ad",
+    "thebrutalizer": "ad",
+    "thecollector": "ad",
+    "thegoldenspatula": "tank",
+    "thornmail": "tank",
+    "tiamat": "ad",
+    "titanichydra": "ad",
+    "towerpowerup": "ad",
+    "trailblazer": "tank",
+    "trinityforce": "ad",
+    "tunneler": "ad",
+    "twinmask": "tank",
+    "twinshadows": "ap",
+    "ultrahydra": "ad",
+    "umbralglaive": "ad",
+    "unendingdespair": "tank",
+    "vampiricscepter": "ad",
+    "verdantbarrier": "ap",
+    "vigilantwardstone": "support",
+    "voidimmolation": "tank",
+    "voidstaff": "ap",
+    "voltaiccyclosword": "ad",
+    "warmogsarmor": "tank",
+    "watchfulwardstone": "support",
+    "willoftheancients": "ap",
+    "witsend": "ad",
+    "woogletswitchcap": "ap",
+    "worldatlas": "support",
+    "wriggleslantern": "ad",
+    "youmuusghostblade": "ad",
+    "yuntalwildarrows": "ad",
+    "zazzaksrealmspike": "support",
+    "zeal": "ad",
+    "zekesconvergence": "tank",
+    "zephyr": "ad",
+    "zhonyashourglass": "ap",
+    "zzrotportal": "tank",
+}
+
+# Augments the group actually takes, from the repo's own records
+# (the trap-augment list in data.json and the HEAVY class icon the
+# parser keeps). Anything not listed here falls through to the
+# keyword check below; anything still unknown is neutral.
+AUGMENT_ROLE = {
+    "heavy": "Frontline",       # Mayhem class icon: the tank class
+    "skilledsniper": "Damage",  # long-range damage augment
+}
+
+# Fallback for augment names the curated map does not know: short,
+# safe substrings of the normalized (lowercase, alphanumeric) name.
+# Frontline and Support are checked before Damage, and "mage" is
+# checked last, so "attack damage" matches before "mage" does.
+# Kept deliberately narrow — a name that matches nothing is neutral.
+AUGMENT_KEYWORDS = [
+    ("armor", "Frontline"), ("magicresist", "Frontline"),
+    ("resistance", "Frontline"), ("maxhealth", "Frontline"),
+    ("titanic", "Frontline"), ("bulwark", "Frontline"),
+    ("juggernaut", "Frontline"), ("vanguard", "Frontline"),
+    ("warden", "Frontline"),
+    ("heal", "Support"), ("shield", "Support"), ("ally", "Support"),
+    ("allies", "Support"), ("enchanter", "Support"),
+    ("guardian", "Support"), ("mend", "Support"),
+    ("abilitypower", "Damage"), ("magicdamage", "Damage"),
+    ("marksman", "Damage"), ("assassin", "Damage"),
+    ("artillery", "Damage"), ("attackdamage", "Damage"),
+    ("critical", "Damage"), ("attackspeed", "Damage"),
+    ("onhit", "Damage"), ("mage", "Damage"),
+]
+
+
+def item_role(name):
+    """'tank' / 'ap' / 'ad' / 'support' for an item name, or None."""
+    return ITEM_ROLE.get(_norm_champ(name)) if name else None
+
+
+def augment_role(name):
+    """'Damage' / 'Frontline' / 'Support' for an augment name, or None."""
+    if not name:
+        return None
+    key = _norm_champ(name)
+    if key in AUGMENT_ROLE:
+        return AUGMENT_ROLE[key]
+    for word, role in AUGMENT_KEYWORDS:
+        if word in key:
+            return role
+    return None
+
+
+def infer_game_role(game, champion_prior=None):
+    """Damage / Frontline / Support for one game, from champion +
+    augments + items (see the rule above). champion_prior is the
+    champion's tag archetype; when omitted it is looked up."""
+    prior = champion_prior or archetype_for(game.get("champion"))
+    votes = {"Damage": 0, "Frontline": 0, "Support": 0}
+    votes[prior] = votes.get(prior, 0) + 1
+    for a in game.get("augments") or []:
+        role = augment_role(a)
+        if role:
+            votes[role] += 1
+    for it in game.get("items") or []:
+        sig = item_role(it)
+        if sig == "tank":
+            votes["Frontline"] += 1
+        elif sig in ("ap", "ad"):
+            votes["Damage"] += 1
+        elif sig == "support":
+            votes["Support"] += 1
+    best = max(votes.values())
+    tied = [r for r, v in votes.items() if v == best]
+    if prior in tied:
+        return prior
+    for role in ("Damage", "Frontline", "Support"):
+        if role in tied:
+            return role
+    return prior
 
 
 # ---------------------------------------------------------------- scoring
@@ -927,6 +1330,9 @@ def rows_from_csv():
                     # so the missing fields are skipped, not scored as 0.
                     "dmg_share": None, "kp": None, "structure_share": None,
                     "augments": [a.strip() for a in (row.get("augments") or "").split(";") if a.strip()],
+                    # Optional column ("items", ;-separated). A CSV
+                    # without it scores roles from the champion alone.
+                    "items": [i.strip() for i in (row.get("items") or "").split(";") if i.strip()],
                     "skillshots_dodged_per_min": float(dodges) if dodges else None,
                 })
             except ValueError:
@@ -944,11 +1350,12 @@ def rows_from_extension(path, players):
     "extension", "players": [{"riot_id", "display_name", "games":
     [{champion, win, date, duration_minutes, kills, deaths, assists,
     cs, hats, event_takedowns, snowballs, skillshots_dodged_per_min,
-    damage_to_champions, damage_taken, augments, teammates (Riot IDs),
-    fingerprint}]}]}. The fingerprint is the match_id — the extension
-    computes it with the same formula as parse_profile_games, so a
-    game imported here dedupes against the same game fetched by
-    PlayARAM later.
+    damage_to_champions, damage_taken, augments, items, archetype
+    (the role the extension inferred from champion + augments +
+    items), teammates (Riot IDs), fingerprint}]}]}. The fingerprint
+    is the match_id — the extension computes it with the same formula
+    as parse_profile_games, so a game imported here dedupes against
+    the same game fetched by PlayARAM later.
 
     Raises ValueError on a structurally broken file. Returns
     (all_games, errors, total_exported). A player with zero usable
@@ -1030,11 +1437,17 @@ def rows_from_extension(path, players):
                     cs = 0
                 fingerprint = (f"{champ}|{kills}/{deaths}/{assists}|"
                                f"{mins:.1f}|{cs}|{dodged}|{date_s}")
+            # The extension already inferred the role from champion +
+            # augments + items; keep it when it is a valid archetype,
+            # otherwise the caller recomputes it (same rule).
+            arch = str(g.get("archetype") or "").strip()
+            if arch not in ("Damage", "Frontline", "Support"):
+                arch = "Damage"  # filled in by the caller
             games.append({
                 "match_id": fingerprint,
                 "date": date_s,
                 "champion": champ,
-                "archetype": "Damage",  # filled in by the caller
+                "archetype": arch,
                 "win": bool(g.get("win")),
                 "kills": kills, "deaths": deaths, "assists": assists,
                 "damage_to_champions": dmg,
@@ -1043,6 +1456,8 @@ def rows_from_extension(path, players):
                 "dmg_share": None, "kp": None, "structure_share": None,
                 "augments": [str(a).strip() for a in (g.get("augments") or [])
                              if str(a).strip()],
+                "items": [str(i).strip() for i in (g.get("items") or [])
+                          if str(i).strip()],
                 "skillshots_dodged_per_min": per_min,
                 "stack_size": None,
                 "teammates": [str(t) for t in (g.get("teammates") or [])],
@@ -1073,6 +1488,28 @@ def archive_broken_export(path):
     except Exception as e:
         print(f"Could not move the broken export aside ({e}) — it will "
               "be retried next run.")
+
+
+# What the page shows under "How the rating works". The updater
+# writes this into data.json on every run, so the explanation always
+# matches the scoring code — edit the words here, not in data.json.
+RANKING_METHOD = {
+    "title": "How the ranking is fair — whole performance, role-adjusted, champion-adjusted",
+    "one_line": "No single stat decides the rank. Every game is graded on the criteria the data source provides for that game, each graded only against players who played the same role in that game, and then adjusted for the champion played.",
+    "points": [
+        "Role first, judged from the game itself: a game's role (Damage, Frontline or Support) comes from the champion plus the augments taken and the items built — not the champion alone. Malphite built AP counts as Damage; Seraphine built with enchanter items counts as Support. Every component is a percentile WITHIN that role across all player-games in the window. A tank with 8 kills can score 90th percentile for Frontline while a carry with 12 kills scores only 60th for Damage. Raw kills and damage never compare a tank to a carry. A game with no augments or items recorded falls back to the champion's usual role.",
+        "Champion second: each component is blended 70% archetype percentile + 30% same-champion percentile (only when the group has 3+ games on that champion; otherwise archetype only). Playing a champion well *for that champion* counts, not just picking a strong champion.",
+        "Whole performance, not one stat: a game grade is the mean of the criteria available for that game — from PlayARAM: KDA Efficiency, Teamplay, Death Quality and Augments. Output and Conversion join in only when damage / structure data exists (a manual CSV). Mechanics (skillshots dodged) is shown as a 7th subscore but is not blended into the grade. KDA is 1 of the graded criteria, damage is only part of Output, and win rate is only 15% of the final score. A missing field is skipped, never scored as 0.",
+        "Consistency counts: Performance Score = 55% mean game grade + 20% median grade + 10% floor (25th percentile) grade + 15% win rate. One pop-off game can't carry a rank; a low floor pulls it down.",
+        "Evidence on every card: each player card shows their subscores vs the group average, their grade split by role played, their best / worst champions vs their own average (with game counts), and a 'Why this rank' paragraph built from those numbers — so a complaint can be answered with the breakdown, not an opinion.",
+    ],
+    "criteria_weights": "Each available criterion counts equally inside a game grade. Win rate is 15% of the final Performance Score, not the ranking itself.",
+    "archetypes": {
+        "Damage": "ADC / mage / assassin carries — judged on damage, kills and carry output",
+        "Frontline": "Tanks / fighters — judged on damage taken, damage soaked per death, and frontline output",
+        "Support": "Enchanters / wardens — judged on assists, teamplay and support output, not carry damage",
+    },
+}
 
 
 # ---------------------------------------------------------------- main
@@ -1240,11 +1677,13 @@ def main():
                   f"{diag['no_champion']} no champion), "
                   f"{n_new} new, cache now {len(merged)}; "
                   f"augments on {diag['with_augments']}, "
+                  f"items on {diag.get('with_items', 0)}, "
                   f"participants on {diag['with_participants']}.", flush=True)
-            # Archetype + stack: teammates arrive as Riot IDs — keep
-            # only group members, as display names.
+            # Role (from champion + augments + items) + stack:
+            # teammates arrive as Riot IDs — keep only group members,
+            # as display names.
             for g in merged:
-                g["archetype"] = archetype_for(g["champion"])
+                g["archetype"] = infer_game_role(g)
                 mates = sorted({riot_to_name[r.lower()]
                                 for r in g.get("teammates", [])
                                 if r.lower() in riot_to_name})
@@ -1269,12 +1708,13 @@ def main():
             print(f"Note: {len(errors)} player(s) had fetch problems — "
                   "scoring the rest from cache. See the page's update note.")
 
-    # CSV rows also need archetypes + a last-50 cut. PlayARAM rows
-    # already have archetypes and a window cut; the loop is harmless
-    # for them (archetype_for is idempotent, sort is by date).
+    # Every game gets its role from champion + augments + items
+    # (infer_game_role), whichever source it came from — PlayARAM,
+    # CSV or extension. The loop is idempotent, and the sort + window
+    # cut apply to all sources.
     for name, games in all_games.items():
         for g in games:
-            g["archetype"] = archetype_for(g["champion"])
+            g["archetype"] = infer_game_role(g)
         games.sort(key=lambda g: (g.get("seq", 0), g.get("date", "")),
                    reverse=True)
         all_games[name] = games[:window]
@@ -1282,6 +1722,7 @@ def main():
     annotate_stack(all_games)
     scored = score_players(all_games, archetypes)
     data["stack_splits"] = stack_splits(all_games)
+    data["ranking_method"] = RANKING_METHOD
     today = datetime.now(CST).strftime("%Y-%m-%d")
     now_label = datetime.now(CST).strftime("%Y-%m-%d %I:%M %p CST")
 
