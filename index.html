@@ -42,6 +42,8 @@
     padding:6px 14px; border-radius:999px; font-size:13px; font-weight:600; text-decoration:none; }
   a.chip:hover { border-color:var(--periwinkle); color:var(--periwinkle-deep); }
   .chip.stale { background:#2a2118; border-color:#8a7433; color:#e5c97a; }
+  .chip.sync { background:#12281d; border-color:#2c5c40; color:var(--green); }
+  .chip[hidden] { display:none; }
   main { max-width:1080px; margin:0 auto; padding:8px 20px 64px; }
   section { margin-top:44px; }
   h2 { position:relative; font-size:21px; font-weight:800; letter-spacing:.03em; text-transform:uppercase;
@@ -248,6 +250,7 @@
   <div class="chips">
     <span class="chip" id="updated-chip">Last updated: …</span>
     <a class="chip" href="https://playaram.gg" target="_blank" rel="noopener">Source: PlayARAM ↗</a>
+    <span class="chip sync" id="sync-chip" hidden>✓ Synced via extension</span>
   </div>
 </header>
 <main>
@@ -333,6 +336,23 @@ async function load() {
     ? 'Last updated: ' + ts.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' })
     : 'Last updated: ' + (data.meta.updated_at_label || '—');
   if (ageH != null && ageH > 48) { updChip.classList.add('stale'); updChip.textContent += ' · stale'; }
+
+  // "Synced via extension" chip — only when the data actually came
+  // from a real extension sync. The signal needs BOTH halves: the
+  // last update attempt was via the browser extension AND the updater
+  // recorded a successful extension sync time. Either half alone
+  // would lie: automation is written even on a failed import (so
+  // last_source alone would show after a failure with no sync), and
+  // the sync time alone would go stale after a later PlayARAM or CSV
+  // run refreshed the data. With the seeded snapshot (no automation,
+  // no sync) the chip stays hidden.
+  const syncChip = document.getElementById('sync-chip');
+  const auto = data.meta.automation;
+  const syncAt = data.meta.last_extension_sync ? new Date(data.meta.last_extension_sync) : null;
+  if (auto && auto.last_source === 'browser extension' && syncAt && !isNaN(syncAt)) {
+    syncChip.hidden = false;
+    syncChip.textContent = '✓ Synced via extension · ' + syncAt.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+  }
 
   // Highlights — KPI cards: a tinted icon chip, a big number, a plain
   // label. No trend pills: the data has no real comparison to show,
