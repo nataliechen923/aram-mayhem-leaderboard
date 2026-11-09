@@ -23,6 +23,44 @@ function githubApiBase() {
   return "https://api.github.com";
 }
 
+/* Every GitHub request gets a hard timeout: if GitHub (or the network
+   in between) never answers, the call must fail instead of hanging
+   the popup on "working" forever. 30s is generous for a small API
+   call and far below anything a user would wait through. On timeout
+   the fetch rejects (AbortError) and the caller returns kind
+   "other", so background.js falls back to the download. */
+const GITHUB_REQUEST_TIMEOUT_MS = 30000;
+
+/* fetch() with a hard timeout via AbortController. The timer is
+   always cleared once the request settles, so no timer leaks. */
+async function fetchWithTimeout(url, options) {
+  const controller = new AbortController();
+  const timer = setTimeout(
+    () => controller.abort(),
+    GITHUB_REQUEST_TIMEOUT_MS
+  );
+  try {
+    return await fetch(url, { ...(options || {}), signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+/* Read a response body with the same hard timeout. A stalled body
+   (headers arrived, bytes never follow) would hang res.json() just
+   as surely as a stalled request hangs fetch(), so race it too. */
+function readJsonWithTimeout(res) {
+  return Promise.race([
+    res.json(),
+    new Promise((_, reject) =>
+      setTimeout(
+        () => reject(new Error("response body timeout")),
+        GITHUB_REQUEST_TIMEOUT_MS
+      )
+    ),
+  ]);
+}
+
 /* Base64-encode a UTF-8 string. Chunked so a large export (50 games
    x 5 players) never blows the call stack. Uses Buffer in Node (tests)
    and TextEncoder + btoa in the browser/service worker. */
@@ -54,7 +92,7 @@ function githubHeaders(token) {
 async function testGitHubToken(token) {
   let res;
   try {
-    res = await fetch(`${githubApiBase()}/repos/${MAYHEM_REPO}`, {
+    res = await fetchWithTimeout(`${githubApiBase()}/repos/${MAYHEM_REPO}`, {
       headers: githubHeaders(token),
     });
   } catch (e) {
@@ -72,7 +110,10 @@ async function testGitHubToken(token) {
    Single attempt only — no retries, no loops. Flow:
    GET the file first: 200 gives us its SHA (needed to overwrite),
    404 means it is a new file (no SHA needed). Then PUT the new
-   content. Returns { ok: true } or { ok: false, kind, status }.
+   content. Every request aborts after 30s (see fetchWithTimeout)
+   and comes back as kind "other" — a stalled API call can never
+   leave the popup on "working" forever. Returns { ok: true } or
+   { ok: false, kind, status }.
    kind: "auth" = token problem; "repo" = repo/path not found;
    "other" = anything else (network, validation, GitHub error). */
 async function commitExportToGitHub(token, payload, dateStr) {
@@ -80,9 +121,9 @@ async function commitExportToGitHub(token, payload, dateStr) {
   const url = `${githubApiBase()}/repos/${MAYHEM_REPO}/contents/${MAYHEM_EXPORT_PATH}?ref=${MAYHEM_BRANCH}`;
   let sha = null;
   try {
-    const getRes = await fetch(url, { headers: githubHeaders(token) });
+    const getRes = await fetchWithTimeout(url, { headers: githubHeaders(token) });
     if (getRes.status === 200) {
-      const body = await getRes.json();
+      const body = await readJsonWithTimeout(getRes);
       sha = body && body.sha ? body.sha : null;
     } else if (getRes.status === 404) {
       sha = null; // new file
@@ -104,7 +145,7 @@ async function commitExportToGitHub(token, payload, dateStr) {
 
   let putRes;
   try {
-    putRes = await fetch(
+    putRes = await fetchWithTimeout(
       `${githubApiBase()}/repos/${MAYHEM_REPO}/contents/${MAYHEM_EXPORT_PATH}`,
       { method: "PUT", headers: githubHeaders(token), body: JSON.stringify(body) }
     );

@@ -11,9 +11,16 @@
      snowballs hit, skillshots dodged   <-- in that display order
    Augment names come from img alt/title, excluding the champion
    portrait, item icons, and summoner spell icons (Mark / Flash).
+   Item build names come from the item icons the same way. The
+   class icon (e.g. alt "HEAVY") is kept — the site's own Augments
+   tab names class + 4 augments per player.
    Participants come from /en/profile/<region>/<RiotID> links in DOM
    order — two teams of 5, the half containing the profile player is
    their team.
+   The role (archetype) is inferred from champion + augments +
+   items — the same rule as scripts/update.py's infer_game_role() —
+   so a tank-built Malphite and an AP-built Malphite are judged in
+   different roles.
 
    This file is pure string parsing (no DOM), so it can be unit-tested
    in Node against synthetic HTML. The DOM helpers at the bottom
@@ -82,11 +89,366 @@ function segmentBits(seg) {
   return { text, imgs, hrefs };
 }
 
+/* Role inference — the JavaScript mirror of update.py's
+   infer_game_role(): the champion's tag archetype is 1 vote, each
+   role-indicative augment adds 1 vote for its role, each
+   role-indicative item adds 1 vote for its role. AP and AD items
+   both vote Damage; tank items vote Frontline; enchanter/support
+   items vote Support. Most votes wins; a tie falls back to the
+   champion's archetype, and if that is not among the tied roles,
+   Damage wins over Frontline over Support. Boots, trinkets and
+   consumables never vote; an augment or item the maps do not know
+   is neutral. ITEM_ROLE_BY_NORM is generated from the same Data
+   Dragon 16.22.1 item.json as update.py's ITEM_ROLE; AUGMENT_ROLE
+   and AUGMENT_KEYWORDS are a line-for-line copy of the Python ones.
+   The champion prior comes from CHAMPION_ARCHETYPE_BY_NORM
+   (extension/champions.js), with a "Damage" fallback if that map
+   is absent. */
+const ITEM_ROLE_BY_NORM = {
+  "abyssalmask": "tank",
+  "abyssalscepter": "ap",
+  "actualizer": "ap",
+  "aegisofthelegion": "tank",
+  "aetherwisp": "ap",
+  "amplifyingtome": "ap",
+  "archangelsstaff": "ap",
+  "ardentcenser": "support",
+  "atmasimpaler": "ad",
+  "atmasreckoning": "ad",
+  "avariceblade": "ad",
+  "axiomarc": "ad",
+  "bandleglassmirror": "ap",
+  "bandlepipes": "tank",
+  "bannerofcommand": "ap",
+  "bansheesveil": "ap",
+  "bastionbreaker": "ad",
+  "bfsword": "ad",
+  "bilgewatercutlass": "ad",
+  "blackcleaver": "ad",
+  "blackfiretorch": "ap",
+  "blackmistscythe": "support",
+  "bladeoftheruinedking": "ad",
+  "blastingwand": "ap",
+  "blightingjewel": "ap",
+  "bloodletterscurse": "ap",
+  "bloodsong": "support",
+  "bloodthirster": "ad",
+  "bountyofworlds": "support",
+  "brawlersgloves": "ad",
+  "bulwarkofthemountain": "support",
+  "caulfieldswarhammer": "ad",
+  "celestialopposition": "support",
+  "chempunkchainsword": "ad",
+  "chemtechputrifier": "support",
+  "cloakofagility": "ad",
+  "cloakofstarrynight": "tank",
+  "cosmicdrive": "ap",
+  "crownoftheshatteredqueen": "ap",
+  "cruelty": "ap",
+  "cryptbloom": "ap",
+  "crystallinebracer": "tank",
+  "cull": "ad",
+  "dagger": "ad",
+  "darkseal": "ap",
+  "dawncore": "support",
+  "deadmansplate": "tank",
+  "deathfiregrasp": "ap",
+  "deathsdance": "ad",
+  "demonicembrace": "ap",
+  "demonkingscrown": "tank",
+  "divinesunderer": "ad",
+  "doransblade": "ad",
+  "doransbow": "ad",
+  "doranshelm": "tank",
+  "doransring": "ap",
+  "doransshield": "tank",
+  "dreammaker": "support",
+  "duskanddawn": "ap",
+  "duskbladeofdraktharr": "ad",
+  "echoesofhelia": "support",
+  "eclipse": "ad",
+  "edgeofnight": "ad",
+  "emblemofvalor": "tank",
+  "endlesshunger": "ad",
+  "essencereaver": "ad",
+  "evenshroud": "tank",
+  "everfrost": "ap",
+  "executionerscalling": "ad",
+  "experimentalhexplate": "ad",
+  "fatedashes": "ap",
+  "feralflare": "ad",
+  "fiendhunterbolts": "ad",
+  "fiendishcodex": "ap",
+  "flesheater": "ap",
+  "forceofnature": "tank",
+  "frostfang": "support",
+  "frozenheart": "tank",
+  "frozenmallet": "ad",
+  "galeforce": "ad",
+  "gamblersblade": "ad",
+  "gargoylestoneplate": "tank",
+  "glacialbuckler": "tank",
+  "glacialshroud": "tank",
+  "goldenspatula": "tank",
+  "goredrinker": "ad",
+  "guardianangel": "ad",
+  "guardiansamulet": "ap",
+  "guardiansblade": "ad",
+  "guardiansdirk": "ad",
+  "guardianshammer": "ad",
+  "guardianshorn": "tank",
+  "guardiansorb": "ap",
+  "guardiansshroud": "ap",
+  "guinsoosrageblade": "ap",
+  "gunmetalgreaves": "ad",
+  "harrowingcrescent": "support",
+  "hauntingguise": "ap",
+  "hearthboundaxe": "ad",
+  "heartsteel": "tank",
+  "hexcoremk1": "ap",
+  "hexcoremk2": "ap",
+  "hexdrinker": "ad",
+  "hexopticsc44": "ad",
+  "hextechalternator": "ap",
+  "hextechgunblade": "ap",
+  "hextechrevolver": "ap",
+  "hextechrocketbelt": "ap",
+  "hollowradiance": "tank",
+  "horizonfocus": "ap",
+  "hubris": "ad",
+  "hullbreaker": "ad",
+  "huntersmachete": "ad",
+  "iceborngauntlet": "tank",
+  "immortalshieldbow": "ad",
+  "imperialmandate": "support",
+  "infinityedge": "ad",
+  "innervatinglocket": "ad",
+  "ionicspark": "ad",
+  "ironspikewhip": "ad",
+  "jakshotheprotean": "tank",
+  "kaenicrookern": "tank",
+  "kircheisshard": "ad",
+  "knightsvow": "tank",
+  "krakenslayer": "ad",
+  "lastwhisper": "ad",
+  "leechingleer": "ap",
+  "liandrystorment": "ap",
+  "lichbane": "ap",
+  "lifeline": "ad",
+  "lifewellpendant": "tank",
+  "lightningbraid": "tank",
+  "locketoftheironsolari": "tank",
+  "longsword": "ad",
+  "lorddominiksregards": "ad",
+  "lostchapter": "ap",
+  "luckypick": "ap",
+  "ludenscompanion": "ap",
+  "ludensecho": "ap",
+  "madredsbloodrazor": "ad",
+  "malady": "ap",
+  "malignance": "ap",
+  "manamune": "ad",
+  "mawofmalmortius": "ad",
+  "mejaissoulstealer": "ap",
+  "mercurialscimitar": "ad",
+  "mikaelsblessing": "support",
+  "moonstonerenewer": "support",
+  "morellonomicon": "ap",
+  "mortalreminder": "ad",
+  "muramana": "ad",
+  "nashorstooth": "ap",
+  "navoriflickerblade": "ad",
+  "navoriquickblades": "ad",
+  "needlesslylargerod": "ap",
+  "nightharvester": "ap",
+  "noonquiver": "ad",
+  "oblivionorb": "ap",
+  "ohmwrecker": "ap",
+  "opportunity": "ad",
+  "overgrowth": "ad",
+  "overlordsbloodmail": "ad",
+  "pauldronsofwhiterock": "support",
+  "perfecthexcore": "ap",
+  "phage": "ad",
+  "phantomdancer": "ad",
+  "pickaxe": "ad",
+  "profanehydra": "ad",
+  "prototypehexcore": "ap",
+  "prowlersclaw": "ad",
+  "rabadonsdeathcap": "ap",
+  "radiantvirtue": "tank",
+  "rageknife": "ad",
+  "randuinsomen": "tank",
+  "rapidfirecannon": "ad",
+  "ravenoushydra": "ad",
+  "rectrix": "ad",
+  "recurvebow": "ad",
+  "redemption": "support",
+  "relicshield": "support",
+  "riftmaker": "ap",
+  "riteofruin": "ap",
+  "rodofages": "ap",
+  "runaanshurricane": "ad",
+  "runesteelspaulders": "support",
+  "runicbulwark": "tank",
+  "runiccompass": "support",
+  "rylaiscrystalscepter": "ap",
+  "scoutsslingshot": "ad",
+  "seekersarmguard": "ap",
+  "seraphsembrace": "ap",
+  "serpentsfang": "ad",
+  "serrateddirk": "ad",
+  "seryldasgrudge": "ad",
+  "shadowflame": "ap",
+  "shardoftrueice": "support",
+  "shieldofmoltenstone": "tank",
+  "shieldoftherakkor": "ad",
+  "shurelyasbattlesong": "support",
+  "shurelyasreverie": "tank",
+  "shusheismanajug": "ap",
+  "silvermeredawn": "tank",
+  "sineater": "tank",
+  "solsticesleigh": "support",
+  "spearofshojin": "ad",
+  "spectralcutlass": "ad",
+  "spectralsickle": "support",
+  "spectrescowl": "tank",
+  "spellthiefsedge": "support",
+  "spiritoftheancientgolem": "tank",
+  "spiritoftheelderlizard": "ad",
+  "spiritofthespectralwraith": "ap",
+  "spiritvisage": "tank",
+  "staffofflowingwater": "support",
+  "starksfervor": "ad",
+  "statikkshiv": "ap",
+  "steelshoulderguards": "support",
+  "steelsigil": "ad",
+  "steraksgage": "ad",
+  "stinger": "ad",
+  "stirringwardstone": "ap",
+  "stormrazor": "ad",
+  "stormsurge": "ap",
+  "stridebreaker": "ad",
+  "sunderedsky": "ad",
+  "sunfireaegis": "tank",
+  "sunfirecape": "tank",
+  "swordofblossomingdawn": "ap",
+  "swordofthedivine": "ap",
+  "swordoftheoccult": "ad",
+  "targonsbuckler": "support",
+  "terminus": "ad",
+  "theblackcleaver": "ad",
+  "thebloodthirster": "ad",
+  "thebrutalizer": "ad",
+  "thecollector": "ad",
+  "thegoldenspatula": "tank",
+  "thornmail": "tank",
+  "tiamat": "ad",
+  "titanichydra": "ad",
+  "towerpowerup": "ad",
+  "trailblazer": "tank",
+  "trinityforce": "ad",
+  "tunneler": "ad",
+  "twinmask": "tank",
+  "twinshadows": "ap",
+  "ultrahydra": "ad",
+  "umbralglaive": "ad",
+  "unendingdespair": "tank",
+  "vampiricscepter": "ad",
+  "verdantbarrier": "ap",
+  "vigilantwardstone": "support",
+  "voidimmolation": "tank",
+  "voidstaff": "ap",
+  "voltaiccyclosword": "ad",
+  "warmogsarmor": "tank",
+  "watchfulwardstone": "support",
+  "willoftheancients": "ap",
+  "witsend": "ad",
+  "woogletswitchcap": "ap",
+  "worldatlas": "support",
+  "wriggleslantern": "ad",
+  "youmuusghostblade": "ad",
+  "yuntalwildarrows": "ad",
+  "zazzaksrealmspike": "support",
+  "zeal": "ad",
+  "zekesconvergence": "tank",
+  "zephyr": "ad",
+  "zhonyashourglass": "ap",
+  "zzrotportal": "tank",
+};
+
+const AUGMENT_ROLE = {
+  heavy: "Frontline",       // Mayhem class icon: the tank class
+  skilledsniper: "Damage",  // long-range damage augment
+};
+
+// Same order as update.py's AUGMENT_KEYWORDS: Frontline and Support
+// first, "mage" last, so "attack damage" matches before "mage" does.
+const AUGMENT_KEYWORDS = [
+  ["armor", "Frontline"], ["magicresist", "Frontline"],
+  ["resistance", "Frontline"], ["maxhealth", "Frontline"],
+  ["titanic", "Frontline"], ["bulwark", "Frontline"],
+  ["juggernaut", "Frontline"], ["vanguard", "Frontline"],
+  ["warden", "Frontline"],
+  ["heal", "Support"], ["shield", "Support"], ["ally", "Support"],
+  ["allies", "Support"], ["enchanter", "Support"],
+  ["guardian", "Support"], ["mend", "Support"],
+  ["abilitypower", "Damage"], ["magicdamage", "Damage"],
+  ["marksman", "Damage"], ["assassin", "Damage"],
+  ["artillery", "Damage"], ["attackdamage", "Damage"],
+  ["critical", "Damage"], ["attackspeed", "Damage"],
+  ["onhit", "Damage"], ["mage", "Damage"],
+];
+
+function itemRole(name) {
+  return (name && ITEM_ROLE_BY_NORM[normChamp(name)]) || null;
+}
+
+function augmentRole(name) {
+  if (!name) return null;
+  const key = normChamp(name);
+  if (Object.prototype.hasOwnProperty.call(AUGMENT_ROLE, key)) return AUGMENT_ROLE[key];
+  for (const [word, role] of AUGMENT_KEYWORDS) {
+    if (key.includes(word)) return role;
+  }
+  return null;
+}
+
+function championPrior(champ) {
+  if (typeof CHAMPION_ARCHETYPE_BY_NORM !== "undefined") {
+    return CHAMPION_ARCHETYPE_BY_NORM[normChamp(champ)] || "Damage";
+  }
+  return "Damage";
+}
+
+function inferGameRole(champ, augments, items) {
+  const prior = championPrior(champ);
+  const votes = { Damage: 0, Frontline: 0, Support: 0 };
+  votes[prior] = (votes[prior] || 0) + 1;
+  for (const a of augments || []) {
+    const role = augmentRole(a);
+    if (role) votes[role] += 1;
+  }
+  for (const it of items || []) {
+    const sig = itemRole(it);
+    if (sig === "tank") votes.Frontline += 1;
+    else if (sig === "ap" || sig === "ad") votes.Damage += 1;
+    else if (sig === "support") votes.Support += 1;
+  }
+  const best = Math.max(votes.Damage, votes.Frontline, votes.Support);
+  const tied = Object.keys(votes).filter((r) => votes[r] === best);
+  if (tied.includes(prior)) return prior;
+  for (const role of ["Damage", "Frontline", "Support"]) {
+    if (tied.includes(role)) return role;
+  }
+  return prior;
+}
+
 function parseProfileGames(html, riotId, now) {
   const diag = {
     segments: 0, parsed: 0, skipped: 0,
     no_kda: 0, no_numbers: 0, no_champion: 0,
-    with_augments: 0, with_participants: 0,
+    with_augments: 0, with_items: 0, with_participants: 0,
   };
   // One card per 'ARAM: Mayhem' header. The page <title> says
   // 'ARAM Mayhem' (no colon), so it does not split there.
@@ -142,6 +504,18 @@ function parseProfileGames(html, riotId, now) {
       if (name && !augments.includes(name)) augments.push(name);
     }
     if (augments.length) diag.with_augments += 1;
+    // Items: the build icons (src contains "item"), alt/title is
+    // the item name. Same rule as update.py: first icons in DOM
+    // order (the profile player's build is the card's main row),
+    // capped at 7 (6 slots + trinket).
+    const items = [];
+    for (const img of bits.imgs) {
+      if (!img.src.toLowerCase().includes("item")) continue;
+      const name = (img.alt || img.title || "").trim();
+      if (name && !items.includes(name)) items.push(name);
+      if (items.length >= 7) break;
+    }
+    if (items.length) diag.with_items += 1;
     // Participants: /en/profile/<region>/<RiotID> links, in DOM
     // order — two groups of 5, one per team.
     const participants = [];
@@ -181,6 +555,8 @@ function parseProfileGames(html, riotId, now) {
       damage_to_champions: null, // filled from the Details panel, if it opens
       damage_taken: null,
       augments,
+      items,
+      archetype: inferGameRole(champ, augments, items),
       teammates,
       fingerprint,
     });
@@ -304,5 +680,6 @@ if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     normChamp, relativeToDate, isoDate, segmentBits, parseProfileGames,
     isChallengePage, findCardRoots, findDetailsButton, extractDamage,
+    itemRole, augmentRole, championPrior, inferGameRole,
   };
 }
