@@ -109,6 +109,22 @@
   .hl .top-pill { margin-top:10px; }
   /* Role delta: plain-words comparison under each role bar. */
   .role-delta { grid-column:2 / -1; font-size:12px; margin-top:-2px; }
+  /* Why-this-rank bullets: the card's rank reasoning as short bullets,
+     one reason per line, so it scans instead of reading as a paragraph. */
+  .why-list { margin:8px 0 0; padding-left:20px; font-size:14px; color:#cfd3e0; }
+  .why-list li { margin:3px 0; }
+  .why-list li::marker { color:var(--lav); }
+  /* History chart legends: HTML below the canvas, wrapping, so names
+     never sit inside the plot or get cut off on phone. */
+  .chart-legend { display:flex; flex-wrap:wrap; gap:6px 16px; margin:10px 4px 0; }
+  .legend-item { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#cfd3e0; white-space:nowrap; }
+  .legend-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+  /* Performance key: the 7 criteria as a small grid, one plain line each. */
+  .key-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0; }
+  .key-item { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 14px; font-size:14px; }
+  .key-item b { color:var(--navy); }
+  .key-item .key-tag { display:block; margin-top:4px; font-size:12px; color:var(--muted); }
+  .key-item .key-tag.missing { color:#e5c97a; }
   [hidden] { display:none !important; }
   /* Dashboard pills: Rating pill and clean stat chips (win rate, record). */
   .pill-rating { display:inline-block; background:rgba(167,139,250,.16); color:#c4b5fd;
@@ -251,6 +267,8 @@
     .stack-row{grid-template-columns:104px 1fr 70px;}
     .stack-sub{grid-column:2 / 4;}
     .spectrum{padding:16px;}
+    canvas{height:240px;}
+    .key-grid{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -305,8 +323,10 @@
     <h2>Performance History</h2>
     <h3>Performance Score — daily history</h3>
     <canvas id="chart-score" width="1000" height="260"></canvas>
+    <div class="chart-legend" id="legend-score"></div>
     <h3>Rating — daily history</h3>
     <canvas id="chart-mmr" width="1000" height="260"></canvas>
+    <div class="chart-legend" id="legend-mmr"></div>
     <p class="muted" id="history-note"></p>
   </section>
 
@@ -520,6 +540,87 @@ async function load() {
       <text x="32" y="36.5" text-anchor="middle" class="donut-num">${pct==null?'—':Math.round(pct)+'%'}</text></svg><div class="donut-label">Win rate</div>${topPill ? `<span class="top-pill">${topPill}</span>` : ''}</div>`;
   };
 
+  // Plain labels for the 7 criteria, used wherever a criterion key
+  // (kda_efficiency, death_quality, ...) would otherwise show raw.
+  const CRIT_LABEL = {output:'Damage output', kda_efficiency:'KDA efficiency', teamplay:'Teamplay', death_quality:'Death quality', conversion:'Structures', augments:'Augments', mechanics:'Skillshots dodged'};
+
+  // Why-this-rank as short bullets: one reason per bullet, plain
+  // labels, numbers bolded. The Fair section keeps the one-line
+  // summary; the card carries the detail — no more two copies of the
+  // same paragraph. The methodology sentence ("Win rate is only 15%…")
+  // is dropped here: the Fair section and the key already say it.
+  const whyBullets = (p) => {
+    const why = p.why_rank;
+    if (!why) return null;
+    const sentences = why.split(/(?<=[.!?]['")\]]?)\s+/).filter(Boolean);
+    const bullets = [];
+    for (const s of sentences) {
+      const t = s.trim();
+      if (!t || /^win rate is only 15%/i.test(t)) continue;
+      if (/^by role:/i.test(t)) {
+        const body = t.replace(/^by role:\s*/i, '').replace(/\.$/, '');
+        for (const part of body.split(/;\s*/)) {
+          const m = part.match(/^(\w+)\s+([\d.]+)\s*\((\d+)\s*games?,\s*([+-]?[\d.]+)\s*vs own avg\)/i);
+          if (m) {
+            const d = parseFloat(m[4]);
+            const vs = d >= 0.5 ? `${Math.abs(d)} above your usual grade` : d <= -0.5 ? `${Math.abs(d)} below your usual grade` : 'about your usual grade';
+            bullets.push(boldNums(`<b>${m[1]}:</b> grade ${m[2]} over ${m[3]} games — ${vs}`));
+          } else bullets.push(boldNums(part));
+        }
+        continue;
+      }
+      let out = t;
+      for (const [k, lab] of Object.entries(CRIT_LABEL)) out = out.replace(new RegExp('\\b' + k + '\\b', 'g'), lab);
+      out = out.replace(/MMR-style/gi, 'MMR');
+      bullets.push(boldNums(out));
+    }
+    return bullets.length ? bullets : null;
+  };
+
+  // Tips to climb, per criterion — used only to derive tips when the
+  // updater's tips list is empty.
+  const TIP_TEXT = {
+    kda_efficiency: 'Focus on KDA efficiency: trade less — fewer deaths for the kills you get.',
+    death_quality: 'Focus on staying alive: die less, and later in the game.',
+    augments: 'Focus on augments: check which augments are winning for the group before you lock one in.',
+    output: 'Focus on damage: look for more damage uptime in team fights.',
+    teamplay: 'Focus on teamplay: join more of the team\'s kills.',
+    conversion: 'Focus on structures: help push turrets after winning fights.',
+    mechanics: 'Focus on dodging: every skillshot dodged is more time dealing damage.'
+  };
+  const PCT_KEYS = ['output','kda_efficiency','teamplay','death_quality','conversion','augments'];
+  // Derive last-20 pros/cons/tips from the numbers when the updater
+  // left those lists empty — strictly within the last 20 games, never
+  // compared against the older window. Pros are criteria at 60+ in
+  // the last 20, cons are criteria at 40 or below; if none crosses
+  // a bar, the single strongest/weakest criterion is named instead.
+  // Tips come from the weakest last-20 criterion. Mechanics is
+  // per-minute, not a percentile, so it only supplies a tip when no
+  // percentile criterion is available.
+  const deriveWorkOn = (p) => {
+    const r20 = p.recent_20;
+    if (!r20 || !r20.subscores) return { pros: [], cons: [], tips: [] };
+    const s20 = r20.subscores;
+    const ranked = PCT_KEYS.map(k => (s20[k] != null) ? { k, v: s20[k] } : null).filter(Boolean)
+      .sort((a, b) => b.v - a.v);
+    const pros = [], cons = [], tips = [];
+    if (ranked.length) {
+      const strong = ranked.filter(x => x.v >= 60);
+      const weak = ranked.filter(x => x.v <= 40);
+      if (strong.length) for (const x of strong) pros.push(`Strong in the last 20: ${CRIT_LABEL[x.k]} ${x.v}.`);
+      else pros.push(`Strongest in the last 20: ${CRIT_LABEL[ranked[0].k]} ${ranked[0].v}.`);
+      // The fallback strongest must not also appear as a con.
+      const weakExclPro = strong.length ? weak : weak.filter(x => x.k !== ranked[0].k);
+      if (weakExclPro.length) for (const x of weakExclPro) cons.push(`Needs work in the last 20: ${CRIT_LABEL[x.k]} ${x.v}.`);
+      else if (ranked.length > 1) cons.push(`Weakest in the last 20: ${CRIT_LABEL[ranked[ranked.length - 1].k]} ${ranked[ranked.length - 1].v}.`);
+      const worst = ranked[ranked.length - 1];
+      if (TIP_TEXT[worst.k]) tips.push(TIP_TEXT[worst.k]);
+    } else if (s20.mechanics != null) {
+      tips.push(TIP_TEXT.mechanics);
+    }
+    return { pros, cons, tips };
+  };
+
   // Player cards — the rank plus the evidence for it, so a complaint gets an answer
   document.getElementById('players').innerHTML = players.map((p,i) => {
     // Plain-words delta for a role vs the player's own overall grade:
@@ -537,20 +638,37 @@ async function load() {
     return `<div class="player" style="--pc:${COLORS[i % COLORS.length]}">
     <div class="player-row-head">
       <h3>${i+1}. ${p.name}${i===0 ? ' <span class="top-tag">★ Top rated</span>' : ''}</h3>
-      <div class="score">${fmt1(p.score)} <span style="font-size:15px;color:var(--muted)">· Rating ${fmt(p.mmr_style)}</span></div>
+      <div class="score">${fmt1(p.score)}</div>
     </div>
-    <p class="player-why"><b>Why this rank:</b> ${p.why_rank || 'Full breakdown fills on the first daily run.'}</p>
+    ${(() => { const wb = whyBullets(p); return wb ? `<p class="player-why"><b>Why this rank:</b></p><ul class="why-list">${wb.map(b => `<li>${b}</li>`).join('')}</ul>` : `<p class="player-why"><b>Why this rank:</b> Full breakdown fills on the first daily run.</p>`; })()}
     <div class="sub-grid">
       <div class="subcard">
         <h4>Overview</h4>
         <div class="overview-flex">
           ${p.win_rate != null ? donut(p.win_rate, COLORS[i % COLORS.length], topWin.has(p.name) ? '★ Best win rate' : '') : ''}
-          <div class="kpi-tiles">
-            <div class="mini-kpi"><div class="mk-label">KDA</div><div class="mk-big">${fmt(p.kda)}</div>${topKda.has(p.name) ? '<span class="top-pill">★ Best KDA</span>' : ''}</div>
-            ${p.damage_per_min != null ? `<div class="mini-kpi"><div class="mk-label">Damage / min</div><div class="mk-big">${fmt(p.damage_per_min.toLocaleString())}</div>${topDmg.has(p.name) ? '<span class="top-pill">★ Top damage</span>' : ''}</div>` : ''}
-            <div class="mini-kpi"><div class="mk-label">Skillshots dodged / min</div><div class="mk-big">${fmt(p.skillshots_dodged_per_min)}</div>${topSkill.has(p.name) ? '<span class="top-pill">★ Most skillshots</span>' : ''}</div>
-            <div class="mini-kpi"><div class="mk-label">Record</div><div class="mk-big">${p.wins!=null ? p.wins+'–'+p.losses : '—'}</div></div>
-          </div>
+          <div class="kpi-tiles">${(() => {
+            // A tile renders only when its value exists — a missing stat
+            // is hidden, never a "—" tile. Win rate is shown by the
+            // donut next to these tiles, not duplicated as a tile.
+            // Kill participation / deaths per game are not in data.json
+            // yet (an updater job is adding them) — the tile appears
+            // automatically once the field exists; the likely field
+            // names are all checked so a rename doesn't hide them.
+            const tile = (label, val, pill) => (val == null || val === '' || val === '—') ? '' : `<div class="mini-kpi"><div class="mk-label">${label}</div><div class="mk-big">${val}</div>${pill || ''}</div>`;
+            const kp = p.kill_participation_pct ?? p.kill_participation ?? p.kp_pct;
+            const dpg = p.deaths_per_game ?? p.deaths_game;
+            return [
+              tile('Performance score', fmt1(p.score)),
+              tile('MMR', fmt(p.mmr_style)),
+              tile('KDA', fmt(p.kda), topKda.has(p.name) ? '<span class="top-pill">★ Best KDA</span>' : ''),
+              tile('Damage / min', p.damage_per_min != null ? p.damage_per_min.toLocaleString() : null, topDmg.has(p.name) ? '<span class="top-pill">★ Top damage</span>' : ''),
+              tile('Share of group damage', p.damage_share_pct != null ? fmt1(p.damage_share_pct) + '%' : null),
+              tile('Kill participation', kp != null ? fmt1(kp) + '%' : null),
+              tile('Deaths / game', dpg != null ? fmt1(dpg) : null),
+              tile('Skillshots dodged / min', fmt(p.skillshots_dodged_per_min), topSkill.has(p.name) ? '<span class="top-pill">★ Most skillshots</span>' : ''),
+              tile('Record', p.wins != null ? p.wins + '–' + p.losses : null),
+            ].join('');
+          })()}</div>
         </div>
       </div>
       <div class="subcard">
@@ -561,12 +679,21 @@ async function load() {
     ${(() => {
       const r20 = p.recent_20;
       if (!r20) return `<div class="workon subcard"><b>What to work on — last 20 games:</b><p class="muted">Recent-20 analysis fills on the first daily run — it needs per-game data. Nothing is shown here until then, so no older snapshot numbers stand in for it.</p></div>`;
+      // The updater's pros/cons/tips lists are often empty (live Nov 9:
+      // empty for 3 of 5 players), which used to leave every card with
+      // the same generic fallback lines. When a list is empty, derive
+      // per-player items from the last-20 numbers vs the last 50, so
+      // each card shows its own picture and updates every run.
+      const d = deriveWorkOn(p);
+      const pros = r20.pros.length ? r20.pros : d.pros;
+      const cons = r20.cons.length ? r20.cons : d.cons;
+      const tips = r20.tips.length ? r20.tips : d.tips;
       return `<div class="workon subcard"><b>What to work on — last 20 games:</b>
         <p>Last 20 games: <b>${r20.wins} wins, ${r20.losses} losses</b>. Average grade ${r20.mean_grade}.</p>
         ${r20.team_line ? `<p><b>Playing together (2+ of the group):</b> ${r20.team_line}</p>` : ''}
-        <b>Pros</b><ul>${r20.pros.map(x => `<li class="pro">${x}</li>`).join('') || '<li>Nothing stands out +5 or more in the last 20 — steady, no big spike.</li>'}</ul>
-        <b>Cons</b><ul>${r20.cons.map(x => `<li class="con">${x}</li>`).join('') || '<li>Nothing slipping -5 or more in the last 20.</li>'}</ul>
-        <b>Tips to climb</b><ul>${r20.tips.map(x => `<li>${x}</li>`).join('') || '<li>Keep doing what the last 20 shows is working, and play your top champions in your best role.</li>'}</ul>
+        <b>Pros</b><ul>${pros.map(x => `<li class="pro">${x}</li>`).join('') || '<li>Nothing stands out +5 or more in the last 20 — steady, no big spike.</li>'}</ul>
+        <b>Cons</b><ul>${cons.map(x => `<li class="con">${x}</li>`).join('') || '<li>Nothing slipping -5 or more in the last 20.</li>'}</ul>
+        <b>Tips to climb</b><ul>${tips.map(x => `<li>${x}</li>`).join('') || '<li>Keep doing what the last 20 shows is working, and play your top champions in your best role.</li>'}</ul>
       </div>`;
     })()}
       <div class="subcard wide">
@@ -610,11 +737,31 @@ async function load() {
       </div>
     </div>`).join('');
 
-  // How it works
+  // How it works — the performance key: the 7 criteria in plain
+  // words, rendered from the data's own criteria text (label + first
+  // sentence) so the key stays correct if criteria change. The label
+  // matches the Evidence bar label on each player card. A criterion
+  // no player has filled yet gets a "not filled yet" tag — it counts
+  // only when the data exists.
   const hw = data.how_rating_works || {};
+  const rm = data.ranking_method || {};
+  const keyItems = (hw.criteria || []).map((c, idx) => {
+    const [key, barLabel] = subKeys[idx] || ['', ''];
+    const dashIdx = c.indexOf('—');
+    const descFull = dashIdx >= 0 ? c.slice(dashIdx + 1).trim() : c;
+    const desc = descFull.split(/(?<=[.!?])\s+/)[0];
+    const filled = players.some(p => p.subscores?.[key] != null);
+    return `<div class="key-item"><b>${barLabel}</b> — ${desc}${filled ? '' : '<span class="key-tag missing">Not filled yet from PlayARAM — it counts only when the data exists.</span>'}</div>`;
+  }).join('');
+  const blendPoint = (rm.points || []).find(pt => /70%/.test(pt)) || '';
+  const blendLine = blendPoint ? blendPoint.split(/(?<=[.!?])\s+/)[0] : 'Each game is scored 70% against your role and 30% against the same champion.';
   document.getElementById('how').innerHTML = `
-    <p><b>${hw.formula || ''}</b></p><p>${hw.mmr_formula || ''}</p>
-    <ul>${(hw.criteria || []).map(c => `<li>${c}</li>`).join('')}</ul>
+    <h3 style="margin-top:0">Performance Score — what counts</h3>
+    <p>Each game is graded on these 7 things. A missing one is skipped, never scored as 0.</p>
+    <div class="key-grid">${keyItems}</div>
+    <p><b>${hw.formula || ''}</b></p>
+    <p>${blendLine}</p>
+    <p>${hw.mmr_formula || ''}</p>
     <p class="muted">${hw.not_measured || ''}</p>`;
 
   // When You Stack — win-rate bars from data.stack_splits (Nov 8
@@ -640,46 +787,92 @@ async function load() {
     (data.history || []).length <= 1
       ? 'Only one history point so far (Nov 8 seed). The line grows by one point per day after the daily runs start.'
       : `${(data.history || []).length} daily points.`;
-  drawChart(document.getElementById('chart-score'), data.history || [], 'scores', 'Performance Score');
-  drawChart(document.getElementById('chart-mmr'), data.history || [], 'mmr_style', 'Rating');
+  // History charts — legends live in HTML below each canvas (never
+  // inside the plot), and each canvas is sized to its displayed width
+  // so text renders at true size on phone.
+  chartState = { history: data.history || [], players };
+  drawChart(document.getElementById('chart-score'), chartState.history, 'scores', players);
+  drawChart(document.getElementById('chart-mmr'), chartState.history, 'mmr_style', players);
+  renderLegend(document.getElementById('legend-score'), players);
+  renderLegend(document.getElementById('legend-mmr'), players);
 }
 
 const COLORS = ['#f27ba7','#a78bfa','#4ade9d','#f5a26b','#e5c97a','#5eead4'];
-function drawChart(canvas, history, key, label) {
+// History chart state, kept so the charts redraw at the right size on
+// window resize (phone rotation, desktop resize).
+let chartState = null;
+let resizeTimer = null;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    if (!chartState) return;
+    drawChart(document.getElementById('chart-score'), chartState.history, 'scores', chartState.players);
+    drawChart(document.getElementById('chart-mmr'), chartState.history, 'mmr_style', chartState.players);
+  }, 150);
+});
+// Legend below a history chart: one dot + name per player, in rank
+// order, wrapping — the same colors as the lines, so the legend never
+// sits inside the plot or gets cut off on phone.
+function renderLegend(el, players) {
+  if (!el) return;
+  el.innerHTML = players.map((p, i) => `<span class="legend-item"><span class="legend-dot" style="background:${COLORS[i % COLORS.length]}"></span>${p.name}</span>`).join('');
+}
+function drawChart(canvas, history, key, players) {
+  // Size the backing store to the displayed size (times device pixel
+  // ratio) so text renders at true size on phone instead of being
+  // shrunk from a fixed 1000px canvas — that was the mobile bug: the
+  // legend and labels were drawn at 1000px and scaled down to ~350px.
+  const dpr = window.devicePixelRatio || 1;
+  const cssW = canvas.clientWidth || 1000;
+  const cssH = canvas.clientHeight || 260;
+  canvas.width = Math.round(cssW * dpr);
+  canvas.height = Math.round(cssH * dpr);
   const ctx = canvas.getContext('2d');
-  const W = canvas.width, H = canvas.height;
-  ctx.clearRect(0,0,W,H);
-  if (!history.length) { ctx.fillStyle='#9aa0b5'; ctx.font='16px Inter, system-ui, sans-serif'; ctx.fillText('No history yet.', 20, 40); return; }
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const W = cssW, H = cssH;
+  ctx.clearRect(0, 0, W, H);
+  if (!history.length) { ctx.fillStyle = '#9aa0b5'; ctx.font = '16px Inter, system-ui, sans-serif'; ctx.fillText('No history yet.', 20, 40); return; }
   const names = [...new Set(history.flatMap(h => Object.keys(h[key] || {})))];
+  // Line color = the player's rank color, the same mapping the
+  // leaderboard, spectrum and legend use — never the history key order.
+  const colorOf = (n) => {
+    const ri = (players || []).findIndex(p => p.name === n);
+    return COLORS[(ri >= 0 ? ri : names.indexOf(n)) % COLORS.length];
+  };
   let vals = history.flatMap(h => Object.values(h[key] || {}));
   let min = Math.min(...vals), max = Math.max(...vals);
   if (min === max) { min -= 5; max += 5; }
   const pad = (max - min) * 0.15; min -= pad; max += pad;
-  const x = i => 50 + (W - 70) * (history.length === 1 ? 0.5 : i / (history.length - 1));
-  const y = v => H - 30 - (H - 60) * ((v - min) / (max - min));
+  const L = 46, R = 14, T = 12, B = 26;
+  const x = i => L + (W - L - R) * (history.length === 1 ? 0.5 : i / (history.length - 1));
+  const y = v => T + (H - T - B) * (1 - (v - min) / (max - min));
   ctx.strokeStyle = '#262a38'; ctx.fillStyle = '#9aa0b5'; ctx.font = '12px Inter, system-ui, sans-serif';
+  ctx.textAlign = 'right';
   for (let t = 0; t <= 4; t++) {
     const v = min + (max - min) * t / 4, yy = y(v);
-    ctx.beginPath(); ctx.moveTo(50, yy); ctx.lineTo(W - 20, yy); ctx.stroke();
-    ctx.fillText(v.toFixed(0), 8, yy + 4);
+    ctx.beginPath(); ctx.moveTo(L, yy); ctx.lineTo(W - R, yy); ctx.stroke();
+    ctx.fillText(v.toFixed(0), L - 8, yy + 4);
   }
-  names.forEach((n, ni) => {
-    ctx.strokeStyle = COLORS[ni % COLORS.length]; ctx.lineWidth = 2; ctx.beginPath();
+  names.forEach((n) => {
+    const col = colorOf(n);
+    ctx.strokeStyle = col; ctx.lineWidth = 2; ctx.beginPath();
+    let started = false;
     history.forEach((h, i) => {
       const v = h[key]?.[n]; if (v == null) return;
-      i === 0 ? ctx.moveTo(x(i), y(v)) : ctx.lineTo(x(i), y(v));
+      if (!started) { ctx.moveTo(x(i), y(v)); started = true; } else ctx.lineTo(x(i), y(v));
     });
     ctx.stroke();
     history.forEach((h, i) => {
       const v = h[key]?.[n]; if (v == null) return;
-      ctx.fillStyle = COLORS[ni % COLORS.length];
+      ctx.fillStyle = col;
       ctx.beginPath(); ctx.arc(x(i), y(v), 4, 0, Math.PI * 2); ctx.fill();
     });
-    ctx.fillStyle = COLORS[ni % COLORS.length];
-    ctx.fillText(n, x(history.length - 1) + 6 > W - 90 ? W - 90 : x(history.length - 1) + 6, 20 + ni * 16);
   });
-  ctx.fillStyle = '#9aa0b5';
-  history.forEach((h, i) => ctx.fillText(h.date.slice(5), x(i) - 10, H - 8));
+  ctx.fillStyle = '#9aa0b5'; ctx.textAlign = 'center';
+  history.forEach((h, i) => {
+    const lx = Math.max(16, Math.min(W - 16, x(i)));
+    ctx.fillText(h.date.slice(5), lx, H - 8);
+  });
 }
 
 // Sortable leaderboard
