@@ -1,0 +1,805 @@
+{
+  "exported_at": "2026-11-09T16:40:46.107Z",
+  "source": "extension",
+  "players": [
+    {
+      "riot_id": "i3i3oy#NA1",
+      "display_name": "I3i3oy",
+      "games": [
+        {
+          "champion": "Aphelios",
+          "win": true,
+          "date": "2026-11-08",
+          "duration_minutes": 22.62,
+          "kills": 21,
+          "deaths": 10,
+          "assists": 17,
+          "cs": 105,
+          "hats": 4,
+          "event_takedowns": 76,
+          "snowballs": 0,
+          "skillshots_dodged": 34,
+          "skillshots_dodged_per_min": 1.5,
+          "damage_to_champions": null,
+          "damage_taken": null,
+          "augments": [
+            "Flow of Spirit",
+            "Critical Rhythm",
+            "Still Here",
+            "Scopiest Weapons"
+          ],
+          "items": [
+            "The Collector",
+            "Yun Tal Wildarrows",
+            "Runaan's Hurricane",
+            "Bloodthirster",
+            "Infinity Edge",
+            "Kraken Slayer"
+          ],
+          "archetype": "Damage",
+          "teammates": [
+            "CreamiNataella#NA1",
+            "Ohwutahel#NA1",
+            "Vincent Chan#NA1",
+            "pikabUwU#NA1"
+          ],
+          "fingerprint": "Aphelios|21/10/17|22.6|105|34|2026-11-08"
+        },
+        {
+          "champion": "DrMundo",
+          "win": false,
+          "date": "2026-11-08",
+          "duration_minutes": 20.22,
+          "kills": 9,
+          "deaths": 11,
+          "assists": 26,
+          "cs": 31,
+          "hats": 0,
+          "event_takedowns": 35,
+          "snowballs": 10,
+          "skillshots_dodged": 210,
+          "skillshots_dodged_per_min": 10.39,
+          "damage_to_champions": null,
+          "damage_taken": null,
+          "augments": [
+            "Goredrink",
+            "Dawnbringer's Resolve",
+            "Armored Impact",
+            "Sap Magic",
+            "BEES!!!"
+          ],
+          "items": [
+            "Heartsteel",
+            "Mercury's Treads",
+            "Force of Nature",
+            "Kaenic Rookern",
+            "Spirit Visage",
+            "Unending Despair"
+          ],
+          "archetype": "Frontline",
+          "teammates": [
+            "CreamiNataella#NA1",
+            "Ohwutahel#NA1",
+            "Vincent Chan#NA1",
+            "pikabUwU#NA1"
+          ],
+          "fingerprint": "DrMundo|9/11/26|20.2|31|210|2026-11-08"
+        }
+      ],
+      "diag": {
+        "segments": 23,
+        "parsed": 20,
+        "skipped": 3,
+        "no_kda": 2,
+        "no_numbers": 0,
+        "no_champion": 0,
+        "with_augments": 20,
+        "with_items": 20,
+        "with_participants": 20,
+        "load_more_clicks": 0,
+        "load_more_found": false,
+        "games_before_load_more": 20,
+        "games_after_load_more": 20,
+        "early_stop": true,
+        "new_games": 2,
+        "card_roots": 2,
+        "with_damage": 0,
+        "no_details_button": 0,
+        "damage_debug": {
+          "root": 0,
+          "parent": 1,
+          "body": 0,
+          "no_change": 1,
+          "label_seen": 0,
+          "guard_would_trip": 1
+        },
+        "panel_samples": [
+          {
+            "game": 0,
+            "champion": "Aphelios",
+            "scope": "none",
+            "lines": []
+          },
+          {
+            "game": 1,
+            "champion": "DrMundo",
+            "scope": "parent",
+            "lines": [
+              "Overview",
+              "Augments",
+              "Flex",
+              "NEW",
+              "Timeline",
+              "Team analysis",
+              "Copy link",
+              "RED TEAM",
+              "57",
+              "PLAYER\tAUGMENTS\tKDA\t / \t\t\tBUILDS",
+              "i3i3oy",
+              "21/10/17",
+              "3.80",
+              "50,625",
+              "41,098",
+              "23,963\t105",
+              "CreamiNataella",
+              "5/5/45",
+              "10.00",
+              "27,437",
+              "25,352",
+              "21,248\t58",
+              "Ohwutahel",
+              "13/12/25",
+              "3.17",
+              "45,539",
+              "44,535",
+              "21,810\t90",
+              "Vincent Chan",
+              "9/10/37",
+              "4.60",
+              "26,609",
+              "61,573",
+              "21,264\t29",
+              "pikabUwU",
+              "9/8/24",
+              "4.13",
+              "33,166",
+              "44,189",
+              "20,587\t20"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "riot_id": "Vincent Chan#NA1",
+      "display_name": "Vincent Chan",
+      "games": [
+        {
+          "champion": "JarvanIV",
+          "win": true,
+          "date": "2026-11-08",
+          "duration_minutes": 22.62,
+          "kills": 9,
+          "deaths": 10,
+          "assists": 37,
+          "cs": 29,
+          "hats": 4,
+          "event_takedowns": 46,
+          "snowballs": 17,
+          "skillshots_dodged": 64,
+          "skillshots_dodged_per_min": 2.83,
+          "damage_to_champions": null,
+          "damage_taken": null,
+          "augments": [
+            "Blunt Force",
+            "Jeweled Bracelet",
+            "Impassable",
+            "Biggest Snowball Ever"
+          ],
+          "items": [
+            "Randuin's Omen",
+            "Mercury's Treads",
+            "Sundered Sky",
+            "Jak'Sho, The Protean",
+            "Thornmail",
+            "Heartsteel"
+          ],
+          "archetype": "Frontline",
+          "teammates": [
+            "CreamiNataella#NA1",
+            "Ohwutahel#NA1",
+            "pikabUwU#NA1",
+            "i3i3oy#NA1"
+          ],
+          "fingerprint": "JarvanIV|9/10/37|22.6|29|64|2026-11-08"
+        },
+        {
+          "champion": "Brand",
+          "win": false,
+          "date": "2026-11-08",
+          "duration_minutes": 20.22,
+          "kills": 12,
+          "deaths": 14,
+          "assists": 26,
+          "cs": 43,
+          "hats": 4,
+          "event_takedowns": 38,
+          "snowballs": 0,
+          "skillshots_dodged": 73,
+          "skillshots_dodged_per_min": 3.61,
+          "damage_to_champions": null,
+          "damage_taken": null,
+          "augments": [
+            "Ice Cold",
+            "It's Killing Time",
+            "With Haste",
+            "Magic Missile",
+            "ADAPt"
+          ],
+          "items": [
+            "Blackfire Torch",
+            "Malignance",
+            "Liandry's Torment",
+            "Rylai's Crystal Scepter",
+            "Morellonomicon",
+            "Sorcerer's Shoes"
+          ],
+          "archetype": "Damage",
+          "teammates": [
+            "CreamiNataella#NA1",
+            "Ohwutahel#NA1",
+            "pikabUwU#NA1",
+            "i3i3oy#NA1"
+          ],
+          "fingerprint": "Brand|12/14/26|20.2|43|73|2026-11-08"
+        }
+      ],
+      "diag": {
+        "segments": 23,
+        "parsed": 20,
+        "skipped": 3,
+        "no_kda": 2,
+        "no_numbers": 0,
+        "no_champion": 0,
+        "with_augments": 20,
+        "with_items": 20,
+        "with_participants": 20,
+        "load_more_clicks": 0,
+        "load_more_found": false,
+        "games_before_load_more": 20,
+        "games_after_load_more": 20,
+        "early_stop": true,
+        "new_games": 2,
+        "card_roots": 2,
+        "with_damage": 0,
+        "no_details_button": 0,
+        "damage_debug": {
+          "root": 0,
+          "parent": 0,
+          "body": 0,
+          "no_change": 2,
+          "label_seen": 0,
+          "guard_would_trip": 2
+        },
+        "panel_samples": [
+          {
+            "game": 0,
+            "champion": "JarvanIV",
+            "scope": "none",
+            "lines": []
+          },
+          {
+            "game": 1,
+            "champion": "Brand",
+            "scope": "none",
+            "lines": []
+          }
+        ]
+      }
+    },
+    {
+      "riot_id": "CreamiNataella#NA1",
+      "display_name": "CreamiNataella",
+      "games": [
+        {
+          "champion": "Milio",
+          "win": true,
+          "date": "2026-11-08",
+          "duration_minutes": 22.62,
+          "kills": 5,
+          "deaths": 5,
+          "assists": 45,
+          "cs": 58,
+          "hats": 2,
+          "event_takedowns": 50,
+          "snowballs": 0,
+          "skillshots_dodged": 22,
+          "skillshots_dodged_per_min": 0.97,
+          "damage_to_champions": null,
+          "damage_taken": null,
+          "augments": [
+            "No Mana, No Problem",
+            "Pursuit of Haste",
+            "The Boom and the Bass",
+            "Jeweled Gauntlet"
+          ],
+          "items": [
+            "Luden's Echo",
+            "Rabadon's Deathcap",
+            "Stormsurge",
+            "Morellonomicon",
+            "Shadowflame",
+            "Void Staff"
+          ],
+          "archetype": "Damage",
+          "teammates": [
+            "Ohwutahel#NA1",
+            "Vincent Chan#NA1",
+            "pikabUwU#NA1",
+            "i3i3oy#NA1"
+          ],
+          "fingerprint": "Milio|5/5/45|22.6|58|22|2026-11-08"
+        },
+        {
+          "champion": "Sivir",
+          "win": false,
+          "date": "2026-11-08",
+          "duration_minutes": 20.22,
+          "kills": 11,
+          "deaths": 13,
+          "assists": 25,
+          "cs": 66,
+          "hats": 0,
+          "event_takedowns": 36,
+          "snowballs": 0,
+          "skillshots_dodged": 60,
+          "skillshots_dodged_per_min": 2.97,
+          "damage_to_champions": null,
+          "damage_taken": null,
+          "augments": [
+            "Blunt Force",
+            "CRIMSON COBALT",
+            "Recoil",
+            "Critical Rhythm",
+            "Bread And Butter"
+          ],
+          "items": [
+            "Infinity Edge",
+            "Statikk Shiv",
+            "The Collector",
+            "Mortal Reminder",
+            "Blade of The Ruined King",
+            "B. F. Sword"
+          ],
+          "archetype": "Damage",
+          "teammates": [
+            "Ohwutahel#NA1",
+            "Vincent Chan#NA1",
+            "pikabUwU#NA1",
+            "i3i3oy#NA1"
+          ],
+          "fingerprint": "Sivir|11/13/25|20.2|66|60|2026-11-08"
+        }
+      ],
+      "diag": {
+        "segments": 23,
+        "parsed": 20,
+        "skipped": 3,
+        "no_kda": 2,
+        "no_numbers": 0,
+        "no_champion": 0,
+        "with_augments": 20,
+        "with_items": 20,
+        "with_participants": 20,
+        "load_more_clicks": 0,
+        "load_more_found": false,
+        "games_before_load_more": 20,
+        "games_after_load_more": 20,
+        "early_stop": true,
+        "new_games": 2,
+        "card_roots": 2,
+        "with_damage": 0,
+        "no_details_button": 0,
+        "damage_debug": {
+          "root": 0,
+          "parent": 1,
+          "body": 0,
+          "no_change": 1,
+          "label_seen": 0,
+          "guard_would_trip": 0
+        },
+        "panel_samples": [
+          {
+            "game": 0,
+            "champion": "Milio",
+            "scope": "none",
+            "lines": []
+          },
+          {
+            "game": 1,
+            "champion": "Sivir",
+            "scope": "parent",
+            "lines": [
+              "Overview",
+              "Augments",
+              "Flex",
+              "NEW",
+              "Timeline",
+              "Team analysis",
+              "Copy link",
+              "RED TEAM",
+              "57",
+              "PLAYER\tAUGMENTS\tKDA\t / \t\t\tBUILDS",
+              "CreamiNataella",
+              "5/5/45",
+              "10.00",
+              "27,437",
+              "25,352",
+              "21,248\t58",
+              "Ohwutahel",
+              "13/12/25",
+              "3.17",
+              "45,539",
+              "44,535",
+              "21,810\t90",
+              "Vincent Chan",
+              "9/10/37",
+              "4.60",
+              "26,609",
+              "61,573",
+              "21,264\t29",
+              "pikabUwU",
+              "9/8/24",
+              "4.13",
+              "33,166",
+              "44,189",
+              "20,587\t20",
+              "i3i3oy",
+              "21/10/17",
+              "3.80",
+              "50,625",
+              "41,098",
+              "23,963\t105"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "riot_id": "Ohwutahel#NA1",
+      "display_name": "Ohwutahel",
+      "games": [
+        {
+          "champion": "Rumble",
+          "win": true,
+          "date": "2026-11-08",
+          "duration_minutes": 22.62,
+          "kills": 13,
+          "deaths": 12,
+          "assists": 25,
+          "cs": 90,
+          "hats": 6,
+          "event_takedowns": 38,
+          "snowballs": 3,
+          "skillshots_dodged": 56,
+          "skillshots_dodged_per_min": 2.48,
+          "damage_to_champions": null,
+          "damage_taken": null,
+          "augments": [
+            "Infernal Soul",
+            "Ethereal Weapon",
+            "Recursion",
+            "Eureka"
+          ],
+          "items": [
+            "Zhonya's Hourglass",
+            "Malignance",
+            "Sorcerer's Shoes",
+            "Shadowflame",
+            "Rylai's Crystal Scepter",
+            "Liandry's Torment"
+          ],
+          "archetype": "Damage",
+          "teammates": [
+            "CreamiNataella#NA1",
+            "Vincent Chan#NA1",
+            "pikabUwU#NA1",
+            "i3i3oy#NA1"
+          ],
+          "fingerprint": "Rumble|13/12/25|22.6|90|56|2026-11-08"
+        },
+        {
+          "champion": "Shen",
+          "win": false,
+          "date": "2026-11-08",
+          "duration_minutes": 20.22,
+          "kills": 12,
+          "deaths": 11,
+          "assists": 27,
+          "cs": 15,
+          "hats": 4,
+          "event_takedowns": 39,
+          "snowballs": 9,
+          "skillshots_dodged": 187,
+          "skillshots_dodged_per_min": 9.25,
+          "damage_to_champions": null,
+          "damage_taken": null,
+          "augments": [
+            "Lonely Warrior",
+            "Transmute: Prismatic",
+            "Growth Spurt",
+            "Salvation",
+            "Bread and Cheese"
+          ],
+          "items": [
+            "Heartsteel",
+            "Mercury's Treads",
+            "Kaenic Rookern",
+            "Warmog's Armor",
+            "Thornmail",
+            "Force of Nature"
+          ],
+          "archetype": "Frontline",
+          "teammates": [
+            "CreamiNataella#NA1",
+            "Vincent Chan#NA1",
+            "pikabUwU#NA1",
+            "i3i3oy#NA1"
+          ],
+          "fingerprint": "Shen|12/11/27|20.2|15|187|2026-11-08"
+        }
+      ],
+      "diag": {
+        "segments": 23,
+        "parsed": 19,
+        "skipped": 4,
+        "no_kda": 2,
+        "no_numbers": 0,
+        "no_champion": 0,
+        "with_augments": 19,
+        "with_items": 19,
+        "with_participants": 19,
+        "load_more_clicks": 0,
+        "load_more_found": false,
+        "games_before_load_more": 19,
+        "games_after_load_more": 19,
+        "early_stop": true,
+        "new_games": 2,
+        "card_roots": 2,
+        "with_damage": 0,
+        "no_details_button": 0,
+        "damage_debug": {
+          "root": 0,
+          "parent": 1,
+          "body": 0,
+          "no_change": 1,
+          "label_seen": 0,
+          "guard_would_trip": 0
+        },
+        "panel_samples": [
+          {
+            "game": 0,
+            "champion": "Rumble",
+            "scope": "none",
+            "lines": []
+          },
+          {
+            "game": 1,
+            "champion": "Shen",
+            "scope": "parent",
+            "lines": [
+              "Overview",
+              "Augments",
+              "Flex",
+              "NEW",
+              "Timeline",
+              "Team analysis",
+              "Copy link",
+              "RED TEAM",
+              "57",
+              "PLAYER\tAUGMENTS\tKDA\t / \t\t\tBUILDS",
+              "Ohwutahel",
+              "13/12/25",
+              "3.17",
+              "45,539",
+              "44,535",
+              "21,810\t90",
+              "CreamiNataella",
+              "5/5/45",
+              "10.00",
+              "27,437",
+              "25,352",
+              "21,248\t58",
+              "Vincent Chan",
+              "9/10/37",
+              "4.60",
+              "26,609",
+              "61,573",
+              "21,264\t29",
+              "pikabUwU",
+              "9/8/24",
+              "4.13",
+              "33,166",
+              "44,189",
+              "20,587\t20",
+              "i3i3oy",
+              "21/10/17",
+              "3.80",
+              "50,625",
+              "41,098",
+              "23,963\t105"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "riot_id": "PikabUwU#NA1",
+      "display_name": "PikabUwU",
+      "games": [
+        {
+          "champion": "Lillia",
+          "win": true,
+          "date": "2026-11-08",
+          "duration_minutes": 22.62,
+          "kills": 9,
+          "deaths": 8,
+          "assists": 24,
+          "cs": 20,
+          "hats": 1,
+          "event_takedowns": 33,
+          "snowballs": 14,
+          "skillshots_dodged": 32,
+          "skillshots_dodged_per_min": 1.41,
+          "damage_to_champions": null,
+          "damage_taken": null,
+          "augments": [
+            "Kill Secured",
+            "Phenomenal Evil",
+            "With Haste",
+            "Eureka"
+          ],
+          "items": [
+            "Rod of Ages",
+            "Liandry's Torment",
+            "Mercury's Treads",
+            "Rylai's Crystal Scepter",
+            "Cosmic Drive",
+            "Morellonomicon"
+          ],
+          "archetype": "Damage",
+          "teammates": [
+            "CreamiNataella#NA1",
+            "Ohwutahel#NA1",
+            "Vincent Chan#NA1",
+            "i3i3oy#NA1"
+          ],
+          "fingerprint": "Lillia|9/8/24|22.6|20|32|2026-11-08"
+        },
+        {
+          "champion": "Hwei",
+          "win": false,
+          "date": "2026-11-08",
+          "duration_minutes": 20.22,
+          "kills": 9,
+          "deaths": 8,
+          "assists": 30,
+          "cs": 64,
+          "hats": 2,
+          "event_takedowns": 39,
+          "snowballs": 0,
+          "skillshots_dodged": 53,
+          "skillshots_dodged_per_min": 2.62,
+          "damage_to_champions": null,
+          "damage_taken": null,
+          "augments": [
+            "Blue Barrier",
+            "From Downtown",
+            "Take'em Down Down Down",
+            "Ocean Soul",
+            "Ok Boomerang"
+          ],
+          "items": [
+            "Ionian Boots of Lucidity",
+            "Blackfire Torch",
+            "Rylai's Crystal Scepter",
+            "Morellonomicon",
+            "Liandry's Torment",
+            "Void Staff"
+          ],
+          "archetype": "Damage",
+          "teammates": [
+            "CreamiNataella#NA1",
+            "Ohwutahel#NA1",
+            "Vincent Chan#NA1",
+            "i3i3oy#NA1"
+          ],
+          "fingerprint": "Hwei|9/8/30|20.2|64|53|2026-11-08"
+        }
+      ],
+      "diag": {
+        "segments": 23,
+        "parsed": 20,
+        "skipped": 3,
+        "no_kda": 2,
+        "no_numbers": 0,
+        "no_champion": 0,
+        "with_augments": 20,
+        "with_items": 20,
+        "with_participants": 20,
+        "load_more_clicks": 0,
+        "load_more_found": false,
+        "games_before_load_more": 20,
+        "games_after_load_more": 20,
+        "early_stop": true,
+        "new_games": 2,
+        "card_roots": 2,
+        "with_damage": 0,
+        "no_details_button": 0,
+        "damage_debug": {
+          "root": 0,
+          "parent": 1,
+          "body": 0,
+          "no_change": 1,
+          "label_seen": 0,
+          "guard_would_trip": 0
+        },
+        "panel_samples": [
+          {
+            "game": 0,
+            "champion": "Lillia",
+            "scope": "none",
+            "lines": []
+          },
+          {
+            "game": 1,
+            "champion": "Hwei",
+            "scope": "parent",
+            "lines": [
+              "Overview",
+              "Augments",
+              "Flex",
+              "NEW",
+              "Timeline",
+              "Team analysis",
+              "Copy link",
+              "RED TEAM",
+              "57",
+              "PLAYER\tAUGMENTS\tKDA\t / \t\t\tBUILDS",
+              "pikabUwU",
+              "9/8/24",
+              "4.13",
+              "33,166",
+              "44,189",
+              "20,587\t20",
+              "CreamiNataella",
+              "5/5/45",
+              "10.00",
+              "27,437",
+              "25,352",
+              "21,248\t58",
+              "Ohwutahel",
+              "13/12/25",
+              "3.17",
+              "45,539",
+              "44,535",
+              "21,810\t90",
+              "Vincent Chan",
+              "9/10/37",
+              "4.60",
+              "26,609",
+              "61,573",
+              "21,264\t29",
+              "i3i3oy",
+              "21/10/17",
+              "3.80",
+              "50,625",
+              "41,098",
+              "23,963\t105"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
