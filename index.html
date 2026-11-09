@@ -523,6 +523,9 @@ async function load() {
     "PikabUwU": "Full breakdown fills on the first daily run."
   };
   const boldNums = (s) => s.replace(/(?<![\w.])([+\-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?%?)(?![\w.])/g, '<b>$1</b>');
+  // Plain labels for criterion keys, so the summary never shows raw
+  // keys like death_quality. Shared with whyBullets below.
+  const CRIT_LABEL = {output:'Damage output', kda_efficiency:'KDA efficiency', teamplay:'Teamplay', death_quality:'Death quality', conversion:'Structures', augments:'Augments', mechanics:'Skillshots dodged'};
   const summarizeLive = (why) => {
     // Leading sentences of why_rank (rank + strongest/weakest), dropping
     // the trailing methodology sentence. Split on sentence ends only —
@@ -531,7 +534,10 @@ async function load() {
     const sentences = text.split(/(?<=[.!?]['")\]]?)\s+/).filter(Boolean);
     let out = '';
     for (const s of sentences) { out += (out ? ' ' : '') + s; if (out.replace(/\s/g, '').length >= 140) break; }
-    return boldNums(out.trim());
+    let plain = out.trim();
+    for (const [k, lab] of Object.entries(CRIT_LABEL)) plain = plain.replace(new RegExp('\\b' + k + '\\b', 'g'), lab);
+    plain = plain.replace(/MMR-style/gi, 'MMR').replace(/vs group avg/gi, 'vs group average');
+    return boldNums(plain);
   };
   document.getElementById('rank-summary').innerHTML = `
     <div class="rank-summary">
@@ -610,8 +616,6 @@ async function load() {
 
   // Plain labels for the criteria, used wherever a criterion key
   // (kda_efficiency, death_quality, ...) would otherwise show raw.
-  const CRIT_LABEL = {output:'Damage output', kda_efficiency:'KDA efficiency', teamplay:'Teamplay', death_quality:'Death quality', conversion:'Structures', augments:'Augments', mechanics:'Skillshots dodged'};
-
   // Why-this-rank as short bullets: one reason per bullet, plain
   // labels, numbers bolded. The Fair section keeps the one-line
   // summary; the card carries the detail — no more two copies of the
