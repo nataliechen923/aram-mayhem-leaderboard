@@ -43,11 +43,14 @@ What PlayARAM's match list shows (collapsed row) — and what it doesn't:
   * Does NOT show: per-game damage dealt/taken, per-player turret
     takedowns, or match IDs. (Damage lives only in the expandable
     Details panel, which renders on demand — it is not in the HTML
-    the updater fetches, confirmed Nov 8.) So the Output and
-    Conversion criteria stay blank for PlayARAM games — a game grade
-    is the mean of the criteria available for that game (KDA,
-    Teamplay when team totals exist, Death Quality, Augments).
-    Missing data is never scored as 0.
+    the updater fetches, confirmed Nov 8.) The extension opens
+    each game's Details panel and reads damage dealt/taken, so
+    extension games carry damage and the Output and Damage Taken
+    criteria join the grade for them; server-fetched games have no
+    damage, so those criteria stay blank for them. Conversion stays
+    blank everywhere unless a manual CSV provides structure data.
+    A game grade is the mean of the criteria available for that
+    game. Missing data is never scored as 0.
 
 Usage:
   python scripts/update.py                        # PlayARAM mode
@@ -366,7 +369,8 @@ def parse_profile_games(html, riot_id, now):
             "damage_to_champions": None,  # not on PlayARAM's match list
             "damage_taken": None,          # not on PlayARAM's match list
             "game_minutes": round(mins, 2),
-            "dmg_share": None, "kp": None, "structure_share": None,
+            "dmg_share": None, "taken_share": None,
+            "kp": None, "structure_share": None,
             "augments": augments,
             "items": items,
             "skillshots_dodged_per_min": (
@@ -914,6 +918,123 @@ def annotate_stack(all_games):
             g["teammates"] = sorted(m for m in mates if m != name)
 
 
+def _norm_member_id(s):
+    """One member key for a Riot ID or a display name: the part before
+    '#', lowercased, alphanumerics only. 'Vincent Chan#NA1' and
+    'Vincent Chan' both become 'vincentchan', so a teammates list
+    works whether it still holds Riot IDs or main() already mapped
+    them to display names."""
+    local = str(s or "").split("#")[0]
+    return "".join(ch for ch in local.lower() if ch.isalnum())
+
+
+def compute_team_totals(all_games):
+    """Percent damage dealt / taken and kill participation for each
+    game, as shares of the game's team totals — the damage ranking
+    factors and the Teamplay criterion.
+
+    Definitions (the extension reads damage dealt/taken from each
+    game's Details panel; the server fetch cannot, so most
+    server-fetched games carry no damage at all):
+      * damage dealt share = player's damage dealt / team damage dealt
+      * damage taken share = player's damage taken / team damage taken
+      * kill participation = (kills + assists) / team kills
+    Team totals are the sum over the five group members' games for
+    the same match. A match has no published ID — PlayARAM shows
+    none, and the fingerprint is unique per player-game, so it
+    cannot link teammates. The match key is therefore (date,
+    game_minutes, win, the full set of group members in the game):
+    the date and the duration (to the second) and the shared result,
+    plus the teammates list the extension reads off the card's
+    participant links (main() maps those Riot IDs to display names
+    before this runs). In a full-stack game every member's game
+    carries the same key, so the five games group together. A group
+    is complete only when it holds exactly one game from every
+    player in all_games and the member set is the whole group (a
+    full stack); otherwise every share stays None. The damage shares
+    additionally need a non-null damage value on all five games
+    for that factor; kill participation needs only KDA, which every
+    parsed game carries, so it fills for every complete full-stack
+    match even when damage is still missing. When a share is
+    unavailable the game falls back to a damage-per-minute
+    percentile in the grade (damage factors) or skips Teamplay
+    entirely (see score_players). Incomplete groups are common: a
+    teammate's game can sit outside their own last-50 window, a
+    2-3 stack has non-group teammates whose damage/kills are not in
+    the cache, and the old cached games from before the extension
+    read damage carry nulls. Two different full-stack matches on
+    the same day with the same duration and result share a key —
+    then the group holds two games per player and the shares stay
+    None (safe: skipped, never wrong). A game whose teammates list
+    is missing or partial cannot be linked to its teammates, so it
+    never yields shares.
+    Why team totals come from the cache, not the card DOM: the
+    collapsed game card shows only the profile player's KDA — the
+    other nine players' KDA is not in the card (only their champion
+    icons and profile links). PlayARAM's Details panel does list
+    KDA for all 10 players, but its exact layout has never been
+    observed from here (the panel renders on demand and the live
+    site is unreachable from this VM), so no panel KDA is parsed —
+    guessing the layout could misattribute kills. The five members'
+    cached games give the exact team totals for full-stack matches
+    with no new DOM reading.
+    Shares are stored as 0-1 fractions on the game dict
+    (dmg_share / taken_share / kp); per-player percentages live in
+    the player aggregates in score_players. Missing values are
+    skipped, never scored as 0.
+    """
+    n_players = len(all_games)
+    if n_players < 2:
+        return
+    # Shares are recomputed fresh on every run (the cache stores the
+    # raw games with shares at None), so clear any shares a previous
+    # call left behind first — otherwise a group that stops being
+    # complete would keep a stale share.
+    for games in all_games.values():
+        for g in games:
+            g["dmg_share"] = None
+            g["taken_share"] = None
+            g["kp"] = None
+    by_key = {}
+    for name, games in all_games.items():
+        me = _norm_member_id(name)
+        for g in games:
+            mates = {_norm_member_id(t) for t in g.get("teammates") or []}
+            mates.add(me)
+            key = (g.get("date"), g.get("game_minutes"), bool(g.get("win")),
+                   frozenset(mates))
+            by_key.setdefault(key, []).append((name, g))
+    for key, entries in by_key.items():
+        names = [n for n, _ in entries]
+        if len(entries) != n_players or len(set(names)) != n_players:
+            continue  # not a complete full-stack match in this window
+        if len(key[3]) != n_players:
+            continue  # member set is not the whole group (a smaller stack)
+        dealt_all = all(g.get("damage_to_champions") is not None
+                        for _, g in entries)
+        taken_all = all(g.get("damage_taken") is not None
+                        for _, g in entries)
+        if dealt_all:
+            total = sum(g["damage_to_champions"] for _, g in entries)
+            if total > 0:
+                for _, g in entries:
+                    g["dmg_share"] = g["damage_to_champions"] / total
+        if taken_all:
+            total = sum(g["damage_taken"] for _, g in entries)
+            if total > 0:
+                for _, g in entries:
+                    g["taken_share"] = g["damage_taken"] / total
+        # Kill participation: the five members ARE the team in a full
+        # stack, so the sum of their kills is the team total. Needs
+        # only KDA, so it fills even when damage is still missing.
+        ka = [(g.get("kills"), g.get("assists")) for _, g in entries]
+        if all(k is not None and a is not None for k, a in ka):
+            team_kills = sum(k for k, _ in ka)
+            if team_kills > 0:
+                for (_, g), (k, a) in zip(entries, ka):
+                    g["kp"] = (k + a) / team_kills
+
+
 def stack_splits(all_games):
     """Win rate + mean grade by stack size, across all player-games."""
     buckets = [("Solo", 1, 1), ("2\u20133 of the group", 2, 3),
@@ -947,10 +1068,20 @@ def score_players(all_games, archetypes):
       damage is only part of Output, and win rate is only 15%
       of the final score. No single stat decides the rank.
       PlayARAM's match list has no damage or turret data, so for
-      PlayARAM games the grade blends KDA, Teamplay (when team totals
-      exist), Death Quality and Augments; Output and Conversion join
-      in only when the source provides damage/structure data (a manual
-      CSV). Mechanics (skillshots dodged) is shown, not blended.
+      server-fetched games the grade blends KDA, Teamplay (when team
+      totals exist), Death Quality and Augments; Output and Damage
+      Taken join in only when the source provides damage. The
+      extension reads damage dealt/taken from each game's Details
+      panel (best effort, strict, null-when-unsure), so extension
+      games carry it. Output is the player's share of team damage
+      dealt when all five teammates' damage is known for the match
+      (a complete full-stack group — see compute_team_totals),
+      else damage per minute; Damage Taken is the same idea for
+      damage taken, graded within the game's role archetype so a
+      tank soaking damage is judged against other tanks, never
+      against a carry's damage taken. Conversion joins in only
+      when a manual CSV provides structure data. Mechanics
+      (skillshots dodged) is shown, not blended.
       A missing field is skipped, never scored as 0.
     Performance Score = 55% mean + 20% median + 10% p25 + 15% win rate.
     MMR-style = 800 + Score x 14.
@@ -970,6 +1101,7 @@ def score_players(all_games, archetypes):
             g["assists_per_min"] = g["assists"] / mins
             g["kda"] = (g["kills"] + g["assists"]) / max(g["deaths"], 1)
             g["dmg_share"] = g.get("dmg_share")
+            g["taken_share"] = g.get("taken_share")
             g["kp"] = g.get("kp")
             g["structure_share"] = g.get("structure_share")
 
@@ -1030,13 +1162,32 @@ def score_players(all_games, archetypes):
             # Team totals are filled in by the caller when available;
             # None stays None (missing, not zero).
             g["dmg_share"] = g.get("dmg_share")
+            g["taken_share"] = g.get("taken_share")
             g["kp"] = g.get("kp")
             g["structure_share"] = g.get("structure_share")
 
-            out_parts = [blended(arch, g["champion"], "dmg_per_min", g["dmg_per_min"]),
-                         blended(arch, g["champion"], "dmg_share", g["dmg_share"])]
-            out_parts = [p for p in out_parts if p is not None]
-            output = sum(out_parts) / len(out_parts) if out_parts else None
+            # Damage dealt (Output): the share of team damage when the
+            # full team's totals are known for the match, else damage
+            # per minute. The share is the fairer measure (a 25-minute
+            # game has more damage in it than an 18-minute one), but
+            # it needs all five teammates' damage — most games only
+            # have the per-minute number, so that is the fallback.
+            if g.get("dmg_share") is not None:
+                output = blended(arch, g["champion"], "dmg_share", g["dmg_share"])
+            else:
+                output = blended(arch, g["champion"], "dmg_per_min", g["dmg_per_min"])
+            # Damage taken: the same idea for damage soaked — share of
+            # team damage taken when the full team's totals are known,
+            # else damage taken per minute. More damage taken scores
+            # higher WITHIN the role: a tank soaking is judged against
+            # other tanks, never against a carry's damage taken. A
+            # carry who dives and takes lots of damage still pays for
+            # the deaths through Death Quality, so the two criteria
+            # balance each other.
+            if g.get("taken_share") is not None:
+                taken = blended(arch, g["champion"], "taken_share", g["taken_share"])
+            else:
+                taken = blended(arch, g["champion"], "taken_per_min", g["taken_per_min"])
             kda = blended(arch, g["champion"], "kda", g["kda"])
             teamplay = blended(arch, g["champion"], "kp", g["kp"])
             death_q = 100 - blended(arch, g["champion"], "deaths", g["deaths"])
@@ -1048,11 +1199,12 @@ def score_players(all_games, archetypes):
                 aug = max(0.0, min(100.0, (aug - 35) / 30 * 100))
             else:
                 aug = 50.0
-            parts = [p for p in [output, kda, teamplay, death_q, conversion, aug]
+            parts = [p for p in [output, taken, kda, teamplay, death_q, conversion, aug]
                      if p is not None]
             g["grade"] = sum(parts) / len(parts) if parts else 50.0
             g["subscores"] = {
                 "output": round(output, 1) if output is not None else None,
+                "damage_taken": round(taken, 1) if taken is not None else None,
                 "kda_efficiency": round(kda, 1) if kda is not None else None,
                 "teamplay": round(teamplay, 1) if teamplay is not None else None,
                 "death_quality": round(death_q, 1) if death_q is not None else None,
@@ -1077,11 +1229,30 @@ def score_players(all_games, archetypes):
                 round(statistics.mean(g["dmg_per_min"] for g in games
                                       if g.get("dmg_per_min") is not None))
                 if any(g.get("dmg_per_min") is not None for g in games) else None),
+            "damage_taken_per_min": (
+                round(statistics.mean(g["taken_per_min"] for g in games
+                                      if g.get("taken_per_min") is not None))
+                if any(g.get("taken_per_min") is not None for g in games) else None),
+            "damage_dealt_share_pct": (
+                round(100.0 * statistics.mean(g["dmg_share"] for g in games
+                                              if g.get("dmg_share") is not None), 1)
+                if any(g.get("dmg_share") is not None for g in games) else None),
+            "damage_taken_share_pct": (
+                round(100.0 * statistics.mean(g["taken_share"] for g in games
+                                              if g.get("taken_share") is not None), 1)
+                if any(g.get("taken_share") is not None for g in games) else None),
+            "kill_participation_pct": (
+                round(100.0 * statistics.mean(g["kp"] for g in games
+                                              if g.get("kp") is not None), 1)
+                if any(g.get("kp") is not None for g in games) else None),
+            "deaths_per_game": (
+                round(statistics.mean(g["deaths"] for g in games), 1)
+                if games else None),
             "subscores": {k: round(statistics.mean(
                 g["subscores"][k] for g in games if g["subscores"][k] is not None), 1)
                 if any(g["subscores"][k] is not None for g in games) else None
-                for k in ["output", "kda_efficiency", "teamplay", "death_quality",
-                          "conversion", "augments", "mechanics"]},
+                for k in ["output", "damage_taken", "kda_efficiency", "teamplay",
+                          "death_quality", "conversion", "augments", "mechanics"]},
             "skillshots_dodged_per_min": (
                 round(statistics.mean(g["skillshots_dodged_per_min"] for g in games
                                       if g.get("skillshots_dodged_per_min") is not None), 2)
@@ -1090,8 +1261,8 @@ def score_players(all_games, archetypes):
         }
 
     # --- Evidence: role split, champion focus, why-this-rank ---
-    sub_keys = ["output", "kda_efficiency", "teamplay", "death_quality",
-                "conversion", "augments", "mechanics"]
+    sub_keys = ["output", "damage_taken", "kda_efficiency", "teamplay",
+                "death_quality", "conversion", "augments", "mechanics"]
     group_avg = {}
     for k in sub_keys:
         vals = [r["subscores"][k] for r in results.values()
@@ -1144,8 +1315,9 @@ def score_players(all_games, archetypes):
         # --- Recent 20: how to improve, from the freshest 20 games only ---
         # Everything here is computed strictly inside the player's most
         # recent 20 games: no comparison to the other 30 games in the
-        # window, and no snapshot numbers. Pros/cons/tips are filled in
-        # the second pass below, against the group's recent-20 averages.
+        # window, and no snapshot numbers. Pros/cons/tips are filled
+        # in the second pass below, ranked within the player's OWN
+        # recent-20 subscores — never against the group's averages.
         newest = sorted(games, key=lambda g: g.get("date", ""), reverse=True)
         recent = newest[:20]
         r_recent = {}
@@ -1241,46 +1413,72 @@ def score_players(all_games, archetypes):
             f"By role: {role_txt}. "
             f"Win rate is only 15% of the score and no single stat decides "
             f"the rank — each game grade blends every criterion the data "
-            f"source provides for that game (from PlayARAM: KDA, teamplay, "
-            f"death quality and augments; damage-based output and "
-            f"conversion only when damage data exists), graded within role "
-            f"and adjusted for champion — not from one stat.")
+            f"source provides for that game (KDA, teamplay, death "
+            f"quality and augments, plus damage dealt and damage taken "
+            f"when the extension has read the game's Details panel — "
+            f"share of team damage on full-stack games, else damage per "
+            f"minute — and conversion only when structure data exists), "
+            f"graded within role and adjusted for champion — not from "
+            f"one stat.")
 
-    # --- Recent-20 pros/cons/tips: within the 20 games only ---
-    # Each player's recent-20 subscores are compared with the GROUP's
-    # recent-20 averages (same 20-game window, same criteria) — never
-    # with the player's own 50-game numbers or the older 30 games.
-    label = {"output": "Output", "kda_efficiency": "KDA efficiency",
+    # --- Recent-20 pros/cons/tips: personal, from the player's OWN
+    # recent-20 subscores only ---
+    # Rank the player's graded criteria (all 0-100 percentiles, so
+    # they compare like-for-like) by their recent-20 subscore:
+    # strongest = pros, weakest = cons. No group average, no
+    # comparison to the older 30 games, no snapshot numbers — so
+    # every player gets guidance from their own freshest 20 games,
+    # and different players get different pros/cons because their
+    # strongest and weakest criteria differ. The tip for each
+    # criterion names the player's own number, so the text differs
+    # per player even when two players share a criterion. Mechanics
+    # is shown, not blended into the grade — it is dodges per
+    # minute, not a 0-100 percentile, so it is not ranked here.
+    label = {"output": "Output", "damage_taken": "Damage taken",
+             "kda_efficiency": "KDA efficiency",
              "teamplay": "Teamplay", "death_quality": "Death quality",
              "conversion": "Conversion", "augments": "Augments",
              "mechanics": "Mechanics"}
     tip_for = {"output": "focus on damage output and positioning to deal more damage",
+               "damage_taken": "step forward and soak more damage for the team",
                "kda_efficiency": "trade less — fewer deaths for the kills you get",
                "teamplay": "join more fights to raise kill participation",
                "death_quality": "die less, and later in the game",
                "conversion": "turn won fights into turrets",
                "augments": "rethink augment picks — the ones taken lately are underperforming",
                "mechanics": "dodge more skillshots"}
-    group_recent_avg = {}
-    for k in sub_keys:
-        vals = [r["recent_20"]["subscores"][k] for r in results.values()
-                if r and r.get("recent_20") and r["recent_20"]["subscores"].get(k) is not None]
-        group_recent_avg[k] = round(statistics.mean(vals), 1) if vals else None
+    keep_for = {"output": "keep finding damage — your positioning is paying off",
+                "damage_taken": "keep stepping forward and soaking for the team",
+                "kda_efficiency": "keep trading like this — good kills for few deaths",
+                "teamplay": "keep joining fights — your kill participation is strong",
+                "death_quality": "keep staying alive — your deaths are low for your role",
+                "conversion": "keep turning won fights into turrets",
+                "augments": "keep drafting augments like these — they're performing"}
+    ranked_keys = ["output", "damage_taken", "kda_efficiency", "teamplay",
+                   "death_quality", "conversion", "augments"]
     for name, r in results.items():
         if not r or not r.get("recent_20"):
             continue
         rr = r["recent_20"]
-        for k in sub_keys:
-            mine = rr["subscores"].get(k)
-            avg = group_recent_avg.get(k)
-            if mine is None or avg is None:
-                continue
-            diff = round(mine - avg, 1)
-            if diff >= 5:
-                rr["pros"].append(f"{label[k]} is a strength in the last 20: {mine} vs the group recent-20 avg {avg} ({diff:+.1f}).")
-            elif diff <= -5:
-                rr["cons"].append(f"{label[k]} is slipping in the last 20: {mine} vs the group recent-20 avg {avg} ({diff:+.1f}).")
-                rr["tips"].append(f"Work on {label[k]}: {tip_for[k]}.")
+        have = [(k, rr["subscores"][k]) for k in ranked_keys
+                if rr["subscores"].get(k) is not None]
+        have.sort(key=lambda kv: kv[1], reverse=True)
+        if not have:
+            continue
+        n = len(have)
+        n_pros = 2 if n >= 4 else 1
+        n_cons = 2 if n >= 4 else 1
+        pros = have[:n_pros]
+        # Top and bottom are disjoint by construction (n >= 2 gives
+        # distinct first/last entries); with a single criterion
+        # there is no weakest to name.
+        cons = have[-n_cons:] if n >= 2 else []
+        for k, v in pros:
+            rr["pros"].append(f"{label[k]} is your strongest area in the last 20 ({v}) — keep it up.")
+            rr["tips"].append(f"Keep up {label[k]} ({v} in the last 20): {keep_for[k]}.")
+        for k, v in cons:
+            rr["cons"].append(f"{label[k]} is your weakest area in the last 20 ({v}) — the thing to work on.")
+            rr["tips"].append(f"Work on {label[k]} ({v} in the last 20): {tip_for[k]}.")
     return results
 
 
@@ -1292,6 +1490,12 @@ def public_game(g):
         "damage_taken": g["damage_taken"], "augments": g.get("augments", []),
         "game_minutes": round(g["game_minutes"], 1),
         "grade": round(g["grade"], 1),
+        "damage_dealt_share_pct": (
+            round(100.0 * g["dmg_share"], 1) if g.get("dmg_share") is not None else None),
+        "damage_taken_share_pct": (
+            round(100.0 * g["taken_share"], 1) if g.get("taken_share") is not None else None),
+        "kill_participation_pct": (
+            round(100.0 * g["kp"], 1) if g.get("kp") is not None else None),
         "stack_size": g.get("stack_size", 1),
         "teammates": g.get("teammates", []),
     }
@@ -1328,7 +1532,8 @@ def rows_from_csv():
                     "game_minutes": mins,
                     # No team totals in a hand-made CSV — None, not 0,
                     # so the missing fields are skipped, not scored as 0.
-                    "dmg_share": None, "kp": None, "structure_share": None,
+                    "dmg_share": None, "taken_share": None,
+                    "kp": None, "structure_share": None,
                     "augments": [a.strip() for a in (row.get("augments") or "").split(";") if a.strip()],
                     # Optional column ("items", ;-separated). A CSV
                     # without it scores roles from the champion alone.
@@ -1453,7 +1658,8 @@ def rows_from_extension(path, players):
                 "damage_to_champions": dmg,
                 "damage_taken": taken,
                 "game_minutes": round(mins, 2),
-                "dmg_share": None, "kp": None, "structure_share": None,
+                "dmg_share": None, "taken_share": None,
+                "kp": None, "structure_share": None,
                 "augments": [str(a).strip() for a in (g.get("augments") or [])
                              if str(a).strip()],
                 "items": [str(i).strip() for i in (g.get("items") or [])
@@ -1499,7 +1705,7 @@ RANKING_METHOD = {
     "points": [
         "Role first, judged from the game itself: a game's role (Damage, Frontline or Support) comes from the champion plus the augments taken and the items built — not the champion alone. Malphite built AP counts as Damage; Seraphine built with enchanter items counts as Support. Every component is a percentile WITHIN that role across all player-games in the window. A tank with 8 kills can score 90th percentile for Frontline while a carry with 12 kills scores only 60th for Damage. Raw kills and damage never compare a tank to a carry. A game with no augments or items recorded falls back to the champion's usual role.",
         "Champion second: each component is blended 70% archetype percentile + 30% same-champion percentile (only when the group has 3+ games on that champion; otherwise archetype only). Playing a champion well *for that champion* counts, not just picking a strong champion.",
-        "Whole performance, not one stat: a game grade is the mean of the criteria available for that game — from PlayARAM: KDA Efficiency, Teamplay, Death Quality and Augments. Output and Conversion join in only when damage / structure data exists (a manual CSV). Mechanics (skillshots dodged) is shown as a 7th subscore but is not blended into the grade. KDA is 1 of the graded criteria, damage is only part of Output, and win rate is only 15% of the final score. A missing field is skipped, never scored as 0.",
+        "Whole performance, not one stat: a game grade is the mean of the criteria available for that game — KDA Efficiency, Teamplay, Death Quality and Augments, plus Output (damage dealt) and Damage Taken when the extension has read the game's Details panel in your browser. Output is your share of the team's damage dealt when all five teammates' damage is known for the match (full-stack games), otherwise damage per minute; Damage Taken is the same idea for damage you soaked, judged within your role — a tank soaking damage is compared with other tanks, never with a carry's damage taken. Teamplay (kill participation: your kills + assists ÷ team kills) also comes from the five members' games, so it only has a value on full-stack games where everyone queued together. PlayARAM's own match list does not show damage, so games from a server fetch have no damage and those two criteria stay blank for them. Conversion joins in only when per-player structure data exists (a manual CSV). Mechanics (skillshots dodged) is shown as an 8th subscore but is not blended into the grade. KDA is 1 of the graded criteria, damage is only part of Output, and win rate is only 15% of the final score. A missing field is skipped, never scored as 0.",
         "Consistency counts: Performance Score = 55% mean game grade + 20% median grade + 10% floor (25th percentile) grade + 15% win rate. One pop-off game can't carry a rank; a low floor pulls it down.",
         "Evidence on every card: each player card shows their subscores vs the group average, their grade split by role played, their best / worst champions vs their own average (with game counts), and a 'Why this rank' paragraph built from those numbers — so a complaint can be answered with the breakdown, not an opinion.",
     ],
@@ -1509,6 +1715,29 @@ RANKING_METHOD = {
         "Frontline": "Tanks / fighters — judged on damage taken, damage soaked per death, and frontline output",
         "Support": "Enchanters / wardens — judged on assists, teamplay and support output, not carry damage",
     },
+}
+
+
+# The per-criterion explainer the page shows under "How the Rating
+# Works". Written into data.json on every run (next to
+# ranking_method), so the wording here is the wording on the page —
+# it used to live only in the seeded data.json, which is how a stale
+# line ("Output … fills from a manual CSV") survived long after the
+# extension started reading damage from the Details panel.
+HOW_RATING_WORKS = {
+    "criteria": [
+        "Output — damage dealt per minute, or your share of your team's damage dealt when all five teammates' damage is known for the match (full-stack games) — graded within your role archetype (Damage / Frontline / Support). Damage comes from the extension reading each game's Details panel in your browser; PlayARAM's match list does not show damage, so games from a server fetch stay blank for Output (a missing field is skipped, never scored as 0).",
+        "Damage taken — damage you took: your share of your team's damage taken when all five teammates' damage is known for the match, else damage taken per minute — graded within your role archetype, so a tank soaking damage is judged against other tanks, never against a carry's damage taken. Same Details-panel source as Output.",
+        "KDA efficiency — kills, deaths and assists weighed against the archetype's expected line.",
+        "Teamplay — kill participation: (kills + assists) ÷ team kills. Team kills come from the five group members' games for the same match, so this only has a value on full-stack games where everyone queued together; other games skip it (a missing field is skipped, never scored as 0).",
+        "Death quality — deaths per game, graded within role (fewer deaths is better).",
+        "Conversion — your share of your team's structure takedowns (turrets + inhibitors ÷ team total). Only when per-player structure data exists — not shown on PlayARAM's match list, so it stays blank from PlayARAM.",
+        "Augments — how the augments you drafted performed across the group's games in this window. PlayARAM names are read from the match list when the page exposes them; otherwise this scores a neutral 50.",
+        "Mechanics — skillshots dodged per minute, from PlayARAM's match list. Shown as a subscore; not blended into the game grade.",
+    ],
+    "formula": "Performance Score = 55% mean game grade + 20% median grade + 10% floor (25th percentile) grade + 15% win rate",
+    "mmr_formula": "MMR-style = 800 + Performance Score × 14 — 1500 is roughly average",
+    "not_measured": "PlayARAM does not publish healing, shielding, crowd-control score or per-player objective damage, so none of those appear here.",
 }
 
 
@@ -1731,9 +1960,16 @@ def main():
         all_games[name] = games[:window]
 
     annotate_stack(all_games)
+    # Team totals for the percent-damage ranking factors and kill
+    # participation: a match group only yields shares when all five
+    # teammates' games are in the window (see compute_team_totals).
+    # Must run before score_players, which reads dmg_share /
+    # taken_share / kp.
+    compute_team_totals(all_games)
     scored = score_players(all_games, archetypes)
     data["stack_splits"] = stack_splits(all_games)
     data["ranking_method"] = RANKING_METHOD
+    data["how_rating_works"] = HOW_RATING_WORKS
     today = datetime.now(CST).strftime("%Y-%m-%d")
     now_label = datetime.now(CST).strftime("%Y-%m-%d %I:%M %p CST")
 
@@ -1748,6 +1984,11 @@ def main():
             "score": s["score"], "mmr_style": s["mmr_style"],
             "wins": s["wins"], "losses": s["losses"], "win_rate": s["win_rate"],
             "kda": s["kda"], "damage_per_min": s["damage_per_min"],
+            "damage_taken_per_min": s["damage_taken_per_min"],
+            "damage_dealt_share_pct": s["damage_dealt_share_pct"],
+            "damage_taken_share_pct": s["damage_taken_share_pct"],
+            "kill_participation_pct": s["kill_participation_pct"],
+            "deaths_per_game": s["deaths_per_game"],
             "subscores": s["subscores"],
             "skillshots_dodged_per_min": s["skillshots_dodged_per_min"],
             "role_split": s.get("role_split"),
@@ -1758,6 +1999,17 @@ def main():
             "why_rank": s.get("why_rank"),
             "games": [public_game(g) for g in s["games"]],
         })
+        # The Nov 8 seed shipped a snapshot note ("Snapshot evidence
+        # above is from Nov 8…") that no run ever overwrote, so it
+        # kept shipping after real runs. The page does not display
+        # it; drop it on a real run rather than leave stale text.
+        player.pop("evidence_note", None)
+        # Same story for the seed's damage_share_pct (a Nov 8
+        # snapshot number, e.g. 21.9 for I3i3oy): nothing reads or
+        # writes it, and the new share fields are
+        # damage_dealt_share_pct / damage_taken_share_pct. Drop it
+        # so the stale number cannot be confused with the new ones.
+        player.pop("damage_share_pct", None)
 
     # Highlights, from the fresh window. Damage is None when the source
     # has no damage data (PlayARAM) — show a blank, not a fake "0".
