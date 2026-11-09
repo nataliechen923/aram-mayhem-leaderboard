@@ -2,8 +2,8 @@
   "highlights": {
     "top_rated": {
       "player": "CreamiNataella",
-      "score": 50.2,
-      "mmr_style": 1503
+      "score": 49.5,
+      "mmr_style": 1493
     },
     "highest_damage_per_min": {
       "player": null,
@@ -78,19 +78,19 @@
     "seed_note": "",
     "title": "ARAM Mayhem \u2014 Team Leaderboard",
     "update_method": "GitHub Actions, once a day, fetching each player's PlayARAM profile (no Riot API key). Loading / refreshing this page makes zero calls to Riot or PlayARAM.",
-    "updated_at": "2026-11-09T10:40:55.116728-06:00",
-    "updated_at_label": "2026-11-09 10:40 AM CST",
+    "updated_at": "2026-11-09T10:45:42.553719-06:00",
+    "updated_at_label": "2026-11-09 10:45 AM CST",
     "window_games": 50,
     "window_note": "Each player is scored on their own last 50 ARAM Mayhem games. Remakes under 5 minutes are excluded. PlayARAM shows only the latest 20 games per fetch, so the updater keeps a cache and the window fills to 50 over the first few daily runs.",
     "stack_note": "Stack splits below are from the Nov 8 6-player snapshot (600 player-games). They recompute for the 5-player group on the first daily run.",
     "automation": {
-      "last_attempt": "2026-11-09T10:40:55.116712-06:00",
-      "last_attempt_label": "2026-11-09 10:40 AM CST",
-      "last_source": "browser extension",
+      "last_attempt": "2026-11-09T10:45:42.553702-06:00",
+      "last_attempt_label": "2026-11-09 10:45 AM CST",
+      "last_source": "PlayARAM",
       "last_games_found": 250,
-      "last_error": null,
+      "last_error": "I3i3oy: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Vincent Chan: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; CreamiNataella: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Ohwutahel: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; PikabUwU: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.",
       "next_update": "Daily at 12:00 AM CST (06:00 UTC), retry 12:30 AM CST",
-      "needs_attention": false
+      "needs_attention": true
     },
     "last_extension_sync": "2026-11-09T10:40:55.097144-06:00",
     "last_extension_sync_label": "2026-11-09 10:40 AM CST"
@@ -124,17 +124,12 @@
             "Scopiest Weapons"
           ],
           "game_minutes": 22.6,
-          "grade": 49.6,
+          "grade": 57.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 66.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "DrMundo|9/11/26|20.2|31|210|2026-11-08",
@@ -154,17 +149,12 @@
             "BEES!!!"
           ],
           "game_minutes": 20.2,
-          "grade": 34.5,
+          "grade": 37.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 66.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Aphelios|21/10/17|22.6|105|34|2026-11-09",
@@ -183,17 +173,12 @@
             "Scopiest Weapons"
           ],
           "game_minutes": 22.6,
-          "grade": 49.6,
+          "grade": 57.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 66.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "DrMundo|9/11/26|20.2|31|210|2026-11-09",
@@ -213,17 +198,12 @@
             "BEES!!!"
           ],
           "game_minutes": 20.2,
-          "grade": 34.5,
+          "grade": 37.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 66.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kassadin|16/14/26|19.5|42|80|2026-11-08",
@@ -243,17 +223,12 @@
             "Eureka"
           ],
           "game_minutes": 19.5,
-          "grade": 45.3,
+          "grade": 36.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 77.8,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Varus|13/11/25|19.6|66|44|2026-11-08",
@@ -273,17 +248,12 @@
             "Juiced"
           ],
           "game_minutes": 19.6,
-          "grade": 46.8,
+          "grade": 56.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 65.5,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Quinn|6/8/27|12.3|29|50|2026-11-08",
@@ -306,12 +276,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|3/8/24|15.4|19|26|2026-11-08",
@@ -334,11 +300,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Caitlyn|16/13/20|17.8|104|12|2026-11-08",
@@ -362,11 +325,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sivir|9/7/24|19.8|84|200|2026-11-08",
@@ -386,17 +346,12 @@
             "Transmute: Prismatic"
           ],
           "game_minutes": 19.8,
-          "grade": 56.2,
+          "grade": 55.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 73.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kayle|9/7/32|15.1|70|7|2026-11-08",
@@ -415,17 +370,12 @@
             "Flow of Spirit"
           ],
           "game_minutes": 15.1,
-          "grade": 63.8,
+          "grade": 67.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 73.2,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kindred|19/6/10|20.6|92|105|2026-11-08",
@@ -474,12 +424,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kassadin|7/7/12|16.9|43|77|2026-11-08",
@@ -502,12 +448,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lucian|8/8/14|15.9|44|24|2026-11-08",
@@ -530,12 +472,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sivir|7/12/39|24.1|108|56|2026-11-08",
@@ -554,17 +492,12 @@
             "Scopier Weapons"
           ],
           "game_minutes": 24.1,
-          "grade": 42.9,
+          "grade": 30.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 78.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kaisa|11/7/26|18.5|65|82|2026-11-08",
@@ -584,17 +517,12 @@
             "Zealot"
           ],
           "game_minutes": 18.5,
-          "grade": 53.3,
+          "grade": 56.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 71.2,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Tryndamere|10/12/20|19.8|61|111|2026-11-08",
@@ -613,17 +541,12 @@
             "Deft"
           ],
           "game_minutes": 19.8,
-          "grade": 24.6,
+          "grade": 23.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 66.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Quinn|12/12/21|17.4|49|25|2026-11-08",
@@ -643,17 +566,12 @@
             "Scopier Weapons"
           ],
           "game_minutes": 17.4,
-          "grade": 36.8,
+          "grade": 18.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 86.8,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Malzahar|11/12/25|25.3|155|84|2026-11-08",
@@ -673,17 +591,12 @@
             "Erosion"
           ],
           "game_minutes": 25.3,
-          "grade": 25.0,
+          "grade": 30.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 58.1,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jinx|12/3/25|13.3|47|20|2026-11-08",
@@ -702,17 +615,12 @@
             "Critical Rhythm"
           ],
           "game_minutes": 13.3,
-          "grade": 79.0,
+          "grade": 75.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 86.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Twitch|30/7/22|20.6|129|47|2026-11-08",
@@ -735,11 +643,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Twitch|20/12/28|24.3|79|42|2026-11-08",
@@ -762,11 +667,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jax|14/16/21|22.6|39|313|2026-11-08",
@@ -785,17 +687,12 @@
             "Scopiest Weapons"
           ],
           "game_minutes": 22.6,
-          "grade": 29.7,
+          "grade": 35.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 62.5,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Corki|19/5/15|12.8|77|9|2026-11-08",
@@ -814,17 +711,12 @@
             "Typhoon"
           ],
           "game_minutes": 12.8,
-          "grade": 73.6,
+          "grade": 77.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 73.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sona|5/11/41|19.1|13|113|2026-11-07",
@@ -843,17 +735,12 @@
             "Protein Shake"
           ],
           "game_minutes": 19.1,
-          "grade": 33.8,
+          "grade": 20.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 93.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Skarner|8/7/32|17.8|47|28|2026-11-07",
@@ -872,17 +759,12 @@
             "Armored Impact"
           ],
           "game_minutes": 17.8,
-          "grade": 67.5,
+          "grade": 67.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 78.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Corki|25/11/33|23.8|91|68|2026-11-07",
@@ -901,17 +783,12 @@
             "Scopiest Weapons"
           ],
           "game_minutes": 23.8,
-          "grade": 47.9,
+          "grade": 50.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 69.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sivir|11/11/23|21.2|91|19|2026-11-07",
@@ -931,17 +808,12 @@
             "Deft"
           ],
           "game_minutes": 21.2,
-          "grade": 41.8,
+          "grade": 38.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 72.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|6/13/25|19.2|64|31|2026-11-07",
@@ -964,11 +836,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Mel|17/6/26|17.0|63|23|2026-11-07",
@@ -991,11 +860,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Neeko|10/13/30|23.1|52|37|2026-11-07",
@@ -1018,11 +884,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Morgana|15/10/32|18.2|44|22|2026-11-07",
@@ -1045,11 +908,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Malphite|14/9/16|11.9|26|20|2026-11-07",
@@ -1121,12 +981,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "KogMaw|6/8/11|14.7|31|30|2026-11-06",
@@ -1149,12 +1005,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Veigar|12/12/23|22.7|76|52|2026-11-06",
@@ -1177,12 +1029,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Soraka|5/8/33|17.0|6|19|2026-11-06",
@@ -1205,12 +1053,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sivir|12/9/17|13.8|48|36|2026-11-06",
@@ -1234,12 +1078,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jax|24/11/16|19.3|51|29|2026-11-06",
@@ -1262,11 +1102,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Varus|24/8/20|17.3|98|21|2026-11-06",
@@ -1290,11 +1127,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Morgana|7/4/50|17.0|64|8|2026-11-06",
@@ -1317,10 +1151,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 2,
-          "teammates": [
-            "CreamiNataella"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Caitlyn|9/9/14|18.2|87|95|2026-11-06",
@@ -1344,10 +1176,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 2,
-          "teammates": [
-            "CreamiNataella"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ahri|18/9/22|16.6|55|37|2026-11-06",
@@ -1370,10 +1200,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 2,
-          "teammates": [
-            "CreamiNataella"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|11/8/32|17.3|86|27|2026-11-06",
@@ -1397,10 +1225,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 2,
-          "teammates": [
-            "CreamiNataella"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Varus|28/14/50|28.5|164|52|2026-11-06",
@@ -1448,12 +1274,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Quinn|22/4/32|12.8|79|3|2026-11-05",
@@ -1475,12 +1297,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Quinn|24/11/10|20.4|125|17|2026-11-05",
@@ -1504,27 +1322,23 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         }
       ],
       "kda": 3.86,
       "losses": 26,
-      "mmr_style": 1427,
+      "mmr_style": 1424,
       "name": "I3i3oy",
       "region": "na1",
       "riot_id": "",
-      "score": 44.8,
+      "score": 44.6,
       "skillshots_dodged_per_min": 2.97,
       "subscores": {
         "output": null,
         "damage_taken": null,
         "kda_efficiency": 52.6,
-        "teamplay": 47.7,
+        "teamplay": null,
         "death_quality": 49.2,
         "conversion": null,
         "augments": 36.2,
@@ -1532,7 +1346,7 @@
       },
       "win_rate": 48.0,
       "wins": 24,
-      "why_rank": "Ranked 2 of 5 at 44.8 (MMR-style 1427, 24-26, 48.0% win rate). Strongest vs the group: kda_efficiency (52.6 vs group avg 49.7, +2.9). Weakest vs the group: teamplay (47.7 vs group avg 50.1, -2.4). By role: Damage 46.7 (42 games, +0.6 vs own avg); Frontline 42.8 (6 games, -3.3 vs own avg); Support 44.1 (2 games, -2.1 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality and augments, plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
+      "why_rank": "Ranked 2 of 5 at 44.6 (MMR-style 1424, 24-26, 48.0% win rate). Strongest vs the group: kda_efficiency (52.6 vs group avg 49.7, +2.9). Weakest vs the group: augments (36.2 vs group avg 37.4, -1.2). By role: Damage 46.7 (42 games, +0.7 vs own avg); Frontline 43.9 (6 games, -2.1 vs own avg); Support 37.2 (2 games, -8.8 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality and augments, plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [
         "Highest damage/min: 2,491",
         "21.9% of group damage",
@@ -1544,31 +1358,31 @@
         "Damage": {
           "games": 42,
           "mean_grade": 46.7,
-          "delta_vs_overall": 0.6
+          "delta_vs_overall": 0.7
         },
         "Frontline": {
           "games": 6,
-          "mean_grade": 42.8,
-          "delta_vs_overall": -3.3
+          "mean_grade": 43.9,
+          "delta_vs_overall": -2.1
         },
         "Support": {
           "games": 2,
-          "mean_grade": 44.1,
-          "delta_vs_overall": -2.1
+          "mean_grade": 37.2,
+          "delta_vs_overall": -8.8
         }
       },
       "champion_focus": {
         "take_when_offered": [
           {
-            "champion": "Quinn",
-            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Quinn.png",
-            "games": 4,
+            "champion": "Varus",
+            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Varus.png",
+            "games": 3,
             "wins": 3,
-            "losses": 1,
-            "win_rate": 75.0,
-            "mean_grade": 51.1,
-            "delta_vs_overall": 4.9,
-            "why": "Grades 4.9 points above this player's own average (46.1) over 4 games, going 3-1 on this champion."
+            "losses": 0,
+            "win_rate": 100.0,
+            "mean_grade": 51.8,
+            "delta_vs_overall": 5.8,
+            "why": "Grades 5.8 points above this player's own average (46.0) over 3 games, going 3-0 on this champion."
           }
         ],
         "pass_or_swap": [
@@ -1579,9 +1393,20 @@
             "wins": 1,
             "losses": 2,
             "win_rate": 33.3,
-            "mean_grade": 36.5,
-            "delta_vs_overall": -9.6,
-            "why": "Grades 9.6 points below this player's own average (46.1) over 3 games, going 1-2 on this champion."
+            "mean_grade": 38.3,
+            "delta_vs_overall": -7.7,
+            "why": "Grades 7.7 points below this player's own average (46.0) over 3 games, going 1-2 on this champion."
+          },
+          {
+            "champion": "Sivir",
+            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Sivir.png",
+            "games": 4,
+            "wins": 0,
+            "losses": 4,
+            "win_rate": 0.0,
+            "mean_grade": 41.0,
+            "delta_vs_overall": -5.0,
+            "why": "Grades 5.0 points below this player's own average (46.0) over 4 games, going 0-4 on this champion."
           }
         ]
       },
@@ -1591,59 +1416,38 @@
         "losses": 13,
         "win_rate": 35.0,
         "mean_grade": 43.7,
-        "score_20": 41.8,
+        "score_20": 41.5,
         "subscores": {
           "output": null,
           "damage_taken": null,
           "kda_efficiency": 46.6,
-          "teamplay": 43.0,
+          "teamplay": null,
           "death_quality": 49.1,
           "conversion": null,
           "augments": 35.5,
           "mechanics": 3.9
         },
         "pros": [
-          "Death quality is your strongest area in the last 20 (49.1) \u2014 keep it up.",
-          "KDA efficiency is your strongest area in the last 20 (46.6) \u2014 keep it up."
+          "Death quality is your strongest area in the last 20 (49.1) \u2014 keep it up."
         ],
         "cons": [
-          "Teamplay is your weakest area in the last 20 (43.0) \u2014 the thing to work on.",
           "Augments is your weakest area in the last 20 (35.5) \u2014 the thing to work on."
         ],
         "tips": [
           "Keep up Death quality (49.1 in the last 20): keep staying alive \u2014 your deaths are low for your role.",
-          "Keep up KDA efficiency (46.6 in the last 20): keep trading like this \u2014 good kills for few deaths.",
-          "Work on Teamplay (43.0 in the last 20): join more fights to raise kill participation.",
           "Work on Augments (35.5 in the last 20): rethink augment picks \u2014 the ones taken lately are underperforming."
         ],
-        "stacked_20": {
-          "games": 19,
-          "wins": 6,
-          "losses": 13,
-          "win_rate": 31.6,
-          "mean_grade": 42.3
-        },
+        "stacked_20": null,
         "solo_20": {
-          "games": 1,
-          "wins": 1,
-          "losses": 0,
-          "win_rate": 100.0,
-          "mean_grade": 69.6
+          "games": 20,
+          "wins": 7,
+          "losses": 13,
+          "win_rate": 35.0,
+          "mean_grade": 43.7
         },
-        "team_line": "Playing together is dragging you down lately: with 2+ of the group in the last 20 you went 6-13 (31.6%, grade 42.3) vs solo 1-0 (100.0%, grade 69.6). Check role balance when you stack \u2014 someone may be off-role."
+        "team_line": "All of your last 20 were solo: 7-13 (35.0%, grade 43.7). No games with the group to compare against."
       },
       "champion_top3": [
-        {
-          "champion": "Quinn",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Quinn.png",
-          "games": 4,
-          "wins": 3,
-          "losses": 1,
-          "win_rate": 75.0,
-          "mean_grade": 51.1,
-          "delta_vs_overall": 4.9,
-          "why": "Grades 4.9 points above this player's own average (46.1) over 4 games, going 3-1 on this champion."
-        },
         {
           "champion": "Varus",
           "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Varus.png",
@@ -1651,9 +1455,9 @@
           "wins": 3,
           "losses": 0,
           "win_rate": 100.0,
-          "mean_grade": 48.6,
-          "delta_vs_overall": 2.5,
-          "why": "Grades 2.5 points above this player's own average (46.1) over 3 games, going 3-0 on this champion."
+          "mean_grade": 51.8,
+          "delta_vs_overall": 5.8,
+          "why": "Grades 5.8 points above this player's own average (46.0) over 3 games, going 3-0 on this champion."
         },
         {
           "champion": "Corki",
@@ -1662,9 +1466,20 @@
           "wins": 3,
           "losses": 1,
           "win_rate": 75.0,
-          "mean_grade": 46.8,
-          "delta_vs_overall": 0.7,
-          "why": "Grades 0.7 points above this player's own average (46.1) over 4 games, going 3-1 on this champion."
+          "mean_grade": 48.4,
+          "delta_vs_overall": 2.5,
+          "why": "Grades 2.5 points above this player's own average (46.0) over 4 games, going 3-1 on this champion."
+        },
+        {
+          "champion": "Quinn",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Quinn.png",
+          "games": 4,
+          "wins": 3,
+          "losses": 1,
+          "win_rate": 75.0,
+          "mean_grade": 46.6,
+          "delta_vs_overall": 0.6,
+          "why": "Grades 0.6 points above this player's own average (46.0) over 4 games, going 3-1 on this champion."
         }
       ],
       "champion_worst3": [
@@ -1675,9 +1490,9 @@
           "wins": 1,
           "losses": 2,
           "win_rate": 33.3,
-          "mean_grade": 36.5,
-          "delta_vs_overall": -9.6,
-          "why": "Grades 9.6 points below this player's own average (46.1) over 3 games, going 1-2 on this champion."
+          "mean_grade": 38.3,
+          "delta_vs_overall": -7.7,
+          "why": "Grades 7.7 points below this player's own average (46.0) over 3 games, going 1-2 on this champion."
         },
         {
           "champion": "Sivir",
@@ -1686,26 +1501,26 @@
           "wins": 0,
           "losses": 4,
           "win_rate": 0.0,
-          "mean_grade": 45.1,
-          "delta_vs_overall": -1.1,
-          "why": "Grades 1.1 points below this player's own average (46.1) over 4 games, going 0-4 on this champion."
+          "mean_grade": 41.0,
+          "delta_vs_overall": -5.0,
+          "why": "Grades 5.0 points below this player's own average (46.0) over 4 games, going 0-4 on this champion."
         },
         {
-          "champion": "Corki",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Corki.png",
+          "champion": "Quinn",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Quinn.png",
           "games": 4,
           "wins": 3,
           "losses": 1,
           "win_rate": 75.0,
-          "mean_grade": 46.8,
-          "delta_vs_overall": 0.7,
-          "why": "Grades 0.7 points above this player's own average (46.1) over 4 games, going 3-1 on this champion."
+          "mean_grade": 46.6,
+          "delta_vs_overall": 0.6,
+          "why": "Grades 0.6 points above this player's own average (46.0) over 4 games, going 3-1 on this champion."
         }
       ],
       "damage_taken_per_min": null,
       "damage_dealt_share_pct": null,
       "damage_taken_share_pct": null,
-      "kill_participation_pct": 72.6,
+      "kill_participation_pct": null,
       "deaths_per_game": 9.9
     },
     {
@@ -1728,17 +1543,12 @@
             "Biggest Snowball Ever"
           ],
           "game_minutes": 22.6,
-          "grade": 75.7,
+          "grade": 73.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 80.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Brand|12/14/26|20.2|43|73|2026-11-08",
@@ -1758,17 +1568,12 @@
             "ADAPt"
           ],
           "game_minutes": 20.2,
-          "grade": 27.2,
+          "grade": 18.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 71.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "JarvanIV|9/10/37|22.6|29|64|2026-11-09",
@@ -1787,17 +1592,12 @@
             "Biggest Snowball Ever"
           ],
           "game_minutes": 22.6,
-          "grade": 75.7,
+          "grade": 73.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 80.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Brand|12/14/26|20.2|43|73|2026-11-09",
@@ -1817,17 +1617,12 @@
             "ADAPt"
           ],
           "game_minutes": 20.2,
-          "grade": 27.2,
+          "grade": 18.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 71.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Mel|22/11/20|19.5|60|55|2026-11-08",
@@ -1847,17 +1642,12 @@
             "Infernal Conduit"
           ],
           "game_minutes": 19.5,
-          "grade": 48.4,
+          "grade": 40.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 77.8,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ekko|25/12/18|19.6|34|78|2026-11-08",
@@ -1877,17 +1667,12 @@
             "Swift and Safe"
           ],
           "game_minutes": 19.6,
-          "grade": 38.4,
+          "grade": 30.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 74.1,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "TwistedFate|13/4/20|12.3|71|17|2026-11-08",
@@ -1910,12 +1695,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "TwistedFate|15/11/23|19.8|54|115|2026-11-08",
@@ -1934,17 +1715,12 @@
             "Upgrade Stormsurge"
           ],
           "game_minutes": 19.8,
-          "grade": 52.5,
+          "grade": 42.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 84.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|15/5/38|15.1|42|4|2026-11-08",
@@ -1963,17 +1739,12 @@
             "Hextech Soul"
           ],
           "game_minutes": 15.1,
-          "grade": 93.3,
+          "grade": 92.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 94.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shen|6/5/31|13.8|15|25|2026-11-08",
@@ -2020,12 +1791,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "FiddleSticks|4/9/17|16.9|26|69|2026-11-08",
@@ -2049,12 +1816,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lillia|7/10/20|15.9|43|47|2026-11-08",
@@ -2077,12 +1840,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Tristana|19/14/20|24.1|86|59|2026-11-08",
@@ -2101,17 +1860,12 @@
             "Scopier Weapons"
           ],
           "game_minutes": 24.1,
-          "grade": 24.6,
+          "grade": 25.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 66.1,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Senna|20/9/23|18.5|33|70|2026-11-08",
@@ -2131,17 +1885,12 @@
             "CRIMSON COBALT"
           ],
           "game_minutes": 18.5,
-          "grade": 55.0,
+          "grade": 46.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 82.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|22/11/6|19.8|47|57|2026-11-08",
@@ -2160,17 +1909,12 @@
             "escAPADe"
           ],
           "game_minutes": 19.8,
-          "grade": 38.2,
+          "grade": 45.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 62.2,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Caitlyn|13/14/16|17.4|54|42|2026-11-08",
@@ -2190,17 +1934,12 @@
             "Soul Siphon"
           ],
           "game_minutes": 17.4,
-          "grade": 22.3,
+          "grade": 6.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 76.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Poppy|11/11/36|25.3|51|272|2026-11-08",
@@ -2220,17 +1959,12 @@
             "Snowday"
           ],
           "game_minutes": 25.3,
-          "grade": 47.1,
+          "grade": 46.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 75.8,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|17/5/20|13.3|35|17|2026-11-08",
@@ -2248,17 +1982,12 @@
             "Upgrade Infinity Edge"
           ],
           "game_minutes": 13.3,
-          "grade": 84.6,
+          "grade": 85.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 86.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Varus|16/6/12|17.0|51|4|2026-11-08",
@@ -2281,12 +2010,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Brand|10/14/29|22.6|25|121|2026-11-08",
@@ -2305,17 +2030,12 @@
             "Tripleshot"
           ],
           "game_minutes": 22.6,
-          "grade": 31.5,
+          "grade": 31.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 69.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Senna|9/7/14|13.4|19|41|2026-11-08",
@@ -2337,12 +2057,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Illaoi|8/7/17|12.8|23|38|2026-11-08",
@@ -2360,17 +2076,12 @@
             "Stuck In Here With Me"
           ],
           "game_minutes": 12.8,
-          "grade": 62.3,
+          "grade": 78.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 54.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|17/13/20|19.1|93|77|2026-11-07",
@@ -2389,17 +2100,12 @@
             "Big Shot"
           ],
           "game_minutes": 19.1,
-          "grade": 27.2,
+          "grade": 15.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 75.5,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Urgot|21/8/26|17.8|70|31|2026-11-07",
@@ -2418,17 +2124,12 @@
             "Firebrand"
           ],
           "game_minutes": 17.8,
-          "grade": 74.3,
+          "grade": 66.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 92.2,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jhin|33/9/33|23.8|90|36|2026-11-07",
@@ -2447,17 +2148,12 @@
             "One Hit Wonder"
           ],
           "game_minutes": 23.8,
-          "grade": 80.6,
+          "grade": 81.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 79.5,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shaco|18/8/26|21.2|31|13|2026-11-07",
@@ -2477,17 +2173,12 @@
             "Ultimate Recursion"
           ],
           "game_minutes": 21.2,
-          "grade": 60.4,
+          "grade": 48.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 93.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kaisa|19/12/27|22.7|95|45|2026-11-06",
@@ -2510,12 +2201,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Blitzcrank|10/10/30|17.0|38|47|2026-11-06",
@@ -2538,12 +2225,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Tristana|5/10/17|13.8|32|37|2026-11-06",
@@ -2567,12 +2250,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Caitlyn|19/12/14|17.0|51|84|2026-11-06",
@@ -2690,12 +2369,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ashe|4/6/30|19.1|36|24|2026-11-04",
@@ -2718,12 +2393,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Tristana|13/7/27|12.1|26|23|2026-11-03",
@@ -2746,12 +2417,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Illaoi|9/15/29|23.9|64|152|2026-11-03",
@@ -2775,12 +2442,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jayce|9/10/17|17.1|39|31|2026-11-03",
@@ -2804,12 +2467,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Smolder|12/8/23|14.4|40|28|2026-11-03",
@@ -2833,12 +2492,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jinx|15/16/25|20.4|117|72|2026-11-02",
@@ -2861,12 +2516,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "TwistedFate|6/9/25|19.4|37|11|2026-11-02",
@@ -2889,12 +2540,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shaco|21/15/12|20.8|24|28|2026-11-02",
@@ -2917,12 +2564,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Udyr|6/15/32|17.7|29|11|2026-11-02",
@@ -2946,12 +2589,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "TwistedFate|4/5/33|14.6|24|38|2026-11-02",
@@ -2975,12 +2614,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "LeeSin|9/10/17|14.1|39|49|2026-11-02",
@@ -3003,12 +2638,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Varus|34/14/22|24.9|60|87|2026-11-02",
@@ -3031,11 +2662,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Blitzcrank|3/15/63|24.3|18|89|2026-11-02",
@@ -3058,11 +2686,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "KogMaw|11/9/27|16.2|18|11|2026-11-02",
@@ -3086,11 +2711,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Senna|13/7/28|14.9|58|10|2026-11-02",
@@ -3113,25 +2735,23 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 2,
-          "teammates": [
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         }
       ],
       "kda": 3.69,
       "losses": 28,
-      "mmr_style": 1421,
+      "mmr_style": 1401,
       "name": "Vincent Chan",
       "region": "na1",
       "riot_id": "",
-      "score": 44.3,
+      "score": 42.9,
       "skillshots_dodged_per_min": 2.65,
       "subscores": {
         "output": null,
         "damage_taken": null,
         "kda_efficiency": 50.8,
-        "teamplay": 64.4,
+        "teamplay": null,
         "death_quality": 46.1,
         "conversion": null,
         "augments": 38.5,
@@ -3139,7 +2759,7 @@
       },
       "win_rate": 44.0,
       "wins": 22,
-      "why_rank": "Ranked 3 of 5 at 44.3 (MMR-style 1421, 22-28, 44.0% win rate). Strongest vs the group: teamplay (64.4 vs group avg 50.1, +14.3). Weakest vs the group: death_quality (46.1 vs group avg 50.0, -3.9). By role: Damage 43.9 (41 games, -2.9 vs own avg); Frontline 59.9 (9 games, +13.1 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality and augments, plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
+      "why_rank": "Ranked 3 of 5 at 42.9 (MMR-style 1401, 22-28, 44.0% win rate). Strongest vs the group: augments (38.5 vs group avg 37.4, +1.1). Weakest vs the group: death_quality (46.1 vs group avg 50.0, -3.9). By role: Damage 41.8 (41 games, -3.3 vs own avg); Frontline 60.3 (9 games, +15.2 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality and augments, plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [
         "Pocket pick: Senna 70.1 (+13.3, 5 games)",
         "Smallest loss-vs-close gap: 51.1 vs 56.0",
@@ -3148,13 +2768,13 @@
       "role_split": {
         "Damage": {
           "games": 41,
-          "mean_grade": 43.9,
-          "delta_vs_overall": -2.9
+          "mean_grade": 41.8,
+          "delta_vs_overall": -3.3
         },
         "Frontline": {
           "games": 9,
-          "mean_grade": 59.9,
-          "delta_vs_overall": 13.1
+          "mean_grade": 60.3,
+          "delta_vs_overall": 15.2
         }
       },
       "champion_focus": {
@@ -3166,9 +2786,9 @@
             "wins": 3,
             "losses": 1,
             "win_rate": 75.0,
-            "mean_grade": 60.8,
-            "delta_vs_overall": 14.1,
-            "why": "Grades 14.1 points above this player's own average (46.8) over 4 games, going 3-1 on this champion."
+            "mean_grade": 59.7,
+            "delta_vs_overall": 14.5,
+            "why": "Grades 14.5 points above this player's own average (45.1) over 4 games, going 3-1 on this champion."
           },
           {
             "champion": "TwistedFate",
@@ -3177,9 +2797,9 @@
             "wins": 2,
             "losses": 2,
             "win_rate": 50.0,
-            "mean_grade": 58.0,
-            "delta_vs_overall": 11.3,
-            "why": "Grades 11.3 points above this player's own average (46.8) over 4 games, going 2-2 on this champion."
+            "mean_grade": 55.4,
+            "delta_vs_overall": 10.3,
+            "why": "Grades 10.3 points above this player's own average (45.1) over 4 games, going 2-2 on this champion."
           },
           {
             "champion": "Senna",
@@ -3188,9 +2808,9 @@
             "wins": 1,
             "losses": 2,
             "win_rate": 33.3,
-            "mean_grade": 53.6,
-            "delta_vs_overall": 6.8,
-            "why": "Grades 6.8 points above this player's own average (46.8) over 3 games, going 1-2 on this champion."
+            "mean_grade": 50.6,
+            "delta_vs_overall": 5.4,
+            "why": "Grades 5.4 points above this player's own average (45.1) over 3 games, going 1-2 on this champion."
           }
         ],
         "pass_or_swap": [
@@ -3201,9 +2821,9 @@
             "wins": 0,
             "losses": 3,
             "win_rate": 0.0,
-            "mean_grade": 28.7,
-            "delta_vs_overall": -18.1,
-            "why": "Grades 18.1 points below this player's own average (46.8) over 3 games, going 0-3 on this champion."
+            "mean_grade": 22.8,
+            "delta_vs_overall": -22.3,
+            "why": "Grades 22.3 points below this player's own average (45.1) over 3 games, going 0-3 on this champion."
           },
           {
             "champion": "Tristana",
@@ -3212,9 +2832,9 @@
             "wins": 1,
             "losses": 2,
             "win_rate": 33.3,
-            "mean_grade": 38.6,
-            "delta_vs_overall": -8.1,
-            "why": "Grades 8.1 points below this player's own average (46.8) over 3 games, going 1-2 on this champion."
+            "mean_grade": 38.9,
+            "delta_vs_overall": -6.2,
+            "why": "Grades 6.2 points below this player's own average (45.1) over 3 games, going 1-2 on this champion."
           }
         ]
       },
@@ -3223,47 +2843,37 @@
         "wins": 8,
         "losses": 12,
         "win_rate": 40.0,
-        "mean_grade": 49.8,
-        "score_20": 45.6,
+        "mean_grade": 46.5,
+        "score_20": 42.8,
         "subscores": {
           "output": null,
           "damage_taken": null,
           "kda_efficiency": 54.6,
-          "teamplay": 64.8,
+          "teamplay": null,
           "death_quality": 48.7,
           "conversion": null,
           "augments": 36.1,
           "mechanics": 3.0
         },
         "pros": [
-          "Teamplay is your strongest area in the last 20 (64.8) \u2014 keep it up.",
           "KDA efficiency is your strongest area in the last 20 (54.6) \u2014 keep it up."
         ],
         "cons": [
-          "Death quality is your weakest area in the last 20 (48.7) \u2014 the thing to work on.",
           "Augments is your weakest area in the last 20 (36.1) \u2014 the thing to work on."
         ],
         "tips": [
-          "Keep up Teamplay (64.8 in the last 20): keep joining fights \u2014 your kill participation is strong.",
           "Keep up KDA efficiency (54.6 in the last 20): keep trading like this \u2014 good kills for few deaths.",
-          "Work on Death quality (48.7 in the last 20): die less, and later in the game.",
           "Work on Augments (36.1 in the last 20): rethink augment picks \u2014 the ones taken lately are underperforming."
         ],
-        "stacked_20": {
-          "games": 19,
-          "wins": 7,
-          "losses": 12,
-          "win_rate": 36.8,
-          "mean_grade": 48.4
-        },
+        "stacked_20": null,
         "solo_20": {
-          "games": 1,
-          "wins": 1,
-          "losses": 0,
-          "win_rate": 100.0,
-          "mean_grade": 75.1
+          "games": 20,
+          "wins": 8,
+          "losses": 12,
+          "win_rate": 40.0,
+          "mean_grade": 46.5
         },
-        "team_line": "Playing together is dragging you down lately: with 2+ of the group in the last 20 you went 7-12 (36.8%, grade 48.4) vs solo 1-0 (100.0%, grade 75.1). Check role balance when you stack \u2014 someone may be off-role."
+        "team_line": "All of your last 20 were solo: 8-12 (40.0%, grade 46.5). No games with the group to compare against."
       },
       "champion_top3": [
         {
@@ -3273,9 +2883,9 @@
           "wins": 3,
           "losses": 1,
           "win_rate": 75.0,
-          "mean_grade": 60.8,
-          "delta_vs_overall": 14.1,
-          "why": "Grades 14.1 points above this player's own average (46.8) over 4 games, going 3-1 on this champion."
+          "mean_grade": 59.7,
+          "delta_vs_overall": 14.5,
+          "why": "Grades 14.5 points above this player's own average (45.1) over 4 games, going 3-1 on this champion."
         },
         {
           "champion": "TwistedFate",
@@ -3284,9 +2894,9 @@
           "wins": 2,
           "losses": 2,
           "win_rate": 50.0,
-          "mean_grade": 58.0,
-          "delta_vs_overall": 11.3,
-          "why": "Grades 11.3 points above this player's own average (46.8) over 4 games, going 2-2 on this champion."
+          "mean_grade": 55.4,
+          "delta_vs_overall": 10.3,
+          "why": "Grades 10.3 points above this player's own average (45.1) over 4 games, going 2-2 on this champion."
         },
         {
           "champion": "Senna",
@@ -3295,9 +2905,9 @@
           "wins": 1,
           "losses": 2,
           "win_rate": 33.3,
-          "mean_grade": 53.6,
-          "delta_vs_overall": 6.8,
-          "why": "Grades 6.8 points above this player's own average (46.8) over 3 games, going 1-2 on this champion."
+          "mean_grade": 50.6,
+          "delta_vs_overall": 5.4,
+          "why": "Grades 5.4 points above this player's own average (45.1) over 3 games, going 1-2 on this champion."
         }
       ],
       "champion_worst3": [
@@ -3308,9 +2918,9 @@
           "wins": 0,
           "losses": 3,
           "win_rate": 0.0,
-          "mean_grade": 28.7,
-          "delta_vs_overall": -18.1,
-          "why": "Grades 18.1 points below this player's own average (46.8) over 3 games, going 0-3 on this champion."
+          "mean_grade": 22.8,
+          "delta_vs_overall": -22.3,
+          "why": "Grades 22.3 points below this player's own average (45.1) over 3 games, going 0-3 on this champion."
         },
         {
           "champion": "Tristana",
@@ -3319,9 +2929,9 @@
           "wins": 1,
           "losses": 2,
           "win_rate": 33.3,
-          "mean_grade": 38.6,
-          "delta_vs_overall": -8.1,
-          "why": "Grades 8.1 points below this player's own average (46.8) over 3 games, going 1-2 on this champion."
+          "mean_grade": 38.9,
+          "delta_vs_overall": -6.2,
+          "why": "Grades 6.2 points below this player's own average (45.1) over 3 games, going 1-2 on this champion."
         },
         {
           "champion": "Senna",
@@ -3330,15 +2940,15 @@
           "wins": 1,
           "losses": 2,
           "win_rate": 33.3,
-          "mean_grade": 53.6,
-          "delta_vs_overall": 6.8,
-          "why": "Grades 6.8 points above this player's own average (46.8) over 3 games, going 1-2 on this champion."
+          "mean_grade": 50.6,
+          "delta_vs_overall": 5.4,
+          "why": "Grades 5.4 points above this player's own average (45.1) over 3 games, going 1-2 on this champion."
         }
       ],
       "damage_taken_per_min": null,
       "damage_dealt_share_pct": null,
       "damage_taken_share_pct": null,
-      "kill_participation_pct": 77.5,
+      "kill_participation_pct": null,
       "deaths_per_game": 10.4
     },
     {
@@ -3361,17 +2971,12 @@
             "Jeweled Gauntlet"
           ],
           "game_minutes": 22.6,
-          "grade": 87.2,
+          "grade": 89.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 87.7,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sivir|11/13/25|20.2|66|60|2026-11-08",
@@ -3391,17 +2996,12 @@
             "Bread And Butter"
           ],
           "game_minutes": 20.2,
-          "grade": 19.7,
+          "grade": 15.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 67.9,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Milio|5/5/45|22.6|58|22|2026-11-09",
@@ -3420,17 +3020,12 @@
             "Jeweled Gauntlet"
           ],
           "game_minutes": 22.6,
-          "grade": 87.2,
+          "grade": 89.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 87.7,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sivir|11/13/25|20.2|66|60|2026-11-09",
@@ -3450,17 +3045,12 @@
             "Bread And Butter"
           ],
           "game_minutes": 20.2,
-          "grade": 19.7,
+          "grade": 15.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 67.9,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ashe|11/11/32|19.5|55|60|2026-11-08",
@@ -3480,17 +3070,12 @@
             "Tap Dancer"
           ],
           "game_minutes": 19.5,
-          "grade": 47.5,
+          "grade": 36.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 79.6,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Maokai|8/10/36|19.6|18|115|2026-11-08",
@@ -3510,17 +3095,12 @@
             "Heavy Hitter"
           ],
           "game_minutes": 19.6,
-          "grade": 49.5,
+          "grade": 48.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 75.9,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "AurelionSol|7/6/27|12.3|26|40|2026-11-08",
@@ -3543,12 +3123,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Seraphine|13/6/24|15.4|43|9|2026-11-08",
@@ -3571,11 +3147,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ziggs|9/12/27|17.8|33|22|2026-11-08",
@@ -3599,11 +3172,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Smolder|10/7/20|19.8|31|135|2026-11-08",
@@ -3623,17 +3193,12 @@
             "Recoil"
           ],
           "game_minutes": 19.8,
-          "grade": 53.2,
+          "grade": 56.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 66.7,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lillia|13/5/29|15.1|23|7|2026-11-08",
@@ -3652,17 +3217,12 @@
             "Transmute: Gold"
           ],
           "game_minutes": 15.1,
-          "grade": 70.2,
+          "grade": 70.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 75.0,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Morgana|16/4/37|15.0|29|42|2026-11-08",
@@ -3710,12 +3270,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Malphite|3/7/19|16.9|17|74|2026-11-08",
@@ -3739,12 +3295,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Chogath|7/10/15|15.9|19|58|2026-11-08",
@@ -3767,12 +3319,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Velkoz|6/10/39|24.1|22|50|2026-11-08",
@@ -3791,17 +3339,12 @@
             "Warlock Juicebox"
           ],
           "game_minutes": 24.1,
-          "grade": 48.7,
+          "grade": 41.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 76.3,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Syndra|5/10/30|18.5|48|70|2026-11-08",
@@ -3821,17 +3364,12 @@
             "Ultimate Unstoppable"
           ],
           "game_minutes": 18.5,
-          "grade": 34.6,
+          "grade": 35.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 67.3,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Chogath|6/11/22|19.8|11|114|2026-11-08",
@@ -3850,17 +3388,12 @@
             "Lonely Warrior"
           ],
           "game_minutes": 19.8,
-          "grade": 39.1,
+          "grade": 46.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 62.2,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Rammus|5/14/24|17.4|14|76|2026-11-08",
@@ -3880,17 +3413,12 @@
             "Sap Magic"
           ],
           "game_minutes": 17.4,
-          "grade": 20.2,
+          "grade": 8.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 76.3,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nidalee|15/9/32|25.3|22|83|2026-11-08",
@@ -3910,17 +3438,12 @@
             "Snowday"
           ],
           "game_minutes": 25.3,
-          "grade": 49.2,
+          "grade": 43.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 75.8,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|5/8/29|13.3|16|39|2026-11-08",
@@ -3939,17 +3462,12 @@
             "The Boom and the Bass"
           ],
           "game_minutes": 13.3,
-          "grade": 78.5,
+          "grade": 81.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 79.1,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Tristana|4/8/15|17.0|64|10|2026-11-08",
@@ -3972,12 +3490,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Yuumi|8/3/49|20.6|8|7|2026-11-08",
@@ -4000,11 +3514,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Morgana|10/9/56|24.3|60|55|2026-11-08",
@@ -4027,11 +3538,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Heimerdinger|9/11/29|22.6|62|73|2026-11-08",
@@ -4050,17 +3558,12 @@
             "Minionmancer"
           ],
           "game_minutes": 22.6,
-          "grade": 29.1,
+          "grade": 27.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 67.9,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sona|5/7/21|13.4|15|74|2026-11-08",
@@ -4082,12 +3585,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Milio|2/4/34|12.8|8|11|2026-11-08",
@@ -4105,17 +3604,12 @@
             "Eureka"
           ],
           "game_minutes": 12.8,
-          "grade": 78.3,
+          "grade": 84.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 78.3,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Karma|5/8/37|19.1|26|79|2026-11-07",
@@ -4134,17 +3628,12 @@
             "Group Hug"
           ],
           "game_minutes": 19.1,
-          "grade": 57.1,
+          "grade": 47.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 85.7,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Milio|6/7/40|17.8|39|19|2026-11-07",
@@ -4164,17 +3653,12 @@
             "CRIMSON COBALT"
           ],
           "game_minutes": 17.8,
-          "grade": 63.3,
+          "grade": 53.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 90.2,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Xerath|12/7/47|23.8|27|40|2026-11-07",
@@ -4193,17 +3677,12 @@
             "Warlock Juicebox"
           ],
           "game_minutes": 23.8,
-          "grade": 66.9,
+          "grade": 74.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 71.1,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Anivia|6/7/29|21.2|55|15|2026-11-07",
@@ -4223,17 +3702,12 @@
             "Warlock Juicebox"
           ],
           "game_minutes": 21.2,
-          "grade": 62.4,
+          "grade": 62.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 74.5,
-          "stack_size": 5,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jhin|11/10/25|19.2|53|27|2026-11-07",
@@ -4256,11 +3730,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Thresh|6/9/38|17.0|39|16|2026-11-07",
@@ -4283,11 +3754,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lux|5/7/36|23.1|48|25|2026-11-07",
@@ -4310,11 +3778,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jinx|9/11/26|18.2|56|15|2026-11-07",
@@ -4337,11 +3802,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Senna|8/12/32|19.6|21|17|2026-11-06",
@@ -4365,12 +3827,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kayle|4/9/14|14.7|39|23|2026-11-06",
@@ -4393,12 +3851,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|7/11/36|22.7|11|142|2026-11-06",
@@ -4421,12 +3875,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Xerath|10/7/25|17.0|33|20|2026-11-06",
@@ -4449,12 +3899,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Anivia|3/6/21|13.8|47|37|2026-11-06",
@@ -4478,12 +3924,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kaisa|6/7/34|19.3|37|5|2026-11-06",
@@ -4506,11 +3948,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|8/9/28|17.3|17|54|2026-11-06",
@@ -4534,11 +3973,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nami|0/7/61|17.0|8|11|2026-11-06",
@@ -4561,10 +3997,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 2,
-          "teammates": [
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Malzahar|2/8/16|18.2|56|74|2026-11-06",
@@ -4588,10 +4022,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 2,
-          "teammates": [
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Smolder|9/8/32|16.6|48|33|2026-11-06",
@@ -4614,10 +4046,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 2,
-          "teammates": [
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Senna|9/8/40|17.3|15|18|2026-11-06",
@@ -4641,10 +4071,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 2,
-          "teammates": [
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Swain|5/14/28|23.0|19|70|2026-11-05",
@@ -4667,12 +4095,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|9/7/39|12.8|35|10|2026-11-05",
@@ -4694,12 +4118,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|3/10/29|20.4|45|18|2026-11-05",
@@ -4723,12 +4143,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "AurelionSol|21/8/20|20.0|85|26|2026-11-05",
@@ -4751,27 +4167,23 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         }
       ],
       "kda": 4.53,
       "losses": 26,
-      "mmr_style": 1503,
+      "mmr_style": 1493,
       "name": "CreamiNataella",
       "region": "na1",
       "riot_id": "",
-      "score": 50.2,
+      "score": 49.5,
       "skillshots_dodged_per_min": 2.36,
       "subscores": {
         "output": null,
         "damage_taken": null,
         "kda_efficiency": 59.7,
-        "teamplay": 58.0,
+        "teamplay": null,
         "death_quality": 59.9,
         "conversion": null,
         "augments": 37.6,
@@ -4779,7 +4191,7 @@
       },
       "win_rate": 48.0,
       "wins": 24,
-      "why_rank": "Ranked 1 of 5 at 50.2 (MMR-style 1503, 24-26, 48.0% win rate). Strongest vs the group: kda_efficiency (59.7 vs group avg 49.7, +10.0). Weakest vs the group: mechanics (2.4 vs group avg 3.1, -0.7). By role: Damage 53.8 (41 games, +0.8 vs own avg); Frontline 51.5 (8 games, -1.5 vs own avg); Support 33.3 (1 games, -19.7 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality and augments, plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
+      "why_rank": "Ranked 1 of 5 at 49.5 (MMR-style 1493, 24-26, 48.0% win rate). Strongest vs the group: kda_efficiency (59.7 vs group avg 49.7, +10.0). Weakest vs the group: mechanics (2.4 vs group avg 3.1, -0.7). By role: Damage 53.1 (41 games, +0.7 vs own avg); Frontline 51.3 (8 games, -1.1 vs own avg); Support 33.3 (1 games, -19.1 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality and augments, plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [
         "Best KDA in the group: 4.66",
         "Pocket picks: Nidalee 72.5 (+16.9, 3 games), Sona 67.9 (+12.3, 3 games)",
@@ -4790,18 +4202,18 @@
       "role_split": {
         "Damage": {
           "games": 41,
-          "mean_grade": 53.8,
-          "delta_vs_overall": 0.8
+          "mean_grade": 53.1,
+          "delta_vs_overall": 0.7
         },
         "Frontline": {
           "games": 8,
-          "mean_grade": 51.5,
-          "delta_vs_overall": -1.5
+          "mean_grade": 51.3,
+          "delta_vs_overall": -1.1
         },
         "Support": {
           "games": 1,
           "mean_grade": 33.3,
-          "delta_vs_overall": -19.7
+          "delta_vs_overall": -19.1
         }
       },
       "champion_focus": {
@@ -4813,9 +4225,9 @@
             "wins": 4,
             "losses": 0,
             "win_rate": 100.0,
-            "mean_grade": 79.0,
-            "delta_vs_overall": 25.9,
-            "why": "Grades 25.9 points above this player's own average (53.1) over 4 games, going 4-0 on this champion."
+            "mean_grade": 79.4,
+            "delta_vs_overall": 27.0,
+            "why": "Grades 27.0 points above this player's own average (52.4) over 4 games, going 4-0 on this champion."
           },
           {
             "champion": "Nautilus",
@@ -4824,9 +4236,9 @@
             "wins": 4,
             "losses": 0,
             "win_rate": 100.0,
-            "mean_grade": 68.1,
-            "delta_vs_overall": 15.0,
-            "why": "Grades 15.0 points above this player's own average (53.1) over 4 games, going 4-0 on this champion."
+            "mean_grade": 68.8,
+            "delta_vs_overall": 16.4,
+            "why": "Grades 16.4 points above this player's own average (52.4) over 4 games, going 4-0 on this champion."
           }
         ],
         "pass_or_swap": []
@@ -4836,47 +4248,37 @@
         "wins": 7,
         "losses": 13,
         "win_rate": 35.0,
-        "mean_grade": 49.1,
-        "score_20": 45.4,
+        "mean_grade": 47.7,
+        "score_20": 43.8,
         "subscores": {
           "output": null,
           "damage_taken": null,
           "kda_efficiency": 56.8,
-          "teamplay": 54.8,
+          "teamplay": null,
           "death_quality": 54.7,
           "conversion": null,
           "augments": 31.7,
           "mechanics": 3.0
         },
         "pros": [
-          "KDA efficiency is your strongest area in the last 20 (56.8) \u2014 keep it up.",
-          "Teamplay is your strongest area in the last 20 (54.8) \u2014 keep it up."
+          "KDA efficiency is your strongest area in the last 20 (56.8) \u2014 keep it up."
         ],
         "cons": [
-          "Death quality is your weakest area in the last 20 (54.7) \u2014 the thing to work on.",
           "Augments is your weakest area in the last 20 (31.7) \u2014 the thing to work on."
         ],
         "tips": [
           "Keep up KDA efficiency (56.8 in the last 20): keep trading like this \u2014 good kills for few deaths.",
-          "Keep up Teamplay (54.8 in the last 20): keep joining fights \u2014 your kill participation is strong.",
-          "Work on Death quality (54.7 in the last 20): die less, and later in the game.",
           "Work on Augments (31.7 in the last 20): rethink augment picks \u2014 the ones taken lately are underperforming."
         ],
-        "stacked_20": {
-          "games": 19,
-          "wins": 6,
-          "losses": 13,
-          "win_rate": 31.6,
-          "mean_grade": 47.3
-        },
+        "stacked_20": null,
         "solo_20": {
-          "games": 1,
-          "wins": 1,
-          "losses": 0,
-          "win_rate": 100.0,
-          "mean_grade": 84.8
+          "games": 20,
+          "wins": 7,
+          "losses": 13,
+          "win_rate": 35.0,
+          "mean_grade": 47.7
         },
-        "team_line": "Playing together is dragging you down lately: with 2+ of the group in the last 20 you went 6-13 (31.6%, grade 47.3) vs solo 1-0 (100.0%, grade 84.8). Check role balance when you stack \u2014 someone may be off-role."
+        "team_line": "All of your last 20 were solo: 7-13 (35.0%, grade 47.7). No games with the group to compare against."
       },
       "champion_top3": [
         {
@@ -4886,9 +4288,9 @@
           "wins": 4,
           "losses": 0,
           "win_rate": 100.0,
-          "mean_grade": 79.0,
-          "delta_vs_overall": 25.9,
-          "why": "Grades 25.9 points above this player's own average (53.1) over 4 games, going 4-0 on this champion."
+          "mean_grade": 79.4,
+          "delta_vs_overall": 27.0,
+          "why": "Grades 27.0 points above this player's own average (52.4) over 4 games, going 4-0 on this champion."
         },
         {
           "champion": "Nautilus",
@@ -4897,9 +4299,9 @@
           "wins": 4,
           "losses": 0,
           "win_rate": 100.0,
-          "mean_grade": 68.1,
-          "delta_vs_overall": 15.0,
-          "why": "Grades 15.0 points above this player's own average (53.1) over 4 games, going 4-0 on this champion."
+          "mean_grade": 68.8,
+          "delta_vs_overall": 16.4,
+          "why": "Grades 16.4 points above this player's own average (52.4) over 4 games, going 4-0 on this champion."
         }
       ],
       "champion_worst3": [
@@ -4910,9 +4312,9 @@
           "wins": 4,
           "losses": 0,
           "win_rate": 100.0,
-          "mean_grade": 68.1,
-          "delta_vs_overall": 15.0,
-          "why": "Grades 15.0 points above this player's own average (53.1) over 4 games, going 4-0 on this champion."
+          "mean_grade": 68.8,
+          "delta_vs_overall": 16.4,
+          "why": "Grades 16.4 points above this player's own average (52.4) over 4 games, going 4-0 on this champion."
         },
         {
           "champion": "Milio",
@@ -4921,15 +4323,15 @@
           "wins": 4,
           "losses": 0,
           "win_rate": 100.0,
-          "mean_grade": 79.0,
-          "delta_vs_overall": 25.9,
-          "why": "Grades 25.9 points above this player's own average (53.1) over 4 games, going 4-0 on this champion."
+          "mean_grade": 79.4,
+          "delta_vs_overall": 27.0,
+          "why": "Grades 27.0 points above this player's own average (52.4) over 4 games, going 4-0 on this champion."
         }
       ],
       "damage_taken_per_min": null,
       "damage_dealt_share_pct": null,
       "damage_taken_share_pct": null,
-      "kill_participation_pct": 75.7,
+      "kill_participation_pct": null,
       "deaths_per_game": 8.6
     },
     {
@@ -4952,17 +4354,12 @@
             "Eureka"
           ],
           "game_minutes": 22.6,
-          "grade": 42.0,
+          "grade": 47.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 66.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shen|12/11/27|20.2|15|187|2026-11-09",
@@ -4982,17 +4379,12 @@
             "Bread and Cheese"
           ],
           "game_minutes": 20.2,
-          "grade": 29.5,
+          "grade": 26.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 73.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Renekton|7/9/12|12.8|13|26|2026-11-07",
@@ -5014,13 +4406,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sion|14/14/35|23.1|43|116|2026-11-06",
@@ -5068,13 +4455,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Maokai|2/8/17|11.4|25|42|2026-10-31",
@@ -5097,13 +4479,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Singed|9/15/31|23.5|53|75|2026-10-31",
@@ -5126,13 +4503,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Rumble|13/12/25|22.6|90|56|2026-11-09",
@@ -5151,17 +4523,12 @@
             "Eureka"
           ],
           "game_minutes": 22.6,
-          "grade": 42.0,
+          "grade": 47.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 66.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shen|12/11/27|20.2|15|187|2026-11-08",
@@ -5181,17 +4548,12 @@
             "Bread and Cheese"
           ],
           "game_minutes": 20.2,
-          "grade": 29.5,
+          "grade": 26.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 73.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Rell|2/14/43|19.5|6|99|2026-11-08",
@@ -5211,17 +4573,12 @@
             "Courage of the Colossus"
           ],
           "game_minutes": 19.5,
-          "grade": 37.8,
+          "grade": 20.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 83.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Trundle|7/8/39|19.6|61|94|2026-11-08",
@@ -5241,17 +4598,12 @@
             "Deft"
           ],
           "game_minutes": 19.6,
-          "grade": 72.3,
+          "grade": 72.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 79.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kaisa|8/8/22|16.8|32|47|2026-11-08",
@@ -5298,11 +4650,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "DrMundo|9/16/18|17.8|38|43|2026-11-08",
@@ -5326,11 +4675,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Yorick|8/9/22|19.8|29|246|2026-11-08",
@@ -5350,17 +4696,12 @@
             "Sap Magic"
           ],
           "game_minutes": 19.8,
-          "grade": 42.4,
+          "grade": 46.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 66.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Katarina|9/9/27|15.1|30|8|2026-11-08",
@@ -5379,17 +4720,12 @@
             "FireFox"
           ],
           "game_minutes": 15.1,
-          "grade": 45.8,
+          "grade": 55.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 64.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shen|14/11/32|24.1|54|96|2026-11-08",
@@ -5408,17 +4744,12 @@
             "Quickstep"
           ],
           "game_minutes": 24.1,
-          "grade": 50.4,
+          "grade": 44.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 78.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Katarina|11/13/27|18.5|25|141|2026-11-08",
@@ -5438,17 +4769,12 @@
             "Take'em Down Down Down"
           ],
           "game_minutes": 18.5,
-          "grade": 31.3,
+          "grade": 24.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 73.1,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Taric|3/11/38|19.8|61|119|2026-11-08",
@@ -5467,17 +4793,12 @@
             "Escape Plan"
           ],
           "game_minutes": 19.8,
-          "grade": 65.2,
+          "grade": 55.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 91.1,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sylas|3/16/25|17.4|11|75|2026-11-08",
@@ -5497,17 +4818,12 @@
             "Growth Spurt"
           ],
           "game_minutes": 17.4,
-          "grade": 17.6,
+          "grade": 3.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 73.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Karthus|14/21/28|25.3|44|212|2026-11-08",
@@ -5527,17 +4843,12 @@
             "Ultimate Recursion"
           ],
           "game_minutes": 25.3,
-          "grade": 9.5,
+          "grade": 1.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 67.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Taric|4/7/31|13.3|15|46|2026-11-08",
@@ -5555,17 +4866,12 @@
             "Divine Intervention"
           ],
           "game_minutes": 13.3,
-          "grade": 82.4,
+          "grade": 80.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 81.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Malphite|5/8/16|17.0|43|37|2026-11-08",
@@ -5588,12 +4894,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jax|12/14/25|20.6|29|142|2026-11-08",
@@ -5616,11 +4918,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "DrMundo|11/19/49|24.3|71|112|2026-11-08",
@@ -5643,11 +4942,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Volibear|13/14/29|22.6|74|435|2026-11-08",
@@ -5666,17 +4962,12 @@
             "Bread And Butter"
           ],
           "game_minutes": 22.6,
-          "grade": 31.7,
+          "grade": 27.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 75.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jayce|7/10/13|13.4|24|53|2026-11-08",
@@ -5697,12 +4988,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Renekton|7/9/12|12.8|13|26|2026-11-08",
@@ -5720,17 +5007,12 @@
             "Dashing"
           ],
           "game_minutes": 12.8,
-          "grade": 45.1,
+          "grade": 59.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 41.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Singed|7/10/31|19.1|63|101|2026-11-07",
@@ -5749,17 +5031,12 @@
             "Titan's Resolve"
           ],
           "game_minutes": 19.1,
-          "grade": 48.4,
+          "grade": 44.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 77.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Zyra|10/8/26|17.8|40|19|2026-11-07",
@@ -5778,17 +5055,12 @@
             "Thread the Needle"
           ],
           "game_minutes": 17.8,
-          "grade": 70.9,
+          "grade": 80.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 70.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|3/13/39|23.8|30|86|2026-11-07",
@@ -5807,17 +5079,12 @@
             "Omni Soul"
           ],
           "game_minutes": 23.8,
-          "grade": 38.1,
+          "grade": 49.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 50.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Yorick|6/9/27|21.2|64|32|2026-11-07",
@@ -5837,17 +5104,12 @@
             "Sap Magic"
           ],
           "game_minutes": 21.2,
-          "grade": 42.2,
+          "grade": 45.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 70.2,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Zyra|10/12/22|19.2|31|23|2026-11-07",
@@ -5870,11 +5132,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shen|9/11/35|17.0|27|42|2026-11-07",
@@ -5896,11 +5155,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Singed|12/11/30|23.1|59|113|2026-11-07",
@@ -5923,11 +5179,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Rumble|19/17/22|18.2|34|31|2026-11-07",
@@ -5950,11 +5203,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sion|14/14/35|23.1|43|116|2026-11-07",
@@ -6003,12 +5253,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Leona|4/10/15|14.7|11|75|2026-11-06",
@@ -6031,12 +5277,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Volibear|8/11/34|19.3|38|35|2026-11-06",
@@ -6059,11 +5301,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ashe|4/12/36|17.3|19|31|2026-11-06",
@@ -6087,11 +5326,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|6/15/23|23.0|32|129|2026-11-05",
@@ -6114,12 +5350,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Shen|13/7/36|12.8|12|2|2026-11-05",
@@ -6141,12 +5373,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Taric|8/15/33|20.4|18|17|2026-11-05",
@@ -6170,12 +5398,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Trundle|4/14/35|20.0|52|133|2026-11-05",
@@ -6198,12 +5422,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Rell|6/10/34|16.1|39|90|2026-11-05",
@@ -6226,11 +5446,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Jax|13/10/15|16.8|28|21|2026-11-05",
@@ -6253,11 +5470,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Yorick|4/12/23|18.3|16|259|2026-11-05",
@@ -6280,11 +5494,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sion|7/6/16|10.9|9|23|2026-11-03",
@@ -6305,12 +5516,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Trundle|16/14/25|21.4|21|89|2026-11-03",
@@ -6333,26 +5540,23 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
+          "stack_size": 1,
+          "teammates": []
         }
       ],
       "kda": 3.07,
       "losses": 25,
-      "mmr_style": 1344,
+      "mmr_style": 1336,
       "name": "Ohwutahel",
       "region": "na1",
       "riot_id": "",
-      "score": 38.8,
+      "score": 38.3,
       "skillshots_dodged_per_min": 4.64,
       "subscores": {
         "output": null,
         "damage_taken": null,
         "kda_efficiency": 39.5,
-        "teamplay": 46.1,
+        "teamplay": null,
         "death_quality": 39.7,
         "conversion": null,
         "augments": 36.9,
@@ -6360,7 +5564,7 @@
       },
       "win_rate": 50.0,
       "wins": 25,
-      "why_rank": "Ranked 5 of 5 at 38.8 (MMR-style 1344, 25-25, 50.0% win rate). Strongest vs the group: mechanics (4.6 vs group avg 3.1, +1.5). Weakest vs the group: death_quality (39.7 vs group avg 50.0, -10.3). By role: Damage 33.0 (17 games, -6.0 vs own avg); Frontline 42.1 (33 games, +3.1 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality and augments, plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
+      "why_rank": "Ranked 5 of 5 at 38.3 (MMR-style 1336, 25-25, 50.0% win rate). Strongest vs the group: mechanics (4.6 vs group avg 3.1, +1.5). Weakest vs the group: death_quality (39.7 vs group avg 50.0, -10.3). By role: Damage 33.0 (17 games, -5.7 vs own avg); Frontline 41.6 (33 games, +2.9 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality and augments, plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [
         "Frontline 52.4 (+4.4, 52 games) vs Damage 44.3 vs Support 41.9",
         "Most skillshots dodged/min: 5.00",
@@ -6371,27 +5575,16 @@
         "Damage": {
           "games": 17,
           "mean_grade": 33.0,
-          "delta_vs_overall": -6.0
+          "delta_vs_overall": -5.7
         },
         "Frontline": {
           "games": 33,
-          "mean_grade": 42.1,
-          "delta_vs_overall": 3.1
+          "mean_grade": 41.6,
+          "delta_vs_overall": 2.9
         }
       },
       "champion_focus": {
         "take_when_offered": [
-          {
-            "champion": "Taric",
-            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Taric.png",
-            "games": 3,
-            "wins": 3,
-            "losses": 0,
-            "win_rate": 100.0,
-            "mean_grade": 55.1,
-            "delta_vs_overall": 16.0,
-            "why": "Grades 16.0 points above this player's own average (39.0) over 3 games, going 3-0 on this champion."
-          },
           {
             "champion": "Sion",
             "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Sion.png",
@@ -6400,19 +5593,19 @@
             "losses": 0,
             "win_rate": 100.0,
             "mean_grade": 54.8,
-            "delta_vs_overall": 15.8,
-            "why": "Grades 15.8 points above this player's own average (39.0) over 3 games, going 3-0 on this champion."
+            "delta_vs_overall": 16.1,
+            "why": "Grades 16.1 points above this player's own average (38.7) over 3 games, going 3-0 on this champion."
           },
           {
-            "champion": "Shen",
-            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Shen.png",
-            "games": 5,
-            "wins": 2,
-            "losses": 3,
-            "win_rate": 40.0,
-            "mean_grade": 44.1,
-            "delta_vs_overall": 5.1,
-            "why": "Grades 5.1 points above this player's own average (39.0) over 5 games, going 2-3 on this champion."
+            "champion": "Taric",
+            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Taric.png",
+            "games": 3,
+            "wins": 3,
+            "losses": 0,
+            "win_rate": 100.0,
+            "mean_grade": 51.2,
+            "delta_vs_overall": 12.5,
+            "why": "Grades 12.5 points above this player's own average (38.7) over 3 games, going 3-0 on this champion."
           }
         ],
         "pass_or_swap": [
@@ -6423,9 +5616,9 @@
             "wins": 2,
             "losses": 1,
             "win_rate": 66.7,
-            "mean_grade": 30.3,
-            "delta_vs_overall": -8.8,
-            "why": "Grades 8.8 points below this player's own average (39.0) over 3 games, going 2-1 on this champion."
+            "mean_grade": 33.6,
+            "delta_vs_overall": -5.1,
+            "why": "Grades 5.1 points below this player's own average (38.7) over 3 games, going 2-1 on this champion."
           }
         ]
       },
@@ -6434,60 +5627,39 @@
         "wins": 7,
         "losses": 13,
         "win_rate": 35.0,
-        "mean_grade": 39.0,
-        "score_20": 36.8,
+        "mean_grade": 36.7,
+        "score_20": 34.7,
         "subscores": {
           "output": null,
           "damage_taken": null,
           "kda_efficiency": 41.5,
-          "teamplay": 52.6,
+          "teamplay": null,
           "death_quality": 38.5,
           "conversion": null,
           "augments": 30.2,
           "mechanics": 5.1
         },
         "pros": [
-          "Teamplay is your strongest area in the last 20 (52.6) \u2014 keep it up.",
           "KDA efficiency is your strongest area in the last 20 (41.5) \u2014 keep it up."
         ],
         "cons": [
-          "Death quality is your weakest area in the last 20 (38.5) \u2014 the thing to work on.",
           "Augments is your weakest area in the last 20 (30.2) \u2014 the thing to work on."
         ],
         "tips": [
-          "Keep up Teamplay (52.6 in the last 20): keep joining fights \u2014 your kill participation is strong.",
           "Keep up KDA efficiency (41.5 in the last 20): keep trading like this \u2014 good kills for few deaths.",
-          "Work on Death quality (38.5 in the last 20): die less, and later in the game.",
           "Work on Augments (30.2 in the last 20): rethink augment picks \u2014 the ones taken lately are underperforming."
         ],
-        "stacked_20": {
-          "games": 19,
-          "wins": 7,
-          "losses": 12,
-          "win_rate": 36.8,
-          "mean_grade": 39.3
-        },
+        "stacked_20": null,
         "solo_20": {
-          "games": 1,
-          "wins": 0,
-          "losses": 1,
-          "win_rate": 0.0,
-          "mean_grade": 34.6
+          "games": 20,
+          "wins": 7,
+          "losses": 13,
+          "win_rate": 35.0,
+          "mean_grade": 36.7
         },
-        "team_line": "Playing together helps you: with 2+ of the group in the last 20 you went 7-12 (36.8%, grade 39.3) vs solo 0-1 (0.0%, grade 34.6)."
+        "team_line": "All of your last 20 were solo: 7-13 (35.0%, grade 36.7). No games with the group to compare against."
       },
       "champion_top3": [
-        {
-          "champion": "Taric",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Taric.png",
-          "games": 3,
-          "wins": 3,
-          "losses": 0,
-          "win_rate": 100.0,
-          "mean_grade": 55.1,
-          "delta_vs_overall": 16.0,
-          "why": "Grades 16.0 points above this player's own average (39.0) over 3 games, going 3-0 on this champion."
-        },
         {
           "champion": "Sion",
           "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Sion.png",
@@ -6496,8 +5668,19 @@
           "losses": 0,
           "win_rate": 100.0,
           "mean_grade": 54.8,
-          "delta_vs_overall": 15.8,
-          "why": "Grades 15.8 points above this player's own average (39.0) over 3 games, going 3-0 on this champion."
+          "delta_vs_overall": 16.1,
+          "why": "Grades 16.1 points above this player's own average (38.7) over 3 games, going 3-0 on this champion."
+        },
+        {
+          "champion": "Taric",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Taric.png",
+          "games": 3,
+          "wins": 3,
+          "losses": 0,
+          "win_rate": 100.0,
+          "mean_grade": 51.2,
+          "delta_vs_overall": 12.5,
+          "why": "Grades 12.5 points above this player's own average (38.7) over 3 games, going 3-0 on this champion."
         },
         {
           "champion": "Shen",
@@ -6506,9 +5689,9 @@
           "wins": 2,
           "losses": 3,
           "win_rate": 40.0,
-          "mean_grade": 44.1,
-          "delta_vs_overall": 5.1,
-          "why": "Grades 5.1 points above this player's own average (39.0) over 5 games, going 2-3 on this champion."
+          "mean_grade": 41.9,
+          "delta_vs_overall": 3.1,
+          "why": "Grades 3.1 points above this player's own average (38.7) over 5 games, going 2-3 on this champion."
         }
       ],
       "champion_worst3": [
@@ -6519,20 +5702,9 @@
           "wins": 2,
           "losses": 1,
           "win_rate": 66.7,
-          "mean_grade": 30.3,
-          "delta_vs_overall": -8.8,
-          "why": "Grades 8.8 points below this player's own average (39.0) over 3 games, going 2-1 on this champion."
-        },
-        {
-          "champion": "Zyra",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Zyra.png",
-          "games": 3,
-          "wins": 1,
-          "losses": 2,
-          "win_rate": 33.3,
-          "mean_grade": 36.0,
-          "delta_vs_overall": -3.1,
-          "why": "Grades 3.1 points below this player's own average (39.0) over 3 games, going 1-2 on this champion."
+          "mean_grade": 33.6,
+          "delta_vs_overall": -5.1,
+          "why": "Grades 5.1 points below this player's own average (38.7) over 3 games, going 2-1 on this champion."
         },
         {
           "champion": "Singed",
@@ -6541,15 +5713,26 @@
           "wins": 1,
           "losses": 2,
           "win_rate": 33.3,
-          "mean_grade": 36.2,
-          "delta_vs_overall": -2.9,
-          "why": "Grades 2.9 points below this player's own average (39.0) over 3 games, going 1-2 on this champion."
+          "mean_grade": 35.0,
+          "delta_vs_overall": -3.7,
+          "why": "Grades 3.7 points below this player's own average (38.7) over 3 games, going 1-2 on this champion."
+        },
+        {
+          "champion": "Yorick",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Yorick.png",
+          "games": 3,
+          "wins": 1,
+          "losses": 2,
+          "win_rate": 33.3,
+          "mean_grade": 38.8,
+          "delta_vs_overall": 0.1,
+          "why": "Grades 0.1 points above this player's own average (38.7) over 3 games, going 1-2 on this champion."
         }
       ],
       "damage_taken_per_min": null,
       "damage_dealt_share_pct": null,
       "damage_taken_share_pct": null,
-      "kill_participation_pct": 71.2,
+      "kill_participation_pct": null,
       "deaths_per_game": 11.8
     },
     {
@@ -6572,17 +5755,12 @@
             "Eureka"
           ],
           "game_minutes": 22.6,
-          "grade": 52.5,
+          "grade": 65.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 57.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Hwei|9/8/30|20.2|64|53|2026-11-09",
@@ -6602,17 +5780,12 @@
             "Ok Boomerang"
           ],
           "game_minutes": 20.2,
-          "grade": 48.5,
+          "grade": 45.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 73.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Vex|10/5/23|12.8|8|6|2026-11-07",
@@ -6634,13 +5807,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Smolder|5/5/39|12.1|28|9|2026-11-02",
@@ -6663,12 +5831,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Mel|20/12/23|23.9|49|71|2026-11-02",
@@ -6692,12 +5856,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Graves|6/10/12|17.1|15|41|2026-11-02",
@@ -6721,12 +5881,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|1/9/26|14.4|4|86|2026-11-02",
@@ -6750,12 +5906,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lillia|9/8/24|22.6|20|32|2026-11-09",
@@ -6774,17 +5926,12 @@
             "Eureka"
           ],
           "game_minutes": 22.6,
-          "grade": 52.5,
+          "grade": 65.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 57.9,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Hwei|9/8/30|20.2|64|53|2026-11-08",
@@ -6804,17 +5951,12 @@
             "Ok Boomerang"
           ],
           "game_minutes": 20.2,
-          "grade": 48.5,
+          "grade": 45.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 73.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Smolder|3/10/30|19.5|50|44|2026-11-08",
@@ -6834,17 +5976,12 @@
             "Biggest Snowball Ever"
           ],
           "game_minutes": 19.5,
-          "grade": 24.3,
+          "grade": 24.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 61.1,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Taliyah|5/8/29|19.6|43|22|2026-11-08",
@@ -6864,17 +6001,12 @@
             "Blue Barrier"
           ],
           "game_minutes": 19.6,
-          "grade": 55.6,
+          "grade": 71.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 58.6,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Blitzcrank|3/6/21|12.3|0|138|2026-11-08",
@@ -6897,12 +6029,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Soraka|3/6/34|19.8|6|173|2026-11-08",
@@ -6922,17 +6050,12 @@
             "Critical Healing"
           ],
           "game_minutes": 19.8,
-          "grade": 50.2,
+          "grade": 58.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 82.2,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Sejuani|10/8/35|15.1|11|12|2026-11-08",
@@ -6951,17 +6074,12 @@
             "Lonely Warrior"
           ],
           "game_minutes": 15.1,
-          "grade": 86.9,
+          "grade": 90.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 80.4,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Karma|1/11/44|26.9|26|34|2026-11-08",
@@ -6985,12 +6103,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Syndra|8/7/9|16.9|33|79|2026-11-08",
@@ -7014,12 +6128,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Elise|3/8/15|15.9|19|32|2026-11-08",
@@ -7042,12 +6152,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Morgana|13/11/33|24.1|43|83|2026-11-08",
@@ -7066,17 +6172,12 @@
             "Transmute: Prismatic"
           ],
           "game_minutes": 24.1,
-          "grade": 37.4,
+          "grade": 24.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 78.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Illaoi|5/13/23|18.5|15|140|2026-11-08",
@@ -7095,17 +6196,12 @@
             "Biggest Snowball Ever"
           ],
           "game_minutes": 18.5,
-          "grade": 14.0,
+          "grade": 15.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 53.8,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Malzahar|4/11/22|19.8|64|55|2026-11-08",
@@ -7124,17 +6220,12 @@
             "Blue Barrier"
           ],
           "game_minutes": 19.8,
-          "grade": 37.5,
+          "grade": 48.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 57.8,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Syndra|5/14/20|17.4|28|28|2026-11-08",
@@ -7154,17 +6245,12 @@
             "Chain Reaction"
           ],
           "game_minutes": 17.4,
-          "grade": 22.6,
+          "grade": 23.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 65.8,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Smolder|11/13/24|25.3|43|59|2026-11-08",
@@ -7184,17 +6270,12 @@
             "Goredrink"
           ],
           "game_minutes": 25.3,
-          "grade": 9.4,
+          "grade": 10.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 56.5,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Seraphine|5/4/36|13.3|28|8|2026-11-08",
@@ -7212,17 +6293,12 @@
             "Donation"
           ],
           "game_minutes": 13.3,
-          "grade": 74.7,
+          "grade": 66.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 95.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Mordekaiser|5/8/12|17.0|8|33|2026-11-08",
@@ -7245,12 +6321,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Chogath|10/11/26|22.6|24|319|2026-11-08",
@@ -7269,17 +6341,12 @@
             "Divine Intervention"
           ],
           "game_minutes": 22.6,
-          "grade": 45.3,
+          "grade": 53.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 64.3,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ashe|1/8/16|13.4|9|69|2026-11-08",
@@ -7301,12 +6368,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Vex|10/5/23|12.8|8|6|2026-11-08",
@@ -7324,17 +6387,12 @@
             "Jeweled Gauntlet"
           ],
           "game_minutes": 12.8,
-          "grade": 71.2,
+          "grade": 78.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 71.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nami|15/11/27|19.1|17|66|2026-11-07",
@@ -7353,17 +6411,12 @@
             "Eureka"
           ],
           "game_minutes": 19.1,
-          "grade": 57.0,
+          "grade": 47.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 85.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Teemo|6/9/26|17.8|11|14|2026-11-07",
@@ -7382,17 +6435,12 @@
             "Magic Missile"
           ],
           "game_minutes": 17.8,
-          "grade": 54.6,
+          "grade": 67.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 62.7,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "MissFortune|10/13/34|23.8|36|49|2026-11-07",
@@ -7411,17 +6459,12 @@
             "Bread and Cheese"
           ],
           "game_minutes": 23.8,
-          "grade": 27.6,
+          "grade": 35.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 53.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Cassiopeia|6/11/25|21.2|12|18|2026-11-07",
@@ -7441,17 +6484,12 @@
             "Ethereal Weapon"
           ],
           "game_minutes": 21.2,
-          "grade": 24.4,
+          "grade": 25.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
-          "kill_participation_pct": 66.0,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "Vincent Chan"
-          ]
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Seraphine|5/12/34|19.6|38|18|2026-11-06",
@@ -7475,12 +6513,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Ryze|3/9/12|14.7|40|41|2026-11-06",
@@ -7503,12 +6537,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "AurelionSol|9/8/33|22.7|62|49|2026-11-06",
@@ -7531,12 +6561,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kayle|16/9/23|17.0|54|30|2026-11-06",
@@ -7559,12 +6585,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Soraka|1/8/24|13.8|6|39|2026-11-06",
@@ -7588,12 +6610,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "TwistedFate|9/11/22|23.0|24|27|2026-11-05",
@@ -7616,12 +6634,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lillia|11/7/31|12.8|11|1|2026-11-05",
@@ -7643,12 +6657,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Hwei|5/9/26|20.4|25|14|2026-11-05",
@@ -7672,12 +6682,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kaisa|5/6/24|20.0|25|44|2026-11-05",
@@ -7700,12 +6706,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Lux|11/13/30|20.0|43|17|2026-11-04",
@@ -7728,12 +6730,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Cassiopeia|13/8/25|19.1|39|38|2026-11-04",
@@ -7756,12 +6754,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Swain|10/4/20|10.9|11|12|2026-11-03",
@@ -7783,12 +6777,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Smolder|5/5/39|12.1|28|9|2026-11-03",
@@ -7811,12 +6801,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Mel|20/12/23|23.9|49|71|2026-11-03",
@@ -7840,12 +6826,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Graves|6/10/12|17.1|15|41|2026-11-03",
@@ -7869,12 +6851,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Nautilus|1/9/26|14.4|4|86|2026-11-03",
@@ -7898,12 +6876,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Senna|13/14/23|20.4|28|39|2026-11-02",
@@ -7925,12 +6899,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Teemo|5/9/15|19.4|18|1|2026-11-02",
@@ -7953,12 +6923,8 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         },
         {
           "match_id": "Kaisa|5/8/24|20.8|39|24|2026-11-02",
@@ -7981,27 +6947,23 @@
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
+          "stack_size": 1,
+          "teammates": []
         }
       ],
       "kda": 3.63,
       "losses": 28,
-      "mmr_style": 1388,
+      "mmr_style": 1399,
       "name": "PikabUwU",
       "region": "na1",
       "riot_id": "",
-      "score": 42.0,
+      "score": 42.8,
       "skillshots_dodged_per_min": 2.67,
       "subscores": {
         "output": null,
         "damage_taken": null,
         "kda_efficiency": 45.7,
-        "teamplay": 34.1,
+        "teamplay": null,
         "death_quality": 55.0,
         "conversion": null,
         "augments": 38.0,
@@ -8009,23 +6971,23 @@
       },
       "win_rate": 44.0,
       "wins": 22,
-      "why_rank": "Ranked 4 of 5 at 42.0 (MMR-style 1388, 22-28, 44.0% win rate). Strongest vs the group: death_quality (55.0 vs group avg 50.0, +5.0). Weakest vs the group: teamplay (34.1 vs group avg 50.1, -16.0). By role: Damage 44.6 (41 games, -0.2 vs own avg); Frontline 46.7 (7 games, +1.9 vs own avg); Support 42.7 (2 games, -2.1 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality and augments, plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
+      "why_rank": "Ranked 4 of 5 at 42.8 (MMR-style 1399, 22-28, 44.0% win rate). Strongest vs the group: death_quality (55.0 vs group avg 50.0, +5.0). Weakest vs the group: kda_efficiency (45.7 vs group avg 49.7, -4.0). By role: Damage 45.8 (41 games, -0.4 vs own avg); Frontline 48.7 (7 games, +2.4 vs own avg); Support 46.9 (2 games, +0.7 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality and augments, plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [],
       "role_split": {
         "Damage": {
           "games": 41,
-          "mean_grade": 44.6,
-          "delta_vs_overall": -0.2
+          "mean_grade": 45.8,
+          "delta_vs_overall": -0.4
         },
         "Frontline": {
           "games": 7,
-          "mean_grade": 46.7,
-          "delta_vs_overall": 1.9
+          "mean_grade": 48.7,
+          "delta_vs_overall": 2.4
         },
         "Support": {
           "games": 2,
-          "mean_grade": 42.7,
-          "delta_vs_overall": -2.1
+          "mean_grade": 46.9,
+          "delta_vs_overall": 0.7
         }
       },
       "champion_focus": {
@@ -8037,9 +6999,9 @@
             "wins": 3,
             "losses": 0,
             "win_rate": 100.0,
-            "mean_grade": 62.8,
-            "delta_vs_overall": 17.9,
-            "why": "Grades 17.9 points above this player's own average (44.8) over 3 games, going 3-0 on this champion."
+            "mean_grade": 71.3,
+            "delta_vs_overall": 25.1,
+            "why": "Grades 25.1 points above this player's own average (46.2) over 3 games, going 3-0 on this champion."
           },
           {
             "champion": "Smolder",
@@ -8048,9 +7010,9 @@
             "wins": 2,
             "losses": 2,
             "win_rate": 50.0,
-            "mean_grade": 52.2,
-            "delta_vs_overall": 7.4,
-            "why": "Grades 7.4 points above this player's own average (44.8) over 4 games, going 2-2 on this champion."
+            "mean_grade": 52.6,
+            "delta_vs_overall": 6.4,
+            "why": "Grades 6.4 points above this player's own average (46.2) over 4 games, going 2-2 on this champion."
           }
         ],
         "pass_or_swap": []
@@ -8060,41 +7022,37 @@
         "wins": 7,
         "losses": 13,
         "win_rate": 35.0,
-        "mean_grade": 43.5,
-        "score_20": 41.0,
+        "mean_grade": 46.0,
+        "score_20": 42.7,
         "subscores": {
           "output": null,
           "damage_taken": null,
           "kda_efficiency": 47.6,
-          "teamplay": 33.9,
+          "teamplay": null,
           "death_quality": 57.5,
           "conversion": null,
           "augments": 33.0,
           "mechanics": 3.7
         },
         "pros": [
-          "Death quality is your strongest area in the last 20 (57.5) \u2014 keep it up.",
-          "KDA efficiency is your strongest area in the last 20 (47.6) \u2014 keep it up."
+          "Death quality is your strongest area in the last 20 (57.5) \u2014 keep it up."
         ],
         "cons": [
-          "Teamplay is your weakest area in the last 20 (33.9) \u2014 the thing to work on.",
           "Augments is your weakest area in the last 20 (33.0) \u2014 the thing to work on."
         ],
         "tips": [
           "Keep up Death quality (57.5 in the last 20): keep staying alive \u2014 your deaths are low for your role.",
-          "Keep up KDA efficiency (47.6 in the last 20): keep trading like this \u2014 good kills for few deaths.",
-          "Work on Teamplay (33.9 in the last 20): join more fights to raise kill participation.",
           "Work on Augments (33.0 in the last 20): rethink augment picks \u2014 the ones taken lately are underperforming."
         ],
-        "stacked_20": {
+        "stacked_20": null,
+        "solo_20": {
           "games": 20,
           "wins": 7,
           "losses": 13,
           "win_rate": 35.0,
-          "mean_grade": 43.5
+          "mean_grade": 46.0
         },
-        "solo_20": null,
-        "team_line": "All of your last 20 were with 2+ of the group: 7-13 (35.0%, grade 43.5). No solo games to compare against."
+        "team_line": "All of your last 20 were solo: 7-13 (35.0%, grade 46.0). No games with the group to compare against."
       },
       "champion_top3": [
         {
@@ -8104,9 +7062,9 @@
           "wins": 3,
           "losses": 0,
           "win_rate": 100.0,
-          "mean_grade": 62.8,
-          "delta_vs_overall": 17.9,
-          "why": "Grades 17.9 points above this player's own average (44.8) over 3 games, going 3-0 on this champion."
+          "mean_grade": 71.3,
+          "delta_vs_overall": 25.1,
+          "why": "Grades 25.1 points above this player's own average (46.2) over 3 games, going 3-0 on this champion."
         },
         {
           "champion": "Smolder",
@@ -8115,9 +7073,9 @@
           "wins": 2,
           "losses": 2,
           "win_rate": 50.0,
-          "mean_grade": 52.2,
-          "delta_vs_overall": 7.4,
-          "why": "Grades 7.4 points above this player's own average (44.8) over 4 games, going 2-2 on this champion."
+          "mean_grade": 52.6,
+          "delta_vs_overall": 6.4,
+          "why": "Grades 6.4 points above this player's own average (46.2) over 4 games, going 2-2 on this champion."
         },
         {
           "champion": "Hwei",
@@ -8126,9 +7084,9 @@
           "wins": 1,
           "losses": 2,
           "win_rate": 33.3,
-          "mean_grade": 45.5,
-          "delta_vs_overall": 0.6,
-          "why": "Grades 0.6 points above this player's own average (44.8) over 3 games, going 1-2 on this champion."
+          "mean_grade": 43.5,
+          "delta_vs_overall": -2.7,
+          "why": "Grades 2.7 points below this player's own average (46.2) over 3 games, going 1-2 on this champion."
         }
       ],
       "champion_worst3": [
@@ -8139,9 +7097,9 @@
           "wins": 1,
           "losses": 2,
           "win_rate": 33.3,
-          "mean_grade": 45.5,
-          "delta_vs_overall": 0.6,
-          "why": "Grades 0.6 points above this player's own average (44.8) over 3 games, going 1-2 on this champion."
+          "mean_grade": 43.5,
+          "delta_vs_overall": -2.7,
+          "why": "Grades 2.7 points below this player's own average (46.2) over 3 games, going 1-2 on this champion."
         },
         {
           "champion": "Smolder",
@@ -8150,9 +7108,9 @@
           "wins": 2,
           "losses": 2,
           "win_rate": 50.0,
-          "mean_grade": 52.2,
-          "delta_vs_overall": 7.4,
-          "why": "Grades 7.4 points above this player's own average (44.8) over 4 games, going 2-2 on this champion."
+          "mean_grade": 52.6,
+          "delta_vs_overall": 6.4,
+          "why": "Grades 6.4 points above this player's own average (46.2) over 4 games, going 2-2 on this champion."
         },
         {
           "champion": "Lillia",
@@ -8161,46 +7119,25 @@
           "wins": 3,
           "losses": 0,
           "win_rate": 100.0,
-          "mean_grade": 62.8,
-          "delta_vs_overall": 17.9,
-          "why": "Grades 17.9 points above this player's own average (44.8) over 3 games, going 3-0 on this champion."
+          "mean_grade": 71.3,
+          "delta_vs_overall": 25.1,
+          "why": "Grades 25.1 points above this player's own average (46.2) over 3 games, going 3-0 on this champion."
         }
       ],
       "damage_taken_per_min": null,
       "damage_dealt_share_pct": null,
       "damage_taken_share_pct": null,
-      "kill_participation_pct": 67.8,
+      "kill_participation_pct": null,
       "deaths_per_game": 9
     }
   ],
   "stack_splits": [
     {
       "label": "Solo",
-      "player_games": 13,
-      "wins": 7,
-      "win_rate_pct": 53.8,
-      "grade": 44.3
-    },
-    {
-      "label": "2\u20133 of the group",
-      "player_games": 46,
-      "wins": 28,
-      "win_rate_pct": 60.9,
-      "grade": 48.5
-    },
-    {
-      "label": "4 of the group",
-      "player_games": 86,
-      "wins": 35,
-      "win_rate_pct": 40.7,
-      "grade": 42.4
-    },
-    {
-      "label": "Full stack (5)",
-      "player_games": 105,
-      "wins": 47,
-      "win_rate_pct": 44.8,
-      "grade": 47.9
+      "player_games": 250,
+      "wins": 117,
+      "win_rate_pct": 46.8,
+      "grade": 45.7
     }
   ],
   "playbook_note": "Playbook above is from the Nov 8 snapshot. It recomputes from the last-50, 5-player window on the first daily run.",
