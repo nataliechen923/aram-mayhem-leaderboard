@@ -98,6 +98,18 @@
   .top-tag { display:inline-block; vertical-align:middle; margin-left:8px; padding:2px 9px; border-radius:999px;
     font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
     color:#10121a; background:var(--yellow); }
+  /* Gold star pill: marks the player who leads a category (computed
+     from the data at render time, so leaders change every run). One
+     consistent style everywhere — KPI tiles, donut, highlight cards. */
+  .top-pill { display:inline-block; margin-top:8px; padding:2px 10px; border-radius:999px;
+    font-size:11px; font-weight:800; letter-spacing:.05em; text-transform:uppercase;
+    color:#10121a; background:var(--gold); white-space:nowrap; }
+  .mini-kpi .top-pill { margin-top:6px; }
+  .donut-wrap .top-pill { margin-top:4px; }
+  .hl .top-pill { margin-top:10px; }
+  /* Role delta: plain-words comparison under each role bar. */
+  .role-delta { grid-column:2 / -1; font-size:12px; margin-top:-2px; }
+  [hidden] { display:none !important; }
   /* Dashboard pills: Rating pill and clean stat chips (win rate, record). */
   .pill-rating { display:inline-block; background:rgba(167,139,250,.16); color:#c4b5fd;
     border:1px solid rgba(167,139,250,.40); padding:3px 11px; border-radius:999px; font-weight:700; }
@@ -264,7 +276,7 @@
       <thead><tr>
         <th data-k="rank">#</th><th data-k="name">Player</th><th data-k="score" class="num">Score</th>
         <th data-k="mmr_style" class="num">Rating</th><th data-k="win_rate" class="num">Win rate</th>
-        <th data-k="wins" class="num">Record</th><th data-k="kda" class="num">KDA</th><th data-k="damage_per_min" class="num">Damage / min</th>
+        <th data-k="wins" class="num">Record</th><th data-k="kda" class="num">KDA</th><th data-k="damage_per_min" class="num" id="th-dmg">Damage / min</th>
       </tr></thead>
       <tbody></tbody>
     </table>
@@ -284,6 +296,7 @@
 
   <section>
     <h2>When You Stack</h2>
+    <p class="muted" style="margin:-6px 0 14px">Stacking means playing in the same game together. Each row shows how the group did when that many of the group were in the game — alone, in small groups, or all five together.</p>
     <div class="card" id="stack-chart"></div>
     <p class="muted" id="stack-note"></p>
   </section>
@@ -313,7 +326,8 @@
   </section>
 
   <footer>
-    <p><b>Where this data comes from:</b> the numbers on this page right now are a Nov 8, 2026 snapshot copied from the original page (bboyisk.github.io/aram-mayhem-assessment), which sourced its per-player history from PlayARAM and its population baselines from MayhemMeta. This page never contacts PlayARAM — nothing here was scraped from it after it blocked us. Future updates come from each player's PlayARAM profile, fetched once a day by GitHub Actions (no Riot API key needed — Riot's API does not reliably serve ARAM Mayhem), with a manual CSV export as backup. PlayARAM's match list shows result, champion, KDA, CS and skillshots dodged, but not damage or turret takedowns, so Damage and Structures stay blank on PlayARAM games — a missing field is skipped, never scored as 0. Subscores, recent-20 and top/worst champions stay blank until that first update — no values were invented to fill them.</p>
+    <p id="foot-snapshot"><b>Where this data comes from:</b> the numbers on this page right now are a Nov 8, 2026 snapshot copied from the original page (bboyisk.github.io/aram-mayhem-assessment), which sourced its per-player history from PlayARAM and its population baselines from MayhemMeta. This page never contacts PlayARAM — nothing here was scraped from it after it blocked us. Future updates come from each player's PlayARAM profile, fetched once a day by GitHub Actions (no Riot API key needed — Riot's API does not reliably serve ARAM Mayhem), with a manual CSV export as backup. PlayARAM's match list shows result, champion, KDA, CS and skillshots dodged, but not damage or turret takedowns, so Damage and Structures stay blank on PlayARAM games — a missing field is skipped, never scored as 0. Subscores, recent-20 and top/worst champions stay blank until that first update — no values were invented to fill them.</p>
+    <p id="foot-live" hidden><b>Where this data comes from:</b> the numbers on this page come from each player's PlayARAM profile, collected by the browser extension and rebuilt by GitHub Actions — the latest sync was <span id="foot-sync-time"></span>. This page never contacts PlayARAM itself. Damage and turret takedowns stay blank when the source data doesn't include them — a missing field is skipped, never scored as 0.</p>
     <p>Data: per-player history from PlayARAM (playaram.gg), fetched daily. Population champion &amp; augment win rates: MayhemMeta (mayhemmeta.com). Skillshots dodged comes from PlayARAM's match list.</p>
     <p>What isn't measured: PlayARAM does not publish healing, shielding, crowd-control score or per-player objective damage, so none of those appear here.</p>
     <p>Not affiliated with Riot Games. ARAM Mayhem is a League of Legends game mode.</p>
@@ -328,6 +342,20 @@ async function load() {
   const res = await fetch('data/data.json');
   const data = await res.json();
   const players = [...data.players].sort((a,b) => (b.score ?? -1) - (a.score ?? -1));
+
+  // Category leaders, computed from the data at render time — never
+  // hardcoded, so they change every run. Ties mark every tied player;
+  // a category with no values anywhere has no leaders.
+  const leadersFor = (key) => {
+    const vals = players.map(p => p[key]).filter(v => v != null);
+    if (!vals.length) return new Set();
+    const max = Math.max(...vals);
+    return new Set(players.filter(p => p[key] === max).map(p => p.name));
+  };
+  const topKda = leadersFor('kda');
+  const topSkill = leadersFor('skillshots_dodged_per_min');
+  const topWin = leadersFor('win_rate');
+  const topDmg = leadersFor('damage_per_min');
 
   const ageH = data.meta.updated_at ? (Date.now() - new Date(data.meta.updated_at).getTime()) / 3600000 : null;
   const updChip = document.getElementById('updated-chip');
@@ -349,28 +377,53 @@ async function load() {
   const syncChip = document.getElementById('sync-chip');
   const auto = data.meta.automation;
   const syncAt = data.meta.last_extension_sync ? new Date(data.meta.last_extension_sync) : null;
-  if (auto && auto.last_source === 'browser extension' && syncAt && !isNaN(syncAt)) {
+  const hasRealSync = !!(auto && auto.last_source === 'browser extension' && syncAt && !isNaN(syncAt));
+  if (hasRealSync) {
     syncChip.hidden = false;
     syncChip.textContent = '✓ Synced via extension · ' + syncAt.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
   }
 
+  // Footer provenance: the snapshot paragraph is stale once a real
+  // sync has landed, so swap it for the live paragraph (with the real
+  // sync time) and hide the snapshot text. With seed data the snapshot
+  // paragraph stays exactly as it is.
+  if (hasRealSync) {
+    const footSnap = document.getElementById('foot-snapshot');
+    const footLive = document.getElementById('foot-live');
+    if (footSnap && footLive) {
+      footSnap.hidden = true;
+      footLive.hidden = false;
+      document.getElementById('foot-sync-time').textContent = syncAt.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+    }
+  }
+
   // Highlights — KPI cards: a tinted icon chip, a big number, a plain
-  // label. No trend pills: the data has no real comparison to show,
-  // and deltas are never invented.
+  // label, and a gold star pill on the category leader. No trend pills:
+  // the data has no real comparison to show, and deltas are never
+  // invented. A card whose value is null is hidden entirely — no "—"
+  // card (live Nov 9 run: the damage card has no value, so only three
+  // cards show; it comes back on any future run that provides damage).
   const h = data.highlights || {};
-  document.getElementById('highlights').innerHTML = [
-    ['🏆', 'Top rated · Performance Score', h.top_rated?.score, `${h.top_rated?.player || ''} · Rating ${h.top_rated?.mmr_style ?? ''}`, 'hl-hero'],
-    ['⚔️', 'Highest damage / min', h.highest_damage_per_min?.value?.toLocaleString?.(), `${h.highest_damage_per_min?.player || ''}${h.highest_damage_per_min?.note ? ' · ' + h.highest_damage_per_min.note : ''}`, 'hl-dmg'],
-    ['✨', 'Best KDA', h.best_kda?.value, h.best_kda?.player || '', 'hl-kda'],
-    ['🎯', 'Most skillshots dodged / min', h.most_skillshots_dodged_per_min?.value, h.most_skillshots_dodged_per_min?.player || '', 'hl-mech'],
-  ].map(([icon, l, v, w, cls]) => `<div class="card ${cls}"><div class="kpi-icon">${icon}</div><div class="label">${l}</div><div class="big">${fmt(v)}</div><div class="who">${w}</div></div>`).join('');
+  const hlCards = [
+    ['🏆', 'Top rated · Performance Score', h.top_rated?.score, `${h.top_rated?.player || ''} · Rating ${h.top_rated?.mmr_style ?? ''}`, 'hl-hero', ''],
+    ['⚔️', 'Highest damage / min', h.highest_damage_per_min?.value, h.highest_damage_per_min?.player ? `${h.highest_damage_per_min.player}${h.highest_damage_per_min.note ? ' · ' + h.highest_damage_per_min.note : ''}` : '', 'hl-dmg', '★ Top damage'],
+    ['✨', 'Best KDA', h.best_kda?.value, h.best_kda?.player || '', 'hl-kda', '★ Best KDA'],
+    ['🎯', 'Most skillshots dodged / min', h.most_skillshots_dodged_per_min?.value, h.most_skillshots_dodged_per_min?.player || '', 'hl-mech', '★ Most skillshots'],
+  ].filter(e => e[2] != null);
+  document.getElementById('highlights').innerHTML = hlCards.map(([icon, l, v, w, cls, pill]) =>
+    `<div class="card ${cls}"><div class="kpi-icon">${icon}</div><div class="label">${l}</div><div class="big">${fmt(typeof v === 'number' && v >= 1000 ? v.toLocaleString() : v)}</div><div class="who">${w}</div>${pill ? `<span class="top-pill">${pill}</span>` : ''}</div>`).join('');
 
   // Leaderboard
   const tb = document.querySelector('#leaderboard tbody');
+  // Damage column: hidden entirely when no player has a damage value
+  // (live Nov 9 run: null for all five) — no column of "—". It comes
+  // back on any future run that provides damage.
+  const hasDmg = players.some(p => p.damage_per_min != null);
+  document.getElementById('th-dmg').style.display = hasDmg ? '' : 'none';
   tb.innerHTML = players.map((p,i) => `<tr class="${i===0?'rank1':''}">
     <td class="rank-cell ${i<3 ? 'm'+(i+1) : ''}">${['🥇','🥈','🥉'][i] || (i+1)}</td><td><b>${p.name}</b></td><td class="num"><b>${fmt1(p.score)}</b><div class="bar slim"><div class="bar-fill" style="width:${p.score || 0}%"></div></div></td>
     <td class="num"><span class="pill-rating">${fmt(p.mmr_style)}</span></td><td class="num">${p.win_rate!=null ? `<span class="stat-chip">${fmt1(p.win_rate)}%</span>` : '—'}</td>
-    <td class="num">${p.wins!=null ? `<span class="stat-chip">${p.wins}–${p.losses}</span>` : '—'}</td><td class="num">${fmt(p.kda)}</td><td class="num">${fmt(p.damage_per_min?.toLocaleString?.())}</td></tr>`).join('');
+    <td class="num">${p.wins!=null ? `<span class="stat-chip">${p.wins}–${p.losses}</span>` : '—'}</td><td class="num">${fmt(p.kda)}</td>${hasDmg ? `<td class="num">${fmt(p.damage_per_min?.toLocaleString?.())}</td>` : ''}</tr>`).join('');
 
   // Score spectrum — all five on one shared 0–100 scale, one row each.
   // The top three sit within 1.1 points of each other, so markers on a
@@ -443,33 +496,43 @@ async function load() {
   const subKeys = [['output','Damage'],['kda_efficiency','KDA'],['teamplay','Teamplay'],['death_quality','Deaths'],['conversion','Structures'],['augments','Augments'],['mechanics','Dodging']];
   // One pastel per subscore, used consistently for its bar.
   const subColors = {output:'#f5a26b', kda_efficiency:'#f27ba7', teamplay:'#a78bfa', death_quality:'#4ade9d', conversion:'#e5c97a', augments:'#8f8fd0', mechanics:'#5eead4'};
-  const subBars = (p) => subKeys.map(([k,label]) => {
-    const v = p.subscores?.[k];
-    if (v == null) {
-      const why = (k === 'output' || k === 'conversion')
-        ? '— not available from PlayARAM'
-        : '— not filled yet';
-      return `<div class="bar-row"><span class="bar-label">${label}</span><span class="bar-empty muted">${why}</span></div>`;
-    }
-    return `<div class="bar-row"><span class="bar-label">${label}</span><div class="bar"><div class="bar-fill" style="width:${v}%;background:${subColors[k]}"></div></div><span class="bar-val">${v}</span></div>`;
-  }).join('');
+  // Subscore rows render only when the value exists — a missing
+  // criterion is skipped, never shown as an empty bar or a dash.
+  // (Live Nov 9 run: Damage, Teamplay and Structures are null, so
+  // those rows are hidden; they return on any run that provides them.)
+  const subBars = (p) => {
+    const rows = subKeys.filter(([k]) => p.subscores?.[k] != null).map(([k,label]) => {
+      const v = p.subscores[k];
+      return `<div class="bar-row"><span class="bar-label">${label}</span><div class="bar"><div class="bar-fill" style="width:${v}%;background:${subColors[k]}"></div></div><span class="bar-val">${v}</span></div>`;
+    });
+    return rows.length ? rows.join('') : '<p class="muted">No subscores filled yet for this window.</p>';
+  };
 
-  // Win-rate donut ring (SVG): full ring when win rate is known, grey
-  // ring with "—" when it is not filled yet (seed has no per-player
-  // win rate until the first daily run).
-  const donut = (pct, color) => {
+  // Win-rate donut ring (SVG): full ring when win rate is known.
+  // When it is not filled yet the donut is not rendered at all (the
+  // call site omits it) — no grey ring with "—".
+  const donut = (pct, color, topPill) => {
     const r = 26, c = (2 * Math.PI * r).toFixed(1);
     const frac = (pct == null) ? 0 : Math.max(0, Math.min(100, pct)) / 100;
     return `<div class="donut-wrap"><svg class="donut" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Win rate ${pct==null?'not filled yet':pct+'%'}">
       <circle cx="32" cy="32" r="${r}" fill="none" stroke="#262a38" stroke-width="7"/>
       ${frac > 0 ? `<circle cx="32" cy="32" r="${r}" fill="none" stroke="${color}" stroke-width="7" stroke-linecap="round" stroke-dasharray="${(c*frac).toFixed(1)} ${c}" transform="rotate(-90 32 32)"/>` : ''}
-      <text x="32" y="36.5" text-anchor="middle" class="donut-num">${pct==null?'—':Math.round(pct)+'%'}</text></svg><div class="donut-label">Win rate</div></div>`;
+      <text x="32" y="36.5" text-anchor="middle" class="donut-num">${pct==null?'—':Math.round(pct)+'%'}</text></svg><div class="donut-label">Win rate</div>${topPill ? `<span class="top-pill">${topPill}</span>` : ''}</div>`;
   };
 
   // Player cards — the rank plus the evidence for it, so a complaint gets an answer
   document.getElementById('players').innerHTML = players.map((p,i) => {
+    // Plain-words delta for a role vs the player's own overall grade:
+    // above = a strength for this player, below = a weak spot.
+    const roleDelta = (v) => {
+      const d = v.delta_vs_overall;
+      if (d == null) return '';
+      if (d >= 0.5) return `<span class="role-delta pro">▲ ${d} above your usual grade</span>`;
+      if (d <= -0.5) return `<span class="role-delta con">▼ ${Math.abs(d)} below your usual grade</span>`;
+      return `<span class="role-delta muted">About your usual grade</span>`;
+    };
     const roleRows = p.role_split ? Object.entries(p.role_split).map(([a,v]) =>
-      `<div class="role-row"><span class="bar-label">${a}</span><div class="bar"><div class="bar-fill" style="width:${Math.max(0, Math.min(100, v.mean_grade))}%"></div></div><span class="bar-val">${v.mean_grade} · ${v.games} games</span></div>`).join('')
+      `<div class="role-row"><span class="bar-label">${a}</span><div class="bar"><div class="bar-fill" style="width:${Math.max(0, Math.min(100, v.mean_grade))}%"></div></div><span class="bar-val">${v.mean_grade} · ${v.games} games</span>${roleDelta(v)}</div>`).join('')
       : '<p class="muted">Role split fills on the first daily run — it needs per-game data.</p>';
     return `<div class="player" style="--pc:${COLORS[i % COLORS.length]}">
     <div class="player-row-head">
@@ -481,11 +544,11 @@ async function load() {
       <div class="subcard">
         <h4>Overview</h4>
         <div class="overview-flex">
-          ${donut(p.win_rate, COLORS[i % COLORS.length])}
+          ${p.win_rate != null ? donut(p.win_rate, COLORS[i % COLORS.length], topWin.has(p.name) ? '★ Best win rate' : '') : ''}
           <div class="kpi-tiles">
-            <div class="mini-kpi"><div class="mk-label">KDA</div><div class="mk-big">${fmt(p.kda)}</div></div>
-            <div class="mini-kpi"><div class="mk-label">Damage / min</div><div class="mk-big">${fmt(p.damage_per_min?.toLocaleString?.())}</div></div>
-            <div class="mini-kpi"><div class="mk-label">Skillshots dodged / min</div><div class="mk-big">${fmt(p.skillshots_dodged_per_min)}</div></div>
+            <div class="mini-kpi"><div class="mk-label">KDA</div><div class="mk-big">${fmt(p.kda)}</div>${topKda.has(p.name) ? '<span class="top-pill">★ Best KDA</span>' : ''}</div>
+            ${p.damage_per_min != null ? `<div class="mini-kpi"><div class="mk-label">Damage / min</div><div class="mk-big">${fmt(p.damage_per_min.toLocaleString())}</div>${topDmg.has(p.name) ? '<span class="top-pill">★ Top damage</span>' : ''}</div>` : ''}
+            <div class="mini-kpi"><div class="mk-label">Skillshots dodged / min</div><div class="mk-big">${fmt(p.skillshots_dodged_per_min)}</div>${topSkill.has(p.name) ? '<span class="top-pill">★ Most skillshots</span>' : ''}</div>
             <div class="mini-kpi"><div class="mk-label">Record</div><div class="mk-big">${p.wins!=null ? p.wins+'–'+p.losses : '—'}</div></div>
           </div>
         </div>
@@ -493,7 +556,7 @@ async function load() {
       <div class="subcard">
         <h4>Evidence — subscores</h4>
         ${subBars(p)}
-        <p class="muted">Subscores are percentiles within role archetype, blended with same-champion percentiles. “—” means not filled yet for this window; Damage and Structures stay blank because PlayARAM's match list doesn't show damage or turret takedowns.</p>
+        <p class="muted">Subscores are percentiles within your role, blended with same-champion percentiles. Only criteria the data provides are shown.</p>
       </div>
     ${(() => {
       const r20 = p.recent_20;
@@ -508,6 +571,7 @@ async function load() {
     })()}
       <div class="subcard wide">
         <h4>By role played</h4>
+        <p class="muted" style="margin:-4px 0 10px">Average grade out of 100 in each role, with how many games you played it. The note under each bar says how that role compares to your usual grade — above means it's a strength, below means it's a weak spot.</p>
         ${roleRows}
       </div>
     </div>
@@ -563,8 +627,13 @@ async function load() {
       <span class="stack-val">${fmt1(s.win_rate_pct)}%</span>
       <span class="stack-sub"><span class="stat-chip">${s.player_games} games</span> <span class="stat-chip">${s.wins} wins</span> <span class="stat-chip">Grade ${fmt1(s.grade)}</span></span>
     </div>`).join('') : '<p class="muted">Stack splits fill on the first daily run.</p>';
-  document.getElementById('stack-note').textContent = data.meta?.stack_note ||
-    'Stack splits are a supplementary lens and do not change the scoring.';
+  // The updater's stack_note still describes the Nov 8 snapshot, so
+  // once a real run has landed the note is recomputed from the live
+  // splits instead of showing stale text.
+  const stackTotal = stacks.reduce((a,s) => a + (s.player_games || 0), 0);
+  document.getElementById('stack-note').textContent = hasRealSync
+    ? `${stackTotal} player-games from the last 50 per player. Stack splits are a supplementary lens and do not change the scoring.`
+    : (data.meta?.stack_note || 'Stack splits are a supplementary lens and do not change the scoring.');
 
   // History charts
   document.getElementById('history-note').textContent =
