@@ -1,6 +1,7 @@
 /* Background service worker — the part that opens the 5 profiles one
-   at a time, asks the content script to read each page, and downloads
-   the one export file at the end.
+   at a time, asks the content script to read each page, and then
+   syncs the one export file to GitHub itself (if a token is saved
+   in the options) or downloads it (if not, or if the sync fails).
 
    Human-like by design: one tab at a time, a real page load plus a
    2–4 second pause before reading, a 1–2 second breather between
@@ -8,9 +9,13 @@
    requests to PlayARAM itself — it only reads pages the user's own
    browser opened, on her home connection. If a Cloudflare check
    appears, the run stops and waits for her to click the checkbox
-   herself; it never tries to solve or bypass it. */
+   herself; it never tries to solve or bypass it.
 
-importScripts("players.js");
+   The only network request the extension ever makes on its own is
+   the GitHub commit (api.github.com), and only after all 5 profiles
+   are collected. One attempt, no retries. */
+
+importScripts("players.js", "github.js");
 
 const COLLECT_TIMEOUT_MS = 180000; // Load more + 50 Details panels can take a while
 const LOAD_TIMEOUT_MS = 60000;
@@ -30,9 +35,10 @@ function freshState() {
       games: null,
       note: "",
     })),
-    error: null, // { kind: "challenge" | "page" | "other", message }
+    error: null, // { kind: "challenge" | "page" | "sync" | "other", message }
     done: false,
-    filename: null,
+    filename: null, // set only when the file was downloaded (fallback)
+    synced: false, // true when GitHub accepted the commit
     total_games: 0,
   };
 }
@@ -187,26 +193,52 @@ async function runAll() {
     return;
   }
 
-  // All 5 done — download one file.
-  const filename = `mayhem-extension-export-${localDateStr(new Date())}.json`;
+  // All 5 done — sync the export to GitHub if a token is saved,
+  // otherwise download the file like before. The collection never
+  // waits on the token: it is only read here, after all 5 profiles.
+  const dateStr = localDateStr(new Date());
+  const filename = `mayhem-extension-export-${dateStr}.json`;
   const payload = {
     exported_at: new Date().toISOString(),
     source: "extension",
     players: collected,
   };
-  const blob = new Blob([JSON.stringify(payload, null, 2)],
-    { type: "application/json" });
-  const url = URL.createObjectURL(blob);
+
+  let synced = false;
+  let syncResult = null;
   try {
-    await chrome.downloads.download({
-      url, filename, saveAs: false, conflictAction: "overwrite",
-    });
-  } finally {
-    setTimeout(() => URL.revokeObjectURL(url), 10000);
+    const { githubToken } = await chrome.storage.local.get("githubToken");
+    if (githubToken) {
+      syncResult = await commitExportToGitHub(githubToken, payload, dateStr);
+      synced = !!syncResult.ok;
+    }
+  } catch (e) {
+    // Storage or network problem — fall through to the download.
+    syncResult = { ok: false, kind: "other", status: 0 };
   }
-  state.filename = filename;
+
+  if (!synced) {
+    const blob = new Blob([JSON.stringify(payload, null, 2)],
+      { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    try {
+      await chrome.downloads.download({
+        url, filename, saveAs: false, conflictAction: "overwrite",
+      });
+    } finally {
+      setTimeout(() => URL.revokeObjectURL(url), 10000);
+    }
+    state.filename = filename;
+  }
+  state.synced = synced;
   state.done = true;
   state.running = false;
+  if (!synced && syncResult) {
+    // The token was saved but GitHub did not accept the file. Plain
+    // words only — no token, no status, no response detail. The
+    // downloaded file is the fallback, so the run is still useful.
+    state.error = { kind: "sync", message: syncErrorMessage(syncResult) };
+  }
   await saveState();
 }
 

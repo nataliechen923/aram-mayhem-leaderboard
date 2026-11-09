@@ -48,15 +48,19 @@
 <body>
   <h1>ARAM Mayhem Collector</h1>
   <p class="sub">Reads your group's 5 PlayARAM profiles in your own browser,
-    exactly like you opening them yourself, and downloads one file for
-    the leaderboard. It makes no requests of its own.</p>
+    exactly like you opening them yourself, and sends the games to
+    the leaderboard. With a token saved (see Options below), one click
+    syncs it by itself; without one, it downloads one file instead.
+    It makes no requests to PlayARAM of its own — the only request it
+    ever makes itself is the one that sends the games to GitHub.</p>
   <button id="go">Update leaderboard</button>
   <div id="status"></div>
   <ul id="players"></ul>
   <div id="next"></div>
   <p id="foot">Runs only on playaram.gg profile pages. If a "verify you are
     human" check appears, it stops and waits for you — it never tries to
-    solve it.</p>
+    solve it. <a href="#" id="opts">Extension options</a> — add a GitHub
+    token there to sync with one click, no dragging.</p>
   <script src="players.js"></script>
   <script src="popup.js"></script>
 </body>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ARAM Mayhem Collector — Options</title>
+<style>
+  :root {
+    --bg: #000; --card: #121212; --gold: #c8aa6e; --gold-bright: #e5c97a;
+    --text: #f0ead9; --muted: #a89f8d; --line: #2a2a2a; --green: #3ddc84;
+    --red: #ff6b6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    width: 380px; margin: 0; padding: 16px;
+    background: var(--bg); color: var(--text);
+    font: 13px/1.5 -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  h1 { font-size: 16px; margin: 0 0 2px; color: var(--gold-bright); }
+  p.sub { margin: 0 0 14px; color: var(--muted); font-size: 12px; }
+  label { display: block; margin: 12px 0 4px; font-weight: 600; }
+  .fixed {
+    padding: 8px 10px; background: var(--card); border: 1px solid var(--line);
+    border-radius: 6px; color: var(--text);
+  }
+  .fixed span { color: var(--muted); font-size: 12px; }
+  input[type="password"] {
+    width: 100%; padding: 9px 10px; font-size: 13px;
+    background: var(--card); color: var(--text);
+    border: 1px solid var(--line); border-radius: 6px;
+  }
+  input[type="password"]:focus { outline: 2px solid var(--gold); outline-offset: 0; }
+  .row { display: flex; gap: 8px; margin-top: 14px; }
+  button {
+    padding: 10px 16px; font-size: 14px; font-weight: 700;
+    color: #000; background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+    border: 0; border-radius: 8px; cursor: pointer;
+  }
+  button.secondary {
+    background: var(--card); color: var(--gold-bright);
+    border: 1px solid var(--gold); font-weight: 600;
+  }
+  button:disabled { opacity: .45; cursor: default; }
+  #status { margin-top: 12px; min-height: 18px; }
+  #status.ok { color: var(--green); }
+  #status.err { color: var(--red); }
+  .warn {
+    margin-top: 16px; padding: 10px 12px; background: var(--card);
+    border: 1px solid var(--gold); border-radius: 6px; font-size: 12px;
+  }
+  .warn b { color: var(--gold-bright); }
+  .hint { color: var(--muted); font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+  <h1>ARAM Mayhem Collector — Options</h1>
+  <p class="sub">One-time setup so one click syncs the leaderboard by
+    itself — no dragging a file, no running anything by hand.</p>
+
+  <label>Repository <span style="color:var(--muted);font-weight:400;">(fixed — this is where your page lives)</span></label>
+  <div class="fixed">nataliechen923/aram-mayhem-leaderboard <span>· branch main</span></div>
+
+  <label for="token">GitHub token</label>
+  <input type="password" id="token" placeholder="Paste your token here" autocomplete="off" spellcheck="false">
+  <div class="hint">The token is saved only in this browser, in the
+    extension's own storage. It is never sent anywhere except GitHub,
+    and never shown to anyone.</div>
+
+  <div class="row">
+    <button id="save">Save</button>
+    <button id="test" class="secondary">Test</button>
+  </div>
+  <div id="status"></div>
+
+  <div class="warn"><b>Keep it secret, like a password.</b> This token
+    can write to this one repo only. Never share it, and never paste
+    it in a chat, an email, or anywhere else. You can take it away
+    any time: GitHub → your photo → Settings → Developer settings →
+    Personal access tokens — delete it there, and the extension just
+    goes back to downloading the file instead.</div>
+  <p class="hint">Test checks the token can see the repo. The first
+    sync proves it can write to it. Tokens expire — if you set it for
+    a year, paste a fresh one when GitHub reminds you, and everything
+    carries on.</p>
+
+  <script src="github.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

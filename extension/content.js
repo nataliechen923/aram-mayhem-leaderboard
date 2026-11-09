@@ -7,7 +7,10 @@
       It never attempts to solve or bypass the check.
    2. Clicks "Load more" (a normal in-page button, like the user
       clicking it) until 50 games are on the page or there is no more
-      button, waiting a human-like pause after each click.
+      button: the button is scrolled into view first, and after each
+      click the game count is polled every second for up to 10s, so a
+      slow page still loads. If a click loads nothing new, it tries
+      exactly one more click, then stops with the games it has.
    3. Parses the games out of the page with parser.js — the same rules
       as scripts/update.py, so fingerprints match.
    4. For each game, opens its Details panel (best effort) to read
@@ -23,6 +26,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const rand = (lo, hi) => lo + Math.random() * (hi - lo);
 
 function findLoadMoreButton(doc) {
+  // The real button is a plain <button> with the visible text
+  // "Load more", no href, centered below the last game card — the
+  // /load more/i match below is exactly right for it. While a batch
+  // is loading the button disappears entirely (no "Loading..." text),
+  // so this is only ever called after the game count has grown or
+  // after the wait timed out — never during a load.
   const els = doc.querySelectorAll("button, a, [role='button']");
   for (const el of els) {
     const label = ((el.textContent || "") + " "
@@ -40,6 +49,38 @@ function findLoadMoreButton(doc) {
   return null;
 }
 
+// After a Load more click, poll the parsed game count every second
+// for up to 10s and return as soon as it grows. A fixed sleep was
+// the bug: on the real page the new games can take longer than
+// 2.5s to appear, and the old code then concluded the button had
+// done nothing and stopped at 20 games.
+async function waitForGrowth(before, riotId, now) {
+  const deadline = Date.now() + 10000;
+  while (Date.now() < deadline) {
+    await sleep(1000);
+    if (isChallengePage(document)) return { challenge: true };
+    const p = parseProfileGames(document.documentElement.outerHTML, riotId, now);
+    if (p.games.length > before) return { parsed: p };
+  }
+  return { parsed: null }; // nothing new within 10s
+}
+
+// Diagnostics only: records what the Load more step did, so the
+// popup can show one short line per player (e.g. "Load more: button
+// not found"). Stored under the player's display name in
+// chrome.storage.session — the background worker never touches it,
+// and it is never part of the export. Never throws.
+async function saveLoadMoreDiag(displayName, record) {
+  try {
+    if (typeof chrome === "undefined" || !chrome.storage
+      || !chrome.storage.session) return;
+    const cur = await chrome.storage.session.get("mayhemLoadMore");
+    const map = (cur && cur.mayhemLoadMore) || {};
+    map[displayName] = { ...record, at: new Date().toISOString() };
+    await chrome.storage.session.set({ mayhemLoadMore: map });
+  } catch (e) { /* diagnostics only — never break collection */ }
+}
+
 async function collect(riotId, displayName) {
   const now = new Date();
   if (isChallengePage(document)) {
@@ -47,20 +88,55 @@ async function collect(riotId, displayName) {
   }
   // 1. Load more until 50 games are on the page (or no more button).
   let parsed = parseProfileGames(document.documentElement.outerHTML, riotId, now);
+  const gamesBeforeLoadMore = parsed.games.length;
   let clicks = 0;
+  let buttonFound = false;
+  let stalled = false; // a click already failed to grow the list once
   while (parsed.games.length < 50 && clicks < 8) {
     const btn = findLoadMoreButton(document);
     if (!btn) break;
+    buttonFound = true;
     const before = parsed.games.length;
+    // The button sits at the bottom of a long list; bring it into
+    // view first — on the real page a click on an off-screen control
+    // can be ignored — then click it like the user would.
+    btn.scrollIntoView({ block: "center" });
+    await sleep(rand(400, 700));
     btn.click();
     clicks += 1;
-    await sleep(rand(1500, 2500));
-    if (isChallengePage(document)) return { status: "challenge" };
-    parsed = parseProfileGames(document.documentElement.outerHTML, riotId, now);
-    if (parsed.games.length <= before) break; // button did nothing new
+    const grown = await waitForGrowth(before, riotId, now);
+    if (grown.challenge) return { status: "challenge" };
+    if (grown.parsed) {
+      parsed = grown.parsed;
+      stalled = false;
+      // The button disappears while a batch loads and only comes
+      // back once the new games are in; give it a beat to reappear
+      // before looking for it again, so a still-hidden button is
+      // never mistaken for "no more games".
+      await sleep(rand(500, 900));
+      continue;
+    }
+    // Nothing new arrived within 10s. Try exactly one more click;
+    // if that also loads nothing, stop — the games already on the
+    // page are still collected.
+    if (stalled) break;
+    stalled = true;
   }
   const games = parsed.games.slice(0, 50);
-  const diag = { ...parsed.diag, load_more_clicks: clicks };
+  const diag = {
+    ...parsed.diag,
+    load_more_clicks: clicks,
+    load_more_found: buttonFound,
+    games_before_load_more: gamesBeforeLoadMore,
+    games_after_load_more: parsed.games.length,
+  };
+  await saveLoadMoreDiag(displayName, {
+    games: games.length,
+    load_more_found: buttonFound,
+    load_more_clicks: clicks,
+    games_before_load_more: gamesBeforeLoadMore,
+    games_after_load_more: parsed.games.length,
+  });
 
   // 2. Details panels for damage (best effort, null-safe).
   // Card roots are in document order (newest first), same as the
