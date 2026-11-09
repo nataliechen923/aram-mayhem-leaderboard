@@ -199,23 +199,23 @@ it work.
    from GitHub's computers (see Step 7 — the extension is how the
    fresh games get in). The run still gets a green checkmark, and
    the page keeps the Nov 8 numbers for now.
-9. The numbers fill in when you do Step 7 (the extension) and run
-   the workflow once more. Until then, the page is supposed to
-   still say Nov 8.
+9. The numbers fill in when you do Step 7 (the extension) and
+   click **Update leaderboard** once. The workflow starts by itself
+   after that. Until then, the page is supposed to still say Nov 8.
 
 ## Step 6 — You are done with the website setup
 
 That is the whole setup for the page itself. One more piece follows
 in Step 7 — the extension that feeds it fresh games. From now on:
 
-- Every night at **12:00 AM CST**, the robot runs by itself. If you
-  uploaded a fresh file from the extension (Step 7), it imports
-  those games, updates the numbers, and republishes the page. If
-  there is no new file, it tries PlayARAM directly and, as expected,
-  gets refused — the page simply keeps its last numbers. It tries
-  again at 12:30 AM if the first try fails.
-- You never have to refresh the page by hand for it to update, and
-  you never have to paste anything anywhere.
+- Every night at **12:00 AM CST**, the robot runs by itself. If the
+  extension sent fresh games (Step 7), it imports them, updates the
+  numbers, and republishes the page. If there is no new file, it
+  tries PlayARAM directly and, as expected, gets refused — the page
+  simply keeps its last numbers. It tries again at 12:30 AM if the
+  first try fails.
+- You never have to refresh the page by hand for it to update. The
+  only pasting is the one-time token in Step 7.
 
 ## Step 7 — Install the extension (the part that keeps the numbers fresh)
 
@@ -223,8 +223,9 @@ PlayARAM refuses requests from GitHub's computers, but it loads fine
 in your own Chrome browser at home. So instead of GitHub asking
 PlayARAM for the games, a tiny extension in YOUR Chrome looks at the
 5 profiles the way you would — one click from you, once a day or
-after a game night — and downloads one file. You drag that file into
-the repo, and the robot does the rest.
+after a game night — and sends the games straight to the repo
+itself. The robot sees the new file, imports it, and republishes
+the page, all by itself. Click the button — that is it.
 
 The extension only wakes up on PlayARAM profile pages. It never
 talks to PlayARAM on its own, never tries to get past a security
@@ -258,7 +259,65 @@ That is normal for an extension installed this way — just ignore
 it. (The extension is not in the Chrome store, because it is a
 private tool made only for your group.)
 
-### Use it (about 1 minute, once a day or after a game night)
+If you already installed the first version of the extension (the
+one that only downloaded a file): unzip the new zip the same way,
+and when Windows or Mac asks, pick **Replace the files** so the
+old `extension` folder gets the new files. Then go to
+**chrome://extensions**, find **ARAM Mayhem Collector**, and click
+the little circular **reload** arrow on its card. That is it — your
+saved token (if you added one) stays saved.
+
+### Add the token (once, about 5 minutes)
+
+The extension needs one password-like key — called a token — so it
+is allowed to put the file in your repo itself. You make it once on
+GitHub, paste it into the extension, and then you never touch it
+again until it expires (see the note at the end of this part).
+
+1. Go to **github.com** and make sure you are signed in. Click
+   your **profile photo** (top right corner) and pick **Settings**.
+2. Scroll all the way down the left-hand menu and click
+   **Developer settings** (near the bottom).
+3. On the left, under **Personal access tokens**, click
+   **Fine-grained tokens**.
+4. Click the green **Generate new token** button.
+5. Under **Token name**, type `ARAM Mayhem extension`.
+6. Under **Expiration**, pick **1 year**. (GitHub will email you
+   before it expires. When that happens, just make a new one the
+   same way and paste it in again — everything else stays the
+   same.)
+7. Under **Repository access**, pick **Only select repositories**,
+   then click the box and pick **aram-mayhem-leaderboard**.
+8. Scroll down to **Repository permissions**. Find **Contents** in
+   the list, click the dropdown next to it, and pick **Read and
+   write**. (This is the permission that lets the extension put
+   the file in the repo. It cannot do anything else.)
+9. Scroll to the bottom and click the green **Generate new token**
+   button.
+10. GitHub shows you the token — a long jumble of letters and
+    numbers. Click the **copy button** next to it (the little
+    two-squares icon). **Copy it now: GitHub only shows it once,
+    and if you close this page without copying it, you have to
+    start over.**
+11. Go back to Chrome. Click the **ARAM Mayhem Collector** icon in
+    the toolbar, then click **Extension options** at the bottom of
+    the little box. (Or go to **chrome://extensions**, find
+    **ARAM Mayhem Collector**, and click **Details** → **Extension
+    options**.)
+12. Paste the token into the **GitHub token** box and click
+    **Save**, then click **Test**. If it says the token works,
+    you are done. If it says the token did not work, check you
+    pasted the whole thing, with nothing extra before or after it.
+
+**Keep the token secret, like a password.** It can only write to
+this one repo, but never share it and never paste it in a chat, an
+email, or anywhere else. You can take it away any time: GitHub →
+your photo → Settings → Developer settings → Personal access
+tokens → find "ARAM Mayhem extension" → Delete. If you do that,
+the extension just goes back to downloading the file, and you drag
+it in as below.
+
+### Use it (one click, once a day or after a game night)
 
 1. Click the **ARAM Mayhem Collector** icon in Chrome's toolbar.
    A small box opens. Click the big **Update leaderboard** button.
@@ -266,24 +325,36 @@ private tool made only for your group.)
    read the games — about 1–2 minutes for all 5. **Do not close
    the tabs it opens**, and do not click around in them while it
    works. You can watch it go, or just let it run.
-3. When it finishes, the box says "Done" and Chrome downloads one
-   file called `mayhem-extension-export-YYYY-MM-DD.json` (the date
-   is today's date). It lands in your Downloads folder.
-4. **Rename that file to `extension-export.json`.** (Right-click it
+3. When it finishes, the box says "Synced — the page rebuilds
+   itself, give it a minute." That is the whole job. Wait about a
+   minute, reload your leaderboard link (Ctrl+Shift+R on Windows,
+   Cmd+Shift+R on Mac), and the top should say "Last updated"
+   with today's date. The per-game rows, the "what to work on"
+   tips, and the top 3 / worst 3 champions should be filled in.
+
+That is it. No file to drag, no workflow to run. The robot starts
+itself the moment the extension puts the file in the repo.
+
+### If you have not added a token yet (the drag-a-file way)
+
+This still works, exactly as before:
+
+1. Click **Update leaderboard** as above. When it finishes, the
+   box says "Done" and Chrome downloads one file called
+   `mayhem-extension-export-YYYY-MM-DD.json` (the date is today's
+   date). It lands in your Downloads folder.
+2. **Rename that file to `extension-export.json`.** (Right-click it
    in Downloads, pick Rename, type the new name.)
-5. Go to your repo on GitHub, click the **`data`** folder, then
+3. Go to your repo on GitHub, click the **`data`** folder, then
    **Add file** → **Upload files**, and drag the renamed file in.
    Scroll down and click the green **Commit changes** button.
    (If GitHub says the file already exists, click **Commit changes**
    anyway — it replaces the old one. That is supposed to happen.)
-6. Click the **Actions** tab → **Update leaderboard daily** →
-   **Run workflow** → **Run workflow**. Wait 1–2 minutes for the
-   green checkmark. (You can also skip this step and wait for the
-   nightly run at 12:00 AM — the robot picks the file up by itself.)
-7. Reload your leaderboard link (Ctrl+Shift+R on Windows,
-   Cmd+Shift+R on Mac). The top should now say "Last updated"
-   with today's date, and the per-game rows, the "what to work on"
-   tips, and the top 3 / worst 3 champions should be filled in.
+4. Putting that file in the repo starts the robot by itself now —
+   you do not have to run the workflow by hand. Wait 1–2 minutes
+   for the green checkmark on the Actions page, then reload the
+   leaderboard link. (The robot also runs every night at 12:00 AM
+   and picks the file up then, if you would rather wait.)
 
 ### If the extension box says something is wrong
 
@@ -296,12 +367,26 @@ private tool made only for your group.)
   not load properly. Check your internet, wait a minute, and press
   the button again. If it keeps happening, tell me which player
   it was.
+- **"The token didn't work."** The token in the extension options
+  is wrong or expired. Open the options (click the extension icon
+  → **Extension options**), paste a fresh token (make one as in
+  "Add the token" above), click **Save**, then **Test**. Until it
+  works, the extension downloads the file instead — use the
+  drag-a-file way above.
+- **"Couldn't find the repo."** The token was made for a different
+  repo, or the wrong repo was picked in step 7 of "Add the token".
+  Make a new token and pick **aram-mayhem-leaderboard** under
+  "Only select repositories".
+- **"GitHub didn't accept the file."** Something went wrong on
+  GitHub's side. The file was downloaded instead — drag it in as
+  in "If you have not added a token yet" above. If it keeps
+  happening, tell me what the box said.
 - **The button does nothing.** Close the little box and click the
   icon again. If it still does nothing, the extension may have
   been turned off: go to chrome://extensions and check that
   **ARAM Mayhem Collector** is switched on.
-- **The page still shows Nov 8 after the workflow run.** Check
-  that the file you uploaded is named exactly
+- **The page still shows Nov 8 after the workflow run.** If you
+  dragged the file in yourself, check that it is named exactly
   `extension-export.json` and is inside the `data` folder — not
   in the top level of the repo, and not still called
   `mayhem-extension-export-....json`. If the name is wrong, the
@@ -312,9 +397,10 @@ private tool made only for your group.)
 You are done when you can tick all of these:
 
 - [ ] Your leaderboard link opens and shows the 5 players.
-- [ ] You installed the extension (Step 7) and it downloaded a file.
+- [ ] You installed the extension (Step 7), added the token, and
+      clicked Update leaderboard once — the box said "Synced".
 - [ ] The line at the top says "Last updated" with today's date
-      (after uploading the file and running the workflow once).
+      (after clicking Update leaderboard once).
 - [ ] The Actions page shows a run with a green checkmark.
 - [ ] The "What to work on" box under each player has tips in it
       (not "fills on the first daily run").
@@ -406,8 +492,10 @@ page used.
   day or after a game night. It also opens each game's Details
   panel, so it brings back the damage numbers the server fetch
   could not see, and it clicks "Load more" until it has all 50
-  games. The file it downloads goes in `data/` as
-  `extension-export.json`, and the nightly robot imports it.
+  games. With a token saved, it puts the file in `data/` as
+  `extension-export.json` itself, and the robot imports it right
+  away. Without a token, it downloads the file and you drag it
+  into `data/` yourself (same file, same name).
 - The updater still tries PlayARAM directly once a day from
   GitHub's computers, as a backup. PlayARAM refuses those requests
   (Cloudflare), so that try fails quietly and the page keeps its
@@ -483,9 +571,9 @@ not by playing tanks.
 | `players.yaml` | The 5 players and their Riot IDs (all NA, Mayhem only), and the 50-game window. |
 | `scripts/update.py` | The robot's instructions: fetch the games, compute the scores, save the numbers. |
 | `scripts/check_fresh.py` | A check that runs after each update: if the numbers are older than 3 days, it fails the run on purpose so GitHub emails you. |
-| `.github/workflows/update.yml` | The schedule: run the updater every night at 12:00 AM CST, retry at 12:30 AM. |
-| `extension/` | The Chrome extension (Step 7): reads the 5 profiles in your browser and downloads one file. It comes as a separate zip, `aram-mayhem-extension.zip`. |
-| `data/extension-export.json` | The file the extension downloads (renamed). You upload it to the `data` folder; the robot imports it and removes it. It is not in the repo by default. |
+| `.github/workflows/update.yml` | The schedule: run the updater every night at 12:00 AM CST, retry at 12:30 AM — and also whenever the extension puts a fresh export in `data/`. |
+| `extension/` | The Chrome extension (Step 7): reads the 5 profiles in your browser and sends the games straight to the repo (or downloads one file if no token is saved). It comes as a separate zip, `aram-mayhem-extension.zip`. |
+| `data/extension-export.json` | The file the extension sends to the `data` folder (itself, with a token — or you upload the downloaded file, renamed). The robot imports it and removes it. It is not in the repo by default. |
 | `data/manual_games.csv` | A blank form for the manual backup (see below). |
 
 ## Manual backup (only if PlayARAM stops working)
@@ -512,6 +600,11 @@ week to week.
   how its profile pages look, the extension may stop reading them
   properly until it is updated — tell me if it suddenly finds
   0 games and I will fix it.
+- **The token expires.** If you picked 1 year, GitHub emails you
+  before it runs out. Make a new one the same way (Step 7) and
+  paste it into the extension options — everything else stays
+  the same. While the token is expired, the extension just
+  downloads the file instead, so nothing breaks.
 - **PlayARAM is a small third-party site.** It sits behind a service
   called Cloudflare, which sometimes refuses automated requests (a
   403 error or a cut connection). I saw that happen from one computer
