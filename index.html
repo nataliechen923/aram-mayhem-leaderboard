@@ -8,34 +8,38 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  /* DAYLIGHT theme: pale lavender-white page, white rounded cards, navy text,
-     periwinkle/lavender accents, pale yellow highlights, one dark navy hero card.
-     Green/red are deeper shades tuned for light cards. */
+  /* DARK theme (black/gold — the palette Natalie originally chose):
+     pure black page, charcoal cards, gold accents, warm off-white text,
+     gold grade bars and gold-toned chart lines. Green/red are lightened
+     for contrast on black. */
   :root {
-    --bg:#f5f3fa; --card:#ffffff; --card2:#f6f5fc; --navy:#232a4a; --navy-deep:#1b2140;
-    --text:#232a4a; --muted:#6f6d88; --muted-dim:#8f8ca6;
-    --gold:#d9a441; --gold-bright:#f0d878; --yellow:#f5e6a3;
-    --periwinkle:#8f8fd0; --periwinkle-deep:#5a54a6; --lav-line:#e3e0f0;
-    --green:#177245; --green-bright:#1e8e5a; --red:#b3261e; --red-bright:#d0453e;
-    --line:#e7e4f3; --line-soft:#efedf7;
+    --bg:#000000; --card:#121212; --card2:#1b1b1b; --navy:#f5efe2; --navy-deep:#f5efe2;
+    --text:#f2ecdd; --muted:#b0a892; --muted-dim:#8d8672;
+    --gold:#c8aa6e; --gold-bright:#e5c97a; --yellow:#e5c97a;
+    --periwinkle:#c8aa6e; --periwinkle-deep:#e5c97a; --lav-line:#2a2a2a;
+    --green:#5ed6a0; --green-bright:#4cc38a; --red:#f87171; --red-bright:#ef5350;
+    --line:#2a2a2a; --line-soft:#222222;
     /* Deliberate highlight accents — one per highlight card, restrained. */
     --accent-dmg:#e07b39;   /* damage */
-    --accent-mech:#c65b7f;  /* skillshots / mechanics */
-    --accent-silver:#8a8f98; /* 2nd place */
-    --accent-bronze:#b0703c; /* 3rd place */
-    --shadow:0 1px 2px rgba(35,42,74,.05), 0 12px 32px rgba(35,42,74,.08);
+    --accent-mech:#d67b9a;  /* skillshots / mechanics */
+    --accent-silver:#9aa0a8; /* 2nd place */
+    --accent-bronze:#c98a4b; /* 3rd place */
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 12px 32px rgba(0,0,0,.55);
   }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--text);
     font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
     line-height:1.55; font-size:16px; -webkit-font-smoothing:antialiased; }
   header { padding:34px 20px 22px; max-width:1080px; margin:0 auto; border-bottom:1px solid var(--lav-line); }
-  .eyebrow { margin:0 0 10px; font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:#6a63a8; }
+  .eyebrow { margin:0 0 10px; font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:#c8aa6e; }
   h1 { margin:0; font-size:40px; font-weight:800; letter-spacing:-.02em; line-height:1.05; color:var(--navy); }
   h1 span { color:var(--periwinkle-deep); }
   .sub { color:var(--muted); margin:8px 0 0; font-size:15px; }
-  .badge { display:inline-block; background:#e3f4e9; color:var(--green); border:1px solid #bfe6cd;
-    padding:5px 12px; border-radius:999px; font-size:13px; font-weight:600; margin-top:14px; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+  .chip { display:inline-block; background:#1b1b1b; color:var(--navy); border:1px solid var(--lav-line);
+    padding:6px 14px; border-radius:999px; font-size:13px; font-weight:600; text-decoration:none; }
+  a.chip:hover { border-color:var(--periwinkle); color:var(--periwinkle-deep); }
+  .chip.stale { background:#2a2110; border-color:#8a7433; color:#e5c97a; }
   main { max-width:1080px; margin:0 auto; padding:8px 20px 64px; }
   section { margin-top:44px; }
   h2 { position:relative; font-size:21px; font-weight:800; letter-spacing:.03em; text-transform:uppercase;
@@ -48,22 +52,22 @@
     border-radius:20px; padding:20px 22px; box-shadow:var(--shadow); }
   .card .label { color:var(--muted); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.08em; }
   .card .big { font-size:32px; font-weight:800; margin:6px 0 2px; letter-spacing:-.02em; font-variant-numeric:tabular-nums; color:var(--navy); }
-  .card .who { color:#4c4a68; font-weight:600; font-size:14px; }
-  /* Highlight stat cards: one accent each — hero navy card for top rated,
+  .card .who { color:#b0a892; font-weight:600; font-size:14px; }
+  /* Highlight stat cards: one accent each — hero gold-tinted card for top rated,
      orange = damage, green = KDA, rose = skillshots. */
   .hl { border-top:3px solid var(--periwinkle); }
   .hl-dmg { border-top-color:var(--accent-dmg); } .hl-dmg .big { color:#d96f2a; }
   .hl-kda { border-top-color:var(--green-bright); } .hl-kda .big { color:var(--green); }
-  .hl-mech { border-top-color:var(--accent-mech); } .hl-mech .big { color:#b84a6e; }
-  .hl-hero { background:linear-gradient(160deg,#262d52,#1b2140); border:1px solid #262d52; }
-  .hl-hero .label { color:#b9b8e8; }
+  .hl-mech { border-top-color:var(--accent-mech); } .hl-mech .big { color:#d67b9a; }
+  .hl-hero { background:linear-gradient(160deg,#221d10,#121212); border:1px solid #c8aa6e; }
+  .hl-hero .label { color:#c8aa6e; }
   .hl-hero .big { color:var(--yellow); }
-  .hl-hero .who { color:#e8e6f5; }
+  .hl-hero .who { color:#d8d2c0; }
   .table-card { background:var(--card); border:1px solid var(--line); border-radius:20px;
     overflow:hidden; box-shadow:var(--shadow); }
   table { width:100%; border-collapse:collapse; }
   th, td { padding:12px 14px; text-align:left; border-bottom:1px solid var(--line-soft); font-size:14px; }
-  th { background:#f2f1fa; color:#55527a; font-size:12.5px; font-weight:700; letter-spacing:.06em;
+  th { background:#1b1b1b; color:#b0a892; font-size:12.5px; font-weight:700; letter-spacing:.06em;
     text-transform:uppercase; cursor:pointer; white-space:nowrap; }
   th:hover { color:var(--periwinkle-deep); }
   th:hover::after { content:' ↕'; font-size:10px; color:var(--gold); }
@@ -71,18 +75,16 @@
   th:last-child, td:last-child { padding-right:18px; }
   td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
   tr:last-child td { border-bottom:none; }
-  tr:hover td { background:#f6f5fc; }
-  tr.rank1 td { background:rgba(245,230,163,.45); }
+  tr:hover td { background:#1e1e1e; }
+  tr.rank1 td { background:rgba(200,170,110,.16); }
   tr.rank1 td:first-child { box-shadow:inset 3px 0 0 var(--gold); }
   .rank-cell { font-size:16px; white-space:nowrap; }
   .rank-cell.m1 { filter:drop-shadow(0 0 4px rgba(201,162,39,.55)); }
   .rank-cell.m2 { filter:drop-shadow(0 0 4px rgba(120,125,140,.45)); }
   .rank-cell.m3 { filter:drop-shadow(0 0 4px rgba(176,112,60,.45)); }
-  .pill { display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; font-weight:600; background:#e3f4e9; color:var(--green); }
-  .pill.low { background:#fdecea; color:var(--red); }
   .top-tag { display:inline-block; vertical-align:middle; margin-left:8px; padding:2px 9px; border-radius:999px;
     font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
-    color:var(--navy); background:var(--yellow); }
+    color:#000; background:var(--yellow); }
   .player-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
   .player { background:var(--card); border:1px solid var(--line);
     border-radius:20px; padding:20px; box-shadow:var(--shadow); border-top:3px solid var(--pc,var(--periwinkle)); }
@@ -90,22 +92,20 @@
   .player .score { font-size:26px; font-weight:800; color:var(--periwinkle-deep); letter-spacing:-.01em; font-variant-numeric:tabular-nums; }
   .player ul { margin:8px 0; padding-left:20px; }
   .player li { margin:4px 0; font-size:14px; }
-  .workon { background:#fdf6d8; border:1px solid #e8d67e; border-radius:12px; padding:12px 14px; margin-top:12px; font-size:14px; }
-  .workon b { color:#7a5f14; }
+  .workon { background:#221d10; border:1px solid #8a7433; border-radius:12px; padding:12px 14px; margin-top:12px; font-size:14px; }
+  .workon b { color:#e5c97a; }
   canvas { width:100%; height:260px; background:var(--card); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); }
-  details { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:14px 18px; margin:10px 0; box-shadow:var(--shadow); }
-  summary { cursor:pointer; font-weight:700; }
-  summary:hover { color:var(--periwinkle-deep); }
-  .note { background:#f2f1fa; border-left:4px solid var(--periwinkle); padding:14px 16px; border-radius:8px; color:#3c3a5e; font-size:14px; margin-top:20px; }
+  .fair-short p { margin:10px 0; font-size:15px; }
+  .fair-short p:first-child { margin-top:0; }
   .muted { color:var(--muted); font-size:13px; }
-  code { background:#eceaf6; padding:1px 6px; border-radius:6px; }
+  code { background:#2a2a2a; color:#e5c97a; padding:1px 6px; border-radius:6px; }
   footer { color:var(--muted); font-size:13px; border-top:1px solid var(--lav-line); margin-top:48px; padding-top:20px; }
-  .bar { background:#eceaf6; border:1px solid var(--line); border-radius:999px; height:12px; overflow:hidden; }
+  .bar { background:#2a2a2a; border:1px solid var(--line); border-radius:999px; height:12px; overflow:hidden; }
   .bar.slim { height:8px; margin-top:4px; }
-  .bar-fill { height:100%; background:linear-gradient(90deg,#8f8fd0,#5a54a6); border-radius:999px; }
-  .bar-fill.good { background:linear-gradient(90deg,#2ea36b,#1e8e5a); }
-  .bar-fill.bad { background:linear-gradient(90deg,#d06059,#c0392b); }
-  .bar-row { display:grid; grid-template-columns:110px 1fr 90px; gap:8px; align-items:center; margin:6px 0; font-size:13px; }
+  .bar-fill { height:100%; background:linear-gradient(90deg,#c8aa6e,#e5c97a); border-radius:999px; }
+  .bar-fill.good { background:linear-gradient(90deg,#2f9e6e,#5ed6a0); }
+  .bar-fill.bad { background:linear-gradient(90deg,#c0453e,#f87171); }
+  .bar-row { display:grid; grid-template-columns:110px 1fr 56px; gap:8px; align-items:center; margin:6px 0; font-size:13px; }
   .bar-row .bar-empty { grid-column:2 / 4; }
   .bar-label { color:var(--muted); }
   .bar-val { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; }
@@ -117,10 +117,10 @@
      are two separated panels with pill badges. */
   .champs-list { display:flex; flex-direction:column; gap:28px; }
   .champ-card { background:var(--card); border:1.5px solid var(--line); border-radius:20px;
-    box-shadow:0 2px 4px rgba(35,42,74,.06), 0 16px 36px rgba(35,42,74,.10);
+    box-shadow:0 2px 4px rgba(0,0,0,.5), 0 16px 36px rgba(0,0,0,.6);
     border-top:4px solid var(--pc,var(--periwinkle)); overflow:hidden; }
   .champ-band { display:flex; align-items:center; gap:10px; flex-wrap:wrap;
-    background:#f2f1fa; border-bottom:1px solid var(--line); padding:14px 20px; }
+    background:#1b1b1b; border-bottom:1px solid var(--line); padding:14px 20px; }
   .champ-band h3 { margin:0; font-size:19px; }
   .champ-band .champ-score { margin-left:auto; font-size:15px; font-weight:800;
     color:var(--periwinkle-deep); font-variant-numeric:tabular-nums; white-space:nowrap; }
@@ -128,27 +128,25 @@
   .champ-body { padding:18px 20px 20px; }
   .champ-duo { display:flex; gap:16px; }
   .champ-half { flex:1; min-width:0; border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
-  .champ-half.good { background:#eef9f2; border-top:3px solid var(--green-bright); }
-  .champ-half.bad { background:#fdf1f0; border-top:3px solid var(--red-bright); }
+  .champ-half.good { background:rgba(94,214,160,.10); border-top:3px solid var(--green-bright); }
+  .champ-half.bad { background:rgba(248,113,113,.08); border-top:3px solid var(--red-bright); }
   .champ-half h4 { margin:0 0 12px; font-size:15px; }
   .champ-pill { display:inline-block; padding:3px 12px; border-radius:999px;
     font-size:13px; font-weight:700; letter-spacing:.02em; color:#fff; }
-  .champ-pill.good { background:var(--green); }
-  .champ-pill.bad { background:var(--red); }
+  .champ-pill.good { background:#2e7d5b; }
+  .champ-pill.bad { background:#a52a24; }
   .champ-trio { display:flex; gap:10px; }
   .champ-cell { flex:1; min-width:0; text-align:center; }
   .champ-cell .rank { font-size:12px; color:var(--muted); font-weight:700; }
-  .champ-cell .rank.first { color:#b8860b; }
-  .champ-thumb-lg { width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid var(--line); background:#e7e4f3; box-shadow:0 4px 12px rgba(35,42,74,.18); }
-  .champ-half.good .champ-thumb-lg { border-color:#7cc79c; }
-  .champ-half.bad .champ-thumb-lg { border-color:#e5a9a4; }
+  .champ-cell .rank.first { color:#e5c97a; }
+  .champ-thumb-lg { width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid var(--line); background:#2a2a2a; box-shadow:0 4px 12px rgba(0,0,0,.5); }
+  .champ-half.good .champ-thumb-lg { border-color:#5ed6a0; }
+  .champ-half.bad .champ-thumb-lg { border-color:#f87171; }
   .champ-cell .cname { font-weight:700; font-size:14px; margin-top:6px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .champ-cell .cstats { font-size:12px; color:var(--muted); line-height:1.45; margin-top:4px; font-variant-numeric:tabular-nums; }
   .champ-cell .cwhy { font-size:11px; color:var(--muted); line-height:1.35; margin-top:4px; }
 
   .champ-head { display:flex; justify-content:space-between; gap:8px; font-size:14px; }
-  .why-card { background:var(--card); border:1px solid var(--line);
-    border-radius:20px; padding:20px; box-shadow:var(--shadow); border-top:3px solid var(--pc,var(--periwinkle)); }
   /* One-line rank summary: 5 rows in rank order, numbers bolded. */
   .rank-summary { background:var(--card); border:1px solid var(--line); border-radius:20px;
     box-shadow:var(--shadow); padding:8px 22px; margin-top:18px; }
@@ -159,7 +157,7 @@
   .rs-rank { font-size:16px; }
   .rs-name { font-weight:700; }
   .rs-score { font-weight:800; color:var(--periwinkle-deep); font-variant-numeric:tabular-nums; text-align:right; }
-  .rs-why { color:#3c3a5e; }
+  .rs-why { color:#d8d2c0; }
   .rs-why b { color:var(--navy); }
   /* Score spectrum: every player on one shared 0–100 scale, one row each
      so the tight clusters (55.0 / 55.4 / 56.1) never collide. */
@@ -169,10 +167,10 @@
   .spec-head { display:flex; align-items:baseline; gap:8px; font-size:14px; margin-bottom:6px; }
   .spec-head .spec-name { font-weight:700; }
   .spec-head .spec-val { margin-left:auto; font-weight:800; color:var(--periwinkle-deep); font-variant-numeric:tabular-nums; }
-  .spec-track { position:relative; height:10px; background:#eceaf6; border:1px solid var(--line); border-radius:999px; }
+  .spec-track { position:relative; height:10px; background:#2a2a2a; border:1px solid var(--line); border-radius:999px; }
   .spec-dot { position:absolute; top:50%; width:18px; height:18px; border-radius:50%;
     background:var(--pc,var(--periwinkle)); border:3px solid #fff;
-    transform:translate(-50%,-50%); box-shadow:0 2px 8px rgba(35,42,74,.35); }
+    transform:translate(-50%,-50%); box-shadow:0 2px 8px rgba(0,0,0,.6); }
   .spec-axis { display:flex; justify-content:space-between; margin-top:6px;
     font-size:11.5px; color:var(--muted); font-variant-numeric:tabular-nums; }
   /* When You Stack: win-rate bars, one per stack size. */
@@ -186,7 +184,7 @@
     th:last-child, td:last-child { padding-right:10px; }
     .champ-duo{flex-direction:column;}
     section { margin-top:36px; }
-    .player, .why-card { padding:16px; }
+    .player { padding:16px; }
     .champ-band{padding:12px 16px;} .champ-body{padding:14px 16px 16px;}
     .rs-row{grid-template-columns:28px 1fr auto;}
     .rs-why{grid-column:1 / -1;}
@@ -201,11 +199,12 @@
   <p class="eyebrow">League of Legends · ARAM Mayhem · Last 50 Games</p>
   <h1>ARAM Mayhem <span>— Team Leaderboard</span></h1>
   <p class="sub">Each player scored on their own <b>last 50 ARAM Mayhem games</b>. Remakes under 5 minutes excluded.</p>
-  <p class="sub" id="updated">Loading…</p>
-  <span class="badge">✓ Auto-updates daily at 12:00 AM CST — refreshing this page never contacts Riot or PlayARAM, so it can't get blocked</span>
+  <div class="chips">
+    <span class="chip" id="updated-chip">Last updated: …</span>
+    <a class="chip" href="https://playaram.gg" target="_blank" rel="noopener">Source: PlayARAM ↗</a>
+  </div>
 </header>
 <main>
-  <div class="note" id="seed-note"></div>
 
   <section>
     <h2>Leaderboard — Performance Score</h2>
@@ -215,62 +214,47 @@
     <table id="leaderboard">
       <thead><tr>
         <th data-k="rank">#</th><th data-k="name">Player</th><th data-k="score" class="num">Score</th>
-        <th data-k="mmr_style" class="num">MMR-style</th><th data-k="win_rate" class="num">Win %</th>
-        <th data-k="wins" class="num">W–L</th><th data-k="kda" class="num">KDA</th><th data-k="damage_per_min" class="num">Dmg / min</th>
+        <th data-k="mmr_style" class="num">Rating</th><th data-k="win_rate" class="num">Win rate</th>
+        <th data-k="wins" class="num">Record</th><th data-k="kda" class="num">KDA</th><th data-k="damage_per_min" class="num">Damage / min</th>
       </tr></thead>
       <tbody></tbody>
     </table>
     </div>
-    <p class="muted">Tap a column heading to sort. Score is 0–100. MMR-style = 800 + Score × 14 (1500 ≈ average).</p>
     <div class="spectrum" id="spectrum"></div>
   </section>
 
   <section>
-    <h2>How the ranking is fair — read this before you complain</h2>
-    <div id="fair-ranking"></div>
-    <div id="rank-summary"></div>
-    <div class="player-grid" id="why-standings" style="margin-top:14px"></div>
-    <div class="card" style="margin-top:16px">
-      <div class="label">Worked example — Nov 8 snapshot</div>
-      <p><b>Ohwutahel (tanks) vs Vincent Chan (all carry champs).</b> Vincent ranks 2nd at 55.4 and Ohwutahel 4th at 47.9 — and that gap is <i>not</i> because carries get more kills. Vincent is graded only against other Damage games, Ohwutahel's tank games only against other Frontline games.</p>
-      <p>Ohwutahel's own numbers prove the point: his Frontline games grade <b>52.4</b> (+4.4, 52 games), while his Damage games grade 44.3 and his Support games 41.9. As a frontliner he is actually close to Vincent's level — his overall rank is pulled down by the off-role games in his last 100, not by playing tanks. If he played Frontline only, his score would be around 52, not 47.9.</p>
-      <p>Vincent's rank comes from carry games graded <i>within</i> the carry role: his Senna grades 70.1 (+13.3, 5 games), and his loss-vs-close gap is the smallest in the group (51.1 vs 56.0), which is what the median + floor terms reward. A carry with big KDA but a low floor would not rank this high — KDA is only 1 of 7 criteria, and win rate is only 15% of the score.</p>
-      <p class="muted">This example uses Nov 8 snapshot numbers. It recomputes from the last-50, role-adjusted window on the first daily run, and each player card below shows the same breakdown for that player.</p>
+    <h2>How the ranking is fair</h2>
+    <div class="fair-short">
+      <p>No single stat decides your rank. Every game is graded against players in the same role — tanks vs tanks, carries vs carries — then adjusted for the champion played.</p>
+      <p><b>Score = 55% average grade + 20% middle grade + 10% lowest grade + 15% win rate.</b> Each game is scored 70% against your role and 30% against the same champion. Kills, deaths and assists are just 1 of 7 things that count; win rate is only 15% of the score.</p>
+      <p id="fair-proof"></p>
     </div>
+    <div id="rank-summary"></div>
   </section>
 
   <section>
     <h2>When You Stack</h2>
-    <p class="muted">How the group performs by how many of the five are in the game together — a supplementary lens. It does not change the scoring: each player is still scored on their own last 50 games.</p>
     <div class="card" id="stack-chart"></div>
     <p class="muted" id="stack-note"></p>
   </section>
 
   <section>
     <h2>Performance History</h2>
-    <p class="muted">One point per player per day. Each daily 12 AM CST run adds a new point. Y-axis is zoomed to the range the data covers, so close lines separate — it does not start at 0.</p>
     <h3>Performance Score — daily history</h3>
     <canvas id="chart-score" width="1000" height="260"></canvas>
-    <h3>MMR-style — daily history</h3>
+    <h3>Rating — daily history</h3>
     <canvas id="chart-mmr" width="1000" height="260"></canvas>
     <p class="muted" id="history-note"></p>
   </section>
 
   <section>
     <h2>Player by Player — what they do well, and what to work on</h2>
-    <p class="muted">Each card shows why the player stands where they do, then one “What to work on” block — computed only from that player's most recent 20 games, compared with the group's recent-20 averages, and split into games played with 2+ of the group versus solo games, so stacked and solo play don't get mixed up. Nothing from the older games in the window or the Nov 8 snapshot goes into it. It updates every daily run; until the first run has per-game data, that block stays empty. Nothing here is invented.</p>
     <div class="player-grid" id="players"></div>
   </section>
 
   <section>
-    <h2>Recent 50 Games — per player</h2>
-    <p class="muted">Newest first, one row per game: champion, result, KDA, damage, augments, grade. This fills automatically on the first daily updater run (or a manual CSV import — see README). Until then it shows the seeded snapshot, which has scores but no per-game rows.</p>
-    <div id="games"></div>
-  </section>
-
-  <section>
     <h2>Top 3 / Worst 3 champions — last 50 games</h2>
-    <p class="muted">One card per player: Best on the left, Worst on the right, three round portraits each. Ranked by mean game grade on that champion versus the player's own average. Only champions with 3+ games count, so a one-game fluke can't top the list. If a player has only a few champions with 3+ games, the same champion can appear on both sides — it just means that champion is both the best and the worst of a small set. Grade, record and delta are the hard facts under each portrait; the small line under them says why it lands there.</p>
     <div class="champs-list" id="champs"></div>
   </section>
 
@@ -280,7 +264,7 @@
   </section>
 
   <footer>
-    <p><b>Where this data comes from:</b> the numbers on this page right now are a Nov 8, 2026 snapshot copied from the original page (bboyisk.github.io/aram-mayhem-assessment), which sourced its per-player history from PlayARAM and its population baselines from MayhemMeta. This page never contacts PlayARAM — nothing here was scraped from it after it blocked us. Future updates come from each player's PlayARAM profile, fetched once a day by GitHub Actions (no Riot API key needed — Riot's API does not reliably serve ARAM Mayhem), with a manual CSV export as backup. PlayARAM's match list shows result, champion, KDA, CS and skillshots dodged, but not damage or turret takedowns, so Output and Conversion stay blank on PlayARAM games — a missing field is skipped, never scored as 0. Subscores, recent-20, top/worst champions and per-game rows stay blank until that first update — no values were invented to fill them.</p>
+    <p><b>Where this data comes from:</b> the numbers on this page right now are a Nov 8, 2026 snapshot copied from the original page (bboyisk.github.io/aram-mayhem-assessment), which sourced its per-player history from PlayARAM and its population baselines from MayhemMeta. This page never contacts PlayARAM — nothing here was scraped from it after it blocked us. Future updates come from each player's PlayARAM profile, fetched once a day by GitHub Actions (no Riot API key needed — Riot's API does not reliably serve ARAM Mayhem), with a manual CSV export as backup. PlayARAM's match list shows result, champion, KDA, CS and skillshots dodged, but not damage or turret takedowns, so Damage and Structures stay blank on PlayARAM games — a missing field is skipped, never scored as 0. Subscores, recent-20 and top/worst champions stay blank until that first update — no values were invented to fill them.</p>
     <p>Data: per-player history from PlayARAM (playaram.gg), fetched daily. Population champion &amp; augment win rates: MayhemMeta (mayhemmeta.com). Skillshots dodged comes from PlayARAM's match list.</p>
     <p>What isn't measured: PlayARAM does not publish healing, shielding, crowd-control score or per-player objective damage, so none of those appear here.</p>
     <p>Not affiliated with Riot Games. ARAM Mayhem is a League of Legends game mode.</p>
@@ -301,23 +285,19 @@ async function load() {
   const data = await res.json();
   const players = [...data.players].sort((a,b) => (b.score ?? -1) - (a.score ?? -1));
 
-  const auto = data.meta.automation || {};
   const ageH = data.meta.updated_at ? (Date.now() - new Date(data.meta.updated_at).getTime()) / 3600000 : null;
-  const stale = ageH != null && ageH > 48;
-  document.getElementById('updated').innerHTML =
-    `Last updated: ${data.meta.updated_at_label || data.meta.updated_at}  ·  Next update: ${data.meta.next_update || 'Daily at 12:00 AM CST'}  ·  Window: last ${data.meta.window_games} games each`
-    + (auto.last_source ? `<br>Source: ${auto.last_source}${auto.last_games_found != null ? ` · ${auto.last_games_found} games in this window` : ''}${auto.last_attempt_label ? ` · Last attempt: ${auto.last_attempt_label}` : ''}` : '')
-    + (stale ? `<br><b style="color:#b25e09">⚠ Data is ${Math.round(ageH)}h old — the daily update hasn't succeeded in over 2 days. The last snapshot is shown above, not new games.</b>` : '')
-    + (auto.last_error ? `<br><span class="muted">Last update note: ${auto.last_error}</span>` : '')
-    + `<br><span class="muted">Fully automatic — no one has to update this page by hand. It refreshes itself every night.</span>`;
-  document.getElementById('seed-note').textContent = data.meta.seed_note ||
-    'Seeded from the Nov 8, 2026 snapshot on the original page. Scores below are from that snapshot (last-100 window); the first 12 AM CST run recomputes them on the last 50.';
+  const updChip = document.getElementById('updated-chip');
+  const ts = data.meta.updated_at ? new Date(data.meta.updated_at) : null;
+  updChip.textContent = (ts && !isNaN(ts))
+    ? 'Last updated: ' + ts.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' })
+    : 'Last updated: ' + (data.meta.updated_at_label || '—');
+  if (ageH != null && ageH > 48) { updChip.classList.add('stale'); updChip.textContent += ' · stale'; }
 
   // Highlights — the top-rated card is the dark navy hero; the other three
   // each carry one accent (damage-orange / KDA-green / skillshot-rose)
   const h = data.highlights || {};
   document.getElementById('highlights').innerHTML = [
-    ['Top rated · Performance Score', h.top_rated?.score, `${h.top_rated?.player || ''} · MMR-style ${h.top_rated?.mmr_style ?? ''}`, 'hl-hero'],
+    ['Top rated · Performance Score', h.top_rated?.score, `${h.top_rated?.player || ''} · Rating ${h.top_rated?.mmr_style ?? ''}`, 'hl-hero'],
     ['Highest damage / min', h.highest_damage_per_min?.value?.toLocaleString?.(), `${h.highest_damage_per_min?.player || ''}${h.highest_damage_per_min?.note ? ' · ' + h.highest_damage_per_min.note : ''}`, 'hl-dmg'],
     ['Best KDA', h.best_kda?.value, h.best_kda?.player || '', 'hl-kda'],
     ['Most skillshots dodged / min', h.most_skillshots_dodged_per_min?.value, h.most_skillshots_dodged_per_min?.player || '', 'hl-mech'],
@@ -345,12 +325,15 @@ async function load() {
     <div class="spec-axis"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div>
     ${specGap != null ? `<p class="muted" style="margin-bottom:0">The top three sit within ${specGap} points of each other — the gaps are small at the top and wide at the bottom.</p>` : ''}`;
 
-  // Fair ranking explainer (from data.json, so the page and the updater agree)
-  const rm = data.ranking_method || {};
-  document.getElementById('fair-ranking').innerHTML = `
-    <p><b>${rm.one_line || ''}</b></p>
-    <ul>${(rm.points || []).map(x => `<li>${x}</li>`).join('')}</ul>
-    <p class="muted">${rm.criteria_weights || ''} Archetypes: ${Object.entries(rm.archetypes || {}).map(([k,v]) => `<b>${k}</b> — ${v}`).join(' · ')}</p>`;
+  // One hard-fact example for the fair section: Ohwutahel's role
+  // split, live from the data when available, Nov 8 snapshot numbers as
+  // the fallback until the first daily run fills role_split.
+  const oh = players.find(p => p.name === 'Ohwutahel');
+  const ohRs = oh?.role_split || {};
+  const ohF = ohRs.Frontline?.mean_grade ?? 52.4, ohD = ohRs.Damage?.mean_grade ?? 44.3, ohS = ohRs.Support?.mean_grade ?? 41.9;
+  const ohFg = ohRs.Frontline?.games ?? 52;
+  document.getElementById('fair-proof').innerHTML =
+    `One example: Ohwutahel scores <b>${ohF}</b> as a frontliner (${ohFg} games) but <b>${ohD}</b> as damage and <b>${ohS}</b> as support — his rank drops because of off-role games, not because he plays tanks.`;
 
   // One-line rank summary — condensed from each player's why_rank and
   // snapshot facts (Nov 8 snapshot numbers, all reused from data.json).
@@ -359,10 +342,10 @@ async function load() {
   // why_rank, the summary is derived live from it instead, so it can't
   // go stale. PikabUwU has no why_rank yet: the honest empty note.
   const RANK_SUMMARY = {
-    "I3i3oy": "Top Damage carry — highest damage/min (<b>2,491</b>, <b>21.9%</b> of group damage) with pocket picks <b>Jinx 71.9</b> and <b>Varus 68.9</b>; held back by loss games (<b>46.0</b> vs <b>54.1</b> in close games).",
-    "Vincent Chan": "<b>Senna 70.1</b> (+13.3) and the smallest loss-vs-close gap (<b>51.1</b> vs <b>56.0</b>) reward his consistency — dragged by <b>Skilled Sniper ×10</b> at <b>47.02%</b>.",
-    "CreamiNataella": "Best KDA (<b>4.66</b>) with <b>Nidalee 72.5</b> and <b>Sona 67.9</b>, but the lowest structure share (<b>14.6%</b>) and the widest loss-vs-close gap (<b>48.5</b> vs <b>57.4</b>) keep her 3rd.",
-    "Ohwutahel": "Frontline games grade <b>52.4</b> (+4.4, <b>52 games</b>) vs Damage <b>44.3</b> and Support <b>41.9</b> — a strong frontliner dragged down by off-role games; most skillshots dodged (<b>5.00</b>/min).",
+    "I3i3oy": "Top damage carry — most damage per minute (<b>2,491</b>, <b>21.9%</b> of the group's damage). Best on <b>Jinx 71.9</b> and <b>Varus 68.9</b>. Scores lower in losses (<b>46.0</b>) than in close games (<b>54.1</b>).",
+    "Vincent Chan": "Best on <b>Senna 70.1</b>. His scores barely drop in losses (<b>51.1</b> vs <b>56.0</b> in close games) — the steadiest in the group. <b>Skilled Sniper</b>, taken 10 times, wins only <b>47.02%</b> of the time.",
+    "CreamiNataella": "Best KDA (<b>4.66</b>). Best on <b>Nidalee 72.5</b> and <b>Sona 67.9</b>. But she takes the smallest share of structures (<b>14.6%</b>) and her scores drop the most in losses (<b>48.5</b> vs <b>57.4</b> in close games), keeping her 3rd.",
+    "Ohwutahel": "Scores <b>52.4</b> as a frontliner (<b>52 games</b>) vs <b>44.3</b> as damage and <b>41.9</b> as support — a strong frontliner dragged down by off-role games. Dodges the most skillshots (<b>5.00</b> per minute).",
     "PikabUwU": "Full breakdown fills on the first daily run."
   };
   const boldNums = (s) => s.replace(/(?<![\w.])([+\-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?%?)(?![\w.])/g, '<b>$1</b>');
@@ -395,56 +378,39 @@ async function load() {
     </div>`;
 
   // Shared: subscore keys + group averages, used by standings, cards, improve.
-  const subKeys = [['output','Output'],['kda_efficiency','KDA'],['teamplay','Teamplay'],['death_quality','Death Q'],['conversion','Conversion'],['augments','Augments'],['mechanics','Mechanics']];
-  const subLabel = Object.fromEntries(subKeys);
-  const groupSubAvg = {};
-  subKeys.forEach(([k]) => {
-    const vals = players.map(p => p.subscores?.[k]).filter(v => v != null);
-    groupSubAvg[k] = vals.length ? vals.reduce((a,b) => a+b, 0) / vals.length : null;
-  });
+  const subKeys = [['output','Damage'],['kda_efficiency','KDA'],['teamplay','Teamplay'],['death_quality','Deaths'],['conversion','Structures'],['augments','Augments'],['mechanics','Dodging']];
   const subBars = (p) => subKeys.map(([k,label]) => {
-    const v = p.subscores?.[k], avg = groupSubAvg[k];
+    const v = p.subscores?.[k];
     if (v == null) {
       const why = (k === 'output' || k === 'conversion')
         ? '— not available from PlayARAM'
         : '— not filled yet';
       return `<div class="bar-row"><span class="bar-label">${label}</span><span class="bar-empty muted">${why}</span></div>`;
     }
-    const delta = avg != null ? ` (${v - avg >= 0 ? '+' : ''}${(v - avg).toFixed(1)} vs group)` : '';
-    return `<div class="bar-row"><span class="bar-label">${label}</span><div class="bar"><div class="bar-fill" style="width:${v}%"></div></div><span class="bar-val">${v}${delta}</span></div>`;
+    return `<div class="bar-row"><span class="bar-label">${label}</span><div class="bar"><div class="bar-fill" style="width:${v}%"></div></div><span class="bar-val">${v}</span></div>`;
   }).join('');
-
-  // Detailed per-player standings — the "read before you complain" evidence
-  document.getElementById('why-standings').innerHTML = players.map((p,i) => `
-    <div class="why-card" style="--pc:${COLORS[i % COLORS.length]}">
-      <h3>${['🥇','🥈','🥉'][i] || (i+1) + '.'} ${p.name} — ${fmt1(p.score)}</h3>
-      <p>${p.why_rank || 'Full breakdown fills on the first daily run.'}</p>
-      ${subBars(p)}
-      <p class="muted">Role split: ${p.role_split ? Object.entries(p.role_split).map(([a,v]) => `${a} ${v.mean_grade} (${v.games} games, ${v.delta_vs_overall >= 0 ? '+' : ''}${v.delta_vs_overall} vs own avg)`).join(' · ') : 'fills on the first daily run.'}</p>
-      ${(p.snapshot_facts?.length) ? `<ul>${p.snapshot_facts.map(x => `<li>${x}</li>`).join('')}</ul>` : ''}
-    </div>`).join('');
 
   // Player cards — the rank plus the evidence for it, so a complaint gets an answer
   document.getElementById('players').innerHTML = players.map((p,i) => {
     const roleRows = p.role_split ? Object.entries(p.role_split).map(([a,v]) =>
-      `<li><b>${a}:</b> ${v.mean_grade} over ${v.games} games (${v.delta_vs_overall >= 0 ? '+' : ''}${v.delta_vs_overall} vs own average)</li>`).join('')
+      `<li><b>${a}:</b> ${v.mean_grade} over ${v.games} games</li>`).join('')
       : '<li>Role split fills on the first daily run — it needs per-game data.</li>';
     const cf = p.champion_focus || {};
     const champTxt = (cf.take_when_offered?.length || cf.pass_or_swap?.length)
-      ? `<li><b>Take when offered:</b> ${cf.take_when_offered.map(c => `${c.champion} (${c.mean_grade}, ${c.delta_vs_overall >= 0 ? '+' : ''}${c.delta_vs_overall}, ${c.games} games)`).join(', ') || '—'}</li><li><b>Pass or swap away:</b> ${cf.pass_or_swap.map(c => `${c.champion} (${c.mean_grade}, ${c.delta_vs_overall}, ${c.games} games)`).join(', ') || '—'}</li>`
+      ? `<li><b>Take when offered:</b> ${cf.take_when_offered.map(c => `${c.champion} (${c.mean_grade}, ${c.games} games)`).join(', ') || '—'}</li><li><b>Pass or swap away:</b> ${cf.pass_or_swap.map(c => `${c.champion} (${c.mean_grade}, ${c.games} games)`).join(', ') || '—'}</li>`
       : '<li>Champion focus fills on the first daily run (needs 3+ games on a champion).</li>';
     return `<div class="player" style="--pc:${COLORS[i % COLORS.length]}">
     <h3>${i+1}. ${p.name}${i===0 ? ' <span class="top-tag">★ Top rated</span>' : ''}</h3>
-    <div class="score">${fmt1(p.score)} <span style="font-size:15px;color:var(--muted)">· MMR-style ${fmt(p.mmr_style)}</span></div>
+    <div class="score">${fmt1(p.score)} <span style="font-size:15px;color:var(--muted)">· Rating ${fmt(p.mmr_style)}</span></div>
     <p><b>Why this rank:</b> ${p.why_rank || 'Full breakdown fills on the first daily run.'}</p>
     <ul>
-      <li><b>Pocket picks:</b> ${POCKETS[p.name] || '—'}</li>
-      <li><b>KDA:</b> ${fmt(p.kda)} &nbsp;·&nbsp; <b>Dmg/min:</b> ${fmt(p.damage_per_min?.toLocaleString?.())} &nbsp;·&nbsp; <b>Win %:</b> ${fmt1(p.win_rate)}${p.win_rate!=null?'%':''}</li>
-      <li><b>Record (last ${data.meta.window_games}):</b> ${p.wins!=null ? p.wins+'–'+p.losses : '—'}</li>
+      <li><b>Best champions:</b> ${POCKETS[p.name] || '—'}</li>
+      <li><b>KDA:</b> ${fmt(p.kda)} &nbsp;·&nbsp; <b>Damage / min:</b> ${fmt(p.damage_per_min?.toLocaleString?.())} &nbsp;·&nbsp; <b>Win rate:</b> ${fmt1(p.win_rate)}${p.win_rate!=null?'%':''}</li>
+      <li><b>Record (last ${data.meta.window_games} games):</b> ${p.wins!=null ? p.wins+' wins, '+p.losses+' losses' : '—'}</li>
     </ul>
-    <h3>Evidence — subscores vs group average</h3>
+    <h3>Evidence — subscores</h3>
     ${subBars(p)}
-    <p class="muted">Subscores are percentiles within role archetype, blended with same-champion percentiles. “—” means not filled yet for this window; Output and Conversion stay blank because PlayARAM's match list doesn't show damage or turret takedowns.</p>
+    <p class="muted">Subscores are percentiles within role archetype, blended with same-champion percentiles. “—” means not filled yet for this window; Damage and Structures stay blank because PlayARAM's match list doesn't show damage or turret takedowns.</p>
     <h3>By role played</h3><ul>${roleRows}</ul>
     <h3>By champion</h3><ul>${champTxt}</ul>
     ${(p.snapshot_facts?.length) ? `<h3>Snapshot facts (Nov 8)</h3><ul>${p.snapshot_facts.map(x => `<li>${x}</li>`).join('')}</ul>` : ''}
@@ -452,7 +418,7 @@ async function load() {
       const r20 = p.recent_20;
       if (!r20) return `<div class="workon"><b>What to work on — last 20 games:</b><p class="muted">Recent-20 analysis fills on the first daily run — it needs per-game data. Nothing is shown here until then, so no older snapshot numbers stand in for it.</p></div>`;
       return `<div class="workon"><b>What to work on — last 20 games:</b>
-        <p>Last 20: <b>${r20.wins}–${r20.losses}</b> (${r20.win_rate}%), mean grade ${r20.mean_grade}, 20-game score ${r20.score_20}.</p>
+        <p>Last 20 games: <b>${r20.wins} wins, ${r20.losses} losses</b>. Average grade ${r20.mean_grade}.</p>
         ${r20.team_line ? `<p><b>Playing together (2+ of the group):</b> ${r20.team_line}</p>` : ''}
         <b>Pros</b><ul>${r20.pros.map(x => `<li class="pro">${x}</li>`).join('') || '<li>Nothing stands out +5 or more in the last 20 — steady, no big spike.</li>'}</ul>
         <b>Cons</b><ul>${r20.cons.map(x => `<li class="con">${x}</li>`).join('') || '<li>Nothing slipping -5 or more in the last 20.</li>'}</ul>
@@ -475,7 +441,7 @@ async function load() {
         ${c.image ? `<img class="champ-thumb-lg" src="${c.image}" alt="${c.champion} portrait" loading="lazy" onerror="this.style.display='none'">` : '<div class="champ-thumb-lg"></div>'}
         <div class="cname">${c.champion}</div>
         <div class="bar slim"><div class="bar-fill ${good ? 'good' : 'bad'}" style="width:${Math.max(0, Math.min(100, c.mean_grade))}%"></div></div>
-        <div class="cstats">Grade ${c.mean_grade} (${c.delta_vs_overall >= 0 ? '+' : ''}${c.delta_vs_overall})<br>${c.games} games · ${c.wins}–${c.losses} · ${c.win_rate}%</div>
+        <div class="cstats">Grade ${c.mean_grade}<br>${c.games} games · ${c.wins} wins, ${c.losses} losses</div>
         <div class="cwhy">${c.why || ''}</div>
       </div>`).join('') + `</div></div>`;
   };
@@ -484,7 +450,7 @@ async function load() {
       <div class="champ-band">
         <span class="rank-cell ${i<3 ? 'm'+(i+1) : ''}">${['🥇','🥈','🥉'][i] || (i+1)}</span>
         <h3>${p.name}</h3>
-        <span class="champ-score">${fmt1(p.score)} <span>· MMR-style ${fmt(p.mmr_style)}</span></span>
+        <span class="champ-score">${fmt1(p.score)} <span>· Rating ${fmt(p.mmr_style)}</span></span>
       </div>
       <div class="champ-body">
         <div class="champ-duo">
@@ -493,14 +459,6 @@ async function load() {
         </div>
       </div>
     </div>`).join('');
-
-  // Recent games
-  document.getElementById('games').innerHTML = players.map(p => {
-    const games = p.games || [];
-    if (!games.length) return `<details><summary>${p.name} — last ${data.meta.window_games} games</summary><p class="muted">No per-game rows yet. They fill on the first daily run (or a manual CSV import). Scores above are from the seeded Nov 8 snapshot.</p></details>`;
-    const rows = games.map(g => `<tr><td>${g.date}</td><td>${g.champion}</td><td>${g.win ? '<span class="pill">Win</span>' : '<span class="pill low">Loss</span>'}</td><td>${g.kills}/${g.deaths}/${g.assists}</td><td>${g.damage_to_champions != null ? Number(g.damage_to_champions).toLocaleString() : '—'}</td><td>${(g.augments||[]).join(', ') || '—'}</td><td>${(g.stack_size || 1) > 1 ? (g.stack_size + ' of group') : 'Solo'}</td><td>${fmt1(g.grade)}</td></tr>`).join('');
-    return `<details><summary>${p.name} — last ${games.length} games</summary><div style="overflow-x:auto"><table><thead><tr><th>Date</th><th>Champion</th><th>Result</th><th>K/D/A</th><th>Damage</th><th>Augments</th><th>Stack</th><th>Grade</th></tr></thead><tbody>${rows}</tbody></table></div></details>`;
-  }).join('');
 
   // How it works
   const hw = data.how_rating_works || {};
@@ -517,7 +475,7 @@ async function load() {
       <span class="stack-label">${s.label}</span>
       <div class="bar"><div class="bar-fill" style="width:${s.win_rate_pct}%"></div></div>
       <span class="stack-val">${fmt1(s.win_rate_pct)}%</span>
-      <span class="stack-sub">${s.player_games} player-games · grade ${s.grade} · ${s.wins} wins</span>
+      <span class="stack-sub">${s.player_games} games · ${s.wins} wins</span>
     </div>`).join('') : '<p class="muted">Stack splits fill on the first daily run.</p>';
   document.getElementById('stack-note').textContent = data.meta?.stack_note ||
     'Stack splits are a supplementary lens and do not change the scoring.';
@@ -528,15 +486,15 @@ async function load() {
       ? 'Only one history point so far (Nov 8 seed). The line grows by one point per day after the daily runs start.'
       : `${(data.history || []).length} daily points.`;
   drawChart(document.getElementById('chart-score'), data.history || [], 'scores', 'Performance Score');
-  drawChart(document.getElementById('chart-mmr'), data.history || [], 'mmr_style', 'MMR-style');
+  drawChart(document.getElementById('chart-mmr'), data.history || [], 'mmr_style', 'Rating');
 }
 
-const COLORS = ['#2b3566','#8f8fd0','#5da283','#d67b9a','#d9a441','#6a63a8'];
+const COLORS = ['#e5c97a','#c8aa6e','#5ed6a0','#d67b9a','#e07b39','#9aa0a8'];
 function drawChart(canvas, history, key, label) {
   const ctx = canvas.getContext('2d');
   const W = canvas.width, H = canvas.height;
   ctx.clearRect(0,0,W,H);
-  if (!history.length) { ctx.fillStyle='#7a7890'; ctx.font='16px Inter, system-ui, sans-serif'; ctx.fillText('No history yet.', 20, 40); return; }
+  if (!history.length) { ctx.fillStyle='#b0a892'; ctx.font='16px Inter, system-ui, sans-serif'; ctx.fillText('No history yet.', 20, 40); return; }
   const names = [...new Set(history.flatMap(h => Object.keys(h[key] || {})))];
   let vals = history.flatMap(h => Object.values(h[key] || {}));
   let min = Math.min(...vals), max = Math.max(...vals);
@@ -544,7 +502,7 @@ function drawChart(canvas, history, key, label) {
   const pad = (max - min) * 0.15; min -= pad; max += pad;
   const x = i => 50 + (W - 70) * (history.length === 1 ? 0.5 : i / (history.length - 1));
   const y = v => H - 30 - (H - 60) * ((v - min) / (max - min));
-  ctx.strokeStyle = '#e8e6f3'; ctx.fillStyle = '#7a7890'; ctx.font = '12px Inter, system-ui, sans-serif';
+  ctx.strokeStyle = '#2a2a2a'; ctx.fillStyle = '#b0a892'; ctx.font = '12px Inter, system-ui, sans-serif';
   for (let t = 0; t <= 4; t++) {
     const v = min + (max - min) * t / 4, yy = y(v);
     ctx.beginPath(); ctx.moveTo(50, yy); ctx.lineTo(W - 20, yy); ctx.stroke();
@@ -565,7 +523,7 @@ function drawChart(canvas, history, key, label) {
     ctx.fillStyle = COLORS[ni % COLORS.length];
     ctx.fillText(n, x(history.length - 1) + 6 > W - 90 ? W - 90 : x(history.length - 1) + 6, 20 + ni * 16);
   });
-  ctx.fillStyle = '#7a7890';
+  ctx.fillStyle = '#b0a892';
   history.forEach((h, i) => ctx.fillText(h.date.slice(5), x(i) - 10, H - 8));
 }
 
@@ -579,7 +537,7 @@ document.querySelectorAll('#leaderboard th').forEach(th => th.addEventListener('
   rows.forEach(r => tb.appendChild(r));
 }));
 
-load().catch(e => { document.getElementById('updated').textContent = 'Could not load data/data.json — ' + e.message; });
+load().catch(e => { document.getElementById('updated-chip').textContent = 'Could not load data/data.json — ' + e.message; });
 </script>
 </body>
 </html>
