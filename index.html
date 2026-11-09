@@ -103,14 +103,32 @@
     border:1px solid var(--line); border-radius:999px; padding:5px 12px; font-size:13px;
     font-variant-numeric:tabular-nums; white-space:nowrap; }
   .stat-chip b { color:var(--muted); font-weight:600; }
-  .stat-chips { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0; }
-  .player-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+  /* Player by Player: one full-width row per player, with sub-cards
+     inside the row so no single card feels long. Each row: header,
+     then Overview + Evidence side by side, What to work on full
+     width, then By role played full width. */
+  .player-grid { display:flex; flex-direction:column; gap:20px; }
   .player { background:var(--card); border:1px solid var(--line);
-    border-radius:20px; padding:20px; box-shadow:var(--shadow); border-top:3px solid var(--pc,var(--periwinkle)); }
-  .player h3 { margin:0 0 4px; font-size:19px; }
-  .player .score { font-size:26px; font-weight:800; color:var(--periwinkle-deep); letter-spacing:-.01em; font-variant-numeric:tabular-nums; }
-  /* Player card header: big score left, win-rate donut ring right. */
-  .player-head { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    border-radius:20px; padding:20px 22px; box-shadow:var(--shadow); border-top:3px solid var(--pc,var(--periwinkle)); }
+  .player h3 { margin:0; font-size:19px; }
+  .player .score { font-size:26px; font-weight:800; color:var(--periwinkle-deep); letter-spacing:-.01em; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .player-row-head { display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; }
+  .player-why { margin:8px 0 0; font-size:14px; color:#cfd3e0; }
+  .player-why b { color:var(--navy); }
+  .sub-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px; }
+  .subcard { background:var(--card2); border:1px solid var(--line); border-radius:16px; padding:16px 18px; min-width:0; }
+  .subcard h4 { margin:0 0 12px; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+  .subcard .muted { margin:10px 0 0; }
+  .sub-grid .workon { grid-column:1 / -1; margin-top:0; padding:16px 18px; border-radius:16px; }
+  .sub-grid .wide { grid-column:1 / -1; }
+  /* Overview sub-card: win-rate donut left, four mini KPI tiles right. */
+  .overview-flex { display:flex; gap:18px; align-items:center; }
+  .kpi-tiles { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; flex:1; min-width:0; }
+  .mini-kpi { background:#181b26; border:1px solid var(--line); border-radius:12px; padding:10px 12px; }
+  .mini-kpi .mk-label { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+  .mini-kpi .mk-big { font-size:21px; font-weight:800; margin-top:2px; letter-spacing:-.01em; font-variant-numeric:tabular-nums; }
+  .role-row { display:grid; grid-template-columns:96px 1fr 104px; gap:8px; align-items:center; margin:6px 0; font-size:13px; }
+  .role-row .bar-val { text-align:right; }
   .donut-wrap { text-align:center; flex-shrink:0; }
   .donut-label { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); margin-top:2px; }
   .donut-num { fill:#f2f4fb; font-size:13px; font-weight:800; font-family:'Inter',system-ui,sans-serif; }
@@ -210,6 +228,9 @@
     .champ-duo{flex-direction:column;}
     section { margin-top:36px; }
     .player { padding:16px; }
+    .sub-grid{grid-template-columns:1fr;}
+    .overview-flex{flex-direction:column; align-items:flex-start; gap:12px;}
+    .role-row{grid-template-columns:84px 1fr 92px;}
     .champ-band{padding:12px 16px;} .champ-body{padding:14px 16px 16px;}
     .rs-row{grid-template-columns:28px 1fr auto;}
     .rs-why{grid-column:1 / -1;}
@@ -299,11 +320,6 @@
 <script>
 const fmt = v => (v === null || v === undefined) ? '—' : v;
 const fmt1 = v => (v === null || v === undefined) ? '—' : Number(v).toFixed(1);
-
-const POCKETS = {
-  "I3i3oy": "Jinx, Varus", "Vincent Chan": "Senna", "CreamiNataella": "Nidalee, Sona",
-  "Ohwutahel": "Zyra, Trundle, Shen", "PikabUwU": "Aurelion Sol, Hwei"
-};
 
 async function load() {
   const res = await fetch('data/data.json');
@@ -433,38 +449,36 @@ async function load() {
   // Player cards — the rank plus the evidence for it, so a complaint gets an answer
   document.getElementById('players').innerHTML = players.map((p,i) => {
     const roleRows = p.role_split ? Object.entries(p.role_split).map(([a,v]) =>
-      `<li><b>${a}:</b> ${v.mean_grade} over ${v.games} games</li>`).join('')
-      : '<li>Role split fills on the first daily run — it needs per-game data.</li>';
-    const cf = p.champion_focus || {};
-    const champTxt = (cf.take_when_offered?.length || cf.pass_or_swap?.length)
-      ? `<li><b>Take when offered:</b> ${cf.take_when_offered.map(c => `${c.champion} (${c.mean_grade}, ${c.games} games)`).join(', ') || '—'}</li><li><b>Pass or swap away:</b> ${cf.pass_or_swap.map(c => `${c.champion} (${c.mean_grade}, ${c.games} games)`).join(', ') || '—'}</li>`
-      : '<li>Champion focus fills on the first daily run (needs 3+ games on a champion).</li>';
+      `<div class="role-row"><span class="bar-label">${a}</span><div class="bar"><div class="bar-fill" style="width:${Math.max(0, Math.min(100, v.mean_grade))}%"></div></div><span class="bar-val">${v.mean_grade} · ${v.games} games</span></div>`).join('')
+      : '<p class="muted">Role split fills on the first daily run — it needs per-game data.</p>';
     return `<div class="player" style="--pc:${COLORS[i % COLORS.length]}">
-    <h3>${i+1}. ${p.name}${i===0 ? ' <span class="top-tag">★ Top rated</span>' : ''}</h3>
-    <div class="player-head">
+    <div class="player-row-head">
+      <h3>${i+1}. ${p.name}${i===0 ? ' <span class="top-tag">★ Top rated</span>' : ''}</h3>
       <div class="score">${fmt1(p.score)} <span style="font-size:15px;color:var(--muted)">· Rating ${fmt(p.mmr_style)}</span></div>
-      ${donut(p.win_rate, COLORS[i % COLORS.length])}
     </div>
-    <p><b>Why this rank:</b> ${p.why_rank || 'Full breakdown fills on the first daily run.'}</p>
-    <ul>
-      <li><b>Best champions:</b> ${POCKETS[p.name] || '—'}</li>
-    </ul>
-    <div class="stat-chips">
-      <span class="stat-chip"><b>KDA</b> ${fmt(p.kda)}</span>
-      <span class="stat-chip"><b>Damage / min</b> ${fmt(p.damage_per_min?.toLocaleString?.())}</span>
-      <span class="stat-chip"><b>Win rate</b> ${p.win_rate!=null ? fmt1(p.win_rate)+'%' : '—'}</span>
-      <span class="stat-chip"><b>Record</b> ${p.wins!=null ? p.wins+' wins, '+p.losses+' losses' : '—'}</span>
-    </div>
-    <h3>Evidence — subscores</h3>
-    ${subBars(p)}
-    <p class="muted">Subscores are percentiles within role archetype, blended with same-champion percentiles. “—” means not filled yet for this window; Damage and Structures stay blank because PlayARAM's match list doesn't show damage or turret takedowns.</p>
-    <h3>By role played</h3><ul>${roleRows}</ul>
-    <h3>By champion</h3><ul>${champTxt}</ul>
-    ${(p.snapshot_facts?.length) ? `<h3>Snapshot facts (Nov 8)</h3><ul>${p.snapshot_facts.map(x => `<li>${x}</li>`).join('')}</ul>` : ''}
+    <p class="player-why"><b>Why this rank:</b> ${p.why_rank || 'Full breakdown fills on the first daily run.'}</p>
+    <div class="sub-grid">
+      <div class="subcard">
+        <h4>Overview</h4>
+        <div class="overview-flex">
+          ${donut(p.win_rate, COLORS[i % COLORS.length])}
+          <div class="kpi-tiles">
+            <div class="mini-kpi"><div class="mk-label">KDA</div><div class="mk-big">${fmt(p.kda)}</div></div>
+            <div class="mini-kpi"><div class="mk-label">Damage / min</div><div class="mk-big">${fmt(p.damage_per_min?.toLocaleString?.())}</div></div>
+            <div class="mini-kpi"><div class="mk-label">Skillshots dodged / min</div><div class="mk-big">${fmt(p.skillshots_dodged_per_min)}</div></div>
+            <div class="mini-kpi"><div class="mk-label">Record</div><div class="mk-big">${p.wins!=null ? p.wins+'–'+p.losses : '—'}</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="subcard">
+        <h4>Evidence — subscores</h4>
+        ${subBars(p)}
+        <p class="muted">Subscores are percentiles within role archetype, blended with same-champion percentiles. “—” means not filled yet for this window; Damage and Structures stay blank because PlayARAM's match list doesn't show damage or turret takedowns.</p>
+      </div>
     ${(() => {
       const r20 = p.recent_20;
-      if (!r20) return `<div class="workon"><b>What to work on — last 20 games:</b><p class="muted">Recent-20 analysis fills on the first daily run — it needs per-game data. Nothing is shown here until then, so no older snapshot numbers stand in for it.</p></div>`;
-      return `<div class="workon"><b>What to work on — last 20 games:</b>
+      if (!r20) return `<div class="workon subcard"><b>What to work on — last 20 games:</b><p class="muted">Recent-20 analysis fills on the first daily run — it needs per-game data. Nothing is shown here until then, so no older snapshot numbers stand in for it.</p></div>`;
+      return `<div class="workon subcard"><b>What to work on — last 20 games:</b>
         <p>Last 20 games: <b>${r20.wins} wins, ${r20.losses} losses</b>. Average grade ${r20.mean_grade}.</p>
         ${r20.team_line ? `<p><b>Playing together (2+ of the group):</b> ${r20.team_line}</p>` : ''}
         <b>Pros</b><ul>${r20.pros.map(x => `<li class="pro">${x}</li>`).join('') || '<li>Nothing stands out +5 or more in the last 20 — steady, no big spike.</li>'}</ul>
@@ -472,6 +486,11 @@ async function load() {
         <b>Tips to climb</b><ul>${r20.tips.map(x => `<li>${x}</li>`).join('') || '<li>Keep doing what the last 20 shows is working, and play your top champions in your best role.</li>'}</ul>
       </div>`;
     })()}
+      <div class="subcard wide">
+        <h4>By role played</h4>
+        ${roleRows}
+      </div>
+    </div>
   </div>`;
   }).join('');
 
