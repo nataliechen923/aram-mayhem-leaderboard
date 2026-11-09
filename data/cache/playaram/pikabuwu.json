@@ -1,5 +1,45 @@
 [
   {
+    "match_id": "Lillia|9/8/24|22.6|20|32|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Lillia",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 9,
+    "deaths": 8,
+    "assists": 24,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 22.62,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Kill Secured",
+      "Phenomenal Evil",
+      "With Haste",
+      "Eureka"
+    ],
+    "items": [
+      "Rod of Ages",
+      "Liandry's Torment",
+      "Mercury's Treads",
+      "Rylai's Crystal Scepter",
+      "Cosmic Drive",
+      "Morellonomicon"
+    ],
+    "skillshots_dodged_per_min": 1.41,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 57
+  },
+  {
     "match_id": "Hwei|9/8/30|20.2|64|53|2026-11-09",
     "date": "2026-11-09",
     "champion": "Hwei",

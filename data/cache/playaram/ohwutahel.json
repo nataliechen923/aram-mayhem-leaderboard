@@ -1,5 +1,45 @@
 [
   {
+    "match_id": "Rumble|13/12/25|22.6|90|56|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Rumble",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 13,
+    "deaths": 12,
+    "assists": 25,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 22.62,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Infernal Soul",
+      "Ethereal Weapon",
+      "Recursion",
+      "Eureka"
+    ],
+    "items": [
+      "Zhonya's Hourglass",
+      "Malignance",
+      "Sorcerer's Shoes",
+      "Shadowflame",
+      "Rylai's Crystal Scepter",
+      "Liandry's Torment"
+    ],
+    "skillshots_dodged_per_min": 2.48,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 57
+  },
+  {
     "match_id": "Shen|12/11/27|20.2|15|187|2026-11-09",
     "date": "2026-11-09",
     "champion": "Shen",

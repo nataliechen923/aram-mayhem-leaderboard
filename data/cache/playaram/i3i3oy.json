@@ -1,5 +1,86 @@
 [
   {
+    "match_id": "Aphelios|21/10/17|22.6|105|34|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "Aphelios",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 21,
+    "deaths": 10,
+    "assists": 17,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 22.62,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Flow of Spirit",
+      "Critical Rhythm",
+      "Still Here",
+      "Scopiest Weapons"
+    ],
+    "items": [
+      "The Collector",
+      "Yun Tal Wildarrows",
+      "Runaan's Hurricane",
+      "Bloodthirster",
+      "Infinity Edge",
+      "Kraken Slayer"
+    ],
+    "skillshots_dodged_per_min": 1.5,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1"
+    ],
+    "seq": 52
+  },
+  {
+    "match_id": "DrMundo|9/11/26|20.2|31|210|2026-11-08",
+    "date": "2026-11-08",
+    "champion": "DrMundo",
+    "archetype": "Frontline",
+    "win": false,
+    "kills": 9,
+    "deaths": 11,
+    "assists": 26,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 20.22,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Goredrink",
+      "Dawnbringer's Resolve",
+      "Armored Impact",
+      "Sap Magic",
+      "BEES!!!"
+    ],
+    "items": [
+      "Heartsteel",
+      "Mercury's Treads",
+      "Force of Nature",
+      "Kaenic Rookern",
+      "Spirit Visage",
+      "Unending Despair"
+    ],
+    "skillshots_dodged_per_min": 10.39,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1"
+    ],
+    "seq": 51
+  },
+  {
     "match_id": "Aphelios|21/10/17|22.6|105|34|2026-11-09",
     "date": "2026-11-09",
     "champion": "Aphelios",
