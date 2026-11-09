@@ -1,5 +1,244 @@
 [
   {
+    "match_id": "Shen|12/11/27|20.2|15|187|2026-11-09",
+    "date": "2026-11-09",
+    "champion": "Shen",
+    "archetype": "Frontline",
+    "win": false,
+    "kills": 12,
+    "deaths": 11,
+    "assists": 27,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 20.22,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Lonely Warrior",
+      "Transmute: Prismatic",
+      "Growth Spurt",
+      "Salvation",
+      "Bread and Cheese"
+    ],
+    "items": [
+      "Heartsteel",
+      "Mercury's Treads",
+      "Kaenic Rookern",
+      "Warmog's Armor",
+      "Thornmail",
+      "Force of Nature"
+    ],
+    "skillshots_dodged_per_min": 9.25,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 56
+  },
+  {
+    "match_id": "Renekton|7/9/12|12.8|13|26|2026-11-07",
+    "date": "2026-11-07",
+    "champion": "Renekton",
+    "archetype": "Frontline",
+    "win": true,
+    "kills": 7,
+    "deaths": 9,
+    "assists": 12,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 12.78,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Pursuit of Haste",
+      "Escape Plan",
+      "Dashing"
+    ],
+    "items": [
+      "Sundered Sky",
+      "Mercury's Treads",
+      "Death's Dance",
+      "Spirit Visage"
+    ],
+    "skillshots_dodged_per_min": 2.03,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 55
+  },
+  {
+    "match_id": "Sion|14/14/35|23.1|43|116|2026-11-06",
+    "date": "2026-11-06",
+    "champion": "Sion",
+    "archetype": "Frontline",
+    "win": true,
+    "kills": 14,
+    "deaths": 14,
+    "assists": 35,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 23.05,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Still Here",
+      "Armored Impact",
+      "Scopiest Weapons",
+      "Growth Spurt",
+      "Shrink Ray"
+    ],
+    "items": [
+      "Randuin's Omen",
+      "Mercury's Treads",
+      "Unending Despair",
+      "Thornmail",
+      "Jak'Sho, The Protean",
+      "Heartsteel"
+    ],
+    "skillshots_dodged_per_min": 5.03,
+    "stack_size": null,
+    "teammates": [
+      "xbriiibriiix#7129",
+      "HeavyClaymore#42069",
+      "AlphaSimp420#6969",
+      "MasterBlower#Wind"
+    ],
+    "seq": 54
+  },
+  {
+    "match_id": "Zyra|9/12/26|23.6|34|337|2026-10-31",
+    "date": "2026-10-31",
+    "champion": "Zyra",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 9,
+    "deaths": 12,
+    "assists": 26,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 23.6,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Goredrink",
+      "Archmage",
+      "Ice Cold",
+      "Take'em Down Down Down"
+    ],
+    "items": [
+      "Bloodletter's Curse",
+      "Blackfire Torch",
+      "Liandry's Torment",
+      "Sorcerer's Shoes",
+      "Rylai's Crystal Scepter",
+      "Shadowflame"
+    ],
+    "skillshots_dodged_per_min": 14.28,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 53
+  },
+  {
+    "match_id": "Maokai|2/8/17|11.4|25|42|2026-10-31",
+    "date": "2026-10-31",
+    "champion": "Maokai",
+    "archetype": "Frontline",
+    "win": false,
+    "kills": 2,
+    "deaths": 8,
+    "assists": 17,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 11.4,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "POWER",
+      "Armored Impact",
+      "Lich Brain",
+      "Heavy Hitter"
+    ],
+    "items": [
+      "Refillable Potion",
+      "Heartsteel",
+      "Mercury's Treads",
+      "Spirit Visage",
+      "Bramble Vest",
+      "Chain Vest"
+    ],
+    "skillshots_dodged_per_min": 3.68,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 52
+  },
+  {
+    "match_id": "Singed|9/15/31|23.5|53|75|2026-10-31",
+    "date": "2026-10-31",
+    "champion": "Singed",
+    "archetype": "Frontline",
+    "win": false,
+    "kills": 9,
+    "deaths": 15,
+    "assists": 31,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 23.52,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "structure_share": null,
+    "augments": [
+      "Mad Scientist",
+      "Transmute: Prismatic",
+      "Twin Fire",
+      "Warlock Juicebox"
+    ],
+    "items": [
+      "Rod of Ages",
+      "Boots of Swiftness",
+      "Riftmaker",
+      "Dead Man's Plate",
+      "Force of Nature",
+      "Liandry's Torment"
+    ],
+    "skillshots_dodged_per_min": 3.19,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 51
+  },
+  {
     "match_id": "Rumble|13/12/25|22.6|90|56|2026-11-09",
     "date": "2026-11-09",
     "champion": "Rumble",
