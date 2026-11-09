@@ -1,0 +1,176 @@
+{
+  "exported_at": "2026-11-09T18:05:02.159Z",
+  "source": "extension",
+  "players": [
+    {
+      "riot_id": "i3i3oy#NA1",
+      "display_name": "I3i3oy",
+      "games": [],
+      "diag": {
+        "segments": 23,
+        "parsed": 20,
+        "skipped": 3,
+        "no_kda": 2,
+        "no_numbers": 0,
+        "no_champion": 0,
+        "with_augments": 20,
+        "with_items": 20,
+        "with_participants": 20,
+        "load_more_clicks": 0,
+        "load_more_found": false,
+        "games_before_load_more": 20,
+        "games_after_load_more": 20,
+        "early_stop": true,
+        "new_games": 0,
+        "card_roots": 0,
+        "with_damage": 0,
+        "no_details_button": 0,
+        "damage_debug": {
+          "root": 0,
+          "parent": 0,
+          "body": 0,
+          "no_change": 0,
+          "label_seen": 0,
+          "guard_would_trip": 0
+        },
+        "panel_samples": []
+      }
+    },
+    {
+      "riot_id": "Vincent Chan#NA1",
+      "display_name": "Vincent Chan",
+      "games": [],
+      "diag": {
+        "segments": 23,
+        "parsed": 20,
+        "skipped": 3,
+        "no_kda": 2,
+        "no_numbers": 0,
+        "no_champion": 0,
+        "with_augments": 20,
+        "with_items": 20,
+        "with_participants": 20,
+        "load_more_clicks": 0,
+        "load_more_found": false,
+        "games_before_load_more": 20,
+        "games_after_load_more": 20,
+        "early_stop": true,
+        "new_games": 0,
+        "card_roots": 0,
+        "with_damage": 0,
+        "no_details_button": 0,
+        "damage_debug": {
+          "root": 0,
+          "parent": 0,
+          "body": 0,
+          "no_change": 0,
+          "label_seen": 0,
+          "guard_would_trip": 0
+        },
+        "panel_samples": []
+      }
+    },
+    {
+      "riot_id": "CreamiNataella#NA1",
+      "display_name": "CreamiNataella",
+      "games": [],
+      "diag": {
+        "segments": 23,
+        "parsed": 20,
+        "skipped": 3,
+        "no_kda": 2,
+        "no_numbers": 0,
+        "no_champion": 0,
+        "with_augments": 20,
+        "with_items": 20,
+        "with_participants": 20,
+        "load_more_clicks": 0,
+        "load_more_found": false,
+        "games_before_load_more": 20,
+        "games_after_load_more": 20,
+        "early_stop": true,
+        "new_games": 0,
+        "card_roots": 0,
+        "with_damage": 0,
+        "no_details_button": 0,
+        "damage_debug": {
+          "root": 0,
+          "parent": 0,
+          "body": 0,
+          "no_change": 0,
+          "label_seen": 0,
+          "guard_would_trip": 0
+        },
+        "panel_samples": []
+      }
+    },
+    {
+      "riot_id": "Ohwutahel#NA1",
+      "display_name": "Ohwutahel",
+      "games": [],
+      "diag": {
+        "segments": 23,
+        "parsed": 19,
+        "skipped": 4,
+        "no_kda": 2,
+        "no_numbers": 0,
+        "no_champion": 0,
+        "with_augments": 19,
+        "with_items": 19,
+        "with_participants": 19,
+        "load_more_clicks": 0,
+        "load_more_found": false,
+        "games_before_load_more": 19,
+        "games_after_load_more": 19,
+        "early_stop": true,
+        "new_games": 0,
+        "card_roots": 0,
+        "with_damage": 0,
+        "no_details_button": 0,
+        "damage_debug": {
+          "root": 0,
+          "parent": 0,
+          "body": 0,
+          "no_change": 0,
+          "label_seen": 0,
+          "guard_would_trip": 0
+        },
+        "panel_samples": []
+      }
+    },
+    {
+      "riot_id": "PikabUwU#NA1",
+      "display_name": "PikabUwU",
+      "games": [],
+      "diag": {
+        "segments": 23,
+        "parsed": 20,
+        "skipped": 3,
+        "no_kda": 2,
+        "no_numbers": 0,
+        "no_champion": 0,
+        "with_augments": 20,
+        "with_items": 20,
+        "with_participants": 20,
+        "load_more_clicks": 0,
+        "load_more_found": false,
+        "games_before_load_more": 20,
+        "games_after_load_more": 20,
+        "early_stop": true,
+        "new_games": 0,
+        "card_roots": 0,
+        "with_damage": 0,
+        "no_details_button": 0,
+        "damage_debug": {
+          "root": 0,
+          "parent": 0,
+          "body": 0,
+          "no_change": 0,
+          "label_seen": 0,
+          "guard_would_trip": 0
+        },
+        "panel_samples": []
+      }
+    }
+  ]
+}
