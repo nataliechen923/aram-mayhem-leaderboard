@@ -8,66 +8,77 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  /* DARK theme (black/gold — the palette Natalie originally chose):
-     pure black page, charcoal cards, gold accents, warm off-white text,
-     gold grade bars and gold-toned chart lines. Green/red are lightened
-     for contrast on black. */
+  /* DARK dashboard theme (KPI-dashboard card language on dark):
+     deep charcoal-blue page, dark cards with large radii and soft
+     shadows, and one cohesive set of soft brights — pink, lavender,
+     mint, peach, gold — used consistently for accents, player colors
+     and chart lines. */
   :root {
-    --bg:#000000; --card:#121212; --card2:#1b1b1b; --navy:#f5efe2; --navy-deep:#f5efe2;
-    --text:#f2ecdd; --muted:#b0a892; --muted-dim:#8d8672;
-    --gold:#c8aa6e; --gold-bright:#e5c97a; --yellow:#e5c97a;
-    --periwinkle:#c8aa6e; --periwinkle-deep:#e5c97a; --lav-line:#2a2a2a;
-    --green:#5ed6a0; --green-bright:#4cc38a; --red:#f87171; --red-bright:#ef5350;
-    --line:#2a2a2a; --line-soft:#222222;
+    --bg:#0f1118; --card:#181b26; --card2:#1e2230; --navy:#f2f4fb; --navy-deep:#f2f4fb;
+    --text:#eef0f8; --muted:#9aa0b5; --muted-dim:#7a8098;
+    --gold:#e5c97a; --gold-bright:#f0d48a; --yellow:#e5c97a;
+    --pink:#f27ba7; --lav:#a78bfa; --lav-deep:#c4b5fd; --mint:#4ade9d; --peach:#f5a26b; --teal:#5eead4;
+    --periwinkle:#a78bfa; --periwinkle-deep:#c4b5fd; --lav-line:#262a38;
+    --green:#4ade9d; --green-bright:#34d399; --red:#fb7185; --red-bright:#f43f5e;
+    --line:#262a38; --line-soft:#20242f;
     /* Deliberate highlight accents — one per highlight card, restrained. */
-    --accent-dmg:#e07b39;   /* damage */
-    --accent-mech:#d67b9a;  /* skillshots / mechanics */
-    --accent-silver:#9aa0a8; /* 2nd place */
-    --accent-bronze:#c98a4b; /* 3rd place */
-    --shadow:0 1px 2px rgba(0,0,0,.5), 0 12px 32px rgba(0,0,0,.55);
+    --accent-dmg:#f5a26b;   /* damage */
+    --accent-mech:#f27ba7;  /* skillshots / mechanics */
+    --accent-silver:#b6bccb; /* 2nd place */
+    --accent-bronze:#e0a458; /* 3rd place */
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px rgba(0,0,0,.45);
   }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--text);
     font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
     line-height:1.55; font-size:16px; -webkit-font-smoothing:antialiased; }
   header { padding:34px 20px 22px; max-width:1080px; margin:0 auto; border-bottom:1px solid var(--lav-line); }
-  .eyebrow { margin:0 0 10px; font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:#c8aa6e; }
+  .eyebrow { margin:0 0 10px; font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:#c4b5fd; }
   h1 { margin:0; font-size:40px; font-weight:800; letter-spacing:-.02em; line-height:1.05; color:var(--navy); }
   h1 span { color:var(--periwinkle-deep); }
   .sub { color:var(--muted); margin:8px 0 0; font-size:15px; }
   .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
-  .chip { display:inline-block; background:#1b1b1b; color:var(--navy); border:1px solid var(--lav-line);
+  .chip { display:inline-block; background:#1e2230; color:var(--navy); border:1px solid var(--lav-line);
     padding:6px 14px; border-radius:999px; font-size:13px; font-weight:600; text-decoration:none; }
   a.chip:hover { border-color:var(--periwinkle); color:var(--periwinkle-deep); }
-  .chip.stale { background:#2a2110; border-color:#8a7433; color:#e5c97a; }
+  .chip.stale { background:#2a2118; border-color:#8a7433; color:#e5c97a; }
   main { max-width:1080px; margin:0 auto; padding:8px 20px 64px; }
   section { margin-top:44px; }
   h2 { position:relative; font-size:21px; font-weight:800; letter-spacing:.03em; text-transform:uppercase;
     color:var(--navy); border-bottom:1px solid var(--lav-line); padding-bottom:10px; margin:0 0 18px; }
-  h2::after { content:''; position:absolute; left:0; bottom:-1px; width:56px; height:2px;
-    background:linear-gradient(90deg,var(--gold),var(--gold-bright)); border-radius:2px; }
+  /* Dashboard touch: three small accent dots under each section heading. */
+  h2::after { content:''; position:absolute; left:0; bottom:-1px; width:8px; height:8px; border-radius:50%;
+    background:var(--pink); box-shadow:14px 0 0 var(--lav), 28px 0 0 var(--mint); }
   h3 { font-size:17px; font-weight:700; margin:20px 0 8px; letter-spacing:-.01em; color:var(--navy); }
   .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; }
   .card { background:var(--card); border:1px solid var(--line);
     border-radius:20px; padding:20px 22px; box-shadow:var(--shadow); }
   .card .label { color:var(--muted); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.08em; }
   .card .big { font-size:32px; font-weight:800; margin:6px 0 2px; letter-spacing:-.02em; font-variant-numeric:tabular-nums; color:var(--navy); }
-  .card .who { color:#b0a892; font-weight:600; font-size:14px; }
-  /* Highlight stat cards: one accent each — hero gold-tinted card for top rated,
-     orange = damage, green = KDA, rose = skillshots. */
+  .card .who { color:#9aa0b5; font-weight:600; font-size:14px; }
+  /* KPI highlight cards: one accent each — lavender hero for top rated,
+     peach = damage, mint = KDA, pink = skillshots. Each carries a small
+     tinted icon chip. No trend pills: the data has no real comparison
+     to show, and deltas are never invented. */
   .hl { border-top:3px solid var(--periwinkle); }
-  .hl-dmg { border-top-color:var(--accent-dmg); } .hl-dmg .big { color:#d96f2a; }
+  .kpi-icon { width:40px; height:40px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+    font-size:20px; margin-bottom:12px; background:rgba(167,139,250,.16); }
+  .hl-dmg { border-top-color:var(--accent-dmg); } .hl-dmg .big { color:#f5a26b; }
+  .hl-dmg .kpi-icon { background:rgba(245,162,107,.16); }
   .hl-kda { border-top-color:var(--green-bright); } .hl-kda .big { color:var(--green); }
-  .hl-mech { border-top-color:var(--accent-mech); } .hl-mech .big { color:#d67b9a; }
-  .hl-hero { background:linear-gradient(160deg,#221d10,#121212); border:1px solid #c8aa6e; }
-  .hl-hero .label { color:#c8aa6e; }
+  .hl-kda .kpi-icon { background:rgba(74,222,157,.14); }
+  .hl-mech { border-top-color:var(--accent-mech); } .hl-mech .big { color:#f27ba7; }
+  .hl-mech .kpi-icon { background:rgba(242,123,167,.15); }
+  .hl-hero { background:linear-gradient(160deg,rgba(167,139,250,.16),#181b26); border:1px solid rgba(167,139,250,.45); }
+  .hl-hero .label { color:#c4b5fd; }
   .hl-hero .big { color:var(--yellow); }
-  .hl-hero .who { color:#d8d2c0; }
+  .hl-hero .who { color:#cfd3e0; }
+  .hl-hero .kpi-icon { background:rgba(167,139,250,.20); }
   .table-card { background:var(--card); border:1px solid var(--line); border-radius:20px;
     overflow:hidden; box-shadow:var(--shadow); }
   table { width:100%; border-collapse:collapse; }
   th, td { padding:12px 14px; text-align:left; border-bottom:1px solid var(--line-soft); font-size:14px; }
-  th { background:#1b1b1b; color:#b0a892; font-size:12.5px; font-weight:700; letter-spacing:.06em;
+  th { background:#1e2230; color:#9aa0b5; font-size:12.5px; font-weight:700; letter-spacing:.06em;
     text-transform:uppercase; cursor:pointer; white-space:nowrap; }
   th:hover { color:var(--periwinkle-deep); }
   th:hover::after { content:' ↕'; font-size:10px; color:var(--gold); }
@@ -75,36 +86,49 @@
   th:last-child, td:last-child { padding-right:18px; }
   td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
   tr:last-child td { border-bottom:none; }
-  tr:hover td { background:#1e1e1e; }
-  tr.rank1 td { background:rgba(200,170,110,.16); }
-  tr.rank1 td:first-child { box-shadow:inset 3px 0 0 var(--gold); }
+  tr:hover td { background:#1f2331; }
+  tr.rank1 td { background:rgba(167,139,250,.14); }
+  tr.rank1 td:first-child { box-shadow:inset 3px 0 0 var(--lav); }
   .rank-cell { font-size:16px; white-space:nowrap; }
   .rank-cell.m1 { filter:drop-shadow(0 0 4px rgba(201,162,39,.55)); }
   .rank-cell.m2 { filter:drop-shadow(0 0 4px rgba(120,125,140,.45)); }
   .rank-cell.m3 { filter:drop-shadow(0 0 4px rgba(176,112,60,.45)); }
   .top-tag { display:inline-block; vertical-align:middle; margin-left:8px; padding:2px 9px; border-radius:999px;
     font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
-    color:#000; background:var(--yellow); }
+    color:#10121a; background:var(--yellow); }
+  /* Dashboard pills: Rating pill and clean stat chips (win rate, record). */
+  .pill-rating { display:inline-block; background:rgba(167,139,250,.16); color:#c4b5fd;
+    border:1px solid rgba(167,139,250,.40); padding:3px 11px; border-radius:999px; font-weight:700; }
+  .stat-chip { display:inline-flex; gap:6px; align-items:baseline; background:#1e2230;
+    border:1px solid var(--line); border-radius:999px; padding:5px 12px; font-size:13px;
+    font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .stat-chip b { color:var(--muted); font-weight:600; }
+  .stat-chips { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0; }
   .player-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
   .player { background:var(--card); border:1px solid var(--line);
     border-radius:20px; padding:20px; box-shadow:var(--shadow); border-top:3px solid var(--pc,var(--periwinkle)); }
   .player h3 { margin:0 0 4px; font-size:19px; }
   .player .score { font-size:26px; font-weight:800; color:var(--periwinkle-deep); letter-spacing:-.01em; font-variant-numeric:tabular-nums; }
+  /* Player card header: big score left, win-rate donut ring right. */
+  .player-head { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+  .donut-wrap { text-align:center; flex-shrink:0; }
+  .donut-label { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); margin-top:2px; }
+  .donut-num { fill:#f2f4fb; font-size:13px; font-weight:800; font-family:'Inter',system-ui,sans-serif; }
   .player ul { margin:8px 0; padding-left:20px; }
   .player li { margin:4px 0; font-size:14px; }
-  .workon { background:#221d10; border:1px solid #8a7433; border-radius:12px; padding:12px 14px; margin-top:12px; font-size:14px; }
-  .workon b { color:#e5c97a; }
+  .workon { background:rgba(167,139,250,.10); border:1px solid rgba(167,139,250,.35); border-radius:12px; padding:12px 14px; margin-top:12px; font-size:14px; }
+  .workon b { color:#c4b5fd; }
   canvas { width:100%; height:260px; background:var(--card); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); }
   .fair-short p { margin:10px 0; font-size:15px; }
   .fair-short p:first-child { margin-top:0; }
   .muted { color:var(--muted); font-size:13px; }
-  code { background:#2a2a2a; color:#e5c97a; padding:1px 6px; border-radius:6px; }
+  code { background:#262a38; color:#e5c97a; padding:1px 6px; border-radius:6px; }
   footer { color:var(--muted); font-size:13px; border-top:1px solid var(--lav-line); margin-top:48px; padding-top:20px; }
-  .bar { background:#2a2a2a; border:1px solid var(--line); border-radius:999px; height:12px; overflow:hidden; }
+  .bar { background:#262a38; border:1px solid var(--line); border-radius:999px; height:12px; overflow:hidden; }
   .bar.slim { height:8px; margin-top:4px; }
-  .bar-fill { height:100%; background:linear-gradient(90deg,#c8aa6e,#e5c97a); border-radius:999px; }
-  .bar-fill.good { background:linear-gradient(90deg,#2f9e6e,#5ed6a0); }
-  .bar-fill.bad { background:linear-gradient(90deg,#c0453e,#f87171); }
+  .bar-fill { height:100%; background:linear-gradient(90deg,#a78bfa,#f27ba7); border-radius:999px; }
+  .bar-fill.good { background:linear-gradient(90deg,#34d399,#4ade9d); }
+  .bar-fill.bad { background:linear-gradient(90deg,#f43f5e,#fb7185); }
   .bar-row { display:grid; grid-template-columns:110px 1fr 56px; gap:8px; align-items:center; margin:6px 0; font-size:13px; }
   .bar-row .bar-empty { grid-column:2 / 4; }
   .bar-label { color:var(--muted); }
@@ -117,10 +141,10 @@
      are two separated panels with pill badges. */
   .champs-list { display:flex; flex-direction:column; gap:28px; }
   .champ-card { background:var(--card); border:1.5px solid var(--line); border-radius:20px;
-    box-shadow:0 2px 4px rgba(0,0,0,.5), 0 16px 36px rgba(0,0,0,.6);
+    box-shadow:0 2px 4px rgba(0,0,0,.4), 0 14px 30px rgba(0,0,0,.45);
     border-top:4px solid var(--pc,var(--periwinkle)); overflow:hidden; }
   .champ-band { display:flex; align-items:center; gap:10px; flex-wrap:wrap;
-    background:#1b1b1b; border-bottom:1px solid var(--line); padding:14px 20px; }
+    background:#1e2230; border-bottom:1px solid var(--line); padding:14px 20px; }
   .champ-band h3 { margin:0; font-size:19px; }
   .champ-band .champ-score { margin-left:auto; font-size:15px; font-weight:800;
     color:var(--periwinkle-deep); font-variant-numeric:tabular-nums; white-space:nowrap; }
@@ -128,20 +152,20 @@
   .champ-body { padding:18px 20px 20px; }
   .champ-duo { display:flex; gap:16px; }
   .champ-half { flex:1; min-width:0; border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
-  .champ-half.good { background:rgba(94,214,160,.10); border-top:3px solid var(--green-bright); }
-  .champ-half.bad { background:rgba(248,113,113,.08); border-top:3px solid var(--red-bright); }
+  .champ-half.good { background:rgba(74,222,157,.08); border-top:3px solid var(--green-bright); }
+  .champ-half.bad { background:rgba(251,113,133,.07); border-top:3px solid var(--red-bright); }
   .champ-half h4 { margin:0 0 12px; font-size:15px; }
   .champ-pill { display:inline-block; padding:3px 12px; border-radius:999px;
     font-size:13px; font-weight:700; letter-spacing:.02em; color:#fff; }
-  .champ-pill.good { background:#2e7d5b; }
-  .champ-pill.bad { background:#a52a24; }
+  .champ-pill.good { background:#15803d; }
+  .champ-pill.bad { background:#be123c; }
   .champ-trio { display:flex; gap:10px; }
   .champ-cell { flex:1; min-width:0; text-align:center; }
   .champ-cell .rank { font-size:12px; color:var(--muted); font-weight:700; }
   .champ-cell .rank.first { color:#e5c97a; }
-  .champ-thumb-lg { width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid var(--line); background:#2a2a2a; box-shadow:0 4px 12px rgba(0,0,0,.5); }
-  .champ-half.good .champ-thumb-lg { border-color:#5ed6a0; }
-  .champ-half.bad .champ-thumb-lg { border-color:#f87171; }
+  .champ-thumb-lg { width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid var(--line); background:#262a38; box-shadow:0 4px 12px rgba(0,0,0,.45); }
+  .champ-half.good .champ-thumb-lg { border-color:#4ade9d; }
+  .champ-half.bad .champ-thumb-lg { border-color:#fb7185; }
   .champ-cell .cname { font-weight:700; font-size:14px; margin-top:6px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .champ-cell .cstats { font-size:12px; color:var(--muted); line-height:1.45; margin-top:4px; font-variant-numeric:tabular-nums; }
   .champ-cell .cwhy { font-size:11px; color:var(--muted); line-height:1.35; margin-top:4px; }
@@ -154,10 +178,11 @@
   .rs-row { display:grid; grid-template-columns:36px 168px 62px 1fr; gap:12px; align-items:baseline;
     padding:13px 0; border-bottom:1px solid var(--line-soft); font-size:14.5px; }
   .rs-row:last-child { border-bottom:none; }
-  .rs-rank { font-size:16px; }
+  .rs-rank { font-size:16px; white-space:nowrap; }
+  .rs-dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px; vertical-align:middle; }
   .rs-name { font-weight:700; }
   .rs-score { font-weight:800; color:var(--periwinkle-deep); font-variant-numeric:tabular-nums; text-align:right; }
-  .rs-why { color:#d8d2c0; }
+  .rs-why { color:#cfd3e0; }
   .rs-why b { color:var(--navy); }
   /* Score spectrum: every player on one shared 0–100 scale, one row each
      so the tight clusters (55.0 / 55.4 / 56.1) never collide. */
@@ -167,9 +192,9 @@
   .spec-head { display:flex; align-items:baseline; gap:8px; font-size:14px; margin-bottom:6px; }
   .spec-head .spec-name { font-weight:700; }
   .spec-head .spec-val { margin-left:auto; font-weight:800; color:var(--periwinkle-deep); font-variant-numeric:tabular-nums; }
-  .spec-track { position:relative; height:10px; background:#2a2a2a; border:1px solid var(--line); border-radius:999px; }
+  .spec-track { position:relative; height:10px; background:#262a38; border:1px solid var(--line); border-radius:999px; }
   .spec-dot { position:absolute; top:50%; width:18px; height:18px; border-radius:50%;
-    background:var(--pc,var(--periwinkle)); border:3px solid #fff;
+    background:var(--pc,var(--periwinkle)); border:3px solid #0f1118;
     transform:translate(-50%,-50%); box-shadow:0 2px 8px rgba(0,0,0,.6); }
   .spec-axis { display:flex; justify-content:space-between; margin-top:6px;
     font-size:11.5px; color:var(--muted); font-variant-numeric:tabular-nums; }
@@ -293,22 +318,23 @@ async function load() {
     : 'Last updated: ' + (data.meta.updated_at_label || '—');
   if (ageH != null && ageH > 48) { updChip.classList.add('stale'); updChip.textContent += ' · stale'; }
 
-  // Highlights — the top-rated card is the dark navy hero; the other three
-  // each carry one accent (damage-orange / KDA-green / skillshot-rose)
+  // Highlights — KPI cards: a tinted icon chip, a big number, a plain
+  // label. No trend pills: the data has no real comparison to show,
+  // and deltas are never invented.
   const h = data.highlights || {};
   document.getElementById('highlights').innerHTML = [
-    ['Top rated · Performance Score', h.top_rated?.score, `${h.top_rated?.player || ''} · Rating ${h.top_rated?.mmr_style ?? ''}`, 'hl-hero'],
-    ['Highest damage / min', h.highest_damage_per_min?.value?.toLocaleString?.(), `${h.highest_damage_per_min?.player || ''}${h.highest_damage_per_min?.note ? ' · ' + h.highest_damage_per_min.note : ''}`, 'hl-dmg'],
-    ['Best KDA', h.best_kda?.value, h.best_kda?.player || '', 'hl-kda'],
-    ['Most skillshots dodged / min', h.most_skillshots_dodged_per_min?.value, h.most_skillshots_dodged_per_min?.player || '', 'hl-mech'],
-  ].map(([l, v, w, cls]) => `<div class="card ${cls}"><div class="label">${l}</div><div class="big">${fmt(v)}</div><div class="who">${w}</div></div>`).join('');
+    ['🏆', 'Top rated · Performance Score', h.top_rated?.score, `${h.top_rated?.player || ''} · Rating ${h.top_rated?.mmr_style ?? ''}`, 'hl-hero'],
+    ['⚔️', 'Highest damage / min', h.highest_damage_per_min?.value?.toLocaleString?.(), `${h.highest_damage_per_min?.player || ''}${h.highest_damage_per_min?.note ? ' · ' + h.highest_damage_per_min.note : ''}`, 'hl-dmg'],
+    ['✨', 'Best KDA', h.best_kda?.value, h.best_kda?.player || '', 'hl-kda'],
+    ['🎯', 'Most skillshots dodged / min', h.most_skillshots_dodged_per_min?.value, h.most_skillshots_dodged_per_min?.player || '', 'hl-mech'],
+  ].map(([icon, l, v, w, cls]) => `<div class="card ${cls}"><div class="kpi-icon">${icon}</div><div class="label">${l}</div><div class="big">${fmt(v)}</div><div class="who">${w}</div></div>`).join('');
 
   // Leaderboard
   const tb = document.querySelector('#leaderboard tbody');
   tb.innerHTML = players.map((p,i) => `<tr class="${i===0?'rank1':''}">
     <td class="rank-cell ${i<3 ? 'm'+(i+1) : ''}">${['🥇','🥈','🥉'][i] || (i+1)}</td><td><b>${p.name}</b></td><td class="num"><b>${fmt1(p.score)}</b><div class="bar slim"><div class="bar-fill" style="width:${p.score || 0}%"></div></div></td>
-    <td class="num">${fmt(p.mmr_style)}</td><td class="num">${fmt1(p.win_rate)}${p.win_rate!=null?'%':''}</td>
-    <td class="num">${p.wins!=null ? p.wins+'–'+p.losses : '—'}</td><td class="num">${fmt(p.kda)}</td><td class="num">${fmt(p.damage_per_min?.toLocaleString?.())}</td></tr>`).join('');
+    <td class="num"><span class="pill-rating">${fmt(p.mmr_style)}</span></td><td class="num">${p.win_rate!=null ? `<span class="stat-chip">${fmt1(p.win_rate)}%</span>` : '—'}</td>
+    <td class="num">${p.wins!=null ? `<span class="stat-chip">${p.wins}–${p.losses}</span>` : '—'}</td><td class="num">${fmt(p.kda)}</td><td class="num">${fmt(p.damage_per_min?.toLocaleString?.())}</td></tr>`).join('');
 
   // Score spectrum — all five on one shared 0–100 scale, one row each.
   // The top three sit within 1.1 points of each other, so markers on a
@@ -369,7 +395,7 @@ async function load() {
           : (p.why_rank ? summarizeLive(p.why_rank) : 'Full breakdown fills on the first daily run.');
         return `
         <div class="rs-row">
-          <span class="rs-rank">${['🥇','🥈','🥉'][i] || (i+1)}</span>
+          <span class="rs-rank"><span class="rs-dot" style="background:${COLORS[i % COLORS.length]}"></span>${['🥇','🥈','🥉'][i] || (i+1)}</span>
           <span class="rs-name">${p.name}</span>
           <span class="rs-score">${fmt1(p.score)}</span>
           <span class="rs-why">${line}</span>
@@ -379,6 +405,8 @@ async function load() {
 
   // Shared: subscore keys + group averages, used by standings, cards, improve.
   const subKeys = [['output','Damage'],['kda_efficiency','KDA'],['teamplay','Teamplay'],['death_quality','Deaths'],['conversion','Structures'],['augments','Augments'],['mechanics','Dodging']];
+  // One pastel per subscore, used consistently for its bar.
+  const subColors = {output:'#f5a26b', kda_efficiency:'#f27ba7', teamplay:'#a78bfa', death_quality:'#4ade9d', conversion:'#e5c97a', augments:'#8f8fd0', mechanics:'#5eead4'};
   const subBars = (p) => subKeys.map(([k,label]) => {
     const v = p.subscores?.[k];
     if (v == null) {
@@ -387,8 +415,20 @@ async function load() {
         : '— not filled yet';
       return `<div class="bar-row"><span class="bar-label">${label}</span><span class="bar-empty muted">${why}</span></div>`;
     }
-    return `<div class="bar-row"><span class="bar-label">${label}</span><div class="bar"><div class="bar-fill" style="width:${v}%"></div></div><span class="bar-val">${v}</span></div>`;
+    return `<div class="bar-row"><span class="bar-label">${label}</span><div class="bar"><div class="bar-fill" style="width:${v}%;background:${subColors[k]}"></div></div><span class="bar-val">${v}</span></div>`;
   }).join('');
+
+  // Win-rate donut ring (SVG): full ring when win rate is known, grey
+  // ring with "—" when it is not filled yet (seed has no per-player
+  // win rate until the first daily run).
+  const donut = (pct, color) => {
+    const r = 26, c = (2 * Math.PI * r).toFixed(1);
+    const frac = (pct == null) ? 0 : Math.max(0, Math.min(100, pct)) / 100;
+    return `<div class="donut-wrap"><svg class="donut" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Win rate ${pct==null?'not filled yet':pct+'%'}">
+      <circle cx="32" cy="32" r="${r}" fill="none" stroke="#262a38" stroke-width="7"/>
+      ${frac > 0 ? `<circle cx="32" cy="32" r="${r}" fill="none" stroke="${color}" stroke-width="7" stroke-linecap="round" stroke-dasharray="${(c*frac).toFixed(1)} ${c}" transform="rotate(-90 32 32)"/>` : ''}
+      <text x="32" y="36.5" text-anchor="middle" class="donut-num">${pct==null?'—':Math.round(pct)+'%'}</text></svg><div class="donut-label">Win rate</div></div>`;
+  };
 
   // Player cards — the rank plus the evidence for it, so a complaint gets an answer
   document.getElementById('players').innerHTML = players.map((p,i) => {
@@ -401,13 +441,20 @@ async function load() {
       : '<li>Champion focus fills on the first daily run (needs 3+ games on a champion).</li>';
     return `<div class="player" style="--pc:${COLORS[i % COLORS.length]}">
     <h3>${i+1}. ${p.name}${i===0 ? ' <span class="top-tag">★ Top rated</span>' : ''}</h3>
-    <div class="score">${fmt1(p.score)} <span style="font-size:15px;color:var(--muted)">· Rating ${fmt(p.mmr_style)}</span></div>
+    <div class="player-head">
+      <div class="score">${fmt1(p.score)} <span style="font-size:15px;color:var(--muted)">· Rating ${fmt(p.mmr_style)}</span></div>
+      ${donut(p.win_rate, COLORS[i % COLORS.length])}
+    </div>
     <p><b>Why this rank:</b> ${p.why_rank || 'Full breakdown fills on the first daily run.'}</p>
     <ul>
       <li><b>Best champions:</b> ${POCKETS[p.name] || '—'}</li>
-      <li><b>KDA:</b> ${fmt(p.kda)} &nbsp;·&nbsp; <b>Damage / min:</b> ${fmt(p.damage_per_min?.toLocaleString?.())} &nbsp;·&nbsp; <b>Win rate:</b> ${fmt1(p.win_rate)}${p.win_rate!=null?'%':''}</li>
-      <li><b>Record (last ${data.meta.window_games} games):</b> ${p.wins!=null ? p.wins+' wins, '+p.losses+' losses' : '—'}</li>
     </ul>
+    <div class="stat-chips">
+      <span class="stat-chip"><b>KDA</b> ${fmt(p.kda)}</span>
+      <span class="stat-chip"><b>Damage / min</b> ${fmt(p.damage_per_min?.toLocaleString?.())}</span>
+      <span class="stat-chip"><b>Win rate</b> ${p.win_rate!=null ? fmt1(p.win_rate)+'%' : '—'}</span>
+      <span class="stat-chip"><b>Record</b> ${p.wins!=null ? p.wins+' wins, '+p.losses+' losses' : '—'}</span>
+    </div>
     <h3>Evidence — subscores</h3>
     ${subBars(p)}
     <p class="muted">Subscores are percentiles within role archetype, blended with same-champion percentiles. “—” means not filled yet for this window; Damage and Structures stay blank because PlayARAM's match list doesn't show damage or turret takedowns.</p>
@@ -475,7 +522,7 @@ async function load() {
       <span class="stack-label">${s.label}</span>
       <div class="bar"><div class="bar-fill" style="width:${s.win_rate_pct}%"></div></div>
       <span class="stack-val">${fmt1(s.win_rate_pct)}%</span>
-      <span class="stack-sub">${s.player_games} games · ${s.wins} wins</span>
+      <span class="stack-sub"><span class="stat-chip">${s.player_games} games</span> <span class="stat-chip">${s.wins} wins</span> <span class="stat-chip">Grade ${fmt1(s.grade)}</span></span>
     </div>`).join('') : '<p class="muted">Stack splits fill on the first daily run.</p>';
   document.getElementById('stack-note').textContent = data.meta?.stack_note ||
     'Stack splits are a supplementary lens and do not change the scoring.';
@@ -489,12 +536,12 @@ async function load() {
   drawChart(document.getElementById('chart-mmr'), data.history || [], 'mmr_style', 'Rating');
 }
 
-const COLORS = ['#e5c97a','#c8aa6e','#5ed6a0','#d67b9a','#e07b39','#9aa0a8'];
+const COLORS = ['#f27ba7','#a78bfa','#4ade9d','#f5a26b','#e5c97a','#5eead4'];
 function drawChart(canvas, history, key, label) {
   const ctx = canvas.getContext('2d');
   const W = canvas.width, H = canvas.height;
   ctx.clearRect(0,0,W,H);
-  if (!history.length) { ctx.fillStyle='#b0a892'; ctx.font='16px Inter, system-ui, sans-serif'; ctx.fillText('No history yet.', 20, 40); return; }
+  if (!history.length) { ctx.fillStyle='#9aa0b5'; ctx.font='16px Inter, system-ui, sans-serif'; ctx.fillText('No history yet.', 20, 40); return; }
   const names = [...new Set(history.flatMap(h => Object.keys(h[key] || {})))];
   let vals = history.flatMap(h => Object.values(h[key] || {}));
   let min = Math.min(...vals), max = Math.max(...vals);
@@ -502,7 +549,7 @@ function drawChart(canvas, history, key, label) {
   const pad = (max - min) * 0.15; min -= pad; max += pad;
   const x = i => 50 + (W - 70) * (history.length === 1 ? 0.5 : i / (history.length - 1));
   const y = v => H - 30 - (H - 60) * ((v - min) / (max - min));
-  ctx.strokeStyle = '#2a2a2a'; ctx.fillStyle = '#b0a892'; ctx.font = '12px Inter, system-ui, sans-serif';
+  ctx.strokeStyle = '#262a38'; ctx.fillStyle = '#9aa0b5'; ctx.font = '12px Inter, system-ui, sans-serif';
   for (let t = 0; t <= 4; t++) {
     const v = min + (max - min) * t / 4, yy = y(v);
     ctx.beginPath(); ctx.moveTo(50, yy); ctx.lineTo(W - 20, yy); ctx.stroke();
@@ -523,7 +570,7 @@ function drawChart(canvas, history, key, label) {
     ctx.fillStyle = COLORS[ni % COLORS.length];
     ctx.fillText(n, x(history.length - 1) + 6 > W - 90 ? W - 90 : x(history.length - 1) + 6, 20 + ni * 16);
   });
-  ctx.fillStyle = '#b0a892';
+  ctx.fillStyle = '#9aa0b5';
   history.forEach((h, i) => ctx.fillText(h.date.slice(5), x(i) - 10, H - 8));
 }
 
