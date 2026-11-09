@@ -357,8 +357,17 @@ def parse_profile_games(html, riot_id, now):
                     teammates = [r for r in team
                                  if _norm_champ(r.replace("#", "")) != me_norm]
                     break
+        # Fingerprint: champion + KDA + duration + CS + skillshots
+        # dodged. The date is deliberately NOT in it: the relative
+        # time ("14h ago") is computed by truncating the hour bucket,
+        # so the same match can be dated Nov 9 at the 00:20 run and
+        # Nov 8 at the 10:40 run — and the updater then treats it as
+        # a new game, duplicating it in the cache and breaking
+        # full-stack grouping. Same formula as the extension's
+        # parser.js and rows_from_extension below. The date is still
+        # stored on the game (for display and the match key).
         fingerprint = (f"{champ}|{kills}/{deaths}/{assists}|{mins:.1f}|"
-                       f"{cs}|{dodged}|{date_s}")
+                       f"{cs}|{dodged}")
         games.append({
             "match_id": fingerprint,
             "date": date_s,
@@ -387,11 +396,64 @@ def _cache_path(name):
     return PLAYARAM_CACHE_DIR / f"{_norm_champ(name)}.json"
 
 
+_FP_DATE_RE = re.compile(r"\|\d{4}-\d{2}-\d{2}$")
+
+
+def _fp_base(match_id):
+    """The identity of a game, with any trailing |YYYY-MM-DD date
+    stripped. Fingerprints used to carry the date, and the
+    relative-time hour bucket could date the same match Nov 9 on one
+    run and Nov 8 on the next — same champion|KDA|duration|CS|dodged
+    under two dates is ONE game, not two. New fingerprints have no
+    date, so the base is the identity either way."""
+    return _FP_DATE_RE.sub("", str(match_id or "").strip())
+
+
+def dedupe_games_by_identity(games):
+    """Collapse copies of the same game that differ only by the
+    fingerprint's trailing date (the Nov 9 duplicates: the same
+    match was dated Nov 9 at the 00:20 run and Nov 8 at the 10:40
+    run, so the cache held it twice and the window lost older
+    games). Same champion|KDA|duration|CS|dodged = one game.
+    Keeps the copy with the highest seq (its window position is the
+    newest import of that game, and its date is the most recent
+    run's dating) and copies damage dealt/taken from a dropped copy
+    when the kept one has none — a game re-read by the extension
+    can gain damage the first copy never had. The kept copy's
+    match_id is normalized to the dateless fingerprint, so the old
+    and new formats dedupe from here on. Returns the games sorted
+    newest-first by seq."""
+    by_base = {}
+    for g in games:
+        base = _fp_base(g.get("match_id"))
+        cur = by_base.get(base)
+        if cur is None:
+            by_base[base] = g
+            continue
+        # Keep the higher-seq copy; rescue damage from the dropped one.
+        if g.get("seq", 0) > cur.get("seq", 0):
+            keep, drop = g, cur
+        else:
+            keep, drop = cur, g
+        for field in ("damage_to_champions", "damage_taken"):
+            if keep.get(field) is None and drop.get(field) is not None:
+                keep[field] = drop[field]
+        by_base[base] = keep
+    out = list(by_base.values())
+    for g in out:
+        g["match_id"] = _fp_base(g.get("match_id"))
+    out.sort(key=lambda g: g.get("seq", 0), reverse=True)
+    return out
+
+
 def load_playaram_cache(name):
     p = _cache_path(name)
     if p.exists():
         try:
-            return json.loads(p.read_text())
+            # Collapse any date-duplicates left from before the
+            # fingerprint lost its date (in-memory only — the file
+            # is rewritten clean by the next merge).
+            return dedupe_games_by_identity(json.loads(p.read_text()))
         except Exception:
             return []
     return []
@@ -401,20 +463,20 @@ def merge_playaram_cache(name, new_games):
     """Merge freshly parsed games into the player's cache, deduped by
     fingerprint. Newest games get the highest seq numbers; the cache
     is capped at CACHE_KEEP. Returns (window games newest-first, n_new)."""
-    cached = load_playaram_cache(name)
-    seen = {g.get("match_id") for g in cached}
+    cached = dedupe_games_by_identity(load_playaram_cache(name))
+    seen = {_fp_base(g.get("match_id")) for g in cached}
     max_seq = max((g.get("seq", 0) for g in cached), default=0)
     added = 0
     for g in reversed(new_games):  # oldest first, so newest gets top seq
-        if g["match_id"] in seen:
+        if _fp_base(g["match_id"]) in seen:
             continue
         max_seq += 1
         g["seq"] = max_seq
         cached.append(g)
-        seen.add(g["match_id"])
+        seen.add(_fp_base(g["match_id"]))
         added += 1
     cached.sort(key=lambda g: g.get("seq", 0), reverse=True)
-    cached = cached[:CACHE_KEEP]
+    cached = dedupe_games_by_identity(cached)[:CACHE_KEEP]
     PLAYARAM_CACHE_DIR.mkdir(parents=True, exist_ok=True)
     _cache_path(name).write_text(json.dumps(cached, indent=2))
     return cached, added
@@ -890,32 +952,29 @@ def percentile(sorted_vals, p):
 
 
 def annotate_stack(all_games):
-    """Count how many of the group were in each match.
+    """Fill in stack_size / teammates only for games that do not
+    already carry them. main() maps each game's teammates (Riot IDs
+    from the participant links, or display names) to group display
+    names and sets stack_size = 1 + len(teammates) for every source,
+    so this is only a safety net for games that somehow arrive
+    without a teammates list (a manual CSV row, an old cache entry):
+    those read as solo. It never overwrites a teammates list.
 
-    Match IDs are shared across players when they queue together, so the
-    number of group members in a match is the stack size for that game.
-    It counts only group members whose game is also in this 50-game
-    window — a teammate's game outside their own last-50 window won't
-    be counted, so a 5-stack can read as a 4-stack near the window edge.
-    Games that already carry a stack_size (PlayARAM rows, from the
-    participant links) and games with no match_id are left alone.
-    """
-    present = {}
+    The old version grouped games by match_id to find stackmates,
+    but the fingerprint IS the match_id and it is unique per
+    player-game, so every group was a singleton — and on the Nov 9
+    10:45 scheduled run it overwrote every game's teammates with []
+    and wiped kill participation (KP% went from 73.3 to None for
+    everyone). Match grouping lives in compute_team_totals, which
+    keys on (date, game_minutes, win, member set)."""
     for name, games in all_games.items():
         for g in games:
-            if g.get("match_id"):
-                present.setdefault(g["match_id"], set()).add(name)
-    for name, games in all_games.items():
-        for g in games:
-            if g.get("stack_size") is not None:
+            if g.get("stack_size") is not None \
+                    and g.get("teammates") is not None:
                 continue
-            if not g.get("match_id"):
-                g["stack_size"] = 1
-                g["teammates"] = []
-                continue
-            mates = present.get(g["match_id"], {name})
-            g["stack_size"] = len(mates)
-            g["teammates"] = sorted(m for m in mates if m != name)
+            mates = g.get("teammates") or []
+            g["teammates"] = mates
+            g["stack_size"] = 1 + len(mates)
 
 
 def _norm_member_id(s):
@@ -1052,6 +1111,25 @@ def stack_splits(all_games):
     return out
 
 
+def _champion_why(champ, wins, losses):
+    """One-line summary for a champion entry, keyed on the win-loss
+    record only — no grade or delta numbers, one sentence, light
+    wit. The page renders this instead of the old grade paragraph
+    ("Grades X points above this player's own average..."). The
+    mean_grade / delta_vs_overall fields stay in the data for
+    anywhere the page still needs the numbers."""
+    w, l = wins, losses
+    if l == 0:
+        return f"Undefeated on {champ} — {w}-{l}, and it shows."
+    if w == 0:
+        return f"Winless on {champ} — {w}-{l}. Maybe retire this one for now."
+    if w > l:
+        return f"Winning on {champ} — {w}-{l}. Keep it in the rotation."
+    if w == l:
+        return f"Even on {champ} — {w}-{l}. A coin flip."
+    return f"Losing on {champ} — {w}-{l}. Worth a rethink."
+
+
 def score_players(all_games, archetypes):
     """
     all_games: {player_name: [game, ...]} where game has the fields in
@@ -1081,7 +1159,11 @@ def score_players(all_games, archetypes):
       tank soaking damage is judged against other tanks, never
       against a carry's damage taken. Conversion joins in only
       when a manual CSV provides structure data. Mechanics
-      (skillshots dodged) is shown, not blended.
+      (skillshots dodged per minute) is the 8th graded criterion,
+      blended as a percentile within role like the others — a good
+      dodger scores high even on a tank. The subscore still shows
+      the raw dodges-per-minute number, which is what the page
+      displays for it.
       A missing field is skipped, never scored as 0.
     Performance Score = 55% mean + 20% median + 10% p25 + 15% win rate.
     MMR-style = 800 + Score x 14.
@@ -1192,6 +1274,13 @@ def score_players(all_games, archetypes):
             teamplay = blended(arch, g["champion"], "kp", g["kp"])
             death_q = 100 - blended(arch, g["champion"], "deaths", g["deaths"])
             conversion = blended(arch, g["champion"], "structure_share", g["structure_share"])
+            # Mechanics: skillshots dodged per minute, blended as a
+            # percentile within role like every other criterion — a
+            # good dodger scores high even on a tank, and a carry
+            # who never dodges pays for it. Missing (a CSV without
+            # the column) stays None and is skipped, never 0.
+            mech = blended(arch, g["champion"], "skillshots_dodged_per_min",
+                           g.get("skillshots_dodged_per_min"))
             if g.get("augments"):
                 rates = [aug_wins.get(a, 0) / aug_games[a] for a in g["augments"] if aug_games.get(a, 0) >= 3]
                 aug = (sum(rates) / len(rates) * 100) if rates else 50.0
@@ -1199,7 +1288,7 @@ def score_players(all_games, archetypes):
                 aug = max(0.0, min(100.0, (aug - 35) / 30 * 100))
             else:
                 aug = 50.0
-            parts = [p for p in [output, taken, kda, teamplay, death_q, conversion, aug]
+            parts = [p for p in [output, taken, kda, teamplay, death_q, conversion, aug, mech]
                      if p is not None]
             g["grade"] = sum(parts) / len(parts) if parts else 50.0
             g["subscores"] = {
@@ -1210,6 +1299,11 @@ def score_players(all_games, archetypes):
                 "death_quality": round(death_q, 1) if death_q is not None else None,
                 "conversion": round(conversion, 1) if conversion is not None else None,
                 "augments": round(aug, 1),
+                # The mechanics SUBSCORE stays the raw dodges-per-
+                # minute number: the page renders it as "X per
+                # minute" in the score breakdown, so a percentile
+                # here would read as "55.0 per minute". The grade
+                # above uses the blended percentile (mech), not this.
                 "mechanics": g.get("skillshots_dodged_per_min"),
             }
 
@@ -1281,36 +1375,55 @@ def score_players(all_games, archetypes):
                 "mean_grade": round(statistics.mean(g["grade"] for g in ag), 1),
                 "delta_vs_overall": round(statistics.mean(g["grade"] for g in ag) - mean_grade, 1),
             }
-        champ_rows = []
+        # Champion rows for EVERY champion in the window (1+ games):
+        # the top 3 needs 3+ games, but the worst 3 fills from
+        # 2-game then 1-game champions when the 3+ pool is small
+        # (see below), so the rows are built once for all of them.
+        # "why" is a short one-line summary keyed on the win-loss
+        # record only — no grade or delta numbers. The page renders
+        # it instead of the old grade paragraph.
+        champ_rows_all = []
         for champ in sorted({g["champion"] for g in games}):
             cg = [g for g in games if g["champion"] == champ]
-            if len(cg) >= 3:
-                cg_mean = statistics.mean(g["grade"] for g in cg)
-                cg_wins = sum(1 for g in cg if g["win"])
-                cg_delta = round(cg_mean - mean_grade, 1)
-                direction = "above" if cg_delta >= 0 else "below"
-                champ_rows.append({
-                    "champion": champ, "image": champion_image(champ),
-                    "games": len(cg),
-                    "wins": cg_wins, "losses": len(cg) - cg_wins,
-                    "win_rate": round(100.0 * cg_wins / len(cg), 1),
-                    "mean_grade": round(cg_mean, 1),
-                    "delta_vs_overall": cg_delta,
-                    "why": (f"Grades {abs(cg_delta)} points {direction} this player's own "
-                            f"average ({round(mean_grade, 1)}) over {len(cg)} games, "
-                            f"going {cg_wins}-{len(cg) - cg_wins} on this champion."),
-                })
+            cg_mean = statistics.mean(g["grade"] for g in cg)
+            cg_wins = sum(1 for g in cg if g["win"])
+            cg_delta = round(cg_mean - mean_grade, 1)
+            champ_rows_all.append({
+                "champion": champ, "image": champion_image(champ),
+                "games": len(cg),
+                "wins": cg_wins, "losses": len(cg) - cg_wins,
+                "win_rate": round(100.0 * cg_wins / len(cg), 1),
+                "mean_grade": round(cg_mean, 1),
+                "delta_vs_overall": cg_delta,
+                "why": _champion_why(champ, cg_wins, len(cg) - cg_wins),
+            })
+        # The 3+ game pool: "take when offered" / "pass or swap" and
+        # the top 3 all need a real sample, so they stay 3+ only.
+        champ_rows = [c for c in champ_rows_all if c["games"] >= 3]
         take = [c for c in sorted(champ_rows, key=lambda c: c["delta_vs_overall"], reverse=True)
                 if c["delta_vs_overall"] >= 4]
         pas = [c for c in sorted(champ_rows, key=lambda c: c["delta_vs_overall"])
                if c["delta_vs_overall"] <= -4]
         r["role_split"] = role_split
         r["champion_focus"] = {"take_when_offered": take, "pass_or_swap": pas}
-        # Top 3 / worst 3 champions in this 50-game window (3+ games each),
-        # ranked by grade vs the player's own average — hard facts, no opinion.
-        by_delta_desc = sorted(champ_rows, key=lambda c: c["delta_vs_overall"], reverse=True)
-        r["champion_top3"] = by_delta_desc[:3]
-        r["champion_worst3"] = sorted(champ_rows, key=lambda c: c["delta_vs_overall"])[:3]
+        # Top 3 / worst 3 champions in this 50-game window, ranked by
+        # mean grade. Both lists use a MINIMUM OF 2 GAMES — one game
+        # is not a pattern, so 1-game champions stay out, but the
+        # 3-game threshold left too small a pool (CreamiNataella had
+        # only Milio + Nautilus at 3+, so her worst 3 was just her
+        # top 3 reversed). At 2+ her pool is 11 champions and
+        # everyone else's is 12-15, so both lists can be distinct.
+        # HARD RULE: a champion in the top 3 NEVER appears in the
+        # worst 3 — the worst 3 is the lowest-graded 2+ game
+        # champions NOT in the top 3. Fewer than 3 if the pool runs
+        # out — never padded with a top-3 champion.
+        pool2 = [c for c in champ_rows_all if c["games"] >= 2]
+        r["champion_top3"] = sorted(
+            pool2, key=lambda c: c["mean_grade"], reverse=True)[:3]
+        top_names = {c["champion"] for c in r["champion_top3"]}
+        r["champion_worst3"] = sorted(
+            [c for c in pool2 if c["champion"] not in top_names],
+            key=lambda c: c["mean_grade"])[:3]
 
         # --- Recent 20: how to improve, from the freshest 20 games only ---
         # Everything here is computed strictly inside the player's most
@@ -1414,7 +1527,8 @@ def score_players(all_games, archetypes):
             f"Win rate is only 15% of the score and no single stat decides "
             f"the rank — each game grade blends every criterion the data "
             f"source provides for that game (KDA, teamplay, death "
-            f"quality and augments, plus damage dealt and damage taken "
+            f"quality, augments and mechanics — skillshots dodged — "
+            f"plus damage dealt and damage taken "
             f"when the extension has read the game's Details panel — "
             f"share of team damage on full-stack games, else damage per "
             f"minute — and conversion only when structure data exists), "
@@ -1432,8 +1546,10 @@ def score_players(all_games, archetypes):
     # strongest and weakest criteria differ. The tip for each
     # criterion names the player's own number, so the text differs
     # per player even when two players share a criterion. Mechanics
-    # is shown, not blended into the grade — it is dodges per
-    # minute, not a 0-100 percentile, so it is not ranked here.
+    # IS blended into the grade as a percentile, but its subscore
+    # stays dodges per minute (what the page shows), not a 0-100
+    # percentile, so it is not ranked here — the ranking compares
+    # percentiles like-for-like.
     label = {"output": "Output", "damage_taken": "Damage taken",
              "kda_efficiency": "KDA efficiency",
              "teamplay": "Teamplay", "death_quality": "Death quality",
@@ -1630,7 +1746,12 @@ def rows_from_extension(path, players):
                     per_min = None
             fingerprint = str(g.get("fingerprint") or "").strip()
             if not fingerprint:
-                # Fallback, same formula as parse_profile_games.
+                # Fallback, same formula as parse_profile_games:
+                # champion + KDA + duration + CS + skillshots dodged,
+                # NO date (the relative-time hour bucket can flip a
+                # game's computed date across midnight, which
+                # duplicated matches in the cache). The date is still
+                # stored on the game.
                 try:
                     dodged = int(g.get("skillshots_dodged"))
                 except (TypeError, ValueError):
@@ -1641,7 +1762,7 @@ def rows_from_extension(path, players):
                 except (TypeError, ValueError):
                     cs = 0
                 fingerprint = (f"{champ}|{kills}/{deaths}/{assists}|"
-                               f"{mins:.1f}|{cs}|{dodged}|{date_s}")
+                               f"{mins:.1f}|{cs}|{dodged}")
             # The extension already inferred the role from champion +
             # augments + items; keep it when it is a valid archetype,
             # otherwise the caller recomputes it (same rule).
@@ -1705,7 +1826,7 @@ RANKING_METHOD = {
     "points": [
         "Role first, judged from the game itself: a game's role (Damage, Frontline or Support) comes from the champion plus the augments taken and the items built — not the champion alone. Malphite built AP counts as Damage; Seraphine built with enchanter items counts as Support. Every component is a percentile WITHIN that role across all player-games in the window. A tank with 8 kills can score 90th percentile for Frontline while a carry with 12 kills scores only 60th for Damage. Raw kills and damage never compare a tank to a carry. A game with no augments or items recorded falls back to the champion's usual role.",
         "Champion second: each component is blended 70% archetype percentile + 30% same-champion percentile (only when the group has 3+ games on that champion; otherwise archetype only). Playing a champion well *for that champion* counts, not just picking a strong champion.",
-        "Whole performance, not one stat: a game grade is the mean of the criteria available for that game — KDA Efficiency, Teamplay, Death Quality and Augments, plus Output (damage dealt) and Damage Taken when the extension has read the game's Details panel in your browser. Output is your share of the team's damage dealt when all five teammates' damage is known for the match (full-stack games), otherwise damage per minute; Damage Taken is the same idea for damage you soaked, judged within your role — a tank soaking damage is compared with other tanks, never with a carry's damage taken. Teamplay (kill participation: your kills + assists ÷ team kills) also comes from the five members' games, so it only has a value on full-stack games where everyone queued together. PlayARAM's own match list does not show damage, so games from a server fetch have no damage and those two criteria stay blank for them. Conversion joins in only when per-player structure data exists (a manual CSV). Mechanics (skillshots dodged) is shown as an 8th subscore but is not blended into the grade. KDA is 1 of the graded criteria, damage is only part of Output, and win rate is only 15% of the final score. A missing field is skipped, never scored as 0.",
+        "Whole performance, not one stat: a game grade is the mean of the criteria available for that game — KDA Efficiency, Teamplay, Death Quality and Augments, plus Output (damage dealt) and Damage Taken when the extension has read the game's Details panel in your browser. Output is your share of the team's damage dealt when all five teammates' damage is known for the match (full-stack games), otherwise damage per minute; Damage Taken is the same idea for damage you soaked, judged within your role — a tank soaking damage is compared with other tanks, never with a carry's damage taken. Teamplay (kill participation: your kills + assists ÷ team kills) also comes from the five members' games, so it only has a value on full-stack games where everyone queued together. PlayARAM's own match list does not show damage, so games from a server fetch have no damage and those two criteria stay blank for them. Conversion joins in only when per-player structure data exists (a manual CSV). Mechanics (skillshots dodged per minute) is the 8th graded criterion, blended as a percentile within role like the others — a good dodger scores high even on a tank. The page also shows the raw dodges-per-minute number for context. KDA is 1 of the graded criteria, damage is only part of Output, and win rate is only 15% of the final score. A missing field is skipped, never scored as 0.",
         "Consistency counts: Performance Score = 55% mean game grade + 20% median grade + 10% floor (25th percentile) grade + 15% win rate. One pop-off game can't carry a rank; a low floor pulls it down.",
         "Evidence on every card: each player card shows their subscores vs the group average, their grade split by role played, their best / worst champions vs their own average (with game counts), and a 'Why this rank' paragraph built from those numbers — so a complaint can be answered with the breakdown, not an opinion.",
     ],
@@ -1733,7 +1854,7 @@ HOW_RATING_WORKS = {
         "Death quality — deaths per game, graded within role (fewer deaths is better).",
         "Conversion — your share of your team's structure takedowns (turrets + inhibitors ÷ team total). Only when per-player structure data exists — not shown on PlayARAM's match list, so it stays blank from PlayARAM.",
         "Augments — how the augments you drafted performed across the group's games in this window. PlayARAM names are read from the match list when the page exposes them; otherwise this scores a neutral 50.",
-        "Mechanics — skillshots dodged per minute, from PlayARAM's match list. Shown as a subscore; not blended into the game grade.",
+        "Mechanics — skillshots dodged per minute, graded as a percentile within your role archetype like the other criteria (the page also shows the raw dodges-per-minute number).",
     ],
     "formula": "Performance Score = 55% mean game grade + 20% median grade + 10% floor (25th percentile) grade + 15% win rate",
     "mmr_formula": "MMR-style = 800 + Performance Score × 14 — 1500 is roughly average",
@@ -1831,8 +1952,6 @@ def main():
                 DATA_PATH.write_text(json.dumps(data, indent=2))
             return 0
         mode_errors = "; ".join(ext_errors) if ext_errors else None
-        riot_to_name = {p.get("riot_id", "").lower(): p["name"]
-                        for p in players}
         total_new = 0
         for p in players:
             name = p["name"]
@@ -1849,16 +1968,9 @@ def main():
             print(f"  {name}: {len(games)} games in export, {n_new} new, "
                   f"cache now {len(merged)}.")
             all_games[name] = merged[:window]
-        # Teammates arrive as Riot IDs — keep only group members, as
-        # display names. (Same mapping as the PlayARAM branch; the
-        # cache on disk keeps the Riot IDs, so this is safe to repeat.)
-        for name, games in all_games.items():
-            for g in games:
-                mates = sorted({riot_to_name[r.lower()]
-                                for r in g.get("teammates", [])
-                                if r.lower() in riot_to_name})
-                g["teammates"] = mates
-                g["stack_size"] = 1 + len(mates)
+        # Teammates are mapped to display names in the shared loop
+        # below (once, for every source — including players whose
+        # games came from the cache here).
         print(f"Extension import: {n_exported} games exported, "
               f"{total_new} new in cache.")
         # Record that this data came from a real extension sync, so the
@@ -1877,8 +1989,6 @@ def main():
         # 20 server-rendered games, merge into the per-player cache.
         print("PlayARAM mode: fetching profiles from playaram.gg (no Riot key needed).")
         now = datetime.now(CST)
-        riot_to_name = {p.get("riot_id", "").lower(): p["name"]
-                        for p in players}
         errors = []
         total_parsed = 0
         total_new = 0
@@ -1919,16 +2029,12 @@ def main():
                   f"augments on {diag['with_augments']}, "
                   f"items on {diag.get('with_items', 0)}, "
                   f"participants on {diag['with_participants']}.", flush=True)
-            # Role (from champion + augments + items) + stack:
-            # teammates arrive as Riot IDs — keep only group members,
-            # as display names.
+            # Role (from champion + augments + items) for the fresh
+            # games; teammates are mapped to display names in the
+            # shared loop below (once, for every source — including
+            # players whose fetch was blocked and scored from cache).
             for g in merged:
                 g["archetype"] = infer_game_role(g)
-                mates = sorted({riot_to_name[r.lower()]
-                                for r in g.get("teammates", [])
-                                if r.lower() in riot_to_name})
-                g["teammates"] = mates
-                g["stack_size"] = 1 + len(mates)
             all_games[name] = merged[:window]
             print(f"  {len(all_games[name])} ARAM Mayhem games in window.")
         total_games = sum(len(g) for g in all_games.values())
@@ -1951,10 +2057,35 @@ def main():
     # Every game gets its role from champion + augments + items
     # (infer_game_role), whichever source it came from — PlayARAM,
     # CSV or extension. The loop is idempotent, and the sort + window
-    # cut apply to all sources.
+    # cut apply to all sources. Teammates are mapped here too, once
+    # for every source: the old code mapped them inside each branch's
+    # per-player loop, so a blocked PlayARAM fetch (which loads from
+    # cache and continues) skipped the mapping entirely, and
+    # annotate_stack then overwrote teammates with [] and wiped KP%
+    # (Nov 9 10:45: KP% went from 73.3 to None for everyone).
+    # Teammates arrive as Riot IDs (participant links, extension
+    # export) or already as display names (a cache a previous run
+    # mapped, a manual CSV) — both forms are accepted, because a
+    # display name alone is NOT a key in riot_to_name, so a naive
+    # re-map would wipe already-mapped names. Unknown IDs are
+    # dropped, never kept as-is.
+    riot_to_name = {p.get("riot_id", "").lower(): p["name"]
+                    for p in players}
+    name_to_name = {_norm_member_id(p["name"]): p["name"]
+                    for p in players}
     for name, games in all_games.items():
         for g in games:
             g["archetype"] = infer_game_role(g)
+            mates = set()
+            for t in (g.get("teammates") or []):
+                low = str(t).lower()
+                if low in riot_to_name:
+                    mates.add(riot_to_name[low])
+                elif _norm_member_id(t) in name_to_name:
+                    mates.add(name_to_name[_norm_member_id(t)])
+            mates.discard(name)
+            g["teammates"] = sorted(mates)
+            g["stack_size"] = 1 + len(mates)
         games.sort(key=lambda g: (g.get("seq", 0), g.get("date", "")),
                    reverse=True)
         all_games[name] = games[:window]
