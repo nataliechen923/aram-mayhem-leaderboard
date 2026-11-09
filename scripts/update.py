@@ -1142,6 +1142,142 @@ def _champion_why(champ, wins, losses, top=False):
     return f"Losing on {champ} — {w}-{l}. Worth a rethink."
 
 
+# Fun titles, computed every run from the current window's stats —
+# never hardcoded to a name, so they move when gameplay changes.
+# Each title is earned by leading a stat; at most one title per
+# player, assigned in this fixed priority order (each title goes to
+# the top remaining player by its stat); a title whose deciding stat
+# is null for everyone that run is unassigned, never guessed.
+# Priority: Untouchable (best KDA AND fewest deaths) → Glass Cannon
+# (most damage) → Glue (highest kill participation) → Matrix (most
+# skillshots dodged) → Lone Wolf (lowest kill participation). The
+# Untouchable needs BOTH the best KDA and the fewest deaths per
+# game — if the two leaders differ, it is unassigned that run.
+# Lone Wolf is last so nobody who earned a better title gets stuck
+# with it.
+# Pronouns (from Natalie): CreamiNataella and PikabUwU are girls
+# (she/her). The genders of I3i3oy, Vincent Chan and Ohwutahel are
+# unknown — their summaries use their names or they/them, never
+# he/him.
+TITLE_PRONOUNS = {"CreamiNataella": "she", "PikabUwU": "she"}
+TITLE_LABEL = {
+    "untouchable": "The Untouchable",
+    "glass_cannon": "The Glass Cannon",
+    "glue": "The Glue",
+    "matrix": "The Matrix",
+    "lone_wolf": "The Lone Wolf",
+}
+
+
+def _title_pronoun(name):
+    """Pronoun forms for a title summary. she/her for the two players
+    Natalie named as girls; they/them for everyone else (genders
+    unknown) — never he/him."""
+    if TITLE_PRONOUNS.get(name) == "she":
+        return {"subj": "she", "obj": "her", "poss": "her",
+                "be": "is", "do": "does", "hit": "hits",
+                "take": "takes", "neg": "doesn't", "be_contr": "she's"}
+    return {"subj": "they", "obj": "them", "poss": "their",
+            "be": "are", "do": "do", "hit": "hit",
+            "take": "take", "neg": "don't", "be_contr": "they're"}
+
+
+def compute_titles(results):
+    """Fun titles for this window. `results` is the per-player dicts
+    from score_players (score, kda, deaths_per_game,
+    kill_participation_pct, damage_per_min, damage_dealt_share_pct,
+    skillshots_dodged_per_min). Returns {name: (title, summary)}
+    for EVERY player — (None, None) when they earned no title this
+    run, so the page never shows a stale title from an earlier run.
+    A missing stat is skipped, never scored as 0, and a title whose
+    deciding stat is null for everyone is unassigned, never guessed."""
+    titled = set()
+    assigned = {}
+
+    def _best(key, lowest=False):
+        """Top untitled player by a stat (highest, or lowest when
+        lowest=True). Ties: higher score, then name, for determinism.
+        None when the stat is null for every untitled player."""
+        rows = [(n, r[key]) for n, r in results.items()
+                if r and r.get(key) is not None and n not in titled]
+        if not rows:
+            return None
+        rows.sort(key=lambda nr: (nr[1] if lowest else -nr[1],
+                                  -(results[nr[0]]["score"] or 0), nr[0]))
+        return rows[0][0]
+
+    # 1. The Untouchable — best KDA AND fewest deaths per game.
+    kda_top = _best("kda")
+    deaths_top = _best("deaths_per_game", lowest=True)
+    if kda_top is not None and kda_top == deaths_top:
+        assigned[kda_top] = "untouchable"
+        titled.add(kda_top)
+    # 2. The Glass Cannon — most damage per minute; the share of team
+    # damage is the fallback when no damage-per-minute exists.
+    cannon = _best("damage_per_min")
+    if cannon is None:
+        cannon = _best("damage_dealt_share_pct")
+    if cannon is not None:
+        assigned[cannon] = "glass_cannon"
+        titled.add(cannon)
+    # 3. The Glue — highest kill participation.
+    glue = _best("kill_participation_pct")
+    if glue is not None:
+        assigned[glue] = "glue"
+        titled.add(glue)
+    # 4. The Matrix — most skillshots dodged per minute.
+    matrix = _best("skillshots_dodged_per_min")
+    if matrix is not None:
+        assigned[matrix] = "matrix"
+        titled.add(matrix)
+    # 5. The Lone Wolf — lowest kill participation.
+    wolf = _best("kill_participation_pct", lowest=True)
+    if wolf is not None:
+        assigned[wolf] = "lone_wolf"
+        titled.add(wolf)
+
+    out = {}
+    for name, r in results.items():
+        if not r:
+            out[name] = (None, None)
+            continue
+        code = assigned.get(name)
+        if code is None:
+            out[name] = (None, None)
+            continue
+        p = _title_pronoun(name)
+        if code == "untouchable":
+            summary = (f"Best KDA in the group ({r['kda']}) and the fewest "
+                       f"deaths per game ({r['deaths_per_game']}) — "
+                       f"{p['subj']} just {p['neg']} die.")
+        elif code == "glass_cannon":
+            dmg = r.get("damage_per_min")
+            share = r.get("damage_dealt_share_pct")
+            if dmg is not None:
+                dmg_txt = f"{dmg:,.0f}/min"
+                if share is not None:
+                    dmg_txt += f", {share}% of the group's damage"
+            else:
+                dmg_txt = f"{share}% of the group's damage"
+            summary = (f"Most damage in the group ({dmg_txt}) — "
+                       f"{p['subj']} {p['hit']} hard and {p['take']} "
+                       f"the hits back.")
+        elif code == "glue":
+            summary = (f"In on the most team kills "
+                       f"({r['kill_participation_pct']}% kill participation) "
+                       f"— {p['be_contr']} always in the fight.")
+        elif code == "matrix":
+            summary = (f"Dodges the most skillshots in the group "
+                       f"({r['skillshots_dodged_per_min']} per minute) — "
+                       f"good luck hitting {p['obj']}.")
+        else:  # lone_wolf
+            summary = (f"Lowest kill participation in the group "
+                       f"({r['kill_participation_pct']}%) — {p['subj']} "
+                       f"{p['do']} {p['poss']} own thing out there.")
+        out[name] = (TITLE_LABEL[code], summary)
+    return out
+
+
 def score_players(all_games, archetypes):
     """
     all_games: {player_name: [game, ...]} where game has the fields in
@@ -1620,6 +1756,15 @@ def score_players(all_games, archetypes):
         for k, v in cons:
             rr["cons"].append(f"{label[k]} is your weakest area in the last 20 ({v}) — the thing to work on.")
             rr["tips"].append(f"Work on {label[k]} ({v} in the last 20): {tip_for[k]}.")
+
+    # --- Fun titles, computed every run from this window's stats ---
+    # One per player at most; they move when gameplay changes, and a
+    # player with no title gets explicit Nones so the page never
+    # shows a stale title from an earlier run.
+    for name, (title, summary) in compute_titles(results).items():
+        if results.get(name):
+            results[name]["title"] = title
+            results[name]["title_summary"] = summary
     return results
 
 
@@ -2153,6 +2298,8 @@ def main():
             "champion_worst3": s.get("champion_worst3", []),
             "recent_20": s.get("recent_20"),
             "why_rank": s.get("why_rank"),
+            "title": s.get("title"),
+            "title_summary": s.get("title_summary"),
             "games": [public_game(g) for g in s["games"]],
         })
         # The Nov 8 seed shipped a snapshot note ("Snapshot evidence
