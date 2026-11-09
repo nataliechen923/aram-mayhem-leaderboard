@@ -193,36 +193,128 @@ it work.
    means it worked. (A red X means it failed — see "If something
    looks wrong" below.)
 8. Click on the run to open it. Click the job called **update**,
-   then click **Update data**. You should see lines like
-   `20 games on profile, 20 new, cache now 20` for each player on
-   the first run (PlayARAM shows 20 games at a time, so the first
-   run finds 20; later runs find fewer new ones). That means it
-   found your games.
-9. Now go back to your leaderboard link from Step 4 and reload the
-   page (Ctrl+Shift+R on Windows, Cmd+Shift+R on Mac, so your
-   browser does not show you an old saved copy). The line at the
-   very top should now say **"Last updated"** with today's date and
-   time. The per-game rows, the "what to work on" tips, and the top
-   3 / worst 3 champions should now be filled in.
+   then click **Update data**. You will probably see lines like
+   `BLOCKED — PlayARAM returned 403 (Cloudflare challenge)` for
+   each player. That is expected now: PlayARAM refuses requests
+   from GitHub's computers (see Step 7 — the extension is how the
+   fresh games get in). The run still gets a green checkmark, and
+   the page keeps the Nov 8 numbers for now.
+9. The numbers fill in when you do Step 7 (the extension) and run
+   the workflow once more. Until then, the page is supposed to
+   still say Nov 8.
 
-## Step 6 — You are done
+## Step 6 — You are done with the website setup
 
-That is the whole setup. From now on:
+That is the whole setup for the page itself. One more piece follows
+in Step 7 — the extension that feeds it fresh games. From now on:
 
-- Every night at **12:00 AM CST**, the robot runs by itself, fetches
-  the new games, updates the numbers, and republishes the page. It
-  tries again at 12:30 AM if the first try fails.
-- You never have to open GitHub again, unless the page tells you
-  something is wrong (see below).
+- Every night at **12:00 AM CST**, the robot runs by itself. If you
+  uploaded a fresh file from the extension (Step 7), it imports
+  those games, updates the numbers, and republishes the page. If
+  there is no new file, it tries PlayARAM directly and, as expected,
+  gets refused — the page simply keeps its last numbers. It tries
+  again at 12:30 AM if the first try fails.
 - You never have to refresh the page by hand for it to update, and
   you never have to paste anything anywhere.
+
+## Step 7 — Install the extension (the part that keeps the numbers fresh)
+
+PlayARAM refuses requests from GitHub's computers, but it loads fine
+in your own Chrome browser at home. So instead of GitHub asking
+PlayARAM for the games, a tiny extension in YOUR Chrome looks at the
+5 profiles the way you would — one click from you, once a day or
+after a game night — and downloads one file. You drag that file into
+the repo, and the robot does the rest.
+
+The extension only wakes up on PlayARAM profile pages. It never
+talks to PlayARAM on its own, never tries to get past a security
+check, and never refreshes constantly — it reads the pages you
+already opened, at a human pace. That is why it does not look like
+a bot.
+
+### Install it (once, about 3 minutes)
+
+1. Find the file I gave you called `aram-mayhem-extension.zip`
+   and **unzip it**: on Windows, right-click it and pick
+   **Extract All**, then click Extract. On a Mac, just double-click
+   it. You will get a folder called `extension`.
+2. In Chrome, open a new tab and go to **chrome://extensions**
+   (type it in the address bar and press Enter).
+3. At the top right of that page, turn on **Developer mode**
+   (a small switch). Chrome may warn you that developer mode can
+   be risky — this is your own extension, built for you, so it is
+   fine to turn it on.
+4. Click the **Load unpacked** button (top left).
+5. Pick the `extension` folder from step 1 (the one with
+   `manifest.json` inside it) and click Select.
+6. You should now see **ARAM Mayhem Collector** in the list, with
+   a black-and-gold "M" icon. Click the puzzle-piece icon in
+   Chrome's toolbar (top right) and then the pin next to
+   **ARAM Mayhem Collector**, so its icon stays visible.
+
+That is the whole install. Chrome may show a small warning each
+time it starts, saying it found an extension in developer mode.
+That is normal for an extension installed this way — just ignore
+it. (The extension is not in the Chrome store, because it is a
+private tool made only for your group.)
+
+### Use it (about 1 minute, once a day or after a game night)
+
+1. Click the **ARAM Mayhem Collector** icon in Chrome's toolbar.
+   A small box opens. Click the big **Update leaderboard** button.
+2. Chrome will open each of the 5 profiles, one at a time, and
+   read the games — about 1–2 minutes for all 5. **Do not close
+   the tabs it opens**, and do not click around in them while it
+   works. You can watch it go, or just let it run.
+3. When it finishes, the box says "Done" and Chrome downloads one
+   file called `mayhem-extension-export-YYYY-MM-DD.json` (the date
+   is today's date). It lands in your Downloads folder.
+4. **Rename that file to `extension-export.json`.** (Right-click it
+   in Downloads, pick Rename, type the new name.)
+5. Go to your repo on GitHub, click the **`data`** folder, then
+   **Add file** → **Upload files**, and drag the renamed file in.
+   Scroll down and click the green **Commit changes** button.
+   (If GitHub says the file already exists, click **Commit changes**
+   anyway — it replaces the old one. That is supposed to happen.)
+6. Click the **Actions** tab → **Update leaderboard daily** →
+   **Run workflow** → **Run workflow**. Wait 1–2 minutes for the
+   green checkmark. (You can also skip this step and wait for the
+   nightly run at 12:00 AM — the robot picks the file up by itself.)
+7. Reload your leaderboard link (Ctrl+Shift+R on Windows,
+   Cmd+Shift+R on Mac). The top should now say "Last updated"
+   with today's date, and the per-game rows, the "what to work on"
+   tips, and the top 3 / worst 3 champions should be filled in.
+
+### If the extension box says something is wrong
+
+- **"Waiting for verification" / "verify you are human".**
+  PlayARAM showed its security checkbox on one of the profiles.
+  The extension stopped and left the tab open on purpose — it
+  never tries to solve that check itself. Click the checkbox on
+  the PlayARAM tab, then press **Update leaderboard** again.
+- **It found 0 games for someone.** The profile page probably did
+  not load properly. Check your internet, wait a minute, and press
+  the button again. If it keeps happening, tell me which player
+  it was.
+- **The button does nothing.** Close the little box and click the
+  icon again. If it still does nothing, the extension may have
+  been turned off: go to chrome://extensions and check that
+  **ARAM Mayhem Collector** is switched on.
+- **The page still shows Nov 8 after the workflow run.** Check
+  that the file you uploaded is named exactly
+  `extension-export.json` and is inside the `data` folder — not
+  in the top level of the repo, and not still called
+  `mayhem-extension-export-....json`. If the name is wrong, the
+  robot does not see it.
 
 ## How do I know it worked? (checklist)
 
 You are done when you can tick all of these:
 
 - [ ] Your leaderboard link opens and shows the 5 players.
-- [ ] The line at the top says "Last updated" with today's date.
+- [ ] You installed the extension (Step 7) and it downloaded a file.
+- [ ] The line at the top says "Last updated" with today's date
+      (after uploading the file and running the workflow once).
 - [ ] The Actions page shows a run with a green checkmark.
 - [ ] The "What to work on" box under each player has tips in it
       (not "fills on the first daily run").
@@ -251,11 +343,11 @@ Find what you see below, and do what it says.
   Click into the failed run, click the **update** job, and read the
   last few lines under "Update data":
   - *"PlayARAM returned no usable page / blocked"* — PlayARAM
-    refused the request from GitHub's computers. The page keeps the
-    last numbers it had and says so at the top. Wait for the 12:30
-    AM retry. If it keeps failing for several days, tell me — the
-    backup is copying the games by hand from PlayARAM into a file
-    (see "Manual backup" below).
+    refused the request from GitHub's computers. This is expected
+    and is not a problem: the page keeps the last numbers it had
+    and says so at the top. The fresh games come from the
+    extension (Step 7), not from this request. If you have not
+    installed the extension yet, that is the fix.
   - *"0 ARAM Mayhem games"* — PlayARAM answered but showed no
     Mayhem games for someone. Usually a Riot ID is mistyped. Check
     the names in `players.yaml` — they should be exactly
@@ -268,6 +360,17 @@ Find what you see below, and do what it says.
   (Mac). If it still says Nov 8, check the "Last updated" line — a
   green run that found 0 new games just means nobody played since
   the snapshot, which is fine.
+
+- **The workflow run is green but nothing changed, and the page
+  still says the numbers are old.**
+  The robot probably did not see your file. Check that it is
+  named exactly `extension-export.json` and sits inside the
+  `data` folder. If you uploaded it with its downloaded name
+  (`mayhem-extension-export-....json`), rename it and upload it
+  again. If the file was broken (for example, the download was
+  interrupted), the robot moves it aside as
+  `extension-export-failed-<date>.json` and writes a note on the
+  page — just run the extension again and upload the new file.
 
 - **The page says the data is more than 48 hours old.**
   The nightly updates have not worked for 2 days. Go to the Actions
@@ -297,21 +400,33 @@ page used.
   for population averages. The per-game rows, the "what to work on"
   tips, and the top/worst champions are empty until the first update
   run — nothing was made up to fill them.
-- After setup, the updater asks PlayARAM for each player's Mayhem
-  history **once a day** — 5 quiet requests, not hundreds, and never
-  when someone refreshes the page. That is why this version cannot get
-  blocked the way the old one did.
-- PlayARAM shows only the latest **20 games** per profile visit, so
-  the updater keeps a saved list (a cache) of games it has already
-  seen and adds the new ones each day. The last-50 window fills over
-  the first few daily runs — the first run scores on 20 games per
-  player, then 40, then 50. Nothing is made up to fill the gap.
+- **The fresh games come from the Chrome extension (Step 7).**
+  It runs in your own browser, on your home internet, and reads
+  the 5 profiles the way you would — one click from you, once a
+  day or after a game night. It also opens each game's Details
+  panel, so it brings back the damage numbers the server fetch
+  could not see, and it clicks "Load more" until it has all 50
+  games. The file it downloads goes in `data/` as
+  `extension-export.json`, and the nightly robot imports it.
+- The updater still tries PlayARAM directly once a day from
+  GitHub's computers, as a backup. PlayARAM refuses those requests
+  (Cloudflare), so that try fails quietly and the page keeps its
+  last numbers — that is expected, not an error.
+- PlayARAM shows only the latest **20 games** per profile visit to
+  an automated fetch, so the updater keeps a saved list (a cache)
+  of games it has already seen and adds the new ones each day. The
+  extension clicks "Load more" in your browser, so one extension
+  run brings back all 50 games at once and the window fills
+  immediately. Nothing is made up to fill the gap.
 - PlayARAM's match list shows result, champion, KDA, CS and the
   Mayhem event stats (including skillshots dodged), but **not**
-  damage dealt/taken or turret takedowns. So Output and Conversion
-  stay blank on PlayARAM games — the grade uses the criteria that
-  are there (KDA, teamplay, death quality, augments), and a missing
-  field is skipped, never scored as 0.
+  damage dealt/taken in the list itself — that lives in each game's
+  Details panel, which the extension opens for you. So games from
+  the extension usually have damage (Output joins the grade), and
+  games from the server fetch do not (Output stays blank — a
+  missing field is skipped, never scored as 0). Turret takedowns
+  are not shown per player anywhere, so Conversion stays blank
+  unless a manual CSV provides it.
 - If PlayARAM ever refuses the request, the updater keeps the last
   numbers it had, writes a note about it on the page, and tries again
   at 12:30 AM. It never erases the leaderboard.
@@ -369,6 +484,8 @@ not by playing tanks.
 | `scripts/update.py` | The robot's instructions: fetch the games, compute the scores, save the numbers. |
 | `scripts/check_fresh.py` | A check that runs after each update: if the numbers are older than 3 days, it fails the run on purpose so GitHub emails you. |
 | `.github/workflows/update.yml` | The schedule: run the updater every night at 12:00 AM CST, retry at 12:30 AM. |
+| `extension/` | The Chrome extension (Step 7): reads the 5 profiles in your browser and downloads one file. It comes as a separate zip, `aram-mayhem-extension.zip`. |
+| `data/extension-export.json` | The file the extension downloads (renamed). You upload it to the `data` folder; the robot imports it and removes it. It is not in the repo by default. |
 | `data/manual_games.csv` | A blank form for the manual backup (see below). |
 
 ## Manual backup (only if PlayARAM stops working)
@@ -389,6 +506,12 @@ week to week.
 
 ## Honest limits
 
+- **The extension needs one click from you.** It is not fully
+  automatic on purpose — the click is what makes it look like you
+  browsing, which is what keeps it working. If PlayARAM changes
+  how its profile pages look, the extension may stop reading them
+  properly until it is updated — tell me if it suddenly finds
+  0 games and I will fix it.
 - **PlayARAM is a small third-party site.** It sits behind a service
   called Cloudflare, which sometimes refuses automated requests (a
   403 error or a cut connection). I saw that happen from one computer
