@@ -1111,14 +1111,26 @@ def stack_splits(all_games):
     return out
 
 
-def _champion_why(champ, wins, losses):
+def _champion_why(champ, wins, losses, top=False):
     """One-line summary for a champion entry, keyed on the win-loss
     record only — no grade or delta numbers, one sentence, light
-    wit. The page renders this instead of the old grade paragraph
-    ("Grades X points above this player's own average..."). The
-    mean_grade / delta_vs_overall fields stay in the data for
-    anywhere the page still needs the numbers."""
+    wit. `top` says which list the champion sits in, and the line
+    is written to match: a top pick reads like a strength even when
+    the wins aren't there yet ("the grades say the play is there"),
+    never "retire this one"; a worst pick reads like a weakness
+    even when the record is winning ("the grades aren't buying
+    it"), never "keep it in the rotation". The page renders this
+    instead of the old grade paragraph ("Grades X points above this
+    player's own average..."). The mean_grade / delta_vs_overall
+    fields stay in the data for anywhere the page still needs the
+    numbers."""
     w, l = wins, losses
+    if top and w <= l:
+        verb = "Losing" if w < l else "Even"
+        return f"{verb} on {champ} — {w}-{l} — but the grades say the play is there."
+    if not top and w >= l:
+        verb = "Winning" if w > l else "Even"
+        return f"{verb} on {champ} — {w}-{l} — but the grades aren't buying it."
     if l == 0:
         return f"Undefeated on {champ} — {w}-{l}, and it shows."
     if w == 0:
@@ -1381,7 +1393,9 @@ def score_players(all_games, archetypes):
         # (see below), so the rows are built once for all of them.
         # "why" is a short one-line summary keyed on the win-loss
         # record only — no grade or delta numbers. The page renders
-        # it instead of the old grade paragraph.
+        # it instead of the old grade paragraph. Top-3 entries get
+        # their line rewritten list-aware below (top=True), so a top
+        # pick with a losing record never reads like a weakness.
         champ_rows_all = []
         for champ in sorted({g["champion"] for g in games}):
             cg = [g for g in games if g["champion"] == champ]
@@ -1424,6 +1438,17 @@ def score_players(all_games, archetypes):
         r["champion_worst3"] = sorted(
             [c for c in pool2 if c["champion"] not in top_names],
             key=lambda c: c["mean_grade"])[:3]
+        # The "why" line is list-aware: a top pick reads like a
+        # strength even with a losing record (Kassadin 0-2 in a top
+        # 3 must never say "retire this one"), and a worst pick
+        # reads like a weakness even with a winning record (a 2-1
+        # worst pick must never say "keep it in the rotation").
+        for c in r["champion_top3"]:
+            c["why"] = _champion_why(c["champion"], c["wins"],
+                                     c["losses"], top=True)
+        for c in r["champion_worst3"]:
+            c["why"] = _champion_why(c["champion"], c["wins"],
+                                     c["losses"], top=False)
 
         # --- Recent 20: how to improve, from the freshest 20 games only ---
         # Everything here is computed strictly inside the player's most
