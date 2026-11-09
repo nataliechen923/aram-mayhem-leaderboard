@@ -510,11 +510,11 @@ page used.
   Mayhem event stats (including skillshots dodged), but **not**
   damage dealt/taken in the list itself — that lives in each game's
   Details panel, which the extension opens for you. So games from
-  the extension usually have damage (Output joins the grade), and
-  games from the server fetch do not (Output stays blank — a
-  missing field is skipped, never scored as 0). Turret takedowns
-  are not shown per player anywhere, so Conversion stays blank
-  unless a manual CSV provides it.
+  the extension usually have damage (Output and Damage Taken join
+  the grade), and games from the server fetch do not (those two stay
+  blank — a missing field is skipped, never scored as 0). Turret
+  takedowns are not shown per player anywhere, so Conversion stays
+  blank unless a manual CSV provides it.
 - If PlayARAM ever refuses the request, the updater keeps the last
   numbers it had, writes a note about it on the page, and tries again
   at 12:30 AM. It never erases the leaderboard.
@@ -539,18 +539,37 @@ not on one stat, and not skewed by the role they play.
   Playing a champion well *for that champion* counts.
 - **Whole performance, not one stat.** One game is graded on the
   criteria the data source provides for it. From PlayARAM that is
-  KDA Efficiency, Teamplay, Death Quality and Augments; Output and
-  Conversion join in only when damage / turret data exists (a manual
-  CSV). Mechanics (skillshots dodged) is shown but not blended into
-  the grade. KDA is only 1 of the graded criteria, and winning
-  is only 15% of the final score.
+  KDA Efficiency, Teamplay, Death Quality and Augments; Output
+  (damage dealt) and Damage Taken join in when the extension has
+  read the game's Details panel in your browser. Output is your
+  share of the team's damage dealt when all five teammates' damage
+  is known for the match (games where the whole group queued
+  together), otherwise damage per minute; Damage Taken is the same
+  idea for damage you soaked, judged within your role — a tank
+  soaking damage is compared with other tanks, never with a carry's
+  damage taken. Teamplay is kill participation — your kills +
+  assists divided by team kills — and team kills come from the five
+  group members' games for the same match, so it only has a value
+  on full-stack games where everyone queued together. (The page
+  also shows each player's kill participation % and deaths per
+  game, averaged over the window; both stay blank when the data
+  is not available, never 0.) PlayARAM's own match list does not show damage, so
+  games from a server fetch have no damage and those two criteria
+  stay blank for them. Conversion joins in only when per-player
+  turret data exists (a manual CSV). Mechanics (skillshots dodged)
+  is shown but not blended into the grade. KDA is only 1 of the
+  graded criteria, and winning is only 15% of the final score.
 - **Steady beats one great game.** The final score is 55% average
   grade + 20% middle grade + 10% worst-quarter grade + 15% win rate.
   One pop-off game cannot carry a rank; a low floor pulls it down.
 - **"What to work on" comes only from the last 20 games.** Each
-  player's tips are computed from their most recent 20 games,
-  compared with the group's recent-20 averages. Nothing from older
-  games or the Nov 8 snapshot goes into it. The tips also split games
+  player's pros, cons and tips are computed from their OWN most
+  recent 20 games: their graded criteria are ranked by their
+  recent-20 subscore, so the strongest are the pros and the
+  weakest are the cons, each with a tip tied to that criterion
+  and the player's own number — different players get different
+  tips because their strongest and weakest areas differ. Nothing
+  from older games or the Nov 8 snapshot goes into it. The tips also split games
   played **with 2 or more of the group** versus **solo games**, so
   stacked and solo play do not get mixed up.
 - **Top 3 / worst 3 champions** at the bottom are per player, from
