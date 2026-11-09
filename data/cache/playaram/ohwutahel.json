@@ -1,6 +1,6 @@
 [
   {
-    "match_id": "Rumble|13/12/25|22.6|90|56|2026-11-08",
+    "match_id": "Rumble|13/12/25|22.6|90|56",
     "date": "2026-11-08",
     "champion": "Rumble",
     "archetype": "Damage",
@@ -40,7 +40,7 @@
     "seq": 57
   },
   {
-    "match_id": "Shen|12/11/27|20.2|15|187|2026-11-09",
+    "match_id": "Shen|12/11/27|20.2|15|187",
     "date": "2026-11-09",
     "champion": "Shen",
     "archetype": "Frontline",
@@ -81,7 +81,7 @@
     "seq": 56
   },
   {
-    "match_id": "Renekton|7/9/12|12.8|13|26|2026-11-07",
+    "match_id": "Renekton|7/9/12|12.8|13|26",
     "date": "2026-11-07",
     "champion": "Renekton",
     "archetype": "Frontline",
@@ -118,7 +118,7 @@
     "seq": 55
   },
   {
-    "match_id": "Sion|14/14/35|23.1|43|116|2026-11-06",
+    "match_id": "Sion|14/14/35|23.1|43|116",
     "date": "2026-11-06",
     "champion": "Sion",
     "archetype": "Frontline",
@@ -159,7 +159,7 @@
     "seq": 54
   },
   {
-    "match_id": "Zyra|9/12/26|23.6|34|337|2026-10-31",
+    "match_id": "Zyra|9/12/26|23.6|34|337",
     "date": "2026-10-31",
     "champion": "Zyra",
     "archetype": "Damage",
@@ -199,7 +199,7 @@
     "seq": 53
   },
   {
-    "match_id": "Maokai|2/8/17|11.4|25|42|2026-10-31",
+    "match_id": "Maokai|2/8/17|11.4|25|42",
     "date": "2026-10-31",
     "champion": "Maokai",
     "archetype": "Frontline",
@@ -239,7 +239,7 @@
     "seq": 52
   },
   {
-    "match_id": "Singed|9/15/31|23.5|53|75|2026-10-31",
+    "match_id": "Singed|9/15/31|23.5|53|75",
     "date": "2026-10-31",
     "champion": "Singed",
     "archetype": "Frontline",
@@ -279,86 +279,7 @@
     "seq": 51
   },
   {
-    "match_id": "Rumble|13/12/25|22.6|90|56|2026-11-09",
-    "date": "2026-11-09",
-    "champion": "Rumble",
-    "archetype": "Damage",
-    "win": true,
-    "kills": 13,
-    "deaths": 12,
-    "assists": 25,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 22.62,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "Infernal Soul",
-      "Ethereal Weapon",
-      "Recursion",
-      "Eureka"
-    ],
-    "items": [
-      "Zhonya's Hourglass",
-      "Malignance",
-      "Sorcerer's Shoes",
-      "Shadowflame",
-      "Rylai's Crystal Scepter",
-      "Liandry's Torment"
-    ],
-    "skillshots_dodged_per_min": 2.48,
-    "stack_size": null,
-    "teammates": [
-      "CreamiNataella#NA1",
-      "Vincent Chan#NA1",
-      "pikabUwU#NA1",
-      "i3i3oy#NA1"
-    ],
-    "seq": 50
-  },
-  {
-    "match_id": "Shen|12/11/27|20.2|15|187|2026-11-08",
-    "date": "2026-11-08",
-    "champion": "Shen",
-    "archetype": "Frontline",
-    "win": false,
-    "kills": 12,
-    "deaths": 11,
-    "assists": 27,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 20.22,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "Lonely Warrior",
-      "Transmute: Prismatic",
-      "Growth Spurt",
-      "Salvation",
-      "Bread and Cheese"
-    ],
-    "items": [
-      "Heartsteel",
-      "Mercury's Treads",
-      "Kaenic Rookern",
-      "Warmog's Armor",
-      "Thornmail",
-      "Force of Nature"
-    ],
-    "skillshots_dodged_per_min": 9.25,
-    "stack_size": null,
-    "teammates": [
-      "CreamiNataella#NA1",
-      "Vincent Chan#NA1",
-      "pikabUwU#NA1",
-      "i3i3oy#NA1"
-    ],
-    "seq": 49
-  },
-  {
-    "match_id": "Rell|2/14/43|19.5|6|99|2026-11-08",
+    "match_id": "Rell|2/14/43|19.5|6|99",
     "date": "2026-11-08",
     "champion": "Rell",
     "archetype": "Frontline",
@@ -398,7 +319,7 @@
     "seq": 48
   },
   {
-    "match_id": "Trundle|7/8/39|19.6|61|94|2026-11-08",
+    "match_id": "Trundle|7/8/39|19.6|61|94",
     "date": "2026-11-08",
     "champion": "Trundle",
     "archetype": "Frontline",
@@ -438,7 +359,7 @@
     "seq": 47
   },
   {
-    "match_id": "Kaisa|8/8/22|16.8|32|47|2026-11-08",
+    "match_id": "Kaisa|8/8/22|16.8|32|47",
     "date": "2026-11-08",
     "champion": "Kaisa",
     "archetype": "Damage",
@@ -476,7 +397,7 @@
     "seq": 46
   },
   {
-    "match_id": "Zac|1/11/27|15.4|31|32|2026-11-08",
+    "match_id": "Zac|1/11/27|15.4|31|32",
     "date": "2026-11-08",
     "champion": "Zac",
     "archetype": "Frontline",
@@ -514,7 +435,7 @@
     "seq": 45
   },
   {
-    "match_id": "DrMundo|9/16/18|17.8|38|43|2026-11-08",
+    "match_id": "DrMundo|9/16/18|17.8|38|43",
     "date": "2026-11-08",
     "champion": "DrMundo",
     "archetype": "Frontline",
@@ -553,7 +474,7 @@
     "seq": 44
   },
   {
-    "match_id": "Yorick|8/9/22|19.8|29|246|2026-11-08",
+    "match_id": "Yorick|8/9/22|19.8|29|246",
     "date": "2026-11-08",
     "champion": "Yorick",
     "archetype": "Frontline",
@@ -593,7 +514,7 @@
     "seq": 43
   },
   {
-    "match_id": "Katarina|9/9/27|15.1|30|8|2026-11-08",
+    "match_id": "Katarina|9/9/27|15.1|30|8",
     "date": "2026-11-08",
     "champion": "Katarina",
     "archetype": "Damage",
@@ -632,7 +553,7 @@
     "seq": 42
   },
   {
-    "match_id": "Shen|14/11/32|24.1|54|96|2026-11-08",
+    "match_id": "Shen|14/11/32|24.1|54|96",
     "date": "2026-11-08",
     "champion": "Shen",
     "archetype": "Frontline",
@@ -671,7 +592,7 @@
     "seq": 41
   },
   {
-    "match_id": "Katarina|11/13/27|18.5|25|141|2026-11-08",
+    "match_id": "Katarina|11/13/27|18.5|25|141",
     "date": "2026-11-08",
     "champion": "Katarina",
     "archetype": "Damage",
@@ -711,7 +632,7 @@
     "seq": 40
   },
   {
-    "match_id": "Taric|3/11/38|19.8|61|119|2026-11-08",
+    "match_id": "Taric|3/11/38|19.8|61|119",
     "date": "2026-11-08",
     "champion": "Taric",
     "archetype": "Frontline",
@@ -750,7 +671,7 @@
     "seq": 39
   },
   {
-    "match_id": "Sylas|3/16/25|17.4|11|75|2026-11-08",
+    "match_id": "Sylas|3/16/25|17.4|11|75",
     "date": "2026-11-08",
     "champion": "Sylas",
     "archetype": "Damage",
@@ -789,7 +710,7 @@
     "seq": 38
   },
   {
-    "match_id": "Karthus|14/21/28|25.3|44|212|2026-11-08",
+    "match_id": "Karthus|14/21/28|25.3|44|212",
     "date": "2026-11-08",
     "champion": "Karthus",
     "archetype": "Damage",
@@ -829,7 +750,7 @@
     "seq": 37
   },
   {
-    "match_id": "Taric|4/7/31|13.3|15|46|2026-11-08",
+    "match_id": "Taric|4/7/31|13.3|15|46",
     "date": "2026-11-08",
     "champion": "Taric",
     "archetype": "Frontline",
@@ -867,7 +788,7 @@
     "seq": 36
   },
   {
-    "match_id": "Malphite|5/8/16|17.0|43|37|2026-11-08",
+    "match_id": "Malphite|5/8/16|17.0|43|37",
     "date": "2026-11-08",
     "champion": "Malphite",
     "archetype": "Frontline",
@@ -906,7 +827,7 @@
     "seq": 35
   },
   {
-    "match_id": "Jax|12/14/25|20.6|29|142|2026-11-08",
+    "match_id": "Jax|12/14/25|20.6|29|142",
     "date": "2026-11-08",
     "champion": "Jax",
     "archetype": "Damage",
@@ -945,7 +866,7 @@
     "seq": 34
   },
   {
-    "match_id": "DrMundo|11/19/49|24.3|71|112|2026-11-08",
+    "match_id": "DrMundo|11/19/49|24.3|71|112",
     "date": "2026-11-08",
     "champion": "DrMundo",
     "archetype": "Frontline",
@@ -984,7 +905,7 @@
     "seq": 33
   },
   {
-    "match_id": "Volibear|13/14/29|22.6|74|435|2026-11-08",
+    "match_id": "Volibear|13/14/29|22.6|74|435",
     "date": "2026-11-08",
     "champion": "Volibear",
     "archetype": "Frontline",
@@ -1023,7 +944,7 @@
     "seq": 32
   },
   {
-    "match_id": "Jayce|7/10/13|13.4|24|53|2026-11-08",
+    "match_id": "Jayce|7/10/13|13.4|24|53",
     "date": "2026-11-08",
     "champion": "Jayce",
     "archetype": "Damage",
@@ -1059,43 +980,7 @@
     "seq": 31
   },
   {
-    "match_id": "Renekton|7/9/12|12.8|13|26|2026-11-08",
-    "date": "2026-11-08",
-    "champion": "Renekton",
-    "archetype": "Frontline",
-    "win": true,
-    "kills": 7,
-    "deaths": 9,
-    "assists": 12,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 12.78,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "Pursuit of Haste",
-      "Escape Plan",
-      "Dashing"
-    ],
-    "items": [
-      "Sundered Sky",
-      "Mercury's Treads",
-      "Death's Dance",
-      "Spirit Visage"
-    ],
-    "skillshots_dodged_per_min": 2.03,
-    "stack_size": null,
-    "teammates": [
-      "CreamiNataella#NA1",
-      "Vincent Chan#NA1",
-      "pikabUwU#NA1",
-      "i3i3oy#NA1"
-    ],
-    "seq": 30
-  },
-  {
-    "match_id": "Singed|7/10/31|19.1|63|101|2026-11-07",
+    "match_id": "Singed|7/10/31|19.1|63|101",
     "date": "2026-11-07",
     "champion": "Singed",
     "archetype": "Frontline",
@@ -1134,7 +1019,7 @@
     "seq": 29
   },
   {
-    "match_id": "Zyra|10/8/26|17.8|40|19|2026-11-07",
+    "match_id": "Zyra|10/8/26|17.8|40|19",
     "date": "2026-11-07",
     "champion": "Zyra",
     "archetype": "Damage",
@@ -1173,7 +1058,7 @@
     "seq": 28
   },
   {
-    "match_id": "Nautilus|3/13/39|23.8|30|86|2026-11-07",
+    "match_id": "Nautilus|3/13/39|23.8|30|86",
     "date": "2026-11-07",
     "champion": "Nautilus",
     "archetype": "Frontline",
@@ -1212,7 +1097,7 @@
     "seq": 27
   },
   {
-    "match_id": "Yorick|6/9/27|21.2|64|32|2026-11-07",
+    "match_id": "Yorick|6/9/27|21.2|64|32",
     "date": "2026-11-07",
     "champion": "Yorick",
     "archetype": "Frontline",
@@ -1252,7 +1137,7 @@
     "seq": 26
   },
   {
-    "match_id": "Zyra|10/12/22|19.2|31|23|2026-11-07",
+    "match_id": "Zyra|10/12/22|19.2|31|23",
     "date": "2026-11-07",
     "champion": "Zyra",
     "archetype": "Damage",
@@ -1291,7 +1176,7 @@
     "seq": 25
   },
   {
-    "match_id": "Shen|9/11/35|17.0|27|42|2026-11-07",
+    "match_id": "Shen|9/11/35|17.0|27|42",
     "date": "2026-11-07",
     "champion": "Shen",
     "archetype": "Frontline",
@@ -1329,7 +1214,7 @@
     "seq": 24
   },
   {
-    "match_id": "Singed|12/11/30|23.1|59|113|2026-11-07",
+    "match_id": "Singed|12/11/30|23.1|59|113",
     "date": "2026-11-07",
     "champion": "Singed",
     "archetype": "Damage",
@@ -1368,7 +1253,7 @@
     "seq": 23
   },
   {
-    "match_id": "Rumble|19/17/22|18.2|34|31|2026-11-07",
+    "match_id": "Rumble|19/17/22|18.2|34|31",
     "date": "2026-11-07",
     "champion": "Rumble",
     "archetype": "Damage",
@@ -1407,47 +1292,7 @@
     "seq": 22
   },
   {
-    "match_id": "Sion|14/14/35|23.1|43|116|2026-11-07",
-    "date": "2026-11-07",
-    "champion": "Sion",
-    "archetype": "Frontline",
-    "win": true,
-    "kills": 14,
-    "deaths": 14,
-    "assists": 35,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 23.05,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "Still Here",
-      "Armored Impact",
-      "Scopiest Weapons",
-      "Growth Spurt",
-      "Shrink Ray"
-    ],
-    "items": [
-      "Randuin's Omen",
-      "Mercury's Treads",
-      "Unending Despair",
-      "Thornmail",
-      "Jak'Sho, The Protean",
-      "Heartsteel"
-    ],
-    "skillshots_dodged_per_min": 5.03,
-    "stack_size": null,
-    "teammates": [
-      "xbriiibriiix#7129",
-      "HeavyClaymore#42069",
-      "AlphaSimp420#6969",
-      "MasterBlower#Wind"
-    ],
-    "seq": 21
-  },
-  {
-    "match_id": "Lillia|13/15/28|19.6|31|31|2026-11-06",
+    "match_id": "Lillia|13/15/28|19.6|31|31",
     "date": "2026-11-06",
     "champion": "Lillia",
     "archetype": "Damage",
@@ -1487,7 +1332,7 @@
     "seq": 20
   },
   {
-    "match_id": "Leona|4/10/15|14.7|11|75|2026-11-06",
+    "match_id": "Leona|4/10/15|14.7|11|75",
     "date": "2026-11-06",
     "champion": "Leona",
     "archetype": "Frontline",
@@ -1526,7 +1371,7 @@
     "seq": 19
   },
   {
-    "match_id": "Volibear|8/11/34|19.3|38|35|2026-11-06",
+    "match_id": "Volibear|8/11/34|19.3|38|35",
     "date": "2026-11-06",
     "champion": "Volibear",
     "archetype": "Frontline",
@@ -1565,7 +1410,7 @@
     "seq": 18
   },
   {
-    "match_id": "Ashe|4/12/36|17.3|19|31|2026-11-06",
+    "match_id": "Ashe|4/12/36|17.3|19|31",
     "date": "2026-11-06",
     "champion": "Ashe",
     "archetype": "Damage",
@@ -1605,7 +1450,7 @@
     "seq": 17
   },
   {
-    "match_id": "Nautilus|6/15/23|23.0|32|129|2026-11-05",
+    "match_id": "Nautilus|6/15/23|23.0|32|129",
     "date": "2026-11-05",
     "champion": "Nautilus",
     "archetype": "Frontline",
@@ -1644,7 +1489,7 @@
     "seq": 16
   },
   {
-    "match_id": "Shen|13/7/36|12.8|12|2|2026-11-05",
+    "match_id": "Shen|13/7/36|12.8|12|2",
     "date": "2026-11-05",
     "champion": "Shen",
     "archetype": "Frontline",
@@ -1681,7 +1526,7 @@
     "seq": 15
   },
   {
-    "match_id": "Taric|8/15/33|20.4|18|17|2026-11-05",
+    "match_id": "Taric|8/15/33|20.4|18|17",
     "date": "2026-11-05",
     "champion": "Taric",
     "archetype": "Frontline",
@@ -1721,7 +1566,7 @@
     "seq": 14
   },
   {
-    "match_id": "Trundle|4/14/35|20.0|52|133|2026-11-05",
+    "match_id": "Trundle|4/14/35|20.0|52|133",
     "date": "2026-11-05",
     "champion": "Trundle",
     "archetype": "Frontline",
@@ -1760,7 +1605,7 @@
     "seq": 13
   },
   {
-    "match_id": "Rell|6/10/34|16.1|39|90|2026-11-05",
+    "match_id": "Rell|6/10/34|16.1|39|90",
     "date": "2026-11-05",
     "champion": "Rell",
     "archetype": "Frontline",
@@ -1799,7 +1644,7 @@
     "seq": 12
   },
   {
-    "match_id": "Jax|13/10/15|16.8|28|21|2026-11-05",
+    "match_id": "Jax|13/10/15|16.8|28|21",
     "date": "2026-11-05",
     "champion": "Jax",
     "archetype": "Damage",
@@ -1838,7 +1683,7 @@
     "seq": 11
   },
   {
-    "match_id": "Yorick|4/12/23|18.3|16|259|2026-11-05",
+    "match_id": "Yorick|4/12/23|18.3|16|259",
     "date": "2026-11-05",
     "champion": "Yorick",
     "archetype": "Frontline",
@@ -1877,7 +1722,7 @@
     "seq": 10
   },
   {
-    "match_id": "Sion|7/6/16|10.9|9|23|2026-11-03",
+    "match_id": "Sion|7/6/16|10.9|9|23",
     "date": "2026-11-03",
     "champion": "Sion",
     "archetype": "Frontline",
@@ -1911,7 +1756,7 @@
     "seq": 9
   },
   {
-    "match_id": "Trundle|16/14/25|21.4|21|89|2026-11-03",
+    "match_id": "Trundle|16/14/25|21.4|21|89",
     "date": "2026-11-03",
     "champion": "Trundle",
     "archetype": "Frontline",
@@ -1950,7 +1795,7 @@
     "seq": 8
   },
   {
-    "match_id": "Sion|11/8/22|14.6|32|44|2026-11-03",
+    "match_id": "Sion|11/8/22|14.6|32|44",
     "date": "2026-11-03",
     "champion": "Sion",
     "archetype": "Frontline",
@@ -1989,124 +1834,7 @@
     "seq": 7
   },
   {
-    "match_id": "Zyra|9/12/26|23.6|34|337|2026-11-01",
-    "date": "2026-11-01",
-    "champion": "Zyra",
-    "archetype": "Damage",
-    "win": false,
-    "kills": 9,
-    "deaths": 12,
-    "assists": 26,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 23.6,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "Goredrink",
-      "Archmage",
-      "Ice Cold",
-      "Take'em Down Down Down"
-    ],
-    "items": [
-      "Bloodletter's Curse",
-      "Blackfire Torch",
-      "Liandry's Torment",
-      "Sorcerer's Shoes",
-      "Rylai's Crystal Scepter",
-      "Shadowflame"
-    ],
-    "skillshots_dodged_per_min": 14.28,
-    "stack_size": null,
-    "teammates": [
-      "CreamiNataella#NA1",
-      "Vincent Chan#NA1",
-      "pikabUwU#NA1",
-      "i3i3oy#NA1"
-    ],
-    "seq": 6
-  },
-  {
-    "match_id": "Maokai|2/8/17|11.4|25|42|2026-11-01",
-    "date": "2026-11-01",
-    "champion": "Maokai",
-    "archetype": "Frontline",
-    "win": false,
-    "kills": 2,
-    "deaths": 8,
-    "assists": 17,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 11.4,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "POWER",
-      "Armored Impact",
-      "Lich Brain",
-      "Heavy Hitter"
-    ],
-    "items": [
-      "Refillable Potion",
-      "Heartsteel",
-      "Mercury's Treads",
-      "Spirit Visage",
-      "Bramble Vest",
-      "Chain Vest"
-    ],
-    "skillshots_dodged_per_min": 3.68,
-    "stack_size": null,
-    "teammates": [
-      "CreamiNataella#NA1",
-      "Vincent Chan#NA1",
-      "pikabUwU#NA1",
-      "i3i3oy#NA1"
-    ],
-    "seq": 5
-  },
-  {
-    "match_id": "Singed|9/15/31|23.5|53|75|2026-11-01",
-    "date": "2026-11-01",
-    "champion": "Singed",
-    "archetype": "Frontline",
-    "win": false,
-    "kills": 9,
-    "deaths": 15,
-    "assists": 31,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 23.52,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "Mad Scientist",
-      "Transmute: Prismatic",
-      "Twin Fire",
-      "Warlock Juicebox"
-    ],
-    "items": [
-      "Rod of Ages",
-      "Boots of Swiftness",
-      "Riftmaker",
-      "Dead Man's Plate",
-      "Force of Nature",
-      "Liandry's Torment"
-    ],
-    "skillshots_dodged_per_min": 3.19,
-    "stack_size": null,
-    "teammates": [
-      "CreamiNataella#NA1",
-      "Vincent Chan#NA1",
-      "pikabUwU#NA1",
-      "i3i3oy#NA1"
-    ],
-    "seq": 4
-  },
-  {
-    "match_id": "Rakan|4/15/33|19.6|11|102|2026-10-31",
+    "match_id": "Rakan|4/15/33|19.6|11|102",
     "date": "2026-10-31",
     "champion": "Rakan",
     "archetype": "Frontline",
@@ -2146,7 +1874,7 @@
     "seq": 3
   },
   {
-    "match_id": "Taric|7/6/49|14.6|12|166|2026-10-31",
+    "match_id": "Taric|7/6/49|14.6|12|166",
     "date": "2026-10-31",
     "champion": "Taric",
     "archetype": "Frontline",
@@ -2185,7 +1913,7 @@
     "seq": 2
   },
   {
-    "match_id": "Garen|10/8/11|16.8|27|29|2026-10-31",
+    "match_id": "Garen|10/8/11|16.8|27|29",
     "date": "2026-10-31",
     "champion": "Garen",
     "archetype": "Damage",

@@ -1,6 +1,6 @@
 [
   {
-    "match_id": "Lillia|9/8/24|22.6|20|32|2026-11-08",
+    "match_id": "Lillia|9/8/24|22.6|20|32",
     "date": "2026-11-08",
     "champion": "Lillia",
     "archetype": "Damage",
@@ -40,7 +40,7 @@
     "seq": 57
   },
   {
-    "match_id": "Hwei|9/8/30|20.2|64|53|2026-11-09",
+    "match_id": "Hwei|9/8/30|20.2|64|53",
     "date": "2026-11-09",
     "champion": "Hwei",
     "archetype": "Damage",
@@ -81,7 +81,7 @@
     "seq": 56
   },
   {
-    "match_id": "Vex|10/5/23|12.8|8|6|2026-11-07",
+    "match_id": "Vex|10/5/23|12.8|8|6",
     "date": "2026-11-07",
     "champion": "Vex",
     "archetype": "Damage",
@@ -119,7 +119,7 @@
     "seq": 55
   },
   {
-    "match_id": "Smolder|5/5/39|12.1|28|9|2026-11-02",
+    "match_id": "Smolder|5/5/39|12.1|28|9",
     "date": "2026-11-02",
     "champion": "Smolder",
     "archetype": "Damage",
@@ -158,7 +158,7 @@
     "seq": 54
   },
   {
-    "match_id": "Mel|20/12/23|23.9|49|71|2026-11-02",
+    "match_id": "Mel|20/12/23|23.9|49|71",
     "date": "2026-11-02",
     "champion": "Mel",
     "archetype": "Damage",
@@ -199,7 +199,7 @@
     "seq": 53
   },
   {
-    "match_id": "Graves|6/10/12|17.1|15|41|2026-11-02",
+    "match_id": "Graves|6/10/12|17.1|15|41",
     "date": "2026-11-02",
     "champion": "Graves",
     "archetype": "Damage",
@@ -239,7 +239,7 @@
     "seq": 52
   },
   {
-    "match_id": "Nautilus|1/9/26|14.4|4|86|2026-11-02",
+    "match_id": "Nautilus|1/9/26|14.4|4|86",
     "date": "2026-11-02",
     "champion": "Nautilus",
     "archetype": "Frontline",
@@ -280,86 +280,7 @@
     "seq": 51
   },
   {
-    "match_id": "Lillia|9/8/24|22.6|20|32|2026-11-09",
-    "date": "2026-11-09",
-    "champion": "Lillia",
-    "archetype": "Damage",
-    "win": true,
-    "kills": 9,
-    "deaths": 8,
-    "assists": 24,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 22.62,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "Kill Secured",
-      "Phenomenal Evil",
-      "With Haste",
-      "Eureka"
-    ],
-    "items": [
-      "Rod of Ages",
-      "Liandry's Torment",
-      "Mercury's Treads",
-      "Rylai's Crystal Scepter",
-      "Cosmic Drive",
-      "Morellonomicon"
-    ],
-    "skillshots_dodged_per_min": 1.41,
-    "stack_size": null,
-    "teammates": [
-      "CreamiNataella#NA1",
-      "Ohwutahel#NA1",
-      "Vincent Chan#NA1",
-      "i3i3oy#NA1"
-    ],
-    "seq": 50
-  },
-  {
-    "match_id": "Hwei|9/8/30|20.2|64|53|2026-11-08",
-    "date": "2026-11-08",
-    "champion": "Hwei",
-    "archetype": "Damage",
-    "win": false,
-    "kills": 9,
-    "deaths": 8,
-    "assists": 30,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 20.22,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "Blue Barrier",
-      "From Downtown",
-      "Take'em Down Down Down",
-      "Ocean Soul",
-      "Ok Boomerang"
-    ],
-    "items": [
-      "Ionian Boots of Lucidity",
-      "Blackfire Torch",
-      "Rylai's Crystal Scepter",
-      "Morellonomicon",
-      "Liandry's Torment",
-      "Void Staff"
-    ],
-    "skillshots_dodged_per_min": 2.62,
-    "stack_size": null,
-    "teammates": [
-      "CreamiNataella#NA1",
-      "Ohwutahel#NA1",
-      "Vincent Chan#NA1",
-      "i3i3oy#NA1"
-    ],
-    "seq": 49
-  },
-  {
-    "match_id": "Smolder|3/10/30|19.5|50|44|2026-11-08",
+    "match_id": "Smolder|3/10/30|19.5|50|44",
     "date": "2026-11-08",
     "champion": "Smolder",
     "archetype": "Damage",
@@ -399,7 +320,7 @@
     "seq": 48
   },
   {
-    "match_id": "Taliyah|5/8/29|19.6|43|22|2026-11-08",
+    "match_id": "Taliyah|5/8/29|19.6|43|22",
     "date": "2026-11-08",
     "champion": "Taliyah",
     "archetype": "Damage",
@@ -438,7 +359,7 @@
     "seq": 47
   },
   {
-    "match_id": "Blitzcrank|3/6/21|12.3|0|138|2026-11-08",
+    "match_id": "Blitzcrank|3/6/21|12.3|0|138",
     "date": "2026-11-08",
     "champion": "Blitzcrank",
     "archetype": "Frontline",
@@ -476,7 +397,7 @@
     "seq": 46
   },
   {
-    "match_id": "Soraka|3/6/34|19.8|6|173|2026-11-08",
+    "match_id": "Soraka|3/6/34|19.8|6|173",
     "date": "2026-11-08",
     "champion": "Soraka",
     "archetype": "Support",
@@ -516,7 +437,7 @@
     "seq": 45
   },
   {
-    "match_id": "Sejuani|10/8/35|15.1|11|12|2026-11-08",
+    "match_id": "Sejuani|10/8/35|15.1|11|12",
     "date": "2026-11-08",
     "champion": "Sejuani",
     "archetype": "Frontline",
@@ -555,7 +476,7 @@
     "seq": 44
   },
   {
-    "match_id": "Karma|1/11/44|26.9|26|34|2026-11-08",
+    "match_id": "Karma|1/11/44|26.9|26|34",
     "date": "2026-11-08",
     "champion": "Karma",
     "archetype": "Damage",
@@ -595,7 +516,7 @@
     "seq": 43
   },
   {
-    "match_id": "Syndra|8/7/9|16.9|33|79|2026-11-08",
+    "match_id": "Syndra|8/7/9|16.9|33|79",
     "date": "2026-11-08",
     "champion": "Syndra",
     "archetype": "Damage",
@@ -635,7 +556,7 @@
     "seq": 42
   },
   {
-    "match_id": "Elise|3/8/15|15.9|19|32|2026-11-08",
+    "match_id": "Elise|3/8/15|15.9|19|32",
     "date": "2026-11-08",
     "champion": "Elise",
     "archetype": "Damage",
@@ -674,7 +595,7 @@
     "seq": 41
   },
   {
-    "match_id": "Morgana|13/11/33|24.1|43|83|2026-11-08",
+    "match_id": "Morgana|13/11/33|24.1|43|83",
     "date": "2026-11-08",
     "champion": "Morgana",
     "archetype": "Damage",
@@ -713,7 +634,7 @@
     "seq": 40
   },
   {
-    "match_id": "Illaoi|5/13/23|18.5|15|140|2026-11-08",
+    "match_id": "Illaoi|5/13/23|18.5|15|140",
     "date": "2026-11-08",
     "champion": "Illaoi",
     "archetype": "Frontline",
@@ -752,7 +673,7 @@
     "seq": 39
   },
   {
-    "match_id": "Malzahar|4/11/22|19.8|64|55|2026-11-08",
+    "match_id": "Malzahar|4/11/22|19.8|64|55",
     "date": "2026-11-08",
     "champion": "Malzahar",
     "archetype": "Damage",
@@ -791,7 +712,7 @@
     "seq": 38
   },
   {
-    "match_id": "Syndra|5/14/20|17.4|28|28|2026-11-08",
+    "match_id": "Syndra|5/14/20|17.4|28|28",
     "date": "2026-11-08",
     "champion": "Syndra",
     "archetype": "Damage",
@@ -831,7 +752,7 @@
     "seq": 37
   },
   {
-    "match_id": "Smolder|11/13/24|25.3|43|59|2026-11-08",
+    "match_id": "Smolder|11/13/24|25.3|43|59",
     "date": "2026-11-08",
     "champion": "Smolder",
     "archetype": "Damage",
@@ -871,7 +792,7 @@
     "seq": 36
   },
   {
-    "match_id": "Seraphine|5/4/36|13.3|28|8|2026-11-08",
+    "match_id": "Seraphine|5/4/36|13.3|28|8",
     "date": "2026-11-08",
     "champion": "Seraphine",
     "archetype": "Damage",
@@ -909,7 +830,7 @@
     "seq": 35
   },
   {
-    "match_id": "Mordekaiser|5/8/12|17.0|8|33|2026-11-08",
+    "match_id": "Mordekaiser|5/8/12|17.0|8|33",
     "date": "2026-11-08",
     "champion": "Mordekaiser",
     "archetype": "Frontline",
@@ -948,7 +869,7 @@
     "seq": 34
   },
   {
-    "match_id": "Chogath|10/11/26|22.6|24|319|2026-11-08",
+    "match_id": "Chogath|10/11/26|22.6|24|319",
     "date": "2026-11-08",
     "champion": "Chogath",
     "archetype": "Frontline",
@@ -987,7 +908,7 @@
     "seq": 33
   },
   {
-    "match_id": "Ashe|1/8/16|13.4|9|69|2026-11-08",
+    "match_id": "Ashe|1/8/16|13.4|9|69",
     "date": "2026-11-08",
     "champion": "Ashe",
     "archetype": "Damage",
@@ -1024,44 +945,7 @@
     "seq": 32
   },
   {
-    "match_id": "Vex|10/5/23|12.8|8|6|2026-11-08",
-    "date": "2026-11-08",
-    "champion": "Vex",
-    "archetype": "Damage",
-    "win": true,
-    "kills": 10,
-    "deaths": 5,
-    "assists": 23,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 12.78,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "Warlock Juicebox",
-      "Lich Brain",
-      "Jeweled Gauntlet"
-    ],
-    "items": [
-      "Luden's Echo",
-      "Refillable Potion",
-      "Zhonya's Hourglass",
-      "Boots",
-      "Shadowflame"
-    ],
-    "skillshots_dodged_per_min": 0.47,
-    "stack_size": null,
-    "teammates": [
-      "CreamiNataella#NA1",
-      "Ohwutahel#NA1",
-      "Vincent Chan#NA1",
-      "i3i3oy#NA1"
-    ],
-    "seq": 31
-  },
-  {
-    "match_id": "Nami|15/11/27|19.1|17|66|2026-11-07",
+    "match_id": "Nami|15/11/27|19.1|17|66",
     "date": "2026-11-07",
     "champion": "Nami",
     "archetype": "Damage",
@@ -1100,7 +984,7 @@
     "seq": 30
   },
   {
-    "match_id": "Teemo|6/9/26|17.8|11|14|2026-11-07",
+    "match_id": "Teemo|6/9/26|17.8|11|14",
     "date": "2026-11-07",
     "champion": "Teemo",
     "archetype": "Damage",
@@ -1139,7 +1023,7 @@
     "seq": 29
   },
   {
-    "match_id": "MissFortune|10/13/34|23.8|36|49|2026-11-07",
+    "match_id": "MissFortune|10/13/34|23.8|36|49",
     "date": "2026-11-07",
     "champion": "MissFortune",
     "archetype": "Damage",
@@ -1178,7 +1062,7 @@
     "seq": 28
   },
   {
-    "match_id": "Cassiopeia|6/11/25|21.2|12|18|2026-11-07",
+    "match_id": "Cassiopeia|6/11/25|21.2|12|18",
     "date": "2026-11-07",
     "champion": "Cassiopeia",
     "archetype": "Damage",
@@ -1218,7 +1102,7 @@
     "seq": 27
   },
   {
-    "match_id": "Seraphine|5/12/34|19.6|38|18|2026-11-06",
+    "match_id": "Seraphine|5/12/34|19.6|38|18",
     "date": "2026-11-06",
     "champion": "Seraphine",
     "archetype": "Damage",
@@ -1258,7 +1142,7 @@
     "seq": 26
   },
   {
-    "match_id": "Ryze|3/9/12|14.7|40|41|2026-11-06",
+    "match_id": "Ryze|3/9/12|14.7|40|41",
     "date": "2026-11-06",
     "champion": "Ryze",
     "archetype": "Damage",
@@ -1297,7 +1181,7 @@
     "seq": 25
   },
   {
-    "match_id": "AurelionSol|9/8/33|22.7|62|49|2026-11-06",
+    "match_id": "AurelionSol|9/8/33|22.7|62|49",
     "date": "2026-11-06",
     "champion": "AurelionSol",
     "archetype": "Damage",
@@ -1336,7 +1220,7 @@
     "seq": 24
   },
   {
-    "match_id": "Kayle|16/9/23|17.0|54|30|2026-11-06",
+    "match_id": "Kayle|16/9/23|17.0|54|30",
     "date": "2026-11-06",
     "champion": "Kayle",
     "archetype": "Damage",
@@ -1375,7 +1259,7 @@
     "seq": 23
   },
   {
-    "match_id": "Soraka|1/8/24|13.8|6|39|2026-11-06",
+    "match_id": "Soraka|1/8/24|13.8|6|39",
     "date": "2026-11-06",
     "champion": "Soraka",
     "archetype": "Support",
@@ -1414,7 +1298,7 @@
     "seq": 22
   },
   {
-    "match_id": "TwistedFate|9/11/22|23.0|24|27|2026-11-05",
+    "match_id": "TwistedFate|9/11/22|23.0|24|27",
     "date": "2026-11-05",
     "champion": "TwistedFate",
     "archetype": "Damage",
@@ -1453,7 +1337,7 @@
     "seq": 21
   },
   {
-    "match_id": "Lillia|11/7/31|12.8|11|1|2026-11-05",
+    "match_id": "Lillia|11/7/31|12.8|11|1",
     "date": "2026-11-05",
     "champion": "Lillia",
     "archetype": "Damage",
@@ -1491,7 +1375,7 @@
     "seq": 20
   },
   {
-    "match_id": "Hwei|5/9/26|20.4|25|14|2026-11-05",
+    "match_id": "Hwei|5/9/26|20.4|25|14",
     "date": "2026-11-05",
     "champion": "Hwei",
     "archetype": "Damage",
@@ -1531,7 +1415,7 @@
     "seq": 19
   },
   {
-    "match_id": "Kaisa|5/6/24|20.0|25|44|2026-11-05",
+    "match_id": "Kaisa|5/6/24|20.0|25|44",
     "date": "2026-11-05",
     "champion": "Kaisa",
     "archetype": "Damage",
@@ -1570,7 +1454,7 @@
     "seq": 18
   },
   {
-    "match_id": "Lux|11/13/30|20.0|43|17|2026-11-04",
+    "match_id": "Lux|11/13/30|20.0|43|17",
     "date": "2026-11-04",
     "champion": "Lux",
     "archetype": "Damage",
@@ -1609,7 +1493,7 @@
     "seq": 17
   },
   {
-    "match_id": "Cassiopeia|13/8/25|19.1|39|38|2026-11-04",
+    "match_id": "Cassiopeia|13/8/25|19.1|39|38",
     "date": "2026-11-04",
     "champion": "Cassiopeia",
     "archetype": "Damage",
@@ -1648,7 +1532,7 @@
     "seq": 16
   },
   {
-    "match_id": "Swain|10/4/20|10.9|11|12|2026-11-03",
+    "match_id": "Swain|10/4/20|10.9|11|12",
     "date": "2026-11-03",
     "champion": "Swain",
     "archetype": "Damage",
@@ -1686,164 +1570,7 @@
     "seq": 15
   },
   {
-    "match_id": "Smolder|5/5/39|12.1|28|9|2026-11-03",
-    "date": "2026-11-03",
-    "champion": "Smolder",
-    "archetype": "Damage",
-    "win": true,
-    "kills": 5,
-    "deaths": 5,
-    "assists": 39,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 12.07,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "Mystic Punch",
-      "Recoil",
-      "Erosion",
-      "Twin Fire"
-    ],
-    "items": [
-      "Trinity Force",
-      "Muramana",
-      "Ionian Boots of Lucidity",
-      "Last Whisper",
-      "Executioner's Calling"
-    ],
-    "skillshots_dodged_per_min": 0.75,
-    "stack_size": null,
-    "teammates": [
-      "CopiumEnjoyer#9855",
-      "CreamiNataella#NA1",
-      "Vincent Chan#NA1",
-      "i3i3oy#NA1"
-    ],
-    "seq": 14
-  },
-  {
-    "match_id": "Mel|20/12/23|23.9|49|71|2026-11-03",
-    "date": "2026-11-03",
-    "champion": "Mel",
-    "archetype": "Damage",
-    "win": false,
-    "kills": 20,
-    "deaths": 12,
-    "assists": 23,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 23.87,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "THRASH",
-      "Weapon of Destiny",
-      "BEES!!!",
-      "Bread And Jam",
-      "En Passant"
-    ],
-    "items": [
-      "Blackfire Torch",
-      "Rabadon's Deathcap",
-      "Boots of Swiftness",
-      "Liandry's Torment",
-      "Morellonomicon",
-      "Void Staff"
-    ],
-    "skillshots_dodged_per_min": 2.97,
-    "stack_size": null,
-    "teammates": [
-      "CopiumEnjoyer#9855",
-      "CreamiNataella#NA1",
-      "Vincent Chan#NA1",
-      "i3i3oy#NA1"
-    ],
-    "seq": 13
-  },
-  {
-    "match_id": "Graves|6/10/12|17.1|15|41|2026-11-03",
-    "date": "2026-11-03",
-    "champion": "Graves",
-    "archetype": "Damage",
-    "win": false,
-    "kills": 6,
-    "deaths": 10,
-    "assists": 12,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 17.12,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "From Beginning To End",
-      "Rite of Ascension",
-      "Transmute: Prismatic",
-      "Homeguard",
-      "Scoped Weapons"
-    ],
-    "items": [
-      "The Collector",
-      "Mercury's Treads",
-      "Eclipse",
-      "Lord Dominik's Regards",
-      "Bloodthirster"
-    ],
-    "skillshots_dodged_per_min": 2.4,
-    "stack_size": null,
-    "teammates": [
-      "CreamiNataella#NA1",
-      "Vincent Chan#NA1",
-      "i3i3oy#NA1",
-      "yeoman#NA1"
-    ],
-    "seq": 12
-  },
-  {
-    "match_id": "Nautilus|1/9/26|14.4|4|86|2026-11-03",
-    "date": "2026-11-03",
-    "champion": "Nautilus",
-    "archetype": "Frontline",
-    "win": false,
-    "kills": 1,
-    "deaths": 9,
-    "assists": 26,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 14.42,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "Blue Barrier",
-      "Courage of the Colossus",
-      "Tank Engine",
-      "Lonely Warrior",
-      "Archmage"
-    ],
-    "items": [
-      "Heartsteel",
-      "Tear of the Goddess",
-      "Mercury's Treads",
-      "Force of Nature",
-      "Thornmail",
-      "Glowing Mote"
-    ],
-    "skillshots_dodged_per_min": 5.97,
-    "stack_size": null,
-    "teammates": [
-      "CreamiNataella#NA1",
-      "Vincent Chan#NA1",
-      "Mashbrains#NA1",
-      "i3i3oy#NA1"
-    ],
-    "seq": 11
-  },
-  {
-    "match_id": "Senna|13/14/23|20.4|28|39|2026-11-02",
+    "match_id": "Senna|13/14/23|20.4|28|39",
     "date": "2026-11-02",
     "champion": "Senna",
     "archetype": "Damage",
@@ -1881,7 +1608,7 @@
     "seq": 10
   },
   {
-    "match_id": "Teemo|5/9/15|19.4|18|1|2026-11-02",
+    "match_id": "Teemo|5/9/15|19.4|18|1",
     "date": "2026-11-02",
     "champion": "Teemo",
     "archetype": "Damage",
@@ -1920,7 +1647,7 @@
     "seq": 9
   },
   {
-    "match_id": "Kaisa|5/8/24|20.8|39|24|2026-11-02",
+    "match_id": "Kaisa|5/8/24|20.8|39|24",
     "date": "2026-11-02",
     "champion": "Kaisa",
     "archetype": "Damage",
@@ -1959,7 +1686,7 @@
     "seq": 8
   },
   {
-    "match_id": "Rammus|5/13/25|17.7|7|10|2026-11-02",
+    "match_id": "Rammus|5/13/25|17.7|7|10",
     "date": "2026-11-02",
     "champion": "Rammus",
     "archetype": "Frontline",
@@ -1999,7 +1726,7 @@
     "seq": 7
   },
   {
-    "match_id": "Ahri|12/3/32|14.6|33|70|2026-11-02",
+    "match_id": "Ahri|12/3/32|14.6|33|70",
     "date": "2026-11-02",
     "champion": "Ahri",
     "archetype": "Damage",
@@ -2036,7 +1763,7 @@
     "seq": 6
   },
   {
-    "match_id": "Jayce|12/8/14|14.1|23|30|2026-11-02",
+    "match_id": "Jayce|12/8/14|14.1|23|30",
     "date": "2026-11-02",
     "champion": "Jayce",
     "archetype": "Damage",
@@ -2075,7 +1802,7 @@
     "seq": 5
   },
   {
-    "match_id": "Ezreal|13/16/29|24.3|34|34|2026-11-02",
+    "match_id": "Ezreal|13/16/29|24.3|34|34",
     "date": "2026-11-02",
     "champion": "Ezreal",
     "archetype": "Damage",
@@ -2114,7 +1841,7 @@
     "seq": 4
   },
   {
-    "match_id": "Lux|4/8/34|16.2|28|18|2026-11-02",
+    "match_id": "Lux|4/8/34|16.2|28|18",
     "date": "2026-11-02",
     "champion": "Lux",
     "archetype": "Damage",
@@ -2153,7 +1880,7 @@
     "seq": 3
   },
   {
-    "match_id": "Nami|7/3/36|14.9|9|3|2026-11-02",
+    "match_id": "Nami|7/3/36|14.9|9|3",
     "date": "2026-11-02",
     "champion": "Nami",
     "archetype": "Support",
@@ -2190,7 +1917,7 @@
     "seq": 2
   },
   {
-    "match_id": "Nidalee|8/7/29|14.0|3|12|2026-11-01",
+    "match_id": "Nidalee|8/7/29|14.0|3|12",
     "date": "2026-11-01",
     "champion": "Nidalee",
     "archetype": "Damage",

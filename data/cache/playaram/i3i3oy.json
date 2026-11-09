@@ -1,6 +1,6 @@
 [
   {
-    "match_id": "Aphelios|21/10/17|22.6|105|34|2026-11-08",
+    "match_id": "Aphelios|21/10/17|22.6|105|34",
     "date": "2026-11-08",
     "champion": "Aphelios",
     "archetype": "Damage",
@@ -40,7 +40,7 @@
     "seq": 52
   },
   {
-    "match_id": "DrMundo|9/11/26|20.2|31|210|2026-11-08",
+    "match_id": "DrMundo|9/11/26|20.2|31|210",
     "date": "2026-11-08",
     "champion": "DrMundo",
     "archetype": "Frontline",
@@ -81,86 +81,7 @@
     "seq": 51
   },
   {
-    "match_id": "Aphelios|21/10/17|22.6|105|34|2026-11-09",
-    "date": "2026-11-09",
-    "champion": "Aphelios",
-    "archetype": "Damage",
-    "win": true,
-    "kills": 21,
-    "deaths": 10,
-    "assists": 17,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 22.62,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "Flow of Spirit",
-      "Critical Rhythm",
-      "Still Here",
-      "Scopiest Weapons"
-    ],
-    "items": [
-      "The Collector",
-      "Yun Tal Wildarrows",
-      "Runaan's Hurricane",
-      "Bloodthirster",
-      "Infinity Edge",
-      "Kraken Slayer"
-    ],
-    "skillshots_dodged_per_min": 1.5,
-    "stack_size": null,
-    "teammates": [
-      "CreamiNataella#NA1",
-      "Ohwutahel#NA1",
-      "Vincent Chan#NA1",
-      "pikabUwU#NA1"
-    ],
-    "seq": 50
-  },
-  {
-    "match_id": "DrMundo|9/11/26|20.2|31|210|2026-11-09",
-    "date": "2026-11-09",
-    "champion": "DrMundo",
-    "archetype": "Frontline",
-    "win": false,
-    "kills": 9,
-    "deaths": 11,
-    "assists": 26,
-    "damage_to_champions": null,
-    "damage_taken": null,
-    "game_minutes": 20.22,
-    "dmg_share": null,
-    "kp": null,
-    "structure_share": null,
-    "augments": [
-      "Goredrink",
-      "Dawnbringer's Resolve",
-      "Armored Impact",
-      "Sap Magic",
-      "BEES!!!"
-    ],
-    "items": [
-      "Heartsteel",
-      "Mercury's Treads",
-      "Force of Nature",
-      "Kaenic Rookern",
-      "Spirit Visage",
-      "Unending Despair"
-    ],
-    "skillshots_dodged_per_min": 10.39,
-    "stack_size": null,
-    "teammates": [
-      "CreamiNataella#NA1",
-      "Ohwutahel#NA1",
-      "Vincent Chan#NA1",
-      "pikabUwU#NA1"
-    ],
-    "seq": 49
-  },
-  {
-    "match_id": "Kassadin|16/14/26|19.5|42|80|2026-11-08",
+    "match_id": "Kassadin|16/14/26|19.5|42|80",
     "date": "2026-11-08",
     "champion": "Kassadin",
     "archetype": "Damage",
@@ -200,7 +121,7 @@
     "seq": 48
   },
   {
-    "match_id": "Varus|13/11/25|19.6|66|44|2026-11-08",
+    "match_id": "Varus|13/11/25|19.6|66|44",
     "date": "2026-11-08",
     "champion": "Varus",
     "archetype": "Damage",
@@ -240,7 +161,7 @@
     "seq": 47
   },
   {
-    "match_id": "Quinn|6/8/27|12.3|29|50|2026-11-08",
+    "match_id": "Quinn|6/8/27|12.3|29|50",
     "date": "2026-11-08",
     "champion": "Quinn",
     "archetype": "Damage",
@@ -278,7 +199,7 @@
     "seq": 46
   },
   {
-    "match_id": "Nautilus|3/8/24|15.4|19|26|2026-11-08",
+    "match_id": "Nautilus|3/8/24|15.4|19|26",
     "date": "2026-11-08",
     "champion": "Nautilus",
     "archetype": "Frontline",
@@ -317,7 +238,7 @@
     "seq": 45
   },
   {
-    "match_id": "Caitlyn|16/13/20|17.8|104|12|2026-11-08",
+    "match_id": "Caitlyn|16/13/20|17.8|104|12",
     "date": "2026-11-08",
     "champion": "Caitlyn",
     "archetype": "Damage",
@@ -357,7 +278,7 @@
     "seq": 44
   },
   {
-    "match_id": "Sivir|9/7/24|19.8|84|200|2026-11-08",
+    "match_id": "Sivir|9/7/24|19.8|84|200",
     "date": "2026-11-08",
     "champion": "Sivir",
     "archetype": "Damage",
@@ -397,7 +318,7 @@
     "seq": 43
   },
   {
-    "match_id": "Kayle|9/7/32|15.1|70|7|2026-11-08",
+    "match_id": "Kayle|9/7/32|15.1|70|7",
     "date": "2026-11-08",
     "champion": "Kayle",
     "archetype": "Damage",
@@ -436,7 +357,7 @@
     "seq": 42
   },
   {
-    "match_id": "Kindred|19/6/10|20.6|92|105|2026-11-08",
+    "match_id": "Kindred|19/6/10|20.6|92|105",
     "date": "2026-11-08",
     "champion": "Kindred",
     "archetype": "Damage",
@@ -476,7 +397,7 @@
     "seq": 41
   },
   {
-    "match_id": "Trundle|10/20/25|26.9|89|49|2026-11-08",
+    "match_id": "Trundle|10/20/25|26.9|89|49",
     "date": "2026-11-08",
     "champion": "Trundle",
     "archetype": "Frontline",
@@ -516,7 +437,7 @@
     "seq": 40
   },
   {
-    "match_id": "Kassadin|7/7/12|16.9|43|77|2026-11-08",
+    "match_id": "Kassadin|7/7/12|16.9|43|77",
     "date": "2026-11-08",
     "champion": "Kassadin",
     "archetype": "Damage",
@@ -554,7 +475,7 @@
     "seq": 39
   },
   {
-    "match_id": "Lucian|8/8/14|15.9|44|24|2026-11-08",
+    "match_id": "Lucian|8/8/14|15.9|44|24",
     "date": "2026-11-08",
     "champion": "Lucian",
     "archetype": "Damage",
@@ -593,7 +514,7 @@
     "seq": 38
   },
   {
-    "match_id": "Sivir|7/12/39|24.1|108|56|2026-11-08",
+    "match_id": "Sivir|7/12/39|24.1|108|56",
     "date": "2026-11-08",
     "champion": "Sivir",
     "archetype": "Damage",
@@ -632,7 +553,7 @@
     "seq": 37
   },
   {
-    "match_id": "Kaisa|11/7/26|18.5|65|82|2026-11-08",
+    "match_id": "Kaisa|11/7/26|18.5|65|82",
     "date": "2026-11-08",
     "champion": "Kaisa",
     "archetype": "Damage",
@@ -672,7 +593,7 @@
     "seq": 36
   },
   {
-    "match_id": "Tryndamere|10/12/20|19.8|61|111|2026-11-08",
+    "match_id": "Tryndamere|10/12/20|19.8|61|111",
     "date": "2026-11-08",
     "champion": "Tryndamere",
     "archetype": "Damage",
@@ -711,7 +632,7 @@
     "seq": 35
   },
   {
-    "match_id": "Quinn|12/12/21|17.4|49|25|2026-11-08",
+    "match_id": "Quinn|12/12/21|17.4|49|25",
     "date": "2026-11-08",
     "champion": "Quinn",
     "archetype": "Damage",
@@ -751,7 +672,7 @@
     "seq": 34
   },
   {
-    "match_id": "Malzahar|11/12/25|25.3|155|84|2026-11-08",
+    "match_id": "Malzahar|11/12/25|25.3|155|84",
     "date": "2026-11-08",
     "champion": "Malzahar",
     "archetype": "Damage",
@@ -791,7 +712,7 @@
     "seq": 33
   },
   {
-    "match_id": "Jinx|12/3/25|13.3|47|20|2026-11-08",
+    "match_id": "Jinx|12/3/25|13.3|47|20",
     "date": "2026-11-08",
     "champion": "Jinx",
     "archetype": "Damage",
@@ -828,7 +749,7 @@
     "seq": 32
   },
   {
-    "match_id": "Twitch|30/7/22|20.6|129|47|2026-11-08",
+    "match_id": "Twitch|30/7/22|20.6|129|47",
     "date": "2026-11-08",
     "champion": "Twitch",
     "archetype": "Damage",
@@ -867,7 +788,7 @@
     "seq": 31
   },
   {
-    "match_id": "Twitch|20/12/28|24.3|79|42|2026-11-08",
+    "match_id": "Twitch|20/12/28|24.3|79|42",
     "date": "2026-11-08",
     "champion": "Twitch",
     "archetype": "Damage",
@@ -906,7 +827,7 @@
     "seq": 30
   },
   {
-    "match_id": "Jax|14/16/21|22.6|39|313|2026-11-08",
+    "match_id": "Jax|14/16/21|22.6|39|313",
     "date": "2026-11-08",
     "champion": "Jax",
     "archetype": "Damage",
@@ -945,7 +866,7 @@
     "seq": 29
   },
   {
-    "match_id": "Corki|19/5/15|12.8|77|9|2026-11-08",
+    "match_id": "Corki|19/5/15|12.8|77|9",
     "date": "2026-11-08",
     "champion": "Corki",
     "archetype": "Damage",
@@ -984,7 +905,7 @@
     "seq": 28
   },
   {
-    "match_id": "Sona|5/11/41|19.1|13|113|2026-11-07",
+    "match_id": "Sona|5/11/41|19.1|13|113",
     "date": "2026-11-07",
     "champion": "Sona",
     "archetype": "Support",
@@ -1023,7 +944,7 @@
     "seq": 27
   },
   {
-    "match_id": "Skarner|8/7/32|17.8|47|28|2026-11-07",
+    "match_id": "Skarner|8/7/32|17.8|47|28",
     "date": "2026-11-07",
     "champion": "Skarner",
     "archetype": "Frontline",
@@ -1061,7 +982,7 @@
     "seq": 26
   },
   {
-    "match_id": "Corki|25/11/33|23.8|91|68|2026-11-07",
+    "match_id": "Corki|25/11/33|23.8|91|68",
     "date": "2026-11-07",
     "champion": "Corki",
     "archetype": "Damage",
@@ -1100,7 +1021,7 @@
     "seq": 25
   },
   {
-    "match_id": "Sivir|11/11/23|21.2|91|19|2026-11-07",
+    "match_id": "Sivir|11/11/23|21.2|91|19",
     "date": "2026-11-07",
     "champion": "Sivir",
     "archetype": "Damage",
@@ -1140,7 +1061,7 @@
     "seq": 24
   },
   {
-    "match_id": "MissFortune|6/13/25|19.2|64|31|2026-11-07",
+    "match_id": "MissFortune|6/13/25|19.2|64|31",
     "date": "2026-11-07",
     "champion": "MissFortune",
     "archetype": "Damage",
@@ -1178,7 +1099,7 @@
     "seq": 23
   },
   {
-    "match_id": "Mel|17/6/26|17.0|63|23|2026-11-07",
+    "match_id": "Mel|17/6/26|17.0|63|23",
     "date": "2026-11-07",
     "champion": "Mel",
     "archetype": "Damage",
@@ -1217,7 +1138,7 @@
     "seq": 22
   },
   {
-    "match_id": "Neeko|10/13/30|23.1|52|37|2026-11-07",
+    "match_id": "Neeko|10/13/30|23.1|52|37",
     "date": "2026-11-07",
     "champion": "Neeko",
     "archetype": "Damage",
@@ -1256,7 +1177,7 @@
     "seq": 21
   },
   {
-    "match_id": "Morgana|15/10/32|18.2|44|22|2026-11-07",
+    "match_id": "Morgana|15/10/32|18.2|44|22",
     "date": "2026-11-07",
     "champion": "Morgana",
     "archetype": "Damage",
@@ -1295,7 +1216,7 @@
     "seq": 20
   },
   {
-    "match_id": "Malphite|14/9/16|11.9|26|20|2026-11-07",
+    "match_id": "Malphite|14/9/16|11.9|26|20",
     "date": "2026-11-07",
     "champion": "Malphite",
     "archetype": "Damage",
@@ -1334,7 +1255,7 @@
     "seq": 19
   },
   {
-    "match_id": "Jax|7/14/24|18.6|45|97|2026-11-07",
+    "match_id": "Jax|7/14/24|18.6|45|97",
     "date": "2026-11-07",
     "champion": "Jax",
     "archetype": "Damage",
@@ -1373,7 +1294,7 @@
     "seq": 18
   },
   {
-    "match_id": "Corki|16/12/24|19.6|73|34|2026-11-06",
+    "match_id": "Corki|16/12/24|19.6|73|34",
     "date": "2026-11-06",
     "champion": "Corki",
     "archetype": "Damage",
@@ -1413,7 +1334,7 @@
     "seq": 17
   },
   {
-    "match_id": "KogMaw|6/8/11|14.7|31|30|2026-11-06",
+    "match_id": "KogMaw|6/8/11|14.7|31|30",
     "date": "2026-11-06",
     "champion": "KogMaw",
     "archetype": "Damage",
@@ -1452,7 +1373,7 @@
     "seq": 16
   },
   {
-    "match_id": "Veigar|12/12/23|22.7|76|52|2026-11-06",
+    "match_id": "Veigar|12/12/23|22.7|76|52",
     "date": "2026-11-06",
     "champion": "Veigar",
     "archetype": "Damage",
@@ -1491,7 +1412,7 @@
     "seq": 15
   },
   {
-    "match_id": "Soraka|5/8/33|17.0|6|19|2026-11-06",
+    "match_id": "Soraka|5/8/33|17.0|6|19",
     "date": "2026-11-06",
     "champion": "Soraka",
     "archetype": "Support",
@@ -1530,7 +1451,7 @@
     "seq": 14
   },
   {
-    "match_id": "Sivir|12/9/17|13.8|48|36|2026-11-06",
+    "match_id": "Sivir|12/9/17|13.8|48|36",
     "date": "2026-11-06",
     "champion": "Sivir",
     "archetype": "Damage",
@@ -1570,7 +1491,7 @@
     "seq": 13
   },
   {
-    "match_id": "Jax|24/11/16|19.3|51|29|2026-11-06",
+    "match_id": "Jax|24/11/16|19.3|51|29",
     "date": "2026-11-06",
     "champion": "Jax",
     "archetype": "Frontline",
@@ -1609,7 +1530,7 @@
     "seq": 12
   },
   {
-    "match_id": "Varus|24/8/20|17.3|98|21|2026-11-06",
+    "match_id": "Varus|24/8/20|17.3|98|21",
     "date": "2026-11-06",
     "champion": "Varus",
     "archetype": "Damage",
@@ -1649,7 +1570,7 @@
     "seq": 11
   },
   {
-    "match_id": "Morgana|7/4/50|17.0|64|8|2026-11-06",
+    "match_id": "Morgana|7/4/50|17.0|64|8",
     "date": "2026-11-06",
     "champion": "Morgana",
     "archetype": "Damage",
@@ -1687,7 +1608,7 @@
     "seq": 10
   },
   {
-    "match_id": "Caitlyn|9/9/14|18.2|87|95|2026-11-06",
+    "match_id": "Caitlyn|9/9/14|18.2|87|95",
     "date": "2026-11-06",
     "champion": "Caitlyn",
     "archetype": "Damage",
@@ -1727,7 +1648,7 @@
     "seq": 9
   },
   {
-    "match_id": "Ahri|18/9/22|16.6|55|37|2026-11-06",
+    "match_id": "Ahri|18/9/22|16.6|55|37",
     "date": "2026-11-06",
     "champion": "Ahri",
     "archetype": "Damage",
@@ -1766,7 +1687,7 @@
     "seq": 8
   },
   {
-    "match_id": "MissFortune|11/8/32|17.3|86|27|2026-11-06",
+    "match_id": "MissFortune|11/8/32|17.3|86|27",
     "date": "2026-11-06",
     "champion": "MissFortune",
     "archetype": "Damage",
@@ -1806,7 +1727,7 @@
     "seq": 7
   },
   {
-    "match_id": "Varus|28/14/50|28.5|164|52|2026-11-06",
+    "match_id": "Varus|28/14/50|28.5|164|52",
     "date": "2026-11-06",
     "champion": "Varus",
     "archetype": "Damage",
@@ -1846,7 +1767,7 @@
     "seq": 6
   },
   {
-    "match_id": "Corki|20/12/22|23.0|140|50|2026-11-05",
+    "match_id": "Corki|20/12/22|23.0|140|50",
     "date": "2026-11-05",
     "champion": "Corki",
     "archetype": "Damage",
@@ -1885,7 +1806,7 @@
     "seq": 5
   },
   {
-    "match_id": "Quinn|22/4/32|12.8|79|3|2026-11-05",
+    "match_id": "Quinn|22/4/32|12.8|79|3",
     "date": "2026-11-05",
     "champion": "Quinn",
     "archetype": "Damage",
@@ -1921,7 +1842,7 @@
     "seq": 4
   },
   {
-    "match_id": "Quinn|24/11/10|20.4|125|17|2026-11-05",
+    "match_id": "Quinn|24/11/10|20.4|125|17",
     "date": "2026-11-05",
     "champion": "Quinn",
     "archetype": "Damage",
@@ -1961,7 +1882,7 @@
     "seq": 3
   },
   {
-    "match_id": "Senna|12/9/24|20.0|72|47|2026-11-05",
+    "match_id": "Senna|12/9/24|20.0|72|47",
     "date": "2026-11-05",
     "champion": "Senna",
     "archetype": "Damage",
@@ -2000,7 +1921,7 @@
     "seq": 2
   },
   {
-    "match_id": "Skarner|8/8/31|16.1|35|59|2026-11-05",
+    "match_id": "Skarner|8/8/31|16.1|35|59",
     "date": "2026-11-05",
     "champion": "Skarner",
     "archetype": "Frontline",

@@ -78,22 +78,22 @@
     "seed_note": "",
     "title": "ARAM Mayhem \u2014 Team Leaderboard",
     "update_method": "GitHub Actions, once a day, fetching each player's PlayARAM profile (no Riot API key). Loading / refreshing this page makes zero calls to Riot or PlayARAM.",
-    "updated_at": "2026-11-09T12:12:11.669757-06:00",
-    "updated_at_label": "2026-11-09 12:12 PM CST",
+    "updated_at": "2026-11-09T13:43:00.994311-06:00",
+    "updated_at_label": "2026-11-09 01:43 PM CST",
     "window_games": 50,
     "window_note": "Each player is scored on their own last 50 ARAM Mayhem games. Remakes under 5 minutes are excluded. PlayARAM shows only the latest 20 games per fetch, so the updater keeps a cache and the window fills to 50 over the first few daily runs.",
     "stack_note": "Stack splits below are from the Nov 8 6-player snapshot (600 player-games). They recompute for the 5-player group on the first daily run.",
     "automation": {
-      "last_attempt": "2026-11-09T12:12:11.669744-06:00",
-      "last_attempt_label": "2026-11-09 12:12 PM CST",
-      "last_source": "PlayARAM",
+      "last_attempt": "2026-11-09T13:43:00.994296-06:00",
+      "last_attempt_label": "2026-11-09 01:43 PM CST",
+      "last_source": "browser extension",
       "last_games_found": 250,
-      "last_error": "I3i3oy: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Vincent Chan: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; CreamiNataella: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Ohwutahel: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; PikabUwU: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.",
+      "last_error": null,
       "next_update": "Daily at 12:00 AM CST (06:00 UTC), retry 12:30 AM CST",
-      "needs_attention": true
+      "needs_attention": false
     },
-    "last_extension_sync": "2026-11-09T10:40:55.097144-06:00",
-    "last_extension_sync_label": "2026-11-09 10:40 AM CST"
+    "last_extension_sync": "2026-11-09T13:43:00.969897-06:00",
+    "last_extension_sync_label": "2026-11-09 01:43 PM CST"
   },
   "playbook": [
     "Pocket picks first. Jinx for I3i3oy (71.9, +15.8, 4 games) and Varus (68.9, +12.8, 6 games), Senna for Vincent Chan (70.1, +13.3, 5 games), Nidalee for CreamiNataella (72.5, +16.9, 3 games) and Sona (67.9, +12.3, 3 games), Aurelion Sol for pikabUwU (61.9, +14.3, 3 games) and Hwei (56.5, +8.9, 8 games), Zyra for Ohwutahel (68.0, +20.0, 3 games), Trundle (64.5, +16.5, 6 games) and Shen (64.2, +16.2, 6 games).",
@@ -1690,7 +1690,261 @@
       "damage_dealt_share_pct": null,
       "damage_taken_share_pct": null,
       "kill_participation_pct": 73.8,
-      "deaths_per_game": 9.8
+      "deaths_per_game": 9.8,
+      "title": null,
+      "title_summary": null,
+      "kda_history": [
+        {
+          "game": 1,
+          "champion": "Skarner",
+          "kda": 4.88
+        },
+        {
+          "game": 2,
+          "champion": "Senna",
+          "kda": 4.0
+        },
+        {
+          "game": 3,
+          "champion": "Quinn",
+          "kda": 3.09
+        },
+        {
+          "game": 4,
+          "champion": "Quinn",
+          "kda": 13.5
+        },
+        {
+          "game": 5,
+          "champion": "Corki",
+          "kda": 3.5
+        },
+        {
+          "game": 6,
+          "champion": "Varus",
+          "kda": 5.57
+        },
+        {
+          "game": 7,
+          "champion": "MissFortune",
+          "kda": 5.38
+        },
+        {
+          "game": 8,
+          "champion": "Ahri",
+          "kda": 4.44
+        },
+        {
+          "game": 9,
+          "champion": "Caitlyn",
+          "kda": 2.56
+        },
+        {
+          "game": 10,
+          "champion": "Morgana",
+          "kda": 14.25
+        },
+        {
+          "game": 11,
+          "champion": "Varus",
+          "kda": 5.5
+        },
+        {
+          "game": 12,
+          "champion": "Jax",
+          "kda": 3.64
+        },
+        {
+          "game": 13,
+          "champion": "Sivir",
+          "kda": 3.22
+        },
+        {
+          "game": 14,
+          "champion": "Soraka",
+          "kda": 4.75
+        },
+        {
+          "game": 15,
+          "champion": "Veigar",
+          "kda": 2.92
+        },
+        {
+          "game": 16,
+          "champion": "KogMaw",
+          "kda": 2.12
+        },
+        {
+          "game": 17,
+          "champion": "Corki",
+          "kda": 3.33
+        },
+        {
+          "game": 18,
+          "champion": "Jax",
+          "kda": 2.21
+        },
+        {
+          "game": 19,
+          "champion": "Malphite",
+          "kda": 3.33
+        },
+        {
+          "game": 20,
+          "champion": "Morgana",
+          "kda": 4.7
+        },
+        {
+          "game": 21,
+          "champion": "Neeko",
+          "kda": 3.08
+        },
+        {
+          "game": 22,
+          "champion": "Mel",
+          "kda": 7.17
+        },
+        {
+          "game": 23,
+          "champion": "MissFortune",
+          "kda": 2.38
+        },
+        {
+          "game": 24,
+          "champion": "Sivir",
+          "kda": 3.09
+        },
+        {
+          "game": 25,
+          "champion": "Corki",
+          "kda": 5.27
+        },
+        {
+          "game": 26,
+          "champion": "Skarner",
+          "kda": 5.71
+        },
+        {
+          "game": 27,
+          "champion": "Sona",
+          "kda": 4.18
+        },
+        {
+          "game": 28,
+          "champion": "Corki",
+          "kda": 6.8
+        },
+        {
+          "game": 29,
+          "champion": "Jax",
+          "kda": 2.19
+        },
+        {
+          "game": 30,
+          "champion": "Twitch",
+          "kda": 4.0
+        },
+        {
+          "game": 31,
+          "champion": "Twitch",
+          "kda": 7.43
+        },
+        {
+          "game": 32,
+          "champion": "Jinx",
+          "kda": 12.33
+        },
+        {
+          "game": 33,
+          "champion": "Malzahar",
+          "kda": 3.0
+        },
+        {
+          "game": 34,
+          "champion": "Quinn",
+          "kda": 2.75
+        },
+        {
+          "game": 35,
+          "champion": "Tryndamere",
+          "kda": 2.5
+        },
+        {
+          "game": 36,
+          "champion": "Kaisa",
+          "kda": 5.29
+        },
+        {
+          "game": 37,
+          "champion": "Sivir",
+          "kda": 3.83
+        },
+        {
+          "game": 38,
+          "champion": "Lucian",
+          "kda": 2.75
+        },
+        {
+          "game": 39,
+          "champion": "Kassadin",
+          "kda": 2.71
+        },
+        {
+          "game": 40,
+          "champion": "Trundle",
+          "kda": 1.75
+        },
+        {
+          "game": 41,
+          "champion": "Kindred",
+          "kda": 4.83
+        },
+        {
+          "game": 42,
+          "champion": "Kayle",
+          "kda": 5.86
+        },
+        {
+          "game": 43,
+          "champion": "Sivir",
+          "kda": 4.71
+        },
+        {
+          "game": 44,
+          "champion": "Caitlyn",
+          "kda": 2.77
+        },
+        {
+          "game": 45,
+          "champion": "Nautilus",
+          "kda": 3.38
+        },
+        {
+          "game": 46,
+          "champion": "Quinn",
+          "kda": 4.12
+        },
+        {
+          "game": 47,
+          "champion": "Varus",
+          "kda": 3.45
+        },
+        {
+          "game": 48,
+          "champion": "Kassadin",
+          "kda": 3.0
+        },
+        {
+          "game": 49,
+          "champion": "DrMundo",
+          "kda": 3.18
+        },
+        {
+          "game": 50,
+          "champion": "Aphelios",
+          "kda": 3.8
+        }
+      ]
     },
     {
       "damage_per_min": null,
@@ -3311,7 +3565,261 @@
       "damage_dealt_share_pct": null,
       "damage_taken_share_pct": null,
       "kill_participation_pct": 79.5,
-      "deaths_per_game": 10.1
+      "deaths_per_game": 10.1,
+      "title": "The Glue",
+      "title_summary": "In on the most team kills (79.5% kill participation) \u2014 they're always in the fight.",
+      "kda_history": [
+        {
+          "game": 1,
+          "champion": "Senna",
+          "kda": 6.0
+        },
+        {
+          "game": 2,
+          "champion": "Karma",
+          "kda": 7.4
+        },
+        {
+          "game": 3,
+          "champion": "Senna",
+          "kda": 5.86
+        },
+        {
+          "game": 4,
+          "champion": "KogMaw",
+          "kda": 4.22
+        },
+        {
+          "game": 5,
+          "champion": "Blitzcrank",
+          "kda": 4.4
+        },
+        {
+          "game": 6,
+          "champion": "Varus",
+          "kda": 4.0
+        },
+        {
+          "game": 7,
+          "champion": "LeeSin",
+          "kda": 2.6
+        },
+        {
+          "game": 8,
+          "champion": "TwistedFate",
+          "kda": 7.4
+        },
+        {
+          "game": 9,
+          "champion": "Udyr",
+          "kda": 2.53
+        },
+        {
+          "game": 10,
+          "champion": "Shaco",
+          "kda": 2.2
+        },
+        {
+          "game": 11,
+          "champion": "TwistedFate",
+          "kda": 3.44
+        },
+        {
+          "game": 12,
+          "champion": "Jinx",
+          "kda": 2.5
+        },
+        {
+          "game": 13,
+          "champion": "Smolder",
+          "kda": 4.38
+        },
+        {
+          "game": 14,
+          "champion": "Jayce",
+          "kda": 2.6
+        },
+        {
+          "game": 15,
+          "champion": "Illaoi",
+          "kda": 2.53
+        },
+        {
+          "game": 16,
+          "champion": "Tristana",
+          "kda": 5.71
+        },
+        {
+          "game": 17,
+          "champion": "Ashe",
+          "kda": 5.67
+        },
+        {
+          "game": 18,
+          "champion": "Amumu",
+          "kda": 2.73
+        },
+        {
+          "game": 19,
+          "champion": "Lucian",
+          "kda": 2.65
+        },
+        {
+          "game": 20,
+          "champion": "Corki",
+          "kda": 1.67
+        },
+        {
+          "game": 21,
+          "champion": "Trundle",
+          "kda": 5.56
+        },
+        {
+          "game": 22,
+          "champion": "Caitlyn",
+          "kda": 2.75
+        },
+        {
+          "game": 23,
+          "champion": "Tristana",
+          "kda": 2.2
+        },
+        {
+          "game": 24,
+          "champion": "Blitzcrank",
+          "kda": 4.0
+        },
+        {
+          "game": 25,
+          "champion": "Kaisa",
+          "kda": 3.83
+        },
+        {
+          "game": 26,
+          "champion": "Shaco",
+          "kda": 5.5
+        },
+        {
+          "game": 27,
+          "champion": "Jhin",
+          "kda": 7.33
+        },
+        {
+          "game": 28,
+          "champion": "Urgot",
+          "kda": 5.88
+        },
+        {
+          "game": 29,
+          "champion": "MissFortune",
+          "kda": 2.85
+        },
+        {
+          "game": 30,
+          "champion": "Illaoi",
+          "kda": 3.57
+        },
+        {
+          "game": 31,
+          "champion": "Senna",
+          "kda": 3.29
+        },
+        {
+          "game": 32,
+          "champion": "Brand",
+          "kda": 2.79
+        },
+        {
+          "game": 33,
+          "champion": "Varus",
+          "kda": 4.67
+        },
+        {
+          "game": 34,
+          "champion": "MissFortune",
+          "kda": 7.4
+        },
+        {
+          "game": 35,
+          "champion": "Poppy",
+          "kda": 4.27
+        },
+        {
+          "game": 36,
+          "champion": "Caitlyn",
+          "kda": 2.07
+        },
+        {
+          "game": 37,
+          "champion": "MissFortune",
+          "kda": 2.55
+        },
+        {
+          "game": 38,
+          "champion": "Senna",
+          "kda": 4.78
+        },
+        {
+          "game": 39,
+          "champion": "Tristana",
+          "kda": 2.79
+        },
+        {
+          "game": 40,
+          "champion": "Lillia",
+          "kda": 2.7
+        },
+        {
+          "game": 41,
+          "champion": "FiddleSticks",
+          "kda": 2.33
+        },
+        {
+          "game": 42,
+          "champion": "Smolder",
+          "kda": 3.77
+        },
+        {
+          "game": 43,
+          "champion": "Shen",
+          "kda": 7.4
+        },
+        {
+          "game": 44,
+          "champion": "MissFortune",
+          "kda": 10.6
+        },
+        {
+          "game": 45,
+          "champion": "TwistedFate",
+          "kda": 3.45
+        },
+        {
+          "game": 46,
+          "champion": "TwistedFate",
+          "kda": 8.25
+        },
+        {
+          "game": 47,
+          "champion": "Ekko",
+          "kda": 3.58
+        },
+        {
+          "game": 48,
+          "champion": "Mel",
+          "kda": 3.82
+        },
+        {
+          "game": 49,
+          "champion": "Brand",
+          "kda": 2.71
+        },
+        {
+          "game": 50,
+          "champion": "JarvanIV",
+          "kda": 4.6
+        }
+      ]
     },
     {
       "damage_per_min": null,
@@ -4919,7 +5427,261 @@
       "damage_dealt_share_pct": null,
       "damage_taken_share_pct": null,
       "kill_participation_pct": 75.7,
-      "deaths_per_game": 8.4
+      "deaths_per_game": 8.4,
+      "title": "The Untouchable",
+      "title_summary": "Best KDA in the group (4.6) and the fewest deaths per game (8.4) \u2014 she just doesn't die.",
+      "kda_history": [
+        {
+          "game": 1,
+          "champion": "Lux",
+          "kda": 12.0
+        },
+        {
+          "game": 2,
+          "champion": "Evelynn",
+          "kda": 5.0
+        },
+        {
+          "game": 3,
+          "champion": "AurelionSol",
+          "kda": 5.12
+        },
+        {
+          "game": 4,
+          "champion": "MissFortune",
+          "kda": 3.2
+        },
+        {
+          "game": 5,
+          "champion": "Nautilus",
+          "kda": 6.86
+        },
+        {
+          "game": 6,
+          "champion": "Swain",
+          "kda": 2.36
+        },
+        {
+          "game": 7,
+          "champion": "Senna",
+          "kda": 6.12
+        },
+        {
+          "game": 8,
+          "champion": "Smolder",
+          "kda": 5.12
+        },
+        {
+          "game": 9,
+          "champion": "Malzahar",
+          "kda": 2.25
+        },
+        {
+          "game": 10,
+          "champion": "Nami",
+          "kda": 8.71
+        },
+        {
+          "game": 11,
+          "champion": "Nautilus",
+          "kda": 4.0
+        },
+        {
+          "game": 12,
+          "champion": "Kaisa",
+          "kda": 5.71
+        },
+        {
+          "game": 13,
+          "champion": "Anivia",
+          "kda": 4.0
+        },
+        {
+          "game": 14,
+          "champion": "Xerath",
+          "kda": 5.0
+        },
+        {
+          "game": 15,
+          "champion": "Nautilus",
+          "kda": 3.91
+        },
+        {
+          "game": 16,
+          "champion": "Kayle",
+          "kda": 2.0
+        },
+        {
+          "game": 17,
+          "champion": "Senna",
+          "kda": 3.33
+        },
+        {
+          "game": 18,
+          "champion": "Jinx",
+          "kda": 3.18
+        },
+        {
+          "game": 19,
+          "champion": "Lux",
+          "kda": 5.86
+        },
+        {
+          "game": 20,
+          "champion": "Thresh",
+          "kda": 4.89
+        },
+        {
+          "game": 21,
+          "champion": "Jhin",
+          "kda": 3.6
+        },
+        {
+          "game": 22,
+          "champion": "Anivia",
+          "kda": 5.0
+        },
+        {
+          "game": 23,
+          "champion": "Xerath",
+          "kda": 8.43
+        },
+        {
+          "game": 24,
+          "champion": "Milio",
+          "kda": 6.57
+        },
+        {
+          "game": 25,
+          "champion": "Karma",
+          "kda": 5.25
+        },
+        {
+          "game": 26,
+          "champion": "Milio",
+          "kda": 9.0
+        },
+        {
+          "game": 27,
+          "champion": "Sona",
+          "kda": 3.71
+        },
+        {
+          "game": 28,
+          "champion": "Heimerdinger",
+          "kda": 3.45
+        },
+        {
+          "game": 29,
+          "champion": "Morgana",
+          "kda": 7.33
+        },
+        {
+          "game": 30,
+          "champion": "Yuumi",
+          "kda": 19.0
+        },
+        {
+          "game": 31,
+          "champion": "Tristana",
+          "kda": 2.38
+        },
+        {
+          "game": 32,
+          "champion": "Nautilus",
+          "kda": 4.25
+        },
+        {
+          "game": 33,
+          "champion": "Nidalee",
+          "kda": 5.22
+        },
+        {
+          "game": 34,
+          "champion": "Rammus",
+          "kda": 2.07
+        },
+        {
+          "game": 35,
+          "champion": "Chogath",
+          "kda": 2.55
+        },
+        {
+          "game": 36,
+          "champion": "Syndra",
+          "kda": 3.5
+        },
+        {
+          "game": 37,
+          "champion": "Velkoz",
+          "kda": 4.5
+        },
+        {
+          "game": 38,
+          "champion": "Chogath",
+          "kda": 2.2
+        },
+        {
+          "game": 39,
+          "champion": "Malphite",
+          "kda": 3.14
+        },
+        {
+          "game": 40,
+          "champion": "Nidalee",
+          "kda": 3.54
+        },
+        {
+          "game": 41,
+          "champion": "Morgana",
+          "kda": 13.25
+        },
+        {
+          "game": 42,
+          "champion": "Lillia",
+          "kda": 8.4
+        },
+        {
+          "game": 43,
+          "champion": "Smolder",
+          "kda": 4.29
+        },
+        {
+          "game": 44,
+          "champion": "Ziggs",
+          "kda": 3.0
+        },
+        {
+          "game": 45,
+          "champion": "Seraphine",
+          "kda": 6.17
+        },
+        {
+          "game": 46,
+          "champion": "AurelionSol",
+          "kda": 5.67
+        },
+        {
+          "game": 47,
+          "champion": "Maokai",
+          "kda": 4.4
+        },
+        {
+          "game": 48,
+          "champion": "Ashe",
+          "kda": 3.91
+        },
+        {
+          "game": 49,
+          "champion": "Sivir",
+          "kda": 2.77
+        },
+        {
+          "game": 50,
+          "champion": "Milio",
+          "kda": 10.0
+        }
+      ]
     },
     {
       "damage_per_min": null,
@@ -6542,7 +7304,261 @@
       "damage_dealt_share_pct": null,
       "damage_taken_share_pct": null,
       "kill_participation_pct": 73.1,
-      "deaths_per_game": 11.6
+      "deaths_per_game": 11.6,
+      "title": "The Matrix",
+      "title_summary": "Dodges the most skillshots in the group (4.7 per minute) \u2014 good luck hitting them.",
+      "kda_history": [
+        {
+          "game": 1,
+          "champion": "Garen",
+          "kda": 2.62
+        },
+        {
+          "game": 2,
+          "champion": "Taric",
+          "kda": 9.33
+        },
+        {
+          "game": 3,
+          "champion": "Rakan",
+          "kda": 2.47
+        },
+        {
+          "game": 4,
+          "champion": "Sion",
+          "kda": 4.12
+        },
+        {
+          "game": 5,
+          "champion": "Trundle",
+          "kda": 2.93
+        },
+        {
+          "game": 6,
+          "champion": "Sion",
+          "kda": 3.83
+        },
+        {
+          "game": 7,
+          "champion": "Yorick",
+          "kda": 2.25
+        },
+        {
+          "game": 8,
+          "champion": "Jax",
+          "kda": 2.8
+        },
+        {
+          "game": 9,
+          "champion": "Rell",
+          "kda": 4.0
+        },
+        {
+          "game": 10,
+          "champion": "Trundle",
+          "kda": 2.79
+        },
+        {
+          "game": 11,
+          "champion": "Taric",
+          "kda": 2.73
+        },
+        {
+          "game": 12,
+          "champion": "Shen",
+          "kda": 7.0
+        },
+        {
+          "game": 13,
+          "champion": "Nautilus",
+          "kda": 1.93
+        },
+        {
+          "game": 14,
+          "champion": "Ashe",
+          "kda": 3.33
+        },
+        {
+          "game": 15,
+          "champion": "Volibear",
+          "kda": 3.82
+        },
+        {
+          "game": 16,
+          "champion": "Leona",
+          "kda": 1.9
+        },
+        {
+          "game": 17,
+          "champion": "Lillia",
+          "kda": 2.73
+        },
+        {
+          "game": 18,
+          "champion": "Rumble",
+          "kda": 2.41
+        },
+        {
+          "game": 19,
+          "champion": "Singed",
+          "kda": 3.82
+        },
+        {
+          "game": 20,
+          "champion": "Shen",
+          "kda": 4.0
+        },
+        {
+          "game": 21,
+          "champion": "Zyra",
+          "kda": 2.67
+        },
+        {
+          "game": 22,
+          "champion": "Yorick",
+          "kda": 3.67
+        },
+        {
+          "game": 23,
+          "champion": "Nautilus",
+          "kda": 3.23
+        },
+        {
+          "game": 24,
+          "champion": "Zyra",
+          "kda": 4.5
+        },
+        {
+          "game": 25,
+          "champion": "Singed",
+          "kda": 3.8
+        },
+        {
+          "game": 26,
+          "champion": "Jayce",
+          "kda": 2.0
+        },
+        {
+          "game": 27,
+          "champion": "Volibear",
+          "kda": 3.0
+        },
+        {
+          "game": 28,
+          "champion": "DrMundo",
+          "kda": 3.16
+        },
+        {
+          "game": 29,
+          "champion": "Jax",
+          "kda": 2.64
+        },
+        {
+          "game": 30,
+          "champion": "Malphite",
+          "kda": 2.62
+        },
+        {
+          "game": 31,
+          "champion": "Taric",
+          "kda": 5.0
+        },
+        {
+          "game": 32,
+          "champion": "Karthus",
+          "kda": 2.0
+        },
+        {
+          "game": 33,
+          "champion": "Sylas",
+          "kda": 1.75
+        },
+        {
+          "game": 34,
+          "champion": "Taric",
+          "kda": 3.73
+        },
+        {
+          "game": 35,
+          "champion": "Katarina",
+          "kda": 2.92
+        },
+        {
+          "game": 36,
+          "champion": "Shen",
+          "kda": 4.18
+        },
+        {
+          "game": 37,
+          "champion": "Katarina",
+          "kda": 4.0
+        },
+        {
+          "game": 38,
+          "champion": "Yorick",
+          "kda": 3.33
+        },
+        {
+          "game": 39,
+          "champion": "DrMundo",
+          "kda": 1.69
+        },
+        {
+          "game": 40,
+          "champion": "Zac",
+          "kda": 2.55
+        },
+        {
+          "game": 41,
+          "champion": "Kaisa",
+          "kda": 3.75
+        },
+        {
+          "game": 42,
+          "champion": "Trundle",
+          "kda": 5.75
+        },
+        {
+          "game": 43,
+          "champion": "Rell",
+          "kda": 3.21
+        },
+        {
+          "game": 44,
+          "champion": "Singed",
+          "kda": 2.67
+        },
+        {
+          "game": 45,
+          "champion": "Maokai",
+          "kda": 2.38
+        },
+        {
+          "game": 46,
+          "champion": "Zyra",
+          "kda": 2.92
+        },
+        {
+          "game": 47,
+          "champion": "Sion",
+          "kda": 3.5
+        },
+        {
+          "game": 48,
+          "champion": "Renekton",
+          "kda": 2.11
+        },
+        {
+          "game": 49,
+          "champion": "Shen",
+          "kda": 3.55
+        },
+        {
+          "game": 50,
+          "champion": "Rumble",
+          "kda": 3.17
+        }
+      ]
     },
     {
       "damage_per_min": null,
@@ -8138,7 +9154,261 @@
       "damage_dealt_share_pct": null,
       "damage_taken_share_pct": null,
       "kill_participation_pct": 67.4,
-      "deaths_per_game": 9.0
+      "deaths_per_game": 9.0,
+      "title": "The Lone Wolf",
+      "title_summary": "Lowest kill participation in the group (67.4%) \u2014 she does her own thing out there.",
+      "kda_history": [
+        {
+          "game": 1,
+          "champion": "Nidalee",
+          "kda": 5.29
+        },
+        {
+          "game": 2,
+          "champion": "Nami",
+          "kda": 14.33
+        },
+        {
+          "game": 3,
+          "champion": "Lux",
+          "kda": 4.75
+        },
+        {
+          "game": 4,
+          "champion": "Ezreal",
+          "kda": 2.62
+        },
+        {
+          "game": 5,
+          "champion": "Jayce",
+          "kda": 3.25
+        },
+        {
+          "game": 6,
+          "champion": "Ahri",
+          "kda": 14.67
+        },
+        {
+          "game": 7,
+          "champion": "Rammus",
+          "kda": 2.31
+        },
+        {
+          "game": 8,
+          "champion": "Kaisa",
+          "kda": 3.62
+        },
+        {
+          "game": 9,
+          "champion": "Teemo",
+          "kda": 2.22
+        },
+        {
+          "game": 10,
+          "champion": "Senna",
+          "kda": 2.57
+        },
+        {
+          "game": 11,
+          "champion": "Swain",
+          "kda": 7.5
+        },
+        {
+          "game": 12,
+          "champion": "Cassiopeia",
+          "kda": 4.75
+        },
+        {
+          "game": 13,
+          "champion": "Lux",
+          "kda": 3.15
+        },
+        {
+          "game": 14,
+          "champion": "Kaisa",
+          "kda": 4.83
+        },
+        {
+          "game": 15,
+          "champion": "Hwei",
+          "kda": 3.44
+        },
+        {
+          "game": 16,
+          "champion": "Lillia",
+          "kda": 6.0
+        },
+        {
+          "game": 17,
+          "champion": "TwistedFate",
+          "kda": 2.82
+        },
+        {
+          "game": 18,
+          "champion": "Soraka",
+          "kda": 3.12
+        },
+        {
+          "game": 19,
+          "champion": "Kayle",
+          "kda": 4.33
+        },
+        {
+          "game": 20,
+          "champion": "AurelionSol",
+          "kda": 5.25
+        },
+        {
+          "game": 21,
+          "champion": "Ryze",
+          "kda": 1.67
+        },
+        {
+          "game": 22,
+          "champion": "Seraphine",
+          "kda": 3.25
+        },
+        {
+          "game": 23,
+          "champion": "Cassiopeia",
+          "kda": 2.82
+        },
+        {
+          "game": 24,
+          "champion": "MissFortune",
+          "kda": 3.38
+        },
+        {
+          "game": 25,
+          "champion": "Teemo",
+          "kda": 3.56
+        },
+        {
+          "game": 26,
+          "champion": "Nami",
+          "kda": 3.82
+        },
+        {
+          "game": 27,
+          "champion": "Ashe",
+          "kda": 2.12
+        },
+        {
+          "game": 28,
+          "champion": "Chogath",
+          "kda": 3.27
+        },
+        {
+          "game": 29,
+          "champion": "Mordekaiser",
+          "kda": 2.12
+        },
+        {
+          "game": 30,
+          "champion": "Seraphine",
+          "kda": 10.25
+        },
+        {
+          "game": 31,
+          "champion": "Smolder",
+          "kda": 2.69
+        },
+        {
+          "game": 32,
+          "champion": "Syndra",
+          "kda": 1.79
+        },
+        {
+          "game": 33,
+          "champion": "Malzahar",
+          "kda": 2.36
+        },
+        {
+          "game": 34,
+          "champion": "Illaoi",
+          "kda": 2.15
+        },
+        {
+          "game": 35,
+          "champion": "Morgana",
+          "kda": 4.18
+        },
+        {
+          "game": 36,
+          "champion": "Elise",
+          "kda": 2.25
+        },
+        {
+          "game": 37,
+          "champion": "Syndra",
+          "kda": 2.43
+        },
+        {
+          "game": 38,
+          "champion": "Karma",
+          "kda": 4.09
+        },
+        {
+          "game": 39,
+          "champion": "Sejuani",
+          "kda": 5.62
+        },
+        {
+          "game": 40,
+          "champion": "Soraka",
+          "kda": 6.17
+        },
+        {
+          "game": 41,
+          "champion": "Blitzcrank",
+          "kda": 4.0
+        },
+        {
+          "game": 42,
+          "champion": "Taliyah",
+          "kda": 4.25
+        },
+        {
+          "game": 43,
+          "champion": "Smolder",
+          "kda": 3.3
+        },
+        {
+          "game": 44,
+          "champion": "Nautilus",
+          "kda": 3.0
+        },
+        {
+          "game": 45,
+          "champion": "Graves",
+          "kda": 1.8
+        },
+        {
+          "game": 46,
+          "champion": "Mel",
+          "kda": 3.58
+        },
+        {
+          "game": 47,
+          "champion": "Smolder",
+          "kda": 8.8
+        },
+        {
+          "game": 48,
+          "champion": "Vex",
+          "kda": 6.6
+        },
+        {
+          "game": 49,
+          "champion": "Hwei",
+          "kda": 4.88
+        },
+        {
+          "game": 50,
+          "champion": "Lillia",
+          "kda": 4.12
+        }
+      ]
     }
   ],
   "stack_splits": [
