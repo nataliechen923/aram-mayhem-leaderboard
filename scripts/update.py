@@ -1632,6 +1632,17 @@ def main():
                 g["stack_size"] = 1 + len(mates)
         print(f"Extension import: {n_exported} games exported, "
               f"{total_new} new in cache.")
+        # Record that this data came from a real extension sync, so the
+        # page can show a "Synced via extension" chip. Only set on a
+        # successful import — this point is past both failure exits
+        # above (broken export, 0 usable games). A PlayARAM fetch or a
+        # manual CSV never touches it, and a later non-extension run
+        # leaves the last successful sync time in place.
+        sync_now = datetime.now(CST)
+        data.setdefault("meta", {})["last_extension_sync"] = \
+            sync_now.isoformat()
+        data["meta"]["last_extension_sync_label"] = sync_now.strftime(
+            "%Y-%m-%d %I:%M %p CST")
     else:
         # PlayARAM mode: fetch each player's profile, parse the (up to)
         # 20 server-rendered games, merge into the per-player cache.
