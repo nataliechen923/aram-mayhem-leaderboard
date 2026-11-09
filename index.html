@@ -403,7 +403,7 @@ async function load() {
   };
   document.getElementById('rank-summary').innerHTML = `
     <div class="rank-summary">
-      <h3>Why each player ranks where they do — in one line each</h3>
+      <h3>Why each player ranks where they do</h3>
       ${players.map((p,i) => {
         const isSeed = !p.role_split && !p.recent_20;
         const line = (isSeed && RANK_SUMMARY[p.name])
