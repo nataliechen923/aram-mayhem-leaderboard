@@ -1768,6 +1768,24 @@ def score_players(all_games, archetypes):
     return results
 
 
+def kda_history(games):
+    """Per-game KDA for the KDA chart, oldest first: one entry
+    per game in the window, numbered 1 (oldest) to N (newest), with
+    the game's KDA and the champion played. The window list is
+    newest-first, so it is reversed here. A game with no KDA is
+    skipped, never plotted as 0 — the number stays tied to its
+    position in the window, so a skipped game leaves a gap,
+    never a renumbered line."""
+    out = []
+    for i, g in enumerate(reversed(games), 1):
+        kda = g.get("kda")
+        if kda is None:
+            continue
+        out.append({"game": i, "champion": g.get("champion"),
+                    "kda": round(kda, 2)})
+    return out
+
+
 def public_game(g):
     return {
         "match_id": g["match_id"], "date": g["date"], "champion": g["champion"],
@@ -2301,7 +2319,13 @@ def main():
             "title": s.get("title"),
             "title_summary": s.get("title_summary"),
             "games": [public_game(g) for g in s["games"]],
+            "kda_history": kda_history(s["games"]),
         })
+        # The per-game performance chart this fed was removed (Nov 9:
+        # the section is now score-daily, KDA-per-game, damage-daily),
+        # so drop any game_history a previous run wrote rather than
+        # leave a stale field in data.json.
+        player.pop("game_history", None)
         # The Nov 8 seed shipped a snapshot note ("Snapshot evidence
         # above is from Nov 8…") that no run ever overwrote, so it
         # kept shipping after real runs. The page does not display
@@ -2343,6 +2367,10 @@ def main():
             "date": today, "window_games": window,
             "scores": {p["name"]: p["score"] for p in data["players"] if p.get("score") is not None},
             "mmr_style": {p["name"]: p["mmr_style"] for p in data["players"] if p.get("mmr_style") is not None},
+            # Damage per minute, one point per day — only players with
+            # damage data appear; missing stays missing, never 0, so
+            # the damage chart draws nothing until damage lands.
+            "damage_per_min": {p["name"]: p["damage_per_min"] for p in data["players"] if p.get("damage_per_min") is not None},
         })
     total_games = sum(len(s["games"]) for s in scored.values() if s)
     set_automation(data, source_label, total_games, mode_errors)
