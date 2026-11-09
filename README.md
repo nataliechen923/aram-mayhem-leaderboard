@@ -581,6 +581,21 @@ not on one stat, and not skewed by the role they play.
   one-sentence reason. Each champion shows its official portrait
   in a little round bubble. A champion in the top 3 never appears
   in the worst 3.
+- **Fun titles** under each player's name are earned fresh every
+  run from that window's stats — never fixed to a name, so they
+  move when gameplay changes. At most one title per player, in
+  this order: **The Untouchable** (best KDA *and* fewest deaths
+  per game — both, or no title that run), **The Glass Cannon**
+  (most damage per minute, else biggest share of the group's
+  damage), **The Glue** (highest kill participation), **The
+  Matrix** (most skillshots dodged per minute), **The Lone Wolf**
+  (lowest kill participation, assigned last so nobody who earned
+  a better title gets stuck with it). A title whose deciding stat
+  is blank for everyone that run (damage is blank until the
+  extension reads it) is left off rather than guessed. Each title
+  comes with a one-line summary from the player's own numbers.
+  Pronouns: she/her for CreamiNataella and PikabUwU; names or
+  they/them for everyone else, never he/him.
 - **The role maps come from the game's own data.** Item roles come
   from Data Dragon item tags (tank items carry Health with Armor or
   Magic Resist, AP items carry ability power, and so on), and the
