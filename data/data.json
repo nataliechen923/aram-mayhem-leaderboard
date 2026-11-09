@@ -84,11 +84,11 @@
     "window_note": "Each player is scored on their own last 50 ARAM Mayhem games. Remakes under 5 minutes are excluded. PlayARAM shows only the latest 20 games per fetch, so the updater keeps a cache and the window fills to 50 over the first few daily runs.",
     "stack_note": "Stack splits below are from the Nov 8 6-player snapshot (600 player-games). They recompute for the 5-player group on the first daily run.",
     "automation": {
-      "last_attempt": "2026-11-09T10:45:42.553702-06:00",
-      "last_attempt_label": "2026-11-09 10:45 AM CST",
-      "last_source": "PlayARAM",
-      "last_games_found": 250,
-      "last_error": "I3i3oy: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Vincent Chan: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; CreamiNataella: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Ohwutahel: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; PikabUwU: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.",
+      "last_attempt": "2026-11-09T12:05:11.249973-06:00",
+      "last_attempt_label": "2026-11-09 12:05 PM CST",
+      "last_source": "browser extension",
+      "last_games_found": 0,
+      "last_error": "I3i3oy: 0 usable games in the export \u2014 scoring from the cache.; Vincent Chan: 0 usable games in the export \u2014 scoring from the cache.; CreamiNataella: 0 usable games in the export \u2014 scoring from the cache.; Ohwutahel: 0 usable games in the export \u2014 scoring from the cache.; PikabUwU: 0 usable games in the export \u2014 scoring from the cache.",
       "next_update": "Daily at 12:00 AM CST (06:00 UTC), retry 12:30 AM CST",
       "needs_attention": true
     },
