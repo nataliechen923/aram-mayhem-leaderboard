@@ -23,6 +23,15 @@ also what gets a site blocked. This updater is the opposite:
     games, the script does NOT wipe the leaderboard. It keeps the last
     snapshot, records the failure on the page, and tries again at
     12:30 AM. See README.md.
+  * Nov 8 evening: GitHub's computers are blocked by Cloudflare too
+    (403 on the first request), so server fetching cannot be the
+    primary source. The primary source is now the Chrome extension
+    (extension/): it runs in Natalie's own browser, on her home
+    connection, reads the 5 profiles the way she would, and downloads
+    one JSON file. She drops it in data/ as extension-export.json and
+    this script imports it with --from-extension, merging into the
+    same cache (same fingerprints, same dedupe). The nightly PlayARAM
+    fetch above stays as a fallback that fails gracefully.
 
 What PlayARAM's match list shows (collapsed row) — and what it doesn't:
   * Shows: result, relative date ("14h ago"), duration, champion,
@@ -42,6 +51,7 @@ What PlayARAM's match list shows (collapsed row) — and what it doesn't:
 Usage:
   python scripts/update.py                        # PlayARAM mode
   python scripts/update.py --from-csv data/manual_games.csv
+  python scripts/update.py --from-extension data/extension-export.json
   python scripts/update.py --dry-run              # PlayARAM mode, no writes
 
 Stdlib only. No extra packages to install.
@@ -65,6 +75,7 @@ DATA_PATH = ROOT / "data" / "data.json"
 PLAYERS_PATH = ROOT / "players.yaml"
 PLAYARAM_CACHE_DIR = ROOT / "data" / "cache" / "playaram"
 CSV_PATH = ROOT / "data" / "manual_games.csv"
+EXTENSION_EXPORT_PATH = ROOT / "data" / "extension-export.json"
 
 CST = timezone(timedelta(hours=-6))  # CST, UTC-6 (Nov-Mar)
 
@@ -117,9 +128,12 @@ def playaram_region(region):
 
 def playaram_profile_url(riot_id, region):
     name, tag = riot_id.rsplit("#", 1)
+    # PlayARAM lowercases the name in the URL (PikabUwU -> pikabuwu,
+    # "Vincent Chan" -> vincent%20chan, # -> %23). These exact URLs
+    # were verified against the ones Natalie pasted from her browser.
     return ("{}/en/profile/{}/{}"
             .format(PLAYARAM_BASE, playaram_region(region),
-                    urllib.parse.quote(f"{name}#{tag}")))
+                    urllib.parse.quote(f"{name.lower()}#{tag}")))
 
 
 def _is_cloudflare_challenge(html):
@@ -920,7 +934,153 @@ def rows_from_csv():
     return out
 
 
+# ---------------------------------------------------------------- extension export
+def rows_from_extension(path, players):
+    """Read a browser-extension export into {display_name: [game, ...]}
+    in the same shape parse_profile_games() returns, so the existing
+    cache merge + scoring just work.
+
+    Export schema (see extension/): {"exported_at", "source":
+    "extension", "players": [{"riot_id", "display_name", "games":
+    [{champion, win, date, duration_minutes, kills, deaths, assists,
+    cs, hats, event_takedowns, snowballs, skillshots_dodged_per_min,
+    damage_to_champions, damage_taken, augments, teammates (Riot IDs),
+    fingerprint}]}]}. The fingerprint is the match_id — the extension
+    computes it with the same formula as parse_profile_games, so a
+    game imported here dedupes against the same game fetched by
+    PlayARAM later.
+
+    Raises ValueError on a structurally broken file. Returns
+    (all_games, errors, total_exported). A player with zero usable
+    games is an error entry (warning, not fatal) — the caller scores
+    them from the cache. Unknown Riot IDs are skipped with a warning.
+    A damage value of 0 means blank (a real Mayhem game never deals 0
+    damage) — kept as None, skipped, never scored as 0."""
+    try:
+        raw = json.loads(Path(path).read_text())
+    except OSError as e:
+        raise ValueError(f"cannot read {path}: {e}")
+    except json.JSONDecodeError as e:
+        raise ValueError(f"{path} is not valid JSON: {e}")
+    if not isinstance(raw, dict) or not isinstance(raw.get("players"), list):
+        raise ValueError(f"{path} is not an extension export "
+                         "(expected {\"players\": [...]}).")
+    by_riot = {p.get("riot_id", "").lower(): p["name"] for p in players}
+    by_name = {p["name"].lower(): p["name"] for p in players}
+    all_games, errors = {}, []
+    total_exported = 0
+    for entry in raw["players"]:
+        if not isinstance(entry, dict):
+            continue
+        name = (by_riot.get(str(entry.get("riot_id", "")).lower())
+                or by_name.get(str(entry.get("display_name", "")).lower()))
+        if not name:
+            errors.append(f"Unknown player in export: "
+                          f"{entry.get('riot_id') or entry.get('display_name') or '?'} — skipped.")
+            continue
+        games = []
+        skipped = 0
+        for g in entry.get("games") or []:
+            try:
+                champ = str(g["champion"]).strip()
+                if not champ:
+                    raise ValueError("no champion")
+                mins = float(g["duration_minutes"])
+                if mins <= 0:
+                    raise ValueError("no duration")
+                kills, deaths, assists = (int(g["kills"]), int(g["deaths"]),
+                                          int(g["assists"]))
+                date_s = str(g.get("date") or "").strip()
+                if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_s):
+                    raise ValueError("no date")
+            except (KeyError, TypeError, ValueError):
+                skipped += 1
+                continue
+            dmg = g.get("damage_to_champions")
+            taken = g.get("damage_taken")
+            try:
+                dmg = int(dmg) or None
+            except (TypeError, ValueError):
+                dmg = None
+            try:
+                taken = int(taken) or None
+            except (TypeError, ValueError):
+                taken = None
+            per_min = g.get("skillshots_dodged_per_min")
+            try:
+                per_min = float(per_min) if per_min is not None else None
+            except (TypeError, ValueError):
+                per_min = None
+            if per_min is None and g.get("skillshots_dodged") is not None:
+                try:
+                    per_min = round(int(g["skillshots_dodged"]) / mins, 2)
+                except (TypeError, ValueError, ZeroDivisionError):
+                    per_min = None
+            fingerprint = str(g.get("fingerprint") or "").strip()
+            if not fingerprint:
+                # Fallback, same formula as parse_profile_games.
+                try:
+                    dodged = int(g.get("skillshots_dodged"))
+                except (TypeError, ValueError):
+                    dodged = round((per_min or 0) * mins)
+                cs = g.get("cs")
+                try:
+                    cs = int(cs)
+                except (TypeError, ValueError):
+                    cs = 0
+                fingerprint = (f"{champ}|{kills}/{deaths}/{assists}|"
+                               f"{mins:.1f}|{cs}|{dodged}|{date_s}")
+            games.append({
+                "match_id": fingerprint,
+                "date": date_s,
+                "champion": champ,
+                "archetype": "Damage",  # filled in by the caller
+                "win": bool(g.get("win")),
+                "kills": kills, "deaths": deaths, "assists": assists,
+                "damage_to_champions": dmg,
+                "damage_taken": taken,
+                "game_minutes": round(mins, 2),
+                "dmg_share": None, "kp": None, "structure_share": None,
+                "augments": [str(a).strip() for a in (g.get("augments") or [])
+                             if str(a).strip()],
+                "skillshots_dodged_per_min": per_min,
+                "stack_size": None,
+                "teammates": [str(t) for t in (g.get("teammates") or [])],
+            })
+        if skipped:
+            errors.append(f"{name}: {skipped} exported game(s) were "
+                          "missing fields and were skipped.")
+        if not games:
+            errors.append(f"{name}: 0 usable games in the export — "
+                          "scoring from the cache.")
+        all_games[name] = games
+        total_exported += len(games)
+    return all_games, errors, total_exported
+
+
+def archive_broken_export(path):
+    """Move a broken/empty extension export aside so the next run does
+    not retry it. Best effort — a failure to move is not fatal."""
+    try:
+        p = Path(path)
+        if not p.exists():
+            return
+        stamp = datetime.now(CST).strftime("%Y-%m-%d-%H%M")
+        dest = p.with_name(f"extension-export-failed-{stamp}.json")
+        p.rename(dest)
+        print(f"Moved the broken export aside as {dest.name} — it will "
+              "not be retried.")
+    except Exception as e:
+        print(f"Could not move the broken export aside ({e}) — it will "
+              "be retried next run.")
+
+
 # ---------------------------------------------------------------- main
+# What the last run used, for the crash handler below (it records the
+# source on the page when the updater dies unexpectedly).
+CURRENT_SOURCE = "PlayARAM"
+
+
 def set_automation(data, source, games_found, error):
     """Record how the last update attempt went, so the page can show it
     and nobody has to check the backend. Written even on failure."""
@@ -937,18 +1097,30 @@ def set_automation(data, source, games_found, error):
 
 
 def main():
-    global CSV_PATH
+    global CSV_PATH, CURRENT_SOURCE
     dry_run = "--dry-run" in sys.argv
     from_csv = "--from-csv" in sys.argv
+    from_extension = "--from-extension" in sys.argv
     csv_arg = None
     if from_csv:
         i = sys.argv.index("--from-csv")
         csv_arg = Path(sys.argv[i + 1]) if i + 1 < len(sys.argv) else CSV_PATH
+    extension_arg = None
+    if from_extension:
+        i = sys.argv.index("--from-extension")
+        extension_arg = (Path(sys.argv[i + 1]) if i + 1 < len(sys.argv)
+                         else EXTENSION_EXPORT_PATH)
+        CURRENT_SOURCE = "browser extension"
+    elif from_csv:
+        CURRENT_SOURCE = "manual CSV"
 
     players, window = load_players()
     data = json.loads(DATA_PATH.read_text())
     archetypes = champion_archetypes()
     all_games = {}
+    # What the page's update note says, and any per-player problems.
+    source_label = CURRENT_SOURCE
+    mode_errors = None
     playaram_errors = None  # set in the PlayARAM branch; None in CSV mode
 
     if from_csv:
@@ -961,6 +1133,68 @@ def main():
             if not dry_run:
                 DATA_PATH.write_text(json.dumps(data, indent=2))
             return 0
+    elif from_extension:
+        # Extension mode: the Chrome extension (extension/) read the 5
+        # profiles in Natalie's own browser and downloaded one JSON
+        # file, which she dropped in data/ as extension-export.json.
+        # Merge it into the SAME per-player cache the PlayARAM
+        # fetcher uses — same fingerprints, same dedupe — then score
+        # exactly like the normal path. The workflow removes the file
+        # after a successful import, so it is never imported twice.
+        print(f"Extension mode: reading {extension_arg}")
+        try:
+            all_games, ext_errors, n_exported = rows_from_extension(
+                extension_arg, players)
+        except ValueError as e:
+            print(f"Extension export is broken: {e}")
+            print("Keeping the last snapshot — nothing was wiped.")
+            set_automation(data, "browser extension", 0,
+                           f"Extension export is broken: {e}")
+            archive_broken_export(extension_arg)
+            if not dry_run:
+                DATA_PATH.write_text(json.dumps(data, indent=2))
+            return 0
+        if n_exported == 0:
+            print("Extension export has 0 usable games for everyone.")
+            print("Keeping the last snapshot — nothing was wiped.")
+            set_automation(data, "browser extension", 0,
+                           "; ".join(ext_errors) if ext_errors else
+                           "Extension export had 0 usable games.")
+            archive_broken_export(extension_arg)
+            if not dry_run:
+                DATA_PATH.write_text(json.dumps(data, indent=2))
+            return 0
+        mode_errors = "; ".join(ext_errors) if ext_errors else None
+        riot_to_name = {p.get("riot_id", "").lower(): p["name"]
+                        for p in players}
+        total_new = 0
+        for p in players:
+            name = p["name"]
+            games = all_games.get(name) or []
+            if not games:
+                # No usable games for this player in the export — score
+                # from the cache, same as a failed PlayARAM fetch.
+                all_games[name] = sorted(
+                    load_playaram_cache(name),
+                    key=lambda g: g.get("seq", 0), reverse=True)[:window]
+                continue
+            merged, n_new = merge_playaram_cache(name, games)
+            total_new += n_new
+            print(f"  {name}: {len(games)} games in export, {n_new} new, "
+                  f"cache now {len(merged)}.")
+            all_games[name] = merged[:window]
+        # Teammates arrive as Riot IDs — keep only group members, as
+        # display names. (Same mapping as the PlayARAM branch; the
+        # cache on disk keeps the Riot IDs, so this is safe to repeat.)
+        for name, games in all_games.items():
+            for g in games:
+                mates = sorted({riot_to_name[r.lower()]
+                                for r in g.get("teammates", [])
+                                if r.lower() in riot_to_name})
+                g["teammates"] = mates
+                g["stack_size"] = 1 + len(mates)
+        print(f"Extension import: {n_exported} games exported, "
+              f"{total_new} new in cache.")
     else:
         # PlayARAM mode: fetch each player's profile, parse the (up to)
         # 20 server-rendered games, merge into the per-player cache.
@@ -1030,6 +1264,7 @@ def main():
                 DATA_PATH.write_text(json.dumps(data, indent=2))
             return 0
         playaram_errors = "; ".join(errors) if errors else None
+        mode_errors = playaram_errors
         if errors:
             print(f"Note: {len(errors)} player(s) had fetch problems — "
                   "scoring the rest from cache. See the page's update note.")
@@ -1103,9 +1338,7 @@ def main():
             "mmr_style": {p["name"]: p["mmr_style"] for p in data["players"] if p.get("mmr_style") is not None},
         })
     total_games = sum(len(s["games"]) for s in scored.values() if s)
-    set_automation(data, "manual CSV" if from_csv else "PlayARAM",
-                   total_games,
-                   playaram_errors if not from_csv else None)
+    set_automation(data, source_label, total_games, mode_errors)
     data["meta"].update({
         "updated_at": datetime.now(CST).isoformat(),
         "updated_at_label": now_label,
@@ -1133,7 +1366,7 @@ if __name__ == "__main__":
         if "--dry-run" not in sys.argv:
             try:
                 _data = json.loads(DATA_PATH.read_text())
-                set_automation(_data, "PlayARAM", 0,
+                set_automation(_data, CURRENT_SOURCE, 0,
                                f"Updater crashed: {e}")
                 DATA_PATH.write_text(json.dumps(_data, indent=2))
             except Exception:
