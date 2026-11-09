@@ -98,6 +98,13 @@
   .top-tag { display:inline-block; vertical-align:middle; margin-left:8px; padding:2px 9px; border-radius:999px;
     font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
     color:#10121a; background:var(--yellow); }
+  /* Fun title: computed by the updater every run from the window's
+     stats, never hardcoded — it moves when gameplay changes. Gold
+     italic subtitle under the player's name, plus its one-line
+     summary. The leaderboard row gets the same title, smaller. */
+  .player-title { color:var(--gold); font-style:italic; font-weight:700; font-size:19px; margin:4px 0 0; }
+  .title-summary { color:#c9cede; font-size:14px; margin:4px 0 0; }
+  .lb-title { color:var(--gold); font-style:italic; font-size:12px; font-weight:600; }
   /* Gold star pill: marks the player who leads a category (computed
      from the data at render time, so leaders change every run). One
      consistent style everywhere — KPI tiles, donut, highlight cards. */
@@ -480,7 +487,7 @@ async function load() {
   document.getElementById('th-deaths').style.display = hasDeaths ? '' : 'none';
   const lead = (isTop, text) => isTop ? `<span class="pill-leader">${text}</span>` : text;
   tb.innerHTML = players.map((p,i) => `<tr class="${i===0?'rank1':''}">
-    <td class="rank-cell ${i<3 ? 'm'+(i+1) : ''}">${['🥇','🥈','🥉'][i] || (i+1)}</td><td><b>${p.name}</b></td><td class="num"><b>${fmt1(p.score)}</b><div class="bar slim"><div class="bar-fill" style="width:${p.score || 0}%"></div></div></td>
+    <td class="rank-cell ${i<3 ? 'm'+(i+1) : ''}">${['🥇','🥈','🥉'][i] || (i+1)}</td><td><b>${p.name}</b>${p.title ? `<div class="lb-title">${p.title}</div>` : ''}</td><td class="num"><b>${fmt1(p.score)}</b><div class="bar slim"><div class="bar-fill" style="width:${p.score || 0}%"></div></div></td>
     <td class="num"><span class="pill-rating">${fmt(p.mmr_style)}</span></td><td class="num">${p.win_rate!=null ? (topWin.has(p.name) ? `<span class="pill-leader">${fmt1(p.win_rate)}%</span>` : `<span class="stat-chip">${fmt1(p.win_rate)}%</span>`) : '—'}</td>
     <td class="num">${p.wins!=null ? `<span class="stat-chip">${p.wins}–${p.losses}</span>` : '—'}</td><td class="num">${p.kda!=null ? lead(topKda.has(p.name), fmt(p.kda)) : '—'}</td>${hasDmg ? `<td class="num">${p.damage_per_min!=null ? lead(topDmg.has(p.name), fmt(p.damage_per_min?.toLocaleString?.())) : '—'}</td>` : ''}${hasShare ? `<td class="num">${shareOf(p)!=null ? lead(topShare.has(p.name), fmt1(shareOf(p)) + '%') : '—'}</td>` : ''}${hasKp ? `<td class="num">${kpOf(p)!=null ? lead(topKp.has(p.name), fmt1(kpOf(p)) + '%') : '—'}</td>` : ''}${hasDeaths ? `<td class="num">${dpgOf(p)!=null ? lead(topDeaths.has(p.name), fmt1(dpgOf(p))) : '—'}</td>` : ''}</tr>`).join('');
 
@@ -507,7 +514,7 @@ async function load() {
   const ohF = ohRs.Frontline?.mean_grade ?? 52.4, ohD = ohRs.Damage?.mean_grade ?? 44.3, ohS = ohRs.Support?.mean_grade ?? 41.9;
   const ohFg = ohRs.Frontline?.games ?? 52;
   document.getElementById('fair-proof').innerHTML =
-    `One example: Ohwutahel scores <b>${ohF}</b> as a frontliner (${ohFg} games) but <b>${ohD}</b> as damage and <b>${ohS}</b> as support — his rank drops because of off-role games, not because he plays tanks.`;
+    `One example: Ohwutahel scores <b>${ohF}</b> as a frontliner (${ohFg} games) but <b>${ohD}</b> as damage and <b>${ohS}</b> as support — their rank drops because of off-role games, not because they play tanks.`;
 
   // One-line rank summary — condensed from each player's why_rank and
   // snapshot facts (Nov 8 snapshot numbers, all reused from data.json).
@@ -517,7 +524,7 @@ async function load() {
   // go stale. PikabUwU has no why_rank yet: the honest empty note.
   const RANK_SUMMARY = {
     "I3i3oy": "Top damage carry — most damage per minute (<b>2,491</b>, <b>21.9%</b> of the group's damage). Best on <b>Jinx 71.9</b> and <b>Varus 68.9</b>. Scores lower in losses (<b>46.0</b>) than in close games (<b>54.1</b>).",
-    "Vincent Chan": "Best on <b>Senna 70.1</b>. His scores barely drop in losses (<b>51.1</b> vs <b>56.0</b> in close games) — the steadiest in the group. <b>Skilled Sniper</b>, taken 10 times, wins only <b>47.02%</b> of the time.",
+    "Vincent Chan": "Best on <b>Senna 70.1</b>. Their scores barely drop in losses (<b>51.1</b> vs <b>56.0</b> in close games) — the steadiest in the group. <b>Skilled Sniper</b>, taken 10 times, wins only <b>47.02%</b> of the time.",
     "CreamiNataella": "Best KDA (<b>4.66</b>). Best on <b>Nidalee 72.5</b> and <b>Sona 67.9</b>. But she takes the smallest share of structures (<b>14.6%</b>) and her scores drop the most in losses (<b>48.5</b> vs <b>57.4</b> in close games), keeping her 3rd.",
     "Ohwutahel": "Scores <b>52.4</b> as a frontliner (<b>52 games</b>) vs <b>44.3</b> as damage and <b>41.9</b> as support — a strong frontliner dragged down by off-role games. Dodges the most skillshots (<b>5.00</b> per minute).",
     "PikabUwU": "Full breakdown fills on the first daily run."
@@ -712,6 +719,7 @@ async function load() {
       <h3>${i+1}. ${p.name}${i===0 ? ' <span class="top-tag">★ Top rated</span>' : ''}</h3>
       <div class="score">${fmt1(p.score)}</div>
     </div>
+    ${p.title ? `<div class="player-title">“${p.title}”</div>${p.title_summary ? `<p class="title-summary">${p.title_summary}</p>` : ''}` : ''}
     ${(() => { const wb = whyBullets(p); return wb ? `<p class="player-why"><b>Why this rank:</b></p><ul class="why-list">${wb.map(b => `<li>${b}</li>`).join('')}</ul>` : `<p class="player-why"><b>Why this rank:</b> Full breakdown fills on the first daily run.</p>`; })()}
     <div class="sub-grid">
       <div class="subcard">
