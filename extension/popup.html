@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ARAM Mayhem Collector</title>
+<style>
+  :root {
+    --bg: #000; --card: #121212; --gold: #c8aa6e; --gold-bright: #e5c97a;
+    --text: #f0ead9; --muted: #a89f8d; --line: #2a2a2a; --green: #3ddc84;
+    --red: #ff6b6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    width: 340px; margin: 0; padding: 14px;
+    background: var(--bg); color: var(--text);
+    font: 13px/1.45 -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  h1 { font-size: 15px; margin: 0 0 2px; color: var(--gold-bright); }
+  p.sub { margin: 0 0 12px; color: var(--muted); font-size: 12px; }
+  button#go {
+    width: 100%; padding: 12px; font-size: 15px; font-weight: 700;
+    color: #000; background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+    border: 0; border-radius: 8px; cursor: pointer;
+  }
+  button#go:disabled { opacity: .45; cursor: default; }
+  #status { margin: 10px 0 6px; min-height: 18px; color: var(--text); }
+  #status.error { color: var(--red); }
+  #status.done { color: var(--green); }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li {
+    display: flex; justify-content: space-between; gap: 8px;
+    padding: 7px 8px; margin-bottom: 6px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 6px;
+  }
+  li .who { font-weight: 600; }
+  li .st { color: var(--muted); text-align: right; }
+  li .st.done { color: var(--green); }
+  li .st.busy { color: var(--gold-bright); }
+  li .st.bad { color: var(--red); }
+  #next { display: none; margin-top: 10px; padding: 10px; background: var(--card);
+    border: 1px solid var(--gold); border-radius: 6px; font-size: 12px; }
+  #next b { color: var(--gold-bright); }
+  #next code { color: var(--gold-bright); }
+  a { color: var(--gold-bright); }
+  #foot { margin-top: 10px; color: var(--muted); font-size: 11px; }
+</style>
+</head>
+<body>
+  <h1>ARAM Mayhem Collector</h1>
+  <p class="sub">Reads your group's 5 PlayARAM profiles in your own browser,
+    exactly like you opening them yourself, and downloads one file for
+    the leaderboard. It makes no requests of its own.</p>
+  <button id="go">Update leaderboard</button>
+  <div id="status"></div>
+  <ul id="players"></ul>
+  <div id="next"></div>
+  <p id="foot">Runs only on playaram.gg profile pages. If a "verify you are
+    human" check appears, it stops and waits for you — it never tries to
+    solve it.</p>
+  <script src="players.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
