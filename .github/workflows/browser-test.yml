@@ -1,0 +1,48 @@
+name: Probe PlayARAM with a real browser
+
+# One-off experiment (manual run only — never scheduled): does a REAL
+# browser on a GitHub runner load PlayARAM profile pages past
+# Cloudflare, where plain HTTP fetches get a 403?
+#
+# It does NOT touch the leaderboard: no data/ changes, no commit, no
+# deploy. It only prints one verdict line per player in the run log:
+#   PROBE I3i3oy: LOADED (20 game cards)
+#   PROBE Vincent Chan: BLOCKED (Cloudflare challenge page)
+#   PROBE SUMMARY: 5/5 loaded
+# If the pages load, the next step is wiring a browser fetch into the
+# daily updater. If they are blocked, the automatic options are
+# exhausted and the page keeps the Nov 8 snapshot.
+#
+# How to run: Actions tab -> "Probe PlayARAM with a real browser" ->
+# Run workflow. No CAPTCHA/Turnstile solving happens — a challenge
+# just counts as BLOCKED for that player.
+
+on:
+  workflow_dispatch:
+
+# Read-only: this job commits nothing.
+permissions:
+  contents: read
+
+concurrency:
+  group: aram-mayhem-browser-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Playwright and Chromium
+        run: |
+          pip install playwright
+          python -m playwright install chromium --with-deps
+
+      - name: Probe PlayARAM profiles in a real browser
+        run: python scripts/browser_probe.py
