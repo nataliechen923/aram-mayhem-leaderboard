@@ -596,7 +596,7 @@ async function load() {
       return `<div class="build-row"><span class="build-label"><b>${label}</b></span><span class="build-val">${v} / 100</span></div>`;
     }).join('');
     return `<div class="subcard wide"><h4>How this score is built</h4>
-      <p class="muted" style="margin:-4px 0 8px">The score blends the 0–100 criteria below — 55% mean + 20% median + 10% floor + 15% win rate. Anything “not filled yet” is skipped, never scored as 0. Skillshots dodged is dodges per minute, shown for context rather than scored.</p>
+      <p class="muted" style="margin:-4px 0 8px">The score blends the 0–100 criteria below — 55% mean + 20% median + 10% floor + 15% win rate. Anything “not filled yet” is skipped, never scored as 0. Skillshots dodged counts too — graded as a percentile within your role, shown here as dodges per minute.</p>
       ${rows}
       <p class="muted" style="margin:10px 0 0">What each one means is in “How the Rating Works” at the bottom of the page.</p>
     </div>`;
@@ -784,14 +784,13 @@ async function load() {
   // portrait bubbles in a row on each side.
   const champTrio = (list, title, good) => {
     const pill = `<span class="champ-pill ${good ? 'good' : 'bad'}">${title}</span>`;
-    if (!list || !list.length) return `<div class="champ-half ${good ? 'good' : 'bad'}"><h4>${pill}</h4><p class="muted">Fills on the first daily run (needs 3+ games on a champion).</p></div>`;
+    if (!list || !list.length) return `<div class="champ-half ${good ? 'good' : 'bad'}"><h4>${pill}</h4><p class="muted">Fills on the first daily run (needs 2+ games on a champion).</p></div>`;
     return `<div class="champ-half ${good ? 'good' : 'bad'}"><h4>${pill}</h4><div class="champ-trio">` + list.map((c,idx) => `
       <div class="champ-cell">
         <div class="rank${idx===0 ? ' first' : ''}">#${idx+1}</div>
         ${c.image ? `<img class="champ-thumb-lg" src="${c.image}" alt="${c.champion} portrait" loading="lazy" onerror="this.style.display='none'">` : '<div class="champ-thumb-lg"></div>'}
         <div class="cname">${c.champion}</div>
-        <div class="bar slim"><div class="bar-fill ${good ? 'good' : 'bad'}" style="width:${Math.max(0, Math.min(100, c.mean_grade))}%"></div></div>
-        <div class="cstats">Grade ${c.mean_grade}<br>${c.games} games · ${c.wins} wins, ${c.losses} losses</div>
+        <div class="cstats">${c.games} games · ${c.wins} wins, ${c.losses} losses</div>
         <div class="cwhy">${c.why || ''}</div>
       </div>`).join('') + `</div></div>`;
   };
