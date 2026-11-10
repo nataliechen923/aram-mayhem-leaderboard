@@ -55,6 +55,31 @@
         "Ohwutahel": 1352,
         "PikabUwU": 1451
       }
+    },
+    {
+      "date": "2026-11-10",
+      "window_games": 50,
+      "scores": {
+        "I3i3oy": 49.9,
+        "Vincent Chan": 48.6,
+        "CreamiNataella": 50.0,
+        "Ohwutahel": 43.9,
+        "PikabUwU": 44.2
+      },
+      "mmr_style": {
+        "I3i3oy": 1498,
+        "Vincent Chan": 1481,
+        "CreamiNataella": 1500,
+        "Ohwutahel": 1415,
+        "PikabUwU": 1419
+      },
+      "damage_per_min": {
+        "I3i3oy": 2248,
+        "Vincent Chan": 2690,
+        "CreamiNataella": 1695,
+        "Ohwutahel": 1803,
+        "PikabUwU": 1509
+      }
     }
   ],
   "how_rating_works": {
@@ -77,19 +102,19 @@
     "seed_note": "",
     "title": "ARAM Mayhem \u2014 Team Leaderboard",
     "update_method": "GitHub Actions, once a day, fetching each player's PlayARAM profile (no Riot API key). Loading / refreshing this page makes zero calls to Riot or PlayARAM.",
-    "updated_at": "2026-11-09T19:05:22.507405-06:00",
-    "updated_at_label": "2026-11-09 07:05 PM CST",
+    "updated_at": "2026-11-10T07:52:45.395457-06:00",
+    "updated_at_label": "2026-11-10 07:52 AM CST",
     "window_games": 50,
     "window_note": "Each player is scored on their own last 50 ARAM Mayhem games. Remakes under 5 minutes are excluded. PlayARAM shows only the latest 20 games per fetch, so the updater keeps a cache and the window fills to 50 over the first few daily runs.",
     "stack_note": "Stack splits below are from the Nov 8 6-player snapshot (600 player-games). They recompute for the 5-player group on the first daily run.",
     "automation": {
-      "last_attempt": "2026-11-09T19:05:22.507383-06:00",
-      "last_attempt_label": "2026-11-09 07:05 PM CST",
-      "last_source": "browser extension",
+      "last_attempt": "2026-11-10T07:52:45.395435-06:00",
+      "last_attempt_label": "2026-11-10 07:52 AM CST",
+      "last_source": "PlayARAM",
       "last_games_found": 250,
-      "last_error": null,
+      "last_error": "I3i3oy: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Vincent Chan: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; CreamiNataella: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Ohwutahel: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; PikabUwU: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.",
       "next_update": "Daily at 12:00 AM CST (06:00 UTC), retry 12:30 AM CST",
-      "needs_attention": false
+      "needs_attention": true
     },
     "last_extension_sync": "2026-11-09T19:05:22.465560-06:00",
     "last_extension_sync_label": "2026-11-09 07:05 PM CST"
