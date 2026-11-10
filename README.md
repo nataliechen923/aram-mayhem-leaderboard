@@ -513,8 +513,8 @@ page used.
   the extension usually have damage (Output and Damage Taken join
   the grade), and games from the server fetch do not (those two stay
   blank — a missing field is skipped, never scored as 0). Turret
-  takedowns are not shown per player anywhere, so Conversion stays
-  blank unless a manual CSV provides it.
+  takedowns are not shown per player anywhere, so there is no
+  structures criterion in the rating at all.
 - If PlayARAM ever refuses the request, the updater keeps the last
   numbers it had, writes a note about it on the page, and tries again
   at 12:30 AM. It never erases the leaderboard.
@@ -556,9 +556,8 @@ not on one stat, and not skewed by the role they play.
   game, averaged over the window; both stay blank when the data
   is not available, never 0.) PlayARAM's own match list does not show damage, so
   games from a server fetch have no damage and those two criteria
-  stay blank for them. Conversion joins in only when per-player
-  turret data exists (a manual CSV). Mechanics (skillshots dodged
-  per minute) is the 8th graded criterion, blended as a percentile
+  stay blank for them. Mechanics (skillshots dodged
+  per minute) is the 7th graded criterion, blended as a percentile
   within role like the others — a good dodger scores high even on a
   tank. KDA is only 1 of the
   graded criteria, and winning is only 15% of the final score.

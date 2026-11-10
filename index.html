@@ -351,10 +351,10 @@
     <div class="chart-legend" id="legend-kda"></div>
     <p class="muted" id="kda-history-note"></p>
     <p class="muted" id="kda-hover"></p>
-    <h3>Damage / min — daily history</h3>
-    <canvas id="chart-dmg" width="1000" height="260"></canvas>
-    <div class="chart-legend" id="legend-dmg"></div>
-    <p class="muted" id="damage-history-note"></p>
+    <h3>MMR rating — daily history</h3>
+    <canvas id="chart-rating" width="1000" height="260"></canvas>
+    <div class="chart-legend" id="legend-rating"></div>
+    <p class="muted" id="rating-history-note"></p>
     <p class="muted" id="history-note"></p>
   </section>
 
@@ -374,8 +374,8 @@
   </section>
 
   <footer>
-    <p id="foot-snapshot"><b>Where this data comes from:</b> the numbers on this page right now are a Nov 8, 2026 snapshot copied from the original page (bboyisk.github.io/aram-mayhem-assessment), which sourced its per-player history from PlayARAM and its population baselines from MayhemMeta. This page never contacts PlayARAM — nothing here was scraped from it after it blocked us. Future updates come from each player's PlayARAM profile, fetched once a day by GitHub Actions (no Riot API key needed — Riot's API does not reliably serve ARAM Mayhem), with a manual CSV export as backup. PlayARAM's match list shows result, champion, KDA, CS and skillshots dodged, but not damage or turret takedowns, so Damage and Structures stay blank on PlayARAM games — a missing field is skipped, never scored as 0. Subscores, recent-20 and top/worst champions stay blank until that first update — no values were invented to fill them.</p>
-    <p id="foot-live" hidden><b>Where this data comes from:</b> the numbers on this page come from each player's PlayARAM profile, collected by the browser extension and rebuilt by GitHub Actions — the latest sync was <span id="foot-sync-time"></span>. This page never contacts PlayARAM itself. Damage and turret takedowns stay blank when the source data doesn't include them — a missing field is skipped, never scored as 0.</p>
+    <p id="foot-snapshot"><b>Where this data comes from:</b> the numbers on this page right now are a Nov 8, 2026 snapshot copied from the original page (bboyisk.github.io/aram-mayhem-assessment), which sourced its per-player history from PlayARAM and its population baselines from MayhemMeta. This page never contacts PlayARAM — nothing here was scraped from it after it blocked us. Future updates come from each player's PlayARAM profile, fetched once a day by GitHub Actions (no Riot API key needed — Riot's API does not reliably serve ARAM Mayhem), with a manual CSV export as backup. PlayARAM's match list shows result, champion, KDA, CS and skillshots dodged, but not damage, so Damage stays blank on PlayARAM games — a missing field is skipped, never scored as 0. Subscores, recent-20 and top/worst champions stay blank until that first update — no values were invented to fill them.</p>
+    <p id="foot-live" hidden><b>Where this data comes from:</b> the numbers on this page come from each player's PlayARAM profile, collected by the browser extension and rebuilt by GitHub Actions — the latest sync was <span id="foot-sync-time"></span>. This page never contacts PlayARAM itself. Damage stays blank when the source data doesn't include it — a missing field is skipped, never scored as 0.</p>
     <p>Data: per-player history from PlayARAM (playaram.gg), fetched daily. Population champion &amp; augment win rates: MayhemMeta (mayhemmeta.com). Skillshots dodged comes from PlayARAM's match list.</p>
     <p>What isn't measured: PlayARAM does not publish healing, shielding, crowd-control score or per-player objective damage, so none of those appear here.</p>
     <p>Not affiliated with Riot Games. ARAM Mayhem is a League of Legends game mode.</p>
@@ -531,14 +531,14 @@ async function load() {
   const RANK_SUMMARY = {
     "I3i3oy": "Top damage carry — most damage per minute (<b>2,491</b>, <b>21.9%</b> of the group's damage). Best on <b>Jinx 71.9</b> and <b>Varus 68.9</b>. Scores lower in losses (<b>46.0</b>) than in close games (<b>54.1</b>).",
     "Vincent Chan": "Best on <b>Senna 70.1</b>. Their scores barely drop in losses (<b>51.1</b> vs <b>56.0</b> in close games) — the steadiest in the group. <b>Skilled Sniper</b>, taken 10 times, wins only <b>47.02%</b> of the time.",
-    "CreamiNataella": "Best KDA (<b>4.66</b>). Best on <b>Nidalee 72.5</b> and <b>Sona 67.9</b>. But she takes the smallest share of structures (<b>14.6%</b>) and her scores drop the most in losses (<b>48.5</b> vs <b>57.4</b> in close games), keeping her 3rd.",
+    "CreamiNataella": "Best KDA (<b>4.66</b>). Best on <b>Nidalee 72.5</b> and <b>Sona 67.9</b>. But her scores drop the most in losses (<b>48.5</b> vs <b>57.4</b> in close games), keeping her 3rd.",
     "Ohwutahel": "Scores <b>52.4</b> as a frontliner (<b>52 games</b>) vs <b>44.3</b> as damage and <b>41.9</b> as support — a strong frontliner dragged down by off-role games. Dodges the most skillshots (<b>5.00</b> per minute).",
     "PikabUwU": "Full breakdown fills on the first daily run."
   };
   const boldNums = (s) => s.replace(/(?<![\w.])([+\-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?%?)(?![\w.])/g, '<b>$1</b>');
   // Plain labels for criterion keys, so the summary never shows raw
   // keys like death_quality. Shared with whyBullets below.
-  const CRIT_LABEL = {output:'Damage output', kda_efficiency:'KDA efficiency', teamplay:'Teamplay', death_quality:'Death quality', conversion:'Structures', augments:'Augments', mechanics:'Skillshots dodged'};
+  const CRIT_LABEL = {output:'Damage output', kda_efficiency:'KDA efficiency', teamplay:'Teamplay', death_quality:'Death quality', augments:'Augments', mechanics:'Skillshots dodged'};
   const summarizeLive = (why) => {
     // Leading sentences of why_rank (rank + strongest/weakest), dropping
     // the trailing methodology sentence. Split on sentence ends only —
@@ -571,12 +571,12 @@ async function load() {
     </div>`;
 
   // Shared: subscore keys + group averages, used by standings, cards, improve.
-  const subKeys = [['output','Damage'],['damage_taken','Damage taken'],['kda_efficiency','KDA'],['teamplay','Teamplay'],['death_quality','Deaths'],['conversion','Structures'],['augments','Augments'],['mechanics','Dodging']];
+  const subKeys = [['output','Damage'],['damage_taken','Damage taken'],['kda_efficiency','KDA'],['teamplay','Teamplay'],['death_quality','Deaths'],['augments','Augments'],['mechanics','Dodging']];
   // One pastel per subscore, used consistently for its bar.
-  const subColors = {output:'#f5a26b', damage_taken:'#f87171', kda_efficiency:'#f27ba7', teamplay:'#a78bfa', death_quality:'#4ade9d', conversion:'#e5c97a', augments:'#8f8fd0', mechanics:'#5eead4'};
+  const subColors = {output:'#f5a26b', damage_taken:'#f87171', kda_efficiency:'#f27ba7', teamplay:'#a78bfa', death_quality:'#4ade9d', augments:'#8f8fd0', mechanics:'#5eead4'};
   // Subscore rows render only when the value exists — a missing
   // criterion is skipped, never shown as an empty bar or a dash.
-  // (Live Nov 9 run: Damage, Damage taken, Teamplay and Structures are null, so
+  // (Live Nov 9 run: Damage, Damage taken and Teamplay are null, so
   // those rows are hidden; they return on any run that provides them.)
   const subBars = (p) => {
     const rows = subKeys.filter(([k]) => p.subscores?.[k] != null).map(([k,label]) => {
@@ -596,7 +596,6 @@ async function load() {
     ['kda_efficiency','KDA efficiency',''],
     ['teamplay','Teamplay','only counts on full-stack games'],
     ['death_quality','Death quality',''],
-    ['conversion','Structures','needs structure data'],
     ['augments','Augments',''],
     ['mechanics','Skillshots dodged',''],
   ];
@@ -670,10 +669,9 @@ async function load() {
     augments: 'Focus on augments: check which augments are winning for the group before you lock one in.',
     output: 'Focus on damage: look for more damage uptime in team fights.',
     teamplay: 'Focus on teamplay: join more of the team\'s kills.',
-    conversion: 'Focus on structures: help push turrets after winning fights.',
     mechanics: 'Focus on dodging: every skillshot dodged is more time dealing damage.'
   };
-  const PCT_KEYS = ['output','kda_efficiency','teamplay','death_quality','conversion','augments'];
+  const PCT_KEYS = ['output','kda_efficiency','teamplay','death_quality','augments'];
   // Derive last-20 pros/cons/tips from the numbers when the updater
   // left those lists empty — strictly within the last 20 games, never
   // compared against the older window. Pros are criteria at 60+ in
@@ -832,8 +830,8 @@ async function load() {
   // Criteria are matched to their bar label by the label text before
   // the em-dash, not by index — the updater added "Damage taken" as
   // a second criterion, so index mapping mislabels the key.
-  const CRIT_KEY_BY_LABEL = {'Output':'output','Damage taken':'damage_taken','KDA efficiency':'kda_efficiency','Teamplay':'teamplay','Death quality':'death_quality','Conversion':'conversion','Augments':'augments','Mechanics':'mechanics'};
-  const BAR_LABEL = {output:'Damage', damage_taken:'Damage taken', kda_efficiency:'KDA', teamplay:'Teamplay', death_quality:'Deaths', conversion:'Structures', augments:'Augments', mechanics:'Dodging'};
+  const CRIT_KEY_BY_LABEL = {'Output':'output','Damage taken':'damage_taken','KDA efficiency':'kda_efficiency','Teamplay':'teamplay','Death quality':'death_quality','Augments':'augments','Mechanics':'mechanics'};
+  const BAR_LABEL = {output:'Damage', damage_taken:'Damage taken', kda_efficiency:'KDA', teamplay:'Teamplay', death_quality:'Deaths', augments:'Augments', mechanics:'Dodging'};
   const hw = data.how_rating_works || {};
   const rm = data.ranking_method || {};
   const keyItems = (hw.criteria || []).map((c) => {
@@ -883,20 +881,17 @@ async function load() {
   // History charts — legends live in HTML below each canvas (never
   // inside the plot), and each canvas is sized to its displayed width
   // so text renders at true size on phone. Exactly three charts:
-  // score (daily), KDA (per game), damage/min (daily).
+  // score (daily), KDA (per game), MMR rating (daily).
   chartState = { history: data.history || [], players };
   drawChart(document.getElementById('chart-score'), chartState.history, 'scores', players);
   renderLegend(document.getElementById('legend-score'), players);
-  // Damage / min, daily: same daily pattern as the score chart. While
-  // no damage has been collected yet, drawChart shows the fill-later
-  // message and nothing is plotted — never a 0 line.
-  drawChart(document.getElementById('chart-dmg'), chartState.history, 'damage_per_min', players,
-    'Damage fills once damage data exists — no damage collected yet.');
-  renderLegend(document.getElementById('legend-dmg'), players);
-  const hasDamage = (chartState.history || []).some(h => h.damage_per_min && Object.keys(h.damage_per_min).length);
-  document.getElementById('damage-history-note').textContent = hasDamage
-    ? 'Damage per minute, one point per day.'
-    : 'Damage per minute fills once damage data is collected — it needs the extension\u2019s Details-panel reads.';
+  // MMR rating, daily: same daily pattern as the score chart, from
+  // the history points' mmr_style (800 + score x 14). Two points so
+  // far (Nov 8 seed, Nov 9 run); one more point lands each day.
+  drawChart(document.getElementById('chart-rating'), chartState.history, 'mmr_style', players,
+    'No rating history yet.');
+  renderLegend(document.getElementById('legend-rating'), players);
+  document.getElementById('rating-history-note').textContent = 'MMR-style rating, one point per day.';
   // KDA chart — X axis is game number (10/20/30/40/50), not dates.
   // Each player's kda_history comes from the updater (oldest first);
   // a player with none yet gets an empty list and the chart says so.
@@ -924,8 +919,8 @@ window.addEventListener('resize', () => {
   resizeTimer = setTimeout(() => {
     if (!chartState) return;
     drawChart(document.getElementById('chart-score'), chartState.history, 'scores', chartState.players);
-    drawChart(document.getElementById('chart-dmg'), chartState.history, 'damage_per_min', chartState.players,
-      'Damage fills once damage data exists — no damage collected yet.');
+    drawChart(document.getElementById('chart-rating'), chartState.history, 'mmr_style', chartState.players,
+      'No rating history yet.');
     drawPerGameChart(document.getElementById('chart-kda'), chartState.kdaHistory || [], chartState.players, 'kda');
   }, 150);
 });
