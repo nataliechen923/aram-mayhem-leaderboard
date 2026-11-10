@@ -78,22 +78,22 @@
     "seed_note": "",
     "title": "ARAM Mayhem \u2014 Team Leaderboard",
     "update_method": "GitHub Actions, once a day, fetching each player's PlayARAM profile (no Riot API key). Loading / refreshing this page makes zero calls to Riot or PlayARAM.",
-    "updated_at": "2026-11-09T13:43:00.994311-06:00",
-    "updated_at_label": "2026-11-09 01:43 PM CST",
+    "updated_at": "2026-11-09T18:20:45.370940-06:00",
+    "updated_at_label": "2026-11-09 06:20 PM CST",
     "window_games": 50,
     "window_note": "Each player is scored on their own last 50 ARAM Mayhem games. Remakes under 5 minutes are excluded. PlayARAM shows only the latest 20 games per fetch, so the updater keeps a cache and the window fills to 50 over the first few daily runs.",
     "stack_note": "Stack splits below are from the Nov 8 6-player snapshot (600 player-games). They recompute for the 5-player group on the first daily run.",
     "automation": {
-      "last_attempt": "2026-11-09T13:43:00.994296-06:00",
-      "last_attempt_label": "2026-11-09 01:43 PM CST",
+      "last_attempt": "2026-11-09T18:20:45.370925-06:00",
+      "last_attempt_label": "2026-11-09 06:20 PM CST",
       "last_source": "browser extension",
       "last_games_found": 250,
       "last_error": null,
       "next_update": "Daily at 12:00 AM CST (06:00 UTC), retry 12:30 AM CST",
       "needs_attention": false
     },
-    "last_extension_sync": "2026-11-09T13:43:00.969897-06:00",
-    "last_extension_sync_label": "2026-11-09 01:43 PM CST"
+    "last_extension_sync": "2026-11-09T18:20:45.338302-06:00",
+    "last_extension_sync_label": "2026-11-09 06:20 PM CST"
   },
   "playbook": [
     "Pocket picks first. Jinx for I3i3oy (71.9, +15.8, 4 games) and Varus (68.9, +12.8, 6 games), Senna for Vincent Chan (70.1, +13.3, 5 games), Nidalee for CreamiNataella (72.5, +16.9, 3 games) and Sona (67.9, +12.3, 3 games), Aurelion Sol for pikabUwU (61.9, +14.3, 3 games) and Hwei (56.5, +8.9, 8 games), Zyra for Ohwutahel (68.0, +20.0, 3 games), Trundle (64.5, +16.5, 6 games) and Shen (64.2, +16.2, 6 games).",
