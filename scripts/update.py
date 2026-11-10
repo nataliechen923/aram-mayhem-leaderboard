@@ -1247,6 +1247,24 @@ def compute_titles(results):
         assigned[wolf] = "lone_wolf"
         titled.add(wolf)
 
+    def _leads_group(key, name, lowest=False):
+        """True when `name` actually leads the WHOLE group on a stat —
+        not just the untitled players. A title goes to the top
+        remaining player (priority order), so the winner is not
+        always the group leader: e.g. The Glue can land on the
+        second-highest KP when the KP leader already holds Glass
+        Cannon. The summary must only claim 'most' / 'lowest' when
+        it is true for the whole group, or the page contradicts its
+        own leaderboard (Nov 9: I3i3oy's Glue summary said 'most
+        team kills' at 73.8% while Vincent Chan's 79.5% sat in the
+        KP column)."""
+        vals = [r[key] for r in results.values()
+                if r and r.get(key) is not None]
+        if not vals or results[name].get(key) is None:
+            return False
+        best = min(vals) if lowest else max(vals)
+        return results[name][key] == best
+
     out = {}
     for name, r in results.items():
         if not r:
@@ -1274,17 +1292,29 @@ def compute_titles(results):
                        f"{p['subj']} {p['hit']} hard and {p['take']} "
                        f"the hits back.")
         elif code == "glue":
-            summary = (f"In on the most team kills "
-                       f"({r['kill_participation_pct']}% kill participation) "
-                       f"— {p['be_contr']} always in the fight.")
+            if _leads_group("kill_participation_pct", name):
+                summary = (f"In on the most team kills "
+                           f"({r['kill_participation_pct']}% kill participation) "
+                           f"— {p['be_contr']} always in the fight.")
+            else:
+                summary = (f"In on {r['kill_participation_pct']}% of team kills "
+                           f"— {p['be_contr']} always in the fight.")
         elif code == "matrix":
-            summary = (f"Dodges the most skillshots in the group "
-                       f"({r['skillshots_dodged_per_min']} per minute) — "
-                       f"good luck hitting {p['obj']}.")
+            if _leads_group("skillshots_dodged_per_min", name):
+                summary = (f"Dodges the most skillshots in the group "
+                           f"({r['skillshots_dodged_per_min']} per minute) — "
+                           f"good luck hitting {p['obj']}.")
+            else:
+                summary = (f"Dodges {r['skillshots_dodged_per_min']} skillshots "
+                           f"per minute — good luck hitting {p['obj']}.")
         else:  # lone_wolf
-            summary = (f"Lowest kill participation in the group "
-                       f"({r['kill_participation_pct']}%) — {p['subj']} "
-                       f"{p['do']} {p['poss']} own thing out there.")
+            if _leads_group("kill_participation_pct", name, lowest=True):
+                summary = (f"Lowest kill participation in the group "
+                           f"({r['kill_participation_pct']}%) — {p['subj']} "
+                           f"{p['do']} {p['poss']} own thing out there.")
+            else:
+                summary = (f"Just {r['kill_participation_pct']}% kill participation "
+                           f"— {p['subj']} {p['do']} {p['poss']} own thing out there.")
         out[name] = (TITLE_LABEL[code], summary)
     return out
 
