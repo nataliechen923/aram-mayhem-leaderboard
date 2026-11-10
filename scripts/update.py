@@ -462,18 +462,30 @@ def load_playaram_cache(name):
 def merge_playaram_cache(name, new_games):
     """Merge freshly parsed games into the player's cache, deduped by
     fingerprint. Newest games get the highest seq numbers; the cache
-    is capped at CACHE_KEEP. Returns (window games newest-first, n_new)."""
+    is capped at CACHE_KEEP. Returns (window games newest-first, n_new).
+
+    A game whose dateless identity already sits in the cache is not
+    counted as new — but a re-read can carry damage the cached copy
+    never had (the 18:20 re-read filled in damage for games the 13:42
+    run cached without it), so damage dealt/taken are copied from the
+    new copy into the cached one wherever the cached copy has None.
+    Nothing else about the cached copy changes."""
     cached = dedupe_games_by_identity(load_playaram_cache(name))
-    seen = {_fp_base(g.get("match_id")) for g in cached}
+    by_base = {_fp_base(g.get("match_id")): g for g in cached}
     max_seq = max((g.get("seq", 0) for g in cached), default=0)
     added = 0
     for g in reversed(new_games):  # oldest first, so newest gets top seq
-        if _fp_base(g["match_id"]) in seen:
+        base = _fp_base(g["match_id"])
+        if base in by_base:
+            old = by_base[base]
+            for field in ("damage_to_champions", "damage_taken"):
+                if old.get(field) is None and g.get(field) is not None:
+                    old[field] = g[field]
             continue
         max_seq += 1
         g["seq"] = max_seq
         cached.append(g)
-        seen.add(_fp_base(g["match_id"]))
+        by_base[base] = g
         added += 1
     cached.sort(key=lambda g: g.get("seq", 0), reverse=True)
     cached = dedupe_games_by_identity(cached)[:CACHE_KEEP]
