@@ -64,7 +64,6 @@
       "KDA efficiency \u2014 kills, deaths and assists weighed against the archetype's expected line.",
       "Teamplay \u2014 kill participation: (kills + assists) \u00f7 team kills. Team kills come from the five group members' games for the same match, so this only has a value on full-stack games where everyone queued together; other games skip it (a missing field is skipped, never scored as 0).",
       "Death quality \u2014 deaths per game, graded within role (fewer deaths is better).",
-      "Conversion \u2014 your share of your team's structure takedowns (turrets + inhibitors \u00f7 team total). Only when per-player structure data exists \u2014 not shown on PlayARAM's match list, so it stays blank from PlayARAM.",
       "Augments \u2014 how the augments you drafted performed across the group's games in this window. PlayARAM names are read from the match list when the page exposes them; otherwise this scores a neutral 50.",
       "Mechanics \u2014 skillshots dodged per minute, graded as a percentile within your role archetype like the other criteria (the page also shows the raw dodges-per-minute number)."
     ],
@@ -78,29 +77,28 @@
     "seed_note": "",
     "title": "ARAM Mayhem \u2014 Team Leaderboard",
     "update_method": "GitHub Actions, once a day, fetching each player's PlayARAM profile (no Riot API key). Loading / refreshing this page makes zero calls to Riot or PlayARAM.",
-    "updated_at": "2026-11-09T18:35:04.431684-06:00",
-    "updated_at_label": "2026-11-09 06:35 PM CST",
+    "updated_at": "2026-11-09T18:53:59.459842-06:00",
+    "updated_at_label": "2026-11-09 06:53 PM CST",
     "window_games": 50,
     "window_note": "Each player is scored on their own last 50 ARAM Mayhem games. Remakes under 5 minutes are excluded. PlayARAM shows only the latest 20 games per fetch, so the updater keeps a cache and the window fills to 50 over the first few daily runs.",
     "stack_note": "Stack splits below are from the Nov 8 6-player snapshot (600 player-games). They recompute for the 5-player group on the first daily run.",
     "automation": {
-      "last_attempt": "2026-11-09T18:35:04.431664-06:00",
-      "last_attempt_label": "2026-11-09 06:35 PM CST",
+      "last_attempt": "2026-11-09T18:53:59.459821-06:00",
+      "last_attempt_label": "2026-11-09 06:53 PM CST",
       "last_source": "browser extension",
       "last_games_found": 250,
       "last_error": null,
       "next_update": "Daily at 12:00 AM CST (06:00 UTC), retry 12:30 AM CST",
       "needs_attention": false
     },
-    "last_extension_sync": "2026-11-09T18:35:04.390012-06:00",
-    "last_extension_sync_label": "2026-11-09 06:35 PM CST"
+    "last_extension_sync": "2026-11-09T18:53:59.418204-06:00",
+    "last_extension_sync_label": "2026-11-09 06:53 PM CST"
   },
   "playbook": [
     "Pocket picks first. Jinx for I3i3oy (71.9, +15.8, 4 games) and Varus (68.9, +12.8, 6 games), Senna for Vincent Chan (70.1, +13.3, 5 games), Nidalee for CreamiNataella (72.5, +16.9, 3 games) and Sona (67.9, +12.3, 3 games), Aurelion Sol for pikabUwU (61.9, +14.3, 3 games) and Hwei (56.5, +8.9, 8 games), Zyra for Ohwutahel (68.0, +20.0, 3 games), Trundle (64.5, +16.5, 6 games) and Shen (64.2, +16.2, 6 games).",
     "Frontline-only for Ohwutahel. His Frontline games grade 52.4 (+4.4, 52 games) vs his Damage games at 44.3 (\u22123.7, 27 games) and his Support games at 41.9 (\u22126.1, 21 games).",
     "Shared trap augments \u2014 taken at population win rates under 48%. Skilled Sniper 47.02% (pikabUwU \u00d711, Vincent Chan \u00d710), Pursuit of Haste 47.15% (I3i3oy \u00d75, Vincent Chan \u00d73), Ultimate Recursion 46.92% (CreamiNataella \u00d73, Vincent Chan \u00d73), Thread the Needle 47.17% (I3i3oy \u00d73), Pandora's Box 47.04% (CreamiNataella \u00d73).",
     "Loss games grade well below close games. Group loss-game mean grade 43.9 vs close-game mean grade 50.2. Per player (loss vs close): I3i3oy 46.0 vs 54.1; CreamiNataella 48.5 vs 57.4; pikabUwU 41.0 vs 46.5; Ohwutahel 40.8 vs 49.0; Vincent Chan 51.1 vs 56.0.",
-    "Turret crediting for CreamiNataella. Her team structure share is 14.6%, the lowest in the group (I3i3oy highest at 26.2%).",
     "Last-quarter deaths. Group mean late-death share in the Nov 8 snapshot was 26.8% \u2014 recomputed for the 5-player group on the first daily run."
   ],
   "players": [
@@ -1522,13 +1520,12 @@
         "kda_efficiency": 52.1,
         "teamplay": 49.5,
         "death_quality": 48.8,
-        "conversion": null,
         "augments": 41.0,
         "mechanics": 2.8
       },
       "win_rate": 50.0,
       "wins": 25,
-      "why_rank": "Ranked 2 of 5 at 49.9 (MMR-style 1498, 25-25, 50.0% win rate). Strongest vs the group: damage_taken (60.5 vs group avg 49.6, +10.9). Weakest vs the group: augments (41.0 vs group avg 42.6, -1.6). By role: Damage 50.7 (42 games, -0.2 vs own avg); Frontline 54.5 (6 games, +3.7 vs own avg); Support 43.7 (2 games, -7.2 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
+      "why_rank": "Ranked 2 of 5 at 49.9 (MMR-style 1498, 25-25, 50.0% win rate). Strongest vs the group: damage_taken (60.5 vs group avg 49.6, +10.9). Weakest vs the group: augments (41.0 vs group avg 42.6, -1.6). By role: Damage 50.7 (42 games, -0.2 vs own avg); Frontline 54.5 (6 games, +3.7 vs own avg); Support 43.7 (2 games, -7.2 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [
         "Highest damage/min: 2,491",
         "21.9% of group damage",
@@ -1582,7 +1579,6 @@
           "kda_efficiency": 50.2,
           "teamplay": 51.2,
           "death_quality": 52.3,
-          "conversion": null,
           "augments": 37.6,
           "mechanics": 3.5
         },
@@ -3365,13 +3361,12 @@
         "kda_efficiency": 51.0,
         "teamplay": 66.2,
         "death_quality": 46.5,
-        "conversion": null,
         "augments": 39.9,
         "mechanics": 2.7
       },
       "win_rate": 44.0,
       "wins": 22,
-      "why_rank": "Ranked 3 of 5 at 48.6 (MMR-style 1481, 22-28, 44.0% win rate). Strongest vs the group: output (68.5 vs group avg 50.7, +17.8). Weakest vs the group: death_quality (46.5 vs group avg 49.7, -3.2). By role: Damage 49.1 (41 games, -0.8 vs own avg); Frontline 52.2 (8 games, +2.3 vs own avg); Support 64.8 (1 games, +14.9 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
+      "why_rank": "Ranked 3 of 5 at 48.6 (MMR-style 1481, 22-28, 44.0% win rate). Strongest vs the group: output (68.5 vs group avg 50.7, +17.8). Weakest vs the group: death_quality (46.5 vs group avg 49.7, -3.2). By role: Damage 49.1 (41 games, -0.8 vs own avg); Frontline 52.2 (8 games, +2.3 vs own avg); Support 64.8 (1 games, +14.9 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [
         "Pocket pick: Senna 70.1 (+13.3, 5 games)",
         "Smallest loss-vs-close gap: 51.1 vs 56.0",
@@ -3445,7 +3440,6 @@
           "kda_efficiency": 51.2,
           "teamplay": 60.9,
           "death_quality": 47.9,
-          "conversion": null,
           "augments": 35.7,
           "mechanics": 3.1
         },
@@ -5236,17 +5230,15 @@
         "kda_efficiency": 59.3,
         "teamplay": 57.6,
         "death_quality": 59.9,
-        "conversion": null,
         "augments": 43.2,
         "mechanics": 2.3
       },
       "win_rate": 50.0,
       "wins": 25,
-      "why_rank": "Ranked 1 of 5 at 50.0 (MMR-style 1500, 25-25, 50.0% win rate). Strongest vs the group: death_quality (59.9 vs group avg 49.7, +10.2). Weakest vs the group: output (40.2 vs group avg 50.7, -10.5). By role: Damage 50.0 (41 games, -0.3 vs own avg); Frontline 51.9 (8 games, +1.7 vs own avg); Support 47.4 (1 games, -2.9 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
+      "why_rank": "Ranked 1 of 5 at 50.0 (MMR-style 1500, 25-25, 50.0% win rate). Strongest vs the group: death_quality (59.9 vs group avg 49.7, +10.2). Weakest vs the group: output (40.2 vs group avg 50.7, -10.5). By role: Damage 50.0 (41 games, -0.3 vs own avg); Frontline 51.9 (8 games, +1.7 vs own avg); Support 47.4 (1 games, -2.9 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [
         "Best KDA in the group: 4.66",
         "Pocket picks: Nidalee 72.5 (+16.9, 3 games), Sona 67.9 (+12.3, 3 games)",
-        "Lowest structure share: 14.6% (group high 26.2%)",
         "Widest loss-vs-close gap: 48.5 vs 57.4",
         "Trap augments: Ultimate Recursion, Pandora's Box"
       ],
@@ -5307,7 +5299,6 @@
           "kda_efficiency": 54.9,
           "teamplay": 54.8,
           "death_quality": 56.5,
-          "conversion": null,
           "augments": 36.6,
           "mechanics": 3.0
         },
@@ -7097,13 +7088,12 @@
         "kda_efficiency": 39.6,
         "teamplay": 47.0,
         "death_quality": 40.0,
-        "conversion": null,
         "augments": 41.9,
         "mechanics": 4.7
       },
       "win_rate": 50.0,
       "wins": 25,
-      "why_rank": "Ranked 5 of 5 at 43.9 (MMR-style 1415, 25-25, 50.0% win rate). Strongest vs the group: output (55.1 vs group avg 50.7, +4.4). Weakest vs the group: kda_efficiency (39.6 vs group avg 49.4, -9.8). By role: Damage 40.9 (17 games, -3.6 vs own avg); Frontline 46.3 (33 games, +1.8 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
+      "why_rank": "Ranked 5 of 5 at 43.9 (MMR-style 1415, 25-25, 50.0% win rate). Strongest vs the group: output (55.1 vs group avg 50.7, +4.4). Weakest vs the group: kda_efficiency (39.6 vs group avg 49.4, -9.8). By role: Damage 40.9 (17 games, -3.6 vs own avg); Frontline 46.3 (33 games, +1.8 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [
         "Frontline 52.4 (+4.4, 52 games) vs Damage 44.3 vs Support 41.9",
         "Most skillshots dodged/min: 5.00",
@@ -7195,7 +7185,6 @@
           "kda_efficiency": 37.8,
           "teamplay": 52.5,
           "death_quality": 36.2,
-          "conversion": null,
           "augments": 35.1,
           "mechanics": 5.6
         },
@@ -8997,13 +8986,12 @@
         "kda_efficiency": 45.1,
         "teamplay": 31.0,
         "death_quality": 53.2,
-        "conversion": null,
         "augments": 46.9,
         "mechanics": 2.6
       },
       "win_rate": 48.0,
       "wins": 24,
-      "why_rank": "Ranked 4 of 5 at 44.2 (MMR-style 1419, 24-26, 48.0% win rate). Strongest vs the group: augments (46.9 vs group avg 42.6, +4.3). Weakest vs the group: output (30.3 vs group avg 50.7, -20.4). By role: Damage 46.4 (40 games, +1.0 vs own avg); Frontline 42.7 (7 games, -2.7 vs own avg); Support 39.1 (3 games, -6.3 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute \u2014 and conversion only when structure data exists), graded within role and adjusted for champion \u2014 not from one stat.",
+      "why_rank": "Ranked 4 of 5 at 44.2 (MMR-style 1419, 24-26, 48.0% win rate). Strongest vs the group: augments (46.9 vs group avg 42.6, +4.3). Weakest vs the group: output (30.3 vs group avg 50.7, -20.4). By role: Damage 46.4 (40 games, +1.0 vs own avg); Frontline 42.7 (7 games, -2.7 vs own avg); Support 39.1 (3 games, -6.3 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [],
       "role_split": {
         "Damage": {
@@ -9039,7 +9027,6 @@
           "kda_efficiency": 43.8,
           "teamplay": 30.6,
           "death_quality": 56.9,
-          "conversion": null,
           "augments": 39.7,
           "mechanics": 3.8
         },
@@ -9435,7 +9422,7 @@
     "points": [
       "Role first, judged from the game itself: a game's role (Damage, Frontline or Support) comes from the champion plus the augments taken and the items built \u2014 not the champion alone. Malphite built AP counts as Damage; Seraphine built with enchanter items counts as Support. Every component is a percentile WITHIN that role across all player-games in the window. A tank with 8 kills can score 90th percentile for Frontline while a carry with 12 kills scores only 60th for Damage. Raw kills and damage never compare a tank to a carry. A game with no augments or items recorded falls back to the champion's usual role.",
       "Champion second: each component is blended 70% archetype percentile + 30% same-champion percentile (only when the group has 3+ games on that champion; otherwise archetype only). Playing a champion well *for that champion* counts, not just picking a strong champion.",
-      "Whole performance, not one stat: a game grade is the mean of the criteria available for that game \u2014 KDA Efficiency, Teamplay, Death Quality and Augments, plus Output (damage dealt) and Damage Taken when the extension has read the game's Details panel in your browser. Output is your share of the team's damage dealt when all five teammates' damage is known for the match (full-stack games), otherwise damage per minute; Damage Taken is the same idea for damage you soaked, judged within your role \u2014 a tank soaking damage is compared with other tanks, never with a carry's damage taken. Teamplay (kill participation: your kills + assists \u00f7 team kills) also comes from the five members' games, so it only has a value on full-stack games where everyone queued together. PlayARAM's own match list does not show damage, so games from a server fetch have no damage and those two criteria stay blank for them. Conversion joins in only when per-player structure data exists (a manual CSV). Mechanics (skillshots dodged per minute) is the 8th graded criterion, blended as a percentile within role like the others \u2014 a good dodger scores high even on a tank. The page also shows the raw dodges-per-minute number for context. KDA is 1 of the graded criteria, damage is only part of Output, and win rate is only 15% of the final score. A missing field is skipped, never scored as 0.",
+      "Whole performance, not one stat: a game grade is the mean of the criteria available for that game \u2014 KDA Efficiency, Teamplay, Death Quality and Augments, plus Output (damage dealt) and Damage Taken when the extension has read the game's Details panel in your browser. Output is your share of the team's damage dealt when all five teammates' damage is known for the match (full-stack games), otherwise damage per minute; Damage Taken is the same idea for damage you soaked, judged within your role \u2014 a tank soaking damage is compared with other tanks, never with a carry's damage taken. Teamplay (kill participation: your kills + assists \u00f7 team kills) also comes from the five members' games, so it only has a value on full-stack games where everyone queued together. PlayARAM's own match list does not show damage, so games from a server fetch have no damage and those two criteria stay blank for them. Mechanics (skillshots dodged per minute) is the 7th graded criterion, blended as a percentile within role like the others \u2014 a good dodger scores high even on a tank. The page also shows the raw dodges-per-minute number for context. KDA is 1 of the graded criteria, damage is only part of Output, and win rate is only 15% of the final score. A missing field is skipped, never scored as 0.",
       "Consistency counts: Performance Score = 55% mean game grade + 20% median grade + 10% floor (25th percentile) grade + 15% win rate. One pop-off game can't carry a rank; a low floor pulls it down.",
       "Evidence on every card: each player card shows their subscores vs the group average, their grade split by role played, their best / worst champions vs their own average (with game counts), and a 'Why this rank' paragraph built from those numbers \u2014 so a complaint can be answered with the breakdown, not an opinion."
     ],
