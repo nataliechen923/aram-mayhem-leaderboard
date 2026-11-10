@@ -47,8 +47,7 @@ What PlayARAM's match list shows (collapsed row) — and what it doesn't:
     each game's Details panel and reads damage dealt/taken, so
     extension games carry damage and the Output and Damage Taken
     criteria join the grade for them; server-fetched games have no
-    damage, so those criteria stay blank for them. Conversion stays
-    blank everywhere unless a manual CSV provides structure data.
+    damage, so those criteria stay blank for them.
     A game grade is the mean of the criteria available for that
     game. Missing data is never scored as 0.
 
@@ -379,7 +378,7 @@ def parse_profile_games(html, riot_id, now):
             "damage_taken": None,          # not on PlayARAM's match list
             "game_minutes": round(mins, 2),
             "dmg_share": None, "taken_share": None,
-            "kp": None, "structure_share": None,
+            "kp": None,
             "augments": augments,
             "items": items,
             "skillshots_dodged_per_min": (
@@ -1317,9 +1316,8 @@ def score_players(all_games, archetypes):
       else damage per minute; Damage Taken is the same idea for
       damage taken, graded within the game's role archetype so a
       tank soaking damage is judged against other tanks, never
-      against a carry's damage taken. Conversion joins in only
-      when a manual CSV provides structure data. Mechanics
-      (skillshots dodged per minute) is the 8th graded criterion,
+      against a carry's damage taken. Mechanics
+      (skillshots dodged per minute) is the 7th graded criterion,
       blended as a percentile within role like the others — a good
       dodger scores high even on a tank. The subscore still shows
       the raw dodges-per-minute number, which is what the page
@@ -1345,7 +1343,6 @@ def score_players(all_games, archetypes):
             g["dmg_share"] = g.get("dmg_share")
             g["taken_share"] = g.get("taken_share")
             g["kp"] = g.get("kp")
-            g["structure_share"] = g.get("structure_share")
 
     # Group games by archetype for percentile baselines.
     by_arch = {}
@@ -1406,7 +1403,6 @@ def score_players(all_games, archetypes):
             g["dmg_share"] = g.get("dmg_share")
             g["taken_share"] = g.get("taken_share")
             g["kp"] = g.get("kp")
-            g["structure_share"] = g.get("structure_share")
 
             # Damage dealt (Output): the share of team damage when the
             # full team's totals are known for the match, else damage
@@ -1433,7 +1429,6 @@ def score_players(all_games, archetypes):
             kda = blended(arch, g["champion"], "kda", g["kda"])
             teamplay = blended(arch, g["champion"], "kp", g["kp"])
             death_q = 100 - blended(arch, g["champion"], "deaths", g["deaths"])
-            conversion = blended(arch, g["champion"], "structure_share", g["structure_share"])
             # Mechanics: skillshots dodged per minute, blended as a
             # percentile within role like every other criterion — a
             # good dodger scores high even on a tank, and a carry
@@ -1448,7 +1443,7 @@ def score_players(all_games, archetypes):
                 aug = max(0.0, min(100.0, (aug - 35) / 30 * 100))
             else:
                 aug = 50.0
-            parts = [p for p in [output, taken, kda, teamplay, death_q, conversion, aug, mech]
+            parts = [p for p in [output, taken, kda, teamplay, death_q, aug, mech]
                      if p is not None]
             g["grade"] = sum(parts) / len(parts) if parts else 50.0
             g["subscores"] = {
@@ -1457,7 +1452,6 @@ def score_players(all_games, archetypes):
                 "kda_efficiency": round(kda, 1) if kda is not None else None,
                 "teamplay": round(teamplay, 1) if teamplay is not None else None,
                 "death_quality": round(death_q, 1) if death_q is not None else None,
-                "conversion": round(conversion, 1) if conversion is not None else None,
                 "augments": round(aug, 1),
                 # The mechanics SUBSCORE stays the raw dodges-per-
                 # minute number: the page renders it as "X per
@@ -1506,7 +1500,7 @@ def score_players(all_games, archetypes):
                 g["subscores"][k] for g in games if g["subscores"][k] is not None), 1)
                 if any(g["subscores"][k] is not None for g in games) else None
                 for k in ["output", "damage_taken", "kda_efficiency", "teamplay",
-                          "death_quality", "conversion", "augments", "mechanics"]},
+                          "death_quality", "augments", "mechanics"]},
             "skillshots_dodged_per_min": (
                 round(statistics.mean(g["skillshots_dodged_per_min"] for g in games
                                       if g.get("skillshots_dodged_per_min") is not None), 2)
@@ -1516,7 +1510,7 @@ def score_players(all_games, archetypes):
 
     # --- Evidence: role split, champion focus, why-this-rank ---
     sub_keys = ["output", "damage_taken", "kda_efficiency", "teamplay",
-                "death_quality", "conversion", "augments", "mechanics"]
+                "death_quality", "augments", "mechanics"]
     group_avg = {}
     for k in sub_keys:
         vals = [r["subscores"][k] for r in results.values()
@@ -1704,7 +1698,7 @@ def score_players(all_games, archetypes):
             f"plus damage dealt and damage taken "
             f"when the extension has read the game's Details panel — "
             f"share of team damage on full-stack games, else damage per "
-            f"minute — and conversion only when structure data exists), "
+            f"minute), "
             f"graded within role and adjusted for champion — not from "
             f"one stat.")
 
@@ -1726,14 +1720,13 @@ def score_players(all_games, archetypes):
     label = {"output": "Output", "damage_taken": "Damage taken",
              "kda_efficiency": "KDA efficiency",
              "teamplay": "Teamplay", "death_quality": "Death quality",
-             "conversion": "Conversion", "augments": "Augments",
+             "augments": "Augments",
              "mechanics": "Mechanics"}
     tip_for = {"output": "focus on damage output and positioning to deal more damage",
                "damage_taken": "step forward and soak more damage for the team",
                "kda_efficiency": "trade less — fewer deaths for the kills you get",
                "teamplay": "join more fights to raise kill participation",
                "death_quality": "die less, and later in the game",
-               "conversion": "turn won fights into turrets",
                "augments": "rethink augment picks — the ones taken lately are underperforming",
                "mechanics": "dodge more skillshots"}
     keep_for = {"output": "keep finding damage — your positioning is paying off",
@@ -1741,10 +1734,9 @@ def score_players(all_games, archetypes):
                 "kda_efficiency": "keep trading like this — good kills for few deaths",
                 "teamplay": "keep joining fights — your kill participation is strong",
                 "death_quality": "keep staying alive — your deaths are low for your role",
-                "conversion": "keep turning won fights into turrets",
                 "augments": "keep drafting augments like these — they're performing"}
     ranked_keys = ["output", "damage_taken", "kda_efficiency", "teamplay",
-                   "death_quality", "conversion", "augments"]
+                   "death_quality", "augments"]
     for name, r in results.items():
         if not r or not r.get("recent_20"):
             continue
@@ -1849,7 +1841,7 @@ def rows_from_csv():
                     # No team totals in a hand-made CSV — None, not 0,
                     # so the missing fields are skipped, not scored as 0.
                     "dmg_share": None, "taken_share": None,
-                    "kp": None, "structure_share": None,
+                    "kp": None,
                     "augments": [a.strip() for a in (row.get("augments") or "").split(";") if a.strip()],
                     # Optional column ("items", ;-separated). A CSV
                     # without it scores roles from the champion alone.
@@ -1980,7 +1972,7 @@ def rows_from_extension(path, players):
                 "damage_taken": taken,
                 "game_minutes": round(mins, 2),
                 "dmg_share": None, "taken_share": None,
-                "kp": None, "structure_share": None,
+                "kp": None,
                 "augments": [str(a).strip() for a in (g.get("augments") or [])
                              if str(a).strip()],
                 "items": [str(i).strip() for i in (g.get("items") or [])
@@ -2026,7 +2018,7 @@ RANKING_METHOD = {
     "points": [
         "Role first, judged from the game itself: a game's role (Damage, Frontline or Support) comes from the champion plus the augments taken and the items built — not the champion alone. Malphite built AP counts as Damage; Seraphine built with enchanter items counts as Support. Every component is a percentile WITHIN that role across all player-games in the window. A tank with 8 kills can score 90th percentile for Frontline while a carry with 12 kills scores only 60th for Damage. Raw kills and damage never compare a tank to a carry. A game with no augments or items recorded falls back to the champion's usual role.",
         "Champion second: each component is blended 70% archetype percentile + 30% same-champion percentile (only when the group has 3+ games on that champion; otherwise archetype only). Playing a champion well *for that champion* counts, not just picking a strong champion.",
-        "Whole performance, not one stat: a game grade is the mean of the criteria available for that game — KDA Efficiency, Teamplay, Death Quality and Augments, plus Output (damage dealt) and Damage Taken when the extension has read the game's Details panel in your browser. Output is your share of the team's damage dealt when all five teammates' damage is known for the match (full-stack games), otherwise damage per minute; Damage Taken is the same idea for damage you soaked, judged within your role — a tank soaking damage is compared with other tanks, never with a carry's damage taken. Teamplay (kill participation: your kills + assists ÷ team kills) also comes from the five members' games, so it only has a value on full-stack games where everyone queued together. PlayARAM's own match list does not show damage, so games from a server fetch have no damage and those two criteria stay blank for them. Conversion joins in only when per-player structure data exists (a manual CSV). Mechanics (skillshots dodged per minute) is the 8th graded criterion, blended as a percentile within role like the others — a good dodger scores high even on a tank. The page also shows the raw dodges-per-minute number for context. KDA is 1 of the graded criteria, damage is only part of Output, and win rate is only 15% of the final score. A missing field is skipped, never scored as 0.",
+        "Whole performance, not one stat: a game grade is the mean of the criteria available for that game — KDA Efficiency, Teamplay, Death Quality and Augments, plus Output (damage dealt) and Damage Taken when the extension has read the game's Details panel in your browser. Output is your share of the team's damage dealt when all five teammates' damage is known for the match (full-stack games), otherwise damage per minute; Damage Taken is the same idea for damage you soaked, judged within your role — a tank soaking damage is compared with other tanks, never with a carry's damage taken. Teamplay (kill participation: your kills + assists ÷ team kills) also comes from the five members' games, so it only has a value on full-stack games where everyone queued together. PlayARAM's own match list does not show damage, so games from a server fetch have no damage and those two criteria stay blank for them. Mechanics (skillshots dodged per minute) is the 7th graded criterion, blended as a percentile within role like the others — a good dodger scores high even on a tank. The page also shows the raw dodges-per-minute number for context. KDA is 1 of the graded criteria, damage is only part of Output, and win rate is only 15% of the final score. A missing field is skipped, never scored as 0.",
         "Consistency counts: Performance Score = 55% mean game grade + 20% median grade + 10% floor (25th percentile) grade + 15% win rate. One pop-off game can't carry a rank; a low floor pulls it down.",
         "Evidence on every card: each player card shows their subscores vs the group average, their grade split by role played, their best / worst champions vs their own average (with game counts), and a 'Why this rank' paragraph built from those numbers — so a complaint can be answered with the breakdown, not an opinion.",
     ],
@@ -2052,7 +2044,6 @@ HOW_RATING_WORKS = {
         "KDA efficiency — kills, deaths and assists weighed against the archetype's expected line.",
         "Teamplay — kill participation: (kills + assists) ÷ team kills. Team kills come from the five group members' games for the same match, so this only has a value on full-stack games where everyone queued together; other games skip it (a missing field is skipped, never scored as 0).",
         "Death quality — deaths per game, graded within role (fewer deaths is better).",
-        "Conversion — your share of your team's structure takedowns (turrets + inhibitors ÷ team total). Only when per-player structure data exists — not shown on PlayARAM's match list, so it stays blank from PlayARAM.",
         "Augments — how the augments you drafted performed across the group's games in this window. PlayARAM names are read from the match list when the page exposes them; otherwise this scores a neutral 50.",
         "Mechanics — skillshots dodged per minute, graded as a percentile within your role archetype like the other criteria (the page also shows the raw dodges-per-minute number).",
     ],
