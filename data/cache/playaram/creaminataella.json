@@ -1,5 +1,240 @@
 [
   {
+    "match_id": "Lucian|18/9/18|27.1|123|48",
+    "date": "2026-11-11",
+    "champion": "Lucian",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 18,
+    "deaths": 9,
+    "assists": 18,
+    "damage_to_champions": 63954,
+    "damage_taken": 51429,
+    "game_minutes": 27.15,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Upgrade Infinity Edge",
+      "Upgrade Collector",
+      "Tap Dancer",
+      "Still Here"
+    ],
+    "items": [
+      "The Collector",
+      "Blade of The Ruined King",
+      "Infinity Edge",
+      "Mortal Reminder",
+      "Bloodthirster",
+      "Rapid Firecannon"
+    ],
+    "skillshots_dodged_per_min": 1.77,
+    "stack_size": null,
+    "teammates": [
+      "pikabUwU#NA1",
+      "i3i3oy#NA1",
+      "Zemocean#707",
+      "NYSpyder#NA1"
+    ],
+    "seq": 58
+  },
+  {
+    "match_id": "Milio|7/6/39|19.1|68|46",
+    "date": "2026-11-11",
+    "champion": "Milio",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 7,
+    "deaths": 6,
+    "assists": 39,
+    "damage_to_champions": 24664,
+    "damage_taken": 25394,
+    "game_minutes": 19.15,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Wooglet's Witchcap",
+      "Transmute: Gold",
+      "BEES!!!",
+      "Witchful Thinking",
+      "No Mana, No Problem"
+    ],
+    "items": [
+      "Wooglet's Witchcap",
+      "Luden's Echo",
+      "Amplifying Tome",
+      "Stormsurge",
+      "Shadowflame",
+      "Morellonomicon"
+    ],
+    "skillshots_dodged_per_min": 2.4,
+    "stack_size": null,
+    "teammates": [
+      "Koba#1019",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1",
+      "S0ul0nF1re#m30w"
+    ],
+    "seq": 57
+  },
+  {
+    "match_id": "Nami|1/6/34|13.4|4|52",
+    "date": "2026-11-10",
+    "champion": "Nami",
+    "archetype": "Support",
+    "win": true,
+    "kills": 1,
+    "deaths": 6,
+    "assists": 34,
+    "damage_to_champions": 6122,
+    "damage_taken": 16306,
+    "game_minutes": 13.4,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Fey Magic",
+      "Mercy's Strike",
+      "Critical Healing"
+    ],
+    "items": [
+      "Moonstone Renewer",
+      "Diadem of Songs",
+      "Imperial Mandate",
+      "Ardent Censer",
+      "Amplifying Tome",
+      "Sapphire Crystal"
+    ],
+    "skillshots_dodged_per_min": 3.88,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 56
+  },
+  {
+    "match_id": "Nautilus|7/14/26|21.1|25|280",
+    "date": "2026-11-10",
+    "champion": "Nautilus",
+    "archetype": "Frontline",
+    "win": false,
+    "kills": 7,
+    "deaths": 14,
+    "assists": 26,
+    "damage_to_champions": 28979,
+    "damage_taken": 97505,
+    "game_minutes": 21.15,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Goldrend",
+      "Ultimate Unstoppable",
+      "Stay Resolute",
+      "Sap Magic"
+    ],
+    "items": [
+      "Heartsteel",
+      "Fimbulwinter",
+      "Unending Despair",
+      "Warmog's Armor",
+      "Spirit Visage",
+      "Thornmail"
+    ],
+    "skillshots_dodged_per_min": 13.24,
+    "stack_size": null,
+    "teammates": [
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 55
+  },
+  {
+    "match_id": "Senna|8/14/38|26.5|84|127",
+    "date": "2026-11-10",
+    "champion": "Senna",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 8,
+    "deaths": 14,
+    "assists": 38,
+    "damage_to_champions": null,
+    "damage_taken": null,
+    "game_minutes": 26.5,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Third Times the Harm",
+      "Ultra Hydra",
+      "Scopier Weapons",
+      "Still Here",
+      "Vulnerability"
+    ],
+    "items": [
+      "Ultra Hydra",
+      "Infinity Edge",
+      "The Collector",
+      "Zeal",
+      "Blade of The Ruined King",
+      "Lord Dominik's Regards"
+    ],
+    "skillshots_dodged_per_min": 4.79,
+    "stack_size": null,
+    "teammates": [
+      "9595hapa#lol",
+      "IU simp#lllll",
+      "Ohwutahel#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 54
+  },
+  {
+    "match_id": "Senna|7/10/36|18.3|30|13",
+    "date": "2026-11-10",
+    "champion": "Senna",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 7,
+    "deaths": 10,
+    "assists": 36,
+    "damage_to_champions": 41063,
+    "damage_taken": 33940,
+    "game_minutes": 18.25,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Weapon of Destiny",
+      "Infinite Recursion",
+      "Deft",
+      "BEES!!!"
+    ],
+    "items": [
+      "Blade of The Ruined King",
+      "Vampiric Scepter",
+      "Infinity Edge",
+      "The Collector",
+      "Lord Dominik's Regards",
+      "Rapid Firecannon"
+    ],
+    "skillshots_dodged_per_min": 0.71,
+    "stack_size": null,
+    "teammates": [
+      "GraVityApproVed#NA1",
+      "LuchoZer0#NA1",
+      "bGenios#shaco",
+      "NutBuster69#NutBu"
+    ],
+    "seq": 53
+  },
+  {
     "match_id": "Milio|5/5/45|22.6|58|22",
     "date": "2026-11-08",
     "champion": "Milio",

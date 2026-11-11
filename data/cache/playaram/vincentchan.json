@@ -1,5 +1,117 @@
 [
   {
+    "match_id": "Sivir|17/8/20|13.4|85|19",
+    "date": "2026-11-10",
+    "champion": "Sivir",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 17,
+    "deaths": 8,
+    "assists": 20,
+    "damage_to_champions": 31926,
+    "damage_taken": 21759,
+    "game_minutes": 13.4,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Weapon of Destiny",
+      "Firebrand"
+    ],
+    "items": [
+      "Gluttonous Greaves",
+      "Yun Tal Wildarrows",
+      "The Collector",
+      "Golden Spatula",
+      "Infinity Edge",
+      "Pickaxe"
+    ],
+    "skillshots_dodged_per_min": 1.42,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Ohwutahel#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 55
+  },
+  {
+    "match_id": "Ezreal|18/15/25|21.1|43|162",
+    "date": "2026-11-10",
+    "champion": "Ezreal",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 18,
+    "deaths": 15,
+    "assists": 25,
+    "damage_to_champions": 76190,
+    "damage_taken": 60426,
+    "game_minutes": 21.15,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "escAPADe",
+      "Trusty Weapon",
+      "Skilled Sniper"
+    ],
+    "items": [
+      "Muramana",
+      "Mortal Reminder",
+      "Iceborn Gauntlet",
+      "Gluttonous Greaves",
+      "Spear of Shojin",
+      "Golden Spatula"
+    ],
+    "skillshots_dodged_per_min": 7.66,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Ohwutahel#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 54
+  },
+  {
+    "match_id": "Varus|14/6/18|10.3|24|54",
+    "date": "2026-11-10",
+    "champion": "Varus",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 14,
+    "deaths": 6,
+    "assists": 18,
+    "damage_to_champions": 24213,
+    "damage_taken": 11373,
+    "game_minutes": 10.35,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Skilled Sniper",
+      "With Haste",
+      "Ultimate Recursion"
+    ],
+    "items": [
+      "Nashor's Tooth",
+      "Berserker's Greaves",
+      "Runaan's Hurricane",
+      "Guinsoo's Rageblade",
+      "Long Sword"
+    ],
+    "skillshots_dodged_per_min": 5.22,
+    "stack_size": null,
+    "teammates": [
+      "NightcrawlerJP#NA1",
+      "ROXXEMBOXXEM#NA1",
+      "pikabUwU#NA1",
+      "sudoDraegon#mkdir"
+    ],
+    "seq": 53
+  },
+  {
     "match_id": "JarvanIV|9/10/37|22.6|29|64",
     "date": "2026-11-08",
     "champion": "JarvanIV",

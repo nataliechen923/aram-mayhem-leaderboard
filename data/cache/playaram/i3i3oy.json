@@ -1,5 +1,200 @@
 [
   {
+    "match_id": "Vayne|12/10/19|27.1|155|46",
+    "date": "2026-11-11",
+    "champion": "Vayne",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 12,
+    "deaths": 10,
+    "assists": 19,
+    "damage_to_champions": 44297,
+    "damage_taken": 43110,
+    "game_minutes": 27.15,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Soul Siphon",
+      "Flow of Spirit",
+      "Transmute: Chaos",
+      "Scopier Weapons"
+    ],
+    "items": [
+      "The Collector",
+      "Kraken Slayer",
+      "Bloodthirster",
+      "Fiendhunter Bolts",
+      "Blade of The Ruined King",
+      "Guinsoo's Rageblade"
+    ],
+    "skillshots_dodged_per_min": 1.69,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "pikabUwU#NA1",
+      "Zemocean#707",
+      "NYSpyder#NA1"
+    ],
+    "seq": 57
+  },
+  {
+    "match_id": "Ashe|5/9/34|19.1|46|72",
+    "date": "2026-11-11",
+    "champion": "Ashe",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 5,
+    "deaths": 9,
+    "assists": 34,
+    "damage_to_champions": 35901,
+    "damage_taken": 22713,
+    "game_minutes": 19.15,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Spell Split",
+      "ADAPt",
+      "Arcane Axiom",
+      "Take'em Down Down Down",
+      "Witchful Thinking"
+    ],
+    "items": [
+      "Malignance",
+      "Nashor's Tooth",
+      "Imperial Mandate",
+      "Stormsurge",
+      "Rabadon's Deathcap",
+      "Blighting Jewel"
+    ],
+    "skillshots_dodged_per_min": 3.76,
+    "stack_size": null,
+    "teammates": [
+      "Koba#1019",
+      "CreamiNataella#NA1",
+      "pikabUwU#NA1",
+      "S0ul0nF1re#m30w"
+    ],
+    "seq": 56
+  },
+  {
+    "match_id": "Malzahar|8/9/22|13.4|70|55",
+    "date": "2026-11-10",
+    "champion": "Malzahar",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 8,
+    "deaths": 9,
+    "assists": 22,
+    "damage_to_champions": 24596,
+    "damage_taken": 18813,
+    "game_minutes": 13.4,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Infinite Recursion",
+      "Minionmancer",
+      "BEES!!!"
+    ],
+    "items": [
+      "Blackfire Torch",
+      "Sorcerer's Shoes",
+      "Liandry's Torment",
+      "Rabadon's Deathcap",
+      "Haunting Guise"
+    ],
+    "skillshots_dodged_per_min": 4.1,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1"
+    ],
+    "seq": 55
+  },
+  {
+    "match_id": "Akshan|15/15/25|21.1|137|187",
+    "date": "2026-11-10",
+    "champion": "Akshan",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 15,
+    "deaths": 15,
+    "assists": 25,
+    "damage_to_champions": 52182,
+    "damage_taken": 62055,
+    "game_minutes": 21.15,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Bouncing Bees",
+      "Typhoon",
+      "escAPADe",
+      "Still Here"
+    ],
+    "items": [
+      "The Collector",
+      "Kraken Slayer",
+      "Runaan's Hurricane",
+      "Mortal Reminder",
+      "Blade of The Ruined King",
+      "Bloodthirster"
+    ],
+    "skillshots_dodged_per_min": 8.84,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1"
+    ],
+    "seq": 54
+  },
+  {
+    "match_id": "Kassadin|11/18/30|26.5|64|216",
+    "date": "2026-11-10",
+    "champion": "Kassadin",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 11,
+    "deaths": 18,
+    "assists": 30,
+    "damage_to_champions": 82666,
+    "damage_taken": 106202,
+    "game_minutes": 26.5,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Dashing",
+      "Wooglet's Witchcap",
+      "Warlock Juicebox",
+      "BEES!!!",
+      "Ultimate Recursion"
+    ],
+    "items": [
+      "Seraph's Embrace",
+      "Rod of Ages",
+      "Wooglet's Witchcap",
+      "Malignance",
+      "Void Staff",
+      "Shadowflame"
+    ],
+    "skillshots_dodged_per_min": 8.15,
+    "stack_size": null,
+    "teammates": [
+      "9595hapa#lol",
+      "IU simp#lllll",
+      "CreamiNataella#NA1",
+      "Ohwutahel#NA1"
+    ],
+    "seq": 53
+  },
+  {
     "match_id": "Aphelios|21/10/17|22.6|105|34",
     "date": "2026-11-08",
     "champion": "Aphelios",

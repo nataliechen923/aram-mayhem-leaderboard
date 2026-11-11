@@ -2,20 +2,20 @@
   "highlights": {
     "top_rated": {
       "player": "CreamiNataella",
-      "score": 50.0,
-      "mmr_style": 1500
+      "score": 47.6,
+      "mmr_style": 1466
     },
     "highest_damage_per_min": {
       "player": "Vincent Chan",
-      "value": 2690
+      "value": 2698
     },
     "best_kda": {
       "player": "CreamiNataella",
-      "value": 4.6
+      "value": 4.5
     },
     "most_skillshots_dodged_per_min": {
       "player": "Ohwutahel",
-      "value": 4.7
+      "value": 4.76
     }
   },
   "history": [
@@ -80,6 +80,31 @@
         "Ohwutahel": 1803,
         "PikabUwU": 1509
       }
+    },
+    {
+      "date": "2026-11-11",
+      "window_games": 50,
+      "scores": {
+        "I3i3oy": 47.3,
+        "Vincent Chan": 47.3,
+        "CreamiNataella": 47.6,
+        "Ohwutahel": 42.3,
+        "PikabUwU": 43.3
+      },
+      "mmr_style": {
+        "I3i3oy": 1462,
+        "Vincent Chan": 1462,
+        "CreamiNataella": 1466,
+        "Ohwutahel": 1392,
+        "PikabUwU": 1406
+      },
+      "damage_per_min": {
+        "I3i3oy": 2240,
+        "Vincent Chan": 2698,
+        "CreamiNataella": 1676,
+        "Ohwutahel": 1616,
+        "PikabUwU": 1488
+      }
     }
   ],
   "how_rating_works": {
@@ -102,22 +127,22 @@
     "seed_note": "",
     "title": "ARAM Mayhem \u2014 Team Leaderboard",
     "update_method": "GitHub Actions, once a day, fetching each player's PlayARAM profile (no Riot API key). Loading / refreshing this page makes zero calls to Riot or PlayARAM.",
-    "updated_at": "2026-11-10T09:09:19.409027-06:00",
-    "updated_at_label": "2026-11-10 09:09 AM CST",
+    "updated_at": "2026-11-11T00:07:30.391059-06:00",
+    "updated_at_label": "2026-11-11 12:07 AM CST",
     "window_games": 50,
     "window_note": "Each player is scored on their own last 50 ARAM Mayhem games. Remakes under 5 minutes are excluded. PlayARAM shows only the latest 20 games per fetch, so the updater keeps a cache and the window fills to 50 over the first few daily runs.",
     "stack_note": "Stack splits below are from the Nov 8 6-player snapshot (600 player-games). They recompute for the 5-player group on the first daily run.",
     "automation": {
-      "last_attempt": "2026-11-10T09:09:19.409011-06:00",
-      "last_attempt_label": "2026-11-10 09:09 AM CST",
-      "last_source": "PlayARAM",
+      "last_attempt": "2026-11-11T00:07:30.391040-06:00",
+      "last_attempt_label": "2026-11-11 12:07 AM CST",
+      "last_source": "browser extension",
       "last_games_found": 250,
-      "last_error": "I3i3oy: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Vincent Chan: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; CreamiNataella: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Ohwutahel: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; PikabUwU: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.",
+      "last_error": null,
       "next_update": "Daily at 12:00 AM CST (06:00 UTC), retry 12:30 AM CST",
-      "needs_attention": true
+      "needs_attention": false
     },
-    "last_extension_sync": "2026-11-09T19:05:22.465560-06:00",
-    "last_extension_sync_label": "2026-11-09 07:05 PM CST"
+    "last_extension_sync": "2026-11-11T00:07:30.353376-06:00",
+    "last_extension_sync_label": "2026-11-11 12:07 AM CST"
   },
   "playbook": [
     "Pocket picks first. Jinx for I3i3oy (71.9, +15.8, 4 games) and Varus (68.9, +12.8, 6 games), Senna for Vincent Chan (70.1, +13.3, 5 games), Nidalee for CreamiNataella (72.5, +16.9, 3 games) and Sona (67.9, +12.3, 3 games), Aurelion Sol for pikabUwU (61.9, +14.3, 3 games) and Hwei (56.5, +8.9, 8 games), Zyra for Ohwutahel (68.0, +20.0, 3 games), Trundle (64.5, +16.5, 6 games) and Shen (64.2, +16.2, 6 games).",
@@ -128,8 +153,148 @@
   ],
   "players": [
     {
-      "damage_per_min": 2248,
+      "damage_per_min": 2240,
       "games": [
+        {
+          "match_id": "Vayne|12/10/19|27.1|155|46",
+          "date": "2026-11-11",
+          "champion": "Vayne",
+          "win": true,
+          "kills": 12,
+          "deaths": 10,
+          "assists": 19,
+          "damage_to_champions": 44297,
+          "damage_taken": 43110,
+          "augments": [
+            "Soul Siphon",
+            "Flow of Spirit",
+            "Transmute: Chaos",
+            "Scopier Weapons"
+          ],
+          "game_minutes": 27.1,
+          "grade": 38.0,
+          "damage_dealt_share_pct": null,
+          "damage_taken_share_pct": null,
+          "kill_participation_pct": null,
+          "stack_size": 3,
+          "teammates": [
+            "CreamiNataella",
+            "PikabUwU"
+          ]
+        },
+        {
+          "match_id": "Ashe|5/9/34|19.1|46|72",
+          "date": "2026-11-11",
+          "champion": "Ashe",
+          "win": false,
+          "kills": 5,
+          "deaths": 9,
+          "assists": 34,
+          "damage_to_champions": 35901,
+          "damage_taken": 22713,
+          "augments": [
+            "Spell Split",
+            "ADAPt",
+            "Arcane Axiom",
+            "Take'em Down Down Down",
+            "Witchful Thinking"
+          ],
+          "game_minutes": 19.1,
+          "grade": 44.6,
+          "damage_dealt_share_pct": null,
+          "damage_taken_share_pct": null,
+          "kill_participation_pct": null,
+          "stack_size": 3,
+          "teammates": [
+            "CreamiNataella",
+            "PikabUwU"
+          ]
+        },
+        {
+          "match_id": "Malzahar|8/9/22|13.4|70|55",
+          "date": "2026-11-10",
+          "champion": "Malzahar",
+          "win": true,
+          "kills": 8,
+          "deaths": 9,
+          "assists": 22,
+          "damage_to_champions": 24596,
+          "damage_taken": 18813,
+          "augments": [
+            "Infinite Recursion",
+            "Minionmancer",
+            "BEES!!!"
+          ],
+          "game_minutes": 13.4,
+          "grade": 55.7,
+          "damage_dealt_share_pct": 24.1,
+          "damage_taken_share_pct": 14.3,
+          "kill_participation_pct": 76.9,
+          "stack_size": 5,
+          "teammates": [
+            "CreamiNataella",
+            "Ohwutahel",
+            "PikabUwU",
+            "Vincent Chan"
+          ]
+        },
+        {
+          "match_id": "Akshan|15/15/25|21.1|137|187",
+          "date": "2026-11-10",
+          "champion": "Akshan",
+          "win": false,
+          "kills": 15,
+          "deaths": 15,
+          "assists": 25,
+          "damage_to_champions": 52182,
+          "damage_taken": 62055,
+          "augments": [
+            "Bouncing Bees",
+            "Typhoon",
+            "escAPADe",
+            "Still Here"
+          ],
+          "game_minutes": 21.1,
+          "grade": 49.7,
+          "damage_dealt_share_pct": 24.7,
+          "damage_taken_share_pct": 19.6,
+          "kill_participation_pct": 74.1,
+          "stack_size": 5,
+          "teammates": [
+            "CreamiNataella",
+            "Ohwutahel",
+            "PikabUwU",
+            "Vincent Chan"
+          ]
+        },
+        {
+          "match_id": "Kassadin|11/18/30|26.5|64|216",
+          "date": "2026-11-10",
+          "champion": "Kassadin",
+          "win": true,
+          "kills": 11,
+          "deaths": 18,
+          "assists": 30,
+          "damage_to_champions": 82666,
+          "damage_taken": 106202,
+          "augments": [
+            "Dashing",
+            "Wooglet's Witchcap",
+            "Warlock Juicebox",
+            "BEES!!!",
+            "Ultimate Recursion"
+          ],
+          "game_minutes": 26.5,
+          "grade": 56.8,
+          "damage_dealt_share_pct": null,
+          "damage_taken_share_pct": null,
+          "kill_participation_pct": null,
+          "stack_size": 3,
+          "teammates": [
+            "CreamiNataella",
+            "Ohwutahel"
+          ]
+        },
         {
           "match_id": "Aphelios|21/10/17|22.6|105|34",
           "date": "2026-11-08",
@@ -147,7 +312,7 @@
             "Scopiest Weapons"
           ],
           "game_minutes": 22.6,
-          "grade": 53.8,
+          "grade": 51.9,
           "damage_dealt_share_pct": 27.6,
           "damage_taken_share_pct": 19.0,
           "kill_participation_pct": 66.7,
@@ -177,7 +342,7 @@
             "BEES!!!"
           ],
           "game_minutes": 20.2,
-          "grade": 69.2,
+          "grade": 68.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -207,7 +372,7 @@
             "Eureka"
           ],
           "game_minutes": 19.5,
-          "grade": 64.9,
+          "grade": 62.4,
           "damage_dealt_share_pct": 31.1,
           "damage_taken_share_pct": 32.0,
           "kill_participation_pct": 77.8,
@@ -237,7 +402,7 @@
             "Juiced"
           ],
           "game_minutes": 19.6,
-          "grade": 45.6,
+          "grade": 42.4,
           "damage_dealt_share_pct": 20.9,
           "damage_taken_share_pct": 10.5,
           "kill_participation_pct": 65.5,
@@ -266,7 +431,7 @@
             "Shrink Engine"
           ],
           "game_minutes": 12.3,
-          "grade": 41.9,
+          "grade": 41.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -294,7 +459,7 @@
             "Sap Magic"
           ],
           "game_minutes": 15.4,
-          "grade": 33.6,
+          "grade": 31.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -322,7 +487,7 @@
             "Still Here"
           ],
           "game_minutes": 17.8,
-          "grade": 46.4,
+          "grade": 43.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -350,7 +515,7 @@
             "Transmute: Prismatic"
           ],
           "game_minutes": 19.8,
-          "grade": 58.7,
+          "grade": 58.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 73.3,
@@ -379,7 +544,7 @@
             "Flow of Spirit"
           ],
           "game_minutes": 15.1,
-          "grade": 47.6,
+          "grade": 46.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 73.2,
@@ -409,7 +574,7 @@
             "Scopier Weapons"
           ],
           "game_minutes": 20.6,
-          "grade": 70.1,
+          "grade": 70.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -434,7 +599,7 @@
             "Flow of Spirit"
           ],
           "game_minutes": 26.9,
-          "grade": 35.7,
+          "grade": 38.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -462,7 +627,7 @@
             "The Boom and the Bass"
           ],
           "game_minutes": 16.9,
-          "grade": 53.2,
+          "grade": 47.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -518,7 +683,7 @@
             "Scopier Weapons"
           ],
           "game_minutes": 24.1,
-          "grade": 39.7,
+          "grade": 37.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 78.0,
@@ -548,7 +713,7 @@
             "Zealot"
           ],
           "game_minutes": 18.5,
-          "grade": 58.8,
+          "grade": 57.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 71.2,
@@ -577,7 +742,7 @@
             "Deft"
           ],
           "game_minutes": 19.8,
-          "grade": 51.0,
+          "grade": 48.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 66.7,
@@ -607,7 +772,7 @@
             "Scopier Weapons"
           ],
           "game_minutes": 17.4,
-          "grade": 47.7,
+          "grade": 47.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 86.8,
@@ -637,7 +802,7 @@
             "Erosion"
           ],
           "game_minutes": 25.3,
-          "grade": 41.2,
+          "grade": 38.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 58.1,
@@ -666,7 +831,7 @@
             "Critical Rhythm"
           ],
           "game_minutes": 13.3,
-          "grade": 74.2,
+          "grade": 72.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 86.0,
@@ -695,7 +860,7 @@
             "Lil' Extra Help"
           ],
           "game_minutes": 20.6,
-          "grade": 74.9,
+          "grade": 73.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -722,7 +887,7 @@
             "Critical Rhythm"
           ],
           "game_minutes": 24.2,
-          "grade": 54.9,
+          "grade": 50.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -749,7 +914,7 @@
             "Scopiest Weapons"
           ],
           "game_minutes": 22.6,
-          "grade": 57.9,
+          "grade": 57.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 62.5,
@@ -778,7 +943,7 @@
             "Typhoon"
           ],
           "game_minutes": 12.8,
-          "grade": 56.2,
+          "grade": 52.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -807,7 +972,7 @@
             "Protein Shake"
           ],
           "game_minutes": 19.1,
-          "grade": 47.1,
+          "grade": 52.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 93.9,
@@ -836,7 +1001,7 @@
             "Armored Impact"
           ],
           "game_minutes": 17.8,
-          "grade": 59.9,
+          "grade": 60.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 78.4,
@@ -865,7 +1030,7 @@
             "Scopiest Weapons"
           ],
           "game_minutes": 23.8,
-          "grade": 53.0,
+          "grade": 51.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 69.9,
@@ -895,7 +1060,7 @@
             "Deft"
           ],
           "game_minutes": 21.2,
-          "grade": 38.6,
+          "grade": 37.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 72.3,
@@ -924,7 +1089,7 @@
             "From Downtown"
           ],
           "game_minutes": 19.2,
-          "grade": 26.1,
+          "grade": 29.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -951,7 +1116,7 @@
             "No Mana, No Problem"
           ],
           "game_minutes": 17.0,
-          "grade": 68.7,
+          "grade": 65.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -978,7 +1143,7 @@
             "Transmute: Gold"
           ],
           "game_minutes": 23.1,
-          "grade": 49.0,
+          "grade": 45.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1005,7 +1170,7 @@
             "Spell Split"
           ],
           "game_minutes": 18.2,
-          "grade": 36.5,
+          "grade": 36.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1032,7 +1197,7 @@
             "Escape Plan"
           ],
           "game_minutes": 11.9,
-          "grade": 50.2,
+          "grade": 44.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1056,7 +1221,7 @@
             "Soul Siphon"
           ],
           "game_minutes": 18.6,
-          "grade": 48.7,
+          "grade": 46.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1081,7 +1246,7 @@
             "Typhoon"
           ],
           "game_minutes": 19.6,
-          "grade": 49.3,
+          "grade": 47.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1109,7 +1274,7 @@
             "Still Here"
           ],
           "game_minutes": 14.7,
-          "grade": 31.3,
+          "grade": 37.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1137,7 +1302,7 @@
             "Hand of Baron"
           ],
           "game_minutes": 22.7,
-          "grade": 36.0,
+          "grade": 32.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1165,7 +1330,7 @@
             "Heavy Hitter"
           ],
           "game_minutes": 17.0,
-          "grade": 40.3,
+          "grade": 40.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1194,7 +1359,7 @@
             "Lil' Extra Help"
           ],
           "game_minutes": 13.8,
-          "grade": 44.1,
+          "grade": 42.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1222,7 +1387,7 @@
             "Take'em Down Down Down"
           ],
           "game_minutes": 19.3,
-          "grade": 50.8,
+          "grade": 51.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1250,7 +1415,7 @@
             "Typhoon"
           ],
           "game_minutes": 17.3,
-          "grade": 57.7,
+          "grade": 52.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1277,7 +1442,7 @@
             "Eureka"
           ],
           "game_minutes": 17.0,
-          "grade": 66.5,
+          "grade": 62.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1304,7 +1469,7 @@
             "Dual Wield"
           ],
           "game_minutes": 18.2,
-          "grade": 51.3,
+          "grade": 47.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1330,7 +1495,7 @@
             "Marksmage"
           ],
           "game_minutes": 16.6,
-          "grade": 53.5,
+          "grade": 50.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1357,7 +1522,7 @@
             "Goredrink"
           ],
           "game_minutes": 17.3,
-          "grade": 52.9,
+          "grade": 49.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -1384,173 +1549,34 @@
             "Archmage"
           ],
           "game_minutes": 28.5,
-          "grade": 42.6,
+          "grade": 40.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
           "stack_size": 1,
           "teammates": []
-        },
-        {
-          "match_id": "Corki|20/12/22|23.0|140|50",
-          "date": "2026-11-05",
-          "champion": "Corki",
-          "win": true,
-          "kills": 20,
-          "deaths": 12,
-          "assists": 22,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Typhoon",
-            "Upgrade Sheen",
-            "Soul Siphon",
-            "The Boom and the Bass"
-          ],
-          "game_minutes": 23.0,
-          "grade": 46.1,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
-        },
-        {
-          "match_id": "Quinn|22/4/32|12.8|79|3",
-          "date": "2026-11-05",
-          "champion": "Quinn",
-          "win": true,
-          "kills": 22,
-          "deaths": 4,
-          "assists": 32,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Ultra Hydra",
-            "Double Tap",
-            "Upgrade Collector"
-          ],
-          "game_minutes": 12.8,
-          "grade": 59.4,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
-        },
-        {
-          "match_id": "Quinn|24/11/10|20.4|125|17",
-          "date": "2026-11-05",
-          "champion": "Quinn",
-          "win": true,
-          "kills": 24,
-          "deaths": 11,
-          "assists": 10,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "HEAVY",
-            "Soul Siphon",
-            "Firebrand",
-            "Totentanz",
-            "Thread the Needle"
-          ],
-          "game_minutes": 20.4,
-          "grade": 42.7,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
-        },
-        {
-          "match_id": "Senna|12/9/24|20.0|72|47",
-          "date": "2026-11-05",
-          "champion": "Senna",
-          "win": true,
-          "kills": 12,
-          "deaths": 9,
-          "assists": 24,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Dual Wield",
-            "Weapon of Destiny",
-            "Upgrade Sword of Blossoming Dawn",
-            "Soul Siphon"
-          ],
-          "game_minutes": 20.0,
-          "grade": 55.5,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
-        },
-        {
-          "match_id": "Skarner|8/8/31|16.1|35|59",
-          "date": "2026-11-05",
-          "champion": "Skarner",
-          "win": true,
-          "kills": 8,
-          "deaths": 8,
-          "assists": 31,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Porcupine",
-            "The Boom and the Bass",
-            "Titan's Resolve",
-            "Armored Impact"
-          ],
-          "game_minutes": 16.1,
-          "grade": 78.0,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "Ohwutahel"
-          ]
         }
       ],
-      "kda": 3.9,
-      "losses": 25,
-      "mmr_style": 1498,
+      "kda": 3.72,
+      "losses": 27,
+      "mmr_style": 1462,
       "name": "I3i3oy",
       "region": "na1",
       "riot_id": "",
-      "score": 49.9,
-      "skillshots_dodged_per_min": 2.85,
+      "score": 47.3,
+      "skillshots_dodged_per_min": 3.19,
       "subscores": {
-        "output": 59.2,
-        "damage_taken": 60.5,
-        "kda_efficiency": 52.1,
-        "teamplay": 49.5,
-        "death_quality": 48.8,
-        "augments": 41.0,
-        "mechanics": 2.8
+        "output": 58.4,
+        "damage_taken": 59.3,
+        "kda_efficiency": 51.1,
+        "teamplay": 50.8,
+        "death_quality": 47.9,
+        "augments": 30.9,
+        "mechanics": 3.2
       },
-      "win_rate": 50.0,
-      "wins": 25,
-      "why_rank": "Ranked 2 of 5 at 49.9 (MMR-style 1498, 25-25, 50.0% win rate). Strongest vs the group: damage_taken (60.5 vs group avg 49.6, +10.9). Weakest vs the group: augments (41.0 vs group avg 42.6, -1.6). By role: Damage 50.7 (42 games, -0.2 vs own avg); Frontline 54.5 (6 games, +3.7 vs own avg); Support 43.7 (2 games, -7.2 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
+      "win_rate": 46.0,
+      "wins": 23,
+      "why_rank": "Ranked 2 of 5 at 47.3 (MMR-style 1462, 23-27, 46.0% win rate). Strongest vs the group: output (58.4 vs group avg 48.6, +9.8). Weakest vs the group: augments (30.9 vs group avg 34.1, -3.2). By role: Damage 48.7 (43 games, -0.0 vs own avg); Frontline 49.9 (5 games, +1.2 vs own avg); Support 46.7 (2 games, -2.1 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [
         "Highest damage/min: 2,491",
         "21.9% of group damage",
@@ -1560,23 +1586,35 @@
       ],
       "role_split": {
         "Damage": {
-          "games": 42,
-          "mean_grade": 50.7,
-          "delta_vs_overall": -0.2
+          "games": 43,
+          "mean_grade": 48.7,
+          "delta_vs_overall": -0.0
         },
         "Frontline": {
-          "games": 6,
-          "mean_grade": 54.5,
-          "delta_vs_overall": 3.7
+          "games": 5,
+          "mean_grade": 49.9,
+          "delta_vs_overall": 1.2
         },
         "Support": {
           "games": 2,
-          "mean_grade": 43.7,
-          "delta_vs_overall": -7.2
+          "mean_grade": 46.7,
+          "delta_vs_overall": -2.1
         }
       },
       "champion_focus": {
-        "take_when_offered": [],
+        "take_when_offered": [
+          {
+            "champion": "Kassadin",
+            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Kassadin.png",
+            "games": 3,
+            "wins": 1,
+            "losses": 2,
+            "win_rate": 33.3,
+            "mean_grade": 55.6,
+            "delta_vs_overall": 6.8,
+            "why": "Losing on Kassadin \u2014 1-2 \u2014 but the grades say the play is there."
+          }
+        ],
         "pass_or_swap": [
           {
             "champion": "Sivir",
@@ -1585,8 +1623,8 @@
             "wins": 0,
             "losses": 4,
             "win_rate": 0.0,
-            "mean_grade": 45.3,
-            "delta_vs_overall": -5.6,
+            "mean_grade": 44.0,
+            "delta_vs_overall": -4.7,
             "why": "Winless on Sivir \u2014 0-4. Maybe retire this one for now."
           }
         ]
@@ -1596,59 +1634,48 @@
         "wins": 8,
         "losses": 12,
         "win_rate": 40.0,
-        "mean_grade": 52.0,
-        "score_20": 48.6,
+        "mean_grade": 48.7,
+        "score_20": 46.2,
         "subscores": {
-          "output": 57.8,
-          "damage_taken": 55.6,
-          "kda_efficiency": 50.2,
-          "teamplay": 51.2,
-          "death_quality": 52.3,
-          "augments": 37.6,
-          "mechanics": 3.5
+          "output": 51.8,
+          "damage_taken": 50.8,
+          "kda_efficiency": 48.3,
+          "teamplay": 50.2,
+          "death_quality": 50.0,
+          "augments": 32.1,
+          "mechanics": 4.1
         },
         "pros": [
-          "Output is your strongest area in the last 20 (57.8) \u2014 keep it up.",
-          "Damage taken is your strongest area in the last 20 (55.6) \u2014 keep it up."
+          "Output is your strongest area in the last 20 (51.8) \u2014 keep it up.",
+          "Damage taken is your strongest area in the last 20 (50.8) \u2014 keep it up."
         ],
         "cons": [
-          "KDA efficiency is your weakest area in the last 20 (50.2) \u2014 the thing to work on.",
-          "Augments is your weakest area in the last 20 (37.6) \u2014 the thing to work on."
+          "KDA efficiency is your weakest area in the last 20 (48.3) \u2014 the thing to work on.",
+          "Augments is your weakest area in the last 20 (32.1) \u2014 the thing to work on."
         ],
         "tips": [
-          "Keep up Output (57.8 in the last 20): keep finding damage \u2014 your positioning is paying off.",
-          "Keep up Damage taken (55.6 in the last 20): keep stepping forward and soaking for the team.",
-          "Work on KDA efficiency (50.2 in the last 20): trade less \u2014 fewer deaths for the kills you get.",
-          "Work on Augments (37.6 in the last 20): rethink augment picks \u2014 the ones taken lately are underperforming."
+          "Keep up Output (51.8 in the last 20): keep finding damage \u2014 your positioning is paying off.",
+          "Keep up Damage taken (50.8 in the last 20): keep stepping forward and soaking for the team.",
+          "Work on KDA efficiency (48.3 in the last 20): trade less \u2014 fewer deaths for the kills you get.",
+          "Work on Augments (32.1 in the last 20): rethink augment picks \u2014 the ones taken lately are underperforming."
         ],
         "stacked_20": {
           "games": 19,
           "wins": 7,
           "losses": 12,
           "win_rate": 36.8,
-          "mean_grade": 51.0
+          "mean_grade": 47.5
         },
         "solo_20": {
           "games": 1,
           "wins": 1,
           "losses": 0,
           "win_rate": 100.0,
-          "mean_grade": 70.1
+          "mean_grade": 70.8
         },
-        "team_line": "Playing together is dragging you down lately: with 2+ of the group in the last 20 you went 7-12 (36.8%, grade 51.0) vs solo 1-0 (100.0%, grade 70.1). Check role balance when you stack \u2014 someone may be off-role."
+        "team_line": "Playing together is dragging you down lately: with 2+ of the group in the last 20 you went 7-12 (36.8%, grade 47.5) vs solo 1-0 (100.0%, grade 70.8). Check role balance when you stack \u2014 someone may be off-role."
       },
       "champion_top3": [
-        {
-          "champion": "Skarner",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Skarner.png",
-          "games": 2,
-          "wins": 2,
-          "losses": 0,
-          "win_rate": 100.0,
-          "mean_grade": 69.0,
-          "delta_vs_overall": 18.1,
-          "why": "Undefeated on Skarner \u2014 2-0, and it shows."
-        },
         {
           "champion": "Twitch",
           "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Twitch.png",
@@ -1656,20 +1683,31 @@
           "wins": 1,
           "losses": 1,
           "win_rate": 50.0,
-          "mean_grade": 64.9,
-          "delta_vs_overall": 14.0,
+          "mean_grade": 62.3,
+          "delta_vs_overall": 13.6,
           "why": "Even on Twitch \u2014 1-1 \u2014 but the grades say the play is there."
         },
         {
           "champion": "Kassadin",
           "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Kassadin.png",
-          "games": 2,
-          "wins": 0,
+          "games": 3,
+          "wins": 1,
           "losses": 2,
-          "win_rate": 0.0,
-          "mean_grade": 59.1,
-          "delta_vs_overall": 8.2,
-          "why": "Losing on Kassadin \u2014 0-2 \u2014 but the grades say the play is there."
+          "win_rate": 33.3,
+          "mean_grade": 55.6,
+          "delta_vs_overall": 6.8,
+          "why": "Losing on Kassadin \u2014 1-2 \u2014 but the grades say the play is there."
+        },
+        {
+          "champion": "Jax",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Jax.png",
+          "games": 3,
+          "wins": 1,
+          "losses": 2,
+          "win_rate": 33.3,
+          "mean_grade": 51.6,
+          "delta_vs_overall": 2.9,
+          "why": "Losing on Jax \u2014 1-2 \u2014 but the grades say the play is there."
         }
       ],
       "champion_worst3": [
@@ -1681,7 +1719,7 @@
           "losses": 1,
           "win_rate": 50.0,
           "mean_grade": 39.5,
-          "delta_vs_overall": -11.4,
+          "delta_vs_overall": -9.2,
           "why": "Even on MissFortune \u2014 1-1 \u2014 but the grades aren't buying it."
         },
         {
@@ -1691,285 +1729,365 @@
           "wins": 0,
           "losses": 4,
           "win_rate": 0.0,
-          "mean_grade": 45.3,
-          "delta_vs_overall": -5.6,
+          "mean_grade": 44.0,
+          "delta_vs_overall": -4.7,
           "why": "Winless on Sivir \u2014 0-4. Maybe retire this one for now."
         },
         {
           "champion": "Quinn",
           "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Quinn.png",
-          "games": 4,
-          "wins": 3,
+          "games": 2,
+          "wins": 1,
           "losses": 1,
-          "win_rate": 75.0,
-          "mean_grade": 47.9,
-          "delta_vs_overall": -3.0,
-          "why": "Winning on Quinn \u2014 3-1 \u2014 but the grades aren't buying it."
+          "win_rate": 50.0,
+          "mean_grade": 44.5,
+          "delta_vs_overall": -4.3,
+          "why": "Even on Quinn \u2014 1-1 \u2014 but the grades aren't buying it."
         }
       ],
       "damage_taken_per_min": 2227,
-      "damage_dealt_share_pct": 26.5,
-      "damage_taken_share_pct": 20.5,
-      "kill_participation_pct": 73.8,
-      "deaths_per_game": 9.8,
+      "damage_dealt_share_pct": 25.7,
+      "damage_taken_share_pct": 19.1,
+      "kill_participation_pct": 74.0,
+      "deaths_per_game": 10.1,
       "title": "The Glue",
-      "title_summary": "In on 73.8% of team kills \u2014 they're always in the fight.",
+      "title_summary": "In on 74.0% of team kills \u2014 they're always in the fight.",
       "kda_history": [
         {
           "game": 1,
-          "champion": "Skarner",
-          "kda": 4.88
-        },
-        {
-          "game": 2,
-          "champion": "Senna",
-          "kda": 4.0
-        },
-        {
-          "game": 3,
-          "champion": "Quinn",
-          "kda": 3.09
-        },
-        {
-          "game": 4,
-          "champion": "Quinn",
-          "kda": 13.5
-        },
-        {
-          "game": 5,
-          "champion": "Corki",
-          "kda": 3.5
-        },
-        {
-          "game": 6,
           "champion": "Varus",
           "kda": 5.57
         },
         {
-          "game": 7,
+          "game": 2,
           "champion": "MissFortune",
           "kda": 5.38
         },
         {
-          "game": 8,
+          "game": 3,
           "champion": "Ahri",
           "kda": 4.44
         },
         {
-          "game": 9,
+          "game": 4,
           "champion": "Caitlyn",
           "kda": 2.56
         },
         {
-          "game": 10,
+          "game": 5,
           "champion": "Morgana",
           "kda": 14.25
         },
         {
-          "game": 11,
+          "game": 6,
           "champion": "Varus",
           "kda": 5.5
         },
         {
-          "game": 12,
+          "game": 7,
           "champion": "Jax",
           "kda": 3.64
         },
         {
-          "game": 13,
+          "game": 8,
           "champion": "Sivir",
           "kda": 3.22
         },
         {
-          "game": 14,
+          "game": 9,
           "champion": "Soraka",
           "kda": 4.75
         },
         {
-          "game": 15,
+          "game": 10,
           "champion": "Veigar",
           "kda": 2.92
         },
         {
-          "game": 16,
+          "game": 11,
           "champion": "KogMaw",
           "kda": 2.12
         },
         {
-          "game": 17,
+          "game": 12,
           "champion": "Corki",
           "kda": 3.33
         },
         {
-          "game": 18,
+          "game": 13,
           "champion": "Jax",
           "kda": 2.21
         },
         {
-          "game": 19,
+          "game": 14,
           "champion": "Malphite",
           "kda": 3.33
         },
         {
-          "game": 20,
+          "game": 15,
           "champion": "Morgana",
           "kda": 4.7
         },
         {
-          "game": 21,
+          "game": 16,
           "champion": "Neeko",
           "kda": 3.08
         },
         {
-          "game": 22,
+          "game": 17,
           "champion": "Mel",
           "kda": 7.17
         },
         {
-          "game": 23,
+          "game": 18,
           "champion": "MissFortune",
           "kda": 2.38
         },
         {
-          "game": 24,
+          "game": 19,
           "champion": "Sivir",
           "kda": 3.09
         },
         {
-          "game": 25,
+          "game": 20,
           "champion": "Corki",
           "kda": 5.27
         },
         {
-          "game": 26,
+          "game": 21,
           "champion": "Skarner",
           "kda": 5.71
         },
         {
-          "game": 27,
+          "game": 22,
           "champion": "Sona",
           "kda": 4.18
         },
         {
-          "game": 28,
+          "game": 23,
           "champion": "Corki",
           "kda": 6.8
         },
         {
-          "game": 29,
+          "game": 24,
           "champion": "Jax",
           "kda": 2.19
         },
         {
-          "game": 30,
+          "game": 25,
           "champion": "Twitch",
           "kda": 4.0
         },
         {
-          "game": 31,
+          "game": 26,
           "champion": "Twitch",
           "kda": 7.43
         },
         {
-          "game": 32,
+          "game": 27,
           "champion": "Jinx",
           "kda": 12.33
         },
         {
-          "game": 33,
+          "game": 28,
           "champion": "Malzahar",
           "kda": 3.0
         },
         {
-          "game": 34,
+          "game": 29,
           "champion": "Quinn",
           "kda": 2.75
         },
         {
-          "game": 35,
+          "game": 30,
           "champion": "Tryndamere",
           "kda": 2.5
         },
         {
-          "game": 36,
+          "game": 31,
           "champion": "Kaisa",
           "kda": 5.29
         },
         {
-          "game": 37,
+          "game": 32,
           "champion": "Sivir",
           "kda": 3.83
         },
         {
-          "game": 38,
+          "game": 33,
           "champion": "Lucian",
           "kda": 2.75
         },
         {
-          "game": 39,
+          "game": 34,
           "champion": "Kassadin",
           "kda": 2.71
         },
         {
-          "game": 40,
+          "game": 35,
           "champion": "Trundle",
           "kda": 1.75
         },
         {
-          "game": 41,
+          "game": 36,
           "champion": "Kindred",
           "kda": 4.83
         },
         {
-          "game": 42,
+          "game": 37,
           "champion": "Kayle",
           "kda": 5.86
         },
         {
-          "game": 43,
+          "game": 38,
           "champion": "Sivir",
           "kda": 4.71
         },
         {
-          "game": 44,
+          "game": 39,
           "champion": "Caitlyn",
           "kda": 2.77
         },
         {
-          "game": 45,
+          "game": 40,
           "champion": "Nautilus",
           "kda": 3.38
         },
         {
-          "game": 46,
+          "game": 41,
           "champion": "Quinn",
           "kda": 4.12
         },
         {
-          "game": 47,
+          "game": 42,
           "champion": "Varus",
           "kda": 3.45
         },
         {
-          "game": 48,
+          "game": 43,
           "champion": "Kassadin",
           "kda": 3.0
         },
         {
-          "game": 49,
+          "game": 44,
           "champion": "DrMundo",
           "kda": 3.18
         },
         {
-          "game": 50,
+          "game": 45,
           "champion": "Aphelios",
           "kda": 3.8
+        },
+        {
+          "game": 46,
+          "champion": "Kassadin",
+          "kda": 2.28
+        },
+        {
+          "game": 47,
+          "champion": "Akshan",
+          "kda": 2.67
+        },
+        {
+          "game": 48,
+          "champion": "Malzahar",
+          "kda": 3.33
+        },
+        {
+          "game": 49,
+          "champion": "Ashe",
+          "kda": 4.33
+        },
+        {
+          "game": 50,
+          "champion": "Vayne",
+          "kda": 3.1
         }
       ]
     },
     {
-      "damage_per_min": 2690,
+      "damage_per_min": 2698,
       "games": [
+        {
+          "match_id": "Sivir|17/8/20|13.4|85|19",
+          "date": "2026-11-10",
+          "champion": "Sivir",
+          "win": true,
+          "kills": 17,
+          "deaths": 8,
+          "assists": 20,
+          "damage_to_champions": 31926,
+          "damage_taken": 21759,
+          "augments": [
+            "Weapon of Destiny",
+            "Firebrand"
+          ],
+          "game_minutes": 13.4,
+          "grade": 66.4,
+          "damage_dealt_share_pct": 31.3,
+          "damage_taken_share_pct": 16.6,
+          "kill_participation_pct": 94.9,
+          "stack_size": 5,
+          "teammates": [
+            "CreamiNataella",
+            "I3i3oy",
+            "Ohwutahel",
+            "PikabUwU"
+          ]
+        },
+        {
+          "match_id": "Ezreal|18/15/25|21.1|43|162",
+          "date": "2026-11-10",
+          "champion": "Ezreal",
+          "win": false,
+          "kills": 18,
+          "deaths": 15,
+          "assists": 25,
+          "damage_to_champions": 76190,
+          "damage_taken": 60426,
+          "augments": [
+            "escAPADe",
+            "Trusty Weapon",
+            "Skilled Sniper"
+          ],
+          "game_minutes": 21.1,
+          "grade": 62.5,
+          "damage_dealt_share_pct": 36.0,
+          "damage_taken_share_pct": 19.1,
+          "kill_participation_pct": 79.6,
+          "stack_size": 5,
+          "teammates": [
+            "CreamiNataella",
+            "I3i3oy",
+            "Ohwutahel",
+            "PikabUwU"
+          ]
+        },
+        {
+          "match_id": "Varus|14/6/18|10.3|24|54",
+          "date": "2026-11-10",
+          "champion": "Varus",
+          "win": true,
+          "kills": 14,
+          "deaths": 6,
+          "assists": 18,
+          "damage_to_champions": 24213,
+          "damage_taken": 11373,
+          "augments": [
+            "Skilled Sniper",
+            "With Haste",
+            "Ultimate Recursion"
+          ],
+          "game_minutes": 10.3,
+          "grade": 64.9,
+          "damage_dealt_share_pct": null,
+          "damage_taken_share_pct": null,
+          "kill_participation_pct": null,
+          "stack_size": 2,
+          "teammates": [
+            "PikabUwU"
+          ]
+        },
         {
           "match_id": "JarvanIV|9/10/37|22.6|29|64",
           "date": "2026-11-08",
@@ -1987,7 +2105,7 @@
             "Biggest Snowball Ever"
           ],
           "game_minutes": 22.6,
-          "grade": 46.7,
+          "grade": 49.7,
           "damage_dealt_share_pct": 14.5,
           "damage_taken_share_pct": 28.4,
           "kill_participation_pct": 80.7,
@@ -2017,7 +2135,7 @@
             "ADAPt"
           ],
           "game_minutes": 20.2,
-          "grade": 54.8,
+          "grade": 48.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2047,7 +2165,7 @@
             "Infernal Conduit"
           ],
           "game_minutes": 19.5,
-          "grade": 48.4,
+          "grade": 42.9,
           "damage_dealt_share_pct": 20.1,
           "damage_taken_share_pct": 13.3,
           "kill_participation_pct": 77.8,
@@ -2077,7 +2195,7 @@
             "Swift and Safe"
           ],
           "game_minutes": 19.6,
-          "grade": 53.2,
+          "grade": 48.3,
           "damage_dealt_share_pct": 25.2,
           "damage_taken_share_pct": 14.9,
           "kill_participation_pct": 74.1,
@@ -2106,7 +2224,7 @@
             "Twin Fire"
           ],
           "game_minutes": 12.3,
-          "grade": 53.4,
+          "grade": 48.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2134,7 +2252,7 @@
             "Upgrade Stormsurge"
           ],
           "game_minutes": 19.8,
-          "grade": 65.4,
+          "grade": 60.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 84.4,
@@ -2163,7 +2281,7 @@
             "Hextech Soul"
           ],
           "game_minutes": 15.1,
-          "grade": 64.1,
+          "grade": 62.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 94.6,
@@ -2191,7 +2309,7 @@
             "Goliath"
           ],
           "game_minutes": 13.8,
-          "grade": 57.4,
+          "grade": 56.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2216,7 +2334,7 @@
             "Blunt Force"
           ],
           "game_minutes": 26.9,
-          "grade": 45.1,
+          "grade": 44.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2245,7 +2363,7 @@
             "Transmute: Prismatic"
           ],
           "game_minutes": 16.9,
-          "grade": 44.4,
+          "grade": 42.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2273,7 +2391,7 @@
             "Ultimate Recursion"
           ],
           "game_minutes": 15.9,
-          "grade": 45.5,
+          "grade": 44.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2301,7 +2419,7 @@
             "Scopier Weapons"
           ],
           "game_minutes": 24.1,
-          "grade": 45.1,
+          "grade": 41.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 66.1,
@@ -2331,7 +2449,7 @@
             "CRIMSON COBALT"
           ],
           "game_minutes": 18.5,
-          "grade": 69.2,
+          "grade": 67.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 82.7,
@@ -2360,7 +2478,7 @@
             "escAPADe"
           ],
           "game_minutes": 19.8,
-          "grade": 56.2,
+          "grade": 53.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 62.2,
@@ -2390,7 +2508,7 @@
             "Soul Siphon"
           ],
           "game_minutes": 17.4,
-          "grade": 41.8,
+          "grade": 40.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 76.3,
@@ -2420,7 +2538,7 @@
             "Snowday"
           ],
           "game_minutes": 25.3,
-          "grade": 58.6,
+          "grade": 57.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 75.8,
@@ -2448,7 +2566,7 @@
             "Upgrade Infinity Edge"
           ],
           "game_minutes": 13.3,
-          "grade": 72.1,
+          "grade": 71.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 86.0,
@@ -2477,7 +2595,7 @@
             "Hand of Baron"
           ],
           "game_minutes": 17.0,
-          "grade": 40.0,
+          "grade": 36.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2505,7 +2623,7 @@
             "Tripleshot"
           ],
           "game_minutes": 22.6,
-          "grade": 49.9,
+          "grade": 47.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 69.6,
@@ -2533,7 +2651,7 @@
             "Apex Inventor"
           ],
           "game_minutes": 13.4,
-          "grade": 44.9,
+          "grade": 46.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2560,7 +2678,7 @@
             "Stuck In Here With Me"
           ],
           "game_minutes": 12.8,
-          "grade": 53.7,
+          "grade": 51.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2589,7 +2707,7 @@
             "Big Shot"
           ],
           "game_minutes": 19.1,
-          "grade": 51.8,
+          "grade": 51.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 75.5,
@@ -2618,7 +2736,7 @@
             "Firebrand"
           ],
           "game_minutes": 17.8,
-          "grade": 61.0,
+          "grade": 58.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 92.2,
@@ -2647,7 +2765,7 @@
             "One Hit Wonder"
           ],
           "game_minutes": 23.8,
-          "grade": 65.1,
+          "grade": 63.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 79.5,
@@ -2677,7 +2795,7 @@
             "Ultimate Recursion"
           ],
           "game_minutes": 21.2,
-          "grade": 54.0,
+          "grade": 55.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 93.6,
@@ -2706,7 +2824,7 @@
             "Dual Wield"
           ],
           "game_minutes": 22.7,
-          "grade": 59.5,
+          "grade": 54.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2734,7 +2852,7 @@
             "Kill Secured"
           ],
           "game_minutes": 17.0,
-          "grade": 54.3,
+          "grade": 53.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2763,7 +2881,7 @@
             "Firebrand"
           ],
           "game_minutes": 13.8,
-          "grade": 39.9,
+          "grade": 37.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2791,7 +2909,7 @@
             "Soul Siphon"
           ],
           "game_minutes": 17.0,
-          "grade": 46.4,
+          "grade": 50.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2815,7 +2933,7 @@
             "Ethereal Weapon"
           ],
           "game_minutes": 20.0,
-          "grade": 57.6,
+          "grade": 54.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2838,7 +2956,7 @@
             "Still Here"
           ],
           "game_minutes": 11.0,
-          "grade": 30.7,
+          "grade": 32.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2862,7 +2980,7 @@
             "Typhoon"
           ],
           "game_minutes": 24.1,
-          "grade": 21.1,
+          "grade": 22.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2886,7 +3004,7 @@
             "Infernal Soul"
           ],
           "game_minutes": 20.0,
-          "grade": 35.5,
+          "grade": 30.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2914,7 +3032,7 @@
             "It's Critical"
           ],
           "game_minutes": 19.1,
-          "grade": 61.2,
+          "grade": 60.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2942,7 +3060,7 @@
             "Blunt Force"
           ],
           "game_minutes": 12.1,
-          "grade": 60.2,
+          "grade": 62.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -2971,7 +3089,7 @@
             "Jeweled Gauntlet"
           ],
           "game_minutes": 23.9,
-          "grade": 35.9,
+          "grade": 33.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -3000,7 +3118,7 @@
             "Blunt Force"
           ],
           "game_minutes": 17.1,
-          "grade": 30.4,
+          "grade": 29.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -3029,7 +3147,7 @@
             "Triggered Inferno"
           ],
           "game_minutes": 14.4,
-          "grade": 52.1,
+          "grade": 45.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -3057,7 +3175,7 @@
             "Deft"
           ],
           "game_minutes": 20.4,
-          "grade": 43.4,
+          "grade": 42.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -3085,7 +3203,7 @@
             "Glass Cannon"
           ],
           "game_minutes": 19.4,
-          "grade": 25.7,
+          "grade": 27.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -3113,7 +3231,7 @@
             "Juiced"
           ],
           "game_minutes": 20.8,
-          "grade": 28.9,
+          "grade": 23.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -3142,7 +3260,7 @@
             "Twin Fire"
           ],
           "game_minutes": 17.7,
-          "grade": 17.3,
+          "grade": 16.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -3171,7 +3289,7 @@
             "Bread And Butter"
           ],
           "game_minutes": 14.6,
-          "grade": 72.1,
+          "grade": 68.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -3199,7 +3317,7 @@
             "Snowday"
           ],
           "game_minutes": 14.1,
-          "grade": 43.9,
+          "grade": 42.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -3227,7 +3345,7 @@
             "escAPADe"
           ],
           "game_minutes": 24.9,
-          "grade": 60.8,
+          "grade": 54.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -3254,7 +3372,7 @@
             "Courage of the Colossus"
           ],
           "game_minutes": 24.3,
-          "grade": 50.2,
+          "grade": 53.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -3282,7 +3400,7 @@
             "Glass Cannon"
           ],
           "game_minutes": 16.2,
-          "grade": 47.5,
+          "grade": 43.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -3291,107 +3409,28 @@
             "I3i3oy",
             "PikabUwU"
           ]
-        },
-        {
-          "match_id": "Senna|13/7/28|14.9|58|10",
-          "date": "2026-11-02",
-          "champion": "Senna",
-          "win": true,
-          "kills": 13,
-          "deaths": 7,
-          "assists": 28,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Overflow",
-            "Dual Wield",
-            "Critical Rhythm",
-            "Double Tap"
-          ],
-          "game_minutes": 14.9,
-          "grade": 48.8,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 2,
-          "teammates": [
-            "PikabUwU"
-          ]
-        },
-        {
-          "match_id": "Karma|3/5/34|15.3|44|24",
-          "date": "2026-11-01",
-          "champion": "Karma",
-          "win": true,
-          "kills": 3,
-          "deaths": 5,
-          "assists": 34,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Critical Healing",
-            "Lich Brain",
-            "Bread And Butter",
-            "Bolstered"
-          ],
-          "game_minutes": 15.3,
-          "grade": 64.8,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 1,
-          "teammates": []
-        },
-        {
-          "match_id": "Senna|16/7/26|23.6|91|166",
-          "date": "2026-11-01",
-          "champion": "Senna",
-          "win": false,
-          "kills": 16,
-          "deaths": 7,
-          "assists": 26,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Stackosaurus Rex",
-            "Back To Basics",
-            "Typhoon",
-            "Scopier Weapons"
-          ],
-          "game_minutes": 23.6,
-          "grade": 66.4,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
         }
       ],
-      "kda": 3.77,
+      "kda": 3.68,
       "losses": 28,
-      "mmr_style": 1481,
+      "mmr_style": 1462,
       "name": "Vincent Chan",
       "region": "na1",
       "riot_id": "",
-      "score": 48.6,
-      "skillshots_dodged_per_min": 2.7,
+      "score": 47.3,
+      "skillshots_dodged_per_min": 2.8,
       "subscores": {
-        "output": 68.5,
-        "damage_taken": 51.4,
-        "kda_efficiency": 51.0,
-        "teamplay": 66.2,
-        "death_quality": 46.5,
-        "augments": 39.9,
-        "mechanics": 2.7
+        "output": 69.4,
+        "damage_taken": 49.4,
+        "kda_efficiency": 50.3,
+        "teamplay": 67.8,
+        "death_quality": 46.3,
+        "augments": 32.9,
+        "mechanics": 2.8
       },
       "win_rate": 44.0,
       "wins": 22,
-      "why_rank": "Ranked 3 of 5 at 48.6 (MMR-style 1481, 22-28, 44.0% win rate). Strongest vs the group: output (68.5 vs group avg 50.7, +17.8). Weakest vs the group: death_quality (46.5 vs group avg 49.7, -3.2). By role: Damage 49.1 (41 games, -0.8 vs own avg); Frontline 52.2 (8 games, +2.3 vs own avg); Support 64.8 (1 games, +14.9 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
+      "why_rank": "Ranked 3 of 5 at 47.3 (MMR-style 1462, 22-28, 44.0% win rate). Strongest vs the group: output (69.4 vs group avg 48.6, +20.8). Weakest vs the group: death_quality (46.3 vs group avg 50.0, -3.7). By role: Damage 47.8 (42 games, -0.6 vs own avg); Frontline 51.8 (8 games, +3.3 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [
         "Pocket pick: Senna 70.1 (+13.3, 5 games)",
         "Smallest loss-vs-close gap: 51.1 vs 56.0",
@@ -3399,19 +3438,14 @@
       ],
       "role_split": {
         "Damage": {
-          "games": 41,
-          "mean_grade": 49.1,
-          "delta_vs_overall": -0.8
+          "games": 42,
+          "mean_grade": 47.8,
+          "delta_vs_overall": -0.6
         },
         "Frontline": {
           "games": 8,
-          "mean_grade": 52.2,
-          "delta_vs_overall": 2.3
-        },
-        "Support": {
-          "games": 1,
-          "mean_grade": 64.8,
-          "delta_vs_overall": 14.9
+          "mean_grade": 51.8,
+          "delta_vs_overall": 3.3
         }
       },
       "champion_focus": {
@@ -3423,80 +3457,58 @@
             "wins": 3,
             "losses": 1,
             "win_rate": 75.0,
-            "mean_grade": 61.0,
+            "mean_grade": 59.6,
             "delta_vs_overall": 11.1,
             "why": "Winning on MissFortune \u2014 3-1. Keep it in the rotation."
-          },
-          {
-            "champion": "Senna",
-            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Senna.png",
-            "games": 4,
-            "wins": 1,
-            "losses": 3,
-            "win_rate": 25.0,
-            "mean_grade": 57.3,
-            "delta_vs_overall": 7.4,
-            "why": "Losing on Senna \u2014 1-3 \u2014 but the grades say the play is there."
-          },
-          {
-            "champion": "TwistedFate",
-            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/TwistedFate.png",
-            "games": 4,
-            "wins": 2,
-            "losses": 2,
-            "win_rate": 50.0,
-            "mean_grade": 54.2,
-            "delta_vs_overall": 4.2,
-            "why": "Even on TwistedFate \u2014 2-2 \u2014 but the grades say the play is there."
           }
         ],
         "pass_or_swap": []
       },
       "recent_20": {
         "games": 20,
-        "wins": 7,
-        "losses": 13,
-        "win_rate": 35.0,
-        "mean_grade": 52.8,
-        "score_20": 49.1,
+        "wins": 9,
+        "losses": 11,
+        "win_rate": 45.0,
+        "mean_grade": 53.6,
+        "score_20": 51.0,
         "subscores": {
-          "output": 66.3,
-          "damage_taken": 53.4,
-          "kda_efficiency": 51.2,
-          "teamplay": 60.9,
-          "death_quality": 47.9,
-          "augments": 35.7,
-          "mechanics": 3.1
+          "output": 69.7,
+          "damage_taken": 53.0,
+          "kda_efficiency": 55.0,
+          "teamplay": 65.9,
+          "death_quality": 48.6,
+          "augments": 29.4,
+          "mechanics": 3.4
         },
         "pros": [
-          "Output is your strongest area in the last 20 (66.3) \u2014 keep it up.",
-          "Teamplay is your strongest area in the last 20 (60.9) \u2014 keep it up."
+          "Output is your strongest area in the last 20 (69.7) \u2014 keep it up.",
+          "Teamplay is your strongest area in the last 20 (65.9) \u2014 keep it up."
         ],
         "cons": [
-          "Death quality is your weakest area in the last 20 (47.9) \u2014 the thing to work on.",
-          "Augments is your weakest area in the last 20 (35.7) \u2014 the thing to work on."
+          "Death quality is your weakest area in the last 20 (48.6) \u2014 the thing to work on.",
+          "Augments is your weakest area in the last 20 (29.4) \u2014 the thing to work on."
         ],
         "tips": [
-          "Keep up Output (66.3 in the last 20): keep finding damage \u2014 your positioning is paying off.",
-          "Keep up Teamplay (60.9 in the last 20): keep joining fights \u2014 your kill participation is strong.",
-          "Work on Death quality (47.9 in the last 20): die less, and later in the game.",
-          "Work on Augments (35.7 in the last 20): rethink augment picks \u2014 the ones taken lately are underperforming."
+          "Keep up Output (69.7 in the last 20): keep finding damage \u2014 your positioning is paying off.",
+          "Keep up Teamplay (65.9 in the last 20): keep joining fights \u2014 your kill participation is strong.",
+          "Work on Death quality (48.6 in the last 20): die less, and later in the game.",
+          "Work on Augments (29.4 in the last 20): rethink augment picks \u2014 the ones taken lately are underperforming."
         ],
         "stacked_20": {
           "games": 19,
-          "wins": 6,
-          "losses": 13,
-          "win_rate": 31.6,
-          "mean_grade": 52.6
+          "wins": 8,
+          "losses": 11,
+          "win_rate": 42.1,
+          "mean_grade": 53.5
         },
         "solo_20": {
           "games": 1,
           "wins": 1,
           "losses": 0,
           "win_rate": 100.0,
-          "mean_grade": 57.4
+          "mean_grade": 56.3
         },
-        "team_line": "Playing together is dragging you down lately: with 2+ of the group in the last 20 you went 6-13 (31.6%, grade 52.6) vs solo 1-0 (100.0%, grade 57.4). Check role balance when you stack \u2014 someone may be off-role."
+        "team_line": "Playing together is dragging you down lately: with 2+ of the group in the last 20 you went 8-11 (42.1%, grade 53.5) vs solo 1-0 (100.0%, grade 56.3). Check role balance when you stack \u2014 someone may be off-role."
       },
       "champion_top3": [
         {
@@ -3506,31 +3518,31 @@
           "wins": 3,
           "losses": 1,
           "win_rate": 75.0,
-          "mean_grade": 61.0,
+          "mean_grade": 59.6,
           "delta_vs_overall": 11.1,
           "why": "Winning on MissFortune \u2014 3-1. Keep it in the rotation."
         },
         {
           "champion": "Senna",
           "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Senna.png",
-          "games": 4,
-          "wins": 1,
-          "losses": 3,
-          "win_rate": 25.0,
-          "mean_grade": 57.3,
-          "delta_vs_overall": 7.4,
-          "why": "Losing on Senna \u2014 1-3 \u2014 but the grades say the play is there."
+          "games": 2,
+          "wins": 0,
+          "losses": 2,
+          "win_rate": 0.0,
+          "mean_grade": 57.0,
+          "delta_vs_overall": 8.5,
+          "why": "Losing on Senna \u2014 0-2 \u2014 but the grades say the play is there."
         },
         {
-          "champion": "TwistedFate",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/TwistedFate.png",
-          "games": 4,
-          "wins": 2,
-          "losses": 2,
+          "champion": "Blitzcrank",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Blitzcrank.png",
+          "games": 2,
+          "wins": 1,
+          "losses": 1,
           "win_rate": 50.0,
-          "mean_grade": 54.2,
-          "delta_vs_overall": 4.2,
-          "why": "Even on TwistedFate \u2014 2-2 \u2014 but the grades say the play is there."
+          "mean_grade": 53.5,
+          "delta_vs_overall": 5.1,
+          "why": "Even on Blitzcrank \u2014 1-1 \u2014 but the grades say the play is there."
         }
       ],
       "champion_worst3": [
@@ -3541,20 +3553,9 @@
           "wins": 1,
           "losses": 1,
           "win_rate": 50.0,
-          "mean_grade": 41.4,
-          "delta_vs_overall": -8.5,
+          "mean_grade": 39.4,
+          "delta_vs_overall": -9.1,
           "why": "Even on Shaco \u2014 1-1 \u2014 but the grades aren't buying it."
-        },
-        {
-          "champion": "Caitlyn",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Caitlyn.png",
-          "games": 2,
-          "wins": 0,
-          "losses": 2,
-          "win_rate": 0.0,
-          "mean_grade": 44.1,
-          "delta_vs_overall": -5.8,
-          "why": "Winless on Caitlyn \u2014 0-2. Maybe retire this one for now."
         },
         {
           "champion": "Illaoi",
@@ -3563,274 +3564,449 @@
           "wins": 1,
           "losses": 1,
           "win_rate": 50.0,
-          "mean_grade": 44.8,
-          "delta_vs_overall": -5.2,
+          "mean_grade": 42.6,
+          "delta_vs_overall": -5.9,
           "why": "Even on Illaoi \u2014 1-1 \u2014 but the grades aren't buying it."
+        },
+        {
+          "champion": "Smolder",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Smolder.png",
+          "games": 2,
+          "wins": 0,
+          "losses": 2,
+          "win_rate": 0.0,
+          "mean_grade": 45.2,
+          "delta_vs_overall": -3.3,
+          "why": "Winless on Smolder \u2014 0-2. Maybe retire this one for now."
         }
       ],
-      "damage_taken_per_min": 1963,
-      "damage_dealt_share_pct": 19.9,
-      "damage_taken_share_pct": 18.9,
-      "kill_participation_pct": 79.5,
-      "deaths_per_game": 10.1,
+      "damage_taken_per_min": 1953,
+      "damage_dealt_share_pct": 25.4,
+      "damage_taken_share_pct": 18.5,
+      "kill_participation_pct": 80.3,
+      "deaths_per_game": 10.3,
       "title": "The Glass Cannon",
-      "title_summary": "Most damage in the group (2,690/min, 19.9% of the group's damage) \u2014 they hit hard and take the hits back.",
+      "title_summary": "Most damage in the group (2,698/min, 25.4% of the group's damage) \u2014 they hit hard and take the hits back.",
       "kda_history": [
         {
           "game": 1,
-          "champion": "Senna",
-          "kda": 6.0
-        },
-        {
-          "game": 2,
-          "champion": "Karma",
-          "kda": 7.4
-        },
-        {
-          "game": 3,
-          "champion": "Senna",
-          "kda": 5.86
-        },
-        {
-          "game": 4,
           "champion": "KogMaw",
           "kda": 4.22
         },
         {
-          "game": 5,
+          "game": 2,
           "champion": "Blitzcrank",
           "kda": 4.4
         },
         {
-          "game": 6,
+          "game": 3,
           "champion": "Varus",
           "kda": 4.0
         },
         {
-          "game": 7,
+          "game": 4,
           "champion": "LeeSin",
           "kda": 2.6
         },
         {
-          "game": 8,
+          "game": 5,
           "champion": "TwistedFate",
           "kda": 7.4
         },
         {
-          "game": 9,
+          "game": 6,
           "champion": "Udyr",
           "kda": 2.53
         },
         {
-          "game": 10,
+          "game": 7,
           "champion": "Shaco",
           "kda": 2.2
         },
         {
-          "game": 11,
+          "game": 8,
           "champion": "TwistedFate",
           "kda": 3.44
         },
         {
-          "game": 12,
+          "game": 9,
           "champion": "Jinx",
           "kda": 2.5
         },
         {
-          "game": 13,
+          "game": 10,
           "champion": "Smolder",
           "kda": 4.38
         },
         {
-          "game": 14,
+          "game": 11,
           "champion": "Jayce",
           "kda": 2.6
         },
         {
-          "game": 15,
+          "game": 12,
           "champion": "Illaoi",
           "kda": 2.53
         },
         {
-          "game": 16,
+          "game": 13,
           "champion": "Tristana",
           "kda": 5.71
         },
         {
-          "game": 17,
+          "game": 14,
           "champion": "Ashe",
           "kda": 5.67
         },
         {
-          "game": 18,
+          "game": 15,
           "champion": "Amumu",
           "kda": 2.73
         },
         {
-          "game": 19,
+          "game": 16,
           "champion": "Lucian",
           "kda": 2.65
         },
         {
-          "game": 20,
+          "game": 17,
           "champion": "Corki",
           "kda": 1.67
         },
         {
-          "game": 21,
+          "game": 18,
           "champion": "Trundle",
           "kda": 5.56
         },
         {
-          "game": 22,
+          "game": 19,
           "champion": "Caitlyn",
           "kda": 2.75
         },
         {
-          "game": 23,
+          "game": 20,
           "champion": "Tristana",
           "kda": 2.2
         },
         {
-          "game": 24,
+          "game": 21,
           "champion": "Blitzcrank",
           "kda": 4.0
         },
         {
-          "game": 25,
+          "game": 22,
           "champion": "Kaisa",
           "kda": 3.83
         },
         {
-          "game": 26,
+          "game": 23,
           "champion": "Shaco",
           "kda": 5.5
         },
         {
-          "game": 27,
+          "game": 24,
           "champion": "Jhin",
           "kda": 7.33
         },
         {
-          "game": 28,
+          "game": 25,
           "champion": "Urgot",
           "kda": 5.88
         },
         {
-          "game": 29,
+          "game": 26,
           "champion": "MissFortune",
           "kda": 2.85
         },
         {
-          "game": 30,
+          "game": 27,
           "champion": "Illaoi",
           "kda": 3.57
         },
         {
-          "game": 31,
+          "game": 28,
           "champion": "Senna",
           "kda": 3.29
         },
         {
-          "game": 32,
+          "game": 29,
           "champion": "Brand",
           "kda": 2.79
         },
         {
-          "game": 33,
+          "game": 30,
           "champion": "Varus",
           "kda": 4.67
         },
         {
-          "game": 34,
+          "game": 31,
           "champion": "MissFortune",
           "kda": 7.4
         },
         {
-          "game": 35,
+          "game": 32,
           "champion": "Poppy",
           "kda": 4.27
         },
         {
-          "game": 36,
+          "game": 33,
           "champion": "Caitlyn",
           "kda": 2.07
         },
         {
-          "game": 37,
+          "game": 34,
           "champion": "MissFortune",
           "kda": 2.55
         },
         {
-          "game": 38,
+          "game": 35,
           "champion": "Senna",
           "kda": 4.78
         },
         {
-          "game": 39,
+          "game": 36,
           "champion": "Tristana",
           "kda": 2.79
         },
         {
-          "game": 40,
+          "game": 37,
           "champion": "Lillia",
           "kda": 2.7
         },
         {
-          "game": 41,
+          "game": 38,
           "champion": "FiddleSticks",
           "kda": 2.33
         },
         {
-          "game": 42,
+          "game": 39,
           "champion": "Smolder",
           "kda": 3.77
         },
         {
-          "game": 43,
+          "game": 40,
           "champion": "Shen",
           "kda": 7.4
         },
         {
-          "game": 44,
+          "game": 41,
           "champion": "MissFortune",
           "kda": 10.6
         },
         {
-          "game": 45,
+          "game": 42,
           "champion": "TwistedFate",
           "kda": 3.45
         },
         {
-          "game": 46,
+          "game": 43,
           "champion": "TwistedFate",
           "kda": 8.25
         },
         {
-          "game": 47,
+          "game": 44,
           "champion": "Ekko",
           "kda": 3.58
         },
         {
-          "game": 48,
+          "game": 45,
           "champion": "Mel",
           "kda": 3.82
         },
         {
-          "game": 49,
+          "game": 46,
           "champion": "Brand",
           "kda": 2.71
         },
         {
-          "game": 50,
+          "game": 47,
           "champion": "JarvanIV",
           "kda": 4.6
+        },
+        {
+          "game": 48,
+          "champion": "Varus",
+          "kda": 5.33
+        },
+        {
+          "game": 49,
+          "champion": "Ezreal",
+          "kda": 2.87
+        },
+        {
+          "game": 50,
+          "champion": "Sivir",
+          "kda": 4.62
         }
       ]
     },
     {
-      "damage_per_min": 1695,
+      "damage_per_min": 1676,
       "games": [
+        {
+          "match_id": "Lucian|18/9/18|27.1|123|48",
+          "date": "2026-11-11",
+          "champion": "Lucian",
+          "win": true,
+          "kills": 18,
+          "deaths": 9,
+          "assists": 18,
+          "damage_to_champions": 63954,
+          "damage_taken": 51429,
+          "augments": [
+            "Upgrade Infinity Edge",
+            "Upgrade Collector",
+            "Tap Dancer",
+            "Still Here"
+          ],
+          "game_minutes": 27.1,
+          "grade": 59.0,
+          "damage_dealt_share_pct": null,
+          "damage_taken_share_pct": null,
+          "kill_participation_pct": null,
+          "stack_size": 3,
+          "teammates": [
+            "I3i3oy",
+            "PikabUwU"
+          ]
+        },
+        {
+          "match_id": "Milio|7/6/39|19.1|68|46",
+          "date": "2026-11-11",
+          "champion": "Milio",
+          "win": false,
+          "kills": 7,
+          "deaths": 6,
+          "assists": 39,
+          "damage_to_champions": 24664,
+          "damage_taken": 25394,
+          "augments": [
+            "Wooglet's Witchcap",
+            "Transmute: Gold",
+            "BEES!!!",
+            "Witchful Thinking",
+            "No Mana, No Problem"
+          ],
+          "game_minutes": 19.1,
+          "grade": 53.9,
+          "damage_dealt_share_pct": null,
+          "damage_taken_share_pct": null,
+          "kill_participation_pct": null,
+          "stack_size": 3,
+          "teammates": [
+            "I3i3oy",
+            "PikabUwU"
+          ]
+        },
+        {
+          "match_id": "Nami|1/6/34|13.4|4|52",
+          "date": "2026-11-10",
+          "champion": "Nami",
+          "win": true,
+          "kills": 1,
+          "deaths": 6,
+          "assists": 34,
+          "damage_to_champions": 6122,
+          "damage_taken": 16306,
+          "augments": [
+            "Fey Magic",
+            "Mercy's Strike",
+            "Critical Healing"
+          ],
+          "game_minutes": 13.4,
+          "grade": 52.5,
+          "damage_dealt_share_pct": 6.0,
+          "damage_taken_share_pct": 12.4,
+          "kill_participation_pct": 89.7,
+          "stack_size": 5,
+          "teammates": [
+            "I3i3oy",
+            "Ohwutahel",
+            "PikabUwU",
+            "Vincent Chan"
+          ]
+        },
+        {
+          "match_id": "Nautilus|7/14/26|21.1|25|280",
+          "date": "2026-11-10",
+          "champion": "Nautilus",
+          "win": false,
+          "kills": 7,
+          "deaths": 14,
+          "assists": 26,
+          "damage_to_champions": 28979,
+          "damage_taken": 97505,
+          "augments": [
+            "Goldrend",
+            "Ultimate Unstoppable",
+            "Stay Resolute",
+            "Sap Magic"
+          ],
+          "game_minutes": 21.1,
+          "grade": 35.9,
+          "damage_dealt_share_pct": 13.7,
+          "damage_taken_share_pct": 30.7,
+          "kill_participation_pct": 61.1,
+          "stack_size": 5,
+          "teammates": [
+            "I3i3oy",
+            "Ohwutahel",
+            "PikabUwU",
+            "Vincent Chan"
+          ]
+        },
+        {
+          "match_id": "Senna|8/14/38|26.5|84|127",
+          "date": "2026-11-10",
+          "champion": "Senna",
+          "win": true,
+          "kills": 8,
+          "deaths": 14,
+          "assists": 38,
+          "damage_to_champions": null,
+          "damage_taken": null,
+          "augments": [
+            "Third Times the Harm",
+            "Ultra Hydra",
+            "Scopier Weapons",
+            "Still Here",
+            "Vulnerability"
+          ],
+          "game_minutes": 26.5,
+          "grade": 53.0,
+          "damage_dealt_share_pct": null,
+          "damage_taken_share_pct": null,
+          "kill_participation_pct": null,
+          "stack_size": 3,
+          "teammates": [
+            "I3i3oy",
+            "Ohwutahel"
+          ]
+        },
+        {
+          "match_id": "Senna|7/10/36|18.3|30|13",
+          "date": "2026-11-10",
+          "champion": "Senna",
+          "win": false,
+          "kills": 7,
+          "deaths": 10,
+          "assists": 36,
+          "damage_to_champions": 41063,
+          "damage_taken": 33940,
+          "augments": [
+            "Weapon of Destiny",
+            "Infinite Recursion",
+            "Deft",
+            "BEES!!!"
+          ],
+          "game_minutes": 18.2,
+          "grade": 52.0,
+          "damage_dealt_share_pct": null,
+          "damage_taken_share_pct": null,
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
+        },
         {
           "match_id": "Milio|5/5/45|22.6|58|22",
           "date": "2026-11-08",
@@ -3848,7 +4024,7 @@
             "Jeweled Gauntlet"
           ],
           "game_minutes": 22.6,
-          "grade": 60.1,
+          "grade": 55.8,
           "damage_dealt_share_pct": 15.0,
           "damage_taken_share_pct": 11.7,
           "kill_participation_pct": 87.7,
@@ -3878,7 +4054,7 @@
             "Bread And Butter"
           ],
           "game_minutes": 20.2,
-          "grade": 37.2,
+          "grade": 34.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -3908,7 +4084,7 @@
             "Tap Dancer"
           ],
           "game_minutes": 19.5,
-          "grade": 49.2,
+          "grade": 45.9,
           "damage_dealt_share_pct": 22.0,
           "damage_taken_share_pct": 13.0,
           "kill_participation_pct": 79.6,
@@ -3938,7 +4114,7 @@
             "Heavy Hitter"
           ],
           "game_minutes": 19.6,
-          "grade": 55.4,
+          "grade": 53.0,
           "damage_dealt_share_pct": 17.3,
           "damage_taken_share_pct": 29.7,
           "kill_participation_pct": 75.9,
@@ -3967,7 +4143,7 @@
             "Twin Fire"
           ],
           "game_minutes": 12.3,
-          "grade": 55.8,
+          "grade": 53.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -3995,7 +4171,7 @@
             "Enchanting Butterflies"
           ],
           "game_minutes": 15.4,
-          "grade": 40.9,
+          "grade": 41.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4023,7 +4199,7 @@
             "BEES!!!"
           ],
           "game_minutes": 17.8,
-          "grade": 40.5,
+          "grade": 39.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4051,7 +4227,7 @@
             "Recoil"
           ],
           "game_minutes": 19.8,
-          "grade": 55.0,
+          "grade": 51.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 66.7,
@@ -4080,7 +4256,7 @@
             "Transmute: Gold"
           ],
           "game_minutes": 15.1,
-          "grade": 49.6,
+          "grade": 49.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 75.0,
@@ -4109,7 +4285,7 @@
             "Homeguard"
           ],
           "game_minutes": 15.0,
-          "grade": 61.4,
+          "grade": 59.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4134,7 +4310,7 @@
             "Lich Brain"
           ],
           "game_minutes": 26.9,
-          "grade": 47.3,
+          "grade": 44.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4163,7 +4339,7 @@
             "Recursion"
           ],
           "game_minutes": 16.9,
-          "grade": 57.3,
+          "grade": 56.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4191,7 +4367,7 @@
             "Dawnbringer's Resolve"
           ],
           "game_minutes": 15.9,
-          "grade": 35.9,
+          "grade": 33.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4219,7 +4395,7 @@
             "Warlock Juicebox"
           ],
           "game_minutes": 24.1,
-          "grade": 52.1,
+          "grade": 49.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 76.3,
@@ -4249,7 +4425,7 @@
             "Ultimate Unstoppable"
           ],
           "game_minutes": 18.5,
-          "grade": 45.7,
+          "grade": 45.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 67.3,
@@ -4278,7 +4454,7 @@
             "Lonely Warrior"
           ],
           "game_minutes": 19.8,
-          "grade": 52.0,
+          "grade": 52.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 62.2,
@@ -4308,7 +4484,7 @@
             "Sap Magic"
           ],
           "game_minutes": 17.4,
-          "grade": 30.8,
+          "grade": 29.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 76.3,
@@ -4338,7 +4514,7 @@
             "Snowday"
           ],
           "game_minutes": 25.3,
-          "grade": 51.4,
+          "grade": 51.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 75.8,
@@ -4367,7 +4543,7 @@
             "The Boom and the Bass"
           ],
           "game_minutes": 13.3,
-          "grade": 63.0,
+          "grade": 65.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 79.1,
@@ -4396,7 +4572,7 @@
             "Omni Soul"
           ],
           "game_minutes": 17.0,
-          "grade": 21.1,
+          "grade": 21.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4424,7 +4600,7 @@
             "Magic Missile"
           ],
           "game_minutes": 20.6,
-          "grade": 48.0,
+          "grade": 44.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4451,7 +4627,7 @@
             "Shrink Engine"
           ],
           "game_minutes": 24.2,
-          "grade": 55.0,
+          "grade": 54.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4478,7 +4654,7 @@
             "Minionmancer"
           ],
           "game_minutes": 22.6,
-          "grade": 47.1,
+          "grade": 46.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 67.9,
@@ -4506,7 +4682,7 @@
             "Transmute: Prismatic"
           ],
           "game_minutes": 13.4,
-          "grade": 47.4,
+          "grade": 46.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4533,7 +4709,7 @@
             "Eureka"
           ],
           "game_minutes": 12.8,
-          "grade": 47.1,
+          "grade": 42.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4562,7 +4738,7 @@
             "Group Hug"
           ],
           "game_minutes": 19.1,
-          "grade": 56.2,
+          "grade": 57.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 85.7,
@@ -4592,7 +4768,7 @@
             "CRIMSON COBALT"
           ],
           "game_minutes": 17.8,
-          "grade": 56.0,
+          "grade": 50.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 90.2,
@@ -4621,7 +4797,7 @@
             "Warlock Juicebox"
           ],
           "game_minutes": 23.8,
-          "grade": 55.7,
+          "grade": 52.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 71.1,
@@ -4651,7 +4827,7 @@
             "Warlock Juicebox"
           ],
           "game_minutes": 21.2,
-          "grade": 50.9,
+          "grade": 48.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 74.5,
@@ -4680,7 +4856,7 @@
             "Transmute: Prismatic"
           ],
           "game_minutes": 19.2,
-          "grade": 38.3,
+          "grade": 37.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4707,7 +4883,7 @@
             "Kill Secured"
           ],
           "game_minutes": 17.0,
-          "grade": 46.5,
+          "grade": 45.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4734,7 +4910,7 @@
             "Twin Fire"
           ],
           "game_minutes": 23.1,
-          "grade": 44.7,
+          "grade": 43.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4761,7 +4937,7 @@
             "Tap Dancer"
           ],
           "game_minutes": 18.2,
-          "grade": 28.0,
+          "grade": 27.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4789,7 +4965,7 @@
             "Zealot"
           ],
           "game_minutes": 19.6,
-          "grade": 25.0,
+          "grade": 26.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4817,7 +4993,7 @@
             "Magic Missile"
           ],
           "game_minutes": 14.7,
-          "grade": 41.7,
+          "grade": 39.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4845,7 +5021,7 @@
             "Giant Slayer"
           ],
           "game_minutes": 22.7,
-          "grade": 68.7,
+          "grade": 69.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4873,7 +5049,7 @@
             "Erosion"
           ],
           "game_minutes": 17.0,
-          "grade": 59.9,
+          "grade": 52.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4902,7 +5078,7 @@
             "BEES!!!"
           ],
           "game_minutes": 13.8,
-          "grade": 53.2,
+          "grade": 52.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4930,7 +5106,7 @@
             "Upgrade Stormsurge"
           ],
           "game_minutes": 19.3,
-          "grade": 55.3,
+          "grade": 50.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4958,7 +5134,7 @@
             "Mighty Shield"
           ],
           "game_minutes": 17.3,
-          "grade": 59.1,
+          "grade": 57.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -4985,7 +5161,7 @@
             "Mad Scientist"
           ],
           "game_minutes": 17.0,
-          "grade": 64.3,
+          "grade": 55.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -5012,7 +5188,7 @@
             "Eureka"
           ],
           "game_minutes": 18.2,
-          "grade": 52.4,
+          "grade": 47.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -5038,7 +5214,7 @@
             "Scopier Weapons"
           ],
           "game_minutes": 16.6,
-          "grade": 64.8,
+          "grade": 65.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -5065,7 +5241,7 @@
             "Transmute: Gold"
           ],
           "game_minutes": 17.3,
-          "grade": 64.8,
+          "grade": 62.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -5073,194 +5249,28 @@
           "teammates": [
             "I3i3oy"
           ]
-        },
-        {
-          "match_id": "Swain|5/14/28|23.0|19|70",
-          "date": "2026-11-05",
-          "champion": "Swain",
-          "win": true,
-          "kills": 5,
-          "deaths": 14,
-          "assists": 28,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Erosion",
-            "It's Killing Time",
-            "Recursion",
-            "Warlock Juicebox"
-          ],
-          "game_minutes": 23.0,
-          "grade": 32.8,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
-        },
-        {
-          "match_id": "Nautilus|9/7/39|12.8|35|10",
-          "date": "2026-11-05",
-          "champion": "Nautilus",
-          "win": true,
-          "kills": 9,
-          "deaths": 7,
-          "assists": 39,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Icathia's Fall",
-            "Biggest Snowball Ever",
-            "Snowday"
-          ],
-          "game_minutes": 12.8,
-          "grade": 50.6,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
-        },
-        {
-          "match_id": "MissFortune|3/10/29|20.4|45|18",
-          "date": "2026-11-05",
-          "champion": "MissFortune",
-          "win": true,
-          "kills": 3,
-          "deaths": 10,
-          "assists": 29,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "THRASH",
-            "One Hit Wonder",
-            "Weapon of Destiny",
-            "Eureka",
-            "Big Brain"
-          ],
-          "game_minutes": 20.4,
-          "grade": 37.5,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
-        },
-        {
-          "match_id": "AurelionSol|21/8/20|20.0|85|26",
-          "date": "2026-11-05",
-          "champion": "AurelionSol",
-          "win": true,
-          "kills": 21,
-          "deaths": 8,
-          "assists": 20,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Infinite Recursion",
-            "Magic Missile",
-            "Eureka",
-            "BEES!!!"
-          ],
-          "game_minutes": 20.0,
-          "grade": 55.6,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel",
-            "PikabUwU"
-          ]
-        },
-        {
-          "match_id": "Evelynn|14/7/21|16.1|34|38",
-          "date": "2026-11-05",
-          "champion": "Evelynn",
-          "win": true,
-          "kills": 14,
-          "deaths": 7,
-          "assists": 21,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "BEES!!!",
-            "Warlock Juicebox",
-            "Eureka",
-            "Upgrade Stormsurge"
-          ],
-          "game_minutes": 16.1,
-          "grade": 67.1,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
-        },
-        {
-          "match_id": "Lux|8/4/40|16.8|41|15",
-          "date": "2026-11-05",
-          "champion": "Lux",
-          "win": true,
-          "kills": 8,
-          "deaths": 4,
-          "assists": 40,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Echo Cast",
-            "BEES!!!",
-            "Bolstered",
-            "No Mana, No Problem"
-          ],
-          "game_minutes": 16.8,
-          "grade": 78.3,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Ohwutahel"
-          ]
         }
       ],
-      "kda": 4.6,
-      "losses": 25,
-      "mmr_style": 1500,
+      "kda": 4.5,
+      "losses": 28,
+      "mmr_style": 1466,
       "name": "CreamiNataella",
       "region": "na1",
       "riot_id": "",
-      "score": 50.0,
-      "skillshots_dodged_per_min": 2.34,
+      "score": 47.6,
+      "skillshots_dodged_per_min": 2.7,
       "subscores": {
-        "output": 40.2,
-        "damage_taken": 40.9,
-        "kda_efficiency": 59.3,
-        "teamplay": 57.6,
-        "death_quality": 59.9,
-        "augments": 43.2,
-        "mechanics": 2.3
+        "output": 41.3,
+        "damage_taken": 42.1,
+        "kda_efficiency": 60.4,
+        "teamplay": 54.8,
+        "death_quality": 59.8,
+        "augments": 32.6,
+        "mechanics": 2.7
       },
-      "win_rate": 50.0,
-      "wins": 25,
-      "why_rank": "Ranked 1 of 5 at 50.0 (MMR-style 1500, 25-25, 50.0% win rate). Strongest vs the group: death_quality (59.9 vs group avg 49.7, +10.2). Weakest vs the group: output (40.2 vs group avg 50.7, -10.5). By role: Damage 50.0 (41 games, -0.3 vs own avg); Frontline 51.9 (8 games, +1.7 vs own avg); Support 47.4 (1 games, -2.9 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
+      "win_rate": 44.0,
+      "wins": 22,
+      "why_rank": "Ranked 1 of 5 at 47.6 (MMR-style 1466, 22-28, 44.0% win rate). Strongest vs the group: kda_efficiency (60.4 vs group avg 49.8, +10.6). Weakest vs the group: damage_taken (42.1 vs group avg 50.6, -8.5). By role: Damage 47.9 (40 games, -0.3 vs own avg); Frontline 49.6 (8 games, +1.3 vs own avg); Support 49.2 (2 games, +1.0 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [
         "Best KDA in the group: 4.66",
         "Pocket picks: Nidalee 72.5 (+16.9, 3 games), Sona 67.9 (+12.3, 3 games)",
@@ -5269,19 +5279,19 @@
       ],
       "role_split": {
         "Damage": {
-          "games": 41,
-          "mean_grade": 50.0,
+          "games": 40,
+          "mean_grade": 47.9,
           "delta_vs_overall": -0.3
         },
         "Frontline": {
           "games": 8,
-          "mean_grade": 51.9,
-          "delta_vs_overall": 1.7
+          "mean_grade": 49.6,
+          "delta_vs_overall": 1.3
         },
         "Support": {
-          "games": 1,
-          "mean_grade": 47.4,
-          "delta_vs_overall": -2.9
+          "games": 2,
+          "mean_grade": 49.2,
+          "delta_vs_overall": 1.0
         }
       },
       "champion_focus": {
@@ -5290,96 +5300,63 @@
             "champion": "Nautilus",
             "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Nautilus.png",
             "games": 4,
-            "wins": 4,
-            "losses": 0,
-            "win_rate": 100.0,
-            "mean_grade": 60.3,
-            "delta_vs_overall": 10.1,
-            "why": "Undefeated on Nautilus \u2014 4-0, and it shows."
-          },
-          {
-            "champion": "Milio",
-            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Milio.png",
-            "games": 3,
             "wins": 3,
-            "losses": 0,
-            "win_rate": 100.0,
-            "mean_grade": 54.4,
-            "delta_vs_overall": 4.1,
-            "why": "Winning on Milio \u2014 3-0 \u2014 but the grades aren't buying it."
+            "losses": 1,
+            "win_rate": 75.0,
+            "mean_grade": 57.0,
+            "delta_vs_overall": 8.8,
+            "why": "Winning on Nautilus \u2014 3-1. Keep it in the rotation."
           }
         ],
         "pass_or_swap": []
       },
       "recent_20": {
         "games": 20,
-        "wins": 7,
-        "losses": 13,
-        "win_rate": 35.0,
-        "mean_grade": 48.1,
-        "score_20": 45.9,
+        "wins": 8,
+        "losses": 12,
+        "win_rate": 40.0,
+        "mean_grade": 48.7,
+        "score_20": 47.5,
         "subscores": {
-          "output": 41.7,
-          "damage_taken": 42.5,
-          "kda_efficiency": 54.9,
-          "teamplay": 54.8,
-          "death_quality": 56.5,
-          "augments": 36.6,
-          "mechanics": 3.0
+          "output": 43.2,
+          "damage_taken": 43.8,
+          "kda_efficiency": 59.2,
+          "teamplay": 57.1,
+          "death_quality": 56.7,
+          "augments": 30.5,
+          "mechanics": 3.3
         },
         "pros": [
-          "Death quality is your strongest area in the last 20 (56.5) \u2014 keep it up.",
-          "KDA efficiency is your strongest area in the last 20 (54.9) \u2014 keep it up."
+          "KDA efficiency is your strongest area in the last 20 (59.2) \u2014 keep it up.",
+          "Teamplay is your strongest area in the last 20 (57.1) \u2014 keep it up."
         ],
         "cons": [
-          "Output is your weakest area in the last 20 (41.7) \u2014 the thing to work on.",
-          "Augments is your weakest area in the last 20 (36.6) \u2014 the thing to work on."
+          "Output is your weakest area in the last 20 (43.2) \u2014 the thing to work on.",
+          "Augments is your weakest area in the last 20 (30.5) \u2014 the thing to work on."
         ],
         "tips": [
-          "Keep up Death quality (56.5 in the last 20): keep staying alive \u2014 your deaths are low for your role.",
-          "Keep up KDA efficiency (54.9 in the last 20): keep trading like this \u2014 good kills for few deaths.",
-          "Work on Output (41.7 in the last 20): focus on damage output and positioning to deal more damage.",
-          "Work on Augments (36.6 in the last 20): rethink augment picks \u2014 the ones taken lately are underperforming."
+          "Keep up KDA efficiency (59.2 in the last 20): keep trading like this \u2014 good kills for few deaths.",
+          "Keep up Teamplay (57.1 in the last 20): keep joining fights \u2014 your kill participation is strong.",
+          "Work on Output (43.2 in the last 20): focus on damage output and positioning to deal more damage.",
+          "Work on Augments (30.5 in the last 20): rethink augment picks \u2014 the ones taken lately are underperforming."
         ],
         "stacked_20": {
-          "games": 19,
-          "wins": 6,
-          "losses": 13,
-          "win_rate": 31.6,
-          "mean_grade": 47.4
+          "games": 18,
+          "wins": 7,
+          "losses": 11,
+          "win_rate": 38.9,
+          "mean_grade": 47.8
         },
         "solo_20": {
-          "games": 1,
+          "games": 2,
           "wins": 1,
-          "losses": 0,
-          "win_rate": 100.0,
-          "mean_grade": 61.4
+          "losses": 1,
+          "win_rate": 50.0,
+          "mean_grade": 55.9
         },
-        "team_line": "Playing together is dragging you down lately: with 2+ of the group in the last 20 you went 6-13 (31.6%, grade 47.4) vs solo 1-0 (100.0%, grade 61.4). Check role balance when you stack \u2014 someone may be off-role."
+        "team_line": "Playing together is dragging you down lately: with 2+ of the group in the last 20 you went 7-11 (38.9%, grade 47.8) vs solo 1-1 (50.0%, grade 55.9). Check role balance when you stack \u2014 someone may be off-role."
       },
       "champion_top3": [
-        {
-          "champion": "Lux",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Lux.png",
-          "games": 2,
-          "wins": 2,
-          "losses": 0,
-          "win_rate": 100.0,
-          "mean_grade": 61.5,
-          "delta_vs_overall": 11.2,
-          "why": "Undefeated on Lux \u2014 2-0, and it shows."
-        },
-        {
-          "champion": "Nautilus",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Nautilus.png",
-          "games": 4,
-          "wins": 4,
-          "losses": 0,
-          "win_rate": 100.0,
-          "mean_grade": 60.3,
-          "delta_vs_overall": 10.1,
-          "why": "Undefeated on Nautilus \u2014 4-0, and it shows."
-        },
         {
           "champion": "Smolder",
           "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Smolder.png",
@@ -5387,9 +5364,31 @@
           "wins": 1,
           "losses": 1,
           "win_rate": 50.0,
-          "mean_grade": 59.9,
-          "delta_vs_overall": 9.6,
+          "mean_grade": 58.3,
+          "delta_vs_overall": 10.1,
           "why": "Even on Smolder \u2014 1-1 \u2014 but the grades say the play is there."
+        },
+        {
+          "champion": "Morgana",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Morgana.png",
+          "games": 2,
+          "wins": 1,
+          "losses": 1,
+          "win_rate": 50.0,
+          "mean_grade": 57.1,
+          "delta_vs_overall": 8.8,
+          "why": "Even on Morgana \u2014 1-1 \u2014 but the grades say the play is there."
+        },
+        {
+          "champion": "Nautilus",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Nautilus.png",
+          "games": 4,
+          "wins": 3,
+          "losses": 1,
+          "win_rate": 75.0,
+          "mean_grade": 57.0,
+          "delta_vs_overall": 8.8,
+          "why": "Winning on Nautilus \u2014 3-1. Keep it in the rotation."
         }
       ],
       "champion_worst3": [
@@ -5400,20 +5399,9 @@
           "wins": 1,
           "losses": 1,
           "win_rate": 50.0,
-          "mean_grade": 43.9,
-          "delta_vs_overall": -6.3,
+          "mean_grade": 43.1,
+          "delta_vs_overall": -5.2,
           "why": "Even on Chogath \u2014 1-1 \u2014 but the grades aren't buying it."
-        },
-        {
-          "champion": "Senna",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Senna.png",
-          "games": 2,
-          "wins": 1,
-          "losses": 1,
-          "win_rate": 50.0,
-          "mean_grade": 44.9,
-          "delta_vs_overall": -5.4,
-          "why": "Even on Senna \u2014 1-1 \u2014 but the grades aren't buying it."
         },
         {
           "champion": "Nidalee",
@@ -5422,274 +5410,394 @@
           "wins": 0,
           "losses": 2,
           "win_rate": 0.0,
-          "mean_grade": 49.4,
-          "delta_vs_overall": -0.9,
+          "mean_grade": 48.2,
+          "delta_vs_overall": -0.1,
           "why": "Winless on Nidalee \u2014 0-2. Maybe retire this one for now."
+        },
+        {
+          "champion": "Senna",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Senna.png",
+          "games": 4,
+          "wins": 2,
+          "losses": 2,
+          "win_rate": 50.0,
+          "mean_grade": 48.3,
+          "delta_vs_overall": 0.0,
+          "why": "Even on Senna \u2014 2-2 \u2014 but the grades aren't buying it."
         }
       ],
-      "damage_taken_per_min": 1802,
-      "damage_dealt_share_pct": 18.1,
-      "damage_taken_share_pct": 18.2,
+      "damage_taken_per_min": 1851,
+      "damage_dealt_share_pct": 14.8,
+      "damage_taken_share_pct": 19.5,
       "kill_participation_pct": 75.7,
-      "deaths_per_game": 8.4,
+      "deaths_per_game": 8.6,
       "title": "The Untouchable",
-      "title_summary": "Best KDA in the group (4.6) and the fewest deaths per game (8.4) \u2014 she just doesn't die.",
+      "title_summary": "Best KDA in the group (4.5) and the fewest deaths per game (8.6) \u2014 she just doesn't die.",
       "kda_history": [
         {
           "game": 1,
-          "champion": "Lux",
-          "kda": 12.0
-        },
-        {
-          "game": 2,
-          "champion": "Evelynn",
-          "kda": 5.0
-        },
-        {
-          "game": 3,
-          "champion": "AurelionSol",
-          "kda": 5.12
-        },
-        {
-          "game": 4,
-          "champion": "MissFortune",
-          "kda": 3.2
-        },
-        {
-          "game": 5,
-          "champion": "Nautilus",
-          "kda": 6.86
-        },
-        {
-          "game": 6,
-          "champion": "Swain",
-          "kda": 2.36
-        },
-        {
-          "game": 7,
           "champion": "Senna",
           "kda": 6.12
         },
         {
-          "game": 8,
+          "game": 2,
           "champion": "Smolder",
           "kda": 5.12
         },
         {
-          "game": 9,
+          "game": 3,
           "champion": "Malzahar",
           "kda": 2.25
         },
         {
-          "game": 10,
+          "game": 4,
           "champion": "Nami",
           "kda": 8.71
         },
         {
-          "game": 11,
+          "game": 5,
           "champion": "Nautilus",
           "kda": 4.0
         },
         {
-          "game": 12,
+          "game": 6,
           "champion": "Kaisa",
           "kda": 5.71
         },
         {
-          "game": 13,
+          "game": 7,
           "champion": "Anivia",
           "kda": 4.0
         },
         {
-          "game": 14,
+          "game": 8,
           "champion": "Xerath",
           "kda": 5.0
         },
         {
-          "game": 15,
+          "game": 9,
           "champion": "Nautilus",
           "kda": 3.91
         },
         {
-          "game": 16,
+          "game": 10,
           "champion": "Kayle",
           "kda": 2.0
         },
         {
-          "game": 17,
+          "game": 11,
           "champion": "Senna",
           "kda": 3.33
         },
         {
-          "game": 18,
+          "game": 12,
           "champion": "Jinx",
           "kda": 3.18
         },
         {
-          "game": 19,
+          "game": 13,
           "champion": "Lux",
           "kda": 5.86
         },
         {
-          "game": 20,
+          "game": 14,
           "champion": "Thresh",
           "kda": 4.89
         },
         {
-          "game": 21,
+          "game": 15,
           "champion": "Jhin",
           "kda": 3.6
         },
         {
-          "game": 22,
+          "game": 16,
           "champion": "Anivia",
           "kda": 5.0
         },
         {
-          "game": 23,
+          "game": 17,
           "champion": "Xerath",
           "kda": 8.43
         },
         {
-          "game": 24,
+          "game": 18,
           "champion": "Milio",
           "kda": 6.57
         },
         {
-          "game": 25,
+          "game": 19,
           "champion": "Karma",
           "kda": 5.25
         },
         {
-          "game": 26,
+          "game": 20,
           "champion": "Milio",
           "kda": 9.0
         },
         {
-          "game": 27,
+          "game": 21,
           "champion": "Sona",
           "kda": 3.71
         },
         {
-          "game": 28,
+          "game": 22,
           "champion": "Heimerdinger",
           "kda": 3.45
         },
         {
-          "game": 29,
+          "game": 23,
           "champion": "Morgana",
           "kda": 7.33
         },
         {
-          "game": 30,
+          "game": 24,
           "champion": "Yuumi",
           "kda": 19.0
         },
         {
-          "game": 31,
+          "game": 25,
           "champion": "Tristana",
           "kda": 2.38
         },
         {
-          "game": 32,
+          "game": 26,
           "champion": "Nautilus",
           "kda": 4.25
         },
         {
-          "game": 33,
+          "game": 27,
           "champion": "Nidalee",
           "kda": 5.22
         },
         {
-          "game": 34,
+          "game": 28,
           "champion": "Rammus",
           "kda": 2.07
         },
         {
-          "game": 35,
+          "game": 29,
           "champion": "Chogath",
           "kda": 2.55
         },
         {
-          "game": 36,
+          "game": 30,
           "champion": "Syndra",
           "kda": 3.5
         },
         {
-          "game": 37,
+          "game": 31,
           "champion": "Velkoz",
           "kda": 4.5
         },
         {
-          "game": 38,
+          "game": 32,
           "champion": "Chogath",
           "kda": 2.2
         },
         {
-          "game": 39,
+          "game": 33,
           "champion": "Malphite",
           "kda": 3.14
         },
         {
-          "game": 40,
+          "game": 34,
           "champion": "Nidalee",
           "kda": 3.54
         },
         {
-          "game": 41,
+          "game": 35,
           "champion": "Morgana",
           "kda": 13.25
         },
         {
-          "game": 42,
+          "game": 36,
           "champion": "Lillia",
           "kda": 8.4
         },
         {
-          "game": 43,
+          "game": 37,
           "champion": "Smolder",
           "kda": 4.29
         },
         {
-          "game": 44,
+          "game": 38,
           "champion": "Ziggs",
           "kda": 3.0
         },
         {
-          "game": 45,
+          "game": 39,
           "champion": "Seraphine",
           "kda": 6.17
         },
         {
-          "game": 46,
+          "game": 40,
           "champion": "AurelionSol",
           "kda": 5.67
         },
         {
-          "game": 47,
+          "game": 41,
           "champion": "Maokai",
           "kda": 4.4
         },
         {
-          "game": 48,
+          "game": 42,
           "champion": "Ashe",
           "kda": 3.91
         },
         {
-          "game": 49,
+          "game": 43,
           "champion": "Sivir",
           "kda": 2.77
         },
         {
-          "game": 50,
+          "game": 44,
           "champion": "Milio",
           "kda": 10.0
+        },
+        {
+          "game": 45,
+          "champion": "Senna",
+          "kda": 4.3
+        },
+        {
+          "game": 46,
+          "champion": "Senna",
+          "kda": 3.29
+        },
+        {
+          "game": 47,
+          "champion": "Nautilus",
+          "kda": 2.36
+        },
+        {
+          "game": 48,
+          "champion": "Nami",
+          "kda": 5.83
+        },
+        {
+          "game": 49,
+          "champion": "Milio",
+          "kda": 7.67
+        },
+        {
+          "game": 50,
+          "champion": "Lucian",
+          "kda": 4.0
         }
       ]
     },
     {
-      "damage_per_min": 1803,
+      "damage_per_min": 1616,
       "games": [
+        {
+          "match_id": "Nautilus|4/8/27|13.4|9|77",
+          "date": "2026-11-10",
+          "champion": "Nautilus",
+          "win": true,
+          "kills": 4,
+          "deaths": 8,
+          "assists": 27,
+          "damage_to_champions": 14762,
+          "damage_taken": 35161,
+          "augments": [
+            "Courage of the Colossus",
+            "Growth Spurt",
+            "Bread And Butter"
+          ],
+          "game_minutes": 13.4,
+          "grade": 52.3,
+          "damage_dealt_share_pct": 14.5,
+          "damage_taken_share_pct": 26.8,
+          "kill_participation_pct": 79.5,
+          "stack_size": 5,
+          "teammates": [
+            "CreamiNataella",
+            "I3i3oy",
+            "PikabUwU",
+            "Vincent Chan"
+          ]
+        },
+        {
+          "match_id": "Katarina|14/18/22|21.1|21|136",
+          "date": "2026-11-10",
+          "champion": "Katarina",
+          "win": false,
+          "kills": 14,
+          "deaths": 18,
+          "assists": 22,
+          "damage_to_champions": 43989,
+          "damage_taken": 52636,
+          "augments": [
+            "Overloaded",
+            "Swift and Safe",
+            "Lonely Warrior",
+            "Big Brain"
+          ],
+          "game_minutes": 21.1,
+          "grade": 31.9,
+          "damage_dealt_share_pct": 20.8,
+          "damage_taken_share_pct": 16.6,
+          "kill_participation_pct": 66.7,
+          "stack_size": 5,
+          "teammates": [
+            "CreamiNataella",
+            "I3i3oy",
+            "PikabUwU",
+            "Vincent Chan"
+          ]
+        },
+        {
+          "match_id": "Shen|13/18/27|26.5|26|242",
+          "date": "2026-11-10",
+          "champion": "Shen",
+          "win": true,
+          "kills": 13,
+          "deaths": 18,
+          "assists": 27,
+          "damage_to_champions": 38537,
+          "damage_taken": 109479,
+          "augments": [
+            "Third Times the Harm",
+            "Echo Cast",
+            "Bread and Cheese",
+            "Quickstep",
+            "Shadow Runner"
+          ],
+          "game_minutes": 26.5,
+          "grade": 52.1,
+          "damage_dealt_share_pct": null,
+          "damage_taken_share_pct": null,
+          "kill_participation_pct": null,
+          "stack_size": 3,
+          "teammates": [
+            "CreamiNataella",
+            "I3i3oy"
+          ]
+        },
+        {
+          "match_id": "Singed|1/12/16|18.2|32|57",
+          "date": "2026-11-10",
+          "champion": "Singed",
+          "win": false,
+          "kills": 1,
+          "deaths": 12,
+          "assists": 16,
+          "damage_to_champions": 16200,
+          "damage_taken": 60744,
+          "augments": [
+            "Goredrink",
+            "With Haste",
+            "Celestial Body",
+            "Mad Scientist"
+          ],
+          "game_minutes": 18.2,
+          "grade": 35.1,
+          "damage_dealt_share_pct": null,
+          "damage_taken_share_pct": null,
+          "kill_participation_pct": null,
+          "stack_size": 1,
+          "teammates": []
+        },
         {
           "match_id": "Rumble|13/12/25|22.6|90|56",
           "date": "2026-11-08",
@@ -5707,7 +5815,7 @@
             "Eureka"
           ],
           "game_minutes": 22.6,
-          "grade": 49.9,
+          "grade": 47.9,
           "damage_dealt_share_pct": 24.8,
           "damage_taken_share_pct": 20.5,
           "kill_participation_pct": 66.7,
@@ -5737,7 +5845,7 @@
             "Bread and Cheese"
           ],
           "game_minutes": 20.2,
-          "grade": 52.0,
+          "grade": 51.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -5765,7 +5873,7 @@
             "Dashing"
           ],
           "game_minutes": 12.8,
-          "grade": 47.4,
+          "grade": 49.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -5795,7 +5903,7 @@
             "Shrink Ray"
           ],
           "game_minutes": 23.1,
-          "grade": 43.6,
+          "grade": 44.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -5848,7 +5956,7 @@
             "Heavy Hitter"
           ],
           "game_minutes": 11.4,
-          "grade": 39.3,
+          "grade": 37.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -5877,7 +5985,7 @@
             "Warlock Juicebox"
           ],
           "game_minutes": 23.5,
-          "grade": 28.4,
+          "grade": 28.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -5907,7 +6015,7 @@
             "Courage of the Colossus"
           ],
           "game_minutes": 19.5,
-          "grade": 33.9,
+          "grade": 34.7,
           "damage_dealt_share_pct": 8.6,
           "damage_taken_share_pct": 27.0,
           "kill_participation_pct": 83.3,
@@ -5937,7 +6045,7 @@
             "Deft"
           ],
           "game_minutes": 19.6,
-          "grade": 74.9,
+          "grade": 70.6,
           "damage_dealt_share_pct": 18.4,
           "damage_taken_share_pct": 35.4,
           "kill_participation_pct": 79.3,
@@ -5966,7 +6074,7 @@
             "CRIMSON COBALT"
           ],
           "game_minutes": 16.8,
-          "grade": 37.6,
+          "grade": 40.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -5990,7 +6098,7 @@
             "Salvation"
           ],
           "game_minutes": 15.4,
-          "grade": 23.8,
+          "grade": 22.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6018,7 +6126,7 @@
             "Porcupine"
           ],
           "game_minutes": 17.8,
-          "grade": 31.5,
+          "grade": 27.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6046,7 +6154,7 @@
             "Sap Magic"
           ],
           "game_minutes": 19.8,
-          "grade": 50.5,
+          "grade": 49.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 66.7,
@@ -6075,7 +6183,7 @@
             "FireFox"
           ],
           "game_minutes": 15.1,
-          "grade": 35.2,
+          "grade": 41.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 64.3,
@@ -6104,7 +6212,7 @@
             "Quickstep"
           ],
           "game_minutes": 24.1,
-          "grade": 48.4,
+          "grade": 47.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 78.0,
@@ -6134,7 +6242,7 @@
             "Take'em Down Down Down"
           ],
           "game_minutes": 18.5,
-          "grade": 45.5,
+          "grade": 47.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 73.1,
@@ -6163,7 +6271,7 @@
             "Escape Plan"
           ],
           "game_minutes": 19.8,
-          "grade": 64.5,
+          "grade": 67.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 91.1,
@@ -6193,7 +6301,7 @@
             "Growth Spurt"
           ],
           "game_minutes": 17.4,
-          "grade": 30.2,
+          "grade": 29.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 73.7,
@@ -6223,7 +6331,7 @@
             "Ultimate Recursion"
           ],
           "game_minutes": 25.3,
-          "grade": 27.6,
+          "grade": 27.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 67.7,
@@ -6251,7 +6359,7 @@
             "Divine Intervention"
           ],
           "game_minutes": 13.3,
-          "grade": 71.9,
+          "grade": 73.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 81.4,
@@ -6280,7 +6388,7 @@
             "Ultimate Revolution"
           ],
           "game_minutes": 17.0,
-          "grade": 31.9,
+          "grade": 32.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6308,7 +6416,7 @@
             "Goliath"
           ],
           "game_minutes": 20.6,
-          "grade": 58.9,
+          "grade": 51.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6335,7 +6443,7 @@
             "Celestial Body"
           ],
           "game_minutes": 24.2,
-          "grade": 37.1,
+          "grade": 34.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6362,7 +6470,7 @@
             "Bread And Butter"
           ],
           "game_minutes": 22.6,
-          "grade": 44.5,
+          "grade": 44.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 75.0,
@@ -6389,7 +6497,7 @@
             "Bread And Butter"
           ],
           "game_minutes": 13.4,
-          "grade": 45.2,
+          "grade": 44.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6417,7 +6525,7 @@
             "Titan's Resolve"
           ],
           "game_minutes": 19.1,
-          "grade": 54.2,
+          "grade": 50.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 77.6,
@@ -6446,7 +6554,7 @@
             "Thread the Needle"
           ],
           "game_minutes": 17.8,
-          "grade": 61.3,
+          "grade": 61.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 70.6,
@@ -6475,7 +6583,7 @@
             "Omni Soul"
           ],
           "game_minutes": 23.8,
-          "grade": 42.7,
+          "grade": 41.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 50.6,
@@ -6505,7 +6613,7 @@
             "Sap Magic"
           ],
           "game_minutes": 21.2,
-          "grade": 33.9,
+          "grade": 34.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 70.2,
@@ -6534,7 +6642,7 @@
             "Ethereal Weapon"
           ],
           "game_minutes": 19.2,
-          "grade": 20.5,
+          "grade": 20.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6560,7 +6668,7 @@
             "Zealot"
           ],
           "game_minutes": 17.0,
-          "grade": 39.7,
+          "grade": 36.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6587,7 +6695,7 @@
             "Ice Cold"
           ],
           "game_minutes": 23.1,
-          "grade": 63.9,
+          "grade": 50.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6614,7 +6722,7 @@
             "Fey Magic"
           ],
           "game_minutes": 18.2,
-          "grade": 14.9,
+          "grade": 14.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6642,7 +6750,7 @@
             "Bread And Butter"
           ],
           "game_minutes": 19.6,
-          "grade": 22.8,
+          "grade": 20.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6670,7 +6778,7 @@
             "Brass Blast"
           ],
           "game_minutes": 14.7,
-          "grade": 41.6,
+          "grade": 40.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6698,7 +6806,7 @@
             "Bread And Jam"
           ],
           "game_minutes": 19.3,
-          "grade": 52.9,
+          "grade": 53.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6726,7 +6834,7 @@
             "Juiced"
           ],
           "game_minutes": 17.3,
-          "grade": 43.4,
+          "grade": 41.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6753,7 +6861,7 @@
             "Armored Impact"
           ],
           "game_minutes": 23.0,
-          "grade": 37.9,
+          "grade": 29.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6780,7 +6888,7 @@
             "Heavy Hitter"
           ],
           "game_minutes": 12.8,
-          "grade": 58.8,
+          "grade": 54.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6809,7 +6917,7 @@
             "Enchanting Butterflies"
           ],
           "game_minutes": 20.4,
-          "grade": 19.4,
+          "grade": 16.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6837,7 +6945,7 @@
             "Growth Spurt"
           ],
           "game_minutes": 20.0,
-          "grade": 45.6,
+          "grade": 43.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6865,7 +6973,7 @@
             "Bread And Jam"
           ],
           "game_minutes": 16.1,
-          "grade": 69.9,
+          "grade": 69.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6892,7 +7000,7 @@
             "ADAPt"
           ],
           "game_minutes": 16.8,
-          "grade": 55.7,
+          "grade": 54.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6944,7 +7052,7 @@
             "Mighty Shield"
           ],
           "game_minutes": 10.9,
-          "grade": 66.5,
+          "grade": 69.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6972,7 +7080,7 @@
             "Ice Cold"
           ],
           "game_minutes": 21.4,
-          "grade": 30.3,
+          "grade": 29.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -6980,145 +7088,29 @@
           "teammates": [
             "CreamiNataella",
             "I3i3oy"
-          ]
-        },
-        {
-          "match_id": "Sion|11/8/22|14.6|32|44",
-          "date": "2026-11-03",
-          "champion": "Sion",
-          "win": true,
-          "kills": 11,
-          "deaths": 8,
-          "assists": 22,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "HEAVY",
-            "Armored Impact",
-            "Steel Your Heart",
-            "Sap Magic"
-          ],
-          "game_minutes": 14.6,
-          "grade": 66.0,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy"
-          ]
-        },
-        {
-          "match_id": "Rakan|4/15/33|19.6|11|102",
-          "date": "2026-10-31",
-          "champion": "Rakan",
-          "win": false,
-          "kills": 4,
-          "deaths": 15,
-          "assists": 33,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "POWER",
-            "Rejuvenation",
-            "Lonely Warrior",
-            "Echo Cast",
-            "Celestial Body"
-          ],
-          "game_minutes": 19.6,
-          "grade": 24.2,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
-        },
-        {
-          "match_id": "Taric|7/6/49|14.6|12|166",
-          "date": "2026-10-31",
-          "champion": "Taric",
-          "win": true,
-          "kills": 7,
-          "deaths": 6,
-          "assists": 49,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Wee Woo Wee Woo",
-            "Blue Barrier",
-            "Ultimate Recursion",
-            "Sap Magic",
-            "Growth Spurt"
-          ],
-          "game_minutes": 14.6,
-          "grade": 78.3,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
-          ]
-        },
-        {
-          "match_id": "Garen|10/8/11|16.8|27|29",
-          "date": "2026-10-31",
-          "champion": "Garen",
-          "win": true,
-          "kills": 10,
-          "deaths": 8,
-          "assists": 11,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Celestial Body",
-            "Vulnerability",
-            "Big Shot",
-            "Lonely Warrior"
-          ],
-          "game_minutes": 16.8,
-          "grade": 41.8,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 5,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "PikabUwU",
-            "Vincent Chan"
           ]
         }
       ],
-      "kda": 3.12,
-      "losses": 25,
-      "mmr_style": 1415,
+      "kda": 2.98,
+      "losses": 26,
+      "mmr_style": 1392,
       "name": "Ohwutahel",
       "region": "na1",
       "riot_id": "",
-      "score": 43.9,
-      "skillshots_dodged_per_min": 4.7,
+      "score": 42.3,
+      "skillshots_dodged_per_min": 4.76,
       "subscores": {
-        "output": 55.1,
-        "damage_taken": 51.0,
+        "output": 42.0,
+        "damage_taken": 57.2,
         "kda_efficiency": 39.6,
-        "teamplay": 47.0,
-        "death_quality": 40.0,
-        "augments": 41.9,
-        "mechanics": 4.7
+        "teamplay": 48.7,
+        "death_quality": 39.9,
+        "augments": 34.1,
+        "mechanics": 4.8
       },
-      "win_rate": 50.0,
-      "wins": 25,
-      "why_rank": "Ranked 5 of 5 at 43.9 (MMR-style 1415, 25-25, 50.0% win rate). Strongest vs the group: output (55.1 vs group avg 50.7, +4.4). Weakest vs the group: kda_efficiency (39.6 vs group avg 49.4, -9.8). By role: Damage 40.9 (17 games, -3.6 vs own avg); Frontline 46.3 (33 games, +1.8 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
+      "win_rate": 48.0,
+      "wins": 24,
+      "why_rank": "Ranked 5 of 5 at 42.3 (MMR-style 1392, 24-26, 48.0% win rate). Strongest vs the group: damage_taken (57.2 vs group avg 50.6, +6.6). Weakest vs the group: kda_efficiency (39.6 vs group avg 49.8, -10.2). By role: Damage 38.9 (18 games, -3.7 vs own avg); Frontline 44.7 (32 games, +2.1 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [
         "Frontline 52.4 (+4.4, 52 games) vs Damage 44.3 vs Support 41.9",
         "Most skillshots dodged/min: 5.00",
@@ -7127,39 +7119,39 @@
       ],
       "role_split": {
         "Damage": {
-          "games": 17,
-          "mean_grade": 40.9,
-          "delta_vs_overall": -3.6
+          "games": 18,
+          "mean_grade": 38.9,
+          "delta_vs_overall": -3.7
         },
         "Frontline": {
-          "games": 33,
-          "mean_grade": 46.3,
-          "delta_vs_overall": 1.8
+          "games": 32,
+          "mean_grade": 44.7,
+          "delta_vs_overall": 2.1
         }
       },
       "champion_focus": {
         "take_when_offered": [
           {
-            "champion": "Sion",
-            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Sion.png",
+            "champion": "Taric",
+            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Taric.png",
             "games": 3,
             "wins": 3,
             "losses": 0,
             "win_rate": 100.0,
-            "mean_grade": 58.7,
-            "delta_vs_overall": 14.3,
-            "why": "Undefeated on Sion \u2014 3-0, and it shows."
+            "mean_grade": 52.5,
+            "delta_vs_overall": 9.9,
+            "why": "Undefeated on Taric \u2014 3-0, and it shows."
           },
           {
-            "champion": "Taric",
-            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Taric.png",
-            "games": 4,
-            "wins": 4,
-            "losses": 0,
-            "win_rate": 100.0,
-            "mean_grade": 58.6,
-            "delta_vs_overall": 14.1,
-            "why": "Undefeated on Taric \u2014 4-0, and it shows."
+            "champion": "Shen",
+            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Shen.png",
+            "games": 5,
+            "wins": 3,
+            "losses": 2,
+            "win_rate": 60.0,
+            "mean_grade": 48.5,
+            "delta_vs_overall": 5.8,
+            "why": "Winning on Shen \u2014 3-2 \u2014 but the grades aren't buying it."
           },
           {
             "champion": "Trundle",
@@ -7168,103 +7160,70 @@
             "wins": 2,
             "losses": 1,
             "win_rate": 66.7,
-            "mean_grade": 50.3,
-            "delta_vs_overall": 5.8,
+            "mean_grade": 47.8,
+            "delta_vs_overall": 5.2,
             "why": "Winning on Trundle \u2014 2-1 \u2014 but the grades aren't buying it."
-          },
-          {
-            "champion": "Shen",
-            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Shen.png",
-            "games": 4,
-            "wins": 2,
-            "losses": 2,
-            "win_rate": 50.0,
-            "mean_grade": 49.7,
-            "delta_vs_overall": 5.3,
-            "why": "Even on Shen \u2014 2-2 \u2014 but the grades aren't buying it."
-          },
-          {
-            "champion": "Singed",
-            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Singed.png",
-            "games": 3,
-            "wins": 1,
-            "losses": 2,
-            "win_rate": 33.3,
-            "mean_grade": 48.8,
-            "delta_vs_overall": 4.4,
-            "why": "Losing on Singed \u2014 1-2. Worth a rethink."
           }
         ],
         "pass_or_swap": []
       },
       "recent_20": {
         "games": 20,
-        "wins": 6,
-        "losses": 14,
-        "win_rate": 30.0,
-        "mean_grade": 44.7,
-        "score_20": 41.4,
+        "wins": 7,
+        "losses": 13,
+        "win_rate": 35.0,
+        "mean_grade": 44.1,
+        "score_20": 41.6,
         "subscores": {
-          "output": 55.1,
-          "damage_taken": 51.0,
-          "kda_efficiency": 37.8,
-          "teamplay": 52.5,
-          "death_quality": 36.2,
-          "augments": 35.1,
-          "mechanics": 5.6
+          "output": 42.0,
+          "damage_taken": 57.2,
+          "kda_efficiency": 39.2,
+          "teamplay": 55.3,
+          "death_quality": 40.9,
+          "augments": 25.9,
+          "mechanics": 5.1
         },
         "pros": [
-          "Output is your strongest area in the last 20 (55.1) \u2014 keep it up.",
-          "Teamplay is your strongest area in the last 20 (52.5) \u2014 keep it up."
+          "Damage taken is your strongest area in the last 20 (57.2) \u2014 keep it up.",
+          "Teamplay is your strongest area in the last 20 (55.3) \u2014 keep it up."
         ],
         "cons": [
-          "Death quality is your weakest area in the last 20 (36.2) \u2014 the thing to work on.",
-          "Augments is your weakest area in the last 20 (35.1) \u2014 the thing to work on."
+          "KDA efficiency is your weakest area in the last 20 (39.2) \u2014 the thing to work on.",
+          "Augments is your weakest area in the last 20 (25.9) \u2014 the thing to work on."
         ],
         "tips": [
-          "Keep up Output (55.1 in the last 20): keep finding damage \u2014 your positioning is paying off.",
-          "Keep up Teamplay (52.5 in the last 20): keep joining fights \u2014 your kill participation is strong.",
-          "Work on Death quality (36.2 in the last 20): die less, and later in the game.",
-          "Work on Augments (35.1 in the last 20): rethink augment picks \u2014 the ones taken lately are underperforming."
+          "Keep up Damage taken (57.2 in the last 20): keep stepping forward and soaking for the team.",
+          "Keep up Teamplay (55.3 in the last 20): keep joining fights \u2014 your kill participation is strong.",
+          "Work on KDA efficiency (39.2 in the last 20): trade less \u2014 fewer deaths for the kills you get.",
+          "Work on Augments (25.9 in the last 20): rethink augment picks \u2014 the ones taken lately are underperforming."
         ],
         "stacked_20": {
-          "games": 19,
-          "wins": 6,
-          "losses": 13,
-          "win_rate": 31.6,
-          "mean_grade": 45.1
+          "games": 18,
+          "wins": 7,
+          "losses": 11,
+          "win_rate": 38.9,
+          "mean_grade": 44.8
         },
         "solo_20": {
-          "games": 1,
+          "games": 2,
           "wins": 0,
-          "losses": 1,
+          "losses": 2,
           "win_rate": 0.0,
-          "mean_grade": 37.6
+          "mean_grade": 37.8
         },
-        "team_line": "Playing together helps you: with 2+ of the group in the last 20 you went 6-13 (31.6%, grade 45.1) vs solo 0-1 (0.0%, grade 37.6)."
+        "team_line": "Playing together helps you: with 2+ of the group in the last 20 you went 7-11 (38.9%, grade 44.8) vs solo 0-2 (0.0%, grade 37.8)."
       },
       "champion_top3": [
         {
           "champion": "Sion",
           "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Sion.png",
-          "games": 3,
-          "wins": 3,
+          "games": 2,
+          "wins": 2,
           "losses": 0,
           "win_rate": 100.0,
-          "mean_grade": 58.7,
+          "mean_grade": 57.0,
           "delta_vs_overall": 14.3,
-          "why": "Undefeated on Sion \u2014 3-0, and it shows."
-        },
-        {
-          "champion": "Taric",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Taric.png",
-          "games": 4,
-          "wins": 4,
-          "losses": 0,
-          "win_rate": 100.0,
-          "mean_grade": 58.6,
-          "delta_vs_overall": 14.1,
-          "why": "Undefeated on Taric \u2014 4-0, and it shows."
+          "why": "Undefeated on Sion \u2014 2-0, and it shows."
         },
         {
           "champion": "Jax",
@@ -7273,23 +7232,23 @@
           "wins": 2,
           "losses": 0,
           "win_rate": 100.0,
-          "mean_grade": 57.3,
-          "delta_vs_overall": 12.9,
+          "mean_grade": 53.0,
+          "delta_vs_overall": 10.4,
           "why": "Undefeated on Jax \u2014 2-0, and it shows."
+        },
+        {
+          "champion": "Taric",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Taric.png",
+          "games": 3,
+          "wins": 3,
+          "losses": 0,
+          "win_rate": 100.0,
+          "mean_grade": 52.5,
+          "delta_vs_overall": 9.9,
+          "why": "Undefeated on Taric \u2014 3-0, and it shows."
         }
       ],
       "champion_worst3": [
-        {
-          "champion": "Rumble",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Rumble.png",
-          "games": 2,
-          "wins": 1,
-          "losses": 1,
-          "win_rate": 50.0,
-          "mean_grade": 32.4,
-          "delta_vs_overall": -12.0,
-          "why": "Even on Rumble \u2014 1-1 \u2014 but the grades aren't buying it."
-        },
         {
           "champion": "DrMundo",
           "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/DrMundo.png",
@@ -7297,285 +7256,432 @@
           "wins": 0,
           "losses": 2,
           "win_rate": 0.0,
-          "mean_grade": 34.3,
-          "delta_vs_overall": -10.2,
+          "mean_grade": 30.7,
+          "delta_vs_overall": -12.0,
           "why": "Winless on DrMundo \u2014 0-2. Maybe retire this one for now."
         },
         {
-          "champion": "Katarina",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Katarina.png",
+          "champion": "Rumble",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Rumble.png",
           "games": 2,
           "wins": 1,
           "losses": 1,
           "win_rate": 50.0,
+          "mean_grade": 31.3,
+          "delta_vs_overall": -11.3,
+          "why": "Even on Rumble \u2014 1-1 \u2014 but the grades aren't buying it."
+        },
+        {
+          "champion": "Katarina",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Katarina.png",
+          "games": 3,
+          "wins": 1,
+          "losses": 2,
+          "win_rate": 33.3,
           "mean_grade": 40.3,
-          "delta_vs_overall": -4.1,
-          "why": "Even on Katarina \u2014 1-1 \u2014 but the grades aren't buying it."
+          "delta_vs_overall": -2.4,
+          "why": "Losing on Katarina \u2014 1-2. Worth a rethink."
         }
       ],
-      "damage_taken_per_min": 2885,
-      "damage_dealt_share_pct": 17.3,
-      "damage_taken_share_pct": 27.7,
+      "damage_taken_per_min": 3001,
+      "damage_dealt_share_pct": 17.4,
+      "damage_taken_share_pct": 25.3,
       "kill_participation_pct": 73.1,
-      "deaths_per_game": 11.6,
+      "deaths_per_game": 12.0,
       "title": "The Matrix",
-      "title_summary": "Dodges the most skillshots in the group (4.7 per minute) \u2014 good luck hitting them.",
+      "title_summary": "Dodges the most skillshots in the group (4.76 per minute) \u2014 good luck hitting them.",
       "kda_history": [
         {
           "game": 1,
-          "champion": "Garen",
-          "kda": 2.62
-        },
-        {
-          "game": 2,
-          "champion": "Taric",
-          "kda": 9.33
-        },
-        {
-          "game": 3,
-          "champion": "Rakan",
-          "kda": 2.47
-        },
-        {
-          "game": 4,
-          "champion": "Sion",
-          "kda": 4.12
-        },
-        {
-          "game": 5,
           "champion": "Trundle",
           "kda": 2.93
         },
         {
-          "game": 6,
+          "game": 2,
           "champion": "Sion",
           "kda": 3.83
         },
         {
-          "game": 7,
+          "game": 3,
           "champion": "Yorick",
           "kda": 2.25
         },
         {
-          "game": 8,
+          "game": 4,
           "champion": "Jax",
           "kda": 2.8
         },
         {
-          "game": 9,
+          "game": 5,
           "champion": "Rell",
           "kda": 4.0
         },
         {
-          "game": 10,
+          "game": 6,
           "champion": "Trundle",
           "kda": 2.79
         },
         {
-          "game": 11,
+          "game": 7,
           "champion": "Taric",
           "kda": 2.73
         },
         {
-          "game": 12,
+          "game": 8,
           "champion": "Shen",
           "kda": 7.0
         },
         {
-          "game": 13,
+          "game": 9,
           "champion": "Nautilus",
           "kda": 1.93
         },
         {
-          "game": 14,
+          "game": 10,
           "champion": "Ashe",
           "kda": 3.33
         },
         {
-          "game": 15,
+          "game": 11,
           "champion": "Volibear",
           "kda": 3.82
         },
         {
-          "game": 16,
+          "game": 12,
           "champion": "Leona",
           "kda": 1.9
         },
         {
-          "game": 17,
+          "game": 13,
           "champion": "Lillia",
           "kda": 2.73
         },
         {
-          "game": 18,
+          "game": 14,
           "champion": "Rumble",
           "kda": 2.41
         },
         {
-          "game": 19,
+          "game": 15,
           "champion": "Singed",
           "kda": 3.82
         },
         {
-          "game": 20,
+          "game": 16,
           "champion": "Shen",
           "kda": 4.0
         },
         {
-          "game": 21,
+          "game": 17,
           "champion": "Zyra",
           "kda": 2.67
         },
         {
-          "game": 22,
+          "game": 18,
           "champion": "Yorick",
           "kda": 3.67
         },
         {
-          "game": 23,
+          "game": 19,
           "champion": "Nautilus",
           "kda": 3.23
         },
         {
-          "game": 24,
+          "game": 20,
           "champion": "Zyra",
           "kda": 4.5
         },
         {
-          "game": 25,
+          "game": 21,
           "champion": "Singed",
           "kda": 3.8
         },
         {
-          "game": 26,
+          "game": 22,
           "champion": "Jayce",
           "kda": 2.0
         },
         {
-          "game": 27,
+          "game": 23,
           "champion": "Volibear",
           "kda": 3.0
         },
         {
-          "game": 28,
+          "game": 24,
           "champion": "DrMundo",
           "kda": 3.16
         },
         {
-          "game": 29,
+          "game": 25,
           "champion": "Jax",
           "kda": 2.64
         },
         {
-          "game": 30,
+          "game": 26,
           "champion": "Malphite",
           "kda": 2.62
         },
         {
-          "game": 31,
+          "game": 27,
           "champion": "Taric",
           "kda": 5.0
         },
         {
-          "game": 32,
+          "game": 28,
           "champion": "Karthus",
           "kda": 2.0
         },
         {
-          "game": 33,
+          "game": 29,
           "champion": "Sylas",
           "kda": 1.75
         },
         {
-          "game": 34,
+          "game": 30,
           "champion": "Taric",
           "kda": 3.73
         },
         {
-          "game": 35,
+          "game": 31,
           "champion": "Katarina",
           "kda": 2.92
         },
         {
-          "game": 36,
+          "game": 32,
           "champion": "Shen",
           "kda": 4.18
         },
         {
-          "game": 37,
+          "game": 33,
           "champion": "Katarina",
           "kda": 4.0
         },
         {
-          "game": 38,
+          "game": 34,
           "champion": "Yorick",
           "kda": 3.33
         },
         {
-          "game": 39,
+          "game": 35,
           "champion": "DrMundo",
           "kda": 1.69
         },
         {
-          "game": 40,
+          "game": 36,
           "champion": "Zac",
           "kda": 2.55
         },
         {
-          "game": 41,
+          "game": 37,
           "champion": "Kaisa",
           "kda": 3.75
         },
         {
-          "game": 42,
+          "game": 38,
           "champion": "Trundle",
           "kda": 5.75
         },
         {
-          "game": 43,
+          "game": 39,
           "champion": "Rell",
           "kda": 3.21
         },
         {
-          "game": 44,
+          "game": 40,
           "champion": "Singed",
           "kda": 2.67
         },
         {
-          "game": 45,
+          "game": 41,
           "champion": "Maokai",
           "kda": 2.38
         },
         {
-          "game": 46,
+          "game": 42,
           "champion": "Zyra",
           "kda": 2.92
         },
         {
-          "game": 47,
+          "game": 43,
           "champion": "Sion",
           "kda": 3.5
         },
         {
-          "game": 48,
+          "game": 44,
           "champion": "Renekton",
           "kda": 2.11
         },
         {
-          "game": 49,
+          "game": 45,
           "champion": "Shen",
           "kda": 3.55
         },
         {
-          "game": 50,
+          "game": 46,
           "champion": "Rumble",
           "kda": 3.17
+        },
+        {
+          "game": 47,
+          "champion": "Singed",
+          "kda": 1.42
+        },
+        {
+          "game": 48,
+          "champion": "Shen",
+          "kda": 2.22
+        },
+        {
+          "game": 49,
+          "champion": "Katarina",
+          "kda": 2.0
+        },
+        {
+          "game": 50,
+          "champion": "Nautilus",
+          "kda": 3.88
         }
       ]
     },
     {
-      "damage_per_min": 1509,
+      "damage_per_min": 1488,
       "games": [
+        {
+          "match_id": "TahmKench|3/10/30|27.1|7|65",
+          "date": "2026-11-11",
+          "champion": "TahmKench",
+          "win": true,
+          "kills": 3,
+          "deaths": 10,
+          "assists": 30,
+          "damage_to_champions": 20032,
+          "damage_taken": 115479,
+          "augments": [
+            "Phenomenal Evil",
+            "Don't Change the Channel",
+            "Mystic Punch",
+            "Porcupine"
+          ],
+          "game_minutes": 27.1,
+          "grade": 51.9,
+          "damage_dealt_share_pct": null,
+          "damage_taken_share_pct": null,
+          "kill_participation_pct": null,
+          "stack_size": 3,
+          "teammates": [
+            "CreamiNataella",
+            "I3i3oy"
+          ]
+        },
+        {
+          "match_id": "Kaisa|12/6/25|19.1|49|35",
+          "date": "2026-11-11",
+          "champion": "Kaisa",
+          "win": false,
+          "kills": 12,
+          "deaths": 6,
+          "assists": 25,
+          "damage_to_champions": 28728,
+          "damage_taken": 17891,
+          "augments": [
+            "Wooglet's Witchcap",
+            "Homeguard",
+            "CRIMSON COBALT",
+            "Zealot",
+            "Typhoon"
+          ],
+          "game_minutes": 19.1,
+          "grade": 40.9,
+          "damage_dealt_share_pct": null,
+          "damage_taken_share_pct": null,
+          "kill_participation_pct": null,
+          "stack_size": 3,
+          "teammates": [
+            "CreamiNataella",
+            "I3i3oy"
+          ]
+        },
+        {
+          "match_id": "Illaoi|9/7/21|13.4|15|53",
+          "date": "2026-11-10",
+          "champion": "Illaoi",
+          "win": true,
+          "kills": 9,
+          "deaths": 7,
+          "assists": 21,
+          "damage_to_champions": 24468,
+          "damage_taken": 39213,
+          "augments": [
+            "Infinite Recursion",
+            "Sap Magic",
+            "Scopier Weapons"
+          ],
+          "game_minutes": 13.4,
+          "grade": 69.2,
+          "damage_dealt_share_pct": 24.0,
+          "damage_taken_share_pct": 29.9,
+          "kill_participation_pct": 76.9,
+          "stack_size": 5,
+          "teammates": [
+            "CreamiNataella",
+            "I3i3oy",
+            "Ohwutahel",
+            "Vincent Chan"
+          ]
+        },
+        {
+          "match_id": "Soraka|0/11/46|21.1|6|133",
+          "date": "2026-11-10",
+          "champion": "Soraka",
+          "win": false,
+          "kills": 0,
+          "deaths": 11,
+          "assists": 46,
+          "damage_to_champions": 10302,
+          "damage_taken": 44510,
+          "augments": [
+            "Empowered By The Faithful",
+            "First-Aid Kit",
+            "Blue Barrier",
+            "Salvation"
+          ],
+          "game_minutes": 21.1,
+          "grade": 38.0,
+          "damage_dealt_share_pct": 4.9,
+          "damage_taken_share_pct": 14.0,
+          "kill_participation_pct": 85.2,
+          "stack_size": 5,
+          "teammates": [
+            "CreamiNataella",
+            "I3i3oy",
+            "Ohwutahel",
+            "Vincent Chan"
+          ]
+        },
+        {
+          "match_id": "Velkoz|10/3/20|10.3|20|26",
+          "date": "2026-11-10",
+          "champion": "Velkoz",
+          "win": true,
+          "kills": 10,
+          "deaths": 3,
+          "assists": 20,
+          "damage_to_champions": 24368,
+          "damage_taken": 6726,
+          "augments": [
+            "From Downtown",
+            "Magic Missile"
+          ],
+          "game_minutes": 10.3,
+          "grade": 66.4,
+          "damage_dealt_share_pct": null,
+          "damage_taken_share_pct": null,
+          "kill_participation_pct": null,
+          "stack_size": 2,
+          "teammates": [
+            "Vincent Chan"
+          ]
+        },
         {
           "match_id": "Lillia|9/8/24|22.6|20|32",
           "date": "2026-11-08",
@@ -7593,7 +7699,7 @@
             "Eureka"
           ],
           "game_minutes": 22.6,
-          "grade": 46.2,
+          "grade": 45.2,
           "damage_dealt_share_pct": 18.1,
           "damage_taken_share_pct": 20.4,
           "kill_participation_pct": 57.9,
@@ -7623,7 +7729,7 @@
             "Ok Boomerang"
           ],
           "game_minutes": 20.2,
-          "grade": 57.6,
+          "grade": 56.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -7651,7 +7757,7 @@
             "Jeweled Gauntlet"
           ],
           "game_minutes": 12.8,
-          "grade": 53.0,
+          "grade": 50.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -7680,7 +7786,7 @@
             "Twin Fire"
           ],
           "game_minutes": 12.1,
-          "grade": 64.9,
+          "grade": 63.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -7709,7 +7815,7 @@
             "En Passant"
           ],
           "game_minutes": 23.9,
-          "grade": 48.3,
+          "grade": 45.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -7738,7 +7844,7 @@
             "Scoped Weapons"
           ],
           "game_minutes": 17.1,
-          "grade": 27.3,
+          "grade": 26.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -7767,7 +7873,7 @@
             "Archmage"
           ],
           "game_minutes": 14.4,
-          "grade": 56.8,
+          "grade": 55.9,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -7796,7 +7902,7 @@
             "Biggest Snowball Ever"
           ],
           "game_minutes": 19.5,
-          "grade": 35.7,
+          "grade": 31.6,
           "damage_dealt_share_pct": 18.2,
           "damage_taken_share_pct": 14.6,
           "kill_participation_pct": 61.1,
@@ -7826,7 +7932,7 @@
             "Blue Barrier"
           ],
           "game_minutes": 19.6,
-          "grade": 41.7,
+          "grade": 37.7,
           "damage_dealt_share_pct": 18.2,
           "damage_taken_share_pct": 9.4,
           "kill_participation_pct": 58.6,
@@ -7855,7 +7961,7 @@
             "Blue Barrier"
           ],
           "game_minutes": 12.3,
-          "grade": 53.3,
+          "grade": 50.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -7884,7 +7990,7 @@
             "Critical Healing"
           ],
           "game_minutes": 19.8,
-          "grade": 41.2,
+          "grade": 46.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 82.2,
@@ -7943,7 +8049,7 @@
             "Sonic Boom"
           ],
           "game_minutes": 26.9,
-          "grade": 31.1,
+          "grade": 33.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -7972,7 +8078,7 @@
             "Take'em Down Down Down"
           ],
           "game_minutes": 16.9,
-          "grade": 43.7,
+          "grade": 42.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8000,7 +8106,7 @@
             "FireFox"
           ],
           "game_minutes": 15.9,
-          "grade": 30.9,
+          "grade": 29.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8028,7 +8134,7 @@
             "Transmute: Prismatic"
           ],
           "game_minutes": 24.1,
-          "grade": 52.0,
+          "grade": 51.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 78.0,
@@ -8057,7 +8163,7 @@
             "Biggest Snowball Ever"
           ],
           "game_minutes": 18.5,
-          "grade": 40.9,
+          "grade": 41.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 53.8,
@@ -8086,7 +8192,7 @@
             "Blue Barrier"
           ],
           "game_minutes": 19.8,
-          "grade": 38.4,
+          "grade": 34.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 57.8,
@@ -8116,7 +8222,7 @@
             "Chain Reaction"
           ],
           "game_minutes": 17.4,
-          "grade": 32.8,
+          "grade": 31.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 65.8,
@@ -8146,7 +8252,7 @@
             "Goredrink"
           ],
           "game_minutes": 25.3,
-          "grade": 27.7,
+          "grade": 27.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 56.5,
@@ -8174,7 +8280,7 @@
             "Donation"
           ],
           "game_minutes": 13.3,
-          "grade": 59.4,
+          "grade": 62.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 95.3,
@@ -8203,7 +8309,7 @@
             "Biggest Snowball Ever"
           ],
           "game_minutes": 17.0,
-          "grade": 21.2,
+          "grade": 20.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8231,7 +8337,7 @@
             "Divine Intervention"
           ],
           "game_minutes": 22.6,
-          "grade": 61.5,
+          "grade": 62.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 64.3,
@@ -8259,7 +8365,7 @@
             "Magic Missile"
           ],
           "game_minutes": 13.4,
-          "grade": 34.3,
+          "grade": 40.4,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8287,7 +8393,7 @@
             "Eureka"
           ],
           "game_minutes": 19.1,
-          "grade": 63.8,
+          "grade": 54.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 85.7,
@@ -8316,7 +8422,7 @@
             "Magic Missile"
           ],
           "game_minutes": 17.8,
-          "grade": 43.1,
+          "grade": 43.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 62.7,
@@ -8345,7 +8451,7 @@
             "Bread and Cheese"
           ],
           "game_minutes": 23.8,
-          "grade": 37.0,
+          "grade": 35.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 53.0,
@@ -8375,7 +8481,7 @@
             "Ethereal Weapon"
           ],
           "game_minutes": 21.2,
-          "grade": 36.1,
+          "grade": 32.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": 66.0,
@@ -8405,7 +8511,7 @@
             "Ice Cold"
           ],
           "game_minutes": 19.6,
-          "grade": 31.6,
+          "grade": 31.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8433,7 +8539,7 @@
             "Transmute: Prismatic"
           ],
           "game_minutes": 14.7,
-          "grade": 37.3,
+          "grade": 32.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8461,7 +8567,7 @@
             "Mad Scientist"
           ],
           "game_minutes": 22.7,
-          "grade": 58.3,
+          "grade": 62.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8489,7 +8595,7 @@
             "Ultimate Recursion"
           ],
           "game_minutes": 17.0,
-          "grade": 48.0,
+          "grade": 45.2,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8518,7 +8624,7 @@
             "Rejuvenation"
           ],
           "game_minutes": 13.8,
-          "grade": 28.6,
+          "grade": 33.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8546,7 +8652,7 @@
             "BEES!!!"
           ],
           "game_minutes": 23.0,
-          "grade": 31.4,
+          "grade": 33.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8573,7 +8679,7 @@
             "Lich Brain"
           ],
           "game_minutes": 12.8,
-          "grade": 62.5,
+          "grade": 60.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8602,7 +8708,7 @@
             "Divine Intervention"
           ],
           "game_minutes": 20.4,
-          "grade": 39.5,
+          "grade": 37.6,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8630,7 +8736,7 @@
             "Bread And Jam"
           ],
           "game_minutes": 20.0,
-          "grade": 73.5,
+          "grade": 74.8,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8658,7 +8764,7 @@
             "Poltergeist"
           ],
           "game_minutes": 20.0,
-          "grade": 33.6,
+          "grade": 36.1,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8686,7 +8792,7 @@
             "Blue Barrier"
           ],
           "game_minutes": 19.1,
-          "grade": 68.6,
+          "grade": 64.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8713,7 +8819,7 @@
             "Magic Missile"
           ],
           "game_minutes": 10.9,
-          "grade": 66.3,
+          "grade": 62.0,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8740,7 +8846,7 @@
             "Tank It Or Leave It"
           ],
           "game_minutes": 20.4,
-          "grade": 17.6,
+          "grade": 18.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8768,7 +8874,7 @@
             "Mystic Punch"
           ],
           "game_minutes": 19.4,
-          "grade": 32.9,
+          "grade": 25.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8796,7 +8902,7 @@
             "Twin Fire"
           ],
           "game_minutes": 20.8,
-          "grade": 48.1,
+          "grade": 43.7,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8825,7 +8931,7 @@
             "Spin To Win"
           ],
           "game_minutes": 17.7,
-          "grade": 11.5,
+          "grade": 12.3,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8853,7 +8959,7 @@
             "Warlock Juicebox"
           ],
           "game_minutes": 14.6,
-          "grade": 87.0,
+          "grade": 82.5,
           "damage_dealt_share_pct": null,
           "damage_taken_share_pct": null,
           "kill_participation_pct": null,
@@ -8863,244 +8969,147 @@
             "I3i3oy",
             "Vincent Chan"
           ]
-        },
-        {
-          "match_id": "Jayce|12/8/14|14.1|23|30",
-          "date": "2026-11-02",
-          "champion": "Jayce",
-          "win": false,
-          "kills": 12,
-          "deaths": 8,
-          "assists": 14,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Weapon of Destiny",
-            "Can't Touch This",
-            "Goredrink",
-            "Veil of Warding"
-          ],
-          "game_minutes": 14.1,
-          "grade": 51.9,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 4,
-          "teammates": [
-            "CreamiNataella",
-            "I3i3oy",
-            "Vincent Chan"
-          ]
-        },
-        {
-          "match_id": "Ezreal|13/16/29|24.3|34|34",
-          "date": "2026-11-02",
-          "champion": "Ezreal",
-          "win": true,
-          "kills": 13,
-          "deaths": 16,
-          "assists": 29,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Magic Missile",
-            "Take'em Down Down Down",
-            "Dual Wield",
-            "Holy Snowball"
-          ],
-          "game_minutes": 24.3,
-          "grade": 39.6,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Vincent Chan"
-          ]
-        },
-        {
-          "match_id": "Lux|4/8/34|16.2|28|18",
-          "date": "2026-11-02",
-          "champion": "Lux",
-          "win": true,
-          "kills": 4,
-          "deaths": 8,
-          "assists": 34,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Skilled Sniper",
-            "Blue Barrier",
-            "Mighty Shield",
-            "It's Killing Time",
-            "Jeweled Gauntlet"
-          ],
-          "game_minutes": 16.2,
-          "grade": 63.5,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 3,
-          "teammates": [
-            "I3i3oy",
-            "Vincent Chan"
-          ]
-        },
-        {
-          "match_id": "Nami|7/3/36|14.9|9|3",
-          "date": "2026-11-02",
-          "champion": "Nami",
-          "win": true,
-          "kills": 7,
-          "deaths": 3,
-          "assists": 36,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "Double Time",
-            "Overloaded",
-            "Mercy's Strike"
-          ],
-          "game_minutes": 14.9,
-          "grade": 47.5,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 2,
-          "teammates": [
-            "Vincent Chan"
-          ]
-        },
-        {
-          "match_id": "Nidalee|8/7/29|14.0|3|12",
-          "date": "2026-11-01",
-          "champion": "Nidalee",
-          "win": true,
-          "kills": 8,
-          "deaths": 7,
-          "assists": 29,
-          "damage_to_champions": null,
-          "damage_taken": null,
-          "augments": [
-            "HEAVY",
-            "CRIMSON COBALT",
-            "Triggered Inferno",
-            "Enchanting Butterflies"
-          ],
-          "game_minutes": 14.0,
-          "grade": 58.5,
-          "damage_dealt_share_pct": null,
-          "damage_taken_share_pct": null,
-          "kill_participation_pct": null,
-          "stack_size": 1,
-          "teammates": []
         }
       ],
-      "kda": 3.67,
-      "losses": 26,
-      "mmr_style": 1419,
+      "kda": 3.69,
+      "losses": 27,
+      "mmr_style": 1406,
       "name": "PikabUwU",
       "region": "na1",
       "riot_id": "",
-      "score": 44.2,
-      "skillshots_dodged_per_min": 2.56,
+      "score": 43.3,
+      "skillshots_dodged_per_min": 2.79,
       "subscores": {
-        "output": 30.3,
-        "damage_taken": 44.3,
-        "kda_efficiency": 45.1,
-        "teamplay": 31.0,
-        "death_quality": 53.2,
-        "augments": 46.9,
-        "mechanics": 2.6
+        "output": 31.8,
+        "damage_taken": 44.8,
+        "kda_efficiency": 47.7,
+        "teamplay": 31.6,
+        "death_quality": 56.0,
+        "augments": 39.9,
+        "mechanics": 2.8
       },
-      "win_rate": 48.0,
-      "wins": 24,
-      "why_rank": "Ranked 4 of 5 at 44.2 (MMR-style 1419, 24-26, 48.0% win rate). Strongest vs the group: augments (46.9 vs group avg 42.6, +4.3). Weakest vs the group: output (30.3 vs group avg 50.7, -20.4). By role: Damage 46.4 (40 games, +1.0 vs own avg); Frontline 42.7 (7 games, -2.7 vs own avg); Support 39.1 (3 games, -6.3 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
+      "win_rate": 46.0,
+      "wins": 23,
+      "why_rank": "Ranked 4 of 5 at 43.3 (MMR-style 1406, 23-27, 46.0% win rate). Strongest vs the group: death_quality (56.0 vs group avg 50.0, +6.0). Weakest vs the group: teamplay (31.6 vs group avg 50.7, -19.1). By role: Damage 44.5 (38 games, -0.0 vs own avg); Frontline 46.5 (9 games, +1.9 vs own avg); Support 39.4 (3 games, -5.1 vs own avg). Win rate is only 15% of the score and no single stat decides the rank \u2014 each game grade blends every criterion the data source provides for that game (KDA, teamplay, death quality, augments and mechanics \u2014 skillshots dodged \u2014 plus damage dealt and damage taken when the extension has read the game's Details panel \u2014 share of team damage on full-stack games, else damage per minute), graded within role and adjusted for champion \u2014 not from one stat.",
       "snapshot_facts": [],
       "role_split": {
         "Damage": {
-          "games": 40,
-          "mean_grade": 46.4,
-          "delta_vs_overall": 1.0
+          "games": 38,
+          "mean_grade": 44.5,
+          "delta_vs_overall": -0.0
         },
         "Frontline": {
-          "games": 7,
-          "mean_grade": 42.7,
-          "delta_vs_overall": -2.7
+          "games": 9,
+          "mean_grade": 46.5,
+          "delta_vs_overall": 1.9
         },
         "Support": {
           "games": 3,
-          "mean_grade": 39.1,
-          "delta_vs_overall": -6.3
+          "mean_grade": 39.4,
+          "delta_vs_overall": -5.1
         }
       },
       "champion_focus": {
-        "take_when_offered": [],
-        "pass_or_swap": []
+        "take_when_offered": [
+          {
+            "champion": "Kaisa",
+            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Kaisa.png",
+            "games": 3,
+            "wins": 2,
+            "losses": 1,
+            "win_rate": 66.7,
+            "mean_grade": 53.1,
+            "delta_vs_overall": 8.6,
+            "why": "Winning on Kaisa \u2014 2-1. Keep it in the rotation."
+          }
+        ],
+        "pass_or_swap": [
+          {
+            "champion": "Soraka",
+            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Soraka.png",
+            "games": 3,
+            "wins": 0,
+            "losses": 3,
+            "win_rate": 0.0,
+            "mean_grade": 39.4,
+            "delta_vs_overall": -5.1,
+            "why": "Winless on Soraka \u2014 0-3. Maybe retire this one for now."
+          },
+          {
+            "champion": "Smolder",
+            "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Smolder.png",
+            "games": 3,
+            "wins": 1,
+            "losses": 2,
+            "win_rate": 33.3,
+            "mean_grade": 40.6,
+            "delta_vs_overall": -4.0,
+            "why": "Losing on Smolder \u2014 1-2. Worth a rethink."
+          }
+        ]
       },
       "recent_20": {
         "games": 20,
-        "wins": 7,
-        "losses": 13,
-        "win_rate": 35.0,
-        "mean_grade": 42.8,
-        "score_20": 40.5,
+        "wins": 8,
+        "losses": 12,
+        "win_rate": 40.0,
+        "mean_grade": 43.9,
+        "score_20": 41.9,
         "subscores": {
-          "output": 31.9,
-          "damage_taken": 37.6,
-          "kda_efficiency": 43.8,
-          "teamplay": 30.6,
-          "death_quality": 56.9,
-          "augments": 39.7,
-          "mechanics": 3.8
+          "output": 31.7,
+          "damage_taken": 41.0,
+          "kda_efficiency": 51.2,
+          "teamplay": 27.1,
+          "death_quality": 57.5,
+          "augments": 36.5,
+          "mechanics": 3.5
         },
         "pros": [
-          "Death quality is your strongest area in the last 20 (56.9) \u2014 keep it up.",
-          "KDA efficiency is your strongest area in the last 20 (43.8) \u2014 keep it up."
+          "Death quality is your strongest area in the last 20 (57.5) \u2014 keep it up.",
+          "KDA efficiency is your strongest area in the last 20 (51.2) \u2014 keep it up."
         ],
         "cons": [
-          "Output is your weakest area in the last 20 (31.9) \u2014 the thing to work on.",
-          "Teamplay is your weakest area in the last 20 (30.6) \u2014 the thing to work on."
+          "Output is your weakest area in the last 20 (31.7) \u2014 the thing to work on.",
+          "Teamplay is your weakest area in the last 20 (27.1) \u2014 the thing to work on."
         ],
         "tips": [
-          "Keep up Death quality (56.9 in the last 20): keep staying alive \u2014 your deaths are low for your role.",
-          "Keep up KDA efficiency (43.8 in the last 20): keep trading like this \u2014 good kills for few deaths.",
-          "Work on Output (31.9 in the last 20): focus on damage output and positioning to deal more damage.",
-          "Work on Teamplay (30.6 in the last 20): join more fights to raise kill participation."
+          "Keep up Death quality (57.5 in the last 20): keep staying alive \u2014 your deaths are low for your role.",
+          "Keep up KDA efficiency (51.2 in the last 20): keep trading like this \u2014 good kills for few deaths.",
+          "Work on Output (31.7 in the last 20): focus on damage output and positioning to deal more damage.",
+          "Work on Teamplay (27.1 in the last 20): join more fights to raise kill participation."
         ],
         "stacked_20": {
           "games": 20,
-          "wins": 7,
-          "losses": 13,
-          "win_rate": 35.0,
-          "mean_grade": 42.8
+          "wins": 8,
+          "losses": 12,
+          "win_rate": 40.0,
+          "mean_grade": 43.9
         },
         "solo_20": null,
-        "team_line": "All of your last 20 were with 2+ of the group: 7-13 (35.0%, grade 42.8). No solo games to compare against."
+        "team_line": "All of your last 20 were with 2+ of the group: 8-12 (40.0%, grade 43.9). No solo games to compare against."
       },
       "champion_top3": [
         {
-          "champion": "Kaisa",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Kaisa.png",
-          "games": 2,
-          "wins": 2,
-          "losses": 0,
-          "win_rate": 100.0,
-          "mean_grade": 60.8,
-          "delta_vs_overall": 15.4,
-          "why": "Undefeated on Kaisa \u2014 2-0, and it shows."
-        },
-        {
-          "champion": "Nami",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Nami.png",
+          "champion": "Illaoi",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Illaoi.png",
           "games": 2,
           "wins": 1,
           "losses": 1,
           "win_rate": 50.0,
-          "mean_grade": 55.6,
-          "delta_vs_overall": 10.2,
-          "why": "Even on Nami \u2014 1-1 \u2014 but the grades say the play is there."
+          "mean_grade": 55.3,
+          "delta_vs_overall": 10.8,
+          "why": "Even on Illaoi \u2014 1-1 \u2014 but the grades say the play is there."
+        },
+        {
+          "champion": "Kaisa",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Kaisa.png",
+          "games": 3,
+          "wins": 2,
+          "losses": 1,
+          "win_rate": 66.7,
+          "mean_grade": 53.1,
+          "delta_vs_overall": 8.6,
+          "why": "Winning on Kaisa \u2014 2-1. Keep it in the rotation."
         },
         {
           "champion": "Lillia",
@@ -9109,23 +9118,12 @@
           "wins": 2,
           "losses": 0,
           "win_rate": 100.0,
-          "mean_grade": 54.4,
-          "delta_vs_overall": 9.0,
+          "mean_grade": 52.9,
+          "delta_vs_overall": 8.3,
           "why": "Undefeated on Lillia \u2014 2-0, and it shows."
         }
       ],
       "champion_worst3": [
-        {
-          "champion": "Soraka",
-          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Soraka.png",
-          "games": 2,
-          "wins": 0,
-          "losses": 2,
-          "win_rate": 0.0,
-          "mean_grade": 34.9,
-          "delta_vs_overall": -10.5,
-          "why": "Winless on Soraka \u2014 0-2. Maybe retire this one for now."
-        },
         {
           "champion": "Teemo",
           "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Teemo.png",
@@ -9133,8 +9131,8 @@
           "wins": 1,
           "losses": 1,
           "win_rate": 50.0,
-          "mean_grade": 38.0,
-          "delta_vs_overall": -7.4,
+          "mean_grade": 34.4,
+          "delta_vs_overall": -10.2,
           "why": "Even on Teemo \u2014 1-1 \u2014 but the grades aren't buying it."
         },
         {
@@ -9144,268 +9142,279 @@
           "wins": 0,
           "losses": 2,
           "win_rate": 0.0,
-          "mean_grade": 38.3,
-          "delta_vs_overall": -7.1,
+          "mean_grade": 36.7,
+          "delta_vs_overall": -7.9,
           "why": "Winless on Syndra \u2014 0-2. Maybe retire this one for now."
+        },
+        {
+          "champion": "Soraka",
+          "image": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Soraka.png",
+          "games": 3,
+          "wins": 0,
+          "losses": 3,
+          "win_rate": 0.0,
+          "mean_grade": 39.4,
+          "delta_vs_overall": -5.1,
+          "why": "Winless on Soraka \u2014 0-3. Maybe retire this one for now."
         }
       ],
-      "damage_taken_per_min": 1896,
-      "damage_dealt_share_pct": 18.1,
-      "damage_taken_share_pct": 14.8,
-      "kill_participation_pct": 67.4,
-      "deaths_per_game": 9.0,
+      "damage_taken_per_min": 1943,
+      "damage_dealt_share_pct": 16.7,
+      "damage_taken_share_pct": 17.6,
+      "kill_participation_pct": 69.0,
+      "deaths_per_game": 8.9,
       "title": "The Lone Wolf",
-      "title_summary": "Lowest kill participation in the group (67.4%) \u2014 she does her own thing out there.",
+      "title_summary": "Lowest kill participation in the group (69.0%) \u2014 she does her own thing out there.",
       "kda_history": [
         {
           "game": 1,
-          "champion": "Nidalee",
-          "kda": 5.29
-        },
-        {
-          "game": 2,
-          "champion": "Nami",
-          "kda": 14.33
-        },
-        {
-          "game": 3,
-          "champion": "Lux",
-          "kda": 4.75
-        },
-        {
-          "game": 4,
-          "champion": "Ezreal",
-          "kda": 2.62
-        },
-        {
-          "game": 5,
-          "champion": "Jayce",
-          "kda": 3.25
-        },
-        {
-          "game": 6,
           "champion": "Ahri",
           "kda": 14.67
         },
         {
-          "game": 7,
+          "game": 2,
           "champion": "Rammus",
           "kda": 2.31
         },
         {
-          "game": 8,
+          "game": 3,
           "champion": "Kaisa",
           "kda": 3.62
         },
         {
-          "game": 9,
+          "game": 4,
           "champion": "Teemo",
           "kda": 2.22
         },
         {
-          "game": 10,
+          "game": 5,
           "champion": "Senna",
           "kda": 2.57
         },
         {
-          "game": 11,
+          "game": 6,
           "champion": "Swain",
           "kda": 7.5
         },
         {
-          "game": 12,
+          "game": 7,
           "champion": "Cassiopeia",
           "kda": 4.75
         },
         {
-          "game": 13,
+          "game": 8,
           "champion": "Lux",
           "kda": 3.15
         },
         {
-          "game": 14,
+          "game": 9,
           "champion": "Kaisa",
           "kda": 4.83
         },
         {
-          "game": 15,
+          "game": 10,
           "champion": "Hwei",
           "kda": 3.44
         },
         {
-          "game": 16,
+          "game": 11,
           "champion": "Lillia",
           "kda": 6.0
         },
         {
-          "game": 17,
+          "game": 12,
           "champion": "TwistedFate",
           "kda": 2.82
         },
         {
-          "game": 18,
+          "game": 13,
           "champion": "Soraka",
           "kda": 3.12
         },
         {
-          "game": 19,
+          "game": 14,
           "champion": "Kayle",
           "kda": 4.33
         },
         {
-          "game": 20,
+          "game": 15,
           "champion": "AurelionSol",
           "kda": 5.25
         },
         {
-          "game": 21,
+          "game": 16,
           "champion": "Ryze",
           "kda": 1.67
         },
         {
-          "game": 22,
+          "game": 17,
           "champion": "Seraphine",
           "kda": 3.25
         },
         {
-          "game": 23,
+          "game": 18,
           "champion": "Cassiopeia",
           "kda": 2.82
         },
         {
-          "game": 24,
+          "game": 19,
           "champion": "MissFortune",
           "kda": 3.38
         },
         {
-          "game": 25,
+          "game": 20,
           "champion": "Teemo",
           "kda": 3.56
         },
         {
-          "game": 26,
+          "game": 21,
           "champion": "Nami",
           "kda": 3.82
         },
         {
-          "game": 27,
+          "game": 22,
           "champion": "Ashe",
           "kda": 2.12
         },
         {
-          "game": 28,
+          "game": 23,
           "champion": "Chogath",
           "kda": 3.27
         },
         {
-          "game": 29,
+          "game": 24,
           "champion": "Mordekaiser",
           "kda": 2.12
         },
         {
-          "game": 30,
+          "game": 25,
           "champion": "Seraphine",
           "kda": 10.25
         },
         {
-          "game": 31,
+          "game": 26,
           "champion": "Smolder",
           "kda": 2.69
         },
         {
-          "game": 32,
+          "game": 27,
           "champion": "Syndra",
           "kda": 1.79
         },
         {
-          "game": 33,
+          "game": 28,
           "champion": "Malzahar",
           "kda": 2.36
         },
         {
-          "game": 34,
+          "game": 29,
           "champion": "Illaoi",
           "kda": 2.15
         },
         {
-          "game": 35,
+          "game": 30,
           "champion": "Morgana",
           "kda": 4.18
         },
         {
-          "game": 36,
+          "game": 31,
           "champion": "Elise",
           "kda": 2.25
         },
         {
-          "game": 37,
+          "game": 32,
           "champion": "Syndra",
           "kda": 2.43
         },
         {
-          "game": 38,
+          "game": 33,
           "champion": "Karma",
           "kda": 4.09
         },
         {
-          "game": 39,
+          "game": 34,
           "champion": "Sejuani",
           "kda": 5.62
         },
         {
-          "game": 40,
+          "game": 35,
           "champion": "Soraka",
           "kda": 6.17
         },
         {
-          "game": 41,
+          "game": 36,
           "champion": "Blitzcrank",
           "kda": 4.0
         },
         {
-          "game": 42,
+          "game": 37,
           "champion": "Taliyah",
           "kda": 4.25
         },
         {
-          "game": 43,
+          "game": 38,
           "champion": "Smolder",
           "kda": 3.3
         },
         {
-          "game": 44,
+          "game": 39,
           "champion": "Nautilus",
           "kda": 3.0
         },
         {
-          "game": 45,
+          "game": 40,
           "champion": "Graves",
           "kda": 1.8
         },
         {
-          "game": 46,
+          "game": 41,
           "champion": "Mel",
           "kda": 3.58
         },
         {
-          "game": 47,
+          "game": 42,
           "champion": "Smolder",
           "kda": 8.8
         },
         {
-          "game": 48,
+          "game": 43,
           "champion": "Vex",
           "kda": 6.6
         },
         {
-          "game": 49,
+          "game": 44,
           "champion": "Hwei",
           "kda": 4.88
         },
         {
-          "game": 50,
+          "game": 45,
           "champion": "Lillia",
           "kda": 4.12
+        },
+        {
+          "game": 46,
+          "champion": "Velkoz",
+          "kda": 10.0
+        },
+        {
+          "game": 47,
+          "champion": "Soraka",
+          "kda": 4.18
+        },
+        {
+          "game": 48,
+          "champion": "Illaoi",
+          "kda": 4.29
+        },
+        {
+          "game": 49,
+          "champion": "Kaisa",
+          "kda": 6.17
+        },
+        {
+          "game": 50,
+          "champion": "TahmKench",
+          "kda": 3.3
         }
       ]
     }
@@ -9414,30 +9423,30 @@
     {
       "label": "Solo",
       "player_games": 14,
-      "wins": 8,
-      "win_rate_pct": 57.1,
-      "grade": 49.3
+      "wins": 6,
+      "win_rate_pct": 42.9,
+      "grade": 46.4
     },
     {
       "label": "2\u20133 of the group",
-      "player_games": 53,
+      "player_games": 56,
       "wins": 35,
-      "win_rate_pct": 66.0,
-      "grade": 50.1
+      "win_rate_pct": 62.5,
+      "grade": 47.2
     },
     {
       "label": "4 of the group",
-      "player_games": 86,
-      "wins": 36,
-      "win_rate_pct": 41.9,
-      "grade": 44.2
+      "player_games": 77,
+      "wins": 28,
+      "win_rate_pct": 36.4,
+      "grade": 42.4
     },
     {
       "label": "Full stack (5)",
-      "player_games": 97,
-      "wins": 42,
-      "win_rate_pct": 43.3,
-      "grade": 50.5
+      "player_games": 103,
+      "wins": 45,
+      "win_rate_pct": 43.7,
+      "grade": 49.3
     }
   ],
   "playbook_note": "Playbook above is from the Nov 8 snapshot. It recomputes from the last-50, 5-player window on the first daily run.",

@@ -1,5 +1,197 @@
 [
   {
+    "match_id": "TahmKench|3/10/30|27.1|7|65",
+    "date": "2026-11-11",
+    "champion": "TahmKench",
+    "archetype": "Frontline",
+    "win": true,
+    "kills": 3,
+    "deaths": 10,
+    "assists": 30,
+    "damage_to_champions": 20032,
+    "damage_taken": 115479,
+    "game_minutes": 27.15,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Phenomenal Evil",
+      "Don't Change the Channel",
+      "Mystic Punch",
+      "Porcupine"
+    ],
+    "items": [
+      "Heartsteel",
+      "Fimbulwinter",
+      "Mercury's Treads",
+      "Spirit Visage",
+      "Thornmail",
+      "Warmog's Armor"
+    ],
+    "skillshots_dodged_per_min": 2.39,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "i3i3oy#NA1",
+      "Zemocean#707",
+      "NYSpyder#NA1"
+    ],
+    "seq": 62
+  },
+  {
+    "match_id": "Kaisa|12/6/25|19.1|49|35",
+    "date": "2026-11-11",
+    "champion": "Kaisa",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 12,
+    "deaths": 6,
+    "assists": 25,
+    "damage_to_champions": 28728,
+    "damage_taken": 17891,
+    "game_minutes": 19.15,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Wooglet's Witchcap",
+      "Homeguard",
+      "CRIMSON COBALT",
+      "Zealot",
+      "Typhoon"
+    ],
+    "items": [
+      "Shadowflame",
+      "Sorcerer's Shoes",
+      "Wooglet's Witchcap",
+      "Luden's Echo",
+      "Nashor's Tooth",
+      "Vampiric Scepter"
+    ],
+    "skillshots_dodged_per_min": 1.83,
+    "stack_size": null,
+    "teammates": [
+      "Koba#1019",
+      "CreamiNataella#NA1",
+      "i3i3oy#NA1",
+      "S0ul0nF1re#m30w"
+    ],
+    "seq": 61
+  },
+  {
+    "match_id": "Illaoi|9/7/21|13.4|15|53",
+    "date": "2026-11-10",
+    "champion": "Illaoi",
+    "archetype": "Frontline",
+    "win": true,
+    "kills": 9,
+    "deaths": 7,
+    "assists": 21,
+    "damage_to_champions": 24468,
+    "damage_taken": 39213,
+    "game_minutes": 13.4,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Infinite Recursion",
+      "Sap Magic",
+      "Scopier Weapons"
+    ],
+    "items": [
+      "Sundered Sky",
+      "Mercury's Treads",
+      "Iceborn Gauntlet",
+      "Sterak's Gage",
+      "Spectre's Cowl",
+      "Glowing Mote"
+    ],
+    "skillshots_dodged_per_min": 3.96,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 60
+  },
+  {
+    "match_id": "Soraka|0/11/46|21.1|6|133",
+    "date": "2026-11-10",
+    "champion": "Soraka",
+    "archetype": "Support",
+    "win": false,
+    "kills": 0,
+    "deaths": 11,
+    "assists": 46,
+    "damage_to_champions": 10302,
+    "damage_taken": 44510,
+    "game_minutes": 21.15,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Empowered By The Faithful",
+      "First-Aid Kit",
+      "Blue Barrier",
+      "Salvation"
+    ],
+    "items": [
+      "Rod of Ages",
+      "Ionian Boots of Lucidity",
+      "Moonstone Renewer",
+      "Warmog's Armor",
+      "Ardent Censer",
+      "Echoes of Helia"
+    ],
+    "skillshots_dodged_per_min": 6.29,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Ohwutahel#NA1",
+      "Vincent Chan#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 59
+  },
+  {
+    "match_id": "Velkoz|10/3/20|10.3|20|26",
+    "date": "2026-11-10",
+    "champion": "Velkoz",
+    "archetype": "Damage",
+    "win": true,
+    "kills": 10,
+    "deaths": 3,
+    "assists": 20,
+    "damage_to_champions": 24368,
+    "damage_taken": 6726,
+    "game_minutes": 10.35,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "From Downtown",
+      "Magic Missile"
+    ],
+    "items": [
+      "Blackfire Torch",
+      "Refillable Potion",
+      "Liandry's Torment",
+      "Boots",
+      "Giant's Belt"
+    ],
+    "skillshots_dodged_per_min": 2.51,
+    "stack_size": null,
+    "teammates": [
+      "NightcrawlerJP#NA1",
+      "ROXXEMBOXXEM#NA1",
+      "Vincent Chan#NA1",
+      "sudoDraegon#mkdir"
+    ],
+    "seq": 58
+  },
+  {
     "match_id": "Lillia|9/8/24|22.6|20|32",
     "date": "2026-11-08",
     "champion": "Lillia",

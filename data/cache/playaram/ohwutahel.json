@@ -1,5 +1,160 @@
 [
   {
+    "match_id": "Nautilus|4/8/27|13.4|9|77",
+    "date": "2026-11-10",
+    "champion": "Nautilus",
+    "archetype": "Frontline",
+    "win": true,
+    "kills": 4,
+    "deaths": 8,
+    "assists": 27,
+    "damage_to_champions": 14762,
+    "damage_taken": 35161,
+    "game_minutes": 13.4,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Courage of the Colossus",
+      "Growth Spurt",
+      "Bread And Butter"
+    ],
+    "items": [
+      "Heartsteel",
+      "Fimbulwinter",
+      "Mercury's Treads",
+      "Kaenic Rookern",
+      "Bramble Vest"
+    ],
+    "skillshots_dodged_per_min": 5.75,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 61
+  },
+  {
+    "match_id": "Katarina|14/18/22|21.1|21|136",
+    "date": "2026-11-10",
+    "champion": "Katarina",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 14,
+    "deaths": 18,
+    "assists": 22,
+    "damage_to_champions": 43989,
+    "damage_taken": 52636,
+    "game_minutes": 21.15,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Overloaded",
+      "Swift and Safe",
+      "Lonely Warrior",
+      "Big Brain"
+    ],
+    "items": [
+      "Hextech Gunblade",
+      "Zhonya's Hourglass",
+      "Hextech Alternator",
+      "Shadowflame",
+      "Rabadon's Deathcap",
+      "Sorcerer's Shoes"
+    ],
+    "skillshots_dodged_per_min": 6.43,
+    "stack_size": null,
+    "teammates": [
+      "CreamiNataella#NA1",
+      "Vincent Chan#NA1",
+      "pikabUwU#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 60
+  },
+  {
+    "match_id": "Shen|13/18/27|26.5|26|242",
+    "date": "2026-11-10",
+    "champion": "Shen",
+    "archetype": "Frontline",
+    "win": true,
+    "kills": 13,
+    "deaths": 18,
+    "assists": 27,
+    "damage_to_champions": 38537,
+    "damage_taken": 109479,
+    "game_minutes": 26.5,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Third Times the Harm",
+      "Echo Cast",
+      "Bread and Cheese",
+      "Quickstep",
+      "Shadow Runner"
+    ],
+    "items": [
+      "Heartsteel",
+      "Spirit Visage",
+      "Unending Despair",
+      "Wit's End",
+      "Warmog's Armor",
+      "Thornmail"
+    ],
+    "skillshots_dodged_per_min": 9.13,
+    "stack_size": null,
+    "teammates": [
+      "9595hapa#lol",
+      "IU simp#lllll",
+      "CreamiNataella#NA1",
+      "i3i3oy#NA1"
+    ],
+    "seq": 59
+  },
+  {
+    "match_id": "Singed|1/12/16|18.2|32|57",
+    "date": "2026-11-10",
+    "champion": "Singed",
+    "archetype": "Damage",
+    "win": false,
+    "kills": 1,
+    "deaths": 12,
+    "assists": 16,
+    "damage_to_champions": 16200,
+    "damage_taken": 60744,
+    "game_minutes": 18.18,
+    "dmg_share": null,
+    "taken_share": null,
+    "kp": null,
+    "augments": [
+      "Goredrink",
+      "With Haste",
+      "Celestial Body",
+      "Mad Scientist"
+    ],
+    "items": [
+      "Rod of Ages",
+      "Boots of Swiftness",
+      "Rylai's Crystal Scepter",
+      "Liandry's Torment",
+      "Force of Nature",
+      "Chain Vest"
+    ],
+    "skillshots_dodged_per_min": 3.13,
+    "stack_size": null,
+    "teammates": [
+      "Shrilllll#meow",
+      "AI Neeko#BOT",
+      "Nika#1022",
+      "The Hatter#Chaos"
+    ],
+    "seq": 58
+  },
+  {
     "match_id": "Rumble|13/12/25|22.6|90|56",
     "date": "2026-11-08",
     "champion": "Rumble",
