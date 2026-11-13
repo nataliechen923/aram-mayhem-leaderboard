@@ -130,6 +130,31 @@
         "Ohwutahel": 1616,
         "PikabUwU": 1488
       }
+    },
+    {
+      "date": "2026-11-13",
+      "window_games": 50,
+      "scores": {
+        "I3i3oy": 47.3,
+        "Vincent Chan": 47.3,
+        "CreamiNataella": 47.6,
+        "Ohwutahel": 42.3,
+        "PikabUwU": 43.3
+      },
+      "mmr_style": {
+        "I3i3oy": 1462,
+        "Vincent Chan": 1462,
+        "CreamiNataella": 1466,
+        "Ohwutahel": 1392,
+        "PikabUwU": 1406
+      },
+      "damage_per_min": {
+        "I3i3oy": 2240,
+        "Vincent Chan": 2698,
+        "CreamiNataella": 1676,
+        "Ohwutahel": 1616,
+        "PikabUwU": 1488
+      }
     }
   ],
   "how_rating_works": {
@@ -152,14 +177,14 @@
     "seed_note": "",
     "title": "ARAM Mayhem \u2014 Team Leaderboard",
     "update_method": "GitHub Actions, once a day, fetching each player's PlayARAM profile (no Riot API key). Loading / refreshing this page makes zero calls to Riot or PlayARAM.",
-    "updated_at": "2026-11-12T09:30:38.952021-06:00",
-    "updated_at_label": "2026-11-12 09:30 AM CST",
+    "updated_at": "2026-11-13T07:32:30.531357-06:00",
+    "updated_at_label": "2026-11-13 07:32 AM CST",
     "window_games": 50,
     "window_note": "Each player is scored on their own last 50 ARAM Mayhem games. Remakes under 5 minutes are excluded. PlayARAM shows only the latest 20 games per fetch, so the updater keeps a cache and the window fills to 50 over the first few daily runs.",
     "stack_note": "Stack splits below are from the Nov 8 6-player snapshot (600 player-games). They recompute for the 5-player group on the first daily run.",
     "automation": {
-      "last_attempt": "2026-11-12T09:30:38.952004-06:00",
-      "last_attempt_label": "2026-11-12 09:30 AM CST",
+      "last_attempt": "2026-11-13T07:32:30.531341-06:00",
+      "last_attempt_label": "2026-11-13 07:32 AM CST",
       "last_source": "PlayARAM",
       "last_games_found": 250,
       "last_error": "I3i3oy: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Vincent Chan: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; CreamiNataella: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; Ohwutahel: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.; PikabUwU: PlayARAM blocked the request (Cloudflare) \u2014 page keeps its last numbers.",
